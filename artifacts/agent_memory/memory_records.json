@@ -1,0 +1,278 @@
+{
+  "schema_version": "agent_memory_v1",
+  "tables": {
+    "thesis_ledger": [
+      {
+        "thesis_id": "ths_7d2a38f0f6a1",
+        "fund": "MStar US Equity",
+        "acid": "US ID EQ",
+        "thesis_text": "Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.",
+        "thesis_drivers": [
+          "valuation_adjustment_top_down"
+        ],
+        "last_affirmed_snapshot_date": "2026-04-06",
+        "last_affirmed_stf": -0.0440526031682848,
+        "last_affirmed_decomp": "{\"growth\":0.02,\"yield\":0.0278291907492728,\"inflation\":0.0245560585345919,\"currency_usd\":0.0,\"valuation_adjustment_top_down\":-0.0575146444220777,\"valuation_adjustment_combined\":-0.0363920481918165,\"valuation_adjustment_bottom_up\":-0.015269451961555304}",
+        "falsification_conditions": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+        "status": "active",
+        "review_state": "proposed",
+        "created_at": "2026-04-29T00:00:00Z",
+        "updated_at": "2026-04-29T00:00:00Z",
+        "created_by_review_run_id": "manual_thesis_seed_2026-04-29",
+        "last_updated_by_review_run_id": "manual_thesis_seed_2026-04-29",
+        "visibility_scope": "personal",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_120bf174c7ce"
+          }
+        ]
+      },
+      {
+        "thesis_id": "ths_0e5b6cf4d912",
+        "fund": "MStar International Equity",
+        "acid": "EU ID EQ",
+        "thesis_text": "Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.",
+        "thesis_drivers": [
+          "valuation_adjustment_top_down"
+        ],
+        "last_affirmed_snapshot_date": "2026-04-06",
+        "last_affirmed_stf": -0.0366980208921893,
+        "last_affirmed_decomp": "{\"growth\":0.0189999999999999,\"yield\":0.0241694367075922,\"inflation\":0.0173395224207185,\"currency_usd\":0.0145667832991156,\"valuation_adjustment_top_down\":-0.0549497694269507,\"valuation_adjustment_combined\":-0.028702117369756,\"valuation_adjustment_bottom_up\":-0.002454465312561299}",
+        "falsification_conditions": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+        "status": "active",
+        "review_state": "proposed",
+        "created_at": "2026-04-29T00:00:00Z",
+        "updated_at": "2026-04-29T00:00:00Z",
+        "created_by_review_run_id": "manual_thesis_seed_2026-04-29",
+        "last_updated_by_review_run_id": "manual_thesis_seed_2026-04-29",
+        "visibility_scope": "personal",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_03a2430b4cf4"
+          }
+        ]
+      },
+      {
+        "thesis_id": "ths_4ab728909cb7",
+        "fund": "MStar International Equity",
+        "acid": "JP IT EQ",
+        "thesis_text": "Maintain baseline thesis tracking for the Japan technology overweight so future decomposition changes can be evaluated explicitly.",
+        "thesis_drivers": [
+          "valuation_adjustment_top_down"
+        ],
+        "last_affirmed_snapshot_date": "2026-04-06",
+        "last_affirmed_stf": -0.0440544588570395,
+        "last_affirmed_decomp": "{\"growth\":0.0349999999999999,\"yield\":0.0143085853004688,\"inflation\":0.0208956492604628,\"currency_usd\":0.0489702003717674,\"valuation_adjustment_top_down\":-0.0738655261928078,\"valuation_adjustment_combined\":-0.0357482200906974,\"valuation_adjustment_bottom_up\":0.002369086011413002}",
+        "falsification_conditions": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+        "status": "active",
+        "review_state": "proposed",
+        "created_at": "2026-04-29T00:00:00Z",
+        "updated_at": "2026-04-29T00:00:00Z",
+        "created_by_review_run_id": "manual_thesis_seed_2026-04-29",
+        "last_updated_by_review_run_id": "manual_thesis_seed_2026-04-29",
+        "visibility_scope": "personal",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_0b3af9613ba1"
+          }
+        ]
+      }
+    ],
+    "open_challenges": [],
+    "exceptions": [
+      {
+        "exception_id": "exc_c59aee0b3903",
+        "fund": "MStar US Equity",
+        "scope": "acid",
+        "acid": "USD Cash",
+        "acid_pattern": "",
+        "trigger_types": [
+          "sign_disagreement",
+          "decomposition_rotation",
+          "better_expression_available"
+        ],
+        "exception_text": "USD Cash is an accepted exception for this fund and does not require VIR or algo matching.",
+        "effective_from": "2026-04-06",
+        "effective_to": "",
+        "review_cadence": "monthly",
+        "last_reviewed_snapshot_date": "2026-04-06",
+        "review_state": "approved",
+        "created_at": "2026-04-28T00:00:00Z",
+        "updated_at": "2026-04-28T00:00:00Z",
+        "created_by_review_run_id": "manual_fund_review_2026-04-28",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo.csv",
+            "row_id": "falg_14c7ffe2a378"
+          }
+        ]
+      },
+      {
+        "exception_id": "exc_eba17105a2b2",
+        "fund": "MStar US Equity",
+        "scope": "acid",
+        "acid": "EM EQ",
+        "acid_pattern": "",
+        "trigger_types": [
+          "sign_disagreement",
+          "decomposition_rotation",
+          "better_expression_available"
+        ],
+        "exception_text": "The tiny EM EQ residual is accepted for this US equity fund and should not be treated as a mapping failure.",
+        "effective_from": "2026-04-06",
+        "effective_to": "",
+        "review_cadence": "monthly",
+        "last_reviewed_snapshot_date": "2026-04-06",
+        "review_state": "approved",
+        "created_at": "2026-04-28T00:00:00Z",
+        "updated_at": "2026-04-28T00:00:00Z",
+        "created_by_review_run_id": "manual_fund_review_2026-04-28",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo.csv",
+            "row_id": "falg_333b0b731512"
+          }
+        ]
+      },
+      {
+        "exception_id": "exc_be881e922df8",
+        "fund": "MStar International Equity",
+        "scope": "acid",
+        "acid": "EM EQ",
+        "acid_pattern": "",
+        "trigger_types": [
+          "sign_disagreement",
+          "decomposition_rotation",
+          "better_expression_available"
+        ],
+        "exception_text": "The benchmark-only EM EQ residual is accepted for this fund, matched through VIR, and ignored in algo review.",
+        "effective_from": "2026-04-06",
+        "effective_to": "",
+        "review_cadence": "monthly",
+        "last_reviewed_snapshot_date": "2026-04-06",
+        "review_state": "approved",
+        "created_at": "2026-04-28T00:00:00Z",
+        "updated_at": "2026-04-28T00:00:00Z",
+        "created_by_review_run_id": "manual_fund_review_2026-04-28",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo.csv",
+            "row_id": "falg_f9e3ff4c500d"
+          }
+        ]
+      },
+      {
+        "exception_id": "exc_975f2ec94a3d",
+        "fund": "MStar International Equity",
+        "scope": "acid",
+        "acid": "US EQ",
+        "acid_pattern": "",
+        "trigger_types": [
+          "sign_disagreement",
+          "decomposition_rotation",
+          "better_expression_available"
+        ],
+        "exception_text": "The benchmark-only US EQ residual is accepted for this fund and can be ignored on the algo side.",
+        "effective_from": "2026-04-06",
+        "effective_to": "",
+        "review_cadence": "monthly",
+        "last_reviewed_snapshot_date": "2026-04-06",
+        "review_state": "approved",
+        "created_at": "2026-04-28T00:00:00Z",
+        "updated_at": "2026-04-28T00:00:00Z",
+        "created_by_review_run_id": "manual_fund_review_2026-04-28",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo.csv",
+            "row_id": "falg_1042ef0ba3de"
+          }
+        ]
+      },
+      {
+        "exception_id": "exc_3d9d6e1471e1",
+        "fund": "MStar Global Opportunistic Equity",
+        "scope": "acid",
+        "acid": "USD Cash",
+        "acid_pattern": "",
+        "trigger_types": [
+          "sign_disagreement",
+          "decomposition_rotation",
+          "better_expression_available"
+        ],
+        "exception_text": "USD Cash is an accepted exception for this fund and should not be escalated as a VIR or algo mapping issue.",
+        "effective_from": "2026-04-06",
+        "effective_to": "",
+        "review_cadence": "monthly",
+        "last_reviewed_snapshot_date": "2026-04-06",
+        "review_state": "approved",
+        "created_at": "2026-04-28T00:00:00Z",
+        "updated_at": "2026-04-28T00:00:00Z",
+        "created_by_review_run_id": "manual_fund_review_2026-04-28",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo.csv",
+            "row_id": "falg_bc2a7add0edb"
+          }
+        ]
+      },
+      {
+        "exception_id": "exc_ed6a4abefcd9",
+        "fund": "MStar Global Opportunistic Equity",
+        "scope": "acid",
+        "acid": "EM LC T: Gbl Div. (JPM)",
+        "acid_pattern": "",
+        "trigger_types": [
+          "sign_disagreement",
+          "decomposition_rotation",
+          "better_expression_available"
+        ],
+        "exception_text": "The tiny EM LC T: Gbl Div. (JPM) residual is accepted and does not require additional mapping treatment.",
+        "effective_from": "2026-04-06",
+        "effective_to": "",
+        "review_cadence": "monthly",
+        "last_reviewed_snapshot_date": "2026-04-06",
+        "review_state": "approved",
+        "created_at": "2026-04-28T00:00:00Z",
+        "updated_at": "2026-04-28T00:00:00Z",
+        "created_by_review_run_id": "manual_fund_review_2026-04-28",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo.csv",
+            "row_id": "falg_e5662b4c022d"
+          }
+        ]
+      },
+      {
+        "exception_id": "exc_efc351fe6cc3",
+        "fund": "MStar Global Income",
+        "scope": "acid",
+        "acid": "USD Cash",
+        "acid_pattern": "",
+        "trigger_types": [
+          "sign_disagreement",
+          "decomposition_rotation",
+          "better_expression_available"
+        ],
+        "exception_text": "The negative USD Cash position is accepted as a real portfolio position for this fund and not a mapping failure.",
+        "effective_from": "2026-04-06",
+        "effective_to": "",
+        "review_cadence": "monthly",
+        "last_reviewed_snapshot_date": "2026-04-06",
+        "review_state": "approved",
+        "created_at": "2026-04-28T00:00:00Z",
+        "updated_at": "2026-04-28T00:00:00Z",
+        "created_by_review_run_id": "manual_fund_review_2026-04-28",
+        "evidence_pointers": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo.csv",
+            "row_id": "falg_44c116aaeeee"
+          }
+        ]
+      }
+    ],
+    "watch_items": []
+  }
+}
