@@ -1,0 +1,193 @@
+{
+  "schema_version": "approved_market_context_sources_v1",
+  "sources": [
+    {
+      "source_id": "factset_earnings_insight",
+      "source_name": "FactSet Earnings Insight",
+      "source_type": "earnings_research_pdf",
+      "publisher": "FactSet Research Systems Inc.",
+      "domain": "advantage.factset.com",
+      "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+      "publication_date": "2026-05-29",
+      "approved_use": [
+        "earnings_surprises",
+        "revenue_surprises",
+        "earnings_growth",
+        "earnings_revisions",
+        "earnings_guidance",
+        "sector_earnings_context",
+        "valuation_context"
+      ],
+      "default_scope_type": "market",
+      "default_scope_value": "US equity earnings",
+      "relevant_acids": [
+        "US LRG EQ",
+        "US LRG G EQ",
+        "US IT EQ",
+        "US ID EQ",
+        "US CD EQ"
+      ],
+      "notes": "Approved as a credible earnings and valuation context source for live/current-period PM review. Historical replay use requires as-of-date/source-date controls."
+    },
+    {
+      "source_id": "bls_labor_market_releases",
+      "source_name": "U.S. Bureau of Labor Statistics Releases",
+      "source_type": "official_government_data",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "domain": "bls.gov",
+      "url": "https://www.bls.gov/",
+      "publication_date": "",
+      "approved_use": [
+        "labor_market_context",
+        "payrolls",
+        "unemployment",
+        "wages",
+        "jolts",
+        "inflation_real_earnings"
+      ],
+      "default_scope_type": "macro",
+      "default_scope_value": "US labor market",
+      "relevant_acids": [
+        "US LRG EQ",
+        "US LRG G EQ",
+        "US IT EQ",
+        "US ID EQ",
+        "US CD EQ",
+        "US FN EQ"
+      ],
+      "notes": "Approved for official U.S. labor-market, wage, JOLTS, CPI, and real-earnings context."
+    },
+    {
+      "source_id": "ism_pmi_reports",
+      "source_name": "Institute for Supply Management PMI Reports",
+      "source_type": "official_survey_data",
+      "publisher": "Institute for Supply Management",
+      "domain": "ismworld.org",
+      "url": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/",
+      "publication_date": "",
+      "approved_use": [
+        "manufacturing_context",
+        "services_context",
+        "new_orders",
+        "production",
+        "employment",
+        "prices",
+        "supplier_deliveries",
+        "industrial_cycle_context"
+      ],
+      "default_scope_type": "macro",
+      "default_scope_value": "US PMI",
+      "relevant_acids": [
+        "US ID EQ",
+        "US CD EQ",
+        "US MT EQ",
+        "US EN EQ"
+      ],
+      "notes": "Approved for manufacturing/services activity and cyclical sector context, especially Industrials and Materials."
+    },
+    {
+      "source_id": "federal_reserve_policy_materials",
+      "source_name": "Federal Reserve Policy Materials",
+      "source_type": "official_central_bank_source",
+      "publisher": "Board of Governors of the Federal Reserve System",
+      "domain": "federalreserve.gov",
+      "url": "https://www.federalreserve.gov/monetarypolicy.htm",
+      "publication_date": "",
+      "approved_use": [
+        "monetary_policy_context",
+        "rate_cut_expectations",
+        "inflation_assessment",
+        "labor_market_assessment",
+        "financial_conditions"
+      ],
+      "default_scope_type": "macro",
+      "default_scope_value": "US monetary policy",
+      "relevant_acids": [
+        "US LRG EQ",
+        "US LRG G EQ",
+        "US IT EQ",
+        "US ID EQ",
+        "US FN EQ",
+        "US RE EQ",
+        "US UT EQ"
+      ],
+      "notes": "Approved for official Fed statements, minutes, speeches, and monetary-policy context."
+    },
+    {
+      "source_id": "sp_global_market_intelligence_and_ratings",
+      "source_name": "S&P Global Market Intelligence and Ratings Research",
+      "source_type": "market_research",
+      "publisher": "S&P Global",
+      "domain": "spglobal.com",
+      "url": "https://www.spglobal.com/",
+      "publication_date": "",
+      "approved_use": [
+        "sector_research",
+        "credit_context",
+        "earnings_context",
+        "technology_capex_context",
+        "macro_market_context"
+      ],
+      "default_scope_type": "market",
+      "default_scope_value": "Global market and sector research",
+      "relevant_acids": [
+        "US LRG EQ",
+        "US LRG G EQ",
+        "US IT EQ",
+        "US ID EQ",
+        "US CD EQ",
+        "US FN EQ"
+      ],
+      "notes": "Approved for sector and market research where article/report publication date is available."
+    },
+    {
+      "source_id": "nasdaq_market_review",
+      "source_name": "Nasdaq Market Review and Outlook",
+      "source_type": "market_commentary",
+      "publisher": "Nasdaq",
+      "domain": "nasdaq.com",
+      "url": "https://www.nasdaq.com/market-activity",
+      "publication_date": "",
+      "approved_use": [
+        "market_performance_context",
+        "sector_performance_context",
+        "style_leadership_context",
+        "earnings_commentary"
+      ],
+      "default_scope_type": "market",
+      "default_scope_value": "US equity market",
+      "relevant_acids": [
+        "US LRG EQ",
+        "US LRG G EQ",
+        "US IT EQ",
+        "US ID EQ",
+        "US CD EQ"
+      ],
+      "notes": "Approved as market commentary/context, not as a primary source for official economic data."
+    },
+    {
+      "source_id": "goldman_sachs_research_insights",
+      "source_name": "Goldman Sachs Research Insights",
+      "source_type": "market_research",
+      "publisher": "Goldman Sachs",
+      "domain": "goldmansachs.com",
+      "url": "https://www.goldmansachs.com/insights",
+      "publication_date": "",
+      "approved_use": [
+        "macro_market_context",
+        "technology_capex_context",
+        "ai_investment_context",
+        "valuation_context",
+        "sector_research"
+      ],
+      "default_scope_type": "market",
+      "default_scope_value": "Global investment research",
+      "relevant_acids": [
+        "US LRG EQ",
+        "US LRG G EQ",
+        "US IT EQ"
+      ],
+      "notes": "Approved for thematic market research and AI/capex context where publication date is available."
+    }
+  ]
+}
