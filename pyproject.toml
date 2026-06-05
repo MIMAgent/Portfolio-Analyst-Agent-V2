@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "portfolio-analyst-agent"
+version = "0.1.0"
+description = "Local parser and tooling scaffold for the Portfolio Analyst Agent."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+# Agent runtime deps are isolated here; the parser/tool core stays stdlib-only.
+agent = ["anthropic", "pydantic>=2"]
+bedrock = ["boto3", "pypdf>=5"]
+dev = ["pytest"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/portfolio_analyst_agent"]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src",
+]
+testpaths = ["tests"]
