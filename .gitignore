@@ -2,8 +2,20 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-artifacts/
-data/
-*.zip
 vite.err.log
 vite.out.log
+*.zip
+
+# Raw/project input files stay local unless explicitly approved.
+data/*
+!data/acid_mapping_bootstrap_v1.csv
+
+# Generated artifacts stay local by default. Keep only curated runtime fixtures
+# that make the demo/review harness reproducible from a fresh clone.
+artifacts/*
+!artifacts/agent_memory/
+!artifacts/agent_memory/memory_records.json
+!artifacts/rolled_exposures/
+!artifacts/rolled_exposures/*.csv
+!artifacts/rolled_exposures/*.md
+!artifacts/equity_vir_history.csv.zip
