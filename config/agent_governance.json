@@ -1,0 +1,29 @@
+{
+  "schema_version": "agent_governance_v1",
+  "events": [
+    {
+      "governance_version": "governance_2026-04-06_v1",
+      "effective_from": "2026-04-06",
+      "parameters": {
+        "materiality_threshold_active": 1.0,
+        "materiality_threshold_target": 1.0,
+        "materiality_threshold_benchmark": 1.0,
+        "materiality_threshold_exposure_mom": 1.0,
+        "materiality_threshold_algo_mom": 1.0,
+        "strong_materiality_threshold_active": 1.5,
+        "top_quartile_max": 0.2,
+        "bottom_quartile_min": 0.8,
+        "strong_top_percentile_max": 0.2,
+        "strong_bottom_percentile_min": 0.8,
+        "decomposition_weakening_threshold": 0.01,
+        "peer_advantage_threshold_stf": 1.0,
+        "near_miss_threshold_buffer": 0.25,
+        "stale_challenge_threshold_months": 3,
+        "stale_thesis_threshold_months": 6,
+        "vir_quartile_universe": "workbook_type_snapshot",
+        "auto_apply_memory_ops": false
+      },
+      "notes": "Initial Model 1 governance defaults externalized from challenge trigger constants. Thresholds are placeholders pending shadow-month calibration."
+    }
+  ]
+}
