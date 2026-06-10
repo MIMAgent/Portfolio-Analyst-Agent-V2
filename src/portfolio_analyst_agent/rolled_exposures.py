@@ -442,15 +442,13 @@ def _fund_blocks(worksheet: Worksheet) -> list[FundBlock]:
     return blocks
 
 
-# The account block starts at row 5 and runs contiguously until the first blank
-# secid. Earlier code hardcoded `range(5, 83)`, which truncated the block at row 82
-# and silently dropped the bond benchmark accounts at rows 83-88 (Bloomberg US Agg,
-# US Corp, US Corp HY, JPM EMBI/GBI-EM). That dropout zeroed benchmark coverage for
-# the bond funds, which in turn produced phantom 100% "active" bets downstream.
+# The account block starts at row 5. Older workbooks were contiguous, but newer
+# monthly files can include banner rows with a blank secid inside the block, so we
+# scan the full populated range and keep only rows with a secid.
 ACCOUNT_BLOCK_FIRST_ROW = 5
-# Smallest acceptable last row; a block ending before this means the layout changed
-# or the parse truncated, and the IC-facing numbers cannot be trusted.
-ACCOUNT_BLOCK_MIN_LAST_ROW = 83
+# Minimum count of parsed account rows. A materially smaller result means the layout
+# changed or the parse truncated, and the IC-facing numbers cannot be trusted.
+ACCOUNT_BLOCK_MIN_ROW_COUNT = 70
 
 
 def _account_rows(worksheet: Worksheet, fund_blocks: list[FundBlock]) -> list[AccountRow]:
@@ -460,8 +458,9 @@ def _account_rows(worksheet: Worksheet, fund_blocks: list[FundBlock]) -> list[Ac
     for row_number in range(ACCOUNT_BLOCK_FIRST_ROW, last_sheet_row + 1):
         secid = worksheet.get_cell(row_number, 2).strip()
         if not secid:
-            # The account block is contiguous; the first blank secid ends it.
-            break
+            # Newer monthly workbooks can carry section-header rows with a blank secid.
+            # Ignore those rows rather than treating them as the end of the account block.
+            continue
         observed_last_row = row_number
 
         account_name = worksheet.get_cell(row_number, 1).strip() or secid
@@ -484,12 +483,12 @@ def _account_rows(worksheet: Worksheet, fund_blocks: list[FundBlock]) -> list[Ac
             )
         )
 
-    if observed_last_row < ACCOUNT_BLOCK_MIN_LAST_ROW:
+    if len(rows) < ACCOUNT_BLOCK_MIN_ROW_COUNT:
         raise ValueError(
-            f"Account block ended at row {observed_last_row}, before the expected "
-            f"minimum row {ACCOUNT_BLOCK_MIN_LAST_ROW}. The Portfolio sheet layout may "
-            f"have changed or the parse truncated; refusing to emit possibly-incomplete "
-            f"rolled exposures."
+            f"Parsed only {len(rows)} account rows (last populated row {observed_last_row}), "
+            f"below the expected minimum {ACCOUNT_BLOCK_MIN_ROW_COUNT}. The Portfolio sheet "
+            f"layout may have changed or the parse truncated; refusing to emit possibly-"
+            f"incomplete rolled exposures."
         )
     return rows
 

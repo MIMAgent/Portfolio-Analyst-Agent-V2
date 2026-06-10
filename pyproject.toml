@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "portfolio-analyst-agent"
+name = "portfolio-analyst-agent-v2"
 version = "0.1.0"
-description = "Local parser and tooling scaffold for the Portfolio Analyst Agent."
+description = "Local parser and tooling scaffold for Portfolio Analyst Agent V2."
 requires-python = ">=3.11"
 dependencies = []
 

@@ -1250,9 +1250,90 @@ Implemented the first LLM agent runtime layer without making a live API call.
   - preferred Bedrock API-key path:
     - `AWS_BEARER_TOKEN_BEDROCK`
     - `AWS_DEFAULT_REGION=us-east-1`
-  - standard AWS temporary credential fallback:
+- standard AWS temporary credential fallback:
   - `AWS_ACCESS_KEY_ID`
   - `AWS_SECRET_ACCESS_KEY`
   - `AWS_SESSION_TOKEN`
 - Full test suite passed after Bedrock runtime support:
   - `57 passed in 0.30s`
+
+---
+
+## 2026-06-10 — May 2026 data refresh, single-fund review artifact, and frontend redesign checkpoint
+
+This is the current handoff checkpoint for Al. The repo now contains the latest May 2026 data snapshot, a tracked single-fund review artifact, and a non-final frontend redesign tied to the refreshed structured data.
+
+### Data snapshot and source files
+
+- Saved the latest monthly source files under `data/2026-05-31/` as the repo convention for the May 2026 snapshot:
+  - `Algo LR (3).xlsx`
+  - `RMv2_PCT_Mstar_funds_2026-06-08.xlsm`
+  - `202605-Equity Model.xlsx`
+  - `202605- Fixed Income Model.csv`
+- Per user instruction, the folder keeps the `2026-05-31` snapshot convention even though one source filename carries a `2026-06-08` date. Treat these as the May 2026 source pack.
+
+### Structured exposure refresh
+
+- Rebuilt the rolled exposure artifacts for the latest data pack.
+- Updated tracked CSV outputs in `artifacts/rolled_exposures/`, including:
+  - `fund_weights_vir_algo_multisignal.csv`
+  - `fund_rolled_exposure_detail.csv`
+  - `fund_rolled_exposure_summary.csv`
+  - account-level rollup outputs
+  - `fund_rollthrough_definitions.csv`
+- The frontend now consumes refreshed structured rows instead of the earlier stale bundle.
+
+### Monthly review artifact saved to repo
+
+- Added a tracked monthly review artifact for:
+  - `artifacts/monthly_review/2026-05-31/mstar-us-equity/`
+- Saved files include:
+  - `pm_review.md`
+  - `pm_review.html`
+  - `change_brief.json`
+  - `change_brief.md`
+  - `agent_trace.json`
+- This is currently a single-fund checkpoint, useful both as review output and as frontend content.
+
+### Frontend data bundling changes
+
+- Updated `scripts/build_monthly_review_frontend_bundle.py` so the frontend bundle is rebuilt from tracked repo artifacts.
+- The script now regenerates:
+  - `frontend/Example_frontendV1/src/data/monthlyReviewBundle.json`
+  - `frontend/Example_frontendV1/src/data/fundWeightsVirAlgo.json`
+  - `frontend/Example_frontendV1/src/data/exposureLineage.json`
+- Important behavior:
+  - saved PM review content comes from `artifacts/monthly_review/...`
+  - structured exposure and lineage views come from `artifacts/rolled_exposures/...`
+  - the app surfaces snapshot mismatch when review narrative and structured tables are not from the exact same file date
+
+### Frontend redesign checkpoint
+
+- Refactored the React shell in `frontend/Example_frontendV1/src/App.jsx`.
+- Restyled the app in `frontend/Example_frontendV1/src/styles.css` toward the new PM dashboard reference.
+- Current navigation / sections:
+  - `Overview`
+  - `Challenge Brief`
+  - `VIR Decomp`
+  - `Fund of Funds`
+  - `IC Prep`
+  - `Agent Memory`
+- Added:
+  - top shell with fund selector and snapshot chips
+  - portfolio view switcher for `New Portfolio`, `Target Portfolio`, and `Benchmark`
+  - fund directory derived from real structured exposure data
+  - badge counts for challenge / IC-prep tabs
+  - IC-prep panel synthesized from top tensions plus saved review text
+- The redesign is explicitly **not final UI**. It is a checkpoint aligned to the latest design direction and real data wiring.
+
+### Notes for Al
+
+- The current preview build was verified locally after a successful `vite build`.
+- The main repo files to inspect for the latest frontend checkpoint are:
+  - `frontend/Example_frontendV1/src/App.jsx`
+  - `frontend/Example_frontendV1/src/styles.css`
+  - `frontend/Example_frontendV1/src/data/monthlyReviewBundle.json`
+  - `frontend/Example_frontendV1/src/data/fundWeightsVirAlgo.json`
+  - `frontend/Example_frontendV1/src/data/exposureLineage.json`
+  - `scripts/build_monthly_review_frontend_bundle.py`
+- The branch used for this checkpoint is `codex/non-final-ui-checkpoint`.

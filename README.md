@@ -1,4 +1,4 @@
-# Portfolio Analyst Agent
+# Portfolio Analyst Agent V2
 
 Institutional PM analyst agent for monthly VIR review, portfolio cross-reference, and IC prep.
 

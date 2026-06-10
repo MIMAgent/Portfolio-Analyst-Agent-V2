@@ -1,4 +1,4 @@
-# Portfolio Analyst Agent - Q2 2026 Execution Dashboard
+# Portfolio Analyst Agent V2 - Q2 2026 Execution Dashboard
 
 Last updated: April 2, 2026
 
@@ -28,7 +28,7 @@ Deliver a trusted Model 1 operating workflow and a Model 2 pilot-ready foundatio
 
 ## Quarter Objective
 
-By the end of Q2 2026, the Portfolio Analyst Agent should be able to:
+By the end of Q2 2026, Portfolio Analyst Agent V2 should be able to:
 
 - ingest equity and fixed income model outputs reliably
 - ingest holdings and cross-reference positions to VIR signals

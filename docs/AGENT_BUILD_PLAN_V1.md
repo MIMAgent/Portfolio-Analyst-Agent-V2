@@ -1,4 +1,4 @@
-# Agent Build Plan v1 — Portfolio Analyst Agent
+# Agent Build Plan v1 - Portfolio Analyst Agent V2
 
 **Date:** 2026-05-29
 **Status:** Design/plan only. No code written. This is the implementation plan for the LLM reasoning loop specified in `AGENT_REASONING_LOOP_AND_MEMORY_V1.md`.

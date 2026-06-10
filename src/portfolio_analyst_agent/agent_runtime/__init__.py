@@ -1,4 +1,4 @@
-"""LLM runtime for the Portfolio Analyst Agent."""
+"""LLM runtime for Portfolio Analyst Agent V2."""
 
 from .loop import FundRunResult, run_fund
 

@@ -1,4 +1,4 @@
-"""Portfolio Analyst Agent local tooling."""
+"""Portfolio Analyst Agent V2 local tooling."""
 
 from .algo_parser import (
     AlgoParseResult,

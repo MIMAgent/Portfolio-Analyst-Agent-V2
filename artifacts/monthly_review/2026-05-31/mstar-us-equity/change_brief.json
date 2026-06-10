@@ -1,0 +1,76 @@
+{
+  "evidence_index": [
+    {
+      "artifact_path": "artifacts/rolled_exposures/fund_rollthrough_coverage.csv",
+      "row_id": "fcov_54c444652ee9"
+    },
+    {
+      "artifact_path": "artifacts/market_context/monthly_market_context.csv",
+      "row_id": "mctx_c9a2583a840b"
+    },
+    {
+      "artifact_path": "artifacts/market_context/monthly_market_context.csv",
+      "row_id": "mctx_61f867c3d7f6"
+    },
+    {
+      "artifact_path": "data/acid_mapping_bootstrap_v1.csv",
+      "row_id": "row_79ad4faff107"
+    },
+    {
+      "artifact_path": "artifacts/equity_vir_history.csv.zip",
+      "row_id": "row_2f73a7ba32e3"
+    }
+  ],
+  "executive_summary": "MStar US Equity 2026-05-31: full target and benchmark coverage (2/2 rows matched [csv:artifacts/rolled_exposures/fund_rollthrough_coverage.csv#row_id=fcov_54c444652ee9]); 0 triggers fired; 2 approved exceptions in force (EM EQ residual, USD Cash); US EQ context shows Q1 2026 blended EPS growth 28.6% vs. 13.1% quarter-start estimate, led by Comm Services, with Energy the only sector declining [csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c9a2583a840b].",
+  "material_movers": [
+    {
+      "acid": "US EQ",
+      "evidence_pointers": [
+        {
+          "artifact_path": "artifacts/market_context/monthly_market_context.csv",
+          "row_id": "mctx_c9a2583a840b"
+        },
+        {
+          "artifact_path": "artifacts/market_context/monthly_market_context.csv",
+          "row_id": "mctx_61f867c3d7f6"
+        },
+        {
+          "artifact_path": "data/acid_mapping_bootstrap_v1.csv",
+          "row_id": "row_79ad4faff107"
+        }
+      ],
+      "narrative": "Q1 2026 blended S&P 500 EPS growth of 28.6% beat the 13.1% quarter-start estimate; Communication Services led all sectors (48.9%) driven by Alphabet, Amazon, and Meta; Energy is the sole sector with a declining EPS growth rate (0.6% vs. 8.2%) [csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c9a2583a840b, csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_61f867c3d7f6]; US EQ mapped as broad-market-beta, comparison group us_equity_broad [csv:data/acid_mapping_bootstrap_v1.csv#row_id=row_79ad4faff107]; individual ACID exposure rows are compacted at this snapshot so active/target/benchmark weight delta is not resolvable.",
+      "pm_takeaway": "The 28.6% blended earnings beat is heavily concentrated in Comm Services mega-caps, so the aggregate US EQ signal may overstate broad market health if sector weights are skewed toward Energy or other EPS laggards [csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c9a2583a840b].",
+      "review_question": "With Comm Services now the primary EPS driver and Energy growth collapsing to 0.6%, does the fund's effective sector mix within US EQ amplify or dilute this concentration risk relative to the benchmark [csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_61f867c3d7f6]?",
+      "what_would_change_view": "Uncompacted ACID-level sector exposure rows at the next snapshot, or a broadening of EPS beats beyond mega-cap Comm Services, would sharpen or soften this read [csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c9a2583a840b]."
+    }
+  ],
+  "memory_updates_summary": {
+    "approved_exceptions": 2,
+    "open_challenges": 0,
+    "proposed_count_from_prior_run": 1,
+    "thesis_ledger_entries": 0,
+    "watch_items": 0
+  },
+  "sizing_artifact_summary": {
+    "note": "Individual ACID exposure rows compacted at 2026-05-31; Sizing Considerations not written this run."
+  },
+  "triggers_fired_summary": {
+    "candidate_count": 0,
+    "fired_count": 0,
+    "note": "No triggers fired; EM EQ and USD Cash exceptions suppress sign_disagreement, decomposition_rotation, and better_expression_available.",
+    "suppressed_count": 0
+  },
+  "header": {
+    "fund": "MStar US Equity",
+    "snapshot_date": "2026-05-31",
+    "prior_snapshot_date": "",
+    "as_of_date": "2026-05-31",
+    "review_run_id": "rrun_f519bdec910f",
+    "parser_version": "rolled_exposure_alignment_multisignal_v1",
+    "mapping_version": "mapping_layer_pending_review",
+    "governance_version": "governance_2026-04-06_v1",
+    "algo_version": "algo_workbooks_current",
+    "run_mode": "ad_hoc"
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "run_metadata": {
+    "fund": "MStar US Equity",
+    "snapshot_date": "2026-05-31",
+    "as_of_date": "2026-05-31",
+    "review_run_id": "rrun_f519bdec910f",
+    "parser_version": "rolled_exposure_alignment_multisignal_v1",
+    "mapping_version": "mapping_layer_pending_review",
+    "governance_version": "governance_2026-04-06_v1",
+    "algo_version": "algo_workbooks_current",
+    "run_mode": "ad_hoc",
+    "generated_at": "2026-06-09T21:57:06Z",
+    "source_file_hashes": {
+      "config/agent_governance.json": "ed588c4f83d6d8268614ce0f4917e2fc45b40f3b12225335dd5b2f20e00359e4"
+    }
+  },
+  "status": "completed",
+  "completed_writes": [
+    "write_change_brief"
+  ],
+  "trace": [
+    {
+      "turn_index": 0,
+      "event": "llm_response",
+      "stop_reason": "tool_use",
+      "usage": {
+        "inputTokens": 3614,
+        "outputTokens": 307,
+        "totalTokens": 3921,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "content_types": [
+        "text",
+        "tool_use",
+        "tool_use",
+        "tool_use"
+      ]
+    },
+    {
+      "turn_index": 0,
+      "event": "tool_call",
+      "tool_name": "recall_memory",
+      "tool_id": "tooluse_GhYBjDOT2ArdWoopvxjlgw",
+      "is_error": false,
+      "input_keys": [
+        "as_of_date",
+        "fund",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "as_of_date",
+          "exceptions",
+          "fund",
+          "open_challenges",
+          "run_metadata",
+          "scope_requested",
+          "snapshot_date",
+          "summary",
+          "thesis_ledger",
+          "watch_items"
+        ],
+        "row_count": "",
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 0,
+      "event": "tool_call",
+      "tool_name": "get_fund_snapshot",
+      "tool_id": "tooluse_RG4ZP49Kv4pRp2yGPXsLZ2",
+      "is_error": false,
+      "input_keys": [
+        "as_of_date",
+        "fund",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "acid_rows",
+          "coverage",
+          "diagnostics",
+          "fund_metadata",
+          "run_metadata"
+        ],
+        "row_count": "",
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 0,
+      "event": "tool_call",
+      "tool_name": "evaluate_challenge_triggers",
+      "tool_id": "tooluse_gDAKEzH0B66cFic0vVUefW",
+      "is_error": false,
+      "input_keys": [
+        "as_of_date",
+        "fund",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "as_of_date",
+          "deferred_trigger_types",
+          "fund",
+          "run_metadata",
+          "snapshot_date",
+          "summary",
+          "supported_trigger_types",
+          "trigger_candidates"
+        ],
+        "row_count": "",
+        "candidate_count": 0
+      }
+    },
+    {
+      "turn_index": 1,
+      "event": "llm_response",
+      "stop_reason": "tool_use",
+      "usage": {
+        "inputTokens": 6081,
+        "outputTokens": 267,
+        "totalTokens": 6348,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "content_types": [
+        "text",
+        "tool_use",
+        "tool_use"
+      ]
+    },
+    {
+      "turn_index": 1,
+      "event": "tool_call",
+      "tool_name": "get_acid_history",
+      "tool_id": "tooluse_82neXkfDBLeXeq3bZjrPNM",
+      "is_error": false,
+      "input_keys": [
+        "acid",
+        "as_of_date",
+        "lookback_months",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "acid",
+          "as_of_date",
+          "lookback_months",
+          "model_family",
+          "row_count",
+          "rows",
+          "run_metadata",
+          "snapshot_date"
+        ],
+        "row_count": 1,
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 1,
+      "event": "tool_call",
+      "tool_name": "get_market_context",
+      "tool_id": "tooluse_ty4Ub3HFCWdaeU4zwSz8si",
+      "is_error": false,
+      "input_keys": [
+        "as_of_date",
+        "fund",
+        "limit",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "acid",
+          "as_of_date",
+          "comparison_group",
+          "context_status",
+          "fund",
+          "row_count",
+          "rows",
+          "run_metadata",
+          "snapshot_date"
+        ],
+        "row_count": 2,
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 2,
+      "event": "llm_response",
+      "stop_reason": "tool_use",
+      "usage": {
+        "inputTokens": 7365,
+        "outputTokens": 390,
+        "totalTokens": 7755,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "content_types": [
+        "text",
+        "tool_use",
+        "tool_use",
+        "tool_use"
+      ]
+    },
+    {
+      "turn_index": 2,
+      "event": "tool_call",
+      "tool_name": "get_exposure_lineage",
+      "tool_id": "tooluse_JJJnNHATG9xOYdwm7toCT2",
+      "is_error": false,
+      "input_keys": [
+        "acid",
+        "as_of_date",
+        "fund",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "acid",
+          "as_of_date",
+          "fund",
+          "limit",
+          "returned_row_count",
+          "row_count",
+          "rows",
+          "run_metadata",
+          "snapshot_date"
+        ],
+        "row_count": 0,
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 2,
+      "event": "tool_call",
+      "tool_name": "get_peer_context",
+      "tool_id": "tooluse_msiBihxcIUPnReWcrInrNp",
+      "is_error": false,
+      "input_keys": [
+        "acid",
+        "as_of_date",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "acid",
+          "as_of_date",
+          "current_snapshot_row_count",
+          "current_snapshot_rows",
+          "mapping",
+          "mapping_status",
+          "peer_count",
+          "peers",
+          "run_metadata",
+          "snapshot_date"
+        ],
+        "row_count": "",
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 2,
+      "event": "tool_call",
+      "tool_name": "get_exposure_lineage",
+      "tool_id": "tooluse_slWTL6VUqF8ZGChQLkx89Q",
+      "is_error": false,
+      "input_keys": [
+        "acid",
+        "as_of_date",
+        "fund",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "acid",
+          "as_of_date",
+          "fund",
+          "limit",
+          "returned_row_count",
+          "row_count",
+          "rows",
+          "run_metadata",
+          "snapshot_date"
+        ],
+        "row_count": 0,
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 3,
+      "event": "llm_response",
+      "stop_reason": "tool_use",
+      "usage": {
+        "inputTokens": 8589,
+        "outputTokens": 252,
+        "totalTokens": 8841,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "content_types": [
+        "text",
+        "tool_use"
+      ]
+    },
+    {
+      "turn_index": 3,
+      "event": "tool_call",
+      "tool_name": "search_market_context",
+      "tool_id": "tooluse_TwMReTqNSToWIVKwmwWlBz",
+      "is_error": false,
+      "input_keys": [
+        "acid",
+        "as_of_date",
+        "max_results",
+        "max_sources",
+        "query",
+        "snapshot_date"
+      ],
+      "result_summary": {
+        "keys": [
+          "acid",
+          "as_of_date",
+          "comparison_group",
+          "context_status",
+          "fund",
+          "new_row_count",
+          "output_csv",
+          "query",
+          "rows",
+          "run_metadata",
+          "searched_domains",
+          "snapshot_date",
+          "total_row_count"
+        ],
+        "row_count": "",
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 4,
+      "event": "llm_response",
+      "stop_reason": "tool_use",
+      "usage": {
+        "inputTokens": 9816,
+        "outputTokens": 2706,
+        "totalTokens": 12522,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "content_types": [
+        "text",
+        "tool_use"
+      ]
+    },
+    {
+      "turn_index": 4,
+      "event": "tool_call",
+      "tool_name": "write_change_brief",
+      "tool_id": "tooluse_r7c3DzKa3zbKtqCZuu5gBI",
+      "is_error": true,
+      "input_keys": [
+        "content",
+        "fund"
+      ],
+      "result_summary": {
+        "keys": [
+          "error",
+          "error_type"
+        ],
+        "row_count": "",
+        "candidate_count": "",
+        "error": "$.material_movers[1].narrative: csv:artifacts/agent_memory/memory_records.json: CSV citation must use csv:<path>#row_id=<id>.; $.material_movers[1].pm_takeaway: csv:artifacts/rolled_exposures/fund_weights_vir_algo.csv#row_id=falg_333b0b731512: CSV source not found: artifacts\\rolled_exposures\\fund_weights_vir_algo.csv or artifacts\\rolled_exposures\\fund_weights_vir_algo.csv.zip; $.material_movers[1].review_question: csv:artifacts/rolled_exposures/fund_weights_vir_algo.csv#row_id=falg_333b0b731512: CSV source not found: artifacts\\rolled_exposures\\fund_weights_vir_algo.csv or artifacts\\rolled_exposures\\fund_weights_vir_algo.csv.zip; $.material_movers[1].what_would_change_view: csv:artifacts/agent_memory/memory_records.json#row_id=exc_eba17105a2b2: CSV row_id not found: exc_eba17105a2b2; $.material_movers[2].narrative: csv:artifacts/agent_memory/memory_records.json: CSV citation must use csv:<path>#row_id=<id>.; $.material_movers[2].narrative: csv:artifacts/rolled_exposures/fund_weights_vir_algo.csv#row_id=falg_14c7ffe2a378: CSV source not found: artifacts\\rolled_exposures\\fund_weights_vir_algo.csv or artifacts\\rolled_exposures\\fund_weights_vir_algo.csv.zip; $.material_movers[2].pm_takeaway: csv:artifacts/rolled_exposures/fund_weights_vir_algo.csv#row_id=falg_14c7ffe2a378: CSV source not found: artifacts\\rolled_exposures\\fund_weights_vir_algo.csv or artifacts\\rolled_exposures\\fund_weights_vir_algo.csv.zip; $.material_movers[2].review_question: csv:artifacts/rolled_exposures/fund_weights_vir_algo.csv#row_id=falg_14c7ffe2a378: CSV source not found: artifacts\\rolled_exposures\\fund_weights_vir_algo.csv or artifacts\\rolled_exposures\\fund_weights_vir_algo.csv.zip; $.material_movers[2].what_would_change_view: csv:artifacts/agent_memory/memory_records.json#row_id=exc_c59aee0b3903: CSV row_id not found: exc_c59aee0b3903; $.material_movers[1].evidence_pointers[0]: csv:artifacts/agent_memory/memory_records.json#row_id=exc_eba17105a2b2: CSV row_id not found: exc_eba17105a2b2; $.material_movers[1].evidence_pointers[1]: csv:artifacts/rolled_exposures/fund_weights_vir_algo.csv#row_id=falg_333b0b731512: CSV source not found: artifacts\\rolled_exposures\\fund_weights_vir_algo.csv or artifacts\\rolled_exposures\\fund_weights_vir_algo.csv.zip; $.material_movers[2].evidence_pointers[0]: csv:artifacts/agent_memory/memory_records.json#row_id=exc_c59aee0b3903: CSV row_id not found: exc_c59aee0b3903; $.material_movers[2].evidence_pointers[1]: csv:artifacts/rolled_exposures/fund_weights_vir_algo.csv#row_id=falg_14c7ffe2a378: CSV source not found: artifacts\\rolled_exposures\\fund_weights_vir_algo.csv or artifacts\\rolled_exposures\\fund_weights_vir_algo.csv.zip",
+        "error_type": "CitationError"
+      }
+    },
+    {
+      "turn_index": 5,
+      "event": "llm_response",
+      "stop_reason": "tool_use",
+      "usage": {
+        "inputTokens": 13394,
+        "outputTokens": 1291,
+        "totalTokens": 14685,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "content_types": [
+        "text",
+        "tool_use"
+      ]
+    },
+    {
+      "turn_index": 5,
+      "event": "tool_call",
+      "tool_name": "write_change_brief",
+      "tool_id": "tooluse_8xM1FlBi7iRR7oCsnLBBKu",
+      "is_error": false,
+      "input_keys": [
+        "content",
+        "fund"
+      ],
+      "result_summary": {
+        "keys": [
+          "json_path",
+          "markdown_path",
+          "pm_review_html_path",
+          "pm_review_markdown_path"
+        ],
+        "row_count": "",
+        "candidate_count": ""
+      }
+    },
+    {
+      "turn_index": 5,
+      "event": "loop_closed",
+      "reason": "required_writes_completed",
+      "completed_writes": [
+        "write_change_brief"
+      ],
+      "required_writes": [
+        "write_change_brief"
+      ]
+    }
+  ],
+  "closed_at": "2026-06-09T21:59:59Z"
+}

@@ -1,10 +1,10 @@
-# Portfolio Analyst Agent - Project Dashboard v3
+# Portfolio Analyst Agent V2 - Project Dashboard v3
 
 Last updated: April 2, 2026
 
 ## Purpose
 
-This dashboard is a meeting-ready planning view for the full Portfolio Analyst Agent program.
+This dashboard is a meeting-ready planning view for the full Portfolio Analyst Agent V2 program.
 
 It is grounded in:
 
@@ -22,7 +22,7 @@ Current project partners for the design and pilot phase:
 
 ## Program Objective
 
-Build the Portfolio Analyst Agent from a single-user monthly VIR analysis workflow into a collaborative institutional intelligence platform.
+Build Portfolio Analyst Agent V2 from a single-user monthly VIR analysis workflow into a collaborative institutional intelligence platform.
 
 End-state deployment target:
 

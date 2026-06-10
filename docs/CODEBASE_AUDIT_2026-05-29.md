@@ -1,4 +1,4 @@
-# Codebase Audit — Portfolio Analyst Agent
+# Codebase Audit - Portfolio Analyst Agent V2
 
 **Date:** 2026-05-29
 **Scope:** Full repository (`src/`, `scripts/`, `docs/`, `frontend/`, `pyproject.toml`) — ~7,600 LOC Python + React/Vite prototype.

@@ -1,4 +1,4 @@
-# Portfolio Analyst Agent - Q2 2026 One-Page Meeting Dashboard
+# Portfolio Analyst Agent V2 - Q2 2026 One-Page Meeting Dashboard
 
 Last updated: April 2, 2026
 

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the v1 contract for the Portfolio Analyst Agent's monthly reasoning loop, tool surface, memory model, output package, historical replay controls, and contingent Challenge framing.
+This document defines the v1 contract for Portfolio Analyst Agent V2's monthly reasoning loop, tool surface, memory model, output package, historical replay controls, and contingent Challenge framing.
 
 It is the deliverable called for by Sprint 3 in `docs/PROJECT_DASHBOARD_Q2_2026.md` ("Agent operating design"). It supersedes the agent-loop placeholders in `MODEL1_OUTPUT_PACKAGE_DECISION_PENDING.md` for Model 1 design, and it stands alongside the parser specs and mapping schema rather than replacing them.
 
