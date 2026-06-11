@@ -1,0 +1,120 @@
+{
+  "fund": "US Equity",
+  "query": "",
+  "theme_ids": [
+    "smid_overweight"
+  ],
+  "section_keys": [
+    "directional_moves_rationale"
+  ],
+  "before_date": "2026-06-01",
+  "recurring_themes": [
+    {
+      "theme_id": "information_technology_underweight",
+      "label": "Information Technology Underweight",
+      "join_hints": {
+        "acid_candidates": [
+          "US IT"
+        ],
+        "categories": [
+          "Eq Sector"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "smid_overweight",
+      "label": "SMID Overweight",
+      "join_hints": {
+        "acid_candidates": [
+          "US MID EQ",
+          "US SML EQ"
+        ],
+        "categories": [
+          "Eq Size / Style"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "industrials_overweight",
+      "label": "Industrials Overweight",
+      "join_hints": {
+        "acid_candidates": [
+          "US ID EQ"
+        ],
+        "categories": [
+          "Eq Sector"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "financials_overweight",
+      "label": "Financials Overweight",
+      "join_hints": {
+        "acid_candidates": [
+          "US FN EQ"
+        ],
+        "categories": [
+          "Eq Sector"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "ai_leadership_risk",
+      "label": "AI Leadership Risk",
+      "join_hints": {
+        "acid_candidates": [
+          "US IT"
+        ],
+        "categories": [
+          "Eq Sector"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "subadvisor_and_sleeve_structure",
+      "label": "Subadvisor And Sleeve Structure",
+      "join_hints": {
+        "acid_candidates": [],
+        "categories": []
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "value_tilt",
+      "label": "Value Tilt",
+      "join_hints": {
+        "acid_candidates": [
+          "US LRG V EQ",
+          "US MID V EQ",
+          "US SML V EQ"
+        ],
+        "categories": [
+          "Eq Size / Style"
+        ]
+      },
+      "occurrence_count": 3
+    }
+  ],
+  "matches": [
+    {
+      "document_date": "03/16/2026",
+      "source_filename": "March 2026 Mutual Fund Checklist - US Equity.docx",
+      "section_key": "directional_moves_rationale",
+      "section_label": "Directional Moves And Rationale",
+      "prompt": "What moves are you making and what is your rationale?",
+      "body_text": "Proposed trade: Trim 0.5% each from S&P 600 Value ETF (SLYV) and S&P 600 ETF (SPSM) Add 1% to Wasatch This would simply formalize some of the cash changes we\u2019ve made in the portfolio into actual target weight changes. The idea for this trade came out of our last quarterly call with Wasatch in January, when they showed that their portfolio was trading more cheaply than their small cap universe \u2013 a rarity since Wasatch focuses on higher quality companies.  The relative valuation opportunity has arisen because Wasatch\u2019s portfolio has meaningfully underperformed our ETFs over trailing periods: Trailing returns ended 2/28/2026 Wasatch\u2019s performance history suggests they recover very strongly from down years, though there is no analogous year in recent memory for the disastrous stock selection that occurred in 2025. Wasatch is \u201cdown but not out\u201d, and we believe it makes sense to push more into an active manager who has underperformed but who we continue to trust. There are other portfolio considerations at play. This move may slightly improve the quality of our small cap exposure, and as we have noted small cap quality has underperformed small cap junk of late. MAR research suggests that small cap quality underperformance tends not to persist for more than two years and that \u201ccontinuing underperformance would be an unprecedented event.\u201d Lastly, we would not be adding to small caps with this trade, just readjusting our exposure. If anything, we would be bringing slightly more balance to our style exposure within small caps by culling from small value/blend and reallocating towards small growth, a segment that has underperformed on a relative basis YTD.",
+      "score": 6.74,
+      "matched_terms": [],
+      "related_themes": [
+        "smid_overweight",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    }
+  ]
+}

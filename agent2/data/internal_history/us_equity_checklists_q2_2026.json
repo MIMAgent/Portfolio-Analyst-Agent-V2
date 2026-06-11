@@ -1,0 +1,1361 @@
+{
+  "document_count": 3,
+  "documents": [
+    {
+      "source_path": "C:\\Users\\schuri2\\Downloads\\March 2026 Mutual Fund Checklist - US Equity.docx",
+      "source_filename": "March 2026 Mutual Fund Checklist - US Equity.docx",
+      "document_type": "mutual_fund_checklist",
+      "fund": "US Equity",
+      "document_date": "03/16/2026",
+      "pm_names": [
+        "Doug McGraw",
+        "Mike Budzinski"
+      ],
+      "trade_proposal": {
+        "status": "present",
+        "items": [
+          "Trim 0.5% each from S&P 600 Value ETF (SLYV) and S&P 600 ETF (SPSM)",
+          "Add 1% to Wasatch"
+        ],
+        "summary": "Trim 0.5% each from S&P 600 Value ETF (SLYV) and S&P 600 ETF (SPSM) Add 1% to Wasatch"
+      },
+      "sections": [
+        {
+          "section_key": "benchmark_relative_overweights_underweights",
+          "section_label": "Benchmark Relative Overweights And Underweights",
+          "prompt": "What are the fund\u2019s largest benchmark relative overweight and underweight Give rationale for both.",
+          "body_paragraphs": [
+            "Sector Over/Underweights (Fund Level)",
+            "The Industrials sector is our largest sector overweight (+4.3%)",
+            "The Industrials overweight is linked to our SMID overweight.",
+            "Wasatch and Systematic SMID are particularly overweight Industrials",
+            "Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight",
+            "MFS and Systematic Large Cap are both overweight the fund\u2019s index",
+            "Opportunistic Value has lower Industrials weights than the fund\u2019s index",
+            "Financials is our second largest overweight (+2.5%)",
+            "MFS has a 7 percentage point overweight against its benchmark (Russell 1000 Value)",
+            "Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index",
+            "Systematic Large Cap has a material overweight to Financials, with 18.3% of the strategy in that sector.",
+            "Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services)",
+            "Two of our five single-stock overweights are Financials (Visa and BlackRock)",
+            "Information Technology is our largest sector underweight (-4.9%)",
+            "Clearbridge\u2019s 42% allocation is higher than the fund\u2019s benchmark weight, but is nearly 8% below the Russell 1000 Growth index\u2019s weight",
+            "Systematic Large Cap is overweight IT",
+            "The Completion portfolio is all IT right now",
+            "Opportunistic Value is underweight the IT sector by over 10%",
+            "The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices.",
+            "Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month)",
+            "Within Opp Value, our sector over/underweights are mostly consistent with prevailing spreads-to-fair. We are not increasing our real estate weight further as we are awaiting the rollout of the new REIT model.",
+            "Size/Style Relative Weights (Fund Level)",
+            "Our SMID overweight remains large (+7.5%)",
+            "This overweight is comprised of a 0.8% overweight to mid caps and a 6.7% overweight to small caps",
+            "We are also more value-leaning than our benchmark (see blue shaded area below):",
+            "Contribution to Tracking Error",
+            "The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at just over 3%. We are exploring ways of boosting this up and will present findings at the April PCC.",
+            "Largest Single Stock Over/Underweights (Fund)",
+            "Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level.",
+            "Mag 7/Elite 8 names comprise our top underweights at the fund level"
+          ],
+          "body_text": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Large Cap are both overweight the fund\u2019s index Opportunistic Value has lower Industrials weights than the fund\u2019s index Financials is our second largest overweight (+2.5%) MFS has a 7 percentage point overweight against its benchmark (Russell 1000 Value) Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index Systematic Large Cap has a material overweight to Financials, with 18.3% of the strategy in that sector. Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services) Two of our five single-stock overweights are Financials (Visa and BlackRock) Information Technology is our largest sector underweight (-4.9%) Clearbridge\u2019s 42% allocation is higher than the fund\u2019s benchmark weight, but is nearly 8% below the Russell 1000 Growth index\u2019s weight Systematic Large Cap is overweight IT The Completion portfolio is all IT right now Opportunistic Value is underweight the IT sector by over 10% The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices. Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month) Within Opp Value, our sector over/underweights are mostly consistent with prevailing spreads-to-fair. We are not increasing our real estate weight further as we are awaiting the rollout of the new REIT model. Size/Style Relative Weights (Fund Level) Our SMID overweight remains large (+7.5%) This overweight is comprised of a 0.8% overweight to mid caps and a 6.7% overweight to small caps We are also more value-leaning than our benchmark (see blue shaded area below): Contribution to Tracking Error The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at just over 3%. We are exploring ways of boosting this up and will present findings at the April PCC. Largest Single Stock Over/Underweights (Fund) Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level. Mag 7/Elite 8 names comprise our top underweights at the fund level"
+        },
+        {
+          "section_key": "offsets_for_largest_overweight",
+          "section_label": "Offsets For Largest Overweight",
+          "prompt": "What offsets does the fund hold to mitigate the risk of the largest overweight?",
+          "body_paragraphs": [
+            "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+          ],
+          "body_text": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+        },
+        {
+          "section_key": "algo_relative_overweights_underweights",
+          "section_label": "Algo Relative Overweights And Underweights",
+          "prompt": "What are the fund\u2019s largest algo relative overweight and underweight? Give rationale for both.",
+          "body_paragraphs": [
+            "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, which it does (see above).",
+            "FUND SPECIFIC:"
+          ],
+          "body_text": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, which it does (see above). FUND SPECIFIC:"
+        },
+        {
+          "section_key": "fund_specific_range_usage",
+          "section_label": "Fund Specific Range Usage",
+          "prompt": "What percentage of your allowable range is your largest overweight? How much do you own in ETFs/Sleeves relative to your maximum allowable?",
+          "body_paragraphs": [
+            "Subadvisors account for 45% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below the normal 50% allocation.",
+            "Industrials sits at a 4.36% overweight today, which is well within our allowable range of \u00b110% of the benchmark weight.",
+            "Directional Moves"
+          ],
+          "body_text": "Subadvisors account for 45% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below the normal 50% allocation. Industrials sits at a 4.36% overweight today, which is well within our allowable range of \u00b110% of the benchmark weight. Directional Moves"
+        },
+        {
+          "section_key": "directional_moves_rationale",
+          "section_label": "Directional Moves And Rationale",
+          "prompt": "What moves are you making and what is your rationale?",
+          "body_paragraphs": [
+            "Proposed trade:",
+            "Trim 0.5% each from S&P 600 Value ETF (SLYV) and S&P 600 ETF (SPSM)",
+            "Add 1% to Wasatch",
+            "This would simply formalize some of the cash changes we\u2019ve made in the portfolio into actual target weight changes. The idea for this trade came out of our last quarterly call with Wasatch in January, when they showed that their portfolio was trading more cheaply than their small cap universe \u2013 a rarity since Wasatch focuses on higher quality companies.  The relative valuation opportunity has arisen because Wasatch\u2019s portfolio has meaningfully underperformed our ETFs over trailing periods:",
+            "Trailing returns ended 2/28/2026",
+            "Wasatch\u2019s performance history suggests they recover very strongly from down years, though there is no analogous year in recent memory for the disastrous stock selection that occurred in 2025. Wasatch is \u201cdown but not out\u201d, and we believe it makes sense to push more into an active manager who has underperformed but who we continue to trust.",
+            "There are other portfolio considerations at play. This move may slightly improve the quality of our small cap exposure, and as we have noted small cap quality has underperformed small cap junk of late. MAR research suggests that small cap quality underperformance tends not to persist for more than two years and that \u201ccontinuing underperformance would be an unprecedented event.\u201d",
+            "Lastly, we would not be adding to small caps with this trade, just readjusting our exposure. If anything, we would be bringing slightly more balance to our style exposure within small caps by culling from small value/blend and reallocating towards small growth, a segment that has underperformed on a relative basis YTD."
+          ],
+          "body_text": "Proposed trade: Trim 0.5% each from S&P 600 Value ETF (SLYV) and S&P 600 ETF (SPSM) Add 1% to Wasatch This would simply formalize some of the cash changes we\u2019ve made in the portfolio into actual target weight changes. The idea for this trade came out of our last quarterly call with Wasatch in January, when they showed that their portfolio was trading more cheaply than their small cap universe \u2013 a rarity since Wasatch focuses on higher quality companies.  The relative valuation opportunity has arisen because Wasatch\u2019s portfolio has meaningfully underperformed our ETFs over trailing periods: Trailing returns ended 2/28/2026 Wasatch\u2019s performance history suggests they recover very strongly from down years, though there is no analogous year in recent memory for the disastrous stock selection that occurred in 2025. Wasatch is \u201cdown but not out\u201d, and we believe it makes sense to push more into an active manager who has underperformed but who we continue to trust. There are other portfolio considerations at play. This move may slightly improve the quality of our small cap exposure, and as we have noted small cap quality has underperformed small cap junk of late. MAR research suggests that small cap quality underperformance tends not to persist for more than two years and that \u201ccontinuing underperformance would be an unprecedented event.\u201d Lastly, we would not be adding to small caps with this trade, just readjusting our exposure. If anything, we would be bringing slightly more balance to our style exposure within small caps by culling from small value/blend and reallocating towards small growth, a segment that has underperformed on a relative basis YTD."
+        },
+        {
+          "section_key": "range_of_added_positions",
+          "section_label": "Range Of Added Positions",
+          "prompt": "What percentage of your range are you now holding in the sectors/countries/etc that you are adding to?",
+          "body_paragraphs": [
+            "As mentioned immediately above, this trade does not really impact our overall small cap allocation, nor do we have a formal limit for small cap exposure at the fund level. Therefore, this question is less applicable to this trade."
+          ],
+          "body_text": "As mentioned immediately above, this trade does not really impact our overall small cap allocation, nor do we have a formal limit for small cap exposure at the fund level. Therefore, this question is less applicable to this trade."
+        },
+        {
+          "section_key": "what_would_need_to_happen_to_add",
+          "section_label": "What Would Need To Happen To Add",
+          "prompt": "What would need to happen for you to add further to this position?",
+          "body_paragraphs": [
+            "We would consider adding to Wasatch further if their performance struggles continued, provided that we felt confident in their portfolio and assured they weren\u2019t deviating from their long-term process. We might consider leaning further into Wasatch if small value handily outperformed small growth and a more pronounced style tilt became justifiable."
+          ],
+          "body_text": "We would consider adding to Wasatch further if their performance struggles continued, provided that we felt confident in their portfolio and assured they weren\u2019t deviating from their long-term process. We might consider leaning further into Wasatch if small value handily outperformed small growth and a more pronounced style tilt became justifiable."
+        },
+        {
+          "section_key": "considered_but_not_done",
+          "section_label": "Considered But Not Done",
+          "prompt": "What moves did you consider but decide against?",
+          "body_paragraphs": [
+            "We didn\u2019t consider any other expressions of this trade given that Wasatch is our main source of exposure to that part of the style box and their idiosyncratic performance was the source of the trade idea.",
+            "Robustness Considerations"
+          ],
+          "body_text": "We didn\u2019t consider any other expressions of this trade given that Wasatch is our main source of exposure to that part of the style box and their idiosyncratic performance was the source of the trade idea. Robustness Considerations"
+        },
+        {
+          "section_key": "robustness_best_worst_environment",
+          "section_label": "Robustness Best And Worst Environment",
+          "prompt": "What macroeconomic environment do you believe your portfolio is best and worst positioned for?",
+          "body_paragraphs": [
+            "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme).",
+            "With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic growth, if the growth is not purely driven by AI investment.",
+            "Worst Positioned For:  1.  Mag 7 and AI-themed market leadership.   2.  Small caps and value under-performing."
+          ],
+          "body_text": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic growth, if the growth is not purely driven by AI investment. Worst Positioned For:  1.  Mag 7 and AI-themed market leadership.   2.  Small caps and value under-performing."
+        },
+        {
+          "section_key": "vulnerability_room_to_move",
+          "section_label": "Vulnerability Room To Move",
+          "prompt": "If the environment that the portfolio is most vulnerable to plays out, how much room do you have to lean further in that direction?",
+          "body_paragraphs": [
+            "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value.",
+            "We feel we are near a limit on our small cap exposure.",
+            "Miscellaneous"
+          ],
+          "body_text": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+        },
+        {
+          "section_key": "miscellaneous_comments",
+          "section_label": "Miscellaneous Comments",
+          "prompt": "What further comments would you like to make on current positioning and the proposed moves?",
+          "body_paragraphs": [
+            "The selloff in software began around Halloween of 2025 (IGV\u2019s most recent high-water mark). Since that time, our fund has performed in line with our benchmark but underperformed peers (see below). US Opp Value has performed well on a relative basis despite being overweight software in recent months. In other words, we have capacity to add more software within Opp Value by sourcing from areas that have performed well.",
+            "Prospective Opp Value trades",
+            "We are contemplating, but have yet to finalize, upcoming moves within Opp Value. As was discussed at the Equity PM meeting this month, we will be rationalizing our software holdings\u2014eliminating some, adding to others\u2014and exploring whether to add further to our software weight depending on how much of our portfolio is \u201csoftware adjacent.\u201d We are also considering trimming energy back to its target overweight as it has drifted further overweight given strong recent performance. Finally, we are looking to rationalize other parts of our book \u2013 e.g., potentially eliminating Campbell\u2019s given its poor long-term performance and thesis drift."
+          ],
+          "body_text": "The selloff in software began around Halloween of 2025 (IGV\u2019s most recent high-water mark). Since that time, our fund has performed in line with our benchmark but underperformed peers (see below). US Opp Value has performed well on a relative basis despite being overweight software in recent months. In other words, we have capacity to add more software within Opp Value by sourcing from areas that have performed well. Prospective Opp Value trades We are contemplating, but have yet to finalize, upcoming moves within Opp Value. As was discussed at the Equity PM meeting this month, we will be rationalizing our software holdings\u2014eliminating some, adding to others\u2014and exploring whether to add further to our software weight depending on how much of our portfolio is \u201csoftware adjacent.\u201d We are also considering trimming energy back to its target overweight as it has drifted further overweight given strong recent performance. Finally, we are looking to rationalize other parts of our book \u2013 e.g., potentially eliminating Campbell\u2019s given its poor long-term performance and thesis drift."
+        },
+        {
+          "section_key": "roadmap",
+          "section_label": "Roadmap",
+          "prompt": "Roadmap---  What asset classes do you intend to do work on, or request that Research assign a squad to?  Briefly, why for each idea (VIR, cyclicality, unique catalyst, etc)?",
+          "body_paragraphs": [
+            "We have met with all nine of our prospective managers in the US Large Growth bench refresh. We are individually scoring these prospects and will be meeting as a group to trim down the list and determine next steps.",
+            "On a separate but related note, Clearbridge intends to move to a non-diversified strategy from a diversified strategy, subject to the approval of its mutual fund shareholders. They do not anticipate that this move will lead to large immediate changes (~3% turnover).",
+            "In Opportunistic Value, we are reviewing the Information Technology sector this month."
+          ],
+          "body_text": "We have met with all nine of our prospective managers in the US Large Growth bench refresh. We are individually scoring these prospects and will be meeting as a group to trim down the list and determine next steps. On a separate but related note, Clearbridge intends to move to a non-diversified strategy from a diversified strategy, subject to the approval of its mutual fund shareholders. They do not anticipate that this move will lead to large immediate changes (~3% turnover). In Opportunistic Value, we are reviewing the Information Technology sector this month."
+        }
+      ],
+      "themes": [
+        {
+          "theme_id": "information_technology_underweight",
+          "label": "Information Technology Underweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US IT"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "The selloff in software began around Halloween of 2025 (IGV\u2019s most recent high-water mark). Since that time, our fund has performed in line with our benchmark but underperformed peers (see below). US Opp Value has per..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "We have met with all nine of our prospective managers in the US Large Growth bench refresh. We are individually scoring these prospects and will be meeting as a group to trim down the list and determine next steps. On..."
+            }
+          ]
+        },
+        {
+          "theme_id": "smid_overweight",
+          "label": "SMID Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US MID EQ",
+              "US SML EQ"
+            ],
+            "categories": [
+              "Eq Size / Style"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "directional_moves_rationale",
+              "evidence_excerpt": "Proposed trade: Trim 0.5% each from S&P 600 Value ETF (SLYV) and S&P 600 ETF (SPSM) Add 1% to Wasatch This would simply formalize some of the cash changes we\u2019ve made in the portfolio into actual target weight changes...."
+            },
+            {
+              "section_key": "range_of_added_positions",
+              "evidence_excerpt": "As mentioned immediately above, this trade does not really impact our overall small cap allocation, nor do we have a formal limit for small cap exposure at the fund level. Therefore, this question is less applicable t..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "vulnerability_room_to_move",
+              "evidence_excerpt": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+            }
+          ]
+        },
+        {
+          "theme_id": "industrials_overweight",
+          "label": "Industrials Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US ID EQ"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "offsets_for_largest_overweight",
+              "evidence_excerpt": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+            },
+            {
+              "section_key": "fund_specific_range_usage",
+              "evidence_excerpt": "Subadvisors account for 45% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below the normal 50% allocation. Industrials sits at a 4.36% overweight today, which is well within..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            }
+          ]
+        },
+        {
+          "theme_id": "financials_overweight",
+          "label": "Financials Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US FN EQ"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "offsets_for_largest_overweight",
+              "evidence_excerpt": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            }
+          ]
+        },
+        {
+          "theme_id": "ai_leadership_risk",
+          "label": "AI Leadership Risk",
+          "join_hints": {
+            "acid_candidates": [
+              "US IT"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            }
+          ]
+        },
+        {
+          "theme_id": "subadvisor_and_sleeve_structure",
+          "label": "Subadvisor And Sleeve Structure",
+          "join_hints": {
+            "acid_candidates": [],
+            "categories": []
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "algo_relative_overweights_underweights",
+              "evidence_excerpt": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, whic..."
+            },
+            {
+              "section_key": "fund_specific_range_usage",
+              "evidence_excerpt": "Subadvisors account for 45% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below the normal 50% allocation. Industrials sits at a 4.36% overweight today, which is well within..."
+            },
+            {
+              "section_key": "directional_moves_rationale",
+              "evidence_excerpt": "Proposed trade: Trim 0.5% each from S&P 600 Value ETF (SLYV) and S&P 600 ETF (SPSM) Add 1% to Wasatch This would simply formalize some of the cash changes we\u2019ve made in the portfolio into actual target weight changes...."
+            },
+            {
+              "section_key": "what_would_need_to_happen_to_add",
+              "evidence_excerpt": "We would consider adding to Wasatch further if their performance struggles continued, provided that we felt confident in their portfolio and assured they weren\u2019t deviating from their long-term process. We might consid..."
+            },
+            {
+              "section_key": "considered_but_not_done",
+              "evidence_excerpt": "We didn\u2019t consider any other expressions of this trade given that Wasatch is our main source of exposure to that part of the style box and their idiosyncratic performance was the source of the trade idea. Robustness C..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "The selloff in software began around Halloween of 2025 (IGV\u2019s most recent high-water mark). Since that time, our fund has performed in line with our benchmark but underperformed peers (see below). US Opp Value has per..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "We have met with all nine of our prospective managers in the US Large Growth bench refresh. We are individually scoring these prospects and will be meeting as a group to trim down the list and determine next steps. On..."
+            }
+          ]
+        },
+        {
+          "theme_id": "value_tilt",
+          "label": "Value Tilt",
+          "join_hints": {
+            "acid_candidates": [
+              "US LRG V EQ",
+              "US MID V EQ",
+              "US SML V EQ"
+            ],
+            "categories": [
+              "Eq Size / Style"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "algo_relative_overweights_underweights",
+              "evidence_excerpt": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, whic..."
+            },
+            {
+              "section_key": "directional_moves_rationale",
+              "evidence_excerpt": "Proposed trade: Trim 0.5% each from S&P 600 Value ETF (SLYV) and S&P 600 ETF (SPSM) Add 1% to Wasatch This would simply formalize some of the cash changes we\u2019ve made in the portfolio into actual target weight changes...."
+            },
+            {
+              "section_key": "what_would_need_to_happen_to_add",
+              "evidence_excerpt": "We would consider adding to Wasatch further if their performance struggles continued, provided that we felt confident in their portfolio and assured they weren\u2019t deviating from their long-term process. We might consid..."
+            },
+            {
+              "section_key": "considered_but_not_done",
+              "evidence_excerpt": "We didn\u2019t consider any other expressions of this trade given that Wasatch is our main source of exposure to that part of the style box and their idiosyncratic performance was the source of the trade idea. Robustness C..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "vulnerability_room_to_move",
+              "evidence_excerpt": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "The selloff in software began around Halloween of 2025 (IGV\u2019s most recent high-water mark). Since that time, our fund has performed in line with our benchmark but underperformed peers (see below). US Opp Value has per..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "We have met with all nine of our prospective managers in the US Large Growth bench refresh. We are individually scoring these prospects and will be meeting as a group to trim down the list and determine next steps. On..."
+            }
+          ]
+        }
+      ],
+      "document_summary": {
+        "fund": "US Equity",
+        "document_date": "03/16/2026",
+        "pm_names": [
+          "Doug McGraw",
+          "Mike Budzinski"
+        ],
+        "trade_status": "present",
+        "section_count": 12,
+        "section_keys": [
+          "benchmark_relative_overweights_underweights",
+          "offsets_for_largest_overweight",
+          "algo_relative_overweights_underweights",
+          "fund_specific_range_usage",
+          "directional_moves_rationale",
+          "range_of_added_positions",
+          "what_would_need_to_happen_to_add",
+          "considered_but_not_done",
+          "robustness_best_worst_environment",
+          "vulnerability_room_to_move",
+          "miscellaneous_comments",
+          "roadmap"
+        ],
+        "theme_ids": [
+          "information_technology_underweight",
+          "smid_overweight",
+          "industrials_overweight",
+          "financials_overweight",
+          "ai_leadership_risk",
+          "subadvisor_and_sleeve_structure",
+          "value_tilt"
+        ]
+      }
+    },
+    {
+      "source_path": "C:\\Users\\schuri2\\Downloads\\April 2026 Mutual Fund Checklist - US Equity.docx",
+      "source_filename": "April 2026 Mutual Fund Checklist - US Equity.docx",
+      "document_type": "mutual_fund_checklist",
+      "fund": "US Equity",
+      "document_date": "04/20/2026",
+      "pm_names": [
+        "Doug McGraw",
+        "Mike Budzinski"
+      ],
+      "trade_proposal": {
+        "status": "none",
+        "items": [
+          "[No trades proposed.]"
+        ],
+        "summary": "[No trades proposed.]"
+      },
+      "sections": [
+        {
+          "section_key": "benchmark_relative_overweights_underweights",
+          "section_label": "Benchmark Relative Overweights And Underweights",
+          "prompt": "What are the fund\u2019s largest benchmark relative overweight and underweight Give rationale for both.",
+          "body_paragraphs": [
+            "Sector Over/Underweights (Fund Level)",
+            "The Industrials sector is our largest sector overweight (+3.9%)",
+            "The Industrials overweight is linked to our SMID overweight.",
+            "Wasatch and Systematic SMID are particularly overweight Industrials",
+            "Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight",
+            "MFS and Systematic Large Cap are both overweight the fund\u2019s index",
+            "Opportunistic Value has lower Industrials weights than the fund\u2019s index (~4% underweight)",
+            "Financials is our second largest overweight (+3.0%)",
+            "MFS is overweight financials compared to our fund\u2019s benchmark",
+            "Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index",
+            "Systematic Large Cap has a material overweight to Financials, with 18.2% of the strategy in that sector.",
+            "Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services)",
+            "Three of our five single-stock overweights are Financials (Visa, BlackRock, Marsh)",
+            "Information Technology is our largest sector underweight (-5.2%)",
+            "Clearbridge\u2019s 42% allocation is higher than the fund\u2019s benchmark weight, but below the Russell 1000 Growth index\u2019s weight",
+            "Systematic Large Cap is overweight IT",
+            "The Completion portfolio is all IT right now",
+            "Opportunistic Value is underweight the IT sector by ~10% as of the end of March",
+            "The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices.",
+            "Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month)",
+            "Within Opp Value, our sector over/underweights are generally consistent with prevailing spreads-to-fair as of March month end. We have been finding ways to add to IT and financials while paring back (on a cash basis) from energy names.",
+            "Size/Style Relative Weights (Fund Level)",
+            "Our SMID overweight remains large (+10%)",
+            "This overweight is comprised of a 3% overweight to mid caps and a 7.1% overweight to small caps",
+            "We are also more value-leaning than our benchmark (see blue shaded area below):",
+            "Contribution to Tracking Error",
+            "The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at just over 3%. We are exploring ways of boosting this up and will present findings at this month\u2019s PCC.",
+            "Largest Single Stock Over/Underweights (Fund)",
+            "Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level.",
+            "Mag 7/Elite 8 names comprise our top underweights at the fund level"
+          ],
+          "body_text": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Large Cap are both overweight the fund\u2019s index Opportunistic Value has lower Industrials weights than the fund\u2019s index (~4% underweight) Financials is our second largest overweight (+3.0%) MFS is overweight financials compared to our fund\u2019s benchmark Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index Systematic Large Cap has a material overweight to Financials, with 18.2% of the strategy in that sector. Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services) Three of our five single-stock overweights are Financials (Visa, BlackRock, Marsh) Information Technology is our largest sector underweight (-5.2%) Clearbridge\u2019s 42% allocation is higher than the fund\u2019s benchmark weight, but below the Russell 1000 Growth index\u2019s weight Systematic Large Cap is overweight IT The Completion portfolio is all IT right now Opportunistic Value is underweight the IT sector by ~10% as of the end of March The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices. Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month) Within Opp Value, our sector over/underweights are generally consistent with prevailing spreads-to-fair as of March month end. We have been finding ways to add to IT and financials while paring back (on a cash basis) from energy names. Size/Style Relative Weights (Fund Level) Our SMID overweight remains large (+10%) This overweight is comprised of a 3% overweight to mid caps and a 7.1% overweight to small caps We are also more value-leaning than our benchmark (see blue shaded area below): Contribution to Tracking Error The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at just over 3%. We are exploring ways of boosting this up and will present findings at this month\u2019s PCC. Largest Single Stock Over/Underweights (Fund) Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level. Mag 7/Elite 8 names comprise our top underweights at the fund level"
+        },
+        {
+          "section_key": "offsets_for_largest_overweight",
+          "section_label": "Offsets For Largest Overweight",
+          "prompt": "What offsets does the fund hold to mitigate the risk of the largest overweight?",
+          "body_paragraphs": [
+            "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+          ],
+          "body_text": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+        },
+        {
+          "section_key": "algo_relative_overweights_underweights",
+          "section_label": "Algo Relative Overweights And Underweights",
+          "prompt": "What are the fund\u2019s largest algo relative overweight and underweight? Give rationale for both.",
+          "body_paragraphs": [
+            "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, which it does (see above).",
+            "FUND SPECIFIC:"
+          ],
+          "body_text": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, which it does (see above). FUND SPECIFIC:"
+        },
+        {
+          "section_key": "fund_specific_range_usage",
+          "section_label": "Fund Specific Range Usage",
+          "prompt": "What percentage of your allowable range is your largest overweight? How much do you own in ETFs/Sleeves relative to your maximum allowable?",
+          "body_paragraphs": [
+            "Subadvisors account for 46% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below 50%.",
+            "Industrials sits at a 3.9% overweight today, which is well within our allowable range of \u00b110% of the benchmark weight.",
+            "Directional Moves"
+          ],
+          "body_text": "Subadvisors account for 46% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below 50%. Industrials sits at a 3.9% overweight today, which is well within our allowable range of \u00b110% of the benchmark weight. Directional Moves"
+        },
+        {
+          "section_key": "directional_moves_rationale",
+          "section_label": "Directional Moves And Rationale",
+          "prompt": "What moves are you making and what is your rationale?",
+          "body_paragraphs": [
+            "[No trade proposed. We are responding to recent market moves within the confines of Opp Value.]"
+          ],
+          "body_text": "[No trade proposed. We are responding to recent market moves within the confines of Opp Value.]"
+        },
+        {
+          "section_key": "range_of_added_positions",
+          "section_label": "Range Of Added Positions",
+          "prompt": "What percentage of your range are you now holding in the sectors/countries/etc that you are adding to?",
+          "body_paragraphs": [
+            "N/A"
+          ],
+          "body_text": "N/A"
+        },
+        {
+          "section_key": "what_would_need_to_happen_to_add",
+          "section_label": "What Would Need To Happen To Add",
+          "prompt": "What would need to happen for you to add further to this position?",
+          "body_paragraphs": [
+            "N/A"
+          ],
+          "body_text": "N/A"
+        },
+        {
+          "section_key": "considered_but_not_done",
+          "section_label": "Considered But Not Done",
+          "prompt": "What moves did you consider but decide against?",
+          "body_paragraphs": [
+            "N/A",
+            "Robustness Considerations"
+          ],
+          "body_text": "N/A Robustness Considerations"
+        },
+        {
+          "section_key": "robustness_best_worst_environment",
+          "section_label": "Robustness Best And Worst Environment",
+          "prompt": "What macroeconomic environment do you believe your portfolio is best and worst positioned for?",
+          "body_paragraphs": [
+            "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme).",
+            "With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic growth, if the growth is not purely driven by AI investment.",
+            "Worst Positioned For:  1.  Mag 7 and AI-themed market leadership.   2.  Small caps and value under-performing."
+          ],
+          "body_text": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic growth, if the growth is not purely driven by AI investment. Worst Positioned For:  1.  Mag 7 and AI-themed market leadership.   2.  Small caps and value under-performing."
+        },
+        {
+          "section_key": "vulnerability_room_to_move",
+          "section_label": "Vulnerability Room To Move",
+          "prompt": "If the environment that the portfolio is most vulnerable to plays out, how much room do you have to lean further in that direction?",
+          "body_paragraphs": [
+            "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value.",
+            "We feel we are near a limit on our small cap exposure.",
+            "Miscellaneous"
+          ],
+          "body_text": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+        },
+        {
+          "section_key": "miscellaneous_comments",
+          "section_label": "Miscellaneous Comments",
+          "prompt": "What further comments would you like to make on current positioning and the proposed moves?",
+          "body_paragraphs": [
+            "Prospective Opp Value trades",
+            "Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few points to our IT holdings to reflect the direction of VIRs, STFs, and the Algo.  On VIR and STF, IT ranks 5th and 8th, respectively.  We note that, excluding the MER P/FV adjustment, IT ranks last on VIR and STF.   We added to Broadcom last week and will add more on Monday.  Broadcom will move to an overweight position within Opp Value.   NVDA is another IT stock being bought on Monday.  NVDA has over 30% upside per MER.",
+            "In Financials, we will add 50 bps target weight to Banks on Monday, mostly through Bank of America, and will look to add another 50 bps to Financials soon after that.",
+            "Other selected trades planned for Monday:",
+            "Otis                              Industrials              Add",
+            "Danaher                       HC                           Add",
+            "Thermo Fisher           HC                            Add",
+            "Moderna                     HC                             Trim",
+            "Regeneron                  HC                            Trim",
+            "Salesforce                  IT                              Add",
+            "ServiceNow                IT                              Add",
+            "Within IT, we have discussed removing Apple from Opportunistic Value.  In the US Equity Fund, we would transfer the shares to the Completion portfolio to avoid increasing our 2 point underweight at the fund level.   In GOE, we would sell Apple.  We plan to offset the reduction of Apple with other IT stocks."
+          ],
+          "body_text": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few points to our IT holdings to reflect the direction of VIRs, STFs, and the Algo.  On VIR and STF, IT ranks 5th and 8th, respectively.  We note that, excluding the MER P/FV adjustment, IT ranks last on VIR and STF.   We added to Broadcom last week and will add more on Monday.  Broadcom will move to an overweight position within Opp Value.   NVDA is another IT stock being bought on Monday.  NVDA has over 30% upside per MER. In Financials, we will add 50 bps target weight to Banks on Monday, mostly through Bank of America, and will look to add another 50 bps to Financials soon after that. Other selected trades planned for Monday: Otis                              Industrials              Add Danaher                       HC                           Add Thermo Fisher           HC                            Add Moderna                     HC                             Trim Regeneron                  HC                            Trim Salesforce                  IT                              Add ServiceNow                IT                              Add Within IT, we have discussed removing Apple from Opportunistic Value.  In the US Equity Fund, we would transfer the shares to the Completion portfolio to avoid increasing our 2 point underweight at the fund level.   In GOE, we would sell Apple.  We plan to offset the reduction of Apple with other IT stocks."
+        },
+        {
+          "section_key": "roadmap",
+          "section_label": "Roadmap",
+          "prompt": "Roadmap---  What asset classes do you intend to do work on, or request that Research assign a squad to?  Briefly, why for each idea (VIR, cyclicality, unique catalyst, etc)?",
+          "body_paragraphs": [
+            "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench.",
+            "Our next decision regarding Large Cap Growth is whether to retain Clearbridge as the incumbent.  We will reach a decision by the end of the month.  If we decide to replace Clearbridge, we would have six months to choose the replacement.",
+            "In Opportunistic Value, we aim to conclude work on non-Software AI-affected companies in the next month."
+          ],
+          "body_text": "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench. Our next decision regarding Large Cap Growth is whether to retain Clearbridge as the incumbent.  We will reach a decision by the end of the month.  If we decide to replace Clearbridge, we would have six months to choose the replacement. In Opportunistic Value, we aim to conclude work on non-Software AI-affected companies in the next month."
+        }
+      ],
+      "themes": [
+        {
+          "theme_id": "information_technology_underweight",
+          "label": "Information Technology Underweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US IT"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench. Our next decision regarding Large Cap Growth is whether to retain Clearbridge as the incumbent.  We will reach a decision..."
+            }
+          ]
+        },
+        {
+          "theme_id": "smid_overweight",
+          "label": "SMID Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US MID EQ",
+              "US SML EQ"
+            ],
+            "categories": [
+              "Eq Size / Style"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "vulnerability_room_to_move",
+              "evidence_excerpt": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+            }
+          ]
+        },
+        {
+          "theme_id": "industrials_overweight",
+          "label": "Industrials Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US ID EQ"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "offsets_for_largest_overweight",
+              "evidence_excerpt": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+            },
+            {
+              "section_key": "fund_specific_range_usage",
+              "evidence_excerpt": "Subadvisors account for 46% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below 50%. Industrials sits at a 3.9% overweight today, which is well within our allowable range of..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few..."
+            }
+          ]
+        },
+        {
+          "theme_id": "financials_overweight",
+          "label": "Financials Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US FN EQ"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "offsets_for_largest_overweight",
+              "evidence_excerpt": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few..."
+            }
+          ]
+        },
+        {
+          "theme_id": "ai_leadership_risk",
+          "label": "AI Leadership Risk",
+          "join_hints": {
+            "acid_candidates": [
+              "US IT"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench. Our next decision regarding Large Cap Growth is whether to retain Clearbridge as the incumbent.  We will reach a decision..."
+            }
+          ]
+        },
+        {
+          "theme_id": "subadvisor_and_sleeve_structure",
+          "label": "Subadvisor And Sleeve Structure",
+          "join_hints": {
+            "acid_candidates": [],
+            "categories": []
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "algo_relative_overweights_underweights",
+              "evidence_excerpt": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, whic..."
+            },
+            {
+              "section_key": "fund_specific_range_usage",
+              "evidence_excerpt": "Subadvisors account for 46% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below 50%. Industrials sits at a 3.9% overweight today, which is well within our allowable range of..."
+            },
+            {
+              "section_key": "directional_moves_rationale",
+              "evidence_excerpt": "[No trade proposed. We are responding to recent market moves within the confines of Opp Value.]"
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench. Our next decision regarding Large Cap Growth is whether to retain Clearbridge as the incumbent.  We will reach a decision..."
+            }
+          ]
+        },
+        {
+          "theme_id": "value_tilt",
+          "label": "Value Tilt",
+          "join_hints": {
+            "acid_candidates": [
+              "US LRG V EQ",
+              "US MID V EQ",
+              "US SML V EQ"
+            ],
+            "categories": [
+              "Eq Size / Style"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "algo_relative_overweights_underweights",
+              "evidence_excerpt": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, whic..."
+            },
+            {
+              "section_key": "directional_moves_rationale",
+              "evidence_excerpt": "[No trade proposed. We are responding to recent market moves within the confines of Opp Value.]"
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic gro..."
+            },
+            {
+              "section_key": "vulnerability_room_to_move",
+              "evidence_excerpt": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench. Our next decision regarding Large Cap Growth is whether to retain Clearbridge as the incumbent.  We will reach a decision..."
+            }
+          ]
+        }
+      ],
+      "document_summary": {
+        "fund": "US Equity",
+        "document_date": "04/20/2026",
+        "pm_names": [
+          "Doug McGraw",
+          "Mike Budzinski"
+        ],
+        "trade_status": "none",
+        "section_count": 12,
+        "section_keys": [
+          "benchmark_relative_overweights_underweights",
+          "offsets_for_largest_overweight",
+          "algo_relative_overweights_underweights",
+          "fund_specific_range_usage",
+          "directional_moves_rationale",
+          "range_of_added_positions",
+          "what_would_need_to_happen_to_add",
+          "considered_but_not_done",
+          "robustness_best_worst_environment",
+          "vulnerability_room_to_move",
+          "miscellaneous_comments",
+          "roadmap"
+        ],
+        "theme_ids": [
+          "information_technology_underweight",
+          "smid_overweight",
+          "industrials_overweight",
+          "financials_overweight",
+          "ai_leadership_risk",
+          "subadvisor_and_sleeve_structure",
+          "value_tilt"
+        ]
+      }
+    },
+    {
+      "source_path": "C:\\Users\\schuri2\\Downloads\\May 2026 Mutual Fund Checklist - US Equity.docx",
+      "source_filename": "May 2026 Mutual Fund Checklist - US Equity.docx",
+      "document_type": "mutual_fund_checklist",
+      "fund": "US Equity",
+      "document_date": "5/18/2026",
+      "pm_names": [
+        "Doug McGraw",
+        "Mike Budzinski"
+      ],
+      "trade_proposal": {
+        "status": "none",
+        "items": [
+          "[No trades proposed.]"
+        ],
+        "summary": "[No trades proposed.]"
+      },
+      "sections": [
+        {
+          "section_key": "benchmark_relative_overweights_underweights",
+          "section_label": "Benchmark Relative Overweights And Underweights",
+          "prompt": "What are the fund\u2019s largest benchmark relative overweight and underweight Give rationale for both.",
+          "body_paragraphs": [
+            "Sector Over/Underweights (Fund Level)",
+            "The Industrials sector is our largest sector overweight (+3.8%)",
+            "The Industrials overweight is linked to our SMID overweight.",
+            "Wasatch and Systematic SMID are particularly overweight Industrials",
+            "Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight",
+            "MFS and Systematic Large Cap are both overweight the fund\u2019s index",
+            "Opportunistic Value has lower Industrials weights than the fund\u2019s index (~4% underweight)",
+            "Financials is our second largest overweight (+3.5%)",
+            "MFS is overweight financials compared to our fund\u2019s benchmark, and 8 points over its style index.",
+            "Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index",
+            "Systematic Large Cap has a material overweight to Financials, with 18% of the strategy in that sector.",
+            "Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services)",
+            "The fund\u2019s two largest single-stock overweights are Financials (Visa & BlackRock)",
+            "Information Technology is our largest sector underweight (-5%)",
+            "Clearbridge\u2019s 45% allocation is higher than the fund\u2019s benchmark weight, but below the Russell 1000 Growth index\u2019s weight of 50%",
+            "Systematic Large Cap is overweight IT",
+            "The Completion portfolio is 80% IT (Apple and Microsoft)",
+            "Opportunistic Value is underweight the IT sector by ~8% as of the beginning of April; that has probably grown a bit through mid-May",
+            "The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices.",
+            "Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month)",
+            "Within Opp Value, our sector over/underweights are generally consistent with prevailing spreads-to-fair as of April month end.",
+            "Size/Style Relative Weights (Fund Level)",
+            "Our SMID overweight remains large (+9.5%)",
+            "This overweight is comprised of a 2.4% overweight to mid caps and a 7.1% overweight to small caps",
+            "The increase in the SMID allocation was partially explained by Systematic LC Core\u2019s decision to override soft guidelines regarding Small Caps and Mid Caps at the time of its March rebalance",
+            "We are also more value-leaning than our benchmark (see blue shaded area below):  The fund moved slightly toward Value compared with the previous month.",
+            "Contribution to Tracking Error",
+            "The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at 3.6%. We continue to  explore ways of boosting this in accordance with recent PCC presentations.",
+            "We note that the largest contributors to active risk are underweights to Alphabet, Apple, and three semiconductor companies.",
+            "Largest Single Stock Over/Underweights (Fund)",
+            "Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level.",
+            "Mag 7/Elite 8 names comprise our top underweights at the fund level.  Also prevalent among the largest underweights are Micron, AMD and Intel."
+          ],
+          "body_text": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Large Cap are both overweight the fund\u2019s index Opportunistic Value has lower Industrials weights than the fund\u2019s index (~4% underweight) Financials is our second largest overweight (+3.5%) MFS is overweight financials compared to our fund\u2019s benchmark, and 8 points over its style index. Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index Systematic Large Cap has a material overweight to Financials, with 18% of the strategy in that sector. Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services) The fund\u2019s two largest single-stock overweights are Financials (Visa & BlackRock) Information Technology is our largest sector underweight (-5%) Clearbridge\u2019s 45% allocation is higher than the fund\u2019s benchmark weight, but below the Russell 1000 Growth index\u2019s weight of 50% Systematic Large Cap is overweight IT The Completion portfolio is 80% IT (Apple and Microsoft) Opportunistic Value is underweight the IT sector by ~8% as of the beginning of April; that has probably grown a bit through mid-May The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices. Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month) Within Opp Value, our sector over/underweights are generally consistent with prevailing spreads-to-fair as of April month end. Size/Style Relative Weights (Fund Level) Our SMID overweight remains large (+9.5%) This overweight is comprised of a 2.4% overweight to mid caps and a 7.1% overweight to small caps The increase in the SMID allocation was partially explained by Systematic LC Core\u2019s decision to override soft guidelines regarding Small Caps and Mid Caps at the time of its March rebalance We are also more value-leaning than our benchmark (see blue shaded area below):  The fund moved slightly toward Value compared with the previous month. Contribution to Tracking Error The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at 3.6%. We continue to  explore ways of boosting this in accordance with recent PCC presentations. We note that the largest contributors to active risk are underweights to Alphabet, Apple, and three semiconductor companies. Largest Single Stock Over/Underweights (Fund) Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level. Mag 7/Elite 8 names comprise our top underweights at the fund level.  Also prevalent among the largest underweights are Micron, AMD and Intel."
+        },
+        {
+          "section_key": "offsets_for_largest_overweight",
+          "section_label": "Offsets For Largest Overweight",
+          "prompt": "What offsets does the fund hold to mitigate the risk of the largest overweight?",
+          "body_paragraphs": [
+            "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+          ],
+          "body_text": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+        },
+        {
+          "section_key": "algo_relative_overweights_underweights",
+          "section_label": "Algo Relative Overweights And Underweights",
+          "prompt": "What are the fund\u2019s largest algo relative overweight and underweight? Give rationale for both.",
+          "body_paragraphs": [
+            "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, which it does (see above).",
+            "FUND SPECIFIC:"
+          ],
+          "body_text": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, which it does (see above). FUND SPECIFIC:"
+        },
+        {
+          "section_key": "fund_specific_range_usage",
+          "section_label": "Fund Specific Range Usage",
+          "prompt": "What percentage of your allowable range is your largest overweight? How much do you own in ETFs/Sleeves relative to your maximum allowable?",
+          "body_paragraphs": [
+            "Subadvisors account for 45.5% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below 50%.",
+            "Industrials sits at a 3.8% overweight today, which is well within our allowable range of \u00b110% of the benchmark weight.",
+            "Directional Moves"
+          ],
+          "body_text": "Subadvisors account for 45.5% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below 50%. Industrials sits at a 3.8% overweight today, which is well within our allowable range of \u00b110% of the benchmark weight. Directional Moves"
+        },
+        {
+          "section_key": "directional_moves_rationale",
+          "section_label": "Directional Moves And Rationale",
+          "prompt": "What moves are you making and what is your rationale?",
+          "body_paragraphs": [
+            "[No trade proposed. We are responding to recent market moves within the confines of Opp Value.]"
+          ],
+          "body_text": "[No trade proposed. We are responding to recent market moves within the confines of Opp Value.]"
+        },
+        {
+          "section_key": "range_of_added_positions",
+          "section_label": "Range Of Added Positions",
+          "prompt": "What percentage of your range are you now holding in the sectors/countries/etc that you are adding to?",
+          "body_paragraphs": [
+            "N/A"
+          ],
+          "body_text": "N/A"
+        },
+        {
+          "section_key": "what_would_need_to_happen_to_add",
+          "section_label": "What Would Need To Happen To Add",
+          "prompt": "What would need to happen for you to add further to this position?",
+          "body_paragraphs": [
+            "N/A"
+          ],
+          "body_text": "N/A"
+        },
+        {
+          "section_key": "considered_but_not_done",
+          "section_label": "Considered But Not Done",
+          "prompt": "What moves did you consider but decide against?",
+          "body_paragraphs": [
+            "N/A",
+            "Robustness Considerations"
+          ],
+          "body_text": "N/A Robustness Considerations"
+        },
+        {
+          "section_key": "robustness_best_worst_environment",
+          "section_label": "Robustness Best And Worst Environment",
+          "prompt": "What macroeconomic environment do you believe your portfolio is best and worst positioned for?",
+          "body_paragraphs": [
+            "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme).",
+            "With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic growth, if the growth is not purely driven by AI investment.",
+            "Worst Positioned For:  1.  Mag 7 and AI-themed market (especially semiconductor)  leadership.   2.  Small caps and value under-performing."
+          ],
+          "body_text": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic growth, if the growth is not purely driven by AI investment. Worst Positioned For:  1.  Mag 7 and AI-themed market (especially semiconductor)  leadership.   2.  Small caps and value under-performing."
+        },
+        {
+          "section_key": "vulnerability_room_to_move",
+          "section_label": "Vulnerability Room To Move",
+          "prompt": "If the environment that the portfolio is most vulnerable to plays out, how much room do you have to lean further in that direction?",
+          "body_paragraphs": [
+            "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value.",
+            "We feel we are near a limit on our small cap exposure.",
+            "Miscellaneous"
+          ],
+          "body_text": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+        },
+        {
+          "section_key": "miscellaneous_comments",
+          "section_label": "Miscellaneous Comments",
+          "prompt": "What further comments would you like to make on current positioning and the proposed moves?",
+          "body_paragraphs": [
+            "Fund Level Activities",
+            "We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is now 6.5% Small Cap and 22% Mid-Cap.",
+            "After we line up IT sector replacements within Opportunistic Value, we plan to shift some or all of our Apple shares to the Completion portfolio.  Apple is our second largest underweight at the fund level.  If we shifted weight from Opp Value to the Completion Sleeve related to AAPL, we may add to Opp Value the proceeds of trims from the ETFs.",
+            "Fund Positioning",
+            "Semiconductor Positioning",
+            "The fund is 2.5% underweight Semis.  The fund\u2019s weight is 13% with MSTART at 15.5%",
+            "Recent Opp Value trades",
+            "Trims:  Moderna, Marvell, Lyondell, Dow, Regeneron, Occidental Petroleum",
+            "Adds: Bank of America, Wells Fargo, Nvidia, Broadcom, Otis Worldwide, topped up Software names",
+            "Prospective Opp Value trades",
+            "We are discussing IT replacements for AAPL.  Software names are the leading candidates.  We are discussing Tyler Technologies and Guidewire in particular.",
+            "Illumina is a likely source of funds, along with KKR."
+          ],
+          "body_text": "Fund Level Activities We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is now 6.5% Small Cap and 22% Mid-Cap. After we line up IT sector replacements within Opportunistic Value, we plan to shift some or all of our Apple shares to the Completion portfolio.  Apple is our second largest underweight at the fund level.  If we shifted weight from Opp Value to the Completion Sleeve related to AAPL, we may add to Opp Value the proceeds of trims from the ETFs. Fund Positioning Semiconductor Positioning The fund is 2.5% underweight Semis.  The fund\u2019s weight is 13% with MSTART at 15.5% Recent Opp Value trades Trims:  Moderna, Marvell, Lyondell, Dow, Regeneron, Occidental Petroleum Adds: Bank of America, Wells Fargo, Nvidia, Broadcom, Otis Worldwide, topped up Software names Prospective Opp Value trades We are discussing IT replacements for AAPL.  Software names are the leading candidates.  We are discussing Tyler Technologies and Guidewire in particular. Illumina is a likely source of funds, along with KKR."
+        },
+        {
+          "section_key": "roadmap",
+          "section_label": "Roadmap",
+          "prompt": "Roadmap---  What asset classes do you intend to do work on, or request that Research assign a squad to?  Briefly, why for each idea (VIR, cyclicality, unique catalyst, etc)?",
+          "body_paragraphs": [
+            "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench.",
+            "We have reached a decision to terminate Clearbridge from the Large Cap Growth mandate.  Mike and Doug will visit the bench candidates over the next two months to determine a replacement."
+          ],
+          "body_text": "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench. We have reached a decision to terminate Clearbridge from the Large Cap Growth mandate.  Mike and Doug will visit the bench candidates over the next two months to determine a replacement."
+        }
+      ],
+      "themes": [
+        {
+          "theme_id": "information_technology_underweight",
+          "label": "Information Technology Underweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US IT"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid econo..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Fund Level Activities We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is..."
+            }
+          ]
+        },
+        {
+          "theme_id": "smid_overweight",
+          "label": "SMID Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US MID EQ",
+              "US SML EQ"
+            ],
+            "categories": [
+              "Eq Size / Style"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid econo..."
+            },
+            {
+              "section_key": "vulnerability_room_to_move",
+              "evidence_excerpt": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Fund Level Activities We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is..."
+            }
+          ]
+        },
+        {
+          "theme_id": "industrials_overweight",
+          "label": "Industrials Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US ID EQ"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "offsets_for_largest_overweight",
+              "evidence_excerpt": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+            },
+            {
+              "section_key": "fund_specific_range_usage",
+              "evidence_excerpt": "Subadvisors account for 45.5% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below 50%. Industrials sits at a 3.8% overweight today, which is well within our allowable range..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid econo..."
+            }
+          ]
+        },
+        {
+          "theme_id": "financials_overweight",
+          "label": "Financials Overweight",
+          "join_hints": {
+            "acid_candidates": [
+              "US FN EQ"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "offsets_for_largest_overweight",
+              "evidence_excerpt": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer Discretionary."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid econo..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Fund Level Activities We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is..."
+            }
+          ]
+        },
+        {
+          "theme_id": "ai_leadership_risk",
+          "label": "AI Leadership Risk",
+          "join_hints": {
+            "acid_candidates": [
+              "US IT"
+            ],
+            "categories": [
+              "Eq Sector"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid econo..."
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Fund Level Activities We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is..."
+            }
+          ]
+        },
+        {
+          "theme_id": "subadvisor_and_sleeve_structure",
+          "label": "Subadvisor And Sleeve Structure",
+          "join_hints": {
+            "acid_candidates": [],
+            "categories": []
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "algo_relative_overweights_underweights",
+              "evidence_excerpt": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, whic..."
+            },
+            {
+              "section_key": "fund_specific_range_usage",
+              "evidence_excerpt": "Subadvisors account for 45.5% of assets managed.  We do not intend to reduce allocation to subadvisors as it is already below 50%. Industrials sits at a 3.8% overweight today, which is well within our allowable range..."
+            },
+            {
+              "section_key": "directional_moves_rationale",
+              "evidence_excerpt": "[No trade proposed. We are responding to recent market moves within the confines of Opp Value.]"
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Fund Level Activities We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench. We have reached a decision to terminate Clearbridge from the Large Cap Growth mandate.  Mike and Doug will visit the bench..."
+            }
+          ]
+        },
+        {
+          "theme_id": "value_tilt",
+          "label": "Value Tilt",
+          "join_hints": {
+            "acid_candidates": [
+              "US LRG V EQ",
+              "US MID V EQ",
+              "US SML V EQ"
+            ],
+            "categories": [
+              "Eq Size / Style"
+            ]
+          },
+          "matches": [
+            {
+              "section_key": "benchmark_relative_overweights_underweights",
+              "evidence_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweigh..."
+            },
+            {
+              "section_key": "algo_relative_overweights_underweights",
+              "evidence_excerpt": "Following the release of the post-internalization playbook, we will no longer be managing our fund-level exposures to the algo. Instead, we will ensure that Opp Value generally aligns with the algo\u2019s preferences, whic..."
+            },
+            {
+              "section_key": "directional_moves_rationale",
+              "evidence_excerpt": "[No trade proposed. We are responding to recent market moves within the confines of Opp Value.]"
+            },
+            {
+              "section_key": "robustness_best_worst_environment",
+              "evidence_excerpt": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid econo..."
+            },
+            {
+              "section_key": "vulnerability_room_to_move",
+              "evidence_excerpt": "We have room to push into any subadviser, add to Opportunistic Value and adjust sector weights within Opportunistic Value. We feel we are near a limit on our small cap exposure. Miscellaneous"
+            },
+            {
+              "section_key": "miscellaneous_comments",
+              "evidence_excerpt": "Fund Level Activities We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is..."
+            },
+            {
+              "section_key": "roadmap",
+              "evidence_excerpt": "The Large Cap Growth mandate bench refresh is complete.  We chose five managers for the bench. We have reached a decision to terminate Clearbridge from the Large Cap Growth mandate.  Mike and Doug will visit the bench..."
+            }
+          ]
+        }
+      ],
+      "document_summary": {
+        "fund": "US Equity",
+        "document_date": "5/18/2026",
+        "pm_names": [
+          "Doug McGraw",
+          "Mike Budzinski"
+        ],
+        "trade_status": "none",
+        "section_count": 12,
+        "section_keys": [
+          "benchmark_relative_overweights_underweights",
+          "offsets_for_largest_overweight",
+          "algo_relative_overweights_underweights",
+          "fund_specific_range_usage",
+          "directional_moves_rationale",
+          "range_of_added_positions",
+          "what_would_need_to_happen_to_add",
+          "considered_but_not_done",
+          "robustness_best_worst_environment",
+          "vulnerability_room_to_move",
+          "miscellaneous_comments",
+          "roadmap"
+        ],
+        "theme_ids": [
+          "information_technology_underweight",
+          "smid_overweight",
+          "industrials_overweight",
+          "financials_overweight",
+          "ai_leadership_risk",
+          "subadvisor_and_sleeve_structure",
+          "value_tilt"
+        ]
+      }
+    }
+  ],
+  "recurring_themes": [
+    {
+      "theme_id": "information_technology_underweight",
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "smid_overweight",
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "industrials_overweight",
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "financials_overweight",
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "ai_leadership_risk",
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "subadvisor_and_sleeve_structure",
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "value_tilt",
+      "occurrence_count": 3
+    }
+  ]
+}

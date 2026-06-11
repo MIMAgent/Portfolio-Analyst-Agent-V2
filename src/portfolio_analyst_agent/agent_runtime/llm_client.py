@@ -194,12 +194,14 @@ def _bedrock_converse_payload(
     tools: list[dict[str, Any]],
     max_tokens: int,
 ) -> dict[str, Any]:
-    return {
+    payload = {
         "system": [{"text": system}],
         "messages": [_to_bedrock_message(message) for message in messages],
         "inferenceConfig": {"maxTokens": max_tokens},
-        "toolConfig": {"tools": [_to_bedrock_tool(tool) for tool in tools]},
     }
+    if tools:
+        payload["toolConfig"] = {"tools": [_to_bedrock_tool(tool) for tool in tools]}
+    return payload
 
 
 def _send_bedrock_bearer_request(

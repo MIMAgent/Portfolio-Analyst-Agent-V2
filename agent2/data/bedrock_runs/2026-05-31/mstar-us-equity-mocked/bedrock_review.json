@@ -1,0 +1,59 @@
+{
+  "executive_summary": "Test summary for MStar US Equity with one clear sector tension and one stale signal caveat.",
+  "current_positioning": [
+    {
+      "label": "Industrials",
+      "view": "Meaningful overweight despite weak signal backdrop.",
+      "evidence": "Positioning is overweight while both VIR and algo lean underweight."
+    },
+    {
+      "label": "US Large Growth",
+      "view": "Large underweight remains the biggest relative expression.",
+      "evidence": "Active weight is strongly negative and both signals still lean underweight."
+    }
+  ],
+  "what_changed": [
+    {
+      "label": "US Large Growth",
+      "change": "Signal improved month over month but remains negative.",
+      "why_it_matters": "The fund is still materially underweight a benchmark-heavy growth bucket."
+    }
+  ],
+  "bull_case": [
+    {
+      "label": "Industrials",
+      "statement": "If cyclical breadth improves, the overweight can still pay off through stock selection."
+    }
+  ],
+  "bear_case": [
+    {
+      "label": "Industrials",
+      "statement": "The fund may be fighting both model and VIR evidence with a large active bet."
+    }
+  ],
+  "devils_advocate": [
+    {
+      "label": "US Large Growth",
+      "statement": "The underweight may look prudent on signal, but it still leaves the fund exposed if leadership persists."
+    }
+  ],
+  "pm_questions": [
+    {
+      "label": "Industrials",
+      "question": "Why is the overweight still the cleanest expression?",
+      "why_now": "Signals disagree."
+    }
+  ],
+  "follow_up": [
+    {
+      "label": "Industrials",
+      "action": "Review whether the overweight is coming from the highest-conviction names or legacy holdings."
+    }
+  ],
+  "dashboard_highlights": [
+    {
+      "label": "VIR timing",
+      "highlight": "Latest VIR snapshot is older than the labeled review month."
+    }
+  ]
+}

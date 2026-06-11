@@ -1,0 +1,27 @@
+{
+  "fund": "MStar US Equity",
+  "logical_snapshot_date": "2026-05-31",
+  "review_date": "2026-06-10",
+  "model": "us.anthropic.claude-sonnet-4-6",
+  "region_name": "us-east-2",
+  "generated_at": "2026-06-11T16:56:27Z",
+  "artifacts": {
+    "review_packet": "C:/Users/schuri2/OneDrive - MORNINGSTAR INC/Documents/GitHub/Portfolio-Analyst-Agent-V2/agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/agent2_review_packet.json",
+    "evidence_pack": "C:/Users/schuri2/OneDrive - MORNINGSTAR INC/Documents/GitHub/Portfolio-Analyst-Agent-V2/agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/evidence_pack.json",
+    "system_prompt": "C:/Users/schuri2/OneDrive - MORNINGSTAR INC/Documents/GitHub/Portfolio-Analyst-Agent-V2/agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/system_prompt.txt",
+    "user_prompt": "C:/Users/schuri2/OneDrive - MORNINGSTAR INC/Documents/GitHub/Portfolio-Analyst-Agent-V2/agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/user_prompt.txt",
+    "bedrock_raw_response": "C:/Users/schuri2/OneDrive - MORNINGSTAR INC/Documents/GitHub/Portfolio-Analyst-Agent-V2/agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/bedrock_raw_response.json",
+    "bedrock_response_text": "C:/Users/schuri2/OneDrive - MORNINGSTAR INC/Documents/GitHub/Portfolio-Analyst-Agent-V2/agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/bedrock_response.txt",
+    "bedrock_review_json": "C:/Users/schuri2/OneDrive - MORNINGSTAR INC/Documents/GitHub/Portfolio-Analyst-Agent-V2/agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/bedrock_review.json",
+    "bedrock_review_markdown": "C:/Users/schuri2/OneDrive - MORNINGSTAR INC/Documents/GitHub/Portfolio-Analyst-Agent-V2/agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/bedrock_review.md"
+  },
+  "usage": {
+    "inputTokens": 20535,
+    "outputTokens": 4822,
+    "totalTokens": 25357,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "approx_cost_usd": 0.1339,
+  "parsed_json_ok": true
+}

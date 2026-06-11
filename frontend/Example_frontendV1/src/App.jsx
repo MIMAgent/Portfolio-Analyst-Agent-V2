@@ -2,14 +2,16 @@ import { useEffect, useMemo, useState } from 'react'
 import bundle from './data/monthlyReviewBundle.json'
 import exposureLineage from './data/exposureLineage.json'
 import fundWeightsVirAlgo from './data/fundWeightsVirAlgo.json'
+import agent2ReviewMstarUsequity from './data/agent2/mstar-us-equity-review.json'
+import agent2ManifestMstarUsequity from './data/agent2/mstar-us-equity-manifest.json'
+import agent2PacketMstarUsequity from './data/agent2/mstar-us-equity-packet.json'
 
 const tabs = [
   { id: 'dashboard', label: 'Overview' },
-  { id: 'challenges', label: 'Challenge Brief' },
-  { id: 'decomp', label: 'VIR Decomp' },
-  { id: 'fof', label: 'Fund of Funds' },
-  { id: 'ic-prep', label: 'IC Prep' },
-  { id: 'memory', label: 'Agent Memory' },
+  { id: 'positioning', label: 'Positioning' },
+  { id: 'signals', label: 'Signals' },
+  { id: 'review', label: 'PM Review' },
+  { id: 'evidence', label: 'Evidence' },
 ]
 
 const categoryOrder = [
@@ -34,6 +36,14 @@ const presetQuestions = [
   'Which tensions should go into next month watch list?',
   'Where are active weights concentrated by source sleeve?',
 ]
+
+const agent2RunsByFund = {
+  'MStar US Equity': {
+    review: agent2ReviewMstarUsequity,
+    manifest: agent2ManifestMstarUsequity,
+    packet: agent2PacketMstarUsequity,
+  },
+}
 
 export default function App() {
   const fundDirectory = useMemo(() => buildFundDirectory(bundle.funds, fundWeightsVirAlgo), [])
@@ -97,15 +107,15 @@ export default function App() {
           <div className="tb-sep" />
           <span className="tb-fund-name">{selectedFund?.fund ?? 'No fund selected'}</span>
           <div className="tb-right">
-            <button type="button" className="tb-btn primary" onClick={() => setActiveTab('decomp')}>Run Review</button>
-            <button type="button" className="tb-btn" onClick={() => setActiveTab('ic-prep')}>IC Prep</button>
+            <button type="button" className="tb-btn primary" onClick={() => setActiveTab('review')}>PM Review</button>
+            <button type="button" className="tb-btn" onClick={() => setActiveTab('signals')}>Signals</button>
           </div>
         </div>
 
         <aside className="sidebar">
           <div className="sb-header">
             <div className="sb-header-title">PM Analyst Platform</div>
-            <div className="sb-header-subtitle">VIR / Algo / Positioning</div>
+            <div className="sb-header-subtitle">Portfolio / Signals / Agent Review</div>
           </div>
 
           <div className="sb-label">Navigate</div>
@@ -218,15 +228,14 @@ export default function App() {
             {activeTab === 'dashboard' ? (
               <DashboardTab model={filteredModel} onFocusAcid={focusAcid} portfolioView={portfolioView} />
             ) : null}
-            {activeTab === 'challenges' ? (
-              <ChallengeBriefTab model={filteredModel} onOpenReview={(acid) => focusAcid(acid, 'ic-prep')} />
+            {activeTab === 'positioning' ? (
+              <PositioningTab model={filteredModel} onFocusAcid={focusAcid} portfolioView={portfolioView} />
             ) : null}
-            {activeTab === 'decomp' ? (
-              <SignalLensTab model={filteredModel} focusedRow={focusedRow} onFocusAcid={focusAcid} />
+            {activeTab === 'signals' ? (
+              <SignalsTab model={filteredModel} focusedRow={focusedRow} onFocusAcid={focusAcid} />
             ) : null}
-            {activeTab === 'fof' ? <LookThroughTab model={filteredModel} /> : null}
-            {activeTab === 'ic-prep' ? <ICPrepTab model={filteredModel} focusedAcid={focusedRow?.acid ?? ''} /> : null}
-            {activeTab === 'memory' ? <MemoryTab model={filteredModel} /> : null}
+            {activeTab === 'review' ? <ReviewTab model={filteredModel} focusedAcid={focusedRow?.acid ?? ''} /> : null}
+            {activeTab === 'evidence' ? <EvidenceTab model={filteredModel} /> : null}
           </main>
         </div>
       </div>
@@ -236,6 +245,7 @@ export default function App() {
 
 function DashboardTab({ model, onFocusAcid, portfolioView }) {
   const portfolio = getPortfolioViewMeta(model, portfolioView)
+  const agentReview = model.agentReview
   const rows = model.exposures
     .filter((row) => Math.abs(numberOrNull(row[portfolio.field]) ?? 0) >= portfolio.minimum)
     .slice(0, 18)
@@ -255,7 +265,7 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
           {rows.length ? (
             <div className="bar-list" role="img" aria-label="Top active weights vs benchmark">
               {rows.map((row) => (
-                <button key={row.acid} type="button" className="bar-row" onClick={() => onFocusAcid(row.acid, 'decomp')}>
+                <button key={row.acid} type="button" className="bar-row" onClick={() => onFocusAcid(row.acid, 'signals')}>
                   <div className="bar-row-label">
                     <strong>{truncate(row.acid, 22)}</strong>
                     <span>{portfolio.detail(row)}</span>
@@ -299,7 +309,7 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
             {model.tensionRows.slice(0, 10).map((row) => {
               const status = classifyAlignment(row)
               return (
-                <button key={row.acid} type="button" className="table-row table-button" onClick={() => onFocusAcid(row.acid, 'decomp')}>
+                <button key={row.acid} type="button" className="table-row table-button" onClick={() => onFocusAcid(row.acid, 'signals')}>
                   <strong>{row.acid}</strong>
                   <span>{acidTypeLabels[row.acid_type] ?? humanizeKey(row.acid_type)}</span>
                   <code className={`align-right ${toneClass(row.active_rolled_exposure)}`}>{formatWeight(row.active_rolled_exposure)}</code>
@@ -318,8 +328,40 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
       </Card>
 
       <div className="split-grid split-dashboard">
-        <Card title="SAVED PM REVIEW" subtitle="latest detailed agent narrative">
-          {model.reviewSections.length ? (
+        <Card title="AGENT2 VIEW" subtitle={agentReview ? `Live Bedrock review | ${monthYear(agentReview.manifest.logical_snapshot_date)}` : 'No Bedrock review loaded'}>
+          {agentReview ? (
+            <div className="agent-review-stack">
+              <p className="agent-summary">{agentReview.review.executive_summary}</p>
+              <div className="agent-position-list">
+                {agentReview.materialPositions.slice(0, 4).map((position) => (
+                  <article key={position.position_id} className="agent-position-card">
+                    <div className="agent-position-top">
+                      <div>
+                        <h4>{position.label}</h4>
+                        <span>{position.category}</span>
+                      </div>
+                      <StatusBadge tone={alignmentToneForSignal(position.signal_alignment)}>{humanizeKey(position.signal_alignment)}</StatusBadge>
+                    </div>
+                    <div className="agent-position-metrics">
+                      <span>
+                        <label>Active</label>
+                        <code className={toneClass(position.active_weight)}>{formatWeight(position.active_weight)}</code>
+                      </span>
+                      <span>
+                        <label>VIR</label>
+                        <code>{formatMaybe(position.vir_now)}</code>
+                      </span>
+                      <span>
+                        <label>Algo</label>
+                        <code>{formatMaybe(position.algo_active_weight)}</code>
+                      </span>
+                    </div>
+                    <p>{position.internal_history_excerpt || position.sample_source_securities || 'No saved supporting context for this position.'}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ) : model.reviewSections.length ? (
             <div className="review-preview">
               {model.reviewSections.slice(0, 2).map((section) => (
                 <article key={section.title} className="preview-section">
@@ -333,6 +375,37 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
           )}
         </Card>
 
+        <Card title="PM QUESTIONS" subtitle="what the live review wants answered">
+          {agentReview ? (
+            <div className="agent-review-stack">
+              <div className="agent-question-list">
+                {agentReview.review.pm_questions.slice(0, 4).map((item) => (
+                  <article key={item.label} className="agent-question-card">
+                    <h4>{item.label}</h4>
+                    <p>{item.question}</p>
+                    <div className="inline-note tone-neutral">{item.why_now}</div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="memory-summary-grid run-stat-grid">
+                <MiniStat label="Run cost" value={formatCurrency(agentReview.manifest.approx_cost_usd)} tone="blue" />
+                <MiniStat label="Input tokens" value={formatInteger(agentReview.manifest.usage?.inputTokens)} />
+                <MiniStat label="Output tokens" value={formatInteger(agentReview.manifest.usage?.outputTokens)} />
+                <MiniStat label="Total tokens" value={formatInteger(agentReview.manifest.usage?.totalTokens)} />
+              </div>
+
+              <div className="inline-note tone-blue">
+                Model {shortModelName(agentReview.manifest.model)} in {agentReview.manifest.region_name} | generated {formatDateTime(agentReview.manifest.generated_at)}
+              </div>
+            </div>
+          ) : (
+            <EmptyState copy="No structured PM questions are available for this fund yet." />
+          )}
+        </Card>
+      </div>
+
+      <div className="split-grid split-dashboard">
         <Card title="DATA TIMING" subtitle="actual bundle sources">
           <div className="timing-list">
             <TimingRow label="Review snapshot" value={model.snapshotMatrix.review} />
@@ -340,14 +413,237 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
             <TimingRow label="VIR layer" value={model.snapshotMatrix.vir} />
             <TimingRow label="Algo layer" value={model.snapshotMatrix.algo} />
             <TimingRow label="Bundle built" value={formatDateTime(bundle.bundle_generated_at)} />
+            {agentReview ? <TimingRow label="Agent run" value={formatDateTime(agentReview.manifest.generated_at)} /> : null}
           </div>
-          {model.snapshotMatrix.hasMismatch ? (
+          {agentReview?.dataQualityFlags?.length ? (
+            <div className="agent-flag-stack">
+              {agentReview.dataQualityFlags.slice(0, 2).map((flag) => (
+                <div key={flag.flag} className={`inline-note ${flag.severity === 'medium' ? 'tone-amber' : 'tone-neutral'}`}>
+                  {flag.message}
+                </div>
+              ))}
+            </div>
+          ) : model.snapshotMatrix.hasMismatch ? (
             <div className="inline-note tone-blue">
               The saved PM review and the structured exposure layer are not from the same snapshot. The narrative is current to the review run; the tables reflect the latest structured positioning file currently bundled into the app.
             </div>
           ) : null}
         </Card>
       </div>
+    </div>
+  )
+}
+
+function PositioningTab({ model, onFocusAcid, portfolioView }) {
+  const portfolio = getPortfolioViewMeta(model, portfolioView)
+  const rows = model.exposures
+    .filter((row) => Math.abs(numberOrNull(row[portfolio.field]) ?? 0) >= portfolio.minimum)
+    .slice(0, 20)
+  const leaderBook = buildExposureLeaders(model)
+  const lookthroughRows = model.exposures.filter((row) => model.lineageByAcid[row.acid] && Math.abs(numberOrNull(row.active_rolled_exposure) ?? 0) >= 0.3)
+
+  return (
+    <div className="page-grid">
+      <Card title="CATEGORY POSTURE" subtitle="where the fund is leaning by exposure bucket">
+        <div className="category-posture-grid">
+          {model.categoryTrendRows.map((row) => (
+            <article key={row.category} className="category-posture-card">
+              <div>
+                <h4>{row.category}</h4>
+                <span>{row.relationshipLabel}</span>
+              </div>
+              <div className="category-posture-metrics">
+                <span>
+                  <label>Net active</label>
+                  <code className={toneClass(row.positionNet)}>{formatWeight(row.positionNet)}</code>
+                </span>
+                <span>
+                  <label>Avg VIR</label>
+                  <code>{formatMaybe(row.virCurrent)}</code>
+                </span>
+                <span>
+                  <label>Avg algo</label>
+                  <code>{formatMaybe(row.algoCurrent)}</code>
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Card>
+
+      <div className="split-grid split-dashboard">
+        <Card title={portfolio.cardTitle} subtitle={`${model.fundName} | ${portfolio.snapshotLabel}`}>
+          {rows.length ? (
+            <div className="bar-list" role="img" aria-label="Largest portfolio exposures">
+              {rows.map((row) => (
+                <button key={row.acid} type="button" className="bar-row" onClick={() => onFocusAcid(row.acid, 'signals')}>
+                  <div className="bar-row-label">
+                    <strong>{truncate(row.acid, 22)}</strong>
+                    <span>{portfolio.detail(row)}</span>
+                  </div>
+                  <div className="bar-track">
+                    {portfolio.mode === 'centered' ? <div className="bar-zero" /> : null}
+                    <span className={`bar-fill ${portfolio.fillClass(row[portfolio.field])}`} style={portfolio.style(row[portfolio.field])} />
+                  </div>
+                  <code className={portfolio.tone(row[portfolio.field])}>{formatWeight(row[portfolio.field])}</code>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <EmptyState copy="No material positions for this view." />
+          )}
+        </Card>
+
+        <Card title="TOP BOOK TILTS" subtitle="largest overweights and underweights">
+          <div className="split-grid split-tilts">
+            <div className="mini-panel">
+              <div className="subhead">Overweights</div>
+              <div className="leader-list">
+                {leaderBook.overweights.map((row) => (
+                  <button key={`ow-${row.label}`} type="button" className="leader-row" onClick={() => row.acid && onFocusAcid(row.acid, 'signals')}>
+                    <strong>{row.label}</strong>
+                    <code className="tone-text-green">{formatWeight(row.active_weight)}</code>
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="mini-panel">
+              <div className="subhead">Underweights</div>
+              <div className="leader-list">
+                {leaderBook.underweights.map((row) => (
+                  <button key={`uw-${row.label}`} type="button" className="leader-row" onClick={() => row.acid && onFocusAcid(row.acid, 'signals')}>
+                    <strong>{row.label}</strong>
+                    <code className="tone-text-red">{formatWeight(row.active_weight)}</code>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
+
+      <Card title="SOURCE LOOK-THROUGH" subtitle="how the active exposures are being created underneath the fund">
+        {lookthroughRows.length ? (
+          <div className="accordion-stack">
+            {lookthroughRows.map((row) => (
+              <LookThroughRow key={row.acid} row={row} lineage={model.lineageByAcid[row.acid]} />
+            ))}
+          </div>
+        ) : (
+          <EmptyState copy="No expandable look-through rows are available for this fund." />
+        )}
+      </Card>
+    </div>
+  )
+}
+
+function SignalsTab({ model, focusedRow, onFocusAcid }) {
+  const agentReview = model.agentReview
+
+  return (
+    <div className="page-grid">
+      <Card title="SIGNAL STORYLINE" subtitle="what shifted in VIR and where the position book is under pressure">
+        <div className="split-grid split-agent">
+          <AgentNarrativeSection title="What changed" items={agentReview?.review?.what_changed ?? []} tone="blue" />
+          <AgentNarrativeSection title="Dashboard highlights" items={agentReview?.review?.dashboard_highlights ?? []} tone="amber" />
+        </div>
+      </Card>
+
+      <SignalLensTab model={model} focusedRow={focusedRow} onFocusAcid={onFocusAcid} />
+
+      <ChallengeBriefTab model={model} onOpenReview={(acid) => onFocusAcid(acid, 'review')} />
+    </div>
+  )
+}
+
+function ReviewTab({ model, focusedAcid }) {
+  const agentReview = model.agentReview
+
+  return (
+    <div className="page-grid">
+      {agentReview ? (
+        <Card title="EXECUTIVE SUMMARY" subtitle="the agent's current read on the fund">
+          <div className="review-hero">
+            <p>{agentReview.review.executive_summary}</p>
+            <div className="meta-ribbon">
+              <span>Model {shortModelName(agentReview.manifest.model)}</span>
+              <span>Cost {formatCurrency(agentReview.manifest.approx_cost_usd)}</span>
+              <span>Snapshot {agentReview.manifest.logical_snapshot_date}</span>
+              <span>Generated {formatDateTime(agentReview.manifest.generated_at)}</span>
+            </div>
+          </div>
+        </Card>
+      ) : null}
+
+      <ICPrepTab model={model} focusedAcid={focusedAcid} />
+    </div>
+  )
+}
+
+function EvidenceTab({ model }) {
+  const agentReview = model.agentReview
+  const memoryUpdates = model.changeBrief.memory_updates_summary ?? {}
+  const evidence = model.changeBrief.evidence_index ?? []
+
+  return (
+    <div className="page-grid">
+      <div className="split-grid split-memory">
+        <Card title="RUN HEALTH" subtitle="confidence, freshness, and saved run context">
+          <div className="memory-summary-grid">
+            <MiniStat label="Sources" value={String(agentReview?.packet?.source_index?.length ?? 0)} />
+            <MiniStat label="Flags" value={String(agentReview?.dataQualityFlags?.length ?? 0)} tone="amber" />
+            <MiniStat label="Evidence rows" value={String(evidence.length)} tone="blue" />
+            <MiniStat label="Run cost" value={formatCurrency(agentReview?.manifest?.approx_cost_usd)} tone="green" />
+          </div>
+          {agentReview?.dataQualityFlags?.length ? (
+            <div className="agent-flag-stack">
+              {agentReview.dataQualityFlags.map((flag) => (
+                <div key={flag.flag} className={`inline-note ${flag.severity === 'medium' ? 'tone-amber' : 'tone-neutral'}`}>
+                  {flag.message}
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </Card>
+
+        <Card title="AGENT MEMORY" subtitle="what prior review context is being carried in">
+          <div className="memory-summary-grid">
+            <MiniStat label="Theses" value={String(memoryUpdates.thesis_ledger_entries ?? model.memorySummary.thesis_ledger_count ?? 0)} />
+            <MiniStat label="Exceptions" value={String(memoryUpdates.approved_exceptions ?? model.memorySummary.exceptions_count ?? 0)} />
+            <MiniStat label="Watch items" value={String(memoryUpdates.watch_items ?? model.memorySummary.watch_items_count ?? 0)} />
+            <MiniStat label="Proposed" value={String(memoryUpdates.proposed_count_from_prior_run ?? model.memorySummary.proposed_count ?? 0)} />
+          </div>
+          <div className="inline-note tone-neutral">
+            This page is for trust and traceability: what fed the run, what may be stale, and what prior internal context the review is leaning on.
+          </div>
+        </Card>
+      </div>
+
+      <Card title="SOURCE INDEX" subtitle="where the current review is pulling its evidence from">
+        {agentReview?.packet?.source_index?.length ? (
+          <div className="artifact-table">
+            {agentReview.packet.source_index.map((source) => (
+              <div key={`${source.source_type}-${source.artifact_path}`} className="artifact-row">
+                <span>{humanizeKey(source.source_type)}</span>
+                <code>{source.purpose}</code>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <EmptyState copy="No structured source index is available for this fund." />
+        )}
+      </Card>
+
+      <Card title="ARTIFACT PATHS" subtitle="repo locations saved with this run">
+        <div className="artifact-table">
+          {Object.entries(model.artifactPaths).map(([key, value]) => (
+            <div key={key} className="artifact-row">
+              <span>{humanizeKey(key)}</span>
+              <code>{value || '-'}</code>
+            </div>
+          ))}
+        </div>
+      </Card>
     </div>
   )
 }
@@ -579,6 +875,7 @@ function LookThroughTab({ model }) {
 
 function ICPrepTab({ model, focusedAcid }) {
   const prepItems = buildIcPrepItems(model)
+  const agentReview = model.agentReview
 
   return (
     <div className="page-grid">
@@ -611,6 +908,26 @@ function ICPrepTab({ model, focusedAcid }) {
                 </div>
               </article>
             ))}
+          </div>
+        </Card>
+      ) : null}
+
+      {agentReview ? (
+        <Card title="STRUCTURED AGENT CASE" subtitle="live Bedrock output anchored to holdings, VIR, algo, and internal history">
+          <div className="agent-case-grid">
+            <AgentNarrativeSection title="Current positioning" items={agentReview.review.current_positioning} tone="blue" />
+            <AgentNarrativeSection title="Bull case" items={agentReview.review.bull_case} tone="green" />
+            <AgentNarrativeSection title="Bear case" items={agentReview.review.bear_case} tone="red" />
+            <AgentNarrativeSection title="Devil's advocate" items={agentReview.review.devils_advocate} tone="amber" />
+          </div>
+        </Card>
+      ) : null}
+
+      {agentReview ? (
+        <Card title="FOLLOW-UP TRACKER" subtitle="what to ask now and what to do next">
+          <div className="split-grid split-agent">
+            <AgentNarrativeSection title="PM questions" items={agentReview.review.pm_questions} tone="blue" />
+            <AgentNarrativeSection title="Follow-up actions" items={agentReview.review.follow_up} tone="amber" />
           </div>
         </Card>
       ) : null}
@@ -781,13 +1098,20 @@ function inferFundType(fundName = '') {
 }
 
 function tabBadgeForModel(tabId, model) {
-  if (tabId === 'challenges') {
+  if (tabId === 'positioning') {
+    return model.exposures.length ? { label: String(model.exposures.length), info: true } : null
+  }
+  if (tabId === 'signals') {
     const count = buildChallengeCards(model).length
     return count ? { label: String(count) } : null
   }
-  if (tabId === 'ic-prep') {
+  if (tabId === 'review') {
     const count = buildIcPrepItems(model).length
     return count ? { label: String(count), info: true } : null
+  }
+  if (tabId === 'evidence') {
+    const count = model.agentReview?.dataQualityFlags?.length ?? model.changeBrief.evidence_index?.length ?? 0
+    return count ? { label: String(count) } : null
   }
   return null
 }
@@ -926,15 +1250,13 @@ function NavCount({ tabId, model }) {
   const value =
     tabId === 'dashboard'
       ? model.summary.misalignedCount
-      : tabId === 'challenges'
+      : tabId === 'positioning'
+        ? model.exposures.length
+        : tabId === 'signals'
         ? buildChallengeCards(model).length
-        : tabId === 'decomp'
-          ? model.signalRows.length
-          : tabId === 'fof'
-            ? model.exposures.filter((row) => model.lineageByAcid[row.acid]).length
-            : tabId === 'ic-prep'
-              ? model.reviewSections.length
-              : model.changeBrief.evidence_index?.length ?? 0
+        : tabId === 'review'
+          ? model.reviewSections.length
+          : model.agentReview?.dataQualityFlags?.length ?? model.changeBrief.evidence_index?.length ?? 0
 
   return <span className="nav-count">{value}</span>
 }
@@ -1036,6 +1358,35 @@ function ReviewSectionBlocks({ section, focusAcid }) {
   )
 }
 
+function AgentNarrativeSection({ title, items, tone = 'neutral' }) {
+  if (!items?.length) {
+    return <EmptyState copy={`No ${title.toLowerCase()} available.`} />
+  }
+
+  return (
+    <div className="agent-narrative-section">
+      <div className="agent-section-head">
+        <h3>{title}</h3>
+        <StatusBadge tone={tone}>{items.length}</StatusBadge>
+      </div>
+      <div className="agent-narrative-list">
+        {items.map((item, index) => {
+          const primary = item.view || item.statement || item.question || item.action || item.change || item.highlight || ''
+          const secondary = item.evidence || item.why_now || item.why_it_matters || ''
+
+          return (
+            <article key={`${title}-${item.label || index}`} className="agent-narrative-card">
+              <h4>{item.label || `${title} ${index + 1}`}</h4>
+              {primary ? <p>{primary}</p> : null}
+              {secondary ? <div className="inline-note tone-neutral">{secondary}</div> : null}
+            </article>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
 function buildFundModel(fund) {
   const payload = fund?.run_payload ?? {}
   const metadata = payload.review_run_metadata ?? {}
@@ -1046,6 +1397,7 @@ function buildFundModel(fund) {
   const changeBrief = payload.change_brief ?? {}
   const challengeBrief = payload.challenge_brief ?? {}
   const fundName = fund?.fund ?? ''
+  const agentReview = buildAgentReview(agent2RunsByFund[fundName] ?? null)
 
   const exposures = buildExposureRows(fundName)
   const exposureByAcid = new Map(exposures.map((row) => [row.acid, row]))
@@ -1114,6 +1466,7 @@ function buildFundModel(fund) {
     coverageBreakdown,
     reviewMarkdown,
     reviewSections,
+    agentReview,
     artifactPaths: fund?.artifact_paths ?? {},
     summary: {
       positionCount: exposures.length,
@@ -1140,6 +1493,7 @@ function buildExposureRows(fundName) {
 function normalizeExposureRow(row) {
   return {
     ...row,
+    label: row.acid,
     active_rolled_exposure: numberOrNull(row.active_rolled_exposure),
     fund_target_rolled_exposure: numberOrNull(row.fund_target_rolled_exposure),
     fund_benchmark_rolled_exposure: numberOrNull(row.fund_benchmark_rolled_exposure),
@@ -1149,6 +1503,33 @@ function normalizeExposureRow(row) {
     algo_active_weight: numberOrNull(row.algo_active_weight),
     algo_active_weight_mom: numberOrNull(row.algo_active_weight_mom),
     category: classifyExposure(row),
+  }
+}
+
+function buildAgentReview(agentPayload) {
+  if (!agentPayload?.review || !agentPayload?.manifest || !agentPayload?.packet) {
+    return null
+  }
+
+  const materialPositions = (agentPayload.packet.material_positions ?? [])
+    .map((position) => ({
+      ...position,
+      active_weight: numberOrNull(position.active_weight),
+      portfolio_weight: numberOrNull(position.portfolio_weight),
+      benchmark_weight: numberOrNull(position.benchmark_weight),
+      vir_now: numberOrNull(position.vir_now),
+      algo_active_weight: numberOrNull(position.algo_active_weight),
+      importance_score: numberOrNull(position.importance_score),
+    }))
+    .sort((a, b) => Math.abs(numberOrNull(b.active_weight) ?? 0) - Math.abs(numberOrNull(a.active_weight) ?? 0))
+
+  return {
+    review: agentPayload.review,
+    manifest: agentPayload.manifest,
+    packet: agentPayload.packet,
+    materialPositions,
+    positionByAcid: new Map(materialPositions.map((position) => [position.acid, position])),
+    dataQualityFlags: agentPayload.packet.data_quality_flags ?? [],
   }
 }
 
@@ -1171,6 +1552,7 @@ function filterModelByCategory(model, selectedCategory) {
     tensionRows: model.tensionRows.filter((row) => allowed.has(row.acid)),
     lineages: Object.fromEntries(exposures.map((row) => [row.acid, model.lineageByAcid[row.acid]])),
     lineageByAcid: Object.fromEntries(exposures.map((row) => [row.acid, model.lineageByAcid[row.acid]])),
+    agentReview: filterAgentReview(model.agentReview, allowed),
     summary: {
       ...model.summary,
       positionCount: exposures.length,
@@ -1184,6 +1566,20 @@ function filterModelByCategory(model, selectedCategory) {
     maxExposureActive: Math.max(...exposures.map((row) => Math.abs(numberOrNull(row.active_rolled_exposure) ?? 0)), 1),
     maxVirDelta: Math.max(...model.signalRows.filter((row) => allowed.has(row.acid)).map((row) => Math.abs(numberOrNull(row.vir_delta_stf) ?? 0)), 1),
     categoryTrendRows: buildCategoryTrendRows(model.signalRows.filter((row) => allowed.has(row.acid))),
+  }
+}
+
+function filterAgentReview(agentReview, allowed) {
+  if (!agentReview) {
+    return null
+  }
+
+  const materialPositions = agentReview.materialPositions.filter((position) => allowed.has(position.acid))
+
+  return {
+    ...agentReview,
+    materialPositions,
+    positionByAcid: new Map(materialPositions.map((position) => [position.acid, position])),
   }
 }
 
@@ -1227,6 +1623,36 @@ function buildCategoryTrendRows(rows) {
       }
     })
     .filter(Boolean)
+}
+
+function buildExposureLeaders(model) {
+  if (model.agentReview?.packet?.fund_snapshot) {
+    const snapshot = model.agentReview.packet.fund_snapshot
+    return {
+      overweights: (snapshot.largest_overweights ?? []).map((row) => ({
+        acid: findExposureAcid(model, row.label),
+        label: row.label,
+        active_weight: numberOrNull(row.active_weight),
+      })),
+      underweights: (snapshot.largest_underweights ?? []).map((row) => ({
+        acid: findExposureAcid(model, row.label),
+        label: row.label,
+        active_weight: numberOrNull(row.active_weight),
+      })),
+    }
+  }
+
+  const sorted = [...model.exposures].sort((a, b) => Math.abs(numberOrNull(b.active_rolled_exposure) ?? 0) - Math.abs(numberOrNull(a.active_rolled_exposure) ?? 0))
+  return {
+    overweights: sorted
+      .filter((row) => (numberOrNull(row.active_rolled_exposure) ?? 0) > 0)
+      .slice(0, 5)
+      .map((row) => ({ acid: row.acid, label: row.acid, active_weight: row.active_rolled_exposure })),
+    underweights: sorted
+      .filter((row) => (numberOrNull(row.active_rolled_exposure) ?? 0) < 0)
+      .slice(0, 5)
+      .map((row) => ({ acid: row.acid, label: row.acid, active_weight: row.active_rolled_exposure })),
+  }
 }
 
 function buildChallengeCards(model) {
@@ -1384,6 +1810,11 @@ function sourceNamesForAcid(model, acid) {
   return lineage.securities.slice(0, 3).map((item) => item.securityName)
 }
 
+function findExposureAcid(model, label) {
+  const match = model.exposures.find((row) => normalizeLabel(row.acid) === normalizeLabel(label) || normalizeLabel(row.label) === normalizeLabel(label))
+  return match?.acid ?? ''
+}
+
 function summarizeStatuses(rows, field) {
   return rows.reduce((accumulator, row) => {
     const key = row[field] || 'unknown'
@@ -1497,6 +1928,19 @@ function toneFromNumber(value) {
   return numeric > 0 ? 'green' : 'red'
 }
 
+function alignmentToneForSignal(value = '') {
+  if (value === 'aligned') {
+    return 'green'
+  }
+  if (value === 'diverging') {
+    return 'red'
+  }
+  if (value === 'partially_aligned') {
+    return 'amber'
+  }
+  return 'neutral'
+}
+
 function numberOrNull(value) {
   if (value == null || value === '') {
     return null
@@ -1545,6 +1989,27 @@ function formatDateTime(value) {
   })
 }
 
+function formatCurrency(value) {
+  const numeric = numberOrNull(value)
+  if (numeric == null) {
+    return '-'
+  }
+  return numeric.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+}
+
+function formatInteger(value) {
+  const numeric = numberOrNull(value)
+  if (numeric == null) {
+    return '-'
+  }
+  return Math.round(numeric).toLocaleString('en-US')
+}
+
 function monthYear(value) {
   if (!value) {
     return '-'
@@ -1559,6 +2024,11 @@ function monthYear(value) {
   })
 }
 
+function shortModelName(value = '') {
+  const parts = String(value).split('.')
+  return parts[parts.length - 1] || value || '-'
+}
+
 function getRelativeWidth(value, maxValue, maxWidth) {
   const numeric = Math.abs(numberOrNull(value) ?? 0)
   if (!numeric || !maxValue) {
@@ -1571,6 +2041,14 @@ function humanizeKey(value = '') {
   return String(value)
     .replaceAll('_', ' ')
     .replace(/\b\w/g, (character) => character.toUpperCase())
+}
+
+function normalizeLabel(value = '') {
+  return String(value)
+    .toLowerCase()
+    .replace(/united states/g, 'us')
+    .replace(/information technology/g, 'it')
+    .replace(/[^a-z0-9]+/g, '')
 }
 
 function slugify(value = '') {

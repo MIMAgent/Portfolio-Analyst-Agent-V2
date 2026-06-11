@@ -1,0 +1,230 @@
+{
+  "fund": "US Equity",
+  "query": "IT underweight Mag 7 software",
+  "theme_ids": [],
+  "section_keys": [],
+  "before_date": "2026-06-01",
+  "recurring_themes": [
+    {
+      "theme_id": "information_technology_underweight",
+      "label": "Information Technology Underweight",
+      "join_hints": {
+        "acid_candidates": [
+          "US IT"
+        ],
+        "categories": [
+          "Eq Sector"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "smid_overweight",
+      "label": "SMID Overweight",
+      "join_hints": {
+        "acid_candidates": [
+          "US MID EQ",
+          "US SML EQ"
+        ],
+        "categories": [
+          "Eq Size / Style"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "industrials_overweight",
+      "label": "Industrials Overweight",
+      "join_hints": {
+        "acid_candidates": [
+          "US ID EQ"
+        ],
+        "categories": [
+          "Eq Sector"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "financials_overweight",
+      "label": "Financials Overweight",
+      "join_hints": {
+        "acid_candidates": [
+          "US FN EQ"
+        ],
+        "categories": [
+          "Eq Sector"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "ai_leadership_risk",
+      "label": "AI Leadership Risk",
+      "join_hints": {
+        "acid_candidates": [
+          "US IT"
+        ],
+        "categories": [
+          "Eq Sector"
+        ]
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "subadvisor_and_sleeve_structure",
+      "label": "Subadvisor And Sleeve Structure",
+      "join_hints": {
+        "acid_candidates": [],
+        "categories": []
+      },
+      "occurrence_count": 3
+    },
+    {
+      "theme_id": "value_tilt",
+      "label": "Value Tilt",
+      "join_hints": {
+        "acid_candidates": [
+          "US LRG V EQ",
+          "US MID V EQ",
+          "US SML V EQ"
+        ],
+        "categories": [
+          "Eq Size / Style"
+        ]
+      },
+      "occurrence_count": 3
+    }
+  ],
+  "matches": [
+    {
+      "document_date": "5/18/2026",
+      "source_filename": "May 2026 Mutual Fund Checklist - US Equity.docx",
+      "section_key": "benchmark_relative_overweights_underweights",
+      "section_label": "Benchmark Relative Overweights And Underweights",
+      "prompt": "What are the fund\u2019s largest benchmark relative overweight and underweight Give rationale for both.",
+      "body_text": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Large Cap are both overweight the fund\u2019s index Opportunistic Value has lower Industrials weights than the fund\u2019s index (~4% underweight) Financials is our second largest overweight (+3.5%) MFS is overweight financials compared to our fund\u2019s benchmark, and 8 points over its style index. Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index Systematic Large Cap has a material overweight to Financials, with 18% of the strategy in that sector. Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services) The fund\u2019s two largest single-stock overweights are Financials (Visa & BlackRock) Information Technology is our largest sector underweight (-5%) Clearbridge\u2019s 45% allocation is higher than the fund\u2019s benchmark weight, but below the Russell 1000 Growth index\u2019s weight of 50% Systematic Large Cap is overweight IT The Completion portfolio is 80% IT (Apple and Microsoft) Opportunistic Value is underweight the IT sector by ~8% as of the beginning of April; that has probably grown a bit through mid-May The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices. Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month) Within Opp Value, our sector over/underweights are generally consistent with prevailing spreads-to-fair as of April month end. Size/Style Relative Weights (Fund Level) Our SMID overweight remains large (+9.5%) This overweight is comprised of a 2.4% overweight to mid caps and a 7.1% overweight to small caps The increase in the SMID allocation was partially explained by Systematic LC Core\u2019s decision to override soft guidelines regarding Small Caps and Mid Caps at the time of its March rebalance We are also more value-leaning than our benchmark (see blue shaded area below):  The fund moved slightly toward Value compared with the previous month. Contribution to Tracking Error The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at 3.6%. We continue to  explore ways of boosting this in accordance with recent PCC presentations. We note that the largest contributors to active risk are underweights to Alphabet, Apple, and three semiconductor companies. Largest Single Stock Over/Underweights (Fund) Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level. Mag 7/Elite 8 names comprise our top underweights at the fund level.  Also prevalent among the largest underweights are Micron, AMD and Intel.",
+      "score": 4.74,
+      "matched_terms": [
+        "it",
+        "mag"
+      ],
+      "related_themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "document_date": "5/18/2026",
+      "source_filename": "May 2026 Mutual Fund Checklist - US Equity.docx",
+      "section_key": "robustness_best_worst_environment",
+      "section_label": "Robustness Best And Worst Environment",
+      "prompt": "What macroeconomic environment do you believe your portfolio is best and worst positioned for?",
+      "body_text": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI-winner theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic growth, if the growth is not purely driven by AI investment. Worst Positioned For:  1.  Mag 7 and AI-themed market (especially semiconductor)  leadership.   2.  Small caps and value under-performing.",
+      "score": 4.74,
+      "matched_terms": [
+        "it",
+        "mag"
+      ],
+      "related_themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "value_tilt"
+      ]
+    },
+    {
+      "document_date": "5/18/2026",
+      "source_filename": "May 2026 Mutual Fund Checklist - US Equity.docx",
+      "section_key": "miscellaneous_comments",
+      "section_label": "Miscellaneous Comments",
+      "prompt": "What further comments would you like to make on current positioning and the proposed moves?",
+      "body_text": "Fund Level Activities We expect to use the Small Cap ETFs as funding sources in the near-term.  Our small and SMID cap weight has increased materially since March due to changes to Systematic Large Cap Core, which is now 6.5% Small Cap and 22% Mid-Cap. After we line up IT sector replacements within Opportunistic Value, we plan to shift some or all of our Apple shares to the Completion portfolio.  Apple is our second largest underweight at the fund level.  If we shifted weight from Opp Value to the Completion Sleeve related to AAPL, we may add to Opp Value the proceeds of trims from the ETFs. Fund Positioning Semiconductor Positioning The fund is 2.5% underweight Semis.  The fund\u2019s weight is 13% with MSTART at 15.5% Recent Opp Value trades Trims:  Moderna, Marvell, Lyondell, Dow, Regeneron, Occidental Petroleum Adds: Bank of America, Wells Fargo, Nvidia, Broadcom, Otis Worldwide, topped up Software names Prospective Opp Value trades We are discussing IT replacements for AAPL.  Software names are the leading candidates.  We are discussing Tyler Technologies and Guidewire in particular. Illumina is a likely source of funds, along with KKR.",
+      "score": 4.74,
+      "matched_terms": [
+        "it",
+        "software"
+      ],
+      "related_themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "document_date": "04/20/2026",
+      "source_filename": "April 2026 Mutual Fund Checklist - US Equity.docx",
+      "section_key": "benchmark_relative_overweights_underweights",
+      "section_label": "Benchmark Relative Overweights And Underweights",
+      "prompt": "What are the fund\u2019s largest benchmark relative overweight and underweight Give rationale for both.",
+      "body_text": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.9%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Large Cap are both overweight the fund\u2019s index Opportunistic Value has lower Industrials weights than the fund\u2019s index (~4% underweight) Financials is our second largest overweight (+3.0%) MFS is overweight financials compared to our fund\u2019s benchmark Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index Systematic Large Cap has a material overweight to Financials, with 18.2% of the strategy in that sector. Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services) Three of our five single-stock overweights are Financials (Visa, BlackRock, Marsh) Information Technology is our largest sector underweight (-5.2%) Clearbridge\u2019s 42% allocation is higher than the fund\u2019s benchmark weight, but below the Russell 1000 Growth index\u2019s weight Systematic Large Cap is overweight IT The Completion portfolio is all IT right now Opportunistic Value is underweight the IT sector by ~10% as of the end of March The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices. Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month) Within Opp Value, our sector over/underweights are generally consistent with prevailing spreads-to-fair as of March month end. We have been finding ways to add to IT and financials while paring back (on a cash basis) from energy names. Size/Style Relative Weights (Fund Level) Our SMID overweight remains large (+10%) This overweight is comprised of a 3% overweight to mid caps and a 7.1% overweight to small caps We are also more value-leaning than our benchmark (see blue shaded area below): Contribution to Tracking Error The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at just over 3%. We are exploring ways of boosting this up and will present findings at this month\u2019s PCC. Largest Single Stock Over/Underweights (Fund) Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level. Mag 7/Elite 8 names comprise our top underweights at the fund level",
+      "score": 4.74,
+      "matched_terms": [
+        "it",
+        "mag"
+      ],
+      "related_themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "document_date": "04/20/2026",
+      "source_filename": "April 2026 Mutual Fund Checklist - US Equity.docx",
+      "section_key": "robustness_best_worst_environment",
+      "section_label": "Robustness Best And Worst Environment",
+      "prompt": "What macroeconomic environment do you believe your portfolio is best and worst positioned for?",
+      "body_text": "Best Positioned For: We would expect the fund to outperform if IT struggles (e.g., wobbliness to the AI theme). With overweights to Industrials, Financials and Small Caps, the fund is positioned for solid economic growth, if the growth is not purely driven by AI investment. Worst Positioned For:  1.  Mag 7 and AI-themed market leadership.   2.  Small caps and value under-performing.",
+      "score": 4.74,
+      "matched_terms": [
+        "it",
+        "mag"
+      ],
+      "related_themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "value_tilt"
+      ]
+    },
+    {
+      "document_date": "03/16/2026",
+      "source_filename": "March 2026 Mutual Fund Checklist - US Equity.docx",
+      "section_key": "benchmark_relative_overweights_underweights",
+      "section_label": "Benchmark Relative Overweights And Underweights",
+      "prompt": "What are the fund\u2019s largest benchmark relative overweight and underweight Give rationale for both.",
+      "body_text": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+4.3%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Large Cap are both overweight the fund\u2019s index Opportunistic Value has lower Industrials weights than the fund\u2019s index Financials is our second largest overweight (+2.5%) MFS has a 7 percentage point overweight against its benchmark (Russell 1000 Value) Our SMID overweight contributes somewhat to the fund-level overweight, as the Small Caps have a higher allocation to Financials than the fund\u2019s index Systematic Large Cap has a material overweight to Financials, with 18.3% of the strategy in that sector. Despite the Financials overweight, the fund is slightly underweight banks (much of the overweight is due to financial services) Two of our five single-stock overweights are Financials (Visa and BlackRock) Information Technology is our largest sector underweight (-4.9%) Clearbridge\u2019s 42% allocation is higher than the fund\u2019s benchmark weight, but is nearly 8% below the Russell 1000 Growth index\u2019s weight Systematic Large Cap is overweight IT The Completion portfolio is all IT right now Opportunistic Value is underweight the IT sector by over 10% The SMID overweight contributes to a fund-level IT underweight as small cap indices have a much lower IT weight compared to large cap indices. Sector Over/Underweights vs. STF (Opportunistic Value \u2013 Before Any Changes Made This Month) Within Opp Value, our sector over/underweights are mostly consistent with prevailing spreads-to-fair. We are not increasing our real estate weight further as we are awaiting the rollout of the new REIT model. Size/Style Relative Weights (Fund Level) Our SMID overweight remains large (+7.5%) This overweight is comprised of a 0.8% overweight to mid caps and a 6.7% overweight to small caps We are also more value-leaning than our benchmark (see blue shaded area below): Contribution to Tracking Error The output from the most recent Axioma risk report is below. It shows that ~75% of our active risk is coming from \u201cfactor risk\u201d\u2014predominantly our IT underweight, momentum underweight, low beta, and small cap overweight. Specific active risk (stock specific risk) contributes the remaining 25% to our active risk. Fund-level ex ante risk is running at just over 3%. We are exploring ways of boosting this up and will present findings at the April PCC. Largest Single Stock Over/Underweights (Fund) Our largest single-stock overweights are the result of subadvisor stock selection as well as stock selection within Opp Value. No stock is more than 1% overweight at the fund level. Mag 7/Elite 8 names comprise our top underweights at the fund level",
+      "score": 4.74,
+      "matched_terms": [
+        "it",
+        "mag"
+      ],
+      "related_themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    }
+  ]
+}

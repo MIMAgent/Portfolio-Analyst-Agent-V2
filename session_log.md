@@ -1337,3 +1337,164 @@ This is the current handoff checkpoint for Al. The repo now contains the latest 
   - `frontend/Example_frontendV1/src/data/exposureLineage.json`
   - `scripts/build_monthly_review_frontend_bundle.py`
 - The branch used for this checkpoint is `codex/non-final-ui-checkpoint`.
+
+---
+
+## 2026-06-11 - Agent2 buildout, Bedrock live run, SharePoint research wiring, and frontend handoff
+
+This is the latest checkpoint for Al. The repo now contains a separate `agent2/` workstream that builds a richer PM review packet, runs a live Bedrock review, pulls in prior internal checklist context, and matches synced SharePoint research decks by ACID.
+
+### What was added
+
+- Created a new isolated `agent2/` folder so the original agent flow stays intact.
+- Added Agent2 architecture and operating docs:
+  - `agent2/README.md`
+  - `agent2/AGENT2_INPUT_REGISTRY_V1.md`
+  - `agent2/AGENT2_OUTPUT_SCHEMA_V1.md`
+  - `agent2/AGENT2_PHILOSOPHY_AND_OPERATING_MODEL_V1.md`
+  - `agent2/IC_DOC_INGESTION_SPEC_V1.md`
+- Added a frontend/data handoff doc for a future UI rebuild:
+  - `docs/CLAUDE_FRONTEND_DATA_HANDOFF.md`
+- Added a repo-level philosophy copy:
+  - `docs/AGENT2_PHILOSOPHY_AND_OPERATING_MODEL_V1.md`
+
+### Core Agent2 code
+
+- Review packet builder:
+  - `agent2/src/agent2/review_packet_builder.py`
+- Evidence pack builder:
+  - `agent2/src/agent2/evidence_pack_builder.py`
+- Prompt assembly:
+  - `agent2/src/agent2/review_prompt.py`
+- Bedrock execution:
+  - `agent2/src/agent2/bedrock_review_runner.py`
+- Internal checklist ingestion:
+  - `agent2/src/agent2/ic_checklist_ingest.py`
+- Internal history retrieval:
+  - `agent2/src/agent2/internal_history_retrieval.py`
+- SharePoint research matching and slide-text extraction:
+  - `agent2/src/agent2/sharepoint_research.py`
+
+### Supporting scripts
+
+- Build structured packet:
+  - `agent2/scripts/build_review_packet.py`
+- Run live Bedrock review:
+  - `agent2/scripts/run_bedrock_review.py`
+- Ingest old IC / checklist docs:
+  - `agent2/scripts/ingest_ic_checklists.py`
+- Query prior internal rationale:
+  - `agent2/scripts/query_internal_history.py`
+
+### Internal-history and checklist work
+
+- Old US Equity checklist docs were ingested into structured JSON for retrieval.
+- Saved internal-history artifacts under:
+  - `agent2/data/internal_history/`
+- Purpose of this layer:
+  - turn prior monthly PM writeups into structured memory
+  - retrieve relevant historical commentary for current exposures
+  - let the new review compare "what we hold now" vs "what we said before"
+
+### SharePoint research integration
+
+- Agent2 now scans the synced research folder:
+  - `C:\Users\schuri2\MORNINGSTAR INC\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)`
+- Matching logic uses ACIDs from the current exposure / position records.
+- For matched ACIDs, the agent stores:
+  - deck file path
+  - deck metadata from the filename
+  - compact slide-text summary when extractable from `.pptx`
+- This is now wired into:
+  - review packet generation
+  - evidence pack generation
+  - prompt context for Bedrock
+- Latest packet check for `MStar US Equity` showed many matched research files, including examples like:
+  - `US IT EQ`
+  - `US ID EQ`
+  - `US FN EQ`
+  - `US SML EQ`
+
+### Live Bedrock test
+
+- Ran one live Bedrock review for:
+  - `MStar US Equity`
+- Output folder:
+  - `agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/`
+- Key artifacts there:
+  - `agent2_review_packet.json`
+  - `evidence_pack.json`
+  - `system_prompt.txt`
+  - `user_prompt.txt`
+  - `bedrock_raw_response.json`
+  - `bedrock_response.txt`
+  - `bedrock_review.json`
+  - `bedrock_review.md`
+  - `run_manifest.json`
+- `run_manifest.json` currently shows:
+  - model: `us.anthropic.claude-sonnet-4-6`
+  - region: `us-east-2`
+  - input tokens: `20535`
+  - output tokens: `4822`
+  - total tokens: `25357`
+  - approx cost: `$0.1339`
+  - parsed JSON: `true`
+
+### Structured packet / evidence outputs
+
+- Curated packet path:
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/agent2_review_packet.json`
+- Curated evidence path:
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/evidence_pack.json`
+- These are the cleanest files to inspect if someone wants to see the assembled data model without digging through the raw Bedrock run folder.
+
+### Runtime fix in the original agent code
+
+- Updated:
+  - `src/portfolio_analyst_agent/agent_runtime/llm_client.py`
+- Fix made:
+  - do not send empty `toolConfig` to Bedrock when `tools=[]`
+- Reason:
+  - Bedrock Converse was rejecting requests when the runtime included an empty tool block
+
+### Frontend checkpoint
+
+- The frontend was partially rewired to read live Agent2 review data and use a lighter, warmer visual treatment:
+  - `frontend/Example_frontendV1/index.html`
+  - `frontend/Example_frontendV1/src/App.jsx`
+  - `frontend/Example_frontendV1/src/styles.css`
+  - `frontend/Example_frontendV1/src/data/agent2/`
+- The current UI is not final. It is a checkpoint only.
+- The better long-form data/UI handoff for future redesign work is:
+  - `docs/CLAUDE_FRONTEND_DATA_HANDOFF.md`
+
+### What Al should open first
+
+- For the overall concept:
+  - `agent2/README.md`
+  - `docs/AGENT2_PHILOSOPHY_AND_OPERATING_MODEL_V1.md`
+- For the actual packet structure:
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/agent2_review_packet.json`
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/evidence_pack.json`
+- For the live model run:
+  - `agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/run_manifest.json`
+  - `agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live/bedrock_review.md`
+- For SharePoint research logic:
+  - `agent2/src/agent2/sharepoint_research.py`
+- For history / retrieval logic:
+  - `agent2/src/agent2/ic_checklist_ingest.py`
+  - `agent2/src/agent2/internal_history_retrieval.py`
+- For future frontend rebuild:
+  - `docs/CLAUDE_FRONTEND_DATA_HANDOFF.md`
+
+### Current status
+
+- The repo now has:
+  - a separate Agent2 framework
+  - one successful live Bedrock run
+  - tracked structured outputs for one fund
+  - SharePoint research matching by ACID
+  - a non-final frontend checkpoint wired to the new review data
+- The next sensible step after this checkpoint is either:
+  - improve the review schema / prompt quality for more funds, or
+  - rebuild the frontend against the structured Agent2 packet and evidence model

@@ -1,0 +1,208 @@
+{
+  "executive_summary": "MStar US Equity enters the June 2026 review with a clear structural tilt away from large-cap growth and technology, and toward SMID, Industrials, and Financials. The fund's largest underweight is US Large Growth at -7.7 pts, supported by aligned VIR and algo signals that are improving (less negative) month-over-month—consistent with prior internal rationale to reduce a double-digit IT underweight. The two highest-priority tensions are Industrials (+3.3 pts overweight) and Financials (+3.1 pts overweight), where both VIR and algo lean underweight, making these positions active contra-signal bets. The SMID overweight complex—Small Growth, Small, and Mid Value—carries partial signal support but weakening momentum in Mid Value. A data quality flag requires explicit acknowledgment: the VIR snapshot embedded in this packet is dated 2026-02-28, three months stale relative to the May 31 review date. Signal readings for all categories should be treated as directionally indicative rather than current. Fourteen material positions are fighting their VIR/algo read. The fund's relative return path remains heavily conditional on whether large-cap growth and technology continue to underperform, and on whether the value/SMID thesis has legs into the second half.",
+  "current_positioning": [
+    {
+      "label": "US Large Growth – Core Underweight",
+      "view": "Structural underweight, signal-aligned and improving",
+      "evidence": "Active weight -7.7 pts vs benchmark 21.6%. VIR -0.041, algo -7.1 pts. Signal alignment: aligned, quality: improving. Decomposition dominated by valuation_adjustment_top_down (-0.080). Internal history confirms this was a deliberate reduction from a prior double-digit underweight."
+    },
+    {
+      "label": "Information Technology – Sector Underweight",
+      "view": "Meaningful underweight, signal-aligned and improving; PMs actively reducing the gap",
+      "evidence": "Active weight -7.6 pts vs benchmark 36.8%. VIR -0.035, algo -8.6 pts. Signal alignment: aligned. Prior checklist explicitly flagged IT underweight as the primary Opportunistic Value trade. NVIDIA (-1.7 pts), Apple (-1.9 pts), Broadcom (-1.4 pts) are the main detractors from benchmark weight."
+    },
+    {
+      "label": "Industrials – Largest Overweight, Contra-Signal",
+      "view": "Overweight conviction held despite opposing signals; broadness of position adds execution risk",
+      "evidence": "Active weight +3.3 pts. VIR -0.044 (underweight signal), algo -2.9 pts (underweight signal). Signal alignment: diverging, quality: weakening. 274 securities; concentrated in Honeywell, RTX, Union Pacific across MFS and Systematic Large sleeves. Internal history links this to SMID overweight thesis."
+    },
+    {
+      "label": "Financials – Overweight, Contra-Signal but Improving",
+      "view": "Overweight against negative VIR/algo, but VIR momentum is improving (delta +0.006 mom)",
+      "evidence": "Active weight +3.1 pts. VIR -0.016, algo -1.3 pts. Signal alignment: diverging, quality: improving. Yield is the decomposition driver. Visa is the largest active name (+0.76 pts), held across Clearbridge and Systematic Large. Prior history cited Financials as a deliberate increase alongside IT."
+    },
+    {
+      "label": "SMID Complex – Small Growth, Small, Mid Value",
+      "view": "Persistent overweight; partially signal-supported in Small, weakening in Mid Value",
+      "evidence": "US Sml Growth +3.0 pts (algo +0.15, stable); US Mid Value +2.6 pts (algo +1.19, weakening VIR delta -0.004); US Sml +2.4 pts (algo +0.90, stable). Wasatch is primary source for Small Growth (HealthEquity, AAON, JFrog). Decomposition drivers are growth and yield respectively."
+    },
+    {
+      "label": "Consumer Discretionary – Underweight, Signal-Aligned",
+      "view": "Conviction underweight with improving VIR momentum",
+      "evidence": "Active weight -3.3 pts. VIR -0.029, algo -2.9 pts. Signal alignment: aligned, quality: improving. Amazon is the largest single drag (-1.8 pts active). Prior checklist explicitly cited CD underweight as intentional offset to economically sensitive overweights."
+    }
+  ],
+  "what_changed": [
+    {
+      "label": "IT/Large Growth Underweight Reduced from Prior Extremes",
+      "change": "Internal history shows the IT underweight was previously at double digits; current active weight is -7.6 pts, suggesting the PMs have been actively adding IT/Large Growth exposure via Opportunistic Value trades.",
+      "why_it_matters": "The trajectory is toward closing the gap, but at -7.6 pts the fund remains substantially underweight the benchmark's largest sector. Any further IT rally increases the cost of this positioning."
+    },
+    {
+      "label": "Industrials VIR Signal Weakening Further",
+      "change": "Industrials VIR delta is -0.006 month-over-month (moving more negative), while the position remains overweight at +3.3 pts and the algo is -2.9 pts.",
+      "why_it_matters": "The signal-to-position divergence is widening, not stabilizing. This is the highest-priority challenge candidate in the pack."
+    },
+    {
+      "label": "Financials VIR Momentum Turned Positive",
+      "change": "Financials VIR delta is +0.006 mom (improving), even though absolute VIR remains negative and algo is -1.3 pts.",
+      "why_it_matters": "The contra-signal tension in Financials is at least directionally narrowing, giving the overweight slightly more signal cover than Industrials, though it does not yet constitute alignment."
+    },
+    {
+      "label": "US Mid Value Signal Quality Downgraded to Weakening",
+      "change": "Mid Value VIR delta is -0.004 mom (weakening), while the +2.6 pt overweight persists with only partial algo support (+1.19 pts).",
+      "why_it_matters": "Within the SMID complex, Mid Value is the most vulnerable sub-position if the value/yield thesis loses momentum heading into H2."
+    },
+    {
+      "label": "VIR Snapshot is Three Months Stale",
+      "change": "The VIR data embedded in this packet is dated 2026-02-28, against a review month of 2026-05-31. The source holdings snapshot is 2026-06-08.",
+      "why_it_matters": "All VIR readings and delta-mom figures should be treated as directional proxies only. Signal alignment classifications may not reflect current market conditions. This is a meaningful gap for active management decisions."
+    }
+  ],
+  "bull_case": [
+    {
+      "label": "Value/SMID Rotation Accelerates",
+      "statement": "If rising rates or earnings disappointments in mega-cap tech trigger a rotation into value and SMID, the fund's overweights in Industrials, Financials, Small Growth, and Mid Value are well-positioned to capture significant relative outperformance."
+    },
+    {
+      "label": "Financials Carry and Yield Support",
+      "statement": "The yield decomposition driver behind the Financials overweight suggests the thesis is grounded in income generation. In a sustained higher-rate or steeper curve environment, financial sector earnings revisions could close the VIR gap and validate the overweight."
+    },
+    {
+      "label": "IT Underweight Actively Being Reduced at Favorable Entry",
+      "statement": "PMs are demonstrably adding IT exposure (algo and VIR both show improving signal quality). If they continue to close the underweight into market weakness, the cost of the prior positioning is reduced and future alignment improves."
+    },
+    {
+      "label": "Industrials Thesis Linked to Durable SMID Fundamentals",
+      "statement": "The Industrials overweight is documented as linked to the SMID overweight via Wasatch and Systematic strategies. If small/mid industrials (defense, rail, HVAC) continue to benefit from reshoring and infrastructure spending, stock selection within the 274-name bucket could outperform the sector-level signal."
+    }
+  ],
+  "bear_case": [
+    {
+      "label": "Large Growth/IT Leadership Persists",
+      "statement": "At -7.6 pts in IT and -7.7 pts in Large Growth, with benchmarks dominated by AI-linked mega-caps (NVIDIA 7.0% benchmark weight), any continued outperformance of large tech would generate significant negative relative return. This is the fund's single largest risk factor."
+    },
+    {
+      "label": "Industrials and Financials Both Signal-Negative",
+      "statement": "Both overweights are diverging from VIR and algo. If these sectors underperform on deteriorating macro (e.g., trade slowdown hitting industrials, credit concerns hitting financials), the fund carries concentration risk with no signal backstop."
+    },
+    {
+      "label": "Stale VIR May Mask Deterioration",
+      "statement": "The three-month VIR lag means the improving signal quality readings for IT/Large Growth, and the weakening readings for Industrials/Mid Value, may already be materially out of date. Decisions made on stale signals could be systematically off-side."
+    },
+    {
+      "label": "Mid Value Weakening into H2",
+      "statement": "US Mid Value VIR and delta are both moving in the wrong direction. With 128 securities and yield as the decomposition driver, this segment is exposed to any compression in dividend/yield attractiveness if long rates fall unexpectedly."
+    },
+    {
+      "label": "14 Positions Fighting Signals Simultaneously",
+      "statement": "The headline count of 14 material contra-signal positions suggests the portfolio's active risk is not concentrated in one deliberate bet but scattered across multiple diverging exposures, increasing the probability that at least some will detract."
+    }
+  ],
+  "devils_advocate": [
+    {
+      "label": "Algo Signals Are Not the Full Story",
+      "statement": "The algo underweights in Industrials (-2.9 pts) and Financials (-1.3 pts) are mechanically generated. Prior internal history shows the PMs consciously deviate from algo signals for fundamental reasons—the Industrials/SMID linkage is one documented example. The divergence may be intentional and time-bounded, not a lapse."
+    },
+    {
+      "label": "Decomposition Shows Broad-Based, Not Idiosyncratic, Drivers",
+      "statement": "Every major position's decomposition assessment is 'broad_based,' meaning the signals reflect market-wide factor dynamics rather than stock-specific noise. The PMs may be making a deliberate top-down factor bet that broad valuation reversion is overdue—a view the algo does not capture."
+    },
+    {
+      "label": "IT Underweight Has Already Been Partially Corrected",
+      "statement": "The fund moved from a double-digit IT underweight to -7.6 pts. The direction of travel is already aligned with the signal. Demanding immediate full closure ignores that large active adjustments carry implementation cost and market impact risk, particularly in high-turnover mega-cap names."
+    },
+    {
+      "label": "Consumer Discretionary Underweight Is Fully Signal-Supported",
+      "statement": "The -3.3 pt CD underweight is one of the cleanest aligned positions in the book. It provides a partial natural hedge if consumer spending weakens, partially offsetting the risk from the cyclical overweights in Industrials and Financials."
+    }
+  ],
+  "pm_questions": [
+    {
+      "label": "Industrials Overweight Rationale",
+      "question": "Both VIR and algo are underweight Industrials, and the VIR signal is continuing to weaken (delta -0.006 mom). What is the current, specific underwriting case for maintaining a +3.3 pt overweight, and at what signal threshold or time horizon would you reduce?",
+      "why_now": "This is the highest-priority divergence in the pack. The signal quality is labeled 'weakening' and the position is large, broad (274 securities), and the top overweight."
+    },
+    {
+      "label": "Financials Overweight Conviction vs. Signal Gap",
+      "question": "VIR is improving in Financials (delta +0.006) but still negative, and algo is -1.3 pts. Is the Financials overweight a transitional position en route to alignment, or a standalone conviction that the yield/carry thesis will persist regardless of valuation signals?",
+      "why_now": "The improving VIR delta offers some support, but the position remains contra-signal. Knowing whether this is a tactical or structural overweight determines how to monitor it going forward."
+    },
+    {
+      "label": "IT Underweight Closure Pace",
+      "question": "The internal history shows a planned increase in IT and Financials weightings from a double-digit underweight. Current IT active weight is -7.6 pts. What is the target landing zone, and how are you sizing the remaining Opportunistic Value trades given NVIDIA and Apple are still materially underweight at the individual security level?",
+      "why_now": "The IT signal is improving and aligned, making this the most actionable positive trade in the book. The pace and target of closure is the key decision variable."
+    },
+    {
+      "label": "VIR Data Staleness Impact",
+      "question": "The VIR snapshot in this packet is dated 2026-02-28—three months before the review date. How are the PMs currently compensating for the absence of updated VIR readings when making positioning decisions, and when will a current VIR snapshot be available?",
+      "why_now": "This is a data quality flag with medium severity. Alignment and signal quality classifications throughout this review are based on stale inputs, which could be systematically misleading."
+    },
+    {
+      "label": "Mid Value Signal Weakening",
+      "question": "US Mid Value VIR delta is -0.004 (weakening) and signal quality is downgraded. The position is +2.6 pts and yield-driven. Is the mid value thesis still intact, or is this a candidate for reduction given the deteriorating signal and the fund's broader need to close the large-cap underweight?",
+      "why_now": "Mid Value is the weakest signal link in the SMID complex, and trimming it could fund a more aligned use of active risk."
+    },
+    {
+      "label": "Subadvisor Sleeve Coordination",
+      "question": "Multiple diverging positions—Industrials (MFS + Systematic Large), Financials (Clearbridge + Systematic Large), Small Growth (Wasatch)—arise from overlapping sleeve contributions. How are McGraw and Budzinski managing aggregate sector/style exposures at the fund level when individual subadvisors may have independent and conflicting views?",
+      "why_now": "The sleeve structure is a recurring internal theme and is directly relevant to understanding whether the contra-signal positions are deliberate fund-level bets or emergent aggregation artifacts."
+    }
+  ],
+  "follow_up": [
+    {
+      "label": "Obtain Current VIR Snapshot",
+      "action": "Request updated VIR data as of 2026-05-31 or later. The current packet relies on a 2026-02-28 snapshot; all signal alignment and quality ratings should be revalidated once current data is available before acting on any of the challenge candidates."
+    },
+    {
+      "label": "Reconcile 14 Contra-Signal Positions",
+      "action": "Pull the full list of 14 material positions flagged as directionally fighting VIR/algo reads. For each, document whether the divergence is (a) intentional and time-bounded, (b) a subadvisor artifact, or (c) an unintended residual. Industrials and Financials are the top two priorities."
+    },
+    {
+      "label": "Confirm IT Underweight Closure Timeline",
+      "action": "Obtain the PMs' stated target for IT active weight and the planned trade schedule. Given improving VIR and algo signals for IT/Large Growth, confirm whether the Opportunistic Value trade cadence from prior checklists is still active and on track."
+    },
+    {
+      "label": "Resolve Missing VIR and Algo Rows",
+      "action": "Address the 1 exposure row missing VIR context and 3 rows missing algo context flagged in data quality. Confirm these are not material positions before closing this review cycle."
+    },
+    {
+      "label": "Review Mid Value Position for Potential Trim",
+      "action": "Given weakening signal quality and VIR delta deterioration in US Mid Value, assess whether reducing the +2.6 pt overweight would be consistent with the fund's stated risk reduction intent and could fund incremental IT/Large Growth exposure."
+    }
+  ],
+  "dashboard_highlights": [
+    {
+      "label": "Largest Underweight",
+      "highlight": "US Large Growth: -7.7 pts (benchmark 21.6%). Signal-aligned and improving. Dominant driver: valuation adjustment top-down (-0.080)."
+    },
+    {
+      "label": "Largest Overweight",
+      "highlight": "Industrials: +3.3 pts. CONTRA-SIGNAL — VIR underweight (-0.044, weakening), algo underweight (-2.9 pts). Highest-priority challenge candidate."
+    },
+    {
+      "label": "Second Largest Overweight – Contra-Signal",
+      "highlight": "Financials: +3.1 pts. VIR negative (-0.016) and algo negative (-1.3 pts), but VIR momentum improving (+0.006 mom). Yield-driven decomposition."
+    },
+    {
+      "label": "IT Sector Gap",
+      "highlight": "Information Technology: -7.6 pts active. Signal aligned and improving. Being actively reduced from prior double-digit underweight per internal history. NVIDIA (-1.7 pts) and Apple (-1.9 pts) are largest individual drags."
+    },
+    {
+      "label": "SMID Complex",
+      "highlight": "Small Growth (+3.0 pts, stable signal), Small (+2.4 pts, stable), Mid Value (+2.6 pts, WEAKENING signal). Combined SMID overweight is a dominant active theme. Wasatch primary source for Small Growth."
+    },
+    {
+      "label": "Contra-Signal Count",
+      "highlight": "14 material positions are directionally fighting their VIR/algo read. Two (Industrials, Financials) are flagged high priority; three SMID positions are medium priority."
+    },
+    {
+      "label": "DATA QUALITY – Stale VIR",
+      "highlight": "VIR snapshot is 2026-02-28 — 3 months stale vs. review date 2026-05-31. All signal alignment and quality readings are indicative only. Refresh required before acting on challenge candidates."
+    },
+    {
+      "label": "Consumer Discretionary",
+      "highlight": "Consumer Discretionary: -3.3 pts. Cleanest aligned underweight in the book (VIR -0.029, algo -2.9 pts, improving). Acts as partial hedge to cyclical overweights."
+    }
+  ]
+}
