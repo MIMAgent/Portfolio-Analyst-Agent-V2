@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
+import calendar
 from dataclasses import asdict, dataclass
 from datetime import date, datetime, timezone
 from pathlib import Path
 import csv
 import json
+import re
 
+from .csv_sources import open_csv_text
 from .parse_utils import safe_float
 from .workbook_xml import XlsxWorkbook
 
@@ -30,6 +33,19 @@ HISTORY_HEADER_TO_CANONICAL = {
 }
 
 REQUIRED_HISTORY_HEADERS = tuple(HISTORY_HEADER_TO_CANONICAL.keys())
+
+GENERAL_MODEL_MACHINE_HEADERS = {
+    "local_real_vir": "LR10_Combined",
+    "local_nominal_vir": "N10USD_Combined",
+    "unconditional_vir": "LRUC",
+    "price_to_fair_value": "PFV_t",
+    "inflation": "Infl_RD10",
+    "currency_usd": "USD_RD10",
+    "yield_": "Yld_RD10",
+    "growth": "Growth_RD10",
+    "valuation_adjustment_top_down": "ValAdj_RD10",
+    "valuation_adjustment_combined": "ValAdj_RD10_Combined",
+}
 
 
 @dataclass(frozen=True)
@@ -87,6 +103,99 @@ class EquityHistoryParseResult:
 def parse_equity_history_workbook(workbook_path: str | Path) -> EquityHistoryParseResult:
     workbook_path = Path(workbook_path)
     workbook = XlsxWorkbook(workbook_path)
+    worksheet_names = set(workbook._worksheets.keys())
+    if "Sheet1" in worksheet_names:
+        return _parse_sheet1_history_workbook(workbook_path, workbook)
+    if "General Model" in worksheet_names:
+        return _parse_general_model_workbook(workbook_path, workbook)
+    raise KeyError(f"Unsupported equity model workbook layout in {workbook_path.name}: {sorted(worksheet_names)}")
+
+
+def load_equity_history_records_from_csv(csv_path: str | Path) -> list[EquityHistoryRecord]:
+    records: list[EquityHistoryRecord] = []
+    with open_csv_text(csv_path) as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            snapshot_date = date.fromisoformat(row["snapshot_date"])
+            local_real_vir = _to_float(row.get("local_real_vir"))
+            unconditional_vir = _to_float(row.get("unconditional_vir"))
+            local_nominal_vir = _to_float(row.get("local_nominal_vir"))
+            inflation = _to_float(row.get("inflation"))
+            currency_usd = _to_float(row.get("currency_usd"))
+            yield_ = _to_float(row.get("yield"))
+            growth = _to_float(row.get("growth"))
+            valuation_adjustment_top_down = _to_float(row.get("valuation_adjustment_top_down"))
+            valuation_adjustment_combined = _to_float(row.get("valuation_adjustment_combined"))
+            price_to_fair_value = _to_float(row.get("price_to_fair_value"))
+
+            if all(
+                value is None
+                for value in (
+                    local_real_vir,
+                    unconditional_vir,
+                    local_nominal_vir,
+                    inflation,
+                    currency_usd,
+                    yield_,
+                    growth,
+                    valuation_adjustment_top_down,
+                    valuation_adjustment_combined,
+                    price_to_fair_value,
+                )
+            ):
+                continue
+
+            records.append(
+                EquityHistoryRecord(
+                    snapshot_date=snapshot_date,
+                    ingested_at=row.get("ingested_at", ""),
+                    parser_version=row.get("parser_version", PARSER_VERSION),
+                    workbook_type=row.get("workbook_type", "equity_model"),
+                    acid=row.get("acid", ""),
+                    asset_class_name=row.get("asset_class_name") or None,
+                    local_real_vir=local_real_vir,
+                    local_nominal_vir=local_nominal_vir,
+                    usd_hedged_vir=_to_float(row.get("usd_hedged_vir")),
+                    unconditional_vir=unconditional_vir,
+                    stf=_to_float(row.get("stf")),
+                    price_to_fair_value=price_to_fair_value,
+                    inflation=inflation,
+                    currency_usd=currency_usd,
+                    yield_=yield_,
+                    growth=growth,
+                    valuation_adjustment_top_down=valuation_adjustment_top_down,
+                    valuation_adjustment_combined=valuation_adjustment_combined,
+                    valuation_adjustment_bottom_up=_to_float(row.get("valuation_adjustment_bottom_up")),
+                    prior_stf=_to_float(row.get("prior_stf")),
+                    delta_stf=_to_float(row.get("delta_stf")),
+                    delta_local_real_vir=_to_float(row.get("delta_local_real_vir")),
+                    delta_local_nominal_vir=_to_float(row.get("delta_local_nominal_vir")),
+                    delta_usd_hedged_vir=_to_float(row.get("delta_usd_hedged_vir")),
+                    delta_unconditional_vir=_to_float(row.get("delta_unconditional_vir")),
+                    delta_price_to_fair_value=_to_float(row.get("delta_price_to_fair_value")),
+                    prior_rank_in_category_by_stf=_to_int(row.get("prior_rank_in_category_by_stf")),
+                    rank_in_category_by_stf=_to_int(row.get("rank_in_category_by_stf")),
+                    rank_change_by_stf=_to_int(row.get("rank_change_by_stf")),
+                    raw_row=row.get("raw_row", ""),
+                    raw_headers=row.get("raw_headers", ""),
+                )
+            )
+    return records
+
+
+def merge_equity_history_records(
+    existing_records: list[EquityHistoryRecord],
+    new_records: list[EquityHistoryRecord],
+) -> list[EquityHistoryRecord]:
+    merged: dict[tuple[date, str], dict[str, object]] = {}
+    for record in existing_records:
+        merged[(record.snapshot_date, record.acid)] = _record_to_base_row(record)
+    for record in new_records:
+        merged[(record.snapshot_date, record.acid)] = _record_to_base_row(record)
+    return _apply_trend_fields(list(merged.values()))
+
+
+def _parse_sheet1_history_workbook(workbook_path: Path, workbook: XlsxWorkbook) -> EquityHistoryParseResult:
     worksheet = workbook.worksheet("Sheet1")
 
     header_map = _header_map(worksheet)
@@ -151,6 +260,107 @@ def parse_equity_history_workbook(workbook_path: str | Path) -> EquityHistoryPar
         workbook_path=workbook_path,
         row_count=len(records),
         snapshot_dates=snapshot_dates,
+        records=records,
+    )
+
+
+def _parse_general_model_workbook(workbook_path: Path, workbook: XlsxWorkbook) -> EquityHistoryParseResult:
+    worksheet = workbook.worksheet("General Model")
+    header_map = _general_model_header_map(worksheet)
+    snapshot_date = _general_model_snapshot_date(worksheet)
+    ingested_at = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    raw_headers = json.dumps(header_map, sort_keys=True)
+
+    base_rows: list[dict[str, object]] = []
+    for row_number in sorted(worksheet.rows):
+        if row_number <= 5:
+            continue
+
+        acid = worksheet.get_cell(row_number, header_map["acid"]).strip()
+        if not acid:
+            continue
+
+        asset_class_name = worksheet.get_cell(row_number, header_map["asset_class_name"]).strip() or None
+        local_real_vir = _to_float(worksheet.get_cell(row_number, header_map["local_real_vir"]).strip())
+        unconditional_vir = _to_float(worksheet.get_cell(row_number, header_map["unconditional_vir"]).strip())
+        local_nominal_vir = _to_float(worksheet.get_cell(row_number, header_map["local_nominal_vir"]).strip())
+        price_to_fair_value = _to_float(worksheet.get_cell(row_number, header_map["price_to_fair_value"]).strip())
+        inflation = _to_float(worksheet.get_cell(row_number, header_map["inflation"]).strip())
+        currency_usd = _to_float(worksheet.get_cell(row_number, header_map["currency_usd"]).strip())
+        yield_ = _to_float(worksheet.get_cell(row_number, header_map["yield_"]).strip())
+        growth = _to_float(worksheet.get_cell(row_number, header_map["growth"]).strip())
+        valuation_adjustment_top_down = _to_float(
+            worksheet.get_cell(row_number, header_map["valuation_adjustment_top_down"]).strip()
+        )
+        valuation_adjustment_combined = _to_float(
+            worksheet.get_cell(row_number, header_map["valuation_adjustment_combined"]).strip()
+        )
+
+        if all(
+            value is None
+            for value in (
+                local_real_vir,
+                unconditional_vir,
+                local_nominal_vir,
+                inflation,
+                yield_,
+                growth,
+                valuation_adjustment_top_down,
+                valuation_adjustment_combined,
+            )
+        ):
+            continue
+
+        raw_row = {
+            "acid": acid,
+            "asset_class_name": asset_class_name or "",
+            "snapshot_date": snapshot_date.isoformat(),
+            "lr10_combined": worksheet.get_cell(row_number, header_map["local_real_vir"]).strip(),
+            "lruc": worksheet.get_cell(row_number, header_map["unconditional_vir"]).strip(),
+            "usdn_uh10_combined": worksheet.get_cell(row_number, header_map["local_nominal_vir"]).strip(),
+            "pfv_agg": worksheet.get_cell(row_number, header_map["price_to_fair_value"]).strip(),
+            "infl_rd": worksheet.get_cell(row_number, header_map["inflation"]).strip(),
+            "usd_rduh10": worksheet.get_cell(row_number, header_map["currency_usd"]).strip(),
+            "yield_rd10": worksheet.get_cell(row_number, header_map["yield_"]).strip(),
+            "growth_rd": worksheet.get_cell(row_number, header_map["growth"]).strip(),
+            "valadj_rd10": worksheet.get_cell(row_number, header_map["valuation_adjustment_top_down"]).strip(),
+            "valadj_rd10_combined": worksheet.get_cell(row_number, header_map["valuation_adjustment_combined"]).strip(),
+        }
+
+        base_rows.append(
+            {
+                "snapshot_date": snapshot_date,
+                "ingested_at": ingested_at,
+                "parser_version": PARSER_VERSION,
+                "workbook_type": "equity_model",
+                "acid": acid,
+                "asset_class_name": asset_class_name,
+                "local_real_vir": local_real_vir,
+                "local_nominal_vir": local_nominal_vir,
+                "usd_hedged_vir": None,
+                "unconditional_vir": unconditional_vir,
+                "stf": _diff(local_real_vir, unconditional_vir),
+                "price_to_fair_value": price_to_fair_value,
+                "inflation": inflation,
+                "currency_usd": currency_usd,
+                "yield_": yield_,
+                "growth": growth,
+                "valuation_adjustment_top_down": valuation_adjustment_top_down,
+                "valuation_adjustment_combined": valuation_adjustment_combined,
+                "valuation_adjustment_bottom_up": _bottom_up_valuation(
+                    valuation_adjustment_top_down,
+                    valuation_adjustment_combined,
+                ),
+                "raw_row": json.dumps(raw_row, sort_keys=True),
+                "raw_headers": raw_headers,
+            }
+        )
+
+    records = _apply_trend_fields(base_rows)
+    return EquityHistoryParseResult(
+        workbook_path=workbook_path,
+        row_count=len(records),
+        snapshot_dates=[snapshot_date] if records else [],
         records=records,
     )
 
@@ -222,6 +432,43 @@ def _header_map(worksheet) -> dict[str, int]:
     return observed_headers
 
 
+def _general_model_header_map(worksheet) -> dict[str, int]:
+    header_map: dict[str, int] = {}
+    for column_number, raw_header in worksheet.nonempty_cells(3):
+        normalized = raw_header.strip()
+        for key, expected in GENERAL_MODEL_MACHINE_HEADERS.items():
+            if normalized == expected:
+                header_map[key] = column_number
+
+    for column_number, raw_header in worksheet.nonempty_cells(5):
+        normalized = raw_header.strip()
+        if normalized == "ACIDs":
+            header_map["acid"] = column_number
+        elif normalized == "Asset Class Name":
+            header_map["asset_class_name"] = column_number
+
+    required = {"acid", "asset_class_name", *GENERAL_MODEL_MACHINE_HEADERS.keys()}
+    missing = sorted(required - set(header_map.keys()))
+    if missing:
+        raise ValueError(f"Missing required General Model headers: {missing}")
+    return header_map
+
+
+def _general_model_snapshot_date(worksheet) -> date:
+    token = ""
+    for _, raw_header in worksheet.nonempty_cells(5):
+        value = raw_header.strip()
+        if "As of " in value:
+            token = value
+            break
+    match = re.search(r"As of (\d{2})/(\d{4})", token)
+    if not match:
+        raise ValueError("Could not determine General Model snapshot month from row 5 headers.")
+    month = int(match.group(1))
+    year = int(match.group(2))
+    return date(year, month, calendar.monthrange(year, month)[1])
+
+
 def _apply_trend_fields(base_rows: list[dict[str, object]]) -> list[EquityHistoryRecord]:
     grouped: dict[str, list[dict[str, object]]] = {}
     for row in base_rows:
@@ -282,8 +529,40 @@ def _apply_trend_fields(base_rows: list[dict[str, object]]) -> list[EquityHistor
     return records
 
 
+def _record_to_base_row(record: EquityHistoryRecord) -> dict[str, object]:
+    return {
+        "snapshot_date": record.snapshot_date,
+        "ingested_at": record.ingested_at,
+        "parser_version": record.parser_version,
+        "workbook_type": record.workbook_type,
+        "acid": record.acid,
+        "asset_class_name": record.asset_class_name,
+        "local_real_vir": record.local_real_vir,
+        "local_nominal_vir": record.local_nominal_vir,
+        "usd_hedged_vir": record.usd_hedged_vir,
+        "unconditional_vir": record.unconditional_vir,
+        "stf": record.stf,
+        "price_to_fair_value": record.price_to_fair_value,
+        "inflation": record.inflation,
+        "currency_usd": record.currency_usd,
+        "yield_": record.yield_,
+        "growth": record.growth,
+        "valuation_adjustment_top_down": record.valuation_adjustment_top_down,
+        "valuation_adjustment_combined": record.valuation_adjustment_combined,
+        "valuation_adjustment_bottom_up": record.valuation_adjustment_bottom_up,
+        "raw_row": record.raw_row,
+        "raw_headers": record.raw_headers,
+    }
+
+
 def _to_float(raw_value: str | None) -> float | None:
     return safe_float(raw_value)
+
+
+def _to_int(raw_value: str | None) -> int | None:
+    if raw_value is None or raw_value == "":
+        return None
+    return int(float(raw_value))
 
 
 def _diff(left: float | None, right: float | None) -> float | None:
@@ -307,6 +586,8 @@ def _bottom_up_valuation(top_down: float | None, combined: float | None) -> floa
 __all__ = [
     "EquityHistoryParseResult",
     "EquityHistoryRecord",
+    "load_equity_history_records_from_csv",
+    "merge_equity_history_records",
     "parse_equity_history_workbook",
     "write_equity_history_csv",
 ]

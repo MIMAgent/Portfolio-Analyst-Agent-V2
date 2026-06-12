@@ -2,16 +2,18 @@ import { useEffect, useMemo, useState } from 'react'
 import bundle from './data/monthlyReviewBundle.json'
 import exposureLineage from './data/exposureLineage.json'
 import fundWeightsVirAlgo from './data/fundWeightsVirAlgo.json'
+import signalHistory from './data/signalHistory.json'
 import agent2ReviewMstarUsequity from './data/agent2/mstar-us-equity-review.json'
 import agent2ManifestMstarUsequity from './data/agent2/mstar-us-equity-manifest.json'
 import agent2PacketMstarUsequity from './data/agent2/mstar-us-equity-packet.json'
 
 const tabs = [
-  { id: 'dashboard', label: 'Overview' },
-  { id: 'positioning', label: 'Positioning' },
-  { id: 'signals', label: 'Signals' },
-  { id: 'review', label: 'PM Review' },
-  { id: 'evidence', label: 'Evidence' },
+  { id: 'dashboard', navLabel: 'Dashboard', sectionLabel: 'Overview' },
+  { id: 'decomp', navLabel: 'VIR / Algo', sectionLabel: 'VIR / Algo' },
+  { id: 'challenge', navLabel: 'Challenge Brief', sectionLabel: 'Challenge Brief' },
+  { id: 'fof', navLabel: 'Fund of Funds', sectionLabel: 'Fund of Funds' },
+  { id: 'ic', navLabel: 'IC Prep', sectionLabel: 'IC Prep' },
+  { id: 'memory', navLabel: 'Agent Memory', sectionLabel: 'Agent Memory' },
 ]
 
 const categoryOrder = [
@@ -45,18 +47,48 @@ const agent2RunsByFund = {
   },
 }
 
+const signalHistoryByFund = signalHistory.funds ?? {}
+const defaultFundName = 'MStar US Equity'
+const defaultTabId = 'decomp'
+const defaultPortfolioView = 'new'
+const defaultCategory = 'All'
+
 export default function App() {
   const fundDirectory = useMemo(() => buildFundDirectory(bundle.funds, fundWeightsVirAlgo), [])
-  const [selectedSlug, setSelectedSlug] = useState(fundDirectory[0]?.slug ?? '')
-  const [activeTab, setActiveTab] = useState('dashboard')
-  const [selectedCategory, setSelectedCategory] = useState('All')
-  const [selectedAcid, setSelectedAcid] = useState('')
-  const [portfolioView, setPortfolioView] = useState('new')
+  const preferredSlug = fundDirectory.find((fund) => fund.fund === defaultFundName)?.slug ?? fundDirectory[0]?.slug ?? ''
+  const initialViewState = useMemo(() => readViewStateFromUrl(fundDirectory, preferredSlug), [fundDirectory, preferredSlug])
+  const [selectedSlug, setSelectedSlug] = useState(initialViewState.selectedSlug)
+  const [activeTab, setActiveTab] = useState(initialViewState.activeTab)
+  const [selectedCategory, setSelectedCategory] = useState(initialViewState.selectedCategory)
+  const [selectedAcid, setSelectedAcid] = useState(initialViewState.selectedAcid)
+  const [portfolioView, setPortfolioView] = useState(initialViewState.portfolioView)
 
   const selectedFund = fundDirectory.find((fund) => fund.slug === selectedSlug) ?? fundDirectory[0]
   const model = useMemo(() => buildFundModel(selectedFund), [selectedFund])
   const filteredModel = useMemo(() => filterModelByCategory(model, selectedCategory), [model, selectedCategory])
-  const pageTitle = tabs.find((tab) => tab.id === activeTab)?.label ?? 'Overview'
+  const activeTabConfig = tabs.find((tab) => tab.id === activeTab)
+  const pageTitle = activeTabConfig?.sectionLabel ?? 'Overview'
+
+  useEffect(() => {
+    if (!selectedFund) {
+      return
+    }
+    const nextCategory =
+      selectedCategory === defaultCategory || model.availableCategories.includes(selectedCategory)
+        ? selectedCategory
+        : defaultCategory
+    const nextSearch = buildViewSearchParams({
+      fundSlug: selectedFund.slug,
+      activeTab,
+      selectedCategory: nextCategory,
+      selectedAcid,
+      portfolioView,
+    })
+    const nextUrl = `${window.location.pathname}?${nextSearch.toString()}`
+    if (`${window.location.pathname}${window.location.search}` !== nextUrl) {
+      window.history.replaceState({}, '', nextUrl)
+    }
+  }, [activeTab, model.availableCategories, portfolioView, selectedAcid, selectedCategory, selectedFund])
 
   useEffect(() => {
     if (!filteredModel.exposures.length) {
@@ -66,6 +98,12 @@ export default function App() {
       setSelectedAcid(filteredModel.exposures[0].acid)
     }
   }, [filteredModel.exposureByAcid, filteredModel.exposures, selectedAcid])
+
+  useEffect(() => {
+    if (!model.availableCategories.includes(selectedCategory) && selectedCategory !== defaultCategory) {
+      setSelectedCategory(defaultCategory)
+    }
+  }, [model.availableCategories, selectedCategory])
 
   const focusedRow =
     filteredModel.exposureByAcid.get(selectedAcid) ??
@@ -94,149 +132,160 @@ export default function App() {
         <span>This workspace is tuned for desktop review and committee prep.</span>
       </div>
 
-      <div className="shell">
-        <div className="topbar">
-          <div className="logo">
-            <div className="logo-mark">PM</div>
-            Analyst Agent
-          </div>
-          <div className="tb-sep" />
-          <span className="tb-chip live">Live</span>
-          <span className="tb-chip">{monthYear(bundle.snapshot_date || model.snapshotMatrix.review)}</span>
-          <span className="tb-chip">{fundDirectory.length} Funds</span>
-          <div className="tb-sep" />
-          <span className="tb-fund-name">{selectedFund?.fund ?? 'No fund selected'}</span>
-          <div className="tb-right">
-            <button type="button" className="tb-btn primary" onClick={() => setActiveTab('review')}>PM Review</button>
-            <button type="button" className="tb-btn" onClick={() => setActiveTab('signals')}>Signals</button>
-          </div>
-        </div>
-
-        <aside className="sidebar">
-          <div className="sb-header">
-            <div className="sb-header-title">PM Analyst Platform</div>
-            <div className="sb-header-subtitle">Portfolio / Signals / Agent Review</div>
-          </div>
-
-          <div className="sb-label">Navigate</div>
-          <nav className="sidebar-nav" aria-label="Workspace sections">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                className={`nav-btn ${activeTab === tab.id ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                <span>{tab.label}</span>
-              </button>
-            ))}
-          </nav>
-
-          <div className="sb-label">Funds</div>
-          <div className="sb-scroll">
-            {fundDirectory.map((fund) => (
-              <button
-                key={fund.slug}
-                type="button"
-                className={`fund-btn ${selectedSlug === fund.slug ? 'active' : ''}`}
-                onClick={() => setSelectedSlug(fund.slug)}
-              >
-                <div className={`fund-dot ${fund.statusDot}`} />
-                <span className="fund-btn-name">{fund.fund}</span>
-                <span className={`fund-type ${fund.typeClass}`}>{fund.typeLabel}</span>
-              </button>
-            ))}
-          </div>
-
-          <div className="sidebar-footer">
-            <SidebarMeta label="Review" value={model.snapshotMatrix.review} />
-            <SidebarMeta label="VIR" value={model.snapshotMatrix.vir} />
-            <SidebarMeta label="Algo" value={model.snapshotMatrix.algo} />
-            <SidebarMeta label="Bundle built" value={formatDateTime(bundle.bundle_generated_at)} />
-          </div>
-        </aside>
-
-        <div className="main-col">
-          <div className="fund-tabs">
-            {[
-              { id: 'new', label: 'New Portfolio' },
-              { id: 'target', label: 'Target Portfolio' },
-              { id: 'bench', label: 'Benchmark' },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                className={`ftab ${portfolioView === tab.id ? 'active' : ''}`}
-                onClick={() => setPortfolioView(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="sec-tabs">
-            {tabs.map((tab) => {
-              const badge = tabBadgeForModel(tab.id, filteredModel)
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  className={`stab ${activeTab === tab.id ? 'active' : ''}`}
-                  onClick={() => setActiveTab(tab.id)}
-                >
-                  {tab.label}
-                  {badge ? <span className={`stab-badge ${badge.info ? 'info' : ''}`}>{badge.label}</span> : null}
-                </button>
-              )
-            })}
-          </div>
-
-          <main id="main-content" className="content">
-            <div className="page-header">
+      <div className="new-shell">
+        <header className="new-header">
+          <div className="new-header-top">
+            <div className="new-brand">
+              <div className="new-brand-mark">PM</div>
               <div>
-                <div className="page-title">{pageTitle}</div>
-                <div className="page-subtitle">
-                  {selectedFund?.fund} | review {model.snapshotMatrix.review || '-'} | positions {model.snapshotMatrix.positioning || '-'} | VIR {model.snapshotMatrix.vir || '-'} | algo {model.snapshotMatrix.algo || '-'}
-                </div>
-              </div>
-              <div className="page-flags">
-                <StatusBadge tone={filteredModel.summary.urgentCount ? 'amber' : 'green'}>
-                  {filteredModel.summary.urgentCount ? `${filteredModel.summary.urgentCount} urgent` : 'No urgent flags'}
-                </StatusBadge>
-                {filteredModel.snapshotMatrix.hasMismatch ? (
-                  <StatusBadge tone="blue">Snapshot mismatch</StatusBadge>
-                ) : null}
+                <div className="new-brand-title">PM Analyst Agent</div>
+                <div className="new-brand-subtitle">Portfolio signals, look-through, and agent review in one place.</div>
               </div>
             </div>
 
-            <div className="filter-row">
-              <span className="mini-label">CATEGORY</span>
-              <div className="chip-row">
-                {['All', ...model.availableCategories].map((category) => (
+            <div className="new-header-actions">
+              <span className="new-chip is-live">Live</span>
+              <span className="new-chip">{monthYear(bundle.snapshot_date || model.snapshotMatrix.review)}</span>
+              <span className="new-chip">{fundDirectory.length} Funds</span>
+              <button type="button" className="new-action primary" onClick={() => setActiveTab('challenge')}>Run Review</button>
+              <button type="button" className="new-action" onClick={() => setActiveTab('ic')}>IC Prep</button>
+            </div>
+          </div>
+
+          <div className="new-header-grid">
+            <div className="new-header-main">
+              <div className="new-page-title">{selectedFund?.fund ?? 'No fund selected'}</div>
+              <div className="new-page-subtitle">
+                Review {model.snapshotMatrix.review || '-'} | Positions {model.snapshotMatrix.positioning || '-'} | VIR {model.snapshotMatrix.vir || '-'} | Algo {model.snapshotMatrix.algo || '-'}
+              </div>
+            </div>
+
+            <div className="new-header-stats">
+              <MiniStat label="Positions" value={String(filteredModel.summary.positionCount)} />
+              <MiniStat label="Misaligned" value={String(filteredModel.summary.misalignedCount)} tone="amber" />
+              <MiniStat label="Urgent" value={String(filteredModel.summary.urgentCount)} tone="red" />
+              <MiniStat label="Aligned" value={String(filteredModel.summary.alignedCount)} tone="green" />
+            </div>
+          </div>
+        </header>
+
+        <div className="new-app-body">
+          <aside className="new-fund-panel">
+            <div className="new-panel-head">
+              <div className="new-strip-label">Funds</div>
+              <div className="new-panel-meta">{fundDirectory.length} total</div>
+            </div>
+
+            <div className="new-fund-list" role="tablist" aria-label="Funds">
+              {fundDirectory.map((fund) => (
+                <button
+                  key={fund.slug}
+                  type="button"
+                  className={`new-fund-card ${selectedSlug === fund.slug ? 'is-active' : ''}`}
+                  onClick={() => setSelectedSlug(fund.slug)}
+                >
+                  <span className={`new-fund-dot ${fund.statusDot}`} />
+                  <div className="new-fund-card-copy">
+                    <strong>{fund.fund}</strong>
+                    <span>{fund.typeLabel}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            <div className="new-fund-summary">
+              <SidebarMeta label="Review" value={model.snapshotMatrix.review} />
+              <SidebarMeta label="VIR" value={model.snapshotMatrix.vir} />
+              <SidebarMeta label="Algo" value={model.snapshotMatrix.algo} />
+              <SidebarMeta label="Bundle built" value={formatDateTime(bundle.bundle_generated_at)} />
+            </div>
+          </aside>
+
+          <div className="new-workspace">
+            <section className="new-control-bar">
+              <div className="new-segmented" aria-label="Portfolio views">
+                {[
+                  { id: 'new', label: 'New Portfolio' },
+                  { id: 'target', label: 'Target Portfolio' },
+                  { id: 'bench', label: 'Benchmark' },
+                ].map((tab) => (
                   <button
-                    key={category}
+                    key={tab.id}
                     type="button"
-                    className={`filter-chip ${selectedCategory === category ? 'is-active' : ''}`}
-                    onClick={() => setSelectedCategory(category)}
+                    className={`new-segment ${portfolioView === tab.id ? 'is-active' : ''}`}
+                    onClick={() => setPortfolioView(tab.id)}
                   >
-                    {category}
+                    {tab.label}
                   </button>
                 ))}
               </div>
-            </div>
 
-            {activeTab === 'dashboard' ? (
-              <DashboardTab model={filteredModel} onFocusAcid={focusAcid} portfolioView={portfolioView} />
-            ) : null}
-            {activeTab === 'positioning' ? (
-              <PositioningTab model={filteredModel} onFocusAcid={focusAcid} portfolioView={portfolioView} />
-            ) : null}
-            {activeTab === 'signals' ? (
-              <SignalsTab model={filteredModel} focusedRow={focusedRow} onFocusAcid={focusAcid} />
-            ) : null}
-            {activeTab === 'review' ? <ReviewTab model={filteredModel} focusedAcid={focusedRow?.acid ?? ''} /> : null}
-            {activeTab === 'evidence' ? <EvidenceTab model={filteredModel} /> : null}
-          </main>
+              <nav className="new-tab-row" aria-label="Workspace sections">
+                {tabs.map((tab) => {
+                  const badge = tabBadgeForModel(tab.id, filteredModel)
+                  return (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      className={`new-tab ${activeTab === tab.id ? 'is-active' : ''}`}
+                      onClick={() => setActiveTab(tab.id)}
+                    >
+                      <span>{tab.sectionLabel}</span>
+                      {badge ? <span className={`new-tab-badge ${badge.info ? 'is-info' : ''}`}>{badge.label}</span> : null}
+                    </button>
+                  )
+                })}
+              </nav>
+            </section>
+
+            <main id="main-content" className="new-main">
+              <div className="new-section-head">
+                <div>
+                  <div className="page-title">{pageTitle}</div>
+                  <div className="page-subtitle">
+                    Agent review, positioning, and supporting research linked to the selected fund and category.
+                  </div>
+                </div>
+                <div className="page-flags">
+                  <StatusBadge tone={filteredModel.summary.urgentCount ? 'amber' : 'green'}>
+                    {filteredModel.summary.urgentCount ? `${filteredModel.summary.urgentCount} urgent` : 'No urgent flags'}
+                  </StatusBadge>
+                  {filteredModel.snapshotMatrix.hasMismatch ? (
+                    <StatusBadge tone="blue">Snapshot mismatch</StatusBadge>
+                  ) : null}
+                </div>
+              </div>
+
+              <div className="filter-row new-filter-row">
+                <span className="mini-label">Category</span>
+                <div className="chip-row">
+                  {['All', ...model.availableCategories].map((category) => (
+                    <button
+                      key={category}
+                      type="button"
+                      className={`filter-chip ${selectedCategory === category ? 'is-active' : ''}`}
+                      onClick={() => setSelectedCategory(category)}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {activeTab === 'dashboard' ? (
+                <ReferenceDashboardTab model={filteredModel} onFocusAcid={focusAcid} portfolioView={portfolioView} />
+              ) : null}
+              {activeTab === 'challenge' ? (
+                <ReferenceChallengeTab model={filteredModel} onOpenReview={(acid) => focusAcid(acid, 'ic')} />
+              ) : null}
+              {activeTab === 'decomp' ? (
+                <ReferenceDecompTab model={filteredModel} focusedRow={focusedRow} onFocusAcid={focusAcid} />
+              ) : null}
+              {activeTab === 'fof' ? <ReferenceFoFTab model={filteredModel} /> : null}
+              {activeTab === 'ic' ? <ReferenceICTab model={filteredModel} focusedAcid={focusedRow?.acid ?? ''} /> : null}
+              {activeTab === 'memory' ? <ReferenceMemoryTab model={filteredModel} /> : null}
+            </main>
+          </div>
         </div>
       </div>
     </>
@@ -246,6 +295,7 @@ export default function App() {
 function DashboardTab({ model, onFocusAcid, portfolioView }) {
   const portfolio = getPortfolioViewMeta(model, portfolioView)
   const agentReview = model.agentReview
+  const researchHighlights = agentReview?.sharepointHighlights ?? []
   const rows = model.exposures
     .filter((row) => Math.abs(numberOrNull(row[portfolio.field]) ?? 0) >= portfolio.minimum)
     .slice(0, 18)
@@ -328,7 +378,7 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
       </Card>
 
       <div className="split-grid split-dashboard">
-        <Card title="AGENT2 VIEW" subtitle={agentReview ? `Live Bedrock review | ${monthYear(agentReview.manifest.logical_snapshot_date)}` : 'No Bedrock review loaded'}>
+        <Card title="AGENT2 VIEW" subtitle={agentReview ? reviewRunSubtitle(agentReview) : 'No Bedrock review loaded'}>
           {agentReview ? (
             <div className="agent-review-stack">
               <p className="agent-summary">{agentReview.review.executive_summary}</p>
@@ -356,7 +406,29 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
                         <code>{formatMaybe(position.algo_active_weight)}</code>
                       </span>
                     </div>
-                    <p>{position.internal_history_excerpt || position.sample_source_securities || 'No saved supporting context for this position.'}</p>
+                    <div className="agent-support-stack">
+                      {position.sharepoint_research_summary ? (
+                        <div className="agent-support-block">
+                          <label>Research deck</label>
+                          <p>{truncate(position.sharepoint_research_summary, 220)}</p>
+                        </div>
+                      ) : null}
+                      {position.internal_history_excerpt ? (
+                        <div className="agent-support-block">
+                          <label>Prior internal note</label>
+                          <p>{truncate(position.internal_history_excerpt, 220)}</p>
+                        </div>
+                      ) : null}
+                      {!position.sharepoint_research_summary && !position.internal_history_excerpt ? (
+                        <p>{position.sample_source_securities || 'No saved supporting context for this position.'}</p>
+                      ) : null}
+                    </div>
+                    {position.sharepoint_research_path ? (
+                      <div className="agent-support-meta">
+                        <span>SharePoint deck</span>
+                        <code>{fileNameFromPath(position.sharepoint_research_path)}</code>
+                      </div>
+                    ) : null}
                   </article>
                 ))}
               </div>
@@ -406,6 +478,48 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
       </div>
 
       <div className="split-grid split-dashboard">
+        <Card title="INTERNAL RESEARCH" subtitle={agentReview ? "synced SharePoint decks matched to the fund's active exposures" : 'SharePoint research appears when Agent2 packet data is loaded'}>
+          {agentReview ? (
+            <div className="agent-review-stack">
+              <div className="memory-summary-grid">
+                <MiniStat label="Matched decks" value={String(agentReview.matchedResearchCount ?? 0)} tone="blue" />
+                <MiniStat label="Packet review" value={agentReview.packetReviewDate || '-'} />
+                <MiniStat
+                  label="Live narrative"
+                  value={agentReview.manifest.review_date || '-'}
+                  tone={agentReview.hasFreshNarrative ? 'green' : 'amber'}
+                />
+              </div>
+              {researchHighlights.length ? (
+                <div className="research-list">
+                  {researchHighlights.slice(0, 4).map((item) => (
+                    <article key={`${item.acid}-${item.file_name}`} className="research-card">
+                      <div className="research-head">
+                        <div>
+                          <h4>{item.label || item.acid}</h4>
+                          <span>{item.acid}</span>
+                        </div>
+                        {item.active_weight != null ? (
+                          <code className={toneClass(item.active_weight)}>{formatWeight(item.active_weight)}</code>
+                        ) : null}
+                      </div>
+                      <div className="research-meta">
+                        <span>{item.file_name || fileNameFromPath(item.full_path)}</span>
+                        <span>{item.matched_via || 'matched'}</span>
+                      </div>
+                      <p className="research-summary">{truncate(item.summary_text, 240)}</p>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <EmptyState copy="No matched SharePoint research summaries are available for this packet." />
+              )}
+            </div>
+          ) : (
+            <EmptyState copy="No Agent2 packet is loaded for this fund." />
+          )}
+        </Card>
+
         <Card title="DATA TIMING" subtitle="actual bundle sources">
           <div className="timing-list">
             <TimingRow label="Review snapshot" value={model.snapshotMatrix.review} />
@@ -413,8 +527,14 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
             <TimingRow label="VIR layer" value={model.snapshotMatrix.vir} />
             <TimingRow label="Algo layer" value={model.snapshotMatrix.algo} />
             <TimingRow label="Bundle built" value={formatDateTime(bundle.bundle_generated_at)} />
+            {agentReview ? <TimingRow label="Packet refreshed" value={agentReview.packetReviewDate} /> : null}
             {agentReview ? <TimingRow label="Agent run" value={formatDateTime(agentReview.manifest.generated_at)} /> : null}
           </div>
+          {agentReview && !agentReview.hasFreshNarrative ? (
+            <div className="inline-note tone-amber">
+              The structured packet is newer than the last live Bedrock run. This view is using packet-derived review text from current holdings, VIR, algo, and research matches so stale narrative does not leak into the dashboard.
+            </div>
+          ) : null}
           {agentReview?.dataQualityFlags?.length ? (
             <div className="agent-flag-stack">
               {agentReview.dataQualityFlags.slice(0, 2).map((flag) => (
@@ -575,6 +695,27 @@ function ReviewTab({ model, focusedAcid }) {
         </Card>
       ) : null}
 
+      {agentReview?.sharepointHighlights?.length ? (
+        <Card title="RESEARCH BACKDROP" subtitle="internal research decks most relevant to the current active bets">
+          <div className="research-list">
+            {agentReview.sharepointHighlights.slice(0, 6).map((item) => (
+              <article key={`${item.acid}-${item.file_name}`} className="research-card">
+                <div className="research-head">
+                  <div>
+                    <h4>{item.label || item.acid}</h4>
+                    <span>{item.file_name || fileNameFromPath(item.full_path)}</span>
+                  </div>
+                  {item.active_weight != null ? (
+                    <code className={toneClass(item.active_weight)}>{formatWeight(item.active_weight)}</code>
+                  ) : null}
+                </div>
+                <p className="research-summary">{truncate(item.summary_text, 320)}</p>
+              </article>
+            ))}
+          </div>
+        </Card>
+      ) : null}
+
       <ICPrepTab model={model} focusedAcid={focusedAcid} />
     </div>
   )
@@ -618,6 +759,40 @@ function EvidenceTab({ model }) {
           </div>
         </Card>
       </div>
+
+      <Card title="SHAREPOINT RESEARCH" subtitle="synced internal decks matched by ACID to the current fund exposures">
+        {agentReview?.sharepointHighlights?.length ? (
+          <div className="agent-review-stack">
+            <div className="memory-summary-grid">
+              <MiniStat label="Matched decks" value={String(agentReview.matchedResearchCount ?? agentReview.sharepointHighlights.length)} tone="blue" />
+              <MiniStat label="Packet review" value={agentReview.packetReviewDate || '-'} />
+              <MiniStat label="Research surfaced" value={String(agentReview.sharepointHighlights.length)} tone="green" />
+            </div>
+            <div className="research-list">
+              {agentReview.sharepointHighlights.slice(0, 8).map((item) => (
+                <article key={`${item.acid}-${item.file_name}`} className="research-card">
+                  <div className="research-head">
+                    <div>
+                      <h4>{item.label || item.acid}</h4>
+                      <span>{item.acid}</span>
+                    </div>
+                    {item.active_weight != null ? (
+                      <code className={toneClass(item.active_weight)}>{formatWeight(item.active_weight)}</code>
+                    ) : null}
+                  </div>
+                  <div className="research-meta">
+                    <span>{item.file_name || fileNameFromPath(item.full_path)}</span>
+                    <span>{item.matched_via || 'matched'}</span>
+                  </div>
+                  <p className="research-summary">{truncate(item.summary_text, 260)}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <EmptyState copy="No matched SharePoint research was surfaced for this run." />
+        )}
+      </Card>
 
       <Card title="SOURCE INDEX" subtitle="where the current review is pulling its evidence from">
         {agentReview?.packet?.source_index?.length ? (
@@ -957,6 +1132,7 @@ function ICPrepTab({ model, focusedAcid }) {
 }
 
 function MemoryTab({ model }) {
+  const agentReview = model.agentReview
   const memoryUpdates = model.changeBrief.memory_updates_summary ?? {}
   const evidence = model.changeBrief.evidence_index ?? []
 
@@ -1005,6 +1181,84 @@ function MemoryTab({ model }) {
         ) : (
           <EmptyState copy="No evidence index was saved for this run." />
         )}
+      </Card>
+
+      <div className="split-grid split-memory">
+        <Card title="RUN HEALTH" subtitle="freshness, model context, and current packet quality">
+          <div className="memory-summary-grid">
+            <MiniStat label="Sources" value={String(agentReview?.packet?.source_index?.length ?? 0)} />
+            <MiniStat label="Flags" value={String(agentReview?.dataQualityFlags?.length ?? 0)} tone="amber" />
+            <MiniStat label="Run cost" value={formatCurrency(agentReview?.manifest?.approx_cost_usd)} tone="green" />
+            <MiniStat label="Packet review" value={agentReview?.packetReviewDate || '-'} tone="blue" />
+          </div>
+          {agentReview && !agentReview.hasFreshNarrative ? (
+            <div className="inline-note tone-amber">
+              This tab is using the latest rebuilt structured packet and packet-derived review text because the last live Bedrock narrative is older than the current packet.
+            </div>
+          ) : null}
+          {agentReview?.dataQualityFlags?.length ? (
+            <div className="agent-flag-stack">
+              {agentReview.dataQualityFlags.slice(0, 3).map((flag) => (
+                <div key={flag.flag} className={`inline-note ${flag.severity === 'medium' ? 'tone-amber' : 'tone-neutral'}`}>
+                  {flag.message}
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </Card>
+
+        <Card title="SOURCE INDEX" subtitle="where the current review is pulling evidence from">
+          {agentReview?.packet?.source_index?.length ? (
+            <div className="artifact-table">
+              {agentReview.packet.source_index.map((source) => (
+                <div key={`${source.source_type}-${source.artifact_path}`} className="artifact-row">
+                  <span>{humanizeKey(source.source_type)}</span>
+                  <code>{source.purpose}</code>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <EmptyState copy="No structured source index is available for this fund." />
+          )}
+        </Card>
+      </div>
+
+      <Card title="INTERNAL RESEARCH DECKS" subtitle="synced SharePoint research matched to material ACIDs">
+        {agentReview?.sharepointHighlights?.length ? (
+          <div className="research-list">
+            {agentReview.sharepointHighlights.slice(0, 10).map((item) => (
+              <article key={`${item.acid}-${item.file_name}`} className="research-card">
+                <div className="research-head">
+                  <div>
+                    <h4>{item.label || item.acid}</h4>
+                    <span>{item.acid}</span>
+                  </div>
+                  {item.active_weight != null ? (
+                    <code className={toneClass(item.active_weight)}>{formatWeight(item.active_weight)}</code>
+                  ) : null}
+                </div>
+                <div className="research-meta">
+                  <span>{item.file_name || fileNameFromPath(item.full_path)}</span>
+                  <span>{item.matched_via || 'matched'}</span>
+                </div>
+                <p className="research-summary">{truncate(item.summary_text, 260)}</p>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <EmptyState copy="No matched SharePoint research was surfaced for this run." />
+        )}
+      </Card>
+
+      <Card title="ARTIFACT PATHS" subtitle="repo locations saved with this run">
+        <div className="artifact-table">
+          {Object.entries(model.artifactPaths).map(([key, value]) => (
+            <div key={key} className="artifact-row">
+              <span>{humanizeKey(key)}</span>
+              <code>{value || '-'}</code>
+            </div>
+          ))}
+        </div>
       </Card>
     </div>
   )
@@ -1098,18 +1352,22 @@ function inferFundType(fundName = '') {
 }
 
 function tabBadgeForModel(tabId, model) {
-  if (tabId === 'positioning') {
-    return model.exposures.length ? { label: String(model.exposures.length), info: true } : null
-  }
-  if (tabId === 'signals') {
+  if (tabId === 'challenge') {
     const count = buildChallengeCards(model).length
     return count ? { label: String(count) } : null
   }
-  if (tabId === 'review') {
+  if (tabId === 'decomp') {
+    return model.signalRows.length ? { label: String(model.signalRows.length), info: true } : null
+  }
+  if (tabId === 'fof') {
+    const count = model.exposures.filter((row) => model.lineageByAcid[row.acid] && Math.abs(numberOrNull(row.active_rolled_exposure) ?? 0) >= 0.3).length
+    return count ? { label: String(count), info: true } : null
+  }
+  if (tabId === 'ic') {
     const count = buildIcPrepItems(model).length
     return count ? { label: String(count), info: true } : null
   }
-  if (tabId === 'evidence') {
+  if (tabId === 'memory') {
     const count = model.agentReview?.dataQualityFlags?.length ?? model.changeBrief.evidence_index?.length ?? 0
     return count ? { label: String(count) } : null
   }
@@ -1214,6 +1472,1087 @@ function Card({ title, subtitle, children }) {
   )
 }
 
+function ReferenceDashboardTab({ model, onFocusAcid, portfolioView }) {
+  const portfolio = getPortfolioViewMeta(model, portfolioView)
+  const coverageCount = model.exposures.filter((row) => row.vir_stf != null).length
+  const coveragePct = model.exposures.length ? Math.round((coverageCount / model.exposures.length) * 100) : 0
+  const scatterRows = [...model.signalRows]
+    .filter((row) => row.vir_stf != null)
+    .sort((a, b) => Math.abs(numberOrNull(b.active_rolled_exposure) ?? 0) - Math.abs(numberOrNull(a.active_rolled_exposure) ?? 0))
+    .slice(0, 12)
+  const movers = [...model.signalRows]
+    .filter((row) => numberOrNull(row.vir_rank_change_by_stf) != null)
+    .sort((a, b) => Math.abs(numberOrNull(b.vir_rank_change_by_stf) ?? 0) - Math.abs(numberOrNull(a.vir_rank_change_by_stf) ?? 0))
+    .slice(0, 5)
+  const waterfallRows = model.exposures
+    .filter((row) => Math.abs(numberOrNull(row[portfolio.field]) ?? 0) >= portfolio.minimum)
+    .slice(0, 12)
+  const alignedCount = model.signalRows.filter((row) => classifyAlignment(row).key === 'aligned').length
+  const conflictedCount = model.signalRows.filter((row) => classifyAlignment(row).key === 'opposite').length
+  const noSignalCount = model.exposures.filter((row) => row.vir_stf == null).length
+  const agentReview = model.agentReview
+  const kpis = [
+    { label: 'Positions', value: String(model.summary.positionCount), sublabel: `${model.summary.equityCount} eq | ${model.summary.bondCount} fi`, tone: 'blue' },
+    { label: 'VIR Coverage', value: `${coveragePct}%`, sublabel: `${coverageCount} ACIDs matched`, tone: 'green' },
+    { label: 'Conflicts', value: String(conflictedCount), sublabel: 'position vs signal', tone: 'red' },
+    { label: 'Watch Items', value: String(model.summary.watchCount), sublabel: 'drifting momentum', tone: 'amber' },
+    { label: 'IC Questions', value: String(agentReview?.review?.pm_questions?.length ?? buildChallengeCards(model).length), sublabel: 'saved for review', tone: 'violet' },
+  ]
+
+  return (
+    <div>
+      <div className="ref-kpi-row">
+        {kpis.map((kpi) => (
+          <article key={kpi.label} className="ref-kpi">
+            <div className="ref-kpi-label">{kpi.label}</div>
+            <div className={`ref-kpi-value tone-text-${kpi.tone}`}>{kpi.value}</div>
+            <div className="ref-kpi-sub">{kpi.sublabel}</div>
+          </article>
+        ))}
+      </div>
+
+      <div className="ref-two-col">
+        <div>
+          <div className="section-title">{portfolio.cardTitle}</div>
+          <div className="ref-card ref-card-pad">
+            <div className="ref-aw-head">
+              <span>Position</span>
+              <span>UW      0      OW</span>
+              <span className="is-right">Active</span>
+              <span className="is-right">VIR / Rank</span>
+            </div>
+            {waterfallRows.length ? (
+              waterfallRows.map((row) => {
+                const alignment = classifyAlignment(row)
+                const absolute = numberOrNull(row[portfolio.field]) ?? 0
+                const pct = Math.min((Math.abs(absolute) / Math.max(model.maxExposureActive, 0.01)) * 44, 44)
+                const virDelta = numberOrNull(row.vir_delta_stf)
+                const rankDelta = numberOrNull(row.vir_rank_change_by_stf)
+                return (
+                  <button key={row.acid} type="button" className="ref-aw-row" onClick={() => onFocusAcid(row.acid, 'decomp')}>
+                    <div className={`ref-aw-name ${alignment.key === 'opposite' ? 'is-flagged' : ''}`}>{row.acid}</div>
+                    <div className="ref-aw-bar-wrap">
+                      <div className="ref-aw-side ref-aw-side-left">
+                        {absolute < 0 ? (
+                          <div className={`ref-aw-bar ${alignment.key === 'opposite' ? 'is-conflict' : 'is-neg'}`} style={{ width: `${pct}%` }} />
+                        ) : null}
+                      </div>
+                      <div className="ref-aw-zero" />
+                      <div className="ref-aw-side ref-aw-side-right">
+                        {absolute >= 0 ? (
+                          <div className={`ref-aw-bar ${alignment.key === 'opposite' ? 'is-conflict' : 'is-pos'}`} style={{ width: `${pct}%` }} />
+                        ) : null}
+                      </div>
+                    </div>
+                    <div className={`ref-aw-val ${toneClass(absolute)}`}>{formatWeight(absolute)}</div>
+                    <div className="ref-aw-signal">
+                      <span className={toneClass(virDelta)}>{virDelta == null ? '-' : `${virDelta > 0 ? '+' : ''}${(virDelta * 100).toFixed(2)}%`}</span>
+                      <span className={toneClass(rankDelta)}>{rankDelta == null ? '-' : `${rankDelta > 0 ? '+' : ''}${Math.round(rankDelta)}`}</span>
+                    </div>
+                  </button>
+                )
+              })
+            ) : (
+              <EmptyState copy={portfolio.emptyCopy} />
+            )}
+          </div>
+        </div>
+
+        <div className="ref-right-stack">
+          <div>
+            <div className="section-title">VIR vs positioning - signal alignment</div>
+            <div className="ref-card ref-card-pad">
+              <div className="ref-align-stats">
+                <div className="ref-align-box is-green">
+                  <strong>{alignedCount}</strong>
+                  <span>Aligned</span>
+                </div>
+                <div className="ref-align-box is-red">
+                  <strong>{conflictedCount}</strong>
+                  <span>Conflict</span>
+                </div>
+                <div className="ref-align-box">
+                  <strong>{noSignalCount}</strong>
+                  <span>No VIR</span>
+                </div>
+              </div>
+
+              <div className="ref-scatter">
+                <div className="ref-scatter-x" />
+                <div className="ref-scatter-y" />
+                {scatterRows.map((row) => (
+                  <button
+                    key={row.acid}
+                    type="button"
+                    className={`ref-scatter-point ${scatterPointClass(row)}`}
+                    style={scatterPointStyle(row, model.maxExposureActive)}
+                    title={`${row.acid} | VIR ${formatMaybe((numberOrNull(row.vir_stf) ?? 0) * 100)}% | Active ${formatWeight(row.active_rolled_exposure)}`}
+                    onClick={() => onFocusAcid(row.acid, 'decomp')}
+                  />
+                ))}
+              </div>
+              <div className="ref-chart-caption">Active weight vs VIR STF - top-right means OW plus positive VIR.</div>
+            </div>
+          </div>
+
+          <div>
+            <div className="section-title">VIR rank movers this month</div>
+            <div className="ref-card ref-card-pad">
+              {movers.length ? (
+                movers.map((row) => {
+                  const rankDelta = numberOrNull(row.vir_rank_change_by_stf) ?? 0
+                  const width = Math.min((Math.abs(rankDelta) / 100) * 100, 100)
+                  return (
+                    <button key={row.acid} type="button" className="ref-mover-row" onClick={() => onFocusAcid(row.acid, 'decomp')}>
+                      <span>{row.acid}</span>
+                      <div className="ref-mover-track">
+                        <div className={`ref-mover-fill ${rankDelta >= 0 ? 'is-up' : 'is-down'}`} style={{ width: `${width}%` }} />
+                      </div>
+                      <code className={toneClass(rankDelta)}>{rankDelta >= 0 ? `+${Math.round(rankDelta)}` : `${Math.round(rankDelta)}`}</code>
+                    </button>
+                  )
+                })
+              ) : (
+                <EmptyState copy="No VIR rank movers are available for this slice." />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="ref-three-col">
+        <div className="ref-card ref-card-pad">
+          <div className="card-title">Challenge Queue</div>
+          <div className="ref-mini-stack">
+            {buildChallengeCards(model)
+              .slice(0, 3)
+              .map((item) => (
+                <button key={item.id} type="button" className="ref-mini-row" onClick={() => onFocusAcid(item.acid, 'challenge')}>
+                  <div>
+                    <strong>{item.acid}</strong>
+                    <p>{truncate(item.summary, 120)}</p>
+                  </div>
+                  <StatusBadge tone={item.severity === 'urgent' ? 'red' : item.severity === 'watch' ? 'amber' : 'blue'}>{humanizeKey(item.severity)}</StatusBadge>
+                </button>
+              ))}
+          </div>
+        </div>
+
+        <div className="ref-card ref-card-pad ref-overview-research">
+          <div className="card-title">SharePoint Research</div>
+          <div className="ref-research-feed">
+            {agentReview?.sharepointHighlights?.map((item) => (
+              <article key={`${item.acid}-${item.file_name}`} className="ref-research-note">
+                <strong>{item.label || item.acid}</strong>
+                <span>{fileNameFromPath(item.full_path || item.file_name || '')}</span>
+                <div className="ref-research-scroll">
+                  <p>{item.summary_text}</p>
+                </div>
+              </article>
+            ))}
+            {!agentReview?.sharepointHighlights?.length ? <EmptyState copy="No matched research deck is saved for this fund yet." /> : null}
+          </div>
+        </div>
+
+        <div className="ref-card ref-card-pad">
+          <div className="card-title">Agent Run</div>
+          <div className="ref-mini-stack">
+            <div className="ref-run-stat">
+              <span>Model</span>
+              <code>{shortModelName(agentReview?.manifest?.model || '') || '-'}</code>
+            </div>
+            <div className="ref-run-stat">
+              <span>Approx cost</span>
+              <code>{formatCurrency(agentReview?.manifest?.approx_cost_usd)}</code>
+            </div>
+            <div className="ref-run-stat">
+              <span>Generated</span>
+              <code>{formatDateTime(agentReview?.manifest?.generated_at)}</code>
+            </div>
+            {agentReview?.dataQualityFlags?.[0] ? (
+              <div className="inline-note tone-amber">{agentReview.dataQualityFlags[0].message}</div>
+            ) : (
+              <div className="inline-note tone-neutral">Bundle, review, and research details are all available in one place for this fund.</div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ReferenceChallengeTab({ model, onOpenReview }) {
+  const cards = buildChallengeCards(model)
+  const agentReview = model.agentReview
+
+  return (
+    <div>
+      <div className="ref-banner">
+        <span className="ref-banner-icon">!</span>
+        <div>
+          <strong>{cards.length} positions require PM review before the next IC.</strong>
+          <p>The cards below combine active weights, fund positioning, VIR, algo direction, prior internal notes, and matched research context.</p>
+        </div>
+      </div>
+
+      {cards.map((card, index) => {
+        const row = card.row || {}
+        const question = findRelevantNarrativeItem(agentReview?.review?.pm_questions ?? [], row, index)
+        const position = agentReview?.positionByAcid?.get(card.acid)
+        const sourceDecks = positionSourceDecks(position)
+        const virValue = numberOrNull(row.vir_stf)
+        const virDelta = numberOrNull(row.vir_delta_stf)
+        return (
+          <article key={card.id} className="ref-challenge-card">
+            <div className="ref-cc-header">
+              <span className="ref-cc-name">{card.acid}</span>
+              <span className={`tag ${card.severity === 'urgent' ? 'tag-conflict' : card.severity === 'watch' ? 'tag-watch' : 'tag-aligned'}`}>{humanizeKey(card.severity)}</span>
+              <span className={`tag ${(numberOrNull(row.active_rolled_exposure) ?? 0) >= 0 ? 'tag-ow' : 'tag-uw'}`}>{(numberOrNull(row.active_rolled_exposure) ?? 0) >= 0 ? 'OW' : 'UW'}</span>
+              {virDelta != null ? (
+                <span className={`tag ${virDelta >= 0 ? 'tag-aligned' : 'tag-watch'}`}>
+                  VIR {virDelta >= 0 ? '+' : ''}
+                  {(virDelta * 100).toFixed(2)}%
+                </span>
+              ) : null}
+            </div>
+
+            <div className="ref-cc-body">{card.summary}</div>
+
+            <div className="ref-cc-grid">
+              <MetricCell label="Active" value={formatWeight(row.active_rolled_exposure)} tone={toneClass(row.active_rolled_exposure)} />
+              <MetricCell label="Portfolio" value={formatWeight(row.fund_target_rolled_exposure)} />
+              <MetricCell label="Benchmark" value={formatWeight(row.fund_benchmark_rolled_exposure)} />
+              <MetricCell label="VIR STF" value={virValue == null ? '-' : `${formatSignedMaybe(virValue * 100)}%`} tone={toneClass(virValue)} />
+              <MetricCell label="VIR d MoM" value={virDelta == null ? '-' : `${formatSignedMaybe(virDelta * 100)}%`} tone={toneClass(virDelta)} />
+              <MetricCell label="Rank d" value={formatSignedMaybe(row.vir_rank_change_by_stf)} tone={toneClass(row.vir_rank_change_by_stf)} />
+            </div>
+
+            <div className="ref-context-text">{position?.internal_history_excerpt ? truncate(position.internal_history_excerpt, 260) : card.detail}</div>
+
+            {sourceDecks.length ? (
+              <div className="ref-chip-line">
+                {sourceDecks.slice(0, 3).map((deck) => (
+                  <span key={deck} className="ref-data-chip">{deck}</span>
+                ))}
+              </div>
+            ) : null}
+
+            <div className="question-box">
+              <div className="qb-label">Question for PM</div>
+              <div className="qb-text">{question?.question || question?.statement || 'What is the live thesis for this position, and what would invalidate it over the next review cycle?'}</div>
+            </div>
+
+            <div className="ref-card-actions">
+              <button type="button" className="tb-btn" onClick={() => onOpenReview(card.acid)}>
+                Open IC Prep
+              </button>
+            </div>
+          </article>
+        )
+      })}
+    </div>
+  )
+}
+
+function ReferenceDecompTab({ model, focusedRow, onFocusAcid }) {
+  const agentReview = model.agentReview
+  const materialPositions = [...(agentReview?.materialPositions ?? [])]
+    .filter((position) => model.exposureByAcid.has(position.acid))
+    .sort((a, b) => Math.abs(numberOrNull(b.active_weight) ?? 0) - Math.abs(numberOrNull(a.active_weight) ?? 0))
+  const watchlist = buildVirAlgoWatchlist(model, materialPositions, focusedRow?.acid)
+  const selectedAcid = focusedRow?.acid && watchlist.some((item) => item.acid === focusedRow.acid) ? focusedRow.acid : watchlist[0]?.acid
+  const selectedExposure = selectedAcid ? model.exposureByAcid.get(selectedAcid) : null
+  const selectedPosition = selectedAcid ? agentReview?.positionByAcid?.get(selectedAcid) : null
+  const selectedHistory = selectedAcid ? model.signalHistoryByAcid?.[selectedAcid] : null
+  const selectedSeries = selectedHistory?.series ?? []
+  const trendSummary = buildTrendSummary(selectedSeries)
+  const preferredItem = selectedPosition ?? selectedExposure ?? null
+  const selectedIndex = watchlist.findIndex((item) => item.acid === selectedAcid)
+  const overview = findRelevantNarrativeItem(agentReview?.review?.current_positioning ?? [], preferredItem, selectedIndex)
+  const bull = findRelevantNarrativeItem(agentReview?.review?.bull_case ?? [], preferredItem, selectedIndex)
+  const bear = findRelevantNarrativeItem(agentReview?.review?.bear_case ?? [], preferredItem, selectedIndex)
+  const question = findRelevantNarrativeItem(agentReview?.review?.pm_questions ?? [], preferredItem, selectedIndex)
+  const overviewText = buildPositionOverview(selectedPosition, selectedExposure, overview)
+  const bullText = buildPositionBullCase(selectedPosition, bull)
+  const bearText = buildPositionBearCase(selectedPosition, selectedExposure, bear)
+  const pmQuestionText = buildPositionQuestion(selectedPosition, selectedExposure, question)
+  const driverEntries = Object.entries(selectedPosition?.decomposition_values ?? {})
+    .map(([label, value]) => ({ label, value: numberOrNull(value) ?? 0 }))
+    .sort((a, b) => Math.abs(b.value) - Math.abs(a.value))
+    .slice(0, 4)
+  const totalDriverAbs = driverEntries.reduce((sum, item) => sum + Math.abs(item.value), 0) || 1
+  const trustScore = trustScoreFromQuality(selectedPosition?.signal_quality)
+  const monthlyRows = selectedSeries.filter((item) => item.vir_stf != null || item.algo_active_weight != null).slice(-6).reverse()
+
+  return (
+    <div className="ref-va-page">
+      <div className="ref-va-toolbar">
+        <div>
+          <div className="card-title">Signal watchlist</div>
+          <div className="ref-chart-caption">Largest current exposures with usable VIR or algo history.</div>
+        </div>
+        <div className="ref-va-watchlist">
+          {watchlist.map((item) => (
+            <button
+              key={item.acid}
+              type="button"
+              className={`ref-va-pill ${item.acid === selectedAcid ? 'is-active' : ''}`}
+              onClick={() => onFocusAcid(item.acid)}
+            >
+              <strong>{item.acid}</strong>
+              <span>{formatWeight(item.active)}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {selectedAcid ? (
+        <article className="ref-decomp-card ref-va-card">
+          <div className="ref-dc-header">
+            <div>
+              <div className="ref-dc-title">{selectedAcid}</div>
+              <div className="ref-dc-sub">
+                {selectedExposure?.category || 'Signal view'} | active {formatWeight(selectedExposure?.active_rolled_exposure)} | VIR latest {formatAxisPercent(trendSummary.latestVir)} | algo latest {formatAxisPercent(trendSummary.latestAlgo)}
+              </div>
+            </div>
+            <StatusBadge tone={selectedPosition ? alignmentToneForSignal(selectedPosition.signal_direction || selectedPosition.signal_alignment) : toneFromNumber(selectedExposure?.active_rolled_exposure)}>
+              {selectedPosition ? humanizeKey(selectedPosition.signal_direction || selectedPosition.signal_alignment || 'unknown') : classifyAlignment(selectedExposure).label}
+            </StatusBadge>
+          </div>
+
+          <div className="ref-va-main">
+            <div className="ref-va-chart-card">
+              <div className="ref-va-card-head">
+                <div className="card-title">1 year signal path</div>
+                <div className="ref-va-legend">
+                  <span><i className="ref-dot vir" /> VIR STF</span>
+                  <span><i className="ref-dot algo" /> Algo active weight</span>
+                </div>
+              </div>
+              <SignalHistoryChart series={selectedSeries} />
+              <div className="ref-path-caption">
+                Window {monthYear(signalHistory.dateRange?.start)} to {monthYear(signalHistory.dateRange?.end)}. VIR currently loaded through {selectedHistory?.coverage?.vir_latest_date ? monthYear(selectedHistory.coverage.vir_latest_date) : '-'}.
+              </div>
+            </div>
+
+            <aside className="ref-va-side">
+              <div className="ref-va-side-grid">
+                <MetricCell label="Current position" value={formatWeight(selectedExposure?.active_rolled_exposure)} tone={toneFromNumber(selectedExposure?.active_rolled_exposure)} />
+                <MetricCell label="Latest VIR STF" value={formatAxisPercent(trendSummary.latestVir)} tone={toneFromNumber(trendSummary.latestVir)} />
+                <MetricCell label="Latest algo" value={formatAxisPercent(trendSummary.latestAlgo)} tone={toneFromNumber(trendSummary.latestAlgo)} />
+                <MetricCell label="VIR 3m" value={formatAxisPercent(trendSummary.vir3mDelta)} tone={toneFromNumber(trendSummary.vir3mDelta)} />
+                <MetricCell label="Algo 3m" value={formatAxisPercent(trendSummary.algo3mDelta)} tone={toneFromNumber(trendSummary.algo3mDelta)} />
+                <MetricCell label="History points" value={`${selectedHistory?.coverage?.vir_points ?? 0} VIR / ${selectedHistory?.coverage?.algo_points ?? 0} algo`} />
+              </div>
+
+              <div className="ref-va-compare">
+                <div className="card-title">Current vs latest signals</div>
+                <SignalCompareRow label="Position" value={selectedExposure?.active_rolled_exposure} format="weight" />
+                <SignalCompareRow label="VIR STF" value={trendSummary.latestVir} format="signal" />
+                <SignalCompareRow label="Algo active" value={trendSummary.latestAlgo} format="signal" />
+              </div>
+
+              <div className="ref-trust-row">
+                <span>Signal quality</span>
+                <div className="ref-trust-bar">
+                  <div className={`ref-trust-fill tone-bg-${trustToneFromQuality(selectedPosition?.signal_quality)}`} style={{ width: `${trustScore}%` }} />
+                </div>
+                <code>{trustScore}%</code>
+              </div>
+            </aside>
+          </div>
+
+          <div className="ref-va-lower">
+            <div className="ref-va-panel">
+              <div className="card-title">Why it matters now</div>
+              <div className="verdict-row">
+                <span className="verdict-label">Read</span>
+                <span className="verdict-text">{overviewText}</span>
+              </div>
+
+              {driverEntries.length ? (
+                <div className="ref-driver-grid">
+                  {driverEntries.map((driver) => (
+                    <div key={driver.label} className={`ref-driver-block ${driver.label === selectedPosition?.decomposition_driver ? 'is-dominant' : ''}`}>
+                      <div className="ref-driver-label">{humanizeKey(driver.label)}</div>
+                      <div className={`ref-driver-val ${toneClass(driver.value)}`}>{formatMaybe(driver.value * 100)}%</div>
+                      <div className="ref-driver-pct">{Math.round((Math.abs(driver.value) / totalDriverAbs) * 100)}%</div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+              <div className="question-box">
+                <div className="qb-label">Question for PM</div>
+                <div className="qb-text">{pmQuestionText}</div>
+              </div>
+            </div>
+
+            <div className="ref-va-panel">
+              <div className="ref-decomp-notes">
+                <div className="bull-block ba-bull">
+                  <div className="ba-title">Bull case</div>
+                  <div className="ba-text">{bullText}</div>
+                </div>
+                <div className="bear-block ba-bear">
+                  <div className="ba-title">Bear case</div>
+                  <div className="ba-text">{bearText}</div>
+                </div>
+              </div>
+
+              <div className="ref-va-monthly">
+                <div className="card-title">Recent monthly values</div>
+                {monthlyRows.length ? (
+                  <div className="data-table compact">
+                    <div className="table-row is-head">
+                      <span>Month</span>
+                      <span className="align-right">VIR STF</span>
+                      <span className="align-right">Algo</span>
+                    </div>
+                    {monthlyRows.map((item) => (
+                      <div key={item.date} className="table-row">
+                        <span>{monthYear(item.date)}</span>
+                        <code className={`align-right ${toneClass(item.vir_stf)}`}>{formatAxisPercent(item.vir_stf)}</code>
+                        <code className={`align-right ${toneClass(item.algo_active_weight)}`}>{formatAxisPercent(item.algo_active_weight)}</code>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <EmptyState copy="No 12-month history was available for this ACID." />
+                )}
+              </div>
+            </div>
+          </div>
+        </article>
+      ) : (
+        <EmptyState copy="No VIR / algo history is available for the current filter." />
+      )}
+    </div>
+  )
+}
+
+function ReferenceFoFTab({ model }) {
+  const [expanded, setExpanded] = useState(() => new Set())
+  const rows = model.exposures
+    .filter((row) => model.lineageByAcid[row.acid] && Math.abs(numberOrNull(row.active_rolled_exposure) ?? 0) >= 0.3)
+    .slice(0, 12)
+
+  const toggle = (acid) => {
+    setExpanded((current) => {
+      const next = new Set(current)
+      if (next.has(acid)) {
+        next.delete(acid)
+      } else {
+        next.add(acid)
+      }
+      return next
+    })
+  }
+
+  const maxWeight = Math.max(
+    1,
+    ...rows.flatMap((row) => [Math.abs(numberOrNull(row.fund_target_rolled_exposure) ?? 0), Math.abs(numberOrNull(row.fund_benchmark_rolled_exposure) ?? 0)]),
+  )
+
+  return (
+    <div className="ref-card">
+      <div className="ref-card-pad">
+        <div className="card-title">Look-through by exposure</div>
+      </div>
+      <div className="ref-fof-list">
+        {rows.length ? (
+          rows.map((row) => {
+            const detail = model.lineageByAcid[row.acid]
+            const isOpen = expanded.has(row.acid)
+            return (
+              <div key={row.acid}>
+                <button type="button" className={`ref-fof-row ${isOpen ? 'is-open' : ''}`} onClick={() => toggle(row.acid)}>
+                  <span className="ref-fof-acid">{row.acid}</span>
+                  <div className="ref-fof-bars">
+                    <div className="ref-fof-bar ref-fof-bar-bench" style={{ width: `${((numberOrNull(row.fund_benchmark_rolled_exposure) ?? 0) / maxWeight) * 100}%` }} />
+                    <div className="ref-fof-bar ref-fof-bar-port" style={{ width: `${((numberOrNull(row.fund_target_rolled_exposure) ?? 0) / maxWeight) * 100}%` }} />
+                  </div>
+                  <div className="ref-fof-vals">
+                    <code>{formatWeight(row.fund_target_rolled_exposure)}</code>
+                    <code>{formatWeight(row.fund_benchmark_rolled_exposure)}</code>
+                    <code className={toneClass(row.active_rolled_exposure)}>{formatWeight(row.active_rolled_exposure)}</code>
+                  </div>
+                </button>
+                {isOpen ? (
+                  <div className="ref-fof-detail">
+                    <div className="ref-fof-meta">
+                      <span>{detail.securityCount} securities contributing</span>
+                      <span>{detail.byPath?.length ?? 0} sleeves / sources</span>
+                    </div>
+                    <div className="ref-fof-pill-wrap">
+                      {(detail.securities ?? []).slice(0, 8).map((security) => (
+                        <div key={security.identifier || security.securityName} className="ref-fof-pill">
+                          <strong>{security.securityName}</strong>
+                          <code>{formatWeight(security.activeContribution)}</code>
+                          {(security.sources ?? []).slice(0, 3).map((source) => (
+                            <span key={`${security.securityName}-${source.sourceName}`}>{source.sourceName} {formatWeight(source.activeContribution)}</span>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            )
+          })
+        ) : (
+          <div className="ref-card-pad">
+            <EmptyState copy="No look-through rows are available for the current fund filter." />
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+function ReferenceICTab({ model, focusedAcid }) {
+  const items = buildReferenceICItems(model, focusedAcid)
+
+  return (
+    <div>
+      {items.length ? (
+        items.map((item, index) => (
+          <article key={`${item.title}-${index}`} className="ref-ic-card">
+            <div className="ref-ic-header">
+              <div className="ref-ic-num">{index + 1}</div>
+              <div>
+                <div className="ref-ic-title">{item.title}</div>
+                <div className="ref-ic-body">{item.body}</div>
+              </div>
+            </div>
+            {item.evidence?.length ? (
+              <div className="ref-ic-evidence">
+                {item.evidence.map((evidence) => (
+                  <span key={`${item.title}-${evidence}`} className="ref-ic-chip">{evidence}</span>
+                ))}
+              </div>
+            ) : null}
+          </article>
+        ))
+      ) : (
+        <EmptyState copy="No IC prep items are available for this fund." />
+      )}
+    </div>
+  )
+}
+
+function ReferenceMemoryTab({ model }) {
+  const items = buildReferenceMemoryItems(model)
+
+  return (
+    <div className="ref-card ref-card-pad">
+      {items.length ? (
+        items.map((item, index) => (
+          <article key={`${item.category}-${index}`} className="ref-mem-item">
+            <div className={`ref-mem-dot tone-bg-${item.tone || 'neutral'}`} />
+            <div className="ref-mem-content">
+              <div className="ref-mem-category">{item.category}</div>
+              <div className="ref-mem-text">{item.text}</div>
+              <div className="ref-mem-meta">{item.meta}</div>
+            </div>
+          </article>
+        ))
+      ) : (
+        <EmptyState copy="No agent memory entries are saved for this fund yet." />
+      )}
+    </div>
+  )
+}
+
+function MetricCell({ label, value, tone = '' }) {
+  return (
+    <div className="ref-cc-cell">
+      <div className="ref-cc-cell-label">{label}</div>
+      <div className={`ref-cc-cell-val ${tone ? toneClassToText(tone) : ''}`}>{value || '-'}</div>
+    </div>
+  )
+}
+
+function MiniTrendLine({ current, delta }) {
+  const prior = previousValue(current, delta)
+  const values = [prior, current].map((value) => numberOrNull(value) ?? 0)
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  const range = max - min || 1
+  const points = values.map((value, index) => ({
+    cx: index === 0 ? 10 : 90,
+    cy: 90 - (((value - min) / range) * 70 + 10),
+  }))
+
+  return (
+    <div className="ref-mini-line">
+      <div className="ref-mini-axis" />
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <line x1={points[0].cx} y1={points[0].cy} x2={points[1].cx} y2={points[1].cy} className="ref-mini-path" />
+        {points.map((point, index) => (
+          <circle key={`${point.cx}-${index}`} cx={point.cx} cy={point.cy} r="3.2" className="ref-mini-dot" />
+        ))}
+      </svg>
+      <div className="ref-mini-label ref-mini-left">Prev {formatMaybe((prior ?? 0) * 100)}%</div>
+      <div className="ref-mini-label ref-mini-right">Now {formatMaybe((numberOrNull(current) ?? 0) * 100)}%</div>
+    </div>
+  )
+}
+
+function SignalHistoryChart({ series }) {
+  const width = 760
+  const height = 260
+  const padTop = 18
+  const padRight = 14
+  const padBottom = 34
+  const padLeft = 52
+  const plotted = series.filter((item) => item.vir_stf != null || item.algo_active_weight != null)
+
+  if (!plotted.length) {
+    return <EmptyState copy="No 12-month signal history is available for this ACID." />
+  }
+
+  const values = plotted.flatMap((item) => [numberOrNull(item.vir_stf), numberOrNull(item.algo_active_weight)]).filter((value) => value != null)
+  const maxAbs = Math.max(...values.map((value) => Math.abs(value)), 0.01)
+  const yMax = Math.max(maxAbs * 1.2, 0.02)
+  const yMin = -yMax
+  const plotWidth = width - padLeft - padRight
+  const plotHeight = height - padTop - padBottom
+  const zeroY = padTop + ((yMax - 0) / (yMax - yMin)) * plotHeight
+  const xStep = plotted.length > 1 ? plotWidth / (plotted.length - 1) : 0
+
+  const xForIndex = (index) => padLeft + index * xStep
+  const yForValue = (value) => padTop + ((yMax - value) / (yMax - yMin)) * plotHeight
+  const virPath = buildLinePath(plotted, 'vir_stf', xForIndex, yForValue)
+  const algoPath = buildLinePath(plotted, 'algo_active_weight', xForIndex, yForValue)
+  const tickValues = [yMax, yMax / 2, 0, yMin / 2, yMin]
+
+  return (
+    <div className="ref-signal-chart">
+      <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none" aria-label="One year VIR and algo time series">
+        {tickValues.map((tick) => (
+          <g key={tick}>
+            <line x1={padLeft} x2={width - padRight} y1={yForValue(tick)} y2={yForValue(tick)} className="ref-signal-grid" />
+            <text x={padLeft - 10} y={yForValue(tick) + 4} className="ref-signal-y-label">
+              {formatAxisPercent(tick)}
+            </text>
+          </g>
+        ))}
+
+        {plotted.map((item, index) => (
+          <g key={item.date}>
+            <line x1={xForIndex(index)} x2={xForIndex(index)} y1={padTop} y2={height - padBottom} className="ref-signal-vgrid" />
+            <text x={xForIndex(index)} y={height - 12} textAnchor="middle" className="ref-signal-x-label">
+              {shortMonth(item.date)}
+            </text>
+          </g>
+        ))}
+
+        <line x1={padLeft} x2={width - padRight} y1={zeroY} y2={zeroY} className="ref-signal-zero" />
+        {virPath ? <path d={virPath} className="ref-signal-path vir" /> : null}
+        {algoPath ? <path d={algoPath} className="ref-signal-path algo" /> : null}
+
+        {plotted.map((item, index) => (
+          <g key={`${item.date}-dots`}>
+            {item.vir_stf != null ? <circle cx={xForIndex(index)} cy={yForValue(item.vir_stf)} r="3.5" className="ref-signal-dot vir" /> : null}
+            {item.algo_active_weight != null ? <circle cx={xForIndex(index)} cy={yForValue(item.algo_active_weight)} r="3.5" className="ref-signal-dot algo" /> : null}
+          </g>
+        ))}
+
+        <text x={18} y={height / 2} className="ref-signal-axis-title" transform={`rotate(-90 18 ${height / 2})`}>
+          Signal value
+        </text>
+      </svg>
+    </div>
+  )
+}
+
+function SignalCompareRow({ label, value, format = 'weight' }) {
+  const scale = 0.12
+  const width = `${clamp((Math.abs(numberOrNull(value) ?? 0) / scale) * 100, 0, 100)}%`
+  return (
+    <div className="ref-compare-row">
+      <span>{label}</span>
+      <div className="ref-compare-track">
+        <div className={`ref-compare-fill ${toneFromNumber(value)}`} style={{ width }} />
+      </div>
+      <code className={toneClass(value)}>{format === 'signal' ? formatAxisPercent(value) : formatWeight(value)}</code>
+    </div>
+  )
+}
+
+function buildVirAlgoWatchlist(model, materialPositions, focusedAcid) {
+  const seed = []
+  if (focusedAcid && model.exposureByAcid.has(focusedAcid)) {
+    seed.push(model.exposureByAcid.get(focusedAcid))
+  }
+  for (const position of materialPositions) {
+    seed.push(model.exposureByAcid.get(position.acid))
+  }
+  for (const row of model.signalRows) {
+    seed.push(row)
+  }
+
+  const seen = new Set()
+  return seed
+    .filter(Boolean)
+    .filter((row) => {
+      if (!row?.acid || seen.has(row.acid)) {
+        return false
+      }
+      seen.add(row.acid)
+      return true
+    })
+    .map((row) => ({
+      acid: row.acid,
+      active: numberOrNull(row.active_rolled_exposure) ?? numberOrNull(row.active_weight) ?? 0,
+    }))
+    .filter((row) => model.signalHistoryByAcid?.[row.acid]?.coverage?.vir_points || model.signalHistoryByAcid?.[row.acid]?.coverage?.algo_points)
+    .sort((a, b) => Math.abs(b.active) - Math.abs(a.active))
+    .slice(0, 8)
+}
+
+function buildTrendSummary(series = []) {
+  const latestVirIndex = findLatestSeriesIndex(series, 'vir_stf')
+  const latestAlgoIndex = findLatestSeriesIndex(series, 'algo_active_weight')
+
+  return {
+    latestVir: latestVirIndex >= 0 ? numberOrNull(series[latestVirIndex]?.vir_stf) : null,
+    latestAlgo: latestAlgoIndex >= 0 ? numberOrNull(series[latestAlgoIndex]?.algo_active_weight) : null,
+    vir3mDelta: latestVirIndex >= 3 ? deltaBetweenSeriesPoints(series, latestVirIndex, latestVirIndex - 3, 'vir_stf') : null,
+    algo3mDelta: latestAlgoIndex >= 3 ? deltaBetweenSeriesPoints(series, latestAlgoIndex, latestAlgoIndex - 3, 'algo_active_weight') : null,
+  }
+}
+
+function findLatestSeriesIndex(series = [], field) {
+  for (let index = series.length - 1; index >= 0; index -= 1) {
+    if (numberOrNull(series[index]?.[field]) != null) {
+      return index
+    }
+  }
+  return -1
+}
+
+function deltaBetweenSeriesPoints(series = [], currentIndex, priorIndex, field) {
+  const current = numberOrNull(series[currentIndex]?.[field])
+  const prior = numberOrNull(series[priorIndex]?.[field])
+  if (current == null || prior == null) {
+    return null
+  }
+  return current - prior
+}
+
+function buildLinePath(series, field, xForIndex, yForValue) {
+  const points = series
+    .map((item, index) => {
+      const value = numberOrNull(item[field])
+      return value == null ? null : { x: xForIndex(index), y: yForValue(value) }
+    })
+    .filter(Boolean)
+
+  if (!points.length) {
+    return ''
+  }
+
+  return points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ')
+}
+
+function shortMonth(value) {
+  if (!value) {
+    return ''
+  }
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) {
+    return value
+  }
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+  })
+}
+
+function formatAxisPercent(value) {
+  const numeric = numberOrNull(value)
+  if (numeric == null) {
+    return '-'
+  }
+  return `${numeric > 0 ? '+' : ''}${(numeric * 100).toFixed(1)}%`
+}
+
+function scatterPointClass(row) {
+  const alignment = classifyAlignment(row)
+  if (alignment.key === 'opposite') {
+    return 'is-conflict'
+  }
+  if (alignment.key === 'aligned') {
+    return 'is-aligned'
+  }
+  return 'is-neutral'
+}
+
+function scatterPointStyle(row, maxActive) {
+  const vir = numberOrNull(row.vir_stf) ?? 0
+  const active = numberOrNull(row.active_rolled_exposure) ?? 0
+  const left = clamp(((vir + 0.08) / 0.16) * 100, 5, 95)
+  const top = clamp(50 - (active / Math.max(maxActive, 0.01)) * 40, 6, 94)
+  return {
+    left: `${left}%`,
+    top: `${top}%`,
+  }
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value))
+}
+
+function toneClassToText(tone) {
+  return tone === 'green' || tone === 'red' || tone === 'blue' || tone === 'amber' || tone === 'violet' ? `tone-text-${tone}` : ''
+}
+
+function trustScoreFromQuality(value = '') {
+  if (value === 'improving') {
+    return 74
+  }
+  if (value === 'stable') {
+    return 61
+  }
+  if (value === 'weakening') {
+    return 37
+  }
+  return 18
+}
+
+function trustToneFromQuality(value = '') {
+  if (value === 'improving') {
+    return 'green'
+  }
+  if (value === 'stable') {
+    return 'blue'
+  }
+  if (value === 'weakening') {
+    return 'amber'
+  }
+  return 'neutral'
+}
+
+function positionSourceDecks(position) {
+  return (position?.source_refs ?? [])
+    .map((item) => fileNameFromPath(item.artifact_path))
+    .filter((name) => name && !name.endsWith('.csv') && !name.endsWith('.json'))
+}
+
+function findRelevantNarrativeItem(items = [], row = {}, fallbackIndex = 0) {
+  if (!items.length) {
+    return null
+  }
+  const aliases = narrativeAliases(row)
+  const scored = items.map((item, index) => {
+    const labelText = normalizeNarrativeText(item.label || '')
+    const bodyText = normalizeNarrativeText(`${item.question || ''} ${item.statement || ''} ${item.view || ''} ${item.change || ''}`)
+    const labelMatches = aliases.filter((alias) => labelText.includes(alias)).length
+    const bodyMatches = aliases.filter((alias) => bodyText.includes(alias)).length
+    const score = labelMatches * 100 + bodyMatches * 15 - Math.abs(index - fallbackIndex)
+    return { item, labelMatches, bodyMatches, score, distance: Math.abs(index - fallbackIndex) }
+  })
+
+  scored.sort((a, b) => b.score - a.score || a.distance - b.distance)
+  const best = scored[0]
+
+  if (!best || best.score < 80) {
+    return null
+  }
+
+  return best.item
+}
+
+function narrativeTokens(value = '') {
+  return new Set(
+    String(value)
+      .toLowerCase()
+      .replace(/united states/g, 'us')
+      .replace(/information technology/g, 'tech')
+      .split(/[^a-z0-9]+/)
+      .filter((token) => token.length >= 2),
+  )
+}
+
+function narrativeAliases(row = {}) {
+  const aliases = new Set()
+  const acid = String(row.acid || '')
+  const label = String(row.label || '')
+  const category = String(row.category || '')
+  const mapping = row.mapping || {}
+
+  addAliasVariants(aliases, acid)
+  addAliasVariants(aliases, label)
+  addAliasVariants(aliases, mapping.sector)
+  addAliasVariants(aliases, mapping.style)
+  addAliasVariants(aliases, mapping.asset_class_name)
+  addAliasVariants(aliases, category)
+
+  if (/\bUS IT EQ\b/.test(acid) || /technology/i.test(label)) {
+    ;['it', 'tech', 'technology', 'information technology', 'us technology'].forEach((value) => addAliasVariants(aliases, value))
+  }
+  if (/\bUS FN EQ\b/.test(acid) || /financial/i.test(label)) {
+    ;['financials', 'financial services', 'financial'].forEach((value) => addAliasVariants(aliases, value))
+  }
+  if (/\bUS ID EQ\b/.test(acid) || /industrial/i.test(label)) {
+    ;['industrials', 'industrial'].forEach((value) => addAliasVariants(aliases, value))
+  }
+  if (/\bUS CD EQ\b/.test(acid) || /consumer discretionary/i.test(label)) {
+    ;['consumer discretionary', 'consumer cyclical'].forEach((value) => addAliasVariants(aliases, value))
+  }
+  if (/\bUS HC EQ\b/.test(acid) || /health care/i.test(label)) {
+    ;['health care', 'healthcare'].forEach((value) => addAliasVariants(aliases, value))
+  }
+  if (/\bUS LRG G EQ\b/.test(acid) || /lrg growth|large growth/i.test(label)) {
+    ;['large growth', 'lrg growth'].forEach((value) => addAliasVariants(aliases, value))
+  }
+  if (/\bUS LRG V EQ\b/.test(acid) || /lrg value|large value/i.test(label)) {
+    ;['large value', 'lrg value'].forEach((value) => addAliasVariants(aliases, value))
+  }
+  if (/\bUS MID V EQ\b/.test(acid) || /mid value/i.test(label)) {
+    addAliasVariants(aliases, 'mid value')
+  }
+  if (/\bUS MID G EQ\b/.test(acid) || /mid growth/i.test(label)) {
+    addAliasVariants(aliases, 'mid growth')
+  }
+  if (/\bUS SML G EQ\b/.test(acid) || /small growth|sml growth/i.test(label)) {
+    ;['small growth', 'sml growth'].forEach((value) => addAliasVariants(aliases, value))
+  }
+  if (/\bUS SML V EQ\b/.test(acid) || /small value|sml value/i.test(label)) {
+    ;['small value', 'sml value'].forEach((value) => addAliasVariants(aliases, value))
+  }
+
+  return [...aliases].filter((value) => value.length >= 2)
+}
+
+function addAliasVariants(target, value = '') {
+  const normalized = normalizeNarrativeText(value)
+  if (!normalized) {
+    return
+  }
+  target.add(normalized)
+  const compact = normalized.replace(/\s+/g, ' ')
+  if (compact) {
+    target.add(compact)
+  }
+}
+
+function normalizeNarrativeText(value = '') {
+  return String(value)
+    .toLowerCase()
+    .replace(/united states/g, 'us')
+    .replace(/information technology/g, 'tech')
+    .replace(/consumer discretionary/g, 'consumer cyclical')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+}
+
+function buildReferenceICItems(model, focusedAcid) {
+  const agentReview = model.agentReview
+  if (agentReview?.review?.follow_up?.length) {
+    return agentReview.review.follow_up.map((item, index) => ({
+      title: item.label || `Follow up ${index + 1}`,
+      body: item.action,
+      evidence: [
+        focusedAcid && index === 0 ? focusedAcid : null,
+        agentReview.packetReviewDate ? `Packet ${agentReview.packetReviewDate}` : null,
+        model.snapshotMatrix.review ? `Review ${model.snapshotMatrix.review}` : null,
+      ].filter(Boolean),
+    }))
+  }
+
+  return model.reviewSections.map((section) => ({
+    title: section.title,
+    body: section.preview.join(' '),
+    evidence: [focusedAcid || null].filter(Boolean),
+  }))
+}
+
+function buildReferenceMemoryItems(model) {
+  const agentReview = model.agentReview
+  const items = []
+
+  for (const flag of agentReview?.dataQualityFlags ?? []) {
+    items.push({
+      category: 'Data Quality',
+      text: flag.message,
+      meta: `${flag.severity || 'info'} | ${agentReview.packetReviewDate || model.snapshotMatrix.review || '-'}`,
+      tone: flag.severity === 'medium' ? 'amber' : 'blue',
+    })
+  }
+
+  for (const item of agentReview?.review?.dashboard_highlights ?? []) {
+    items.push({
+      category: item.label || 'Highlight',
+      text: item.highlight,
+      meta: `Review ${agentReview.manifest.review_date || model.snapshotMatrix.review || '-'}`,
+      tone: item.label?.includes('DATA QUALITY') ? 'amber' : 'blue',
+    })
+  }
+
+  for (const item of (agentReview?.sharepointHighlights ?? []).slice(0, 4)) {
+    items.push({
+      category: 'SharePoint Research',
+      text: truncate(item.summary_text, 220),
+      meta: `${item.label || item.acid} | ${fileNameFromPath(item.full_path || item.file_name || '')}`,
+      tone: 'green',
+    })
+  }
+
+  return items.slice(0, 10)
+}
+
+function buildPositionOverview(selectedPosition, selectedExposure, overview) {
+  const parts = []
+  if (selectedExposure?.active_rolled_exposure != null && selectedExposure?.fund_benchmark_rolled_exposure != null) {
+    parts.push(`Active weight ${formatWeight(selectedExposure.active_rolled_exposure)} vs benchmark ${formatWeight(selectedExposure.fund_benchmark_rolled_exposure)}.`)
+  }
+  if (selectedPosition?.vir_now != null || selectedPosition?.algo_active_weight != null) {
+    parts.push(`VIR ${formatAxisPercent(selectedPosition?.vir_now)} and algo ${formatAxisPercent(selectedPosition?.algo_active_weight)}.`)
+  }
+  if (selectedPosition?.decomposition_driver) {
+    parts.push(`Primary decomposition driver: ${humanizeKey(selectedPosition.decomposition_driver)}.`)
+  }
+  if (selectedPosition?.sample_source_securities) {
+    parts.push(`Main holdings include ${truncate(selectedPosition.sample_source_securities, 160)}.`)
+  }
+  return parts.join(' ') || overview?.evidence || overview?.view || describeSignalRow(selectedExposure)
+}
+
+function buildPositionBullCase(selectedPosition, bull) {
+  if (selectedPosition?.sharepoint_research_summary) {
+    return selectedPosition.sharepoint_research_summary
+  }
+  if (selectedPosition?.decomposition_assessment === 'broad_based' && selectedPosition?.vir_now != null) {
+    return `The signal is broad-based rather than narrowly mechanical, with VIR at ${formatAxisPercent(selectedPosition.vir_now)} and supporting decomposition breadth.`
+  }
+  return bull?.statement || 'Matched research and current positioning offer a constructive read, but it still needs to be weighed against live pricing.'
+}
+
+function buildPositionBearCase(selectedPosition, selectedExposure, bear) {
+  if (selectedPosition?.decomposition_assessment && ['valuation_led', 'currency_led'].includes(selectedPosition.decomposition_assessment)) {
+    return `The current signal leans heavily on ${humanizeKey(selectedPosition.decomposition_driver)}, which makes the setup less durable if that driver fades.`
+  }
+  if (selectedPosition?.internal_history_excerpt) {
+    return selectedPosition.internal_history_excerpt
+  }
+  if (selectedExposure?.active_rolled_exposure != null) {
+    return `At ${formatWeight(selectedExposure.active_rolled_exposure)}, this remains a meaningful active bet that can hurt relative performance if the current thesis is wrong.`
+  }
+  return bear?.statement || 'The saved internal history does not fully eliminate the risk that this remains a stale or crowded thesis.'
+}
+
+function buildPositionQuestion(selectedPosition, selectedExposure, question) {
+  if (question?.question) {
+    return question.question
+  }
+  if (selectedPosition?.decomposition_assessment && ['valuation_led', 'currency_led'].includes(selectedPosition.decomposition_assessment)) {
+    return `Does the team still want this exposure at ${formatWeight(selectedExposure?.active_rolled_exposure)} if the current signal is being carried mostly by ${humanizeKey(selectedPosition.decomposition_driver)}?`
+  }
+  return 'How should this position be sized given the current VIR direction, algo stance, and the internal thesis carried over from prior reviews?'
+}
+
 function MetricTile({ label, value, sublabel, tone = 'neutral', compact = false }) {
   return (
     <article className={`metric-tile tone-${tone} ${compact ? 'is-compact' : ''}`}>
@@ -1250,11 +2589,13 @@ function NavCount({ tabId, model }) {
   const value =
     tabId === 'dashboard'
       ? model.summary.misalignedCount
-      : tabId === 'positioning'
-        ? model.exposures.length
-        : tabId === 'signals'
+      : tabId === 'challenge'
         ? buildChallengeCards(model).length
-        : tabId === 'review'
+        : tabId === 'decomp'
+          ? model.signalRows.length
+          : tabId === 'fof'
+            ? model.exposures.filter((row) => model.lineageByAcid[row.acid] && Math.abs(numberOrNull(row.active_rolled_exposure) ?? 0) >= 0.3).length
+        : tabId === 'ic'
           ? model.reviewSections.length
           : model.agentReview?.dataQualityFlags?.length ?? model.changeBrief.evidence_index?.length ?? 0
 
@@ -1401,6 +2742,7 @@ function buildFundModel(fund) {
 
   const exposures = buildExposureRows(fundName)
   const exposureByAcid = new Map(exposures.map((row) => [row.acid, row]))
+  const signalHistoryByAcid = signalHistoryByFund[fundName]?.acids ?? {}
   const movers = sortMaterialMovers((changeBrief.material_movers ?? []).map((row) => ({ ...exposureByAcid.get(row.acid), ...row })))
   const moverByAcid = new Map(movers.map((row) => [row.acid, row]))
   const challenges = challengeBrief.items ?? []
@@ -1463,6 +2805,7 @@ function buildFundModel(fund) {
     availableCategories: categoryOrder.filter((category) => exposures.some((row) => row.category === category)),
     lineages: exposureLineage[fundName] ?? {},
     lineageByAcid: exposureLineage[fundName] ?? {},
+    signalHistoryByAcid,
     coverageBreakdown,
     reviewMarkdown,
     reviewSections,
@@ -1523,14 +2866,155 @@ function buildAgentReview(agentPayload) {
     }))
     .sort((a, b) => Math.abs(numberOrNull(b.active_weight) ?? 0) - Math.abs(numberOrNull(a.active_weight) ?? 0))
 
+  const packetReviewDate = agentPayload.packet.run_metadata?.review_date || agentPayload.packet.header?.review_date || ''
+  const sharepointHighlights = buildResearchHighlights(agentPayload.packet.sharepoint_research_summary ?? [], materialPositions)
+  const matchedResearchCount = numberOrNull(agentPayload.packet.run_metadata?.matched_sharepoint_research_count) ?? sharepointHighlights.length
+  const hasFreshNarrative = !packetReviewDate || !agentPayload.manifest.review_date || packetReviewDate === agentPayload.manifest.review_date
+
   return {
-    review: agentPayload.review,
+    review: hasFreshNarrative ? agentPayload.review : buildPacketDrivenReview(agentPayload.packet, materialPositions, sharepointHighlights),
     manifest: agentPayload.manifest,
     packet: agentPayload.packet,
     materialPositions,
     positionByAcid: new Map(materialPositions.map((position) => [position.acid, position])),
     dataQualityFlags: agentPayload.packet.data_quality_flags ?? [],
+    packetReviewDate,
+    matchedResearchCount,
+    sharepointHighlights,
+    hasFreshNarrative,
   }
+}
+
+function buildPacketDrivenReview(packet, materialPositions, sharepointHighlights) {
+  const signalSummary = packet?.signal_summary ?? {}
+  const fundSnapshot = packet?.fund_snapshot ?? {}
+  const challengeBook = packet?.challenge_book ?? []
+  const topMovers = packet?.top_movers ?? []
+  const portfolioImplications = packet?.portfolio_implications ?? []
+  const roadmap = packet?.roadmap ?? []
+  const pmQuestions = packet?.pm_questions ?? []
+  const qualityFlags = packet?.data_quality_flags ?? []
+  const aligned = signalSummary.aligned_positions ?? []
+  const diverging = signalSummary.diverging_positions ?? []
+  const headlineSummary = fundSnapshot.headline_summary ?? []
+  const largestOverweights = fundSnapshot.largest_overweights ?? []
+  const largestUnderweights = fundSnapshot.largest_underweights ?? []
+  const improvingMovers = topMovers.filter((item) => (numberOrNull(item.vir_delta_mom) ?? 0) > 0).slice(0, 3)
+  const weakeningMovers = topMovers.filter((item) => (numberOrNull(item.vir_delta_mom) ?? 0) < 0).slice(0, 3)
+  const highPriorityChallenges = challengeBook.filter((item) => item.priority === 'high').slice(0, 4)
+  const mediumChallenges = challengeBook.filter((item) => item.priority !== 'high').slice(0, 3)
+
+  const executiveSummaryParts = [
+    ...headlineSummary,
+    ...(signalSummary.fund_level_observations ?? []).slice(0, 2),
+  ].filter(Boolean)
+
+  return {
+    executive_summary:
+      executiveSummaryParts.join(' ') ||
+      'The latest structured packet is loaded, but no current live narrative is available for this review month yet.',
+    current_positioning: [
+      ...largestUnderweights.slice(0, 2).map((item) => ({
+        label: `${item.label} underweight`,
+        statement: `${item.label} is a ${formatWeight(item.active_weight)} active underweight versus the benchmark.`,
+        evidence: buildPositionEvidence(item, materialPositions),
+      })),
+      ...largestOverweights.slice(0, 2).map((item) => ({
+        label: `${item.label} overweight`,
+        statement: `${item.label} is a ${formatWeight(item.active_weight)} active overweight versus the benchmark.`,
+        evidence: buildPositionEvidence(item, materialPositions),
+      })),
+    ],
+    bull_case: [
+      ...aligned.slice(0, 3).map((item) => ({
+        label: `${item.label} aligned`,
+        statement: `${item.label} is ${formatWeight(item.active_weight)} active and the current positioning direction is aligned with both VIR and algo.`,
+        evidence: `${item.category} | alignment ${item.signal_alignment}`,
+      })),
+      ...improvingMovers.map((item) => ({
+        label: `${item.label} improving`,
+        statement: `${item.label} moved by ${formatSignal(item.vir_delta_mom)} month over month, with ${humanizeDriver(item.decomposition_driver)} as the main driver.`,
+        evidence: `${item.category} | VIR now ${formatSignal(item.vir_now)} | active ${formatWeight(item.active_weight)}`,
+      })),
+    ].slice(0, 5),
+    bear_case: [
+      ...highPriorityChallenges.map((item) => ({
+        label: item.label,
+        statement: item.reason,
+        evidence: item.question,
+      })),
+      ...weakeningMovers.map((item) => ({
+        label: `${item.label} weakening`,
+        statement: `${item.label} moved by ${formatSignal(item.vir_delta_mom)} month over month, which weakens the current signal backdrop.`,
+        evidence: `${item.category} | VIR now ${formatSignal(item.vir_now)} | active ${formatWeight(item.active_weight)}`,
+      })),
+    ].slice(0, 5),
+    devils_advocate: [
+      ...portfolioImplications.slice(0, 3).map((item, index) => ({
+        label: humanizeKey(item.type || `counterpoint_${index + 1}`),
+        statement: item.statement,
+      })),
+      ...mediumChallenges.slice(0, 2).map((item) => ({
+        label: `${item.label} follow-through`,
+        statement: item.reason,
+        evidence: item.question,
+      })),
+    ].slice(0, 5),
+    pm_questions: pmQuestions.slice(0, 7),
+    follow_up: [
+      ...roadmap.slice(0, 5).map((item) => ({
+        label: item.acid || 'Next step',
+        action: item.step,
+      })),
+      ...qualityFlags.slice(0, 2).map((item) => ({
+        label: humanizeKey(item.flag || 'data_quality'),
+        action: item.message,
+      })),
+    ],
+    dashboard_highlights: [
+      ...headlineSummary.map((highlight, index) => ({
+        label: `Packet highlight ${index + 1}`,
+        highlight,
+      })),
+      ...sharepointHighlights.slice(0, 2).map((item) => ({
+        label: item.label || item.acid,
+        highlight: `${item.file_name || fileNameFromPath(item.full_path)} matched to ${item.acid}.`,
+      })),
+    ],
+  }
+}
+
+function buildPositionEvidence(item, materialPositions) {
+  const matched = materialPositions.find((position) => position.label === item.label || position.acid === item.acid)
+  if (!matched) {
+    return `${item.category || item.group || 'Exposure'} | benchmark ${formatWeight(item.benchmark_weight)} | portfolio ${formatWeight(item.portfolio_weight)}`
+  }
+  return `${matched.category} | benchmark ${formatWeight(matched.benchmark_weight)} | portfolio ${formatWeight(matched.portfolio_weight)} | VIR ${formatSignal(matched.vir_now)} | algo ${formatWeight(matched.algo_active_weight)}`
+}
+
+function humanizeDriver(value = '') {
+  return humanizeKey(String(value || '').replace(/_/g, ' ')).replace(/\bUsd\b/g, 'USD')
+}
+
+function buildResearchHighlights(rows, materialPositions) {
+  const positionsByAcid = new Map(materialPositions.map((position) => [position.acid, position]))
+
+  return [...rows]
+    .map((item) => {
+      const position = positionsByAcid.get(item.acid)
+      return {
+        ...item,
+        active_weight: numberOrNull(position?.active_weight),
+        category: position?.category ?? '',
+      }
+    })
+    .sort((a, b) => {
+      const activeDelta = Math.abs(numberOrNull(b.active_weight) ?? 0) - Math.abs(numberOrNull(a.active_weight) ?? 0)
+      if (activeDelta !== 0) {
+        return activeDelta
+      }
+      return (numberOrNull(b.confidence) ?? 0) - (numberOrNull(a.confidence) ?? 0)
+    })
 }
 
 function filterModelByCategory(model, selectedCategory) {
@@ -1552,6 +3036,7 @@ function filterModelByCategory(model, selectedCategory) {
     tensionRows: model.tensionRows.filter((row) => allowed.has(row.acid)),
     lineages: Object.fromEntries(exposures.map((row) => [row.acid, model.lineageByAcid[row.acid]])),
     lineageByAcid: Object.fromEntries(exposures.map((row) => [row.acid, model.lineageByAcid[row.acid]])),
+    signalHistoryByAcid: Object.fromEntries(exposures.map((row) => [row.acid, model.signalHistoryByAcid[row.acid]]).filter(([, value]) => value)),
     agentReview: filterAgentReview(model.agentReview, allowed),
     summary: {
       ...model.summary,
@@ -1941,6 +3426,49 @@ function alignmentToneForSignal(value = '') {
   return 'neutral'
 }
 
+function readViewStateFromUrl(fundDirectory, preferredSlug) {
+  const allowedTabIds = new Set(tabs.map((tab) => tab.id))
+  const allowedPortfolioViews = new Set(['new', 'target', 'bench'])
+  const allowedCategories = new Set([defaultCategory, ...categoryOrder])
+
+  if (typeof window === 'undefined') {
+    return {
+      selectedSlug: preferredSlug,
+      activeTab: defaultTabId,
+      selectedCategory: defaultCategory,
+      selectedAcid: '',
+      portfolioView: defaultPortfolioView,
+    }
+  }
+
+  const params = new URLSearchParams(window.location.search)
+  const requestedSlug = params.get('fund') || ''
+  const selectedSlug = fundDirectory.some((fund) => fund.slug === requestedSlug) ? requestedSlug : preferredSlug
+  const requestedTab = params.get('tab') || ''
+  const requestedCategory = params.get('category') || ''
+  const requestedPortfolioView = params.get('view') || ''
+
+  return {
+    selectedSlug,
+    activeTab: allowedTabIds.has(requestedTab) ? requestedTab : defaultTabId,
+    selectedCategory: allowedCategories.has(requestedCategory) ? requestedCategory : defaultCategory,
+    selectedAcid: params.get('acid') || '',
+    portfolioView: allowedPortfolioViews.has(requestedPortfolioView) ? requestedPortfolioView : defaultPortfolioView,
+  }
+}
+
+function buildViewSearchParams({ fundSlug, activeTab, selectedCategory, selectedAcid, portfolioView }) {
+  const params = new URLSearchParams()
+  params.set('fund', fundSlug || '')
+  params.set('tab', activeTab || defaultTabId)
+  params.set('category', selectedCategory || defaultCategory)
+  params.set('view', portfolioView || defaultPortfolioView)
+  if (selectedAcid) {
+    params.set('acid', selectedAcid)
+  }
+  return params
+}
+
 function numberOrNull(value) {
   if (value == null || value === '') {
     return null
@@ -2029,6 +3557,16 @@ function shortModelName(value = '') {
   return parts[parts.length - 1] || value || '-'
 }
 
+function reviewRunSubtitle(agentReview) {
+  if (!agentReview) {
+    return 'No Bedrock review loaded'
+  }
+  if (agentReview.hasFreshNarrative) {
+    return `Live Bedrock review | ${monthYear(agentReview.manifest.logical_snapshot_date)}`
+  }
+  return `Packet-derived review | refreshed ${agentReview.packetReviewDate || '-'} | last live run ${agentReview.manifest.review_date || '-'}`
+}
+
 function getRelativeWidth(value, maxValue, maxWidth) {
   const numeric = Math.abs(numberOrNull(value) ?? 0)
   if (!numeric || !maxValue) {
@@ -2056,4 +3594,9 @@ function slugify(value = '') {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
+}
+
+function fileNameFromPath(value = '') {
+  const normalized = String(value).replaceAll('\\', '/')
+  return normalized.split('/').pop() || value || '-'
 }

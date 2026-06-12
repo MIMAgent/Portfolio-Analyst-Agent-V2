@@ -1498,3 +1498,79 @@ This is the latest checkpoint for Al. The repo now contains a separate `agent2/`
 - The next sensible step after this checkpoint is either:
   - improve the review schema / prompt quality for more funds, or
   - rebuild the frontend against the structured Agent2 packet and evidence model
+
+## 2026-06-12 Follow-up: March/April VIR backfill and stale-review cleanup
+
+### What changed today
+
+- Added the missing 2026 US Equity model months into the repo data chain:
+  - `data/2026-03-31/202603-Equity Model.xlsx`
+  - `data/2026-04-30/202604-Equity Model.xlsx`
+- Updated the VIR refresh pipeline so it no longer relies on only the newest workbook:
+  - `scripts/build_fund_weights_vir_algo_multisignal.py`
+  - `--vir-workbook` now accepts multiple files
+  - when no explicit list is passed, it auto-discovers all `data/*/*Equity Model.xlsx` files and refreshes the history in sorted month order
+- Confirmed the parser handles the newer `General Model` workbook layout and continues to merge decomposition fields into:
+  - `artifacts/equity_vir_history.csv`
+  - implementation lives in `src/portfolio_analyst_agent/equity_history.py`
+
+### Why this matters
+
+- The May 2026 VIR month-over-month changes were previously incomplete because the March and April workbooks were missing from the refresh chain.
+- After the fix, the structured artifact and frontend bundle now use the correct May-over-April VIR move.
+- Example checked explicitly:
+  - `US IT EQ`
+  - `2026-03-31`: `-0.027103275954997424`
+  - `2026-04-30`: `-0.04396241690279659`
+  - `2026-05-31`: `-0.05675254928131926`
+  - correct `vir_delta_stf`: `-0.012790132378522667`
+
+### Rebuilt artifacts after the backfill
+
+- Rebuilt rolled exposure alignment with full March-April-May VIR chain.
+- Rebuilt frontend data files:
+  - `frontend/Example_frontendV1/src/data/monthlyReviewBundle.json`
+  - `frontend/Example_frontendV1/src/data/fundWeightsVirAlgo.json`
+  - `frontend/Example_frontendV1/src/data/signalHistory.json`
+- Rebuilt latest structured packet:
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/agent2_review_packet_2026-06-12.json`
+- Copied latest packet into frontend:
+  - `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-packet.json`
+
+### Frontend stale-review protection
+
+- `frontend/Example_frontendV1/src/App.jsx`
+  - now detects when the structured packet is newer than the last live Bedrock narrative
+  - if the narrative is stale, the UI no longer presents the old Bedrock prose as current
+  - instead it derives the visible review sections from the current structured packet
+- Added helper script:
+  - `scripts/build_frontend_agent_review.py`
+  - purpose: regenerate `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-review.json` from the structured packet so the repo itself does not keep obviously stale frontend review text
+
+### Verification notes
+
+- Production build succeeded:
+  - `frontend/Example_frontendV1`
+  - `npm run build`
+- Local data spot checks confirmed:
+  - `frontend/Example_frontendV1/src/data/fundWeightsVirAlgo.json` carries `US IT EQ` with `vir_snapshot_date=2026-05-31` and `vir_delta_stf=-0.012790132378522667`
+  - `frontend/Example_frontendV1/src/data/signalHistory.json` includes March, April, and May 2026 VIR points for `US IT EQ`
+  - `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-packet.json` now matches the corrected May 2026 values
+- The Codex in-app browser returned a blank root both on the existing Vite dev server and a clean preview server even though:
+  - the HTTP endpoints responded normally
+  - Vite served transformed modules
+  - the production build completed successfully
+- Treat that browser blank-state as a local verification-surface issue unless reproduced in a normal browser outside Codex.
+
+### What Al should look at first for this specific fix
+
+- Pipeline / parser:
+  - `scripts/build_fund_weights_vir_algo_multisignal.py`
+  - `src/portfolio_analyst_agent/equity_history.py`
+- Corrected structured outputs:
+  - `artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv`
+  - `frontend/Example_frontendV1/src/data/signalHistory.json`
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/agent2_review_packet_2026-06-12.json`
+- Frontend stale-review handling:
+  - `frontend/Example_frontendV1/src/App.jsx`
+  - `scripts/build_frontend_agent_review.py`

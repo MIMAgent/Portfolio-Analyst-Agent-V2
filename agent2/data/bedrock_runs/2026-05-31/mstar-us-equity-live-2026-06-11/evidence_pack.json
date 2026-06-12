@@ -1,0 +1,1898 @@
+{
+  "header": {
+    "fund": "MStar US Equity",
+    "fund_slug": "mstar-us-equity",
+    "fund_type": "equity",
+    "benchmark": "Russell 3000",
+    "pm_names": [
+      "Doug McGraw",
+      "Mike Budzinski"
+    ],
+    "snapshot_date": "2026-05-31",
+    "as_of_date": "2026-05-31",
+    "review_date": "2026-06-11",
+    "review_run_id": "agent2_mstar-us-equity_2026-05-31",
+    "source_snapshot_date": "2026-06-08"
+  },
+  "headline_summary": [
+    "Largest underweight: United States Lrg Growth (-7.71 pts), with VIR underweight and algo underweight.",
+    "Largest overweight: Industrials (3.34 pts), with decomposition reading broad_based.",
+    "14 material positions are directionally fighting the current VIR/algo read."
+  ],
+  "largest_overweights": [
+    {
+      "category": "Eq Sector",
+      "label": "Industrials",
+      "active_weight": 3.3439648425869724,
+      "benchmark_weight": 9.457546935782528,
+      "portfolio_weight": 12.8015117783695,
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_2cd25da060c5"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+        },
+        {
+          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+          "row_id": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx"
+        }
+      ]
+    },
+    {
+      "category": "Eq Sector",
+      "label": "Financials",
+      "active_weight": 3.0748332763376354,
+      "benchmark_weight": 11.254094667990007,
+      "portfolio_weight": 14.328927944327642,
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_4676b93f2411"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+        },
+        {
+          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202512-EQ-US FN EQ-US Financials Sector Review .pptx",
+          "row_id": "202512-EQ-US FN EQ-US Financials Sector Review .pptx"
+        }
+      ]
+    },
+    {
+      "category": "Eq Size / Style",
+      "label": "United States Sml Growth",
+      "active_weight": 3.0057212127220225,
+      "benchmark_weight": 1.4094523180904275,
+      "portfolio_weight": 4.41517353081245,
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_15cc692a5ebc"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+        }
+      ]
+    },
+    {
+      "category": "Eq Size / Style",
+      "label": "United States Mid Value",
+      "active_weight": 2.59737238293983,
+      "benchmark_weight": 5.48915792439785,
+      "portfolio_weight": 8.08653030733768,
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_e500111e52ee"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+        }
+      ]
+    }
+  ],
+  "largest_underweights": [
+    {
+      "category": "Eq Size / Style",
+      "label": "United States Lrg Growth",
+      "active_weight": -7.712240255099527,
+      "benchmark_weight": 21.60529482228423,
+      "portfolio_weight": 13.893054567184702,
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_9ca5363876f5"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+        }
+      ]
+    },
+    {
+      "category": "Eq Sector",
+      "label": "Information Technology",
+      "active_weight": -7.623297943087156,
+      "benchmark_weight": 36.75592121497909,
+      "portfolio_weight": 29.132623271891934,
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_6b7f813b4866"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+        },
+        {
+          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+          "row_id": "202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx"
+        }
+      ]
+    },
+    {
+      "category": "Eq Size / Style",
+      "label": "United States Lrg",
+      "active_weight": -6.391838829916999,
+      "benchmark_weight": 34.903938789290294,
+      "portfolio_weight": 28.512099959373295,
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_8eb45217d7f0"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+        },
+        {
+          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+          "row_id": "201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx"
+        }
+      ]
+    },
+    {
+      "category": "Eq Sector",
+      "label": "Consumer Discretionary",
+      "active_weight": -3.3068096039317716,
+      "benchmark_weight": 9.6482822348217,
+      "portfolio_weight": 6.341472630889928,
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_53405b886a55"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+        },
+        {
+          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202508-EQ-US CD EQ-Consumer Cyclical Equity Sector Review Final w Internal Slides.pptx",
+          "row_id": "202508-EQ-US CD EQ-Consumer Cyclical Equity Sector Review Final w Internal Slides.pptx"
+        }
+      ]
+    }
+  ],
+  "style_posture": [
+    {
+      "label": "United States Lrg Growth",
+      "active_weight": -7.712240255099527,
+      "interpretation": "Underweight growth exposure remains a meaningful part of the fund shape."
+    },
+    {
+      "label": "United States Lrg",
+      "active_weight": -6.391838829916999,
+      "interpretation": "Underweight exposure in this size bucket is material enough to shape the portfolio's style posture."
+    },
+    {
+      "label": "United States Sml Growth",
+      "active_weight": 3.0057212127220225,
+      "interpretation": "Overweight growth exposure remains a meaningful part of the fund shape."
+    },
+    {
+      "label": "United States Mid Value",
+      "active_weight": 2.59737238293983,
+      "interpretation": "Overweight value exposure remains a meaningful part of the fund shape."
+    },
+    {
+      "label": "United States Sml",
+      "active_weight": 2.407092072607633,
+      "interpretation": "Overweight exposure in this size bucket is material enough to shape the portfolio's style posture."
+    }
+  ],
+  "top_divergences": [
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "portfolio_weight": 12.8015117783695,
+      "benchmark_weight": 9.457546935782528,
+      "active_weight": 3.3439648425869724,
+      "vir_now": -0.0440526031682848,
+      "vir_delta_mom": -0.005781918255383399,
+      "algo_active_weight": -2.92,
+      "signal_alignment": "diverging",
+      "signal_quality": "weakening",
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at ",
+      "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+      "sharepoint_research_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 ",
+      "sample_source_securities": "RTX Corp; W.W. Grainger Inc; Honeywell International Inc; Eaton Corp PLC; EMERSON ELEC. CO; General Dynamics Corp; Boeing Co; Union Pacific Corp; Rockwell Automation Inc; FASTENAL CO; Uber Technologies Inc; PACCAR Inc; AAON Inc; Casella Waste Systems Inc Class A; Lockheed Martin Corp; Illinois Tool Works Inc; EQUIFAX INC; Northrop Grumman Corp; Caterpillar Inc; Standex International Corp; CNH Industrial NV; Kadant Inc; MASCO CORP; Enpro Inc; Saia Inc",
+      "source_breakdown": {
+        "security_count": 274,
+        "securities": [
+          {
+            "security_name": "Honeywell International Inc",
+            "portfolio_weight": 0.816,
+            "benchmark_weight": 0.2139,
+            "active_weight": 0.6021,
+            "sources": [
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 0.4456,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.4456
+              },
+              {
+                "source_name": "MS US EQUITY MFS",
+                "portfolio_weight": 0.3703,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.3703
+              }
+            ]
+          },
+          {
+            "security_name": "RTX Corp",
+            "portfolio_weight": 0.7585,
+            "benchmark_weight": 0.3406,
+            "active_weight": 0.4179,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY MFS",
+                "portfolio_weight": 0.4988,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.4988
+              },
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.2597,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.2597
+              }
+            ]
+          },
+          {
+            "security_name": "Union Pacific Corp",
+            "portfolio_weight": 0.7353,
+            "benchmark_weight": 0.2203,
+            "active_weight": 0.5149,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY MFS",
+                "portfolio_weight": 0.3689,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.3689
+              },
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 0.3664,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.3664
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
+      "portfolio_weight": 14.328927944327642,
+      "benchmark_weight": 11.254094667990007,
+      "active_weight": 3.0748332763376354,
+      "vir_now": -0.016289381735854702,
+      "vir_delta_mom": 0.005856594004557798,
+      "algo_active_weight": -1.29,
+      "signal_alignment": "diverging",
+      "signal_quality": "improving",
+      "decomposition_driver": "yield",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at ",
+      "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202512-EQ-US FN EQ-US Financials Sector Review .pptx",
+      "sharepoint_research_summary": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers. DECEMBER 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use",
+      "sample_source_securities": "JPMorgan Chase & Co; Visa Inc Class A; Morgan Stanley; Mastercard Inc Class A; Progressive Corp; BLACKROCK INC; Citigroup Inc; Nasdaq Inc; The Travelers Companies Inc; American Express Co; Raymond James Financial Inc; Marsh & McLennan Companies Inc; Aon PLC Class A; Charles Schwab Corp; PNC Financial Services Group Inc; BERKSHIRE HATHAWAY INC CO; Wells Fargo & Co; U.S. Bancorp; Bank of America Corp; KKR INC; Moodys Corp; Corpay Inc; S&P Global Inc; SEI Investments Co; Moelis & Co Class A",
+      "source_breakdown": {
+        "security_count": 282,
+        "securities": [
+          {
+            "security_name": "Visa Inc Class A",
+            "portfolio_weight": 1.5414,
+            "benchmark_weight": 0.7769,
+            "active_weight": 0.7645,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.7936,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.7936
+              },
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 0.7479,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.7479
+              }
+            ]
+          },
+          {
+            "security_name": "JPMorgan Chase & Co",
+            "portfolio_weight": 0.8309,
+            "benchmark_weight": 1.142,
+            "active_weight": -0.3111,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY MFS",
+                "portfolio_weight": 0.8309,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.8309
+              },
+              {
+                "source_name": "Morningstar US Market TR USD",
+                "portfolio_weight": 0.0,
+                "benchmark_weight": 1.142,
+                "active_weight": -1.142
+              }
+            ]
+          },
+          {
+            "security_name": "BLACKROCK INC",
+            "portfolio_weight": 0.8178,
+            "benchmark_weight": 0.206,
+            "active_weight": 0.6118,
+            "sources": [
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 0.4256,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.4256
+              },
+              {
+                "source_name": "MS US EQUITY MFS",
+                "portfolio_weight": 0.2605,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.2605
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "acid": "US SML G EQ",
+      "label": "United States Sml Growth",
+      "category": "Eq Size / Style",
+      "portfolio_weight": 4.41517353081245,
+      "benchmark_weight": 1.4094523180904275,
+      "active_weight": 3.0057212127220225,
+      "vir_now": -0.025156063321728005,
+      "vir_delta_mom": -0.00045693926800430273,
+      "algo_active_weight": 0.15,
+      "signal_alignment": "partially_aligned",
+      "signal_quality": "stable",
+      "decomposition_driver": "growth",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Syste",
+      "sharepoint_research_path": "",
+      "sharepoint_research_summary": "",
+      "sample_source_securities": "HealthEquity Inc; AAON Inc; JFrog Ltd Ordinary Shares; Repligen Corp; NOVANTA INC; Global E Online Ltd; Ensign Group Inc; Balchem Corp; Enpro Inc; Saia Inc; Loar Holdings Inc; Everus Construction Group Inc; Ollie's Bargain Outlet Holdings Inc; CSW Industrials Inc; Federal Signal Corp; ESCO Technologies Inc; PJT Partners Inc Class A; Valvoline Inc; The Vita Coco Co Inc; Guidewire Software Inc; XPEL Inc; StoneX Group Inc; RLI Corp; Paymentus Holdings Inc Class A; SiteOne Landscape Supply Inc",
+      "source_breakdown": {
+        "security_count": 217,
+        "securities": [
+          {
+            "security_name": "HealthEquity Inc",
+            "portfolio_weight": 0.4052,
+            "benchmark_weight": 0.0106,
+            "active_weight": 0.3946,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY WASATCH",
+                "portfolio_weight": 0.4052,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.4052
+              },
+              {
+                "source_name": "Morningstar US Market TR USD",
+                "portfolio_weight": 0.0,
+                "benchmark_weight": 0.0106,
+                "active_weight": -0.0106
+              }
+            ]
+          },
+          {
+            "security_name": "AAON Inc",
+            "portfolio_weight": 0.2228,
+            "benchmark_weight": 0.0134,
+            "active_weight": 0.2094,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY WASATCH",
+                "portfolio_weight": 0.2228,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.2228
+              },
+              {
+                "source_name": "Morningstar US Market TR USD",
+                "portfolio_weight": 0.0,
+                "benchmark_weight": 0.0134,
+                "active_weight": -0.0134
+              }
+            ]
+          },
+          {
+            "security_name": "JFrog Ltd Ordinary Shares",
+            "portfolio_weight": 0.2063,
+            "benchmark_weight": 0.0109,
+            "active_weight": 0.1954,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY WASATCH",
+                "portfolio_weight": 0.2063,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.2063
+              },
+              {
+                "source_name": "Morningstar US Market TR USD",
+                "portfolio_weight": 0.0,
+                "benchmark_weight": 0.0109,
+                "active_weight": -0.0109
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "portfolio_weight": 8.08653030733768,
+      "benchmark_weight": 5.48915792439785,
+      "active_weight": 2.59737238293983,
+      "vir_now": -0.017325685841823597,
+      "vir_delta_mom": -0.003794682616306,
+      "algo_active_weight": 1.1900000000000002,
+      "signal_alignment": "partially_aligned",
+      "signal_quality": "weakening",
+      "decomposition_driver": "yield",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Syste",
+      "sharepoint_research_path": "",
+      "sharepoint_research_summary": "",
+      "sample_source_securities": "The Cigna Group; Dominion Energy Inc; The Travelers Companies Inc; Cognizant Technology Solutions Corp Class A; Fox Corp Class A; eBay Inc; PG&E Corp; Edison International; HP Inc; Elevance Health Inc; Humana Inc; Crown Castle Inc; Constellation Brands Inc Class A; Eversource Energy; REALTY INC. CORP; Biogen Inc; PPG Industries Inc; CENTENE CORP; APA Corp; CNH Industrial NV; Omnicom Group Inc; Kimberly-Clark Corp; ONEOK Inc; Becton Dickinson & Co; KEYCORP",
+      "source_breakdown": {
+        "security_count": 128,
+        "securities": [
+          {
+            "security_name": "The Cigna Group",
+            "portfolio_weight": 0.5817,
+            "benchmark_weight": 0.1031,
+            "active_weight": 0.4786,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY MFS",
+                "portfolio_weight": 0.5817,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.5817
+              },
+              {
+                "source_name": "Morningstar US Market TR USD",
+                "portfolio_weight": 0.0,
+                "benchmark_weight": 0.1031,
+                "active_weight": -0.1031
+              }
+            ]
+          },
+          {
+            "security_name": "Cognizant Technology Solutions Corp Class A",
+            "portfolio_weight": 0.3773,
+            "benchmark_weight": 0.0381,
+            "active_weight": 0.3392,
+            "sources": [
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 0.3107,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.3107
+              },
+              {
+                "source_name": "MS US EQ SYSTEMATIC SMID",
+                "portfolio_weight": 0.0667,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.0667
+              }
+            ]
+          },
+          {
+            "security_name": "Dominion Energy Inc",
+            "portfolio_weight": 0.3734,
+            "benchmark_weight": 0.0808,
+            "active_weight": 0.2926,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY MFS",
+                "portfolio_weight": 0.3734,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.3734
+              },
+              {
+                "source_name": "Morningstar US Market TR USD",
+                "portfolio_weight": 0.0,
+                "benchmark_weight": 0.0808,
+                "active_weight": -0.0808
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "portfolio_weight": 4.881463226007805,
+      "benchmark_weight": 2.4743711534001718,
+      "active_weight": 2.407092072607633,
+      "vir_now": -0.014159222379792197,
+      "vir_delta_mom": -0.00042750540842929896,
+      "algo_active_weight": 0.8999999999999999,
+      "signal_alignment": "partially_aligned",
+      "signal_quality": "stable",
+      "decomposition_driver": "growth",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Syste",
+      "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202505-EQ-US SML EQ-Conviction Update.pptx",
+      "sharepoint_research_summary": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cyclica",
+      "sample_source_securities": "Healthpeak Properties Inc; Casella Waste Systems Inc Class A; Standex International Corp; SEI Investments Co; Moelis & Co Class A; Kadant Inc; MASCO CORP; Allison Transmission Holdings Inc; Champion Homes Inc; Jack Henry & Associates Inc; Align Technology Inc; Preformed Line Products Co; Federated Hermes Inc Class B; Axcelis Technologies Inc; Floor & Decor Holdings Inc Class A; Trex Co Inc; Janus Henderson Group PLC; CTS Corp; Acuity Inc; Cactus Inc Class A; CCC Intelligent Solutions Holdings Inc; Freshpet Inc; FactSet Research Systems Inc; Eagle Materials Inc; Cirrus Logic Inc",
+      "source_breakdown": {
+        "security_count": 411,
+        "securities": [
+          {
+            "security_name": "MASCO CORP",
+            "portfolio_weight": 0.3038,
+            "benchmark_weight": 0.021,
+            "active_weight": 0.2828,
+            "sources": [
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 0.1427,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.1427
+              },
+              {
+                "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                "portfolio_weight": 0.1028,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.1028
+              }
+            ]
+          },
+          {
+            "security_name": "Healthpeak Properties Inc",
+            "portfolio_weight": 0.2837,
+            "benchmark_weight": 0.0189,
+            "active_weight": 0.2648,
+            "sources": [
+              {
+                "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                "portfolio_weight": 0.2837,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.2837
+              },
+              {
+                "source_name": "Morningstar US Market TR USD",
+                "portfolio_weight": 0.0,
+                "benchmark_weight": 0.0189,
+                "active_weight": -0.0189
+              }
+            ]
+          },
+          {
+            "security_name": "Casella Waste Systems Inc Class A",
+            "portfolio_weight": 0.2247,
+            "benchmark_weight": 0.0072,
+            "active_weight": 0.2174,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY WASATCH",
+                "portfolio_weight": 0.2199,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.2199
+              },
+              {
+                "source_name": "SPDR Portfolio S&P 600 Sm Cap ETF",
+                "portfolio_weight": 0.0047,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.0047
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "top_aligned_positions": [
+    {
+      "acid": "US LRG G EQ",
+      "label": "United States Lrg Growth",
+      "category": "Eq Size / Style",
+      "portfolio_weight": 13.893054567184702,
+      "benchmark_weight": 21.60529482228423,
+      "active_weight": -7.712240255099527,
+      "vir_now": -0.0407917779042298,
+      "vir_delta_mom": 0.006859192600593894,
+      "algo_active_weight": -7.1,
+      "signal_alignment": "aligned",
+      "signal_quality": "improving",
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at ",
+      "sharepoint_research_path": "",
+      "sharepoint_research_summary": "",
+      "sample_source_securities": "NVIDIA Corp; Netflix Inc; Broadcom Inc; Palo Alto Networks Inc; Analog Devices Inc; KLA CORP; Lam Research Corp; Arista Networks Inc; Boeing Co; Intuitive Surgical Inc; Tesla Inc; Applied Materials Inc; Marvell Technology Inc; ServiceNow Inc; Amphenol Corp Class A; Eli Lilly and Co; Advanced Micro Devices Inc; Intel Corp; Palantir Technologies Inc Ordinary Shares - Class A; GE Aerospace; GE Vernova Inc; Western Digital Corp; CrowdStrike Holdings Inc Class A; Welltower Inc; Corning Inc",
+      "source_breakdown": {
+        "security_count": 29,
+        "securities": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 5.3259,
+            "benchmark_weight": 7.0055,
+            "active_weight": -1.6796,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 2.7799,
+                "benchmark_weight": 0.0,
+                "active_weight": 2.7799
+              },
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 1.4232,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.4232
+              }
+            ]
+          },
+          {
+            "security_name": "Broadcom Inc",
+            "portfolio_weight": 1.5582,
+            "benchmark_weight": 2.9427,
+            "active_weight": -1.3845,
+            "sources": [
+              {
+                "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                "portfolio_weight": 0.6669,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.6669
+              },
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.509,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.509
+              }
+            ]
+          },
+          {
+            "security_name": "Palo Alto Networks Inc",
+            "portfolio_weight": 0.9763,
+            "benchmark_weight": 0.3196,
+            "active_weight": 0.6567,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.6397,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.6397
+              },
+              {
+                "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                "portfolio_weight": 0.3366,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.3366
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "portfolio_weight": 29.132623271891934,
+      "benchmark_weight": 36.75592121497909,
+      "active_weight": -7.623297943087156,
+      "vir_now": -0.03541060855006839,
+      "vir_delta_mom": 0.005351181339873001,
+      "algo_active_weight": -8.64,
+      "signal_alignment": "aligned",
+      "signal_quality": "improving",
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at ",
+      "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+      "sharepoint_research_summary": "Equity Sector Review: US Technology We are moderately negative on the sector, but we see the software industry as undervalued. AUGUST 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Inves",
+      "sample_source_securities": "NVIDIA Corp; APPLE INC; Microsoft Corp; Cisco Systems Inc; Broadcom Inc; Palo Alto Networks Inc; Oracle Corp; Analog Devices Inc; KLA CORP; Lam Research Corp; Arista Networks Inc; Applied Materials Inc; NXP Semiconductors NV; Texas Instruments Inc; Cognizant Technology Solutions Corp Class A; Accenture PLC Class A; Marvell Technology Inc; ServiceNow Inc; Qualcomm Inc; Synopsys Inc; Salesforce Inc; HP Inc; Roper Technologies Inc; Amphenol Corp Class A; JFrog Ltd Ordinary Shares",
+      "source_breakdown": {
+        "security_count": 224,
+        "securities": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 5.3259,
+            "benchmark_weight": 7.0055,
+            "active_weight": -1.6796,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 2.7799,
+                "benchmark_weight": 0.0,
+                "active_weight": 2.7799
+              },
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 1.4232,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.4232
+              }
+            ]
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 4.5565,
+            "benchmark_weight": 6.4813,
+            "active_weight": -1.9248,
+            "sources": [
+              {
+                "source_name": "MSTAR USEQ COMPLETION",
+                "portfolio_weight": 1.4909,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.4909
+              },
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 1.3618,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.3618
+              }
+            ]
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 4.1651,
+            "benchmark_weight": 4.7345,
+            "active_weight": -0.5694,
+            "sources": [
+              {
+                "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                "portfolio_weight": 1.2856,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.2856
+              },
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.992,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.992
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "acid": "US LRG EQ",
+      "label": "United States Lrg",
+      "category": "Eq Size / Style",
+      "portfolio_weight": 28.512099959373295,
+      "benchmark_weight": 34.903938789290294,
+      "active_weight": -6.391838829916999,
+      "vir_now": -0.032045006899654505,
+      "vir_delta_mom": 0.0031205110285117965,
+      "algo_active_weight": -9.259999999999998,
+      "signal_alignment": "aligned",
+      "signal_quality": "improving",
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at ",
+      "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+      "sharepoint_research_summary": "February 22, 2017 Paul Arnold, CFA Marta Norton, CFA Nabil Salem, CFA Carrie Scherkenbach Mike Stout, CFA Americas Asset Allocation: U.S. Equity Agenda Updates to Valuation Implied Returns Intra-U.S. Analysis Valuations ",
+      "sample_source_securities": "APPLE INC; Microsoft Corp; Alphabet Inc Class A; Meta Platforms Inc Class A; AMAZON.COM INC; Visa Inc Class A; Oracle Corp; Mastercard Inc Class A; RTX Corp; McKesson Corp; Eaton Corp PLC; Prologis Inc; Vertex Pharmaceuticals Inc; WALMART INC; Marriott International Inc Class A; NXP Semiconductors NV; Texas Instruments Inc; Linde PLC; Charles Schwab Corp; Sherwin-Williams Co; Uber Technologies Inc; O'Reilly Automotive Inc; KKR INC; Moodys Corp; Lockheed Martin Corp",
+      "source_breakdown": {
+        "security_count": 52,
+        "securities": [
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 4.5565,
+            "benchmark_weight": 6.4813,
+            "active_weight": -1.9248,
+            "sources": [
+              {
+                "source_name": "MSTAR USEQ COMPLETION",
+                "portfolio_weight": 1.4909,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.4909
+              },
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 1.3618,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.3618
+              }
+            ]
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 4.1651,
+            "benchmark_weight": 4.7345,
+            "active_weight": -0.5694,
+            "sources": [
+              {
+                "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                "portfolio_weight": 1.2856,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.2856
+              },
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.992,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.992
+              }
+            ]
+          },
+          {
+            "security_name": "Alphabet Inc Class A",
+            "portfolio_weight": 3.9636,
+            "benchmark_weight": 3.1358,
+            "active_weight": 0.8278,
+            "sources": [
+              {
+                "source_name": "MS US EQ SYSTEMATIC LARGE",
+                "portfolio_weight": 1.2644,
+                "benchmark_weight": 0.0,
+                "active_weight": 1.2644
+              },
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.9624,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.9624
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "acid": "US CD EQ",
+      "label": "Consumer Discretionary",
+      "category": "Eq Sector",
+      "portfolio_weight": 6.341472630889928,
+      "benchmark_weight": 9.6482822348217,
+      "active_weight": -3.3068096039317716,
+      "vir_now": -0.029497116504257397,
+      "vir_delta_mom": 0.006767328501328801,
+      "algo_active_weight": -2.93,
+      "signal_alignment": "aligned",
+      "signal_quality": "improving",
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "internal_history_status": "matched_prior_rationale",
+      "internal_history_excerpt": "The overweight to economically sensitive Industrials (#1) and Financials (#2) is somewhat offset by an overweight to Health Care and Staples, as well as an underweight to Consumer ",
+      "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202508-EQ-US CD EQ-Consumer Cyclical Equity Sector Review Final w Internal Slides.pptx",
+      "sharepoint_research_summary": "Equity Sector Review: US Consumer Cyclical W e don\u2019t see much value collectively but think apparel and homebuilding offer opportunities. AUGUST 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only",
+      "sample_source_securities": "AMAZON.COM INC; Marriott International Inc Class A; Tesla Inc; Lowe's Companies Inc; Airbnb Inc Ordinary Shares - Class A; eBay Inc; O'Reilly Automotive Inc; CHIPOTLE MEXICAN GRILL IN; Nike Inc Class B; Global E Online Ltd; Ollie's Bargain Outlet Holdings Inc; Champion Homes Inc; Valvoline Inc; AUTOZONE INC; XPEL Inc; BorgWarner Inc; Crocs Inc; Floor & Decor Holdings Inc Class A; Wingstop Inc; Lululemon Athletica Inc; PulteGroup Inc; D.R. Horton Inc; Gentherm Inc Class A; YETI Holdings Inc; La-Z-Boy Inc",
+      "source_breakdown": {
+        "security_count": 197,
+        "securities": [
+          {
+            "security_name": "AMAZON.COM INC",
+            "portfolio_weight": 1.982,
+            "benchmark_weight": 3.7604,
+            "active_weight": -1.7784,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.9434,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.9434
+              },
+              {
+                "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                "portfolio_weight": 0.5945,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.5945
+              }
+            ]
+          },
+          {
+            "security_name": "Airbnb Inc Ordinary Shares - Class A",
+            "portfolio_weight": 0.4762,
+            "benchmark_weight": 0.0789,
+            "active_weight": 0.3973,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY CLEARBRIDGE",
+                "portfolio_weight": 0.2826,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.2826
+              },
+              {
+                "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                "portfolio_weight": 0.1936,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.1936
+              }
+            ]
+          },
+          {
+            "security_name": "Marriott International Inc Class A",
+            "portfolio_weight": 0.3809,
+            "benchmark_weight": 0.1175,
+            "active_weight": 0.2634,
+            "sources": [
+              {
+                "source_name": "MS US EQUITY MFS",
+                "portfolio_weight": 0.3809,
+                "benchmark_weight": 0.0,
+                "active_weight": 0.3809
+              },
+              {
+                "source_name": "Morningstar US Market TR USD",
+                "portfolio_weight": 0.0,
+                "benchmark_weight": 0.1175,
+                "active_weight": -0.1175
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "top_movers": [
+    {
+      "acid": "EM IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "vir_now": -0.0501844392967711,
+      "vir_delta_mom": -0.012383889357838497,
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "active_weight": 0.7720227873718182
+    },
+    {
+      "acid": "TW EQ",
+      "label": "Taiwan",
+      "category": "Country",
+      "vir_now": -0.038204530805185904,
+      "vir_delta_mom": -0.011751739062510508,
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "active_weight": 0.5176880047464766
+    },
+    {
+      "acid": "EU CS EQ",
+      "label": "Consumer Staples",
+      "category": "Eq Sector",
+      "vir_now": -0.0007703016240544966,
+      "vir_delta_mom": -0.010710586851752503,
+      "decomposition_driver": "yield",
+      "decomposition_assessment": "broad_based",
+      "active_weight": 0.31564942289845643
+    },
+    {
+      "acid": "EU TL EQ",
+      "label": "Communication Services",
+      "category": "Eq Sector",
+      "vir_now": -0.0272418607887329,
+      "vir_delta_mom": -0.0100016933403335,
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "active_weight": -0.005151162679993392
+    },
+    {
+      "acid": "AU IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "vir_now": -0.0261576928690748,
+      "vir_delta_mom": 0.0099266835028691,
+      "decomposition_driver": "valuation_adjustment_top_down",
+      "decomposition_assessment": "broad_based",
+      "active_weight": 0.008401825747155539
+    }
+  ],
+  "decomposition_focus": [
+    {
+      "acid": "US LRG G EQ",
+      "label": "United States Lrg Growth",
+      "dominant_driver": "valuation_adjustment_top_down",
+      "dominant_driver_value": -0.0796725717316544,
+      "assessment": "broad_based",
+      "vir_now": -0.0407917779042298,
+      "vir_delta_mom": 0.006859192600593894,
+      "active_weight": -7.712240255099527,
+      "values": {
+        "growth": 0.034,
+        "yield": 0.0187186093192518,
+        "inflation": 0.0245560585345919,
+        "currency_usd": 0.0,
+        "valuation_adjustment_top_down": -0.0796725717316544,
+        "valuation_adjustment_combined": -0.0324347193860163
+      }
+    },
+    {
+      "acid": "EM IT EQ",
+      "label": "Information Technology",
+      "dominant_driver": "valuation_adjustment_top_down",
+      "dominant_driver_value": -0.0763279245770085,
+      "assessment": "broad_based",
+      "vir_now": -0.0501844392967711,
+      "vir_delta_mom": -0.012383889357838497,
+      "active_weight": 0.7720227873718182,
+      "values": {
+        "growth": 0.0349999999999999,
+        "yield": 0.0159991581821347,
+        "inflation": 0.0170731299070071,
+        "currency_usd": 0.0362324994754346,
+        "valuation_adjustment_top_down": -0.0763279245770085,
+        "valuation_adjustment_combined": -0.0392541467858454
+      }
+    },
+    {
+      "acid": "TW EQ",
+      "label": "Taiwan",
+      "dominant_driver": "valuation_adjustment_top_down",
+      "dominant_driver_value": -0.0677049018598973,
+      "assessment": "broad_based",
+      "vir_now": -0.038204530805185904,
+      "vir_delta_mom": -0.011751739062510508,
+      "active_weight": 0.5176880047464766,
+      "values": {
+        "growth": 0.0309999999999999,
+        "yield": 0.020696966717098,
+        "inflation": 0.0144329300078005,
+        "currency_usd": 0.0354547766341968,
+        "valuation_adjustment_top_down": -0.0677049018598973,
+        "valuation_adjustment_combined": -0.0274936391529857
+      }
+    },
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "dominant_driver": "valuation_adjustment_top_down",
+      "dominant_driver_value": -0.0675569151869411,
+      "assessment": "broad_based",
+      "vir_now": -0.03541060855006839,
+      "vir_delta_mom": 0.005351181339873001,
+      "active_weight": -7.623297943087156,
+      "values": {
+        "growth": 0.0315000000000001,
+        "yield": 0.0226591191937616,
+        "inflation": 0.0245560585345919,
+        "currency_usd": 0.0,
+        "valuation_adjustment_top_down": -0.0675569151869411,
+        "valuation_adjustment_combined": -0.0237094351581956
+      }
+    },
+    {
+      "acid": "AU IT EQ",
+      "label": "Information Technology",
+      "dominant_driver": "valuation_adjustment_top_down",
+      "dominant_driver_value": -0.0625662280872726,
+      "assessment": "broad_based",
+      "vir_now": -0.0261576928690748,
+      "vir_delta_mom": 0.0099266835028691,
+      "active_weight": 0.008401825747155539,
+      "values": {
+        "growth": 0.0125,
+        "yield": 0.0139501250310865,
+        "inflation": 0.0252401617413962,
+        "currency_usd": -0.0041602442599578,
+        "valuation_adjustment_top_down": -0.0625662280872726,
+        "valuation_adjustment_combined": -0.0139336473088011
+      }
+    }
+  ],
+  "challenge_candidates": [
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "priority": "high",
+      "reason": "Positioning is overweight, but VIR is underweight and algo is underweight.",
+      "question": "Why is the fund still overweight Industrials when both current signals lean underweight/underweight?",
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_2cd25da060c5"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+        },
+        {
+          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+          "row_id": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx"
+        }
+      ]
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
+      "priority": "high",
+      "reason": "Positioning is overweight, but VIR is underweight and algo is underweight.",
+      "question": "Why is the fund still overweight Financials when both current signals lean underweight/underweight?",
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_4676b93f2411"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+        },
+        {
+          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202512-EQ-US FN EQ-US Financials Sector Review .pptx",
+          "row_id": "202512-EQ-US FN EQ-US Financials Sector Review .pptx"
+        }
+      ]
+    },
+    {
+      "acid": "US SML G EQ",
+      "label": "United States Sml Growth",
+      "category": "Eq Size / Style",
+      "priority": "high",
+      "reason": "This is a material active position that still needs an explicit current-month rationale.",
+      "question": "What is the current underwriting case for keeping United States Sml Growth at this size?",
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_15cc692a5ebc"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+        }
+      ]
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "priority": "medium",
+      "reason": "This is a material active position that still needs an explicit current-month rationale.",
+      "question": "What is the current underwriting case for keeping United States Mid Value at this size?",
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_e500111e52ee"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+        }
+      ]
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "priority": "medium",
+      "reason": "This is a material active position that still needs an explicit current-month rationale.",
+      "question": "What is the current underwriting case for keeping United States Sml at this size?",
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_4b4030ed5e48"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+        },
+        {
+          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202505-EQ-US SML EQ-Conviction Update.pptx",
+          "row_id": "202505-EQ-US SML EQ-Conviction Update.pptx"
+        }
+      ]
+    }
+  ],
+  "pm_questions_seed": [
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "question": "Why is the fund still overweight Industrials when both current signals lean underweight/underweight?",
+      "why_now": "Positioning is overweight, but VIR is underweight and algo is underweight."
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "question": "Why is the fund still overweight Financials when both current signals lean underweight/underweight?",
+      "why_now": "Positioning is overweight, but VIR is underweight and algo is underweight."
+    },
+    {
+      "acid": "US SML G EQ",
+      "label": "United States Sml Growth",
+      "question": "What is the current underwriting case for keeping United States Sml Growth at this size?",
+      "why_now": "This is a material active position that still needs an explicit current-month rationale."
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "question": "What is the current underwriting case for keeping United States Mid Value at this size?",
+      "why_now": "This is a material active position that still needs an explicit current-month rationale."
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "question": "What is the current underwriting case for keeping United States Sml at this size?",
+      "why_now": "This is a material active position that still needs an explicit current-month rationale."
+    },
+    {
+      "acid": "US SML V EQ",
+      "label": "United States Sml Value",
+      "question": "What is the current underwriting case for keeping United States Sml Value at this size?",
+      "why_now": "This is a material active position that still needs an explicit current-month rationale."
+    }
+  ],
+  "portfolio_implications_seed": [
+    {
+      "type": "risk_concentration",
+      "statement": "The biggest underweight is United States Lrg Growth, which means the fund's relative return path will still be highly sensitive to whether that area broadens or mean-reverts."
+    },
+    {
+      "type": "conviction_expression",
+      "statement": "The biggest overweight is Industrials, so stock selection and implementation quality inside that bucket matter more than the headline active weight alone suggests."
+    },
+    {
+      "type": "continuity_check",
+      "statement": "Prior internal rationale repeatedly emphasized information technology underweight, so the June review should explicitly confirm whether that story still holds with current sizing and signal evidence."
+    }
+  ],
+  "recurring_internal_themes": [
+    {
+      "theme_id": "information_technology_underweight",
+      "example_acid": "US LRG G EQ",
+      "example_label": "United States Lrg Growth"
+    },
+    {
+      "theme_id": "industrials_overweight",
+      "example_acid": "US LRG G EQ",
+      "example_label": "United States Lrg Growth"
+    },
+    {
+      "theme_id": "financials_overweight",
+      "example_acid": "US LRG G EQ",
+      "example_label": "United States Lrg Growth"
+    },
+    {
+      "theme_id": "ai_leadership_risk",
+      "example_acid": "US LRG G EQ",
+      "example_label": "United States Lrg Growth"
+    },
+    {
+      "theme_id": "subadvisor_and_sleeve_structure",
+      "example_acid": "US LRG G EQ",
+      "example_label": "United States Lrg Growth"
+    },
+    {
+      "theme_id": "value_tilt",
+      "example_acid": "US LRG G EQ",
+      "example_label": "United States Lrg Growth"
+    },
+    {
+      "theme_id": "smid_overweight",
+      "example_acid": "US SML G EQ",
+      "example_label": "United States Sml Growth"
+    }
+  ],
+  "key_internal_history": [
+    {
+      "acid": "US LRG G EQ",
+      "label": "United States Lrg Growth",
+      "category": "Eq Size / Style",
+      "excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few poi",
+      "themes": [
+        "information_technology_underweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few poi",
+      "themes": [
+        "information_technology_underweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "acid": "US LRG EQ",
+      "label": "United States Lrg",
+      "category": "Eq Size / Style",
+      "excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few poi",
+      "themes": [
+        "information_technology_underweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few poi",
+      "themes": [
+        "information_technology_underweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
+      "excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few poi",
+      "themes": [
+        "information_technology_underweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    }
+  ],
+  "key_sharepoint_research": [
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+      "research_summary": "Equity Sector Review: US Technology We are moderately negative on the sector, but we see the software industry as undervalued. AUGUST 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Eric Compton"
+    },
+    {
+      "acid": "US LRG EQ",
+      "label": "United States Lrg",
+      "category": "Eq Size / Style",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+      "research_summary": "February 22, 2017 Paul Arnold, CFA Marta Norton, CFA Nabil Salem, CFA Carrie Scherkenbach Mike Stout, CFA Americas Asset Allocation: U.S. Equity Agenda Updates to Valuation Implied Returns Intra-U.S. Analysis Valuations and Fundamentals Sentiment Asset Allocat"
+    },
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+      "research_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 Mark Murray, CFA Head of Capital Market "
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202512-EQ-US FN EQ-US Financials Sector Review .pptx",
+      "research_summary": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers. DECEMBER 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 47 55 64 71 75 Mark Murray, CFA H"
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202505-EQ-US SML EQ-Conviction Update.pptx",
+      "research_summary": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cyclicals accounting for the majority. They als"
+    }
+  ],
+  "source_drilldowns": [
+    {
+      "acid": "US LRG G EQ",
+      "label": "United States Lrg Growth",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "NVIDIA Corp",
+          "portfolio_weight": 5.3259,
+          "benchmark_weight": 7.0055,
+          "active_weight": -1.6796,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 2.7799,
+              "benchmark_weight": 0.0,
+              "active_weight": 2.7799
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 1.4232,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.4232
+            }
+          ]
+        },
+        {
+          "security_name": "Broadcom Inc",
+          "portfolio_weight": 1.5582,
+          "benchmark_weight": 2.9427,
+          "active_weight": -1.3845,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.6669,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.6669
+            },
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.509,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.509
+            }
+          ]
+        },
+        {
+          "security_name": "Palo Alto Networks Inc",
+          "portfolio_weight": 0.9763,
+          "benchmark_weight": 0.3196,
+          "active_weight": 0.6567,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.6397,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.6397
+            },
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.3366,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3366
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "top_securities": [
+        {
+          "security_name": "NVIDIA Corp",
+          "portfolio_weight": 5.3259,
+          "benchmark_weight": 7.0055,
+          "active_weight": -1.6796,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 2.7799,
+              "benchmark_weight": 0.0,
+              "active_weight": 2.7799
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 1.4232,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.4232
+            }
+          ]
+        },
+        {
+          "security_name": "APPLE INC",
+          "portfolio_weight": 4.5565,
+          "benchmark_weight": 6.4813,
+          "active_weight": -1.9248,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ COMPLETION",
+              "portfolio_weight": 1.4909,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.4909
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 1.3618,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.3618
+            }
+          ]
+        },
+        {
+          "security_name": "Microsoft Corp",
+          "portfolio_weight": 4.1651,
+          "benchmark_weight": 4.7345,
+          "active_weight": -0.5694,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 1.2856,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.2856
+            },
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.992,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.992
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US LRG EQ",
+      "label": "United States Lrg",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "APPLE INC",
+          "portfolio_weight": 4.5565,
+          "benchmark_weight": 6.4813,
+          "active_weight": -1.9248,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ COMPLETION",
+              "portfolio_weight": 1.4909,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.4909
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 1.3618,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.3618
+            }
+          ]
+        },
+        {
+          "security_name": "Microsoft Corp",
+          "portfolio_weight": 4.1651,
+          "benchmark_weight": 4.7345,
+          "active_weight": -0.5694,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 1.2856,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.2856
+            },
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.992,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.992
+            }
+          ]
+        },
+        {
+          "security_name": "Alphabet Inc Class A",
+          "portfolio_weight": 3.9636,
+          "benchmark_weight": 3.1358,
+          "active_weight": 0.8278,
+          "sources": [
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 1.2644,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.2644
+            },
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.9624,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.9624
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "top_securities": [
+        {
+          "security_name": "Honeywell International Inc",
+          "portfolio_weight": 0.816,
+          "benchmark_weight": 0.2139,
+          "active_weight": 0.6021,
+          "sources": [
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.4456,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4456
+            },
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3703,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3703
+            }
+          ]
+        },
+        {
+          "security_name": "RTX Corp",
+          "portfolio_weight": 0.7585,
+          "benchmark_weight": 0.3406,
+          "active_weight": 0.4179,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.4988,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4988
+            },
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.2597,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2597
+            }
+          ]
+        },
+        {
+          "security_name": "Union Pacific Corp",
+          "portfolio_weight": 0.7353,
+          "benchmark_weight": 0.2203,
+          "active_weight": 0.5149,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3689,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3689
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.3664,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3664
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
+      "top_securities": [
+        {
+          "security_name": "Visa Inc Class A",
+          "portfolio_weight": 1.5414,
+          "benchmark_weight": 0.7769,
+          "active_weight": 0.7645,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.7936,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.7936
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.7479,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.7479
+            }
+          ]
+        },
+        {
+          "security_name": "JPMorgan Chase & Co",
+          "portfolio_weight": 0.8309,
+          "benchmark_weight": 1.142,
+          "active_weight": -0.3111,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.8309,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.8309
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 1.142,
+              "active_weight": -1.142
+            }
+          ]
+        },
+        {
+          "security_name": "BLACKROCK INC",
+          "portfolio_weight": 0.8178,
+          "benchmark_weight": 0.206,
+          "active_weight": 0.6118,
+          "sources": [
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.4256,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4256
+            },
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.2605,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2605
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sharepoint_research_summary": [
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "matched_via": "exact",
+      "confidence": 0.98,
+      "folder_month": "",
+      "file_name": "202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+      "full_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+      "slide_titles": [
+        "Equity Sector Review: US Technology",
+        "57",
+        "EQUITY SECTOR REVIEW | US TECHNOLOGY",
+        "US Technology"
+      ],
+      "summary_text": "Equity Sector Review: US Technology We are moderately negative on the sector, but we see the software industry as undervalued. AUGUST 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Eric Compton, CFA Technology Sector Director Morningstar Research Services LLC EQUITY SECTOR REVIEW | US TECHNOLOGY Valuation: Asset Class-Level Perspective Valuation: Stock-Level Perspective Market Sentiment: Flows, Expectations, Momentum Appendix : Glossary of Terms and Definitions Executive Summary Market Overview: Composition Market Overview: Past Performance Fundamental Analysis: Primer and Key Themes Fundamental Analysis: Economic Moats Fundamental Analysis: Risk and Uncertainty Fundamental Analysis: Long-Term Outlook 3 8 18 23 39 46 50 Mat"
+    },
+    {
+      "acid": "US LRG EQ",
+      "label": "United States Lrg",
+      "matched_via": "exact",
+      "confidence": 0.98,
+      "folder_month": "",
+      "file_name": "201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+      "full_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+      "slide_titles": [
+        "February 22, 2017",
+        "Agenda",
+        "Equity Model",
+        "Asset Class"
+      ],
+      "summary_text": "February 22, 2017 Paul Arnold, CFA Marta Norton, CFA Nabil Salem, CFA Carrie Scherkenbach Mike Stout, CFA Americas Asset Allocation: U.S. Equity Agenda Updates to Valuation Implied Returns Intra-U.S. Analysis Valuations and Fundamentals Sentiment Asset Allocation Recommendations Equity Model 3 Unconditional Return = Total Yield (Adj. for Buybacks) + Growth Expected Return= Total Yield (Adj. for Buybacks) + Growth + Change in Valuation Dividends, Buyback Yield CAPE, Margin, ROE Model Productivity/Sector Growth Asset Class Growth 01.2017 Growth 06.2016 Fair P/E 01.2017 Fair P/E 06.2016 Large Growth 3.4% 3.3% 19.3 18.0 Large Value 0.4% 1.0% 13.1 13.5 Mid Growth 4.8% 4.8% 22.2 23.0 Mid Value 2.2% 2.0% 14.2 17.0 Small Growth 5.8% 5.8% 30.2 30.0 Small Value 4.2% 2.5% 19.0 25.0 Calculated based u"
+    },
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "matched_via": "exact",
+      "confidence": 0.98,
+      "folder_month": "",
+      "file_name": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+      "full_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+      "slide_titles": [
+        "Equity Sector Review:",
+        "49",
+        "EQUITY SECTOR REVIEW | US Industrials",
+        "US Industrials Looks Neutral Overall, but Slightly Less Attractive From an Asset Class Perspective"
+      ],
+      "summary_text": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Brian Bernard, CFA, CPA Industrials Sector Director Morningstar Research Services LLC Valuation : Asset Class Level Perspective Valuation : Stock Level Perspective Market Sentiment: Flows, Expectations, Momentum Appendix : Glossary of Terms and Definitions Executive Summary Market Overview : Composition Market Overview : Past Performance Fundamental Analysis : Primer & Key Themes Fundamental Analysis : Economic Moats Fundamental Analysis : Risk & Uncertainty Fundamental Analysis"
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "matched_via": "exact",
+      "confidence": 0.98,
+      "folder_month": "",
+      "file_name": "202512-EQ-US FN EQ-US Financials Sector Review .pptx",
+      "full_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202512-EQ-US FN EQ-US Financials Sector Review .pptx",
+      "slide_titles": [
+        "Equity Sector Review:",
+        "47",
+        "EQUITY SECTOR REVIEW | US FINANCIAL SERVICES",
+        "US Financial Services Looks"
+      ],
+      "summary_text": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers. DECEMBER 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 47 55 64 71 75 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe, LLC Sean Dunlop, CFA Director of Equity Research, Financials Morningstar Research Services, LLC Matt Wilson, CFA; Ziying Peng, CFA; Nick Parekh; Phoebe Chapman Investment Analyst; Associate Investment Analysts Morningstar Investment Management, LLC EQUITY SECTOR REVIEW | US FINANCIAL SERVICES Fundamental Analysis: Long-Term Outlook Valuation: Asset-Class-Level Perspective Valuation: Stock-Level Perspective Market Sentiment: Flows, Expectations, Momentum Append"
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "matched_via": "exact",
+      "confidence": 0.98,
+      "folder_month": "",
+      "file_name": "202505-EQ-US SML EQ-Conviction Update.pptx",
+      "full_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202505-EQ-US SML EQ-Conviction Update.pptx",
+      "slide_titles": [
+        "US SMID Conviction Update",
+        "Executive Summary",
+        "Executive Table",
+        "CONVICTION TABLE"
+      ],
+      "summary_text": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cyclicals accounting for the majority. They also have lower international revenue exposure and less concentration. We find sector exposure can explain a large proportion of the returns of US Small Caps. However, there has been a divergence YTD, suggesting a more idiosyncratic driver over this shorter period, which we find is coming from sentiment rather than fundamentals. In terms of fundamentals, we find the absolute levels of profitability are lower. Growth, on the other hand is higher and this is what drives the higher PE. We find US Small Caps are more sensitive to macroeconom"
+    },
+    {
+      "acid": "US MID EQ",
+      "label": "United States Mid",
+      "matched_via": "exact",
+      "confidence": 0.98,
+      "folder_month": "",
+      "file_name": "201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+      "full_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+      "slide_titles": [
+        "February 22, 2017",
+        "Agenda",
+        "Equity Model",
+        "Asset Class"
+      ],
+      "summary_text": "February 22, 2017 Paul Arnold, CFA Marta Norton, CFA Nabil Salem, CFA Carrie Scherkenbach Mike Stout, CFA Americas Asset Allocation: U.S. Equity Agenda Updates to Valuation Implied Returns Intra-U.S. Analysis Valuations and Fundamentals Sentiment Asset Allocation Recommendations Equity Model 3 Unconditional Return = Total Yield (Adj. for Buybacks) + Growth Expected Return= Total Yield (Adj. for Buybacks) + Growth + Change in Valuation Dividends, Buyback Yield CAPE, Margin, ROE Model Productivity/Sector Growth Asset Class Growth 01.2017 Growth 06.2016 Fair P/E 01.2017 Fair P/E 06.2016 Large Growth 3.4% 3.3% 19.3 18.0 Large Value 0.4% 1.0% 13.1 13.5 Mid Growth 4.8% 4.8% 22.2 23.0 Mid Value 2.2% 2.0% 14.2 17.0 Small Growth 5.8% 5.8% 30.2 30.0 Small Value 4.2% 2.5% 19.0 25.0 Calculated based u"
+    }
+  ],
+  "data_quality_flags": [
+    {
+      "severity": "medium",
+      "flag": "missing_vir_rows",
+      "message": "1 exposure rows do not have matched VIR context."
+    },
+    {
+      "severity": "medium",
+      "flag": "missing_algo_rows",
+      "message": "3 exposure rows do not have matched algo context."
+    },
+    {
+      "severity": "low",
+      "flag": "logical_vs_source_snapshot_date",
+      "message": "The review month is 2026-05-31, while the source holdings snapshot embedded in the rolled artifact is 2026-06-08."
+    },
+    {
+      "severity": "medium",
+      "flag": "stale_vir_snapshot",
+      "message": "The latest matched VIR snapshot in this packet is 2026-02-28, older than the labeled review month 2026-05-31."
+    },
+    {
+      "severity": "low",
+      "flag": "algo_scaled_to_percentage_points",
+      "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
+    }
+  ],
+  "signal_summary": {
+    "fund_level_observations": [
+      "The largest current active expression is United States Lrg Growth at -7.71 percentage points, with aligned signal support.",
+      "Internal history most often references Information Technology Underweight (3 prior mentions), so that posture deserves continuity checks.",
+      "The clearest position-versus-signal tension is Industrials, where positioning is overweight while VIR is underweight and algo is underweight."
+    ],
+    "mechanical_signals": []
+  },
+  "cost_guardrails": {
+    "instruction": "Use only the evidence below. Do not restate every row. Focus on the 5-8 most decision-relevant tensions.",
+    "target_output_tokens": 3500
+  }
+}
