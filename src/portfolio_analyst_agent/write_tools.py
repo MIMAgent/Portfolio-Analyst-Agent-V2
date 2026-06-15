@@ -19,6 +19,18 @@ from .schemas import (
 
 
 DEFAULT_MONTHLY_REVIEW_ROOT = Path("artifacts/monthly_review")
+PM_CHALLENGE_MARKDOWN_FIELDS = (
+    ("challenge_headline", "Headline"),
+    ("thesis_under_pressure", "Thesis Under Pressure"),
+    ("positioning_tension", "Positioning Tension"),
+    ("model_signal_tension", "Model Signal Tension"),
+    ("vir_decomposition_readthrough", "VIR Decomposition Readthrough"),
+    ("market_context_readthrough", "Market Context Readthrough"),
+    ("pm_decision_fork", "PM Decision Fork"),
+    ("primary_pm_question", "Primary PM Question"),
+    ("evidence_needed_next", "Evidence Needed Next"),
+    ("source_quality", "Source Quality"),
+)
 
 
 def write_change_brief(
@@ -175,12 +187,27 @@ def _extend_challenge_markdown(lines: list[str], content: dict[str, Any]) -> Non
         lines.extend([f"### {heading}", ""])
         if trigger_id:
             lines.extend([f"- Trigger: {trigger_id}", ""])
+        _extend_pm_challenge_fields(lines, item)
         if item.get("disagreement_statement"):
             lines.extend(["**Disagreement**", "", str(item["disagreement_statement"]), ""])
         if item.get("challenge"):
             lines.extend(["**Challenge**", "", str(item["challenge"]), ""])
         if item.get("next_review_checkpoint"):
             lines.extend([f"**Next Review Checkpoint:** {item['next_review_checkpoint']}", ""])
+
+
+def _extend_pm_challenge_fields(lines: list[str], item: dict[str, Any]) -> None:
+    emitted = False
+    for field_name, label in PM_CHALLENGE_MARKDOWN_FIELDS:
+        value = item.get(field_name)
+        if value in (None, "", [], {}):
+            continue
+        if not emitted:
+            lines.extend(["**PM Decision Card**", ""])
+            emitted = True
+        lines.extend([f"- **{label}:** {value}"])
+    if emitted:
+        lines.append("")
 
 
 def _extend_sizing_markdown(lines: list[str], content: dict[str, Any]) -> None:
