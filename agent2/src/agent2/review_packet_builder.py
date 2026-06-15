@@ -8,6 +8,7 @@ import io
 import json
 from pathlib import Path
 import re
+import sys
 from typing import Any
 from zipfile import ZipFile
 
@@ -20,6 +21,7 @@ DEFAULT_ALIGNMENT_CSV = REPO_ROOT / "artifacts" / "rolled_exposures" / "fund_wei
 DEFAULT_DETAIL_CSV = REPO_ROOT / "artifacts" / "rolled_exposures" / "fund_rolled_exposure_detail.csv"
 DEFAULT_MAPPING_CSV = REPO_ROOT / "data" / "acid_mapping_bootstrap_v1.csv"
 DEFAULT_VIR_HISTORY_CSV = REPO_ROOT / "artifacts" / "equity_vir_history.csv"
+DEFAULT_US_EQ_RISK_REPORT_XLSX = REPO_ROOT / "data" / "2026-05-31" / "weekly_US_EQ_Time Series Risk Report - Sortable_2026-03-31_2026-06-05.xlsx"
 DEFAULT_INTERNAL_HISTORY_JSON = REPO_ROOT / "agent2" / "data" / "internal_history" / "us_equity_checklists_q2_2026.json"
 DEFAULT_MEMORY_JSON = REPO_ROOT / "artifacts" / "agent_memory" / "memory_records.json"
 DEFAULT_SHAREPOINT_RESEARCH_DIR = DEFAULT_SHAREPOINT_RESEARCH_ROOT
@@ -44,6 +46,7 @@ def build_review_packet(
     detail_csv: str | Path = DEFAULT_DETAIL_CSV,
     mapping_csv: str | Path = DEFAULT_MAPPING_CSV,
     vir_history_csv: str | Path = DEFAULT_VIR_HISTORY_CSV,
+    risk_report_xlsx: str | Path | None = DEFAULT_US_EQ_RISK_REPORT_XLSX,
     internal_history_json: str | Path | None = DEFAULT_INTERNAL_HISTORY_JSON,
     memory_json: str | Path | None = DEFAULT_MEMORY_JSON,
     sharepoint_research_dir: str | Path | None = DEFAULT_SHAREPOINT_RESEARCH_DIR,
@@ -119,6 +122,12 @@ def build_review_packet(
 
     material_positions.sort(key=lambda item: item["importance_score"], reverse=True)
     matched_research_positions = [item for item in material_positions if item.get("sharepoint_research", {}).get("match_status") == "matched"]
+    risk_context = _load_risk_context(
+        fund=fund,
+        logical_snapshot_date=logical_date,
+        material_positions=material_positions,
+        risk_report_xlsx=risk_report_xlsx,
+    )
 
     output_review_date = review_date or date.today().isoformat()
     packet = {
@@ -132,26 +141,29 @@ def build_review_packet(
             history_fund=history_fund,
             logical_date=logical_date,
         ),
-        "fund_snapshot": _build_fund_snapshot(material_positions),
+        "fund_snapshot": _build_fund_snapshot(material_positions, risk_context=risk_context),
         "material_positions": material_positions,
-        "signal_summary": _build_signal_summary(material_positions, recurring_themes),
+        "risk_context": risk_context,
+        "signal_summary": _build_signal_summary(material_positions, recurring_themes, risk_context=risk_context),
         "top_movers": _build_top_movers(material_positions),
         "decomposition_summary": _build_decomposition_summary(material_positions),
         "challenge_book": _build_challenge_book(material_positions),
-        "pm_questions": _build_pm_questions(material_positions, recurring_themes),
-        "portfolio_implications": _build_portfolio_implications(material_positions, recurring_themes),
+        "pm_questions": _build_pm_questions(material_positions, recurring_themes, risk_context=risk_context),
+        "portfolio_implications": _build_portfolio_implications(material_positions, recurring_themes, risk_context=risk_context),
         "roadmap": _build_roadmap(material_positions),
         "sharepoint_research_summary": _build_sharepoint_research_summary(material_positions),
         "data_quality_flags": _build_data_quality_flags(
             material_positions=material_positions,
             selected_snapshot_date=selected_snapshot_date,
             logical_snapshot_date=logical_date,
+            risk_context=risk_context,
         ),
         "source_index": _build_source_index(
             alignment_csv=Path(alignment_csv),
             detail_csv=Path(detail_csv),
             mapping_csv=Path(mapping_csv),
             vir_history_csv=Path(vir_history_csv),
+            risk_report_xlsx=Path(risk_report_xlsx) if risk_report_xlsx else None,
             internal_history_json=Path(internal_history_json) if internal_history_json else None,
             memory_json=Path(memory_json) if memory_json else None,
             sharepoint_research_dir=Path(sharepoint_research_dir) if sharepoint_research_dir else None,
@@ -165,6 +177,8 @@ def build_review_packet(
             "material_position_count": len(material_positions),
             "history_fund_name": history_fund or "",
             "matched_sharepoint_research_count": len(matched_research_positions),
+            "risk_context_available": bool(risk_context.get("available")),
+            "risk_date_used": risk_context.get("summary", {}).get("risk_date_used", ""),
         },
     }
     return packet
@@ -207,7 +221,7 @@ def _build_header(
     }
 
 
-def _build_fund_snapshot(material_positions: list[dict[str, Any]]) -> dict[str, Any]:
+def _build_fund_snapshot(material_positions: list[dict[str, Any]], *, risk_context: dict[str, Any]) -> dict[str, Any]:
     overweights = [item for item in material_positions if item["active_weight"] > 0][:5]
     underweights = [item for item in material_positions if item["active_weight"] < 0][:5]
     category_exposures = []
@@ -244,6 +258,14 @@ def _build_fund_snapshot(material_positions: list[dict[str, Any]]) -> dict[str, 
             )
 
     headline_summary = _build_headline_summary(material_positions)
+    if risk_context.get("available"):
+        risk_summary = risk_context.get("summary", {})
+        headline_summary.append(
+            "US_EQ risk context: "
+            f"active predicted risk {risk_summary.get('active_predicted_risk_pct', 0.0):.2f}%, "
+            f"active share {risk_summary.get('active_share_pct', 0.0):.1f}%, "
+            f"risk date used {risk_summary.get('risk_date_used', '')}."
+        )
     return {
         "largest_overweights": [_snapshot_row(item) for item in overweights],
         "largest_underweights": [_snapshot_row(item) for item in underweights],
@@ -374,7 +396,12 @@ def _build_material_position(
     }
 
 
-def _build_signal_summary(material_positions: list[dict[str, Any]], recurring_themes: list[dict[str, Any]]) -> dict[str, Any]:
+def _build_signal_summary(
+    material_positions: list[dict[str, Any]],
+    recurring_themes: list[dict[str, Any]],
+    *,
+    risk_context: dict[str, Any],
+) -> dict[str, Any]:
     aligned_positions = [
         {
             "acid": item["acid"],
@@ -426,6 +453,7 @@ def _build_signal_summary(material_positions: list[dict[str, Any]], recurring_th
         observations.append(
             f"The clearest position-versus-signal tension is {item['label']}, where positioning is {item['positioning_direction']} while VIR is {item['vir_direction']} and algo is {item['algo_direction']}."
         )
+    observations.extend(risk_context.get("narrative_observations", [])[:3])
     return {
         "aligned_positions": aligned_positions,
         "diverging_positions": diverging_positions,
@@ -498,7 +526,12 @@ def _build_challenge_book(material_positions: list[dict[str, Any]]) -> list[dict
     return challenge_items[:8]
 
 
-def _build_pm_questions(material_positions: list[dict[str, Any]], recurring_themes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _build_pm_questions(
+    material_positions: list[dict[str, Any]],
+    recurring_themes: list[dict[str, Any]],
+    *,
+    risk_context: dict[str, Any],
+) -> list[dict[str, Any]]:
     questions = []
     ranked = sorted(
         material_positions,
@@ -535,10 +568,26 @@ def _build_pm_questions(material_positions: list[dict[str, Any]], recurring_them
                 "why_now": "This theme appears repeatedly in prior internal checklists and should be explicitly re-underwritten rather than assumed.",
             }
         )
+    if risk_context.get("available"):
+        top_driver = next(iter(risk_context.get("top_industry_risk_drivers", [])), None)
+        if top_driver:
+            questions.append(
+                {
+                    "acid": "",
+                    "label": top_driver["label"],
+                    "question": f"What is the underwriting case for keeping {top_driver['label']} as a leading source of active risk right now?",
+                    "why_now": f"It is the largest modeled industry risk driver at {top_driver['share_of_variance_pct']:.1f}% of active variance.",
+                }
+            )
     return questions[:7]
 
 
-def _build_portfolio_implications(material_positions: list[dict[str, Any]], recurring_themes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _build_portfolio_implications(
+    material_positions: list[dict[str, Any]],
+    recurring_themes: list[dict[str, Any]],
+    *,
+    risk_context: dict[str, Any],
+) -> list[dict[str, Any]]:
     implications = []
     largest_underweight = next((item for item in material_positions if item["active_weight"] < 0), None)
     largest_overweight = next((item for item in material_positions if item["active_weight"] > 0), None)
@@ -561,6 +610,16 @@ def _build_portfolio_implications(material_positions: list[dict[str, Any]], recu
             {
                 "type": "continuity_check",
                 "statement": f"Prior internal rationale repeatedly emphasized {recurring_themes[0]['label'].lower()}, so the June review should explicitly confirm whether that story still holds with current sizing and signal evidence.",
+            }
+        )
+    if risk_context.get("available"):
+        risk_summary = risk_context.get("summary", {})
+        implications.append(
+            {
+                "type": "measured_risk_context",
+                "statement": "Measured active risk is "
+                f"{risk_summary.get('active_predicted_risk_pct', 0.0):.2f}% with "
+                f"{risk_summary.get('active_share_pct', 0.0):.1f}% active share, so PM debate should separate conviction from raw risk budget use.",
             }
         )
     return implications
@@ -587,6 +646,7 @@ def _build_data_quality_flags(
     material_positions: list[dict[str, Any]],
     selected_snapshot_date: str,
     logical_snapshot_date: str,
+    risk_context: dict[str, Any],
 ) -> list[dict[str, Any]]:
     flags = []
     missing_vir = [item for item in material_positions if item["vir_join_status"] != "matched_to_vir"]
@@ -633,6 +693,22 @@ def _build_data_quality_flags(
                 "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability.",
             }
         )
+    if not risk_context.get("available"):
+        flags.append(
+            {
+                "severity": "medium",
+                "flag": "missing_risk_report_context",
+                "message": "No parsed US_EQ risk report context was available for this packet.",
+            }
+        )
+    elif risk_context.get("summary", {}).get("risk_date_used", "") < logical_snapshot_date:
+        flags.append(
+            {
+                "severity": "low",
+                "flag": "risk_context_pre_month_end",
+                "message": f"Risk context uses the latest business-day row on or before {logical_snapshot_date}: {risk_context.get('summary', {}).get('risk_date_used', '')}.",
+            }
+        )
     return flags
 
 
@@ -666,6 +742,7 @@ def _build_source_index(
     detail_csv: Path,
     mapping_csv: Path,
     vir_history_csv: Path,
+    risk_report_xlsx: Path | None,
     internal_history_json: Path | None,
     memory_json: Path | None,
     sharepoint_research_dir: Path | None,
@@ -692,6 +769,14 @@ def _build_source_index(
             "purpose": "VIR history and decomposition fields",
         },
     ]
+    if risk_report_xlsx and risk_report_xlsx.exists():
+        sources.append(
+            {
+                "source_type": "risk_report",
+                "artifact_path": risk_report_xlsx.relative_to(REPO_ROOT).as_posix(),
+                "purpose": "US_EQ time-series risk, factor-risk, and return-attribution context",
+            }
+        )
     if internal_history_json and internal_history_json.exists():
         sources.append(
             {
@@ -746,6 +831,30 @@ def _load_optional_internal_history(path: str | Path | None) -> dict[str, Any] |
     if not source.exists():
         return None
     return load_internal_history(source)
+
+
+def _load_risk_context(
+    *,
+    fund: str,
+    logical_snapshot_date: str,
+    material_positions: list[dict[str, Any]],
+    risk_report_xlsx: str | Path | None,
+) -> dict[str, Any]:
+    if fund != "MStar US Equity" or not risk_report_xlsx:
+        return {"available": False}
+    source = Path(risk_report_xlsx)
+    if not source.exists():
+        return {"available": False, "source_file": source.name}
+    src_root = REPO_ROOT / "src"
+    if str(src_root) not in sys.path:
+        sys.path.insert(0, str(src_root))
+    from portfolio_analyst_agent.risk_report import build_risk_context
+
+    return build_risk_context(
+        source,
+        review_date=logical_snapshot_date,
+        material_positions=material_positions,
+    )
 
 
 def _resolve_history_fund_name(payload: dict[str, Any] | None, fund: str) -> str:

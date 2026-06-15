@@ -1574,3 +1574,110 @@ This is the latest checkpoint for Al. The repo now contains a separate `agent2/`
 - Frontend stale-review handling:
   - `frontend/Example_frontendV1/src/App.jsx`
   - `scripts/build_frontend_agent_review.py`
+
+## 2026-06-12 Follow-up: Risk-integrated dashboard handoff for Al
+
+### What changed today
+
+- Added the new risk workbook into the repo and agent flow:
+  - `data/2026-05-31/weekly_US_EQ_Time Series Risk Report - Sortable_2026-03-31_2026-06-05.xlsx`
+- Added a dedicated risk parser:
+  - `src/portfolio_analyst_agent/risk_report.py`
+- Added tests for the new risk parsing:
+  - `tests/test_risk_report.py`
+- Updated Agent2 packet/evidence construction so the saved review packet now includes:
+  - portfolio risk summary
+  - return attribution
+  - top style risk drivers
+  - top industry risk drivers
+  - likely holdings contributors
+  - specific risk watchlist
+- Agent2 files touched:
+  - `agent2/src/agent2/review_packet_builder.py`
+  - `agent2/src/agent2/evidence_pack_builder.py`
+  - `agent2/src/agent2/review_prompt.py`
+- Saved the latest risk-aware live Bedrock run for May 2026:
+  - `agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-12-riskcontext/`
+- Updated tracked review artifacts:
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/agent2_review_packet.json`
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/agent2_review_packet_2026-06-12.json`
+  - `agent2/data/review_packets/2026-05-31/mstar-us-equity/evidence_pack.json`
+
+### Frontend handoff
+
+- Main source files:
+  - `frontend/Example_frontendV1/src/App.jsx`
+  - `frontend/Example_frontendV1/src/styles.css`
+  - `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-manifest.json`
+  - `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-packet.json`
+- The dashboard now has a clearer tab split:
+  - `Overview`
+    - lighter summary / positioning surface
+    - active weights vs benchmark
+    - VIR vs positioning scatter
+    - rank movers
+  - `Risk`
+    - measured risk snapshot
+    - return attribution MTD
+    - measured risk sources
+    - where risk is coming from
+  - `VIR / Algo`
+    - selected exposure time series
+    - signal comparison
+    - position-level risk context
+  - `IC Prep`
+    - actual agent brief
+    - PM questions
+    - devil's advocate
+    - next actions
+    - focused risk lens
+- In plain English:
+  - `Risk` = the risk workbook numbers and decomposition
+  - `IC Prep` = what the agent thinks those numbers mean
+  - `VIR / Algo` = how that applies to the selected position
+
+### Where the agent output is shown
+
+- The saved live narrative / packet-backed brief is surfaced in:
+  - `frontend/Example_frontendV1/src/App.jsx`
+  - tab: `IC Prep`
+- The key rendered sections are:
+  - `Agent brief`
+  - `Focused call`
+  - `Focused risk lens`
+  - `Questions for PM`
+  - `Devil's advocate`
+  - `Next actions`
+  - `Current positioning`
+  - `What the agent is flagging`
+
+### Access / run instructions for Al
+
+- Local frontend source to edit:
+  - `frontend/Example_frontendV1/src/`
+- Run locally:
+  - `cd frontend/Example_frontendV1`
+  - `npm install`
+  - `npm run preview -- --host 127.0.0.1 --port 4177`
+- Then open:
+  - `http://127.0.0.1:4177`
+
+### Temporary quick-share package
+
+- For a fast static upload to Netlify / drag-and-drop hosting:
+  - `frontend/Example_frontendV1/netlify-quickshare/`
+- This is a generated static bundle for quick sharing, not the long-term editable source of truth.
+- If Al wants to make changes, he should edit:
+  - `frontend/Example_frontendV1/src/App.jsx`
+  - `frontend/Example_frontendV1/src/styles.css`
+  - then rebuild from source rather than editing `netlify-quickshare`.
+
+### Notes for Al
+
+- The UI is still not final.
+- The current branch is a checkpoint branch, not a final merge-ready UI branch.
+- The most important code/data to inspect first:
+  - `src/portfolio_analyst_agent/risk_report.py`
+  - `agent2/src/agent2/review_packet_builder.py`
+  - `agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-12-riskcontext/run_manifest.json`
+  - `frontend/Example_frontendV1/src/App.jsx`

@@ -1,0 +1,176 @@
+{
+  "executive_summary": "MStar US Equity (vs. Russell 3000) enters June 2026 with a value-tilted, SMID-overweight posture that is running directly against the grain of both the VIR and algo signals on its two largest active sector bets. The fund is +3.3pts overweight Industrials and +3.1pts overweight Financials, yet both carry negative VIR readings and negative algo active weights—a clean divergence that demands explicit current-month underwriting. The IT underweight at -7.6pts remains the portfolio's single largest active expression and retains signal alignment, but VIR has deteriorated a further -1.3pts month-over-month and the algo now calls for -8.6pts, meaning the fund is actually less short than the model wants. Active predicted risk rose 62bps to 3.88% over the month, driven predominantly by style (Medium-Term Momentum 15.9% of active variance, Size 9.4%), with Semiconductors the leading industry driver at 2.7%. MTD active return was -2.54%, of which -1.24% came from industry factor drag and -1.07% from specific return. The SharePoint research deck on US Financials (Dec-2025) flags the sector as expensive with only select capital-markets names offering value—a direct tension with the fund's broad +3.1pt overweight. The Industrials deck (May-2025) takes only a neutral stance. Data quality: the US Large-Cap size/style SharePoint research is dated February 2017 and should not be treated as current conviction support.",
+  "current_positioning": [
+    {
+      "label": "IT Underweight — Signal-Aligned but Undersized vs. Algo",
+      "view": "Fund holds -7.6pts active underweight, consistent with a moderately negative research view (Aug-2025 deck) and supported by VIR and algo direction, but the algo calls for -8.6pts, so the fund is softer than the model prefers. VIR deteriorated -1.3pts MoM, reinforcing the underweight case.",
+      "evidence": "US IT EQ: portfolio 29.1% vs. benchmark 36.8%; algo_active_weight -8.64; vir_now -0.057, vir_delta_mom -0.013. SharePoint: 'moderately negative on the sector, software undervalued.'"
+    },
+    {
+      "label": "Industrials Overweight — Against Both VIR and Algo",
+      "view": "At +3.3pts, Industrials is the largest sector overweight. Both VIR (–0.039) and algo (–2.92pts) point the other direction. The May-2025 SharePoint deck takes only a neutral sector-level stance, citing selective industry-level value. Prior internal history ties this overweight to the SMID tilt and sub-adviser positioning (MFS, Systematic Large, ClearBridge).",
+      "evidence": "US ID EQ active weight +3.34pts; vir_now -0.039; algo_active_weight -2.92; decomposition: broad_based; top holdings: Honeywell +0.60, Union Pacific +0.51, RTX +0.42."
+    },
+    {
+      "label": "Financials Overweight — Sector-Level Tension with Own Research",
+      "view": "Fund is +3.1pts overweight against a VIR of –0.014 and algo of –1.29. Critically, the Dec-2025 SharePoint deck explicitly calls the sector 'expensive' with value only in select capital-markets names and asset managers. The fund's top overweights within the sector are Visa (+0.76), BlackRock (+0.61), and Corpay—consistent with cherry-picking the valued sub-segments, but the aggregate overweight still exceeds what the sector-level research supports.",
+      "evidence": "US FN EQ active weight +3.07pts; SharePoint: 'sector looks expensive, value in select capital markets firms and asset managers'; top holdings Visa +0.76, BlackRock +0.61; JPMorgan -0.31 (the largest benchmark name is actually underweight within the sector)."
+    },
+    {
+      "label": "SMID Overweight — Linked to Sub-Adviser Structure",
+      "view": "The fund carries +3.0pts in US Small Growth (primarily Wasatch) and +2.6pts in US Mid Value (MFS, Systematic SMID). The Small Growth signal is weakening (vir_delta_mom –0.003, algo only +0.15). The May-2025 US Small conviction update identifies macro sensitivity and sentiment-driven divergence YTD as key risks. The SMID overweight is the structural anchor to the Industrials overweight.",
+      "evidence": "US SML G EQ +3.0pts (vir_now -0.031, weakening); US MID V EQ +2.6pts (algo +1.19, partially aligned). Internal history: 'Industrials overweight linked to SMID overweight, Wasatch and Systematic.'"
+    },
+    {
+      "label": "Large-Cap Growth Underweight — Style Anchor",
+      "view": "At -7.7pts underweight US Large Growth and -6.4pts underweight US Large, the fund's value/SMID tilt is substantial. Both positions are signal-aligned but the quality is weakening. Medium-Term Momentum is the dominant active style risk driver (15.9% of active variance), meaning any momentum rotation could bite hard.",
+      "evidence": "US LRG G EQ active weight -7.71pts; algo -7.10; vir weakening -0.006 MoM. Risk: active style factor risk 2.73%, momentum 15.9% of variance."
+    },
+    {
+      "label": "Consumer Discretionary Underweight — Clean Alignment",
+      "view": "At -3.3pts the CD underweight is signal-aligned (VIR –0.035, algo –2.93). Aug-2025 SharePoint deck sees 'little collective value but apparel and homebuilding offer opportunities.' The fund's biggest drag within the sector is Amazon (-1.78pts active), consistent with the broad underweight.",
+      "evidence": "US CD EQ active weight -3.31pts; signal_alignment aligned; stable signal quality; Amazon active weight -1.78."
+    }
+  ],
+  "what_changed": [
+    {
+      "label": "Active Predicted Risk Rose Sharply",
+      "change": "Active predicted risk increased by +62bps to 3.88% from the April month-end, with active factor risk up +56bps and active style risk up +38bps. Active share also edged up +0.54pts to 45.9%.",
+      "why_it_matters": "The fund is taking on more active risk than last month at a time when the MTD active return was -2.54%. Understanding whether risk expansion was intentional or driven by market moves in the SMID/value sleeve is a priority conversation."
+    },
+    {
+      "label": "IT VIR Deteriorated Further",
+      "change": "US IT VIR moved -1.3pts MoM to –0.057, and EM IT VIR moved -1.9pts MoM to –0.077. Both are the largest MoM movers in the pack.",
+      "why_it_matters": "The model is becoming more negative on tech valuation simultaneously with the fund being less short than the algo recommendation (-7.6pt actual vs. -8.6pt algo). The signal/position gap is widening, not closing."
+    },
+    {
+      "label": "Small Growth Signal Weakening",
+      "change": "US SML G EQ signal quality downgraded to 'weakening'; vir_delta_mom turned negative (-0.003); algo support is negligible at +0.15.",
+      "why_it_matters": "The fund carries a +3.0pt overweight in Small Growth primarily via Wasatch. This was previously linked to broader SMID conviction, but the signal degradation means the position needs active re-underwriting rather than passive carry-forward."
+    },
+    {
+      "label": "MTD Active Return -2.54% with Industry Drag the Largest Component",
+      "change": "Industry factor active return was –1.24% MTD; specific return –1.07%; style –0.23%. Underweights cost –3.13% while overweights contributed +0.59%.",
+      "why_it_matters": "The overweight-to-Industrials/Financials complex did not pay. The pain came from both the underweight book (IT/Large Growth) and specific selection, suggesting the SMID/value rotation did not materialise in May."
+    },
+    {
+      "label": "15 Positions Directionally Fighting VIR/Algo",
+      "change": "The headline summary flags 15 material positions where portfolio direction contradicts current signals.",
+      "why_it_matters": "Combined with the signal-quality weakening across SMID and the VIR deterioration in IT, the number of fighting positions has not been resolved from the prior review cycle, suggesting the PM team is deliberately holding off-signal or the rebalancing cadence has lagged."
+    }
+  ],
+  "bull_case": [
+    {
+      "label": "Value Rotation Payoff",
+      "statement": "If rate expectations stabilise or drift higher, mid-value and SMID names—anchored in Financials (Visa, BlackRock) and Industrials (Honeywell, Union Pacific, RTX)—could rotate into market leadership, rewarding the fund's structural tilt well before the VIR signal catches up."
+    },
+    {
+      "label": "IT Underweight as Valuation Protection",
+      "statement": "The Aug-2025 research deck and current VIR both confirm US IT is stretched on valuation. A multiple-compression episode in mega-cap tech (Apple -1.9pts active, NVIDIA -1.7pts active) would disproportionately help the fund versus the Russell 3000."
+    },
+    {
+      "label": "Selective Financials — Capital Markets Sub-Segment Thesis",
+      "statement": "The Dec-2025 SharePoint deck, while calling the sector expensive in aggregate, identifies capital markets and asset managers as pockets of value. The fund's top active overweights in Financials—Visa, BlackRock, Corpay—are precisely in that sub-segment, suggesting the overweight is more selective than the aggregate active weight implies."
+    },
+    {
+      "label": "Wasatch Small Growth Idiosyncratic Alpha",
+      "statement": "The May-2025 SMID conviction update notes higher growth rates drive Small Cap PEs and identifies idiosyncratic opportunities in names like HealthEquity, JFrog, AAON. If Wasatch's stock selection is working, the -0.031 VIR at the asset-class level is an incomplete picture of expected return."
+    }
+  ],
+  "bear_case": [
+    {
+      "label": "Momentum Unwind Doubles Down on Style Risk",
+      "statement": "Medium-Term Momentum is the single largest active style risk driver at 15.9% of active variance. The fund is short large-cap growth momentum names and long value/SMID. If momentum continues to lead, the -2.54% MTD active return could persist into June."
+    },
+    {
+      "label": "Financials Overweight Against Own Research House View",
+      "statement": "The firm's own Dec-2025 sector review calls Financials expensive at the sector level. Carrying a +3.1pt overweight in a sector your own research house calls expensive—with VIR and algo both negative—requires a very precise stock-selection bet that may not be apparent at the aggregated active-weight level."
+    },
+    {
+      "label": "IT Underweight Undershoots Algo in a Deteriorating Signal Environment",
+      "statement": "The algo recommends -8.6pts in IT; the fund holds -7.6pts. With VIR declining another 1.3pts MoM and both VIR and algo weakening further, the fund is leaning less negative than the model on its best-signal position."
+    },
+    {
+      "label": "SMID Overweight with Weakening Signal and Rising Active Risk",
+      "statement": "The SMID tilt (Small Growth +3.0pts, Small overall +2.4pts, Mid Value +2.6pts) is the structural driver of both the Industrials sector overweight and the rising active risk. With Small Growth signal weakening and active risk up 62bps in one month, the risk-reward on this tilt has deteriorated."
+    },
+    {
+      "label": "Stale Large-Cap Research Reduces Confidence in Size/Style Underwriting",
+      "statement": "The matched SharePoint research for US Large-Cap size/style positioning is dated February 2017—nearly nine years old. This materially weakens the research anchor for the -6.4pt US Lrg and -7.7pt US Lrg Growth underweights beyond what the VIR and algo alone provide."
+    }
+  ],
+  "devils_advocate": [
+    {
+      "label": "Is the Industrials Overweight Really a Sector Bet?",
+      "statement": "The Industrials overweight is described internally as a consequence of the SMID tilt, not a top-down sector conviction. If the real bet is SMID growth and value, then challenging the Industrials overweight in isolation misidentifies where the decision is actually being made—and where it should be defended."
+    },
+    {
+      "label": "VIR and Algo Are Not the Whole Story at 45.9% Active Share",
+      "statement": "The fund's 45.9% active share reflects significant sub-adviser autonomy (Wasatch, MFS, ClearBridge, Systematic). VIR and algo operate at the asset-class level; sub-advisers make security-level decisions. Forcing the sector/style weights to match the algo may actually reduce the fund's ability to capture stock-specific return within each sleeve."
+    },
+    {
+      "label": "Financials Selectivity May Justify the Headline Overweight",
+      "statement": "The fund is meaningfully underweight JPMorgan (-0.31pts) within Financials while overweighting Visa, BlackRock, and Corpay—exactly the names the Dec-2025 research deck flags as relatively attractive. The aggregate overweight may be the right answer arrived at via bottom-up stock selection rather than a top-down sector call that conflicts with research."
+    }
+  ],
+  "pm_questions": [
+    {
+      "label": "Industrials Overweight Conviction Source",
+      "question": "The May-2025 Industrials research deck takes a neutral sector stance, VIR is negative, and the algo calls for -2.9pts. What is the current active conviction argument for holding +3.3pts in Industrials—is this a SMID structural residual or a deliberate sector-level overweight, and has the thesis been reviewed since the sector deck was published?",
+      "why_now": "MTD active return was -2.54% with industry factor drag of -1.24%. The Industrials overweight contributed to the overweight-return drag, and both signals have been negative for multiple months."
+    },
+    {
+      "label": "Financials vs. Own Research House View",
+      "question": "The Dec-2025 SharePoint deck labels Financials expensive at the sector level. The fund holds +3.1pts overweight with negative VIR and negative algo. Can you confirm the overweight is a deliberate sub-segment bet (capital markets, asset managers) rather than a broad sector call, and how do you track whether the selectivity thesis is holding?",
+      "why_now": "The sector-level research and the position are pointing in opposite directions. This tension needs to be on the record for the June review."
+    },
+    {
+      "label": "IT Underweight Sizing vs. Algo Gap",
+      "question": "VIR has deteriorated another -1.3pts MoM and the algo now wants -8.6pts; the fund holds -7.6pts. Given that IT is the largest active position and the signal has worsened, why is the fund running 100bps lighter than the algo recommendation, and is there a plan to close that gap?",
+      "why_now": "The signal/position gap is widening rather than closing at the same time the position is generating the most absolute active-risk contribution in the portfolio."
+    },
+    {
+      "label": "Small Growth Signal Weakening — Wasatch Reunderwriting",
+      "question": "US Small Growth signal quality has degraded to 'weakening' with a negative MoM VIR delta. The position is +3.0pts, almost entirely via Wasatch. Has the Wasatch mandate been reviewed against the May-2025 SMID conviction update's caution around macro sensitivity and sentiment-driven divergence? What is the stop-loss or review trigger for this sleeve?",
+      "why_now": "Active risk rose 62bps in May; the SMID complex is likely a key contributor. The combination of weakening signal and rising risk budget consumption needs an explicit re-underwriting."
+    },
+    {
+      "label": "Active Risk Expansion — Intentional or Passive Drift?",
+      "question": "Active predicted risk increased +62bps to 3.88% in a month where active return was -2.54%. Was this risk expansion deliberate, or is it a drift from market moves within the SMID and value sleeves? If passive drift, what is the rebalancing plan?",
+      "why_now": "Risk expansion in a negative-return month signals the portfolio is moving in an uncomfortable direction on the risk-return trade-off."
+    },
+    {
+      "label": "Large-Cap Size/Style Research Currency",
+      "question": "The matched SharePoint research supporting the US Large-Cap size/style underweight is the February 2017 size and style review. Is there updated internal research that supports the -6.4pt US Lrg and -7.7pt US Lrg Growth underweights, or is the conviction resting solely on the current VIR and algo signals?",
+      "why_now": "A nine-year-old research document is not adequate underwriting for one of the fund's two largest active bets. This gap should be flagged explicitly at the June review."
+    }
+  ],
+  "follow_up": [
+    {
+      "label": "Update US Large-Cap Size/Style Research",
+      "action": "Commission or identify a current research document to replace the February 2017 size/style review as the supporting anchor for the -6.4pt US Lrg and -7.7pt US Lrg Growth underweights. Flag this as a research gap in the June checklist."
+    },
+    {
+      "label": "Confirm Financials Sub-Segment Mapping",
+      "action": "Document which specific Financials holdings constitute the 'capital markets and asset managers' thesis per the Dec-2025 sector deck, and verify that the aggregate +3.1pt sector overweight is fully explained by those approved names rather than residual broad-sector drift from sub-advisers."
+    },
+    {
+      "label": "Review Wasatch Small Growth Mandate Against SMID Conviction Update",
+      "action": "Cross-check the current Wasatch holdings (HealthEquity, JFrog, AAON, Camtek, Nova etc.) against the May-2025 SMID conviction update's macro sensitivity and sentiment findings. Set an explicit signal threshold for reducing the sleeve if VIR continues to weaken."
+    },
+    {
+      "label": "Investigate Active Risk Expansion Source",
+      "action": "Decompose the 62bps increase in active predicted risk versus April month-end: determine how much came from SMID/value sleeve drift versus deliberate rebalancing, and confirm whether the current 3.88% active risk level is within mandate comfort range."
+    },
+    {
+      "label": "Close or Justify IT Underweight Gap vs. Algo",
+      "action": "Decide whether to move the IT underweight from -7.6pts toward the -8.6pts algo recommendation given the further VIR deterioration, or document the explicit reason for holding the gap (e.g., completion sleeve constraints, sub-adviser capacity limits, conviction cap)."
+    }
+  ],
+  "dashboard_highlights": [
+    {
+      "label": "Largest Active Bet",
+      "highlight": "IT underweight at -7.6pts (vs. algo -8.6pts). Signal aligned but fund is 100bps softer than model recommendation. VIR deteriorated -1.3pts MoM."
+    },
+    {
+      "

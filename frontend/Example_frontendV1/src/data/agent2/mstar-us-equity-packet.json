@@ -458,7 +458,8 @@
     "headline_summary": [
       "Largest underweight: Information Technology (-7.62 pts), with VIR underweight and algo underweight.",
       "Largest overweight: Industrials (3.34 pts), with decomposition reading broad_based.",
-      "15 material positions are directionally fighting the current VIR/algo read."
+      "15 material positions are directionally fighting the current VIR/algo read.",
+      "US_EQ risk context: active predicted risk 3.88%, active share 45.9%, risk date used 2026-05-29."
     ]
   },
   "material_positions": [
@@ -19118,6 +19119,414 @@
       ]
     }
   ],
+  "risk_context": {
+    "available": true,
+    "source_file": "weekly_US_EQ_Time Series Risk Report - Sortable_2026-03-31_2026-06-05.xlsx",
+    "portfolio_code": "US_EQ",
+    "benchmark": "Morningstar US Market TR USD",
+    "date_range": "2026-03-31 to 2026-06-05",
+    "report_generated_with": "",
+    "summary": {
+      "review_date_requested": "2026-05-31",
+      "risk_date_used": "2026-05-29",
+      "prior_month_end_used": "2026-04-30",
+      "predicted_beta": 0.8723,
+      "active_predicted_beta": -0.1297,
+      "total_predicted_risk_pct": 14.46,
+      "active_predicted_risk_pct": 3.88,
+      "active_share_pct": 45.93,
+      "factor_risk_pct": 14.15,
+      "specific_risk_pct": 2.98,
+      "active_factor_risk_pct": 3.39,
+      "active_specific_risk_pct": 1.89,
+      "active_style_factor_risk_pct": 2.73,
+      "active_industry_factor_risk_pct": 1.43,
+      "active_market_factor_risk_pct": 0.2,
+      "change_vs_prior_month_end": {
+        "active_predicted_risk_change_pct": 0.62,
+        "active_share_change_pct": 0.54,
+        "active_factor_risk_change_pct": 0.56,
+        "active_specific_risk_change_pct": 0.26,
+        "active_style_factor_risk_change_pct": 0.38,
+        "active_industry_factor_risk_change_pct": 0.2,
+        "active_market_factor_risk_change_pct": 0.15
+      }
+    },
+    "portfolio_coverage": {
+      "asset_count": 380,
+      "common_asset_count": 329,
+      "common_asset_weight_pct": 93.1,
+      "cash_weight_pct": 1.09
+    },
+    "top_style_risk_drivers": [
+      {
+        "label": "Medium-Term Momentum",
+        "share_of_variance_pct": 15.91
+      },
+      {
+        "label": "Market Sensitivity",
+        "share_of_variance_pct": 15.46
+      },
+      {
+        "label": "Size",
+        "share_of_variance_pct": 9.41
+      },
+      {
+        "label": "Growth",
+        "share_of_variance_pct": 1.3
+      },
+      {
+        "label": "Volatility",
+        "share_of_variance_pct": 0.51
+      }
+    ],
+    "top_industry_risk_drivers": [
+      {
+        "label": "Semiconductors & Semiconductor Equipment",
+        "share_of_variance_pct": 2.69
+      },
+      {
+        "label": "Technology Hardware, Storage & Peripherals",
+        "share_of_variance_pct": 1.81
+      },
+      {
+        "label": "Capital Markets",
+        "share_of_variance_pct": 0.58
+      },
+      {
+        "label": "Automobiles",
+        "share_of_variance_pct": 0.54
+      },
+      {
+        "label": "Internet Software & Services",
+        "share_of_variance_pct": 0.39
+      },
+      {
+        "label": "Life Sciences Tools & Services",
+        "share_of_variance_pct": 0.3
+      }
+    ],
+    "return_attribution_mtd": {
+      "active_period_return": -2.54,
+      "active_period_factor_return": -1.48,
+      "active_period_specific_return": -1.07,
+      "period_overweight_return": 0.59,
+      "period_underweight_return": -3.13,
+      "active_style_factor_returns": -0.23,
+      "active_industry_factor_returns": -1.24,
+      "active_market_factor_returns": -0.02,
+      "window_start": "2026-05-01",
+      "window_end": "2026-05-29"
+    },
+    "likely_holdings_contributors": [
+      {
+        "risk_driver": "Semiconductors & Semiconductor Equipment",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 2.69,
+        "active_weight": -7.62,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 5.33,
+            "benchmark_weight": 7.01,
+            "active_weight": -1.68
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 4.56,
+            "benchmark_weight": 6.48,
+            "active_weight": -1.92
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 4.17,
+            "benchmark_weight": 4.73,
+            "active_weight": -0.57
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "Technology Hardware, Storage & Peripherals",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 1.81,
+        "active_weight": -7.62,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 5.33,
+            "benchmark_weight": 7.01,
+            "active_weight": -1.68
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 4.56,
+            "benchmark_weight": 6.48,
+            "active_weight": -1.92
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 4.17,
+            "benchmark_weight": 4.73,
+            "active_weight": -0.57
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "Capital Markets",
+        "mapped_sector": "Financials",
+        "share_of_variance_pct": 0.58,
+        "active_weight": 3.07,
+        "signal_alignment": "diverging",
+        "top_sector_holdings": [
+          {
+            "security_name": "Visa Inc Class A",
+            "portfolio_weight": 1.54,
+            "benchmark_weight": 0.78,
+            "active_weight": 0.76
+          },
+          {
+            "security_name": "JPMorgan Chase & Co",
+            "portfolio_weight": 0.83,
+            "benchmark_weight": 1.14,
+            "active_weight": -0.31
+          },
+          {
+            "security_name": "BLACKROCK INC",
+            "portfolio_weight": 0.82,
+            "benchmark_weight": 0.21,
+            "active_weight": 0.61
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "Automobiles",
+        "mapped_sector": "Consumer Discretionary",
+        "share_of_variance_pct": 0.54,
+        "active_weight": -3.31,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "AMAZON.COM INC",
+            "portfolio_weight": 1.98,
+            "benchmark_weight": 3.76,
+            "active_weight": -1.78
+          },
+          {
+            "security_name": "Airbnb Inc Ordinary Shares - Class A",
+            "portfolio_weight": 0.48,
+            "benchmark_weight": 0.08,
+            "active_weight": 0.4
+          },
+          {
+            "security_name": "Marriott International Inc Class A",
+            "portfolio_weight": 0.38,
+            "benchmark_weight": 0.12,
+            "active_weight": 0.26
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "Internet Software & Services",
+        "mapped_sector": "Communication Services",
+        "share_of_variance_pct": 0.39,
+        "active_weight": -2.27,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "Alphabet Inc Class A",
+            "portfolio_weight": 3.96,
+            "benchmark_weight": 3.14,
+            "active_weight": 0.83
+          },
+          {
+            "security_name": "Meta Platforms Inc Class A",
+            "portfolio_weight": 2.16,
+            "benchmark_weight": 1.96,
+            "active_weight": 0.2
+          },
+          {
+            "security_name": "Netflix Inc",
+            "portfolio_weight": 0.68,
+            "benchmark_weight": 0.51,
+            "active_weight": 0.16
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "Life Sciences Tools & Services",
+        "mapped_sector": "Health Care",
+        "share_of_variance_pct": 0.3,
+        "active_weight": 1.94,
+        "signal_alignment": "partially_aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "JOHNSON & JOHNSON",
+            "portfolio_weight": 1.05,
+            "benchmark_weight": 0.77,
+            "active_weight": 0.28
+          },
+          {
+            "security_name": "The Cigna Group",
+            "portfolio_weight": 0.58,
+            "benchmark_weight": 0.1,
+            "active_weight": 0.48
+          },
+          {
+            "security_name": "Intuitive Surgical Inc",
+            "portfolio_weight": 0.56,
+            "benchmark_weight": 0.21,
+            "active_weight": 0.35
+          }
+        ],
+        "inference_level": "sector_proxy"
+      }
+    ],
+    "specific_risk_watchlist": [
+      {
+        "label": "United States Lrg Growth",
+        "category": "Eq Size / Style",
+        "active_weight": -7.71,
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 5.33,
+            "benchmark_weight": 7.01,
+            "active_weight": -1.68
+          },
+          {
+            "security_name": "Broadcom Inc",
+            "portfolio_weight": 1.56,
+            "benchmark_weight": 2.94,
+            "active_weight": -1.38
+          },
+          {
+            "security_name": "Palo Alto Networks Inc",
+            "portfolio_weight": 0.98,
+            "benchmark_weight": 0.32,
+            "active_weight": 0.66
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "Information Technology",
+        "category": "Eq Sector",
+        "active_weight": -7.62,
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 5.33,
+            "benchmark_weight": 7.01,
+            "active_weight": -1.68
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 4.56,
+            "benchmark_weight": 6.48,
+            "active_weight": -1.92
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 4.17,
+            "benchmark_weight": 4.73,
+            "active_weight": -0.57
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "United States Lrg",
+        "category": "Eq Size / Style",
+        "active_weight": -6.39,
+        "top_sector_holdings": [
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 4.56,
+            "benchmark_weight": 6.48,
+            "active_weight": -1.92
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 4.17,
+            "benchmark_weight": 4.73,
+            "active_weight": -0.57
+          },
+          {
+            "security_name": "Alphabet Inc Class A",
+            "portfolio_weight": 3.96,
+            "benchmark_weight": 3.14,
+            "active_weight": 0.83
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "Industrials",
+        "category": "Eq Sector",
+        "active_weight": 3.34,
+        "top_sector_holdings": [
+          {
+            "security_name": "Honeywell International Inc",
+            "portfolio_weight": 0.82,
+            "benchmark_weight": 0.21,
+            "active_weight": 0.6
+          },
+          {
+            "security_name": "RTX Corp",
+            "portfolio_weight": 0.76,
+            "benchmark_weight": 0.34,
+            "active_weight": 0.42
+          },
+          {
+            "security_name": "Union Pacific Corp",
+            "portfolio_weight": 0.74,
+            "benchmark_weight": 0.22,
+            "active_weight": 0.51
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "Consumer Discretionary",
+        "category": "Eq Sector",
+        "active_weight": -3.31,
+        "top_sector_holdings": [
+          {
+            "security_name": "AMAZON.COM INC",
+            "portfolio_weight": 1.98,
+            "benchmark_weight": 3.76,
+            "active_weight": -1.78
+          },
+          {
+            "security_name": "Airbnb Inc Ordinary Shares - Class A",
+            "portfolio_weight": 0.48,
+            "benchmark_weight": 0.08,
+            "active_weight": 0.4
+          },
+          {
+            "security_name": "Marriott International Inc Class A",
+            "portfolio_weight": 0.38,
+            "benchmark_weight": 0.12,
+            "active_weight": 0.26
+          }
+        ],
+        "inference_level": "sector_proxy"
+      }
+    ],
+    "narrative_observations": [
+      "Measured active risk is currently most concentrated in style risk at 2.73%.",
+      "The biggest modeled industry driver is Semiconductors & Semiconductor Equipment at 2.7% of active variance.",
+      "The largest modeled style driver is Medium-Term Momentum at 15.9% of active variance.",
+      "Within the mapped Information Technology bucket behind Semiconductors & Semiconductor Equipment risk, the largest sector holdings are NVIDIA Corp, APPLE INC, Microsoft Corp."
+    ]
+  },
   "signal_summary": {
     "aligned_positions": [
       {
@@ -19216,7 +19625,10 @@
     "fund_level_observations": [
       "The largest current active expression is Information Technology at -7.62 percentage points, with aligned signal support.",
       "Internal history most often references Information Technology Underweight (3 prior mentions), so that posture deserves continuity checks.",
-      "The clearest position-versus-signal tension is Industrials, where positioning is overweight while VIR is underweight and algo is underweight."
+      "The clearest position-versus-signal tension is Industrials, where positioning is overweight while VIR is underweight and algo is underweight.",
+      "Measured active risk is currently most concentrated in style risk at 2.73%.",
+      "The biggest modeled industry driver is Semiconductors & Semiconductor Equipment at 2.7% of active variance.",
+      "The largest modeled style driver is Medium-Term Momentum at 15.9% of active variance."
     ]
   },
   "top_movers": [
@@ -19711,6 +20123,10 @@
     {
       "type": "continuity_check",
       "statement": "Prior internal rationale repeatedly emphasized information technology underweight, so the June review should explicitly confirm whether that story still holds with current sizing and signal evidence."
+    },
+    {
+      "type": "measured_risk_context",
+      "statement": "Measured active risk is 3.88% with 45.9% active share, so PM debate should separate conviction from raw risk budget use."
     }
   ],
   "roadmap": [
@@ -19917,6 +20333,11 @@
       "severity": "low",
       "flag": "algo_scaled_to_percentage_points",
       "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
+    },
+    {
+      "severity": "low",
+      "flag": "risk_context_pre_month_end",
+      "message": "Risk context uses the latest business-day row on or before 2026-05-31: 2026-05-29."
     }
   ],
   "source_index": [
@@ -19939,6 +20360,11 @@
       "source_type": "vir_history",
       "artifact_path": "artifacts/equity_vir_history.csv.zip",
       "purpose": "VIR history and decomposition fields"
+    },
+    {
+      "source_type": "risk_report",
+      "artifact_path": "data/2026-05-31/weekly_US_EQ_Time Series Risk Report - Sortable_2026-03-31_2026-06-05.xlsx",
+      "purpose": "US_EQ time-series risk, factor-risk, and return-attribution context"
     },
     {
       "source_type": "internal_history",
@@ -19964,6 +20390,8 @@
     "review_date": "2026-06-12",
     "material_position_count": 50,
     "history_fund_name": "US Equity",
-    "matched_sharepoint_research_count": 38
+    "matched_sharepoint_research_count": 38,
+    "risk_context_available": true,
+    "risk_date_used": "2026-05-29"
   }
 }

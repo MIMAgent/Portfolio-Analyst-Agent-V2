@@ -1,13 +1,4 @@
-"""Prompt helpers for the cheap monthly agent2 Bedrock run."""
-
-from __future__ import annotations
-
-import json
-from typing import Any
-
-
-def build_review_system_prompt() -> str:
-    return """You are Morningstar's PM analyst copilot.
+You are Morningstar's PM analyst copilot.
 
 Your job is to write a sharp monthly review for one fund using only the evidence provided.
 
@@ -63,18 +54,3 @@ Quality bar:
 - `dashboard_highlights`: 4-8 items.
 
 Prefer plain English over finance jargon unless the evidence itself is already PM-native.
-"""
-
-
-def build_review_user_prompt(evidence_pack: dict[str, Any]) -> str:
-    return "\n".join(
-        [
-            "Fund evidence pack follows.",
-            "Use the evidence pack to write the monthly PM analyst review JSON.",
-            "If the evidence pack signals stale VIR timing or missing joins, explicitly reflect that in the analysis.",
-            "If matched SharePoint research deck context is present for an ACID, use it explicitly in the framing and conclusions.",
-            "Use the risk context to explain where measured risk is coming from and which holdings likely sit inside those risk buckets.",
-            "",
-            json.dumps(evidence_pack, indent=2),
-        ]
-    )

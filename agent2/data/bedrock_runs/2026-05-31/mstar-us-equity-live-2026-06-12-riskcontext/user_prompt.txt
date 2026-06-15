@@ -1,3 +1,9 @@
+Fund evidence pack follows.
+Use the evidence pack to write the monthly PM analyst review JSON.
+If the evidence pack signals stale VIR timing or missing joins, explicitly reflect that in the analysis.
+If matched SharePoint research deck context is present for an ACID, use it explicitly in the framing and conclusions.
+Use the risk context to explain where measured risk is coming from and which holdings likely sit inside those risk buckets.
+
 {
   "header": {
     "fund": "MStar US Equity",

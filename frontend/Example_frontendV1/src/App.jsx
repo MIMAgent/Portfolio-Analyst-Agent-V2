@@ -1,14 +1,15 @@
 import { useEffect, useMemo, useState } from 'react'
-import bundle from './data/monthlyReviewBundle.json'
-import exposureLineage from './data/exposureLineage.json'
-import fundWeightsVirAlgo from './data/fundWeightsVirAlgo.json'
-import signalHistory from './data/signalHistory.json'
-import agent2ReviewMstarUsequity from './data/agent2/mstar-us-equity-review.json'
-import agent2ManifestMstarUsequity from './data/agent2/mstar-us-equity-manifest.json'
-import agent2PacketMstarUsequity from './data/agent2/mstar-us-equity-packet.json'
+import bundleUrl from './data/monthlyReviewBundle.json?url'
+import exposureLineageUrl from './data/exposureLineage.json?url'
+import fundWeightsVirAlgoUrl from './data/fundWeightsVirAlgo.json?url'
+import signalHistoryUrl from './data/signalHistory.json?url'
+import agent2ReviewMstarUsequityUrl from './data/agent2/mstar-us-equity-review.json?url'
+import agent2ManifestMstarUsequityUrl from './data/agent2/mstar-us-equity-manifest.json?url'
+import agent2PacketMstarUsequityUrl from './data/agent2/mstar-us-equity-packet.json?url'
 
 const tabs = [
   { id: 'dashboard', navLabel: 'Dashboard', sectionLabel: 'Overview' },
+  { id: 'risk', navLabel: 'Risk', sectionLabel: 'Risk' },
   { id: 'decomp', navLabel: 'VIR / Algo', sectionLabel: 'VIR / Algo' },
   { id: 'challenge', navLabel: 'Challenge Brief', sectionLabel: 'Challenge Brief' },
   { id: 'fof', navLabel: 'Fund of Funds', sectionLabel: 'Fund of Funds' },
@@ -39,35 +40,126 @@ const presetQuestions = [
   'Where are active weights concentrated by source sleeve?',
 ]
 
-const agent2RunsByFund = {
-  'MStar US Equity': {
-    review: agent2ReviewMstarUsequity,
-    manifest: agent2ManifestMstarUsequity,
-    packet: agent2PacketMstarUsequity,
-  },
+let runtimeBundle = { funds: [], snapshot_date: '', bundle_generated_at: '' }
+let runtimeExposureLineage = {}
+let runtimeFundWeightsVirAlgo = []
+let runtimeSignalHistory = { funds: {} }
+let runtimeAgent2RunsByFund = {}
+
+function emptyFundModel() {
+  return {
+    fundName: '',
+    exposures: [],
+    exposureByAcid: new Map(),
+    tensionRows: [],
+    signalRows: [],
+    availableCategories: [defaultCategory],
+    lineages: {},
+    lineageByAcid: {},
+    snapshotMatrix: {
+      review: '',
+      positioning: '',
+      vir: '',
+      algo: '',
+      hasMismatch: false,
+    },
+  }
 }
 
-const signalHistoryByFund = signalHistory.funds ?? {}
+async function fetchJson(url) {
+  const response = await fetch(url)
+  if (!response.ok) {
+    throw new Error(`Failed to load ${url}: ${response.status}`)
+  }
+  return response.json()
+}
+
 const defaultFundName = 'MStar US Equity'
 const defaultTabId = 'decomp'
 const defaultPortfolioView = 'new'
 const defaultCategory = 'All'
 
 export default function App() {
-  const fundDirectory = useMemo(() => buildFundDirectory(bundle.funds, fundWeightsVirAlgo), [])
+  const [dataState, setDataState] = useState({ ready: false, error: '' })
+  const fundDirectory = useMemo(() => (dataState.ready ? buildFundDirectory(runtimeBundle.funds, runtimeFundWeightsVirAlgo) : []), [dataState.ready])
   const preferredSlug = fundDirectory.find((fund) => fund.fund === defaultFundName)?.slug ?? fundDirectory[0]?.slug ?? ''
-  const initialViewState = useMemo(() => readViewStateFromUrl(fundDirectory, preferredSlug), [fundDirectory, preferredSlug])
+  const initialViewState = useMemo(
+    () =>
+      fundDirectory.length
+        ? readViewStateFromUrl(fundDirectory, preferredSlug)
+        : {
+            selectedSlug: '',
+            activeTab: defaultTabId,
+            selectedCategory: defaultCategory,
+            selectedAcid: '',
+            portfolioView: defaultPortfolioView,
+          },
+    [fundDirectory, preferredSlug],
+  )
   const [selectedSlug, setSelectedSlug] = useState(initialViewState.selectedSlug)
   const [activeTab, setActiveTab] = useState(initialViewState.activeTab)
   const [selectedCategory, setSelectedCategory] = useState(initialViewState.selectedCategory)
   const [selectedAcid, setSelectedAcid] = useState(initialViewState.selectedAcid)
   const [portfolioView, setPortfolioView] = useState(initialViewState.portfolioView)
 
-  const selectedFund = fundDirectory.find((fund) => fund.slug === selectedSlug) ?? fundDirectory[0]
-  const model = useMemo(() => buildFundModel(selectedFund), [selectedFund])
+  useEffect(() => {
+    let cancelled = false
+
+    async function loadRuntimeData() {
+      try {
+        const [bundleJson, exposureLineageJson, fundWeightsVirAlgoJson, signalHistoryJson, reviewJson, manifestJson, packetJson] =
+          await Promise.all([
+            fetchJson(bundleUrl),
+            fetchJson(exposureLineageUrl),
+            fetchJson(fundWeightsVirAlgoUrl),
+            fetchJson(signalHistoryUrl),
+            fetchJson(agent2ReviewMstarUsequityUrl),
+            fetchJson(agent2ManifestMstarUsequityUrl),
+            fetchJson(agent2PacketMstarUsequityUrl),
+          ])
+
+        runtimeBundle = bundleJson
+        runtimeExposureLineage = exposureLineageJson
+        runtimeFundWeightsVirAlgo = fundWeightsVirAlgoJson
+        runtimeSignalHistory = signalHistoryJson
+        runtimeAgent2RunsByFund = {
+          'MStar US Equity': {
+            review: reviewJson,
+            manifest: manifestJson,
+            packet: packetJson,
+          },
+        }
+
+        if (!cancelled) {
+          setDataState({ ready: true, error: '' })
+        }
+      } catch (error) {
+        if (!cancelled) {
+          setDataState({ ready: false, error: error instanceof Error ? error.message : String(error) })
+        }
+      }
+    }
+
+    loadRuntimeData()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const selectedFund = fundDirectory.find((fund) => fund.slug === selectedSlug) ?? fundDirectory[0] ?? null
+  const model = useMemo(() => (selectedFund ? buildFundModel(selectedFund) : emptyFundModel()), [selectedFund])
   const filteredModel = useMemo(() => filterModelByCategory(model, selectedCategory), [model, selectedCategory])
   const activeTabConfig = tabs.find((tab) => tab.id === activeTab)
   const pageTitle = activeTabConfig?.sectionLabel ?? 'Overview'
+
+  useEffect(() => {
+    if (!fundDirectory.length) {
+      return
+    }
+    if (!selectedSlug || !fundDirectory.some((fund) => fund.slug === selectedSlug)) {
+      setSelectedSlug(initialViewState.selectedSlug || fundDirectory[0].slug)
+    }
+  }, [fundDirectory, initialViewState.selectedSlug, selectedSlug])
 
   useEffect(() => {
     if (!selectedFund) {
@@ -121,6 +213,28 @@ export default function App() {
     }
   }
 
+  if (dataState.error) {
+    return (
+      <div className="loading-shell">
+        <div className="loading-card">
+          <h1>Dashboard failed to load</h1>
+          <p>{dataState.error}</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (!dataState.ready) {
+    return (
+      <div className="loading-shell">
+        <div className="loading-card">
+          <h1>Loading dashboard</h1>
+          <p>Pulling positioning, VIR, algo, and agent files.</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <>
       <a className="skip-link" href="#main-content">
@@ -145,7 +259,7 @@ export default function App() {
 
             <div className="new-header-actions">
               <span className="new-chip is-live">Live</span>
-              <span className="new-chip">{monthYear(bundle.snapshot_date || model.snapshotMatrix.review)}</span>
+              <span className="new-chip">{monthYear(runtimeBundle.snapshot_date || model.snapshotMatrix.review)}</span>
               <span className="new-chip">{fundDirectory.length} Funds</span>
               <button type="button" className="new-action primary" onClick={() => setActiveTab('challenge')}>Run Review</button>
               <button type="button" className="new-action" onClick={() => setActiveTab('ic')}>IC Prep</button>
@@ -197,7 +311,7 @@ export default function App() {
               <SidebarMeta label="Review" value={model.snapshotMatrix.review} />
               <SidebarMeta label="VIR" value={model.snapshotMatrix.vir} />
               <SidebarMeta label="Algo" value={model.snapshotMatrix.algo} />
-              <SidebarMeta label="Bundle built" value={formatDateTime(bundle.bundle_generated_at)} />
+              <SidebarMeta label="Bundle built" value={formatDateTime(runtimeBundle.bundle_generated_at)} />
             </div>
           </aside>
 
@@ -275,6 +389,7 @@ export default function App() {
               {activeTab === 'dashboard' ? (
                 <ReferenceDashboardTab model={filteredModel} onFocusAcid={focusAcid} portfolioView={portfolioView} />
               ) : null}
+              {activeTab === 'risk' ? <ReferenceRiskTab model={filteredModel} onFocusAcid={focusAcid} /> : null}
               {activeTab === 'challenge' ? (
                 <ReferenceChallengeTab model={filteredModel} onOpenReview={(acid) => focusAcid(acid, 'ic')} />
               ) : null}
@@ -526,7 +641,7 @@ function DashboardTab({ model, onFocusAcid, portfolioView }) {
             <TimingRow label="Positioning layer" value={model.snapshotMatrix.positioning} />
             <TimingRow label="VIR layer" value={model.snapshotMatrix.vir} />
             <TimingRow label="Algo layer" value={model.snapshotMatrix.algo} />
-            <TimingRow label="Bundle built" value={formatDateTime(bundle.bundle_generated_at)} />
+            <TimingRow label="Bundle built" value={formatDateTime(runtimeBundle.bundle_generated_at)} />
             {agentReview ? <TimingRow label="Packet refreshed" value={agentReview.packetReviewDate} /> : null}
             {agentReview ? <TimingRow label="Agent run" value={formatDateTime(agentReview.manifest.generated_at)} /> : null}
           </div>
@@ -1681,6 +1796,205 @@ function ReferenceDashboardTab({ model, onFocusAcid, portfolioView }) {
   )
 }
 
+function ReferenceRiskTab({ model, onFocusAcid }) {
+  const riskContext = getRiskContext(model.agentReview)
+  const riskSummary = riskContext?.summary ?? null
+  const riskAttribution = riskContext?.return_attribution_mtd ?? null
+  const styleDrivers = (riskContext?.top_style_risk_drivers ?? []).slice(0, 4)
+  const industryDrivers = (riskContext?.top_industry_risk_drivers ?? []).slice(0, 5)
+  const contributorRows = filterRiskContributorsForModel(riskContext, model).slice(0, 4)
+  const specificRiskRows = filterRiskWatchlistForModel(riskContext, model).slice(0, 4)
+  const kpis = [
+    { label: 'Active Risk', value: formatPercentValue(riskSummary?.active_predicted_risk_pct), sublabel: riskSummary ? `vs ${riskSummary.risk_date_used}` : 'risk workbook', tone: 'amber' },
+    { label: 'Active Share', value: formatPercentValue(riskSummary?.active_share_pct), sublabel: 'portfolio vs benchmark', tone: 'violet' },
+    { label: 'Factor Risk', value: formatPercentValue(riskSummary?.active_factor_risk_pct), sublabel: `style ${formatPercentValue(riskSummary?.active_style_factor_risk_pct, { signed: false })}`, tone: 'blue' },
+    { label: 'Specific Risk', value: formatPercentValue(riskSummary?.active_specific_risk_pct), sublabel: `industry ${formatPercentValue(riskSummary?.active_industry_factor_risk_pct, { signed: false })}`, tone: 'red' },
+    { label: 'MTD Active Return', value: formatPercentValue(riskAttribution?.active_period_return), sublabel: 'factor + specific', tone: 'green' },
+  ]
+
+  if (!riskContext) {
+    return <EmptyState copy="No risk workbook context is loaded for this fund yet." />
+  }
+
+  return (
+    <div className="ref-risk-stack">
+      <div className="ref-kpi-row">
+        {kpis.map((kpi) => (
+          <article key={kpi.label} className="ref-kpi">
+            <div className="ref-kpi-label">{kpi.label}</div>
+            <div className={`ref-kpi-value tone-text-${kpi.tone}`}>{kpi.value}</div>
+            <div className="ref-kpi-sub">{kpi.sublabel}</div>
+          </article>
+        ))}
+      </div>
+
+      <div className="ref-risk-grid">
+        <div className="ref-card ref-card-pad">
+          <div className="card-title">Measured risk snapshot</div>
+          <div className="ref-risk-metrics">
+            <div className="ref-risk-metric">
+              <label>Active predicted risk</label>
+              <strong className={toneClass(riskSummary?.active_predicted_risk_pct)}>{formatPercentValue(riskSummary?.active_predicted_risk_pct)}</strong>
+              <span>{formatPercentValue(riskSummary?.change_vs_prior_month_end?.active_predicted_risk_change_pct)} vs prior month-end</span>
+            </div>
+            <div className="ref-risk-metric">
+              <label>Factor risk</label>
+              <strong>{formatPercentValue(riskSummary?.active_factor_risk_pct)}</strong>
+              <span>Style {formatPercentValue(riskSummary?.active_style_factor_risk_pct, { signed: false })} | Industry {formatPercentValue(riskSummary?.active_industry_factor_risk_pct, { signed: false })}</span>
+            </div>
+            <div className="ref-risk-metric">
+              <label>Specific risk</label>
+              <strong>{formatPercentValue(riskSummary?.active_specific_risk_pct)}</strong>
+              <span>{formatPercentValue(riskSummary?.change_vs_prior_month_end?.active_specific_risk_change_pct)} vs prior month-end</span>
+            </div>
+            <div className="ref-risk-metric">
+              <label>Predicted beta</label>
+              <strong>{formatMaybe(riskSummary?.predicted_beta)}</strong>
+              <span>Active beta {formatSignedMaybe(riskSummary?.active_predicted_beta)}</span>
+            </div>
+          </div>
+          <div className="ref-risk-foot">
+            Risk report window uses {formatCalendarDate(riskSummary?.risk_date_used)} against {formatCalendarDate(riskSummary?.prior_month_end_used)}.
+          </div>
+        </div>
+
+        <div className="ref-card ref-card-pad">
+          <div className="card-title">Return attribution MTD</div>
+          <div className="ref-risk-metrics is-compact">
+            <div className="ref-risk-metric">
+              <label>Active return</label>
+              <strong className={toneClass(riskAttribution?.active_period_return)}>{formatPercentValue(riskAttribution?.active_period_return)}</strong>
+              <span>{formatCalendarDate(riskAttribution?.window_start)} to {formatCalendarDate(riskAttribution?.window_end)}</span>
+            </div>
+            <div className="ref-risk-metric">
+              <label>Factor return</label>
+              <strong className={toneClass(riskAttribution?.active_period_factor_return)}>{formatPercentValue(riskAttribution?.active_period_factor_return)}</strong>
+              <span>Specific {formatPercentValue(riskAttribution?.active_period_specific_return)}</span>
+            </div>
+            <div className="ref-risk-metric">
+              <label>Underweight effect</label>
+              <strong className={toneClass(riskAttribution?.period_underweight_return)}>{formatPercentValue(riskAttribution?.period_underweight_return)}</strong>
+              <span>Overweight {formatPercentValue(riskAttribution?.period_overweight_return)}</span>
+            </div>
+            <div className="ref-risk-metric">
+              <label>Industry factor</label>
+              <strong className={toneClass(riskAttribution?.active_industry_factor_returns)}>{formatPercentValue(riskAttribution?.active_industry_factor_returns)}</strong>
+              <span>Style {formatPercentValue(riskAttribution?.active_style_factor_returns)} | Market {formatPercentValue(riskAttribution?.active_market_factor_returns)}</span>
+            </div>
+          </div>
+          <div className="ref-risk-note">
+            {riskContext.narrative_observations?.slice(0, 2).map((item) => (
+              <p key={item}>{item}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="ref-risk-grid">
+        <div className="ref-card ref-card-pad">
+          <div className="card-title">Measured risk sources</div>
+          <div className="ref-risk-driver-grid">
+            <div className="ref-risk-list">
+              <div className="ref-risk-list-title">Top style drivers</div>
+              {styleDrivers.map((item) => (
+                <div key={item.label} className="ref-risk-row">
+                  <div className="ref-risk-row-head">
+                    <strong>{item.label}</strong>
+                    <code>{formatPercentValue(item.share_of_variance_pct, { signed: false })}</code>
+                  </div>
+                  <div className="ref-risk-bar-track">
+                    <div className="ref-risk-bar-fill is-style" style={{ width: `${clamp((numberOrNull(item.share_of_variance_pct) ?? 0) / 18 * 100, 8, 100)}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="ref-risk-list">
+              <div className="ref-risk-list-title">Top industry drivers</div>
+              {industryDrivers.map((item) => (
+                <div key={item.label} className="ref-risk-row">
+                  <div className="ref-risk-row-head">
+                    <strong>{item.label}</strong>
+                    <code>{formatPercentValue(item.share_of_variance_pct, { signed: false })}</code>
+                  </div>
+                  <div className="ref-risk-bar-track">
+                    <div className="ref-risk-bar-fill is-industry" style={{ width: `${clamp((numberOrNull(item.share_of_variance_pct) ?? 0) / 3 * 100, 8, 100)}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="ref-card ref-card-pad">
+          <div className="card-title">Where risk is coming from</div>
+          <div className="ref-risk-columns">
+            <div className="ref-risk-list">
+              <div className="ref-risk-list-title">Likely holdings contributors</div>
+              {contributorRows.map((item) => {
+                const focusAcid = findExposureAcid(model, item.mapped_sector) || findExposureAcid(model, item.risk_driver)
+                return (
+                  <button
+                    key={`${item.risk_driver}-${item.mapped_sector}`}
+                    type="button"
+                    className="ref-risk-contrib"
+                    onClick={() => (focusAcid ? onFocusAcid(focusAcid, 'decomp') : null)}
+                  >
+                    <div className="ref-risk-row-head">
+                      <div>
+                        <strong>{item.risk_driver}</strong>
+                        <div className="ref-risk-sub">{item.mapped_sector} | active {formatWeight(item.active_weight)}</div>
+                      </div>
+                      <StatusBadge tone={alignmentToneForSignal(item.signal_alignment)}>{humanizeKey(item.signal_alignment || 'mapped')}</StatusBadge>
+                    </div>
+                    <div className="ref-risk-holding-grid">
+                      {(item.top_sector_holdings ?? []).slice(0, 3).map((holding) => (
+                        <span key={`${item.risk_driver}-${holding.security_name}`} className="ref-risk-holding">
+                          {holding.security_name} {formatWeight(holding.active_weight)}
+                        </span>
+                      ))}
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+
+            <div className="ref-risk-list">
+              <div className="ref-risk-list-title">Specific risk watchlist</div>
+              {specificRiskRows.map((item) => {
+                const focusAcid = findExposureAcid(model, item.label)
+                return (
+                  <button
+                    key={item.label}
+                    type="button"
+                    className="ref-risk-contrib is-secondary"
+                    onClick={() => (focusAcid ? onFocusAcid(focusAcid, 'decomp') : null)}
+                  >
+                    <div className="ref-risk-row-head">
+                      <div>
+                        <strong>{item.label}</strong>
+                        <div className="ref-risk-sub">{item.category} | active {formatWeight(item.active_weight)}</div>
+                      </div>
+                      <code>{item.inference_level === 'sector_proxy' ? 'proxy' : item.inference_level || 'mapped'}</code>
+                    </div>
+                    <div className="ref-risk-holding-grid">
+                      {(item.top_sector_holdings ?? []).slice(0, 3).map((holding) => (
+                        <span key={`${item.label}-${holding.security_name}`} className="ref-risk-holding">
+                          {holding.security_name} {formatWeight(holding.active_weight)}
+                        </span>
+                      ))}
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function ReferenceChallengeTab({ model, onOpenReview }) {
   const cards = buildChallengeCards(model)
   const agentReview = model.agentReview
@@ -1756,6 +2070,7 @@ function ReferenceChallengeTab({ model, onOpenReview }) {
 
 function ReferenceDecompTab({ model, focusedRow, onFocusAcid }) {
   const agentReview = model.agentReview
+  const riskContext = getRiskContext(agentReview)
   const materialPositions = [...(agentReview?.materialPositions ?? [])]
     .filter((position) => model.exposureByAcid.has(position.acid))
     .sort((a, b) => Math.abs(numberOrNull(b.active_weight) ?? 0) - Math.abs(numberOrNull(a.active_weight) ?? 0))
@@ -1783,6 +2098,9 @@ function ReferenceDecompTab({ model, focusedRow, onFocusAcid }) {
   const totalDriverAbs = driverEntries.reduce((sum, item) => sum + Math.abs(item.value), 0) || 1
   const trustScore = trustScoreFromQuality(selectedPosition?.signal_quality)
   const monthlyRows = selectedSeries.filter((item) => item.vir_stf != null || item.algo_active_weight != null).slice(-6).reverse()
+  const selectedRiskFocus = buildSelectedRiskFocus(riskContext, selectedExposure, selectedPosition)
+  const selectedRiskSummary = selectedRiskFocus.watchItems[0] ?? null
+  const selectedContributorSummary = selectedRiskFocus.contributors[0] ?? null
 
   return (
     <div className="ref-va-page">
@@ -1831,7 +2149,7 @@ function ReferenceDecompTab({ model, focusedRow, onFocusAcid }) {
               </div>
               <SignalHistoryChart series={selectedSeries} />
               <div className="ref-path-caption">
-                Window {monthYear(signalHistory.dateRange?.start)} to {monthYear(signalHistory.dateRange?.end)}. VIR currently loaded through {selectedHistory?.coverage?.vir_latest_date ? monthYear(selectedHistory.coverage.vir_latest_date) : '-'}.
+                Window {monthYear(runtimeSignalHistory.dateRange?.start)} to {monthYear(runtimeSignalHistory.dateRange?.end)}. VIR currently loaded through {selectedHistory?.coverage?.vir_latest_date ? monthYear(selectedHistory.coverage.vir_latest_date) : '-'}.
               </div>
             </div>
 
@@ -1859,6 +2177,41 @@ function ReferenceDecompTab({ model, focusedRow, onFocusAcid }) {
                 </div>
                 <code>{trustScore}%</code>
               </div>
+
+              {riskContext ? (
+                <div className="ref-va-side-extra">
+                  <div className="ref-risk-mini">
+                    <div className="ref-risk-list-title">Portfolio risk backdrop</div>
+                    <div className="ref-risk-mini-grid">
+                      <span>
+                        <label>Active risk</label>
+                        <strong>{formatPercentValue(riskContext.summary?.active_predicted_risk_pct)}</strong>
+                      </span>
+                      <span>
+                        <label>Style risk</label>
+                        <strong>{formatPercentValue(riskContext.summary?.active_style_factor_risk_pct)}</strong>
+                      </span>
+                      <span>
+                        <label>Industry risk</label>
+                        <strong>{formatPercentValue(riskContext.summary?.active_industry_factor_risk_pct)}</strong>
+                      </span>
+                    </div>
+                  </div>
+
+                  {selectedContributorSummary ? (
+                    <div className="ref-risk-mini">
+                      <div className="ref-risk-row-head">
+                        <div>
+                          <div className="ref-risk-list-title">Matched risk driver</div>
+                          <strong>{selectedContributorSummary.risk_driver}</strong>
+                        </div>
+                        <code>{formatPercentValue(selectedContributorSummary.share_of_variance_pct, { signed: false })}</code>
+                      </div>
+                      <div className="ref-risk-sub">{selectedContributorSummary.mapped_sector} | active {formatWeight(selectedContributorSummary.active_weight)}</div>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
             </aside>
           </div>
 
@@ -1886,6 +2239,44 @@ function ReferenceDecompTab({ model, focusedRow, onFocusAcid }) {
                 <div className="qb-label">Question for PM</div>
                 <div className="qb-text">{pmQuestionText}</div>
               </div>
+
+              {selectedRiskSummary || selectedContributorSummary ? (
+                <div className="ref-risk-selection">
+                  <div className="ref-risk-list-title">Risk lens for this exposure</div>
+                  {selectedRiskSummary ? (
+                    <div className="ref-risk-mini">
+                      <div className="ref-risk-row-head">
+                        <strong>{selectedRiskSummary.label}</strong>
+                        <code>{selectedRiskSummary.inference_level === 'sector_proxy' ? 'proxy' : selectedRiskSummary.inference_level || 'mapped'}</code>
+                      </div>
+                      <div className="ref-risk-sub">{selectedRiskSummary.category} | active {formatWeight(selectedRiskSummary.active_weight)}</div>
+                      <div className="ref-risk-holding-grid">
+                        {(selectedRiskSummary.top_sector_holdings ?? []).slice(0, 3).map((holding) => (
+                          <span key={`${selectedRiskSummary.label}-${holding.security_name}`} className="ref-risk-holding">
+                            {holding.security_name} {formatWeight(holding.active_weight)}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ) : null}
+                  {selectedRiskFocus.contributors.slice(0, 2).map((item) => (
+                    <div key={`${selectedAcid}-${item.risk_driver}`} className="ref-risk-mini">
+                      <div className="ref-risk-row-head">
+                        <strong>{item.risk_driver}</strong>
+                        <StatusBadge tone={alignmentToneForSignal(item.signal_alignment)}>{humanizeKey(item.signal_alignment || 'mapped')}</StatusBadge>
+                      </div>
+                      <div className="ref-risk-sub">{item.mapped_sector} | share of variance {formatPercentValue(item.share_of_variance_pct, { signed: false })}</div>
+                      <div className="ref-risk-holding-grid">
+                        {(item.top_sector_holdings ?? []).slice(0, 3).map((holding) => (
+                          <span key={`${item.risk_driver}-${holding.security_name}`} className="ref-risk-holding">
+                            {holding.security_name} {formatWeight(holding.active_weight)}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
             </div>
 
             <div className="ref-va-panel">
@@ -2011,32 +2402,161 @@ function ReferenceFoFTab({ model }) {
 }
 
 function ReferenceICTab({ model, focusedAcid }) {
-  const items = buildReferenceICItems(model, focusedAcid)
+  const agentReview = model.agentReview
+  const riskContext = getRiskContext(agentReview)
+  const focusedExposure = focusedAcid ? model.exposureByAcid.get(focusedAcid) : null
+  const focusedPosition = focusedAcid ? agentReview?.positionByAcid?.get(focusedAcid) : null
+  const focusedItem = focusedPosition ?? focusedExposure ?? null
+  const focusQuestion = focusedItem ? findRelevantNarrativeItem(agentReview?.review?.pm_questions ?? [], focusedItem, 0) : null
+  const focusBull = focusedItem ? findRelevantNarrativeItem(agentReview?.review?.bull_case ?? [], focusedItem, 0) : null
+  const focusBear = focusedItem ? findRelevantNarrativeItem(agentReview?.review?.bear_case ?? [], focusedItem, 0) : null
+  const focusRisk = buildSelectedRiskFocus(riskContext, focusedExposure, focusedPosition)
+  const focusRiskItems = [...focusRisk.contributors, ...focusRisk.watchItems].slice(0, 3)
+  const fallbackRiskNarratives = buildFocusedRiskFallback(riskContext, focusedExposure, focusedPosition)
+  const summaryBullets = [
+    ...(agentReview?.review?.dashboard_highlights ?? []).slice(0, 3).map((item) => item.highlight),
+    ...(riskContext?.narrative_observations ?? []).slice(0, 2),
+  ].filter(Boolean)
+
+  if (!agentReview) {
+    return <EmptyState copy="No saved agent output is available for this fund." />
+  }
 
   return (
-    <div>
-      {items.length ? (
-        items.map((item, index) => (
-          <article key={`${item.title}-${index}`} className="ref-ic-card">
-            <div className="ref-ic-header">
-              <div className="ref-ic-num">{index + 1}</div>
-              <div>
-                <div className="ref-ic-title">{item.title}</div>
-                <div className="ref-ic-body">{item.body}</div>
+    <div className="ref-ic-page">
+      <div className="ref-card ref-card-pad ref-brief-hero">
+        <div className="ref-brief-kicker">Agent brief</div>
+        <p className="agent-summary">{agentReview.review.executive_summary}</p>
+        <div className="ref-chip-line">
+          <span className="ref-ic-chip">Model {shortModelName(agentReview.manifest.model)}</span>
+          <span className="ref-ic-chip">Cost {formatCurrency(agentReview.manifest.approx_cost_usd)}</span>
+          <span className="ref-ic-chip">Generated {formatDateTime(agentReview.manifest.generated_at)}</span>
+          {agentReview.packetReviewDate ? <span className="ref-ic-chip">Packet {agentReview.packetReviewDate}</span> : null}
+          {focusedAcid ? <span className="ref-ic-chip">Focus {focusedAcid}</span> : null}
+        </div>
+      </div>
+
+      {focusedItem ? (
+        <div className="ref-ic-grid">
+          <div className="ref-card ref-card-pad ref-brief-panel">
+            <div className="card-title">Focused call</div>
+            <div className="ref-brief-list">
+              <div className="ref-brief-item is-featured">
+                <strong>{focusedPosition?.label || focusedAcid}</strong>
+                <p>{focusQuestion?.question || buildPositionQuestion(focusedPosition, focusedExposure, null)}</p>
+              </div>
+              <div className="ref-brief-item">
+                <strong>Bull case</strong>
+                <p>{focusBull?.statement || buildPositionBullCase(focusedPosition, null)}</p>
+              </div>
+              <div className="ref-brief-item">
+                <strong>Bear case</strong>
+                <p>{focusBear?.statement || buildPositionBearCase(focusedPosition, focusedExposure, null)}</p>
               </div>
             </div>
-            {item.evidence?.length ? (
-              <div className="ref-ic-evidence">
-                {item.evidence.map((evidence) => (
-                  <span key={`${item.title}-${evidence}`} className="ref-ic-chip">{evidence}</span>
-                ))}
+          </div>
+
+          <div className="ref-card ref-card-pad ref-brief-panel">
+            <div className="card-title">Focused risk lens</div>
+            <div className="ref-brief-list">
+              {focusRiskItems.map((item) => (
+                <div key={`${focusedAcid}-${item.risk_driver || item.label}`} className="ref-brief-item">
+                  <strong>{item.risk_driver || item.label}</strong>
+                  <p>
+                    {item.mapped_sector ? `${item.mapped_sector} | ` : ''}
+                    active {formatWeight(item.active_weight)}
+                    {item.share_of_variance_pct != null ? ` | variance ${formatPercentValue(item.share_of_variance_pct, { signed: false })}` : ''}
+                  </p>
+                  <span>
+                    {item.signal_alignment ? `${humanizeKey(item.signal_alignment)} signal alignment | ` : ''}
+                    {item.inference_level === 'sector_proxy' ? 'Sector proxy mapping' : item.inference_level || 'Mapped risk context'}
+                  </span>
+                  {(item.top_sector_holdings ?? []).length ? (
+                    <div className="ref-brief-chip-grid">
+                      {(item.top_sector_holdings ?? []).slice(0, 3).map((holding) => (
+                        <span key={`${item.risk_driver || item.label}-${holding.security_name}`} className="ref-brief-chip">
+                          {holding.security_name} {formatWeight(holding.active_weight)}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+              {fallbackRiskNarratives.map((item) => (
+                <div key={item.label} className="ref-brief-item">
+                  <strong>{item.label}</strong>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      <div className="ref-ic-grid ref-ic-grid-3">
+        <div className="ref-card ref-card-pad ref-brief-panel">
+          <div className="card-title">Questions for PM</div>
+          <div className="ref-brief-list">
+            {(agentReview.review.pm_questions ?? []).slice(0, 5).map((item) => (
+              <div key={`${item.acid}-${item.question}`} className="ref-brief-item">
+                <strong>{item.label || item.acid || 'PM question'}</strong>
+                <p>{item.question}</p>
+                {item.why_now ? <span>{item.why_now}</span> : null}
               </div>
-            ) : null}
-          </article>
-        ))
-      ) : (
-        <EmptyState copy="No IC prep items are available for this fund." />
-      )}
+            ))}
+          </div>
+        </div>
+
+        <div className="ref-card ref-card-pad ref-brief-panel">
+          <div className="card-title">Devil's advocate</div>
+          <div className="ref-brief-list">
+            {(agentReview.review.devils_advocate ?? []).slice(0, 5).map((item) => (
+              <div key={`${item.label}-${item.statement}`} className="ref-brief-item">
+                <strong>{item.label}</strong>
+                <p>{item.statement}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="ref-card ref-card-pad ref-brief-panel">
+          <div className="card-title">Next actions</div>
+          <div className="ref-brief-list">
+            {(agentReview.review.follow_up ?? []).slice(0, 5).map((item) => (
+              <div key={`${item.label}-${item.action}`} className="ref-brief-item">
+                <strong>{item.label}</strong>
+                <p>{item.action}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="ref-ic-grid">
+        <div className="ref-card ref-card-pad ref-brief-panel">
+          <div className="card-title">Current positioning</div>
+          <div className="ref-brief-list">
+            {(agentReview.review.current_positioning ?? []).slice(0, 4).map((item) => (
+              <div key={`${item.label}-${item.view || item.statement}`} className="ref-brief-item">
+                <strong>{item.label}</strong>
+                <p>{item.view || item.statement}</p>
+                {item.evidence ? <span>{item.evidence}</span> : null}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="ref-card ref-card-pad ref-brief-panel">
+          <div className="card-title">What the agent is flagging</div>
+          <div className="ref-brief-list">
+            {summaryBullets.slice(0, 5).map((item) => (
+              <div key={item} className="ref-brief-item">
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -2261,7 +2781,7 @@ function shortMonth(value) {
   if (!value) {
     return ''
   }
-  const date = new Date(value)
+  const date = parseAppDate(value)
   if (Number.isNaN(date.getTime())) {
     return value
   }
@@ -2738,11 +3258,11 @@ function buildFundModel(fund) {
   const changeBrief = payload.change_brief ?? {}
   const challengeBrief = payload.challenge_brief ?? {}
   const fundName = fund?.fund ?? ''
-  const agentReview = buildAgentReview(agent2RunsByFund[fundName] ?? null)
+  const agentReview = buildAgentReview(runtimeAgent2RunsByFund[fundName] ?? null)
 
   const exposures = buildExposureRows(fundName)
   const exposureByAcid = new Map(exposures.map((row) => [row.acid, row]))
-  const signalHistoryByAcid = signalHistoryByFund[fundName]?.acids ?? {}
+  const signalHistoryByAcid = runtimeSignalHistory.funds?.[fundName]?.acids ?? {}
   const movers = sortMaterialMovers((changeBrief.material_movers ?? []).map((row) => ({ ...exposureByAcid.get(row.acid), ...row })))
   const moverByAcid = new Map(movers.map((row) => [row.acid, row]))
   const challenges = challengeBrief.items ?? []
@@ -2769,7 +3289,7 @@ function buildFundModel(fund) {
   const reviewMarkdown = fund?.detailed_review_markdown || fund?.run_summary_markdown || ''
   const reviewSections = parseReviewMarkdown(reviewMarkdown)
   const snapshotMatrix = {
-    review: metadata.snapshot_date || fund?.snapshot_date || bundle.snapshot_date,
+    review: metadata.snapshot_date || fund?.snapshot_date || runtimeBundle.snapshot_date,
     positioning: mostCommon(exposures.map((row) => row.snapshot_date)),
     vir: mostCommon(exposures.map((row) => row.vir_snapshot_date)),
     algo: mostCommon(exposures.map((row) => row.algo_snapshot_date)),
@@ -2803,8 +3323,8 @@ function buildFundModel(fund) {
     maxExposureActive: Math.max(...exposures.map((row) => Math.abs(numberOrNull(row.active_rolled_exposure) ?? 0)), 1),
     maxVirDelta: Math.max(...signalRows.map((row) => Math.abs(numberOrNull(row.vir_delta_stf) ?? 0)), 1),
     availableCategories: categoryOrder.filter((category) => exposures.some((row) => row.category === category)),
-    lineages: exposureLineage[fundName] ?? {},
-    lineageByAcid: exposureLineage[fundName] ?? {},
+    lineages: runtimeExposureLineage[fundName] ?? {},
+    lineageByAcid: runtimeExposureLineage[fundName] ?? {},
     signalHistoryByAcid,
     coverageBreakdown,
     reviewMarkdown,
@@ -2827,7 +3347,7 @@ function buildFundModel(fund) {
 }
 
 function buildExposureRows(fundName) {
-  return fundWeightsVirAlgo
+  return runtimeFundWeightsVirAlgo
     .filter((row) => row.fund === fundName)
     .map(normalizeExposureRow)
     .sort(compareExposureRows)
@@ -3015,6 +3535,108 @@ function buildResearchHighlights(rows, materialPositions) {
       }
       return (numberOrNull(b.confidence) ?? 0) - (numberOrNull(a.confidence) ?? 0)
     })
+}
+
+function getRiskContext(agentReview) {
+  const riskContext = agentReview?.packet?.risk_context
+  if (!riskContext?.available) {
+    return null
+  }
+  return riskContext
+}
+
+function buildModelRiskKeySet(model) {
+  const keys = new Set()
+
+  for (const row of model.exposures ?? []) {
+    const acidKey = normalizeLabel(row.acid)
+    if (acidKey) {
+      keys.add(acidKey)
+    }
+  }
+
+  for (const position of model.agentReview?.materialPositions ?? []) {
+    const acidKey = normalizeLabel(position.acid)
+    const labelKey = normalizeLabel(position.label)
+    if (acidKey) {
+      keys.add(acidKey)
+    }
+    if (labelKey) {
+      keys.add(labelKey)
+    }
+  }
+
+  return keys
+}
+
+function filterRiskContributorsForModel(riskContext, model) {
+  const rows = riskContext?.likely_holdings_contributors ?? []
+  if (!rows.length) {
+    return []
+  }
+  const keys = buildModelRiskKeySet(model)
+  const matched = rows.filter((row) => keys.has(normalizeLabel(row.mapped_sector)) || keys.has(normalizeLabel(row.risk_driver)))
+  return matched.length ? matched : rows
+}
+
+function filterRiskWatchlistForModel(riskContext, model) {
+  const rows = riskContext?.specific_risk_watchlist ?? []
+  if (!rows.length) {
+    return []
+  }
+  const keys = buildModelRiskKeySet(model)
+  const matched = rows.filter((row) => keys.has(normalizeLabel(row.label)))
+  return matched.length ? matched : rows
+}
+
+function buildSelectedRiskFocus(riskContext, exposure, position) {
+  const keys = new Set(
+    [position?.label, position?.acid, exposure?.label, exposure?.acid]
+      .map((value) => normalizeLabel(value))
+      .filter(Boolean),
+  )
+
+  return {
+    contributors: (riskContext?.likely_holdings_contributors ?? []).filter(
+      (row) => keys.has(normalizeLabel(row.mapped_sector)) || keys.has(normalizeLabel(row.risk_driver)),
+    ),
+    watchItems: (riskContext?.specific_risk_watchlist ?? []).filter((row) => keys.has(normalizeLabel(row.label))),
+  }
+}
+
+function buildFocusedRiskFallback(riskContext, exposure, position) {
+  if (!riskContext) {
+    return []
+  }
+
+  const items = []
+  const summary = riskContext.summary ?? {}
+  const category = exposure?.category || position?.category || 'Exposure'
+  const topStyle = riskContext.top_style_risk_drivers?.[0]
+  const topIndustry = riskContext.top_industry_risk_drivers?.[0]
+
+  if (summary.active_predicted_risk_pct != null || summary.active_share_pct != null) {
+    items.push({
+      label: 'Portfolio backdrop',
+      text: `${category} sits inside a portfolio running ${formatPercentValue(summary.active_predicted_risk_pct)} active predicted risk and ${formatPercentValue(summary.active_share_pct)} active share.`,
+    })
+  }
+
+  if (topStyle || topIndustry) {
+    items.push({
+      label: 'Dominant risk drivers',
+      text: `${topStyle ? `${topStyle.label} is the biggest style driver at ${formatPercentValue(topStyle.share_of_variance_pct, { signed: false })}. ` : ''}${topIndustry ? `${topIndustry.label} is the largest modeled industry driver at ${formatPercentValue(topIndustry.share_of_variance_pct, { signed: false })}.` : ''}`.trim(),
+    })
+  }
+
+  if (position?.sample_source_securities) {
+    items.push({
+      label: 'Underlying holdings',
+      text: `The current expression is being carried by names such as ${truncate(position.sample_source_securities, 180)}.`,
+    })
+  }
+
+  return items.slice(0, 2)
 }
 
 function filterModelByCategory(model, selectedCategory) {
@@ -3496,9 +4118,26 @@ function formatSignedMaybe(value) {
 function formatWeight(value) {
   const numeric = numberOrNull(value)
   if (numeric == null) {
-    return '—'
+    return '-'
   }
   return `${numeric > 0 ? '+' : ''}${numeric.toFixed(2)}%`
+}
+
+function formatSignal(value) {
+  const numeric = numberOrNull(value)
+  if (numeric == null) {
+    return '-'
+  }
+  return `${numeric > 0 ? '+' : ''}${(numeric * 100).toFixed(1)}%`
+}
+
+function formatPercentValue(value, { signed = true, digits = 2 } = {}) {
+  const numeric = numberOrNull(value)
+  if (numeric == null) {
+    return '-'
+  }
+  const sign = signed && numeric > 0 ? '+' : ''
+  return `${sign}${numeric.toFixed(digits)}%`
 }
 
 function formatDateTime(value) {
@@ -3542,7 +4181,7 @@ function monthYear(value) {
   if (!value) {
     return '-'
   }
-  const date = new Date(value)
+  const date = parseAppDate(value)
   if (Number.isNaN(date.getTime())) {
     return value
   }
@@ -3552,9 +4191,39 @@ function monthYear(value) {
   })
 }
 
+function formatCalendarDate(value) {
+  if (!value) {
+    return '-'
+  }
+  const date = parseAppDate(value)
+  if (Number.isNaN(date.getTime())) {
+    return value
+  }
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  })
+}
+
 function shortModelName(value = '') {
   const parts = String(value).split('.')
   return parts[parts.length - 1] || value || '-'
+}
+
+function parseAppDate(value) {
+  if (!value) {
+    return null
+  }
+  if (value instanceof Date) {
+    return value
+  }
+  const text = String(value)
+  const match = text.match(/^(\d{4})-(\d{2})-(\d{2})$/)
+  if (match) {
+    return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]), 12)
+  }
+  return new Date(text)
 }
 
 function reviewRunSubtitle(agentReview) {

@@ -11,6 +11,7 @@ def build_evidence_pack(review_packet: dict[str, Any]) -> dict[str, Any]:
     material_positions = list(review_packet.get("material_positions", []))
     signal_summary = review_packet.get("signal_summary", {})
     fund_snapshot = review_packet.get("fund_snapshot", {})
+    risk_context = review_packet.get("risk_context", {})
 
     evidence_pack = {
         "header": review_packet.get("header", {}),
@@ -38,6 +39,15 @@ def build_evidence_pack(review_packet: dict[str, Any]) -> dict[str, Any]:
         "key_sharepoint_research": _key_sharepoint_research(material_positions),
         "source_drilldowns": _source_drilldowns(material_positions),
         "sharepoint_research_summary": review_packet.get("sharepoint_research_summary", [])[:6],
+        "risk_context": {
+            "summary": risk_context.get("summary", {}),
+            "top_style_risk_drivers": risk_context.get("top_style_risk_drivers", [])[:4],
+            "top_industry_risk_drivers": risk_context.get("top_industry_risk_drivers", [])[:5],
+            "return_attribution_mtd": risk_context.get("return_attribution_mtd", {}),
+            "likely_holdings_contributors": risk_context.get("likely_holdings_contributors", [])[:4],
+            "specific_risk_watchlist": risk_context.get("specific_risk_watchlist", [])[:4],
+            "narrative_observations": risk_context.get("narrative_observations", [])[:4],
+        },
         "data_quality_flags": review_packet.get("data_quality_flags", []),
         "signal_summary": {
             "fund_level_observations": signal_summary.get("fund_level_observations", []),
