@@ -1681,3 +1681,17 @@ This is the latest checkpoint for Al. The repo now contains a separate `agent2/`
   - `agent2/src/agent2/review_packet_builder.py`
   - `agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-12-riskcontext/run_manifest.json`
   - `frontend/Example_frontendV1/src/App.jsx`
+
+## 2026-06-15 Follow-up: PM challenge card updates merged to main
+
+- Al opened draft PR `#1` (`Add PM challenge card contract`).
+- On June 15, 2026, that work was merged into local `main` and pushed to `origin/main`.
+- The PR adds:
+  - `docs/PM_CHALLENGE_CARD_CONTRACT_V1.md`
+  - richer PM-facing challenge fields in `src/portfolio_analyst_agent/agent_runtime/prompts.py`
+  - schema support in `src/portfolio_analyst_agent/schemas.py`
+  - rendering / validation support in `src/portfolio_analyst_agent/write_tools.py`
+- Practical impact:
+  - `Challenge Brief` output can now carry more decision-useful PM fields such as thesis pressure, positioning tension, model signal tension, decision fork, primary PM question, and next evidence needed.
+- Current default branch:
+  - `main`
