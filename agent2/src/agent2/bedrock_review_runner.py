@@ -1,4 +1,4 @@
-"""Run one compact agent2 review through Bedrock and save all artifacts."""
+"""Run one agent2 review through Bedrock and save all artifacts."""
 
 from __future__ import annotations
 
@@ -39,6 +39,7 @@ def run_bedrock_review(
     model: str = "us.anthropic.claude-sonnet-4-6",
     region_name: str = "us-east-2",
     profile_name: str | None = None,
+    output_style: str = "deep_challenge_memo",
     challenge_count_target: int = 4,
     max_output_tokens: int = 5000,
     read_timeout: int = 180,
@@ -52,10 +53,11 @@ def run_bedrock_review(
     evidence_pack = build_evidence_pack(
         review_packet,
         refresh_market_context=True,
+        output_style=output_style,
         challenge_count_target=challenge_count_target,
     )
-    system_prompt = build_review_system_prompt()
-    user_prompt = build_review_user_prompt(evidence_pack)
+    system_prompt = build_review_system_prompt(output_style=output_style)
+    user_prompt = build_review_user_prompt(evidence_pack, output_style=output_style)
 
     output_dir = Path(output_root)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -84,7 +86,7 @@ def run_bedrock_review(
         validation_error = "Bedrock response was not valid JSON, likely because the response was truncated or malformed."
     if parsed_json is not None:
         try:
-            parsed_json = _validate_review_payload(parsed_json)
+            parsed_json = _validate_review_payload(parsed_json, output_style=output_style)
         except ValueError as exc:
             validation_error = str(exc)
             parsed_json = None
@@ -95,7 +97,7 @@ def run_bedrock_review(
     if parsed_json is not None:
         (output_dir / "bedrock_review.json").write_text(json.dumps(parsed_json, indent=2), encoding="utf-8")
         (output_dir / "bedrock_review.md").write_text(
-            _render_markdown_review(parsed_json, review_packet),
+            _render_markdown_review(parsed_json, review_packet, output_style=output_style),
             encoding="utf-8",
         )
     elif validation_error:
@@ -106,7 +108,7 @@ def run_bedrock_review(
         "logical_snapshot_date": logical_snapshot_date,
         "review_date": review_date,
         "model": model,
-        "output_style": "deep_challenge_memo",
+        "output_style": output_style,
         "challenge_count_target": evidence_pack.get("run_goal", {}).get("challenge_count_target"),
         "region_name": region_name,
         "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
@@ -162,7 +164,7 @@ def _parse_json_response(text: str) -> dict[str, Any] | None:
         return None
 
 
-def _validate_review_payload(payload: dict[str, Any]) -> dict[str, Any]:
+def _validate_review_payload(payload: dict[str, Any], output_style: str = "deep_challenge_memo") -> dict[str, Any]:
     required_list_sections = (
         "key_insights",
         "challenge_brief",
@@ -204,21 +206,24 @@ def _validate_review_payload(payload: dict[str, Any]) -> dict[str, Any]:
             "vir_decomposition_readthrough",
             "market_context_readthrough",
             "measured_risk_readthrough",
-            "exact_holdings_causing_it",
-            "exact_vir_algo_decomp_explanation",
-            "exact_risk_contribution",
-            "exact_internal_research_excerpt",
-            "exact_external_market_context",
-            "bull_case",
-            "bear_case",
-            "devils_advocate",
-            "what_would_change_my_mind",
-            "confidence",
             "pm_decision_fork",
             "primary_pm_question",
             "evidence_needed_next",
             "source_quality",
         ]
+        if output_style == "deep_challenge_memo":
+            required_fields[8:8] = [
+                "exact_holdings_causing_it",
+                "exact_vir_algo_decomp_explanation",
+                "exact_risk_contribution",
+                "exact_internal_research_excerpt",
+                "exact_external_market_context",
+                "bull_case",
+                "bear_case",
+                "devils_advocate",
+                "what_would_change_my_mind",
+                "confidence",
+            ]
         for field in required_fields:
             value = item.get(field)
             if not isinstance(value, str) or not value.strip():
@@ -254,6 +259,7 @@ def _usage_int(usage: dict[str, Any], *keys: str) -> int | None:
 def _render_markdown_review(
     review: dict[str, Any],
     review_packet: dict[str, Any],
+    output_style: str = "deep_challenge_memo",
 ) -> str:
     header = review_packet.get("header", {})
     lines = [
@@ -269,7 +275,7 @@ def _render_markdown_review(
         "",
     ]
     lines.extend(_section_lines("Key Insights", review.get("key_insights", []), ("label", "insight", "why_it_matters")))
-    lines.extend(_challenge_brief_lines(review.get("challenge_brief", [])))
+    lines.extend(_challenge_brief_lines(review.get("challenge_brief", []), output_style=output_style))
     lines.extend(_section_lines("PM Questions", review.get("pm_questions", []), ("label", "question", "why_now")))
     lines.extend(_section_lines("Follow Up", review.get("follow_up", []), ("label", "action", "why_it_matters")))
     lines.extend(_section_lines("Dashboard Highlights", review.get("dashboard_highlights", []), ("label", "highlight")))
@@ -290,7 +296,7 @@ def _section_lines(title: str, rows: list[dict[str, Any]], fields: tuple[str, ..
     return lines
 
 
-def _challenge_brief_lines(rows: list[dict[str, Any]]) -> list[str]:
+def _challenge_brief_lines(rows: list[dict[str, Any]], output_style: str = "deep_challenge_memo") -> list[str]:
     lines = ["## Challenge Brief", ""]
     for row in rows:
         label = row.get("label", "")
@@ -303,21 +309,24 @@ def _challenge_brief_lines(rows: list[dict[str, Any]]) -> list[str]:
             ("vir_decomposition_readthrough", "VIR Decomposition Readthrough"),
             ("market_context_readthrough", "Market Context Readthrough"),
             ("measured_risk_readthrough", "Measured Risk Readthrough"),
-            ("exact_holdings_causing_it", "Exact Holdings Causing It"),
-            ("exact_vir_algo_decomp_explanation", "Exact VIR / Algo / Decomp Explanation"),
-            ("exact_risk_contribution", "Exact Risk Contribution"),
-            ("exact_internal_research_excerpt", "Exact Internal Research Excerpt"),
-            ("exact_external_market_context", "Exact External Market Context"),
-            ("bull_case", "Bull Case"),
-            ("bear_case", "Bear Case"),
-            ("devils_advocate", "Devil's Advocate"),
-            ("what_would_change_my_mind", "What Would Change My Mind"),
-            ("confidence", "Confidence"),
             ("pm_decision_fork", "PM Decision Fork"),
             ("primary_pm_question", "Primary PM Question"),
             ("evidence_needed_next", "Evidence Needed Next"),
             ("source_quality", "Source Quality"),
         ]
+        if output_style == "deep_challenge_memo":
+            challenge_fields[8:8] = [
+                ("exact_holdings_causing_it", "Exact Holdings Causing It"),
+                ("exact_vir_algo_decomp_explanation", "Exact VIR / Algo / Decomp Explanation"),
+                ("exact_risk_contribution", "Exact Risk Contribution"),
+                ("exact_internal_research_excerpt", "Exact Internal Research Excerpt"),
+                ("exact_external_market_context", "Exact External Market Context"),
+                ("bull_case", "Bull Case"),
+                ("bear_case", "Bear Case"),
+                ("devils_advocate", "Devil's Advocate"),
+                ("what_would_change_my_mind", "What Would Change My Mind"),
+                ("confidence", "Confidence"),
+            ]
         for field, title in challenge_fields:
             value = row.get(field, "")
             if value:

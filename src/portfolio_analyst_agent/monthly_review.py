@@ -12,13 +12,14 @@ from typing import Any
 
 from .agent_tools import DEFAULT_ALIGNMENT_CSV, evaluate_challenge_triggers, get_fund_snapshot, recall_memory
 from .csv_sources import resolve_existing_csv_source
+from .equity_history import DEFAULT_EQUITY_VIR_DATASET_CSV
 from .evidence import file_sha256
 from .fund_review import DEFAULT_FUND_ORDER
 from .governance import DEFAULT_GOVERNANCE_PATH, load_governance
 
 
 DEFAULT_OUTPUT_ROOT = Path("artifacts/monthly_review")
-DEFAULT_VIR_HISTORY_CSV = Path("artifacts/equity_vir_history.csv")
+DEFAULT_VIR_HISTORY_CSV = DEFAULT_EQUITY_VIR_DATASET_CSV
 PARSER_VERSION = "rolled_exposure_alignment_multisignal_v1"
 MAPPING_VERSION = "mapping_layer_pending_review"
 ALGO_VERSION = "algo_workbooks_current"
@@ -467,7 +468,7 @@ def _source_hashes() -> dict[str, str]:
         Path("artifacts/rolled_exposures/fund_rollthrough_definitions.csv"),
         Path("artifacts/rolled_exposures/fund_rollthrough_coverage.csv"),
         Path("artifacts/agent_memory/memory_records.json"),
-        Path("artifacts/equity_vir_history.csv"),
+        DEFAULT_VIR_HISTORY_CSV,
         Path(DEFAULT_GOVERNANCE_PATH),
     ]
     resolved_paths = [resolve_existing_csv_source(path) or path for path in paths]

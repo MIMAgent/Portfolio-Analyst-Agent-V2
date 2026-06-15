@@ -12,6 +12,7 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 from portfolio_analyst_agent.fund_weights_vir_algo import build_fund_weights_vir_algo  # noqa: E402
+from portfolio_analyst_agent.equity_history import DEFAULT_EQUITY_VIR_DATASET_CSV  # noqa: E402
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -26,7 +27,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--vir-csv",
-        default="artifacts/equity_vir_history.csv",
+        default=str(DEFAULT_EQUITY_VIR_DATASET_CSV),
         help="Normalized VIR CSV used to attach STF and rank fields.",
     )
     parser.add_argument(

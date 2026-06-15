@@ -9,12 +9,15 @@ from pathlib import Path
 import csv
 import json
 import re
+from zipfile import ZIP_DEFLATED, ZipFile
 
-from .csv_sources import open_csv_text
+from .csv_sources import csv_zip_mirror_path, open_csv_text, resolve_existing_csv_source
 from .parse_utils import safe_float
 from .workbook_xml import XlsxWorkbook
 
 PARSER_VERSION = "equity_history_v1"
+DEFAULT_EQUITY_VIR_BASE_HISTORY_CSV = Path("artifacts/equity_vir_history.csv")
+DEFAULT_EQUITY_VIR_DATASET_CSV = Path("artifacts/vir/equity_vir_dataset.csv")
 
 HISTORY_HEADER_TO_CANONICAL = {
     "acid": "acid",
@@ -193,6 +196,49 @@ def merge_equity_history_records(
     for record in new_records:
         merged[(record.snapshot_date, record.acid)] = _record_to_base_row(record)
     return _apply_trend_fields(list(merged.values()))
+
+
+def discover_equity_model_workbooks(data_root: str | Path) -> list[Path]:
+    root = Path(data_root)
+    return sorted(
+        path.resolve()
+        for path in root.glob("*/*Equity Model.xlsx")
+        if path.is_file() and not path.name.startswith("~$")
+    )
+
+
+def build_equity_vir_dataset(
+    *,
+    base_history_csv: str | Path = DEFAULT_EQUITY_VIR_BASE_HISTORY_CSV,
+    monthly_workbooks: list[str | Path] | None = None,
+    output_csv: str | Path = DEFAULT_EQUITY_VIR_DATASET_CSV,
+    include_existing_output: bool = True,
+) -> tuple[Path, list[EquityHistoryRecord]]:
+    merged_records: list[EquityHistoryRecord] = []
+    output_path = Path(output_csv)
+
+    if include_existing_output:
+        existing_source = resolve_existing_csv_source(output_path)
+        if existing_source:
+            merged_records = merge_equity_history_records(
+                merged_records,
+                load_equity_history_records_from_csv(existing_source),
+            )
+
+    base_source = resolve_existing_csv_source(base_history_csv)
+    if base_source:
+        merged_records = merge_equity_history_records(
+            merged_records,
+            load_equity_history_records_from_csv(base_source),
+        )
+
+    for workbook_path in [Path(path).resolve() for path in monthly_workbooks or []]:
+        result = parse_equity_history_workbook(workbook_path)
+        merged_records = merge_equity_history_records(merged_records, result.records)
+
+    output_path = write_equity_history_csv(merged_records, output_path)
+    write_equity_history_zip_mirror(output_path)
+    return output_path, merged_records
 
 
 def _parse_sheet1_history_workbook(workbook_path: Path, workbook: XlsxWorkbook) -> EquityHistoryParseResult:
@@ -414,6 +460,15 @@ def write_equity_history_csv(records: list[EquityHistoryRecord], output_path: st
     return output_path
 
 
+def write_equity_history_zip_mirror(csv_path: str | Path) -> Path:
+    csv_path = Path(csv_path)
+    mirror_path = csv_zip_mirror_path(csv_path)
+    mirror_path.parent.mkdir(parents=True, exist_ok=True)
+    with ZipFile(mirror_path, "w", compression=ZIP_DEFLATED) as archive:
+        archive.write(csv_path, arcname=csv_path.name)
+    return mirror_path
+
+
 def _header_map(worksheet) -> dict[str, int]:
     observed_headers: dict[str, int] = {}
     for column_number, raw_header in worksheet.nonempty_cells(1):
@@ -584,10 +639,15 @@ def _bottom_up_valuation(top_down: float | None, combined: float | None) -> floa
 
 
 __all__ = [
+    "DEFAULT_EQUITY_VIR_BASE_HISTORY_CSV",
+    "DEFAULT_EQUITY_VIR_DATASET_CSV",
     "EquityHistoryParseResult",
     "EquityHistoryRecord",
+    "build_equity_vir_dataset",
+    "discover_equity_model_workbooks",
     "load_equity_history_records_from_csv",
     "merge_equity_history_records",
     "parse_equity_history_workbook",
     "write_equity_history_csv",
+    "write_equity_history_zip_mirror",
 ]

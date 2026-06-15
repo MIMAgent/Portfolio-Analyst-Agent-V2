@@ -1,4 +1,4 @@
-"""CLI for running one compact agent2 review through Bedrock."""
+"""CLI for running one agent2 review through Bedrock."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from agent2.bedrock_review_runner import run_bedrock_review  # noqa: E402
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Run the canonical agent2 deep monthly review through Bedrock.")
+    parser = argparse.ArgumentParser(description="Run the agent2 monthly review through Bedrock.")
     parser.add_argument("--fund", required=True, help="Fund name.")
     parser.add_argument("--logical-snapshot-date", default="2026-05-31", help="Business month to label the run.")
     parser.add_argument("--review-date", default="", help="Optional review date override.")
@@ -25,10 +25,16 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--aws-region", default="us-east-2", help="AWS region.")
     parser.add_argument("--aws-profile", default=None, help="Optional AWS profile.")
     parser.add_argument(
+        "--output-style",
+        default="deep_challenge_memo",
+        choices=("deep_challenge_memo", "challenge_cards"),
+        help="Review output mode. Deep memo is the default.",
+    )
+    parser.add_argument(
         "--challenge-count-target",
         type=int,
         default=4,
-        help="Number of top challenges to include in the deep memo.",
+        help="Number of top challenges to include in the chosen output mode.",
     )
     parser.add_argument("--max-output-tokens", type=int, default=5000, help="Max model output tokens.")
     parser.add_argument("--bedrock-read-timeout", type=int, default=180, help="Bedrock read timeout.")
@@ -46,6 +52,7 @@ def main() -> int:
         model=args.model,
         region_name=args.aws_region,
         profile_name=args.aws_profile,
+        output_style=args.output_style,
         challenge_count_target=args.challenge_count_target,
         max_output_tokens=args.max_output_tokens,
         read_timeout=args.bedrock_read_timeout,

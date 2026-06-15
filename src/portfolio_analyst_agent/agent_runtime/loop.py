@@ -290,7 +290,7 @@ def _llm_visible_result(*, tool_name: str, result: Any, tool_kind: str, is_error
             "deferred_trigger_types": result.get("deferred_trigger_types", []),
             "fired_trigger_count": len(fired),
             "top_fired_triggers": [
-                _compact_row(row, citation_source="artifacts/equity_vir_history.csv")
+                _compact_row(row, citation_source="artifacts/vir/equity_vir_dataset.csv")
                 for row in fired[:12]
             ],
             "run_metadata": result.get("run_metadata", {}),
@@ -302,7 +302,7 @@ def _llm_visible_result(*, tool_name: str, result: Any, tool_kind: str, is_error
         return {
             **{key: result.get(key) for key in ("acid", "snapshot_date", "as_of_date", "lookback_months", "model_family", "row_count")},
             "rows": [
-                _compact_row(row, citation_source="artifacts/equity_vir_history.csv")
+                _compact_row(row, citation_source="artifacts/vir/equity_vir_dataset.csv")
                 for row in rows[-12:]
                 if isinstance(row, dict)
             ],

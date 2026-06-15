@@ -16,13 +16,14 @@ if str(SRC) not in sys.path:
 
 from portfolio_analyst_agent.algo_parser import parse_algo_workbook  # noqa: E402
 from portfolio_analyst_agent.csv_sources import open_csv_text  # noqa: E402
+from portfolio_analyst_agent.equity_history import DEFAULT_EQUITY_VIR_DATASET_CSV  # noqa: E402
 
 
 FRONTEND_DATA_DIR = ROOT / "frontend" / "Example_frontendV1" / "src" / "data"
 DEFAULT_ALIGNMENT_JSON = FRONTEND_DATA_DIR / "fundWeightsVirAlgo.json"
 DEFAULT_OUTPUT = FRONTEND_DATA_DIR / "signalHistory.json"
 DEFAULT_ALGO_WORKBOOK = ROOT / "data" / "2026-05-31" / "Algo LR (3).xlsx"
-DEFAULT_VIR_HISTORY = ROOT / "artifacts" / "equity_vir_history.csv"
+DEFAULT_VIR_HISTORY = ROOT / DEFAULT_EQUITY_VIR_DATASET_CSV
 
 
 def build_parser() -> argparse.ArgumentParser:

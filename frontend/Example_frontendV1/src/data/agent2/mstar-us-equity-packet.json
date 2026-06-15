@@ -10,7 +10,7 @@
     ],
     "snapshot_date": "2026-05-31",
     "as_of_date": "2026-05-31",
-    "review_date": "2026-06-12",
+    "review_date": "2026-06-15",
     "review_run_id": "agent2_mstar-us-equity_2026-05-31",
     "source_snapshot_date": "2026-06-08"
   },
@@ -19907,12 +19907,39 @@
   ],
   "challenge_book": [
     {
+      "challenge_id": "ch_us-id-eq_2026-05-31",
       "acid": "US ID EQ",
       "label": "Industrials",
       "category": "Eq Sector",
       "priority": "high",
+      "challenge_type": "position_vs_signal_divergence",
+      "challenge_score": 11.922,
       "reason": "Positioning is overweight, but VIR is underweight and algo is underweight.",
-      "question": "Why is the fund still overweight Industrials when both current signals lean underweight/underweight?",
+      "question": "What specific current evidence still supports the thesis 'Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.' given the portfolio is +3.34 pts overweight and the latest VIR/algo stack is underweight/underweight?",
+      "observation": "Positioning is overweight, but VIR is underweight and algo is underweight.",
+      "interpretation": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming.",
+      "challenge_headline": "Industrials remains overweight despite both VIR and algo leaning underweight/underweight.",
+      "thesis_under_pressure": "Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.",
+      "positioning_tension": "Fund weight is 12.80% versus benchmark 9.46%, leaving a +3.34 pt active overweight in Industrials. Top underlying names include Honeywell International Inc, RTX Corp.",
+      "model_signal_tension": "VIR is underweight at -0.039 (+0.002 MoM), while algo active weight is -2.92 pts and points underweight.",
+      "vir_decomposition_readthrough": "The VIR move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
+      "market_context_readthrough": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued.",
+      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.59% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What specific current evidence still supports the thesis 'Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.' given the portfolio is +3.34 pts overweight and the latest VIR/algo stack is underweight/underweight?",
+      "evidence_needed_next": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+      "source_quality": "model+positioning+memory+sharepoint_research",
+      "devils_advocate_statement": "The portfolio may be carrying legacy conviction in Industrials while the current signal stack is already telling a different story.",
+      "what_would_change_view": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+      "internal_context_summary": "Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.",
+      "external_context_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued.",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Honeywell International Inc (+0.60 pts active) via MS US EQ SYSTEMATIC LARGE 0.45%, MS US EQUITY MFS 0.37%; RTX Corp (+0.42 pts active) via MS US EQUITY MFS 0.50%, MS US EQUITY CLEARBRIDGE 0.26%; Union Pacific Corp (+0.51 pts active) via MS US EQUITY MFS 0.37%, MS US EQ SYSTEMATIC LARGE 0.37%",
       "source_refs": [
         {
           "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
@@ -19929,12 +19956,39 @@
       ]
     },
     {
+      "challenge_id": "ch_us-fn-eq_2026-05-31",
       "acid": "US FN EQ",
       "label": "Financials",
       "category": "Eq Sector",
       "priority": "high",
+      "challenge_type": "position_vs_signal_divergence",
+      "challenge_score": 10.181,
       "reason": "Positioning is overweight, but VIR is underweight and algo is underweight.",
-      "question": "Why is the fund still overweight Financials when both current signals lean underweight/underweight?",
+      "question": "What is the live underwriting case for keeping Financials at +3.07 pts overweight when both VIR and algo currently point underweight/underweight?",
+      "observation": "Positioning is overweight, but VIR is underweight and algo is underweight.",
+      "interpretation": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming.",
+      "challenge_headline": "Financials remains overweight despite both VIR and algo leaning underweight/underweight.",
+      "thesis_under_pressure": "The implicit thesis is that a overweight to Financials still deserves this size even though the current VIR/algo stack is pointing the other way.",
+      "positioning_tension": "Fund weight is 14.33% versus benchmark 11.25%, leaving a +3.07 pt active overweight in Financials. Top underlying names include Visa Inc Class A, JPMorgan Chase & Co.",
+      "model_signal_tension": "VIR is underweight at -0.014 (+0.002 MoM), while algo active weight is -1.29 pts and points underweight.",
+      "vir_decomposition_readthrough": "The VIR move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers.",
+      "measured_risk_readthrough": "Measured risk currently points to Capital Markets as a relevant driver at 0.58% of active variance for the mapped Financials bucket. Key holdings in that risk bucket include Visa Inc Class A, JPMorgan Chase & Co, BLACKROCK INC.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.59% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What is the live underwriting case for keeping Financials at +3.07 pts overweight when both VIR and algo currently point underweight/underweight?",
+      "evidence_needed_next": "Check the next VIR decomposition, top-holding lineage inside Financials, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
+      "source_quality": "model+positioning+internal_history+sharepoint_research",
+      "devils_advocate_statement": "The portfolio may be carrying legacy conviction in Financials while the current signal stack is already telling a different story.",
+      "what_would_change_view": "Check the next VIR decomposition, top-holding lineage inside Financials, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
+      "internal_context_summary": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.",
+      "external_context_summary": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers.",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Visa Inc Class A (+0.76 pts active) via MS US EQUITY CLEARBRIDGE 0.79%, MS US EQ SYSTEMATIC LARGE 0.75%; JPMorgan Chase & Co (-0.31 pts active) via MS US EQUITY MFS 0.83%, Morningstar US Market TR USD 0.00%; BLACKROCK INC (+0.61 pts active) via MS US EQ SYSTEMATIC LARGE 0.43%, MS US EQUITY MFS 0.26%",
       "source_refs": [
         {
           "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
@@ -19951,12 +20005,39 @@
       ]
     },
     {
+      "challenge_id": "ch_us-sml-g-eq_2026-05-31",
       "acid": "US SML G EQ",
       "label": "United States Sml Growth",
       "category": "Eq Size / Style",
       "priority": "high",
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_score": 9.947,
       "reason": "This is a material active position that still needs an explicit current-month rationale.",
-      "question": "What is the current underwriting case for keeping United States Sml Growth at this size?",
+      "question": "What current evidence still justifies keeping United States Sml Growth at this size rather than treating it as a position that needs to be refreshed?",
+      "observation": "This is a material active position that still needs an explicit current-month rationale.",
+      "interpretation": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
+      "challenge_headline": "United States Sml Growth still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United States Sml Growth remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 4.42% versus benchmark 1.41%, leaving a +3.01 pt active overweight in United States Sml Growth. Top underlying names include HealthEquity Inc, AAON Inc.",
+      "model_signal_tension": "VIR is underweight at -0.031 (-0.003 MoM), while algo active weight is +0.15 pts and points overweight.",
+      "vir_decomposition_readthrough": "The VIR move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
+      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "measured_risk_readthrough": "Measured style risk is elevated in Medium-Term Momentum at 15.91% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.59% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United States Sml Growth at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that United States Sml Growth is still an intentional expression.",
+      "source_quality": "model+positioning+internal_history",
+      "devils_advocate_statement": "The United States Sml Growth position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
+      "what_would_change_view": "Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that United States Sml Growth is still an intentional expression.",
+      "internal_context_summary": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight.",
+      "external_context_summary": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "HealthEquity Inc (+0.39 pts active) via MS US EQUITY WASATCH 0.41%, Morningstar US Market TR USD 0.00%; AAON Inc (+0.21 pts active) via MS US EQUITY WASATCH 0.22%, Morningstar US Market TR USD 0.00%; JFrog Ltd Ordinary Shares (+0.20 pts active) via MS US EQUITY WASATCH 0.21%, Morningstar US Market TR USD 0.00%",
       "source_refs": [
         {
           "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
@@ -19969,52 +20050,39 @@
       ]
     },
     {
-      "acid": "US MID V EQ",
-      "label": "United States Mid Value",
-      "category": "Eq Size / Style",
-      "priority": "medium",
-      "reason": "This is a material active position that still needs an explicit current-month rationale.",
-      "question": "What is the current underwriting case for keeping United States Mid Value at this size?",
-      "source_refs": [
-        {
-          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
-          "row_id": "fms_e500111e52ee"
-        },
-        {
-          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
-          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
-        }
-      ]
-    },
-    {
-      "acid": "US SML EQ",
-      "label": "United States Sml",
-      "category": "Eq Size / Style",
-      "priority": "medium",
-      "reason": "This is a material active position that still needs an explicit current-month rationale.",
-      "question": "What is the current underwriting case for keeping United States Sml at this size?",
-      "source_refs": [
-        {
-          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
-          "row_id": "fms_4b4030ed5e48"
-        },
-        {
-          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
-          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
-        },
-        {
-          "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202505-EQ-US SML EQ-Conviction Update.pptx",
-          "row_id": "202505-EQ-US SML EQ-Conviction Update.pptx"
-        }
-      ]
-    },
-    {
+      "challenge_id": "ch_us-sml-v-eq_2026-05-31",
       "acid": "US SML V EQ",
       "label": "United States Sml Value",
       "category": "Eq Size / Style",
       "priority": "medium",
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_score": 9.082,
       "reason": "This is a material active position that still needs an explicit current-month rationale.",
-      "question": "What is the current underwriting case for keeping United States Sml Value at this size?",
+      "question": "What current evidence still justifies keeping United States Sml Value at this size rather than treating it as a position that needs to be refreshed?",
+      "observation": "This is a material active position that still needs an explicit current-month rationale.",
+      "interpretation": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
+      "challenge_headline": "United States Sml Value still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United States Sml Value remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 3.94% versus benchmark 1.55%, leaving a +2.39 pt active overweight in United States Sml Value. Top underlying names include Brown-Forman Corp Registered Shs -B- Non Vtg, Artisan Partners Asset Management Inc Class A.",
+      "model_signal_tension": "VIR is underweight at -0.004 (-0.000 MoM), while algo active weight is +0.75 pts and points overweight.",
+      "vir_decomposition_readthrough": "The VIR move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "measured_risk_readthrough": "Measured style risk is elevated in Medium-Term Momentum at 15.91% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.59% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United States Sml Value at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that United States Sml Value is still an intentional expression.",
+      "source_quality": "model+positioning+internal_history",
+      "devils_advocate_statement": "The United States Sml Value position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
+      "what_would_change_view": "Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that United States Sml Value is still an intentional expression.",
+      "internal_context_summary": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.",
+      "external_context_summary": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Brown-Forman Corp Registered Shs -B- Non Vtg (+0.32 pts active) via MS US EQ SYSTEMATIC LARGE 0.14%, MSTAR USEQ OPPORTUNISTIC 0.13%; Artisan Partners Asset Management Inc Class A (+0.18 pts active) via MS US EQ SYSTEMATIC LARGE 0.11%, MS US EQ SYSTEMATIC SMID 0.06%; Baxter International Inc (+0.15 pts active) via MSTAR USEQ OPPORTUNISTIC 0.17%, Morningstar US Market TR USD 0.00%",
       "source_refs": [
         {
           "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
@@ -20027,12 +20095,84 @@
       ]
     },
     {
+      "challenge_id": "ch_us-mid-v-eq_2026-05-31",
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "priority": "medium",
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_score": 8.563,
+      "reason": "This is a material active position that still needs an explicit current-month rationale.",
+      "question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
+      "observation": "This is a material active position that still needs an explicit current-month rationale.",
+      "interpretation": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
+      "challenge_headline": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United States Mid Value remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 8.09% versus benchmark 5.49%, leaving a +2.60 pt active overweight in United States Mid Value. Top underlying names include The Cigna Group, Cognizant Technology Solutions Corp Class A.",
+      "model_signal_tension": "VIR is underweight at -0.015 (+0.000 MoM), while algo active weight is +1.19 pts and points overweight.",
+      "vir_decomposition_readthrough": "The VIR move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "measured_risk_readthrough": "Measured style risk is elevated in Size at 9.41% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.59% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
+      "source_quality": "model+positioning+internal_history",
+      "devils_advocate_statement": "The United States Mid Value position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
+      "what_would_change_view": "Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
+      "internal_context_summary": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight.",
+      "external_context_summary": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "The Cigna Group (+0.48 pts active) via MS US EQUITY MFS 0.58%, Morningstar US Market TR USD 0.00%; Cognizant Technology Solutions Corp Class A (+0.34 pts active) via MS US EQ SYSTEMATIC LARGE 0.31%, MS US EQ SYSTEMATIC SMID 0.07%; Dominion Energy Inc (+0.29 pts active) via MS US EQUITY MFS 0.37%, Morningstar US Market TR USD 0.00%",
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_e500111e52ee"
+        },
+        {
+          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+          "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+        }
+      ]
+    },
+    {
+      "challenge_id": "ch_us-hc-eq_2026-05-31",
       "acid": "US HC EQ",
       "label": "Health Care",
       "category": "Eq Sector",
       "priority": "medium",
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_score": 6.401,
       "reason": "This is a material active position that still needs an explicit current-month rationale.",
-      "question": "What is the current underwriting case for keeping Health Care at this size?",
+      "question": "What current evidence still justifies keeping Health Care at this size rather than treating it as a position that needs to be refreshed?",
+      "observation": "This is a material active position that still needs an explicit current-month rationale.",
+      "interpretation": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
+      "challenge_headline": "Health Care still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that Health Care remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 10.45% versus benchmark 8.51%, leaving a +1.94 pt active overweight in Health Care. Top underlying names include JOHNSON & JOHNSON, The Cigna Group.",
+      "model_signal_tension": "VIR is underweight at -0.005 (-0.002 MoM), while algo active weight is +1.54 pts and points overweight.",
+      "vir_decomposition_readthrough": "The VIR move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "Equity Sector Review: US Healthcare We\u2019re neutral overall, but see good value in some industries, such as healthcare plans.",
+      "measured_risk_readthrough": "Measured risk currently points to Life Sciences Tools & Services as a relevant driver at 0.30% of active variance for the mapped Health Care bucket. Key holdings in that risk bucket include JOHNSON & JOHNSON, The Cigna Group, Intuitive Surgical Inc.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.59% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping Health Care at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that Health Care is still an intentional expression.",
+      "source_quality": "model+positioning+internal_history+sharepoint_research",
+      "devils_advocate_statement": "The Health Care position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
+      "what_would_change_view": "Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that Health Care is still an intentional expression.",
+      "internal_context_summary": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.",
+      "external_context_summary": "Equity Sector Review: US Healthcare We\u2019re neutral overall, but see good value in some industries, such as healthcare plans.",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "JOHNSON & JOHNSON (+0.28 pts active) via MS US EQUITY MFS 0.55%, MS US EQ SYSTEMATIC LARGE 0.50%; The Cigna Group (+0.48 pts active) via MS US EQUITY MFS 0.58%, Morningstar US Market TR USD 0.00%; Intuitive Surgical Inc (+0.35 pts active) via MS US EQUITY CLEARBRIDGE 0.37%, MS US EQ SYSTEMATIC LARGE 0.19%",
       "source_refs": [
         {
           "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
@@ -20047,62 +20187,44 @@
           "row_id": "202501-EQ-US HC EQ-Conviction.pptx"
         }
       ]
-    },
-    {
-      "acid": "USD Cash",
-      "label": "USD Cash",
-      "category": "Cash / Other",
-      "priority": "medium",
-      "reason": "This is a material active position that still needs an explicit current-month rationale.",
-      "question": "What is the current underwriting case for keeping USD Cash at this size?",
-      "source_refs": [
-        {
-          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
-          "row_id": "falg_708beac649fd"
-        },
-        {
-          "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
-          "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
-        }
-      ]
     }
   ],
   "pm_questions": [
     {
       "acid": "US ID EQ",
       "label": "Industrials",
-      "question": "Why is the fund still overweight Industrials when both current signals lean underweight/underweight?",
-      "why_now": "Positioning is overweight, but VIR is underweight and algo is underweight."
+      "question": "What specific current evidence still supports the thesis 'Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.' given the portfolio is +3.34 pts overweight and the latest VIR/algo stack is underweight/underweight?",
+      "why_now": "Industrials remains overweight despite both VIR and algo leaning underweight/underweight."
     },
     {
       "acid": "US FN EQ",
       "label": "Financials",
-      "question": "Why is the fund still overweight Financials when both current signals lean underweight/underweight?",
-      "why_now": "Positioning is overweight, but VIR is underweight and algo is underweight."
+      "question": "What is the live underwriting case for keeping Financials at +3.07 pts overweight when both VIR and algo currently point underweight/underweight?",
+      "why_now": "Financials remains overweight despite both VIR and algo leaning underweight/underweight."
     },
     {
       "acid": "US SML G EQ",
       "label": "United States Sml Growth",
-      "question": "What is the current underwriting case for keeping United States Sml Growth at this size?",
-      "why_now": "This is a material active position that still needs an explicit current-month rationale."
-    },
-    {
-      "acid": "US MID V EQ",
-      "label": "United States Mid Value",
-      "question": "What is the current underwriting case for keeping United States Mid Value at this size?",
-      "why_now": "This is a material active position that still needs an explicit current-month rationale."
-    },
-    {
-      "acid": "US SML EQ",
-      "label": "United States Sml",
-      "question": "What is the current underwriting case for keeping United States Sml at this size?",
-      "why_now": "This is a material active position that still needs an explicit current-month rationale."
+      "question": "What current evidence still justifies keeping United States Sml Growth at this size rather than treating it as a position that needs to be refreshed?",
+      "why_now": "United States Sml Growth still carries a meaningful overweight even though only part of the signal stack agrees."
     },
     {
       "acid": "US SML V EQ",
       "label": "United States Sml Value",
-      "question": "What is the current underwriting case for keeping United States Sml Value at this size?",
-      "why_now": "This is a material active position that still needs an explicit current-month rationale."
+      "question": "What current evidence still justifies keeping United States Sml Value at this size rather than treating it as a position that needs to be refreshed?",
+      "why_now": "United States Sml Value still carries a meaningful overweight even though only part of the signal stack agrees."
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
+      "why_now": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees."
+    },
+    {
+      "acid": "US HC EQ",
+      "label": "Health Care",
+      "question": "What current evidence still justifies keeping Health Care at this size rather than treating it as a position that needs to be refreshed?",
+      "why_now": "Health Care still carries a meaningful overweight even though only part of the signal stack agrees."
     },
     {
       "acid": "",
@@ -20387,7 +20509,7 @@
     "fund": "MStar US Equity",
     "logical_snapshot_date": "2026-05-31",
     "source_snapshot_date": "2026-06-08",
-    "review_date": "2026-06-12",
+    "review_date": "2026-06-15",
     "material_position_count": 50,
     "history_fund_name": "US Equity",
     "matched_sharepoint_research_count": 38,

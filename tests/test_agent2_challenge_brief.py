@@ -186,7 +186,7 @@ def test_validate_review_payload_accepts_deep_challenge_fields():
     assert validated["challenge_brief"][0]["confidence"].startswith("Medium")
 
 
-def test_evidence_pack_defaults_to_canonical_deep_memo():
+def test_evidence_pack_defaults_to_deep_memo():
     challenge_book = _build_challenge_book(
         [_sample_position()],
         risk_context=_sample_risk_context(),
@@ -247,3 +247,26 @@ def test_evidence_pack_can_expand_to_top_four_challenges():
     assert evidence["run_goal"]["challenge_count_target"] == 4
     assert len(evidence["top_challenges"]) == 4
     assert len(evidence["challenge_support_packets"]) == 4
+
+
+def test_compact_mode_uses_compact_output_style_and_budget():
+    challenge_book = _build_challenge_book(
+        [_sample_position()],
+        risk_context=_sample_risk_context(),
+        logical_snapshot_date="2026-05-31",
+    )
+    packet = {
+        "header": {"fund": "MStar US Equity", "snapshot_date": "2026-05-31", "review_date": "2026-06-15"},
+        "fund_snapshot": {"headline_summary": ["headline"], "largest_overweights": [], "largest_underweights": [], "style_posture": []},
+        "material_positions": [_sample_position()],
+        "challenge_book": challenge_book,
+        "top_movers": [],
+        "decomposition_summary": [],
+        "risk_context": _sample_risk_context(),
+        "data_quality_flags": [{"flag_type": "stale_research"}],
+    }
+
+    evidence = build_evidence_pack(packet, refresh_market_context=False, output_style="challenge_cards")
+
+    assert evidence["run_goal"]["output_style"] == "decision_cards_first"
+    assert evidence["cost_guardrails"]["target_output_tokens"] == 2600

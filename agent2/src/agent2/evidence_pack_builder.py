@@ -1,4 +1,4 @@
-"""Build the canonical deep-memo evidence pack from the larger agent2 review packet."""
+"""Build model-ready evidence packs from the larger agent2 review packet."""
 
 from __future__ import annotations
 
@@ -13,11 +13,14 @@ def build_evidence_pack(
     review_packet: dict[str, Any],
     *,
     refresh_market_context: bool = True,
+    output_style: str = "deep_challenge_memo",
     challenge_count_target: int = 4,
 ) -> dict[str, Any]:
     material_positions = list(review_packet.get("material_positions", []))
     fund_snapshot = review_packet.get("fund_snapshot", {})
     risk_context = review_packet.get("risk_context", {})
+    if output_style == "challenge_cards" and challenge_count_target == 4:
+        challenge_count_target = 4
     challenge_candidates = list(review_packet.get("challenge_book", []))[:challenge_count_target]
     positions_by_acid = {
         str(row.get("acid", "")).strip(): row
@@ -46,9 +49,13 @@ def build_evidence_pack(
     evidence_pack = {
         "header": review_packet.get("header", {}),
         "run_goal": {
-            "instruction": "Write the canonical deep PM challenge memo. Prioritize the top 4 decisions the PM actually needs to defend, resize, monitor, or explain.",
+            "instruction": (
+                "Write the canonical deep PM challenge memo. Prioritize the top 4 decisions the PM actually needs to defend, resize, monitor, or explain."
+                if output_style == "deep_challenge_memo"
+                else "Write a concise challenge-first PM review. Prioritize the top PM decisions the PM actually needs to defend, resize, monitor, or explain."
+            ),
             "challenge_count_target": challenge_count_target,
-            "output_style": "deep_challenge_memo",
+            "output_style": "deep_challenge_memo" if output_style == "deep_challenge_memo" else "decision_cards_first",
         },
         "fund_shape": {
             "headline_summary": fund_snapshot.get("headline_summary", [])[:4],
@@ -87,8 +94,12 @@ def build_evidence_pack(
         "source_drilldowns": _source_drilldowns(material_positions),
         "data_quality_flags": review_packet.get("data_quality_flags", []),
         "cost_guardrails": {
-            "instruction": "Use only the evidence below. Do not produce a broad monthly review. Focus on the top 4 PM decisions and keep every section concise.",
-            "target_output_tokens": 4200,
+            "instruction": (
+                "Use only the evidence below. Do not produce a broad monthly review. Focus on the top 4 PM decisions and keep every section concise."
+                if output_style == "deep_challenge_memo"
+                else "Use only the evidence below. Do not produce a broad monthly review. Focus on the top 3-4 PM decisions and keep every section concise."
+            ),
+            "target_output_tokens": 4200 if output_style == "deep_challenge_memo" else 2600,
         },
     }
     return evidence_pack

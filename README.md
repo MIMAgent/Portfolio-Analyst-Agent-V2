@@ -35,9 +35,10 @@ This repository is being bootstrapped from:
 - `scripts/build_sizing_snapshot.py`: build PM-facing sizing snapshot artifacts
 - `scripts/build_algo_alignment.py`: align latest algo signals to VIR and holdings rows
 - `scripts/parse_equity_vir_history.py`: normalize `vir_history.xlsx` into trend-ready equity VIR rows
+- `scripts/build_equity_vir_dataset.py`: build the canonical consolidated equity VIR dataset by taking the base history through February 28, 2026 and appending newer monthly Equity Model workbooks
 - `scripts/build_rolled_exposures.py`: roll account and fund exposures to country, region-sector, and bond ACIDs from `Portfolio` and `Full_lookthrough`
 - `scripts/build_rolled_exposure_alignment.py`: attach VIR fields and latest algo signals to rolled account and fund exposure summaries
-- `scripts/build_fund_weights_vir_algo_multisignal.py`: canonical rolled exposure parser and fund-level VIR/algo join; preserves both local-real and USD-unhedged algo perspectives when available
+- `scripts/build_fund_weights_vir_algo_multisignal.py`: canonical rolled exposure parser and fund-level VIR/algo join; preserves both local-real and USD-unhedged algo perspectives when available, and refreshes the consolidated VIR dataset before joining
 - `scripts/build_fund_weights_vir_algo.py`: legacy single-signal fund-level combined weights/VIR/algo CSV path
 - `scripts/build_fund_weights_summary.py`: build an analyst-facing markdown summary from the combined fund weights/VIR/algo CSV
 
@@ -90,8 +91,21 @@ Direct Anthropic API support remains available only as an explicit alternate pro
 ## Current data files
 
 - `data/vir_history.xlsx`: historical equity VIR input used for trend normalization
-- `artifacts/equity_vir_history.csv.zip`: tracked mirror for the large normalized equity VIR history CSV; readers use `artifacts/equity_vir_history.csv` when present locally and fall back to this ZIP mirror otherwise
+- `artifacts/equity_vir_history.csv.zip`: legacy/base normalized equity VIR history mirror; this is the pre-March base source, not the canonical live dataset
+- `artifacts/vir/equity_vir_dataset.csv.zip`: tracked mirror for the canonical consolidated equity VIR dataset used by the app/backend
 - `data/RMv2_PCT_Mstar_funds_2026-04-06.xlsm`: Morningstar portfolio workbook used for rolled exposure parsing and VIR/algo cross-reference
+
+## Canonical equity VIR rule
+
+- The canonical dataset the backend should read is:
+  - `artifacts/vir/equity_vir_dataset.csv`
+- Construction rule:
+  - use `artifacts/equity_vir_history.csv` through `2026-02-28`
+  - append March 2026 and later monthly Equity Model workbooks from `data/<month>/`
+- Monthly update rule:
+  - add the new monthly Equity Model workbook into `data/<snapshot>/`
+  - run `python scripts\build_equity_vir_dataset.py`
+  - then run the downstream parser/build step as needed; the canonical multisignal builder already refreshes from the consolidated VIR dataset by default
 
 ## Design principles
 

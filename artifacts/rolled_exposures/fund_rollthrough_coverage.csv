@@ -1,10 +1,10 @@
 row_id,snapshot_date,ingested_at,source_file,fund,total_target_weight,matched_target_weight,target_match_pct,total_benchmark_weight,matched_benchmark_weight,benchmark_match_pct
-fcov_54c444652ee9,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar US Equity,2.0,2.0,1.0,2.0,2.0,1.0
-fcov_196de32a4823,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar International Equity,2.0,2.0,1.0,2.0,2.0,1.0
-fcov_87732b12f202,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Global Opportunistic Equity,1.6800000000000002,1.6800000000000002,1.0,2.0,2.0,1.0
-fcov_fd91def6c9fc,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Global Income,2.0,2.0,1.0,2.0,2.0,1.0
-fcov_2626fd2ac716,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Total Return Bond,2.0,2.0,1.0,2.0,2.0,1.0
-fcov_7d411b554e3a,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Municipal Bond,2.0,2.0,1.0,2.0,2.0,1.0
-fcov_da5ef1b3a615,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Defensive Bond,1.9999999999999996,1.9999999999999996,1.0,2.0,2.0,1.0
-fcov_1ac9958f9df7,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Multisector Bond,1.9999999999999998,1.9999999999999998,1.0,1.9999999999999998,1.9999999999999998,1.0
-fcov_39f5213cc838,2026-06-08,2026-06-12T19:41:44Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Alternatives,2.0,2.0,1.0,0.0,0.0,
+fcov_54c444652ee9,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar US Equity,2.0,2.0,1.0,2.0,2.0,1.0
+fcov_196de32a4823,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar International Equity,2.0,2.0,1.0,2.0,2.0,1.0
+fcov_87732b12f202,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Global Opportunistic Equity,1.6800000000000002,1.6800000000000002,1.0,2.0,2.0,1.0
+fcov_fd91def6c9fc,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Global Income,2.0,2.0,1.0,2.0,2.0,1.0
+fcov_2626fd2ac716,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Total Return Bond,2.0,2.0,1.0,2.0,2.0,1.0
+fcov_7d411b554e3a,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Municipal Bond,2.0,2.0,1.0,2.0,2.0,1.0
+fcov_da5ef1b3a615,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Defensive Bond,1.9999999999999996,1.9999999999999996,1.0,2.0,2.0,1.0
+fcov_1ac9958f9df7,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Multisector Bond,1.9999999999999998,1.9999999999999998,1.0,1.9999999999999998,1.9999999999999998,1.0
+fcov_39f5213cc838,2026-06-08,2026-06-15T21:05:05Z,RMv2_PCT_Mstar_funds_2026-06-08.xlsm,MStar Alternatives,2.0,2.0,1.0,0.0,0.0,

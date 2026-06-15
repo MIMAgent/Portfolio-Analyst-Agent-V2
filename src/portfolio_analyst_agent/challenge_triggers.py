@@ -12,12 +12,13 @@ from typing import Any
 
 from .acid_mapping import DEFAULT_ACID_MAPPING_CSV, MappingIndex, load_mapping
 from .csv_sources import open_csv_text, resolve_existing_csv_source
+from .equity_history import DEFAULT_EQUITY_VIR_DATASET_CSV
 from .evidence import file_sha256, stable_row_id
 from .governance import DEFAULT_GOVERNANCE_PATH, GovernanceConfig, load_governance
 from .row_ids import trigger_candidate_id
 
 
-DEFAULT_VIR_HISTORY_CSV = Path("artifacts/equity_vir_history.csv")
+DEFAULT_VIR_HISTORY_CSV = DEFAULT_EQUITY_VIR_DATASET_CSV
 MATERIALITY_THRESHOLD_ACTIVE = 1.0
 STRONG_MATERIALITY_THRESHOLD_ACTIVE = 1.5
 TOP_QUARTILE_MAX = 0.25
@@ -540,7 +541,7 @@ def _evaluate_better_expression_candidate(
     candidate["relative_value_group"] = mapping.fields.get("relative_value_group", "")
     candidate["evidence"].append(
         {
-            "artifact_path": "artifacts/equity_vir_history.csv",
+            "artifact_path": DEFAULT_VIR_HISTORY_CSV.as_posix(),
             "row_id": best_signal.get("row_id", ""),
         }
     )

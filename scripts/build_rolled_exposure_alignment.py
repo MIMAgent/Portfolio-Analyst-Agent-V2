@@ -16,6 +16,7 @@ from portfolio_analyst_agent.rolled_exposure_alignment import (  # noqa: E402
     build_fund_exposure_alignment,
     write_alignment_csv,
 )
+from portfolio_analyst_agent.equity_history import DEFAULT_EQUITY_VIR_DATASET_CSV  # noqa: E402
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -34,6 +35,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--vir-csv",
+        default=str(DEFAULT_EQUITY_VIR_DATASET_CSV),
         help="Normalized VIR CSV to attach STF and rank fields.",
     )
     parser.add_argument(

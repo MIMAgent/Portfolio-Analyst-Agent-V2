@@ -15,10 +15,10 @@ from portfolio_analyst_agent.fund_weights_vir_algo_multisignal import (  # noqa:
     build_fund_weights_vir_algo_multisignal,
 )
 from portfolio_analyst_agent.equity_history import (  # noqa: E402
+    DEFAULT_EQUITY_VIR_DATASET_CSV,
+    build_equity_vir_dataset,
+    discover_equity_model_workbooks,
     load_equity_history_records_from_csv,
-    merge_equity_history_records,
-    parse_equity_history_workbook,
-    write_equity_history_csv,
 )
 
 
@@ -34,7 +34,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument(
         "--vir-csv",
-        default="artifacts/equity_vir_history.csv",
+        default=str(DEFAULT_EQUITY_VIR_DATASET_CSV),
         help="Normalized VIR CSV used to attach STF and rank fields. Falls back to <name>.zip if the raw CSV is absent.",
     )
     parser.add_argument(
@@ -69,47 +69,42 @@ def _resolve_workbook(explicit: str | None) -> str:
     """
     if explicit:
         return explicit
-    candidates = sorted(p for p in (ROOT / "data").glob("RMv2_*.xlsm") if not p.name.startswith("~$"))
+    candidates = sorted(
+        p
+        for p in (ROOT / "data").glob("*/*.xlsm")
+        if p.name.startswith("RMv2_") and not p.name.startswith("~$")
+    )
     if not candidates:
-        raise SystemExit("No workbook given and no data/RMv2_*.xlsm found.")
+        raise SystemExit("No workbook given and no data/*/RMv2_*.xlsm found.")
     return str(candidates[-1])
 
 
 def _resolve_equity_model_workbooks(explicit: list[str] | None) -> list[str]:
     if explicit:
         return explicit
-    candidates = sorted(
-        p
-        for p in (ROOT / "data").glob("*/*Equity Model.xlsx")
-        if not p.name.startswith("~$")
-    )
+    candidates = discover_equity_model_workbooks(ROOT / "data")
     return [str(path) for path in candidates]
 
 
 def _refresh_vir_history(vir_csv: str, vir_workbooks: list[str] | None) -> Path | None:
     if not vir_workbooks:
         return None
-
-    existing_records = []
-    try:
-        existing_records = load_equity_history_records_from_csv(vir_csv)
-    except FileNotFoundError:
-        existing_records = []
-
-    merged_records = existing_records
-    refreshed_row_count = 0
     resolved_workbooks = [Path(path).resolve() for path in vir_workbooks]
-    for workbook_path in resolved_workbooks:
-        result = parse_equity_history_workbook(workbook_path)
-        refreshed_row_count += len(result.records)
-        merged_records = merge_equity_history_records(merged_records, result.records)
-
-    output_path = write_equity_history_csv(merged_records, vir_csv)
-
+    existing_count = 0
+    try:
+        existing_count = len(load_equity_history_records_from_csv(vir_csv))
+    except FileNotFoundError:
+        existing_count = 0
+    output_path, merged_records = build_equity_vir_dataset(
+        monthly_workbooks=resolved_workbooks,
+        output_csv=vir_csv,
+        include_existing_output=True,
+    )
     latest_dates = sorted({record.snapshot_date for record in merged_records})
     latest_snapshot = latest_dates[-1].isoformat() if latest_dates else ""
     print(f"vir_source_workbooks={','.join(str(path) for path in resolved_workbooks)}")
-    print(f"vir_refreshed_rows={refreshed_row_count}")
+    print(f"vir_existing_rows={existing_count}")
+    print(f"vir_merged_rows={len(merged_records)}")
     print(f"vir_latest_snapshot_date={latest_snapshot}")
     print(f"vir_history_csv={output_path}")
     return output_path

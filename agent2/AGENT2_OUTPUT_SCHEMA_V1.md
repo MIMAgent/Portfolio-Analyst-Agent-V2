@@ -2,9 +2,13 @@
 
 Last updated: 2026-06-10
 
+For frontend implementation and field-by-field UI mapping, also see:
+
+- `docs/AGENT2_FRONTEND_DATA_CONTRACT_V2.md`
+
 ## Purpose
 
-This document defines the canonical deep structured output contract for agent2.
+This document defines the structured output contracts for agent2.
 
 The output is intended to be the canonical review packet that can later power:
 
@@ -13,7 +17,7 @@ The output is intended to be the canonical review packet that can later power:
 - HTML summaries
 - archived monthly review records
 
-The output should be built for analytical reuse first, with deep PM challenge briefs as the primary narrative object.
+The output should be built for analytical reuse first, with PM challenge briefs as the primary narrative object.
 
 ---
 
@@ -47,7 +51,7 @@ The packet should be rich enough to support:
 
 ---
 
-## Canonical Bedrock Review Shape
+## Bedrock Review Shapes
 
 Top-level structure for the Bedrock-generated review:
 
@@ -62,10 +66,14 @@ Top-level structure for the Bedrock-generated review:
 }
 ```
 
-This is intentionally shorter than the canonical review packet.
 The canonical packet still stores the larger fact set; the Bedrock review should focus on the top PM decisions only.
 
-In `agent2`, this deep review shape is now the active default and replaces the earlier compact challenge-card methodology.
+`agent2` now supports two presentation modes built off the same underlying evidence:
+
+- `deep_challenge_memo` (default)
+- `challenge_cards`
+
+The deep memo is the default and the compact challenge-card shape remains supported for frontend use.
 
 ---
 

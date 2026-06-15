@@ -1,5 +1,16 @@
 # Frontend Data Handoff for Claude
 
+Superseded for `agent2` dashboard work by:
+
+- `docs/AGENT2_FRONTEND_DATA_CONTRACT_V2.md`
+
+This older handoff is still useful for legacy bundle context, but the newer doc is the canonical frontend mapping reference for:
+
+- `manifest.json`
+- `review.json`
+- `packet.json`
+- `evidence.json`
+
 This document explains the current data structure, where each file lives, how the files relate to each other, what keys are important, and how a new frontend should consume them.
 
 This is meant for rebuilding the PM / portfolio dashboard cleanly from the data, without inheriting the current UI decisions.

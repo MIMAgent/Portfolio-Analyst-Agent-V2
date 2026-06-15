@@ -1714,3 +1714,74 @@ This is the latest checkpoint for Al. The repo now contains a separate `agent2/`
   - `agent2/AGENT2_OUTPUT_SCHEMA_V1.md`
 - The old `agent` folder / legacy runtime was left unchanged.
 - Some historical `agent2/data/bedrock_runs/...` prototype folders could not be deleted because Windows / OneDrive returned access denied on those artifacts, but they are no longer part of the active code path.
+
+# 2026-06-15 - Agent2 Dual Output Restore
+
+- Restored both `agent2` output surfaces on top of the same shared evidence path:
+  - `deep_challenge_memo`
+  - `challenge_cards`
+- Kept `deep_challenge_memo` as the default run mode.
+- This means `agent2` no longer reverts to the old prototype methodology, but it does preserve the earlier compact presentation surface the user wanted to keep.
+
+# 2026-06-15 - Agent2 Frontend Data Contract Cleanup
+
+- Added a new canonical frontend mapping document:
+  - `docs/AGENT2_FRONTEND_DATA_CONTRACT_V2.md`
+- Purpose:
+  - tell the next UI builder exactly which JSON file is authoritative for each surface
+  - define join order across `manifest`, `review`, `packet`, and `evidence`
+  - clarify that `evidence.json` is the preferred dashboard surface
+  - clarify that `packet.json` is the canonical structured fact model
+  - clarify that `review.json` is narrative-only and should not be used as numeric source of truth
+- Important current schema gap called out in the doc:
+  - `review.challenge_brief[]` does not yet carry stable `challenge_id` / `acid`, so deep-memo joins currently require normalized-label fallback
+- Also updated:
+  - `docs/CLAUDE_FRONTEND_DATA_HANDOFF.md`
+    - now points to the new contract as the canonical `agent2` frontend reference
+
+# 2026-06-15 - Canonical Consolidated Equity VIR Dataset
+
+- Added a canonical consolidated equity VIR dataset path:
+  - `artifacts/vir/equity_vir_dataset.csv`
+  - `artifacts/vir/equity_vir_dataset.csv.zip`
+- Dataset construction rule is now explicit:
+  - use legacy/base VIR history through `2026-02-28`
+  - append monthly Equity Model workbook data for March 2026 onward
+- Added:
+  - `scripts/build_equity_vir_dataset.py`
+  - `docs/VIR_DATASET_WORKFLOW.md`
+- Updated backend defaults so repo consumers read the canonical dataset path instead of the legacy base-history path, including:
+  - monthly review runtime
+  - challenge trigger runtime
+  - agent2 review packet builder
+  - frontend signal-history build path
+  - multisignal rolled exposure build path
+- Rebuilt and verified the consolidated dataset:
+  - latest snapshot date now reaches `2026-05-31`
+  - downstream `fund_weights_vir_algo_multisignal.csv` rows for US Equity now show `vir_snapshot_date=2026-05-31`
+
+# 2026-06-15 - Frontend Reference Reset And Navigation Notes
+
+- Reworked `frontend/Example_frontendV1/src/App.jsx` and `frontend/Example_frontendV1/src/styles.css` toward the editorial PM dashboard reference layout the user provided.
+- The current frontend uses the saved `agent2` data copies under:
+  - `frontend/Example_frontendV1/src/data/agent2/`
+    - `mstar-us-equity-manifest.json`
+    - `mstar-us-equity-review.json`
+    - `mstar-us-equity-packet.json`
+    - `mstar-us-equity-evidence.json`
+- Important navigation guidance for Al / the next UI pass:
+  - start with `docs/AGENT2_FRONTEND_DATA_CONTRACT_V2.md`
+  - then read `docs/CLAUDE_FRONTEND_DATA_HANDOFF.md`
+  - then inspect `frontend/Example_frontendV1/src/App.jsx`
+  - treat `evidence.json` as the preferred dashboard-facing surface
+  - treat `packet.json` as the structured numeric/source-of-truth layer
+  - do not use `review.json` as the numeric source of truth; it is narrative-first
+- Fixed a runtime crash in the Risk tab where holding objects were being rendered directly instead of mapping to `security_name`.
+- Verified the local preview after the fix by clicking through:
+  - Overview
+  - Challenge Cards
+  - Deep Memo
+  - Risk
+  - Holdings
+  - Research
+  - Run Detail
