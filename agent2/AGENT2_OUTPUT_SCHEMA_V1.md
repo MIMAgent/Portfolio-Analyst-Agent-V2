@@ -341,22 +341,25 @@ Suggested shape:
 {
   "challenge_id": "ch_em_asia_2026_05",
   "acid": "EM Asia",
+  "label": "EM Asia",
   "category": "Region",
   "priority": "high",
   "challenge_type": "position_vs_signal_divergence",
-  "observation": "The fund remains materially underweight despite four months of improving VIR.",
-  "interpretation": "The persistence of the underweight looks more like positioning inertia unless prior PM rationale still holds.",
-  "bull_case": [
-    "Earnings and valuation trends have both improved.",
-    "Signal support has persisted across multiple months."
-  ],
-  "bear_case": [
-    "China and Taiwan risk may still justify a cautious stance.",
-    "Signal improvement could reverse if macro support weakens."
-  ],
+  "observation": "The fund remains materially underweight despite improving VIR support.",
+  "interpretation": "The persistence of the underweight now needs an explicit live defense rather than a generic carry-forward rationale.",
+  "challenge_headline": "EM Asia remains underweight even as current signal support has improved.",
+  "thesis_under_pressure": "The implicit thesis is that the underweight still deserves to be carried despite improving model support.",
+  "positioning_tension": "Fund weight is 2.1% versus benchmark 5.6%, leaving a -3.5 pt active underweight.",
+  "model_signal_tension": "VIR and algo have improved relative to prior months, weakening the case for a static underweight.",
+  "vir_decomposition_readthrough": "The move is broad enough that it should not be dismissed as one-off technical noise.",
+  "market_context_readthrough": "Current matched research and external context should explain whether macro or policy risk still dominates the thesis.",
+  "pm_decision_fork": "Decide whether to defend the underweight, resize it, or keep it on watch pending fresher evidence.",
+  "primary_pm_question": "What specific current evidence still justifies carrying this underweight at its present size?",
+  "evidence_needed_next": "Check next-month VIR decomposition, top holding lineage, and updated fundamental context.",
+  "source_quality": "model+positioning+internal_history+sharepoint_research",
   "devils_advocate_statement": "Current positioning appears to lag both signal direction and external evidence.",
-  "pm_question": "What specific risk still justifies maintaining this underweight?",
-  "what_would_change_view": "A renewed deterioration in earnings revisions would weaken the current challenge.",
+  "pm_question": "What specific current evidence still justifies carrying this underweight at its present size?",
+  "what_would_change_view": "A renewed deterioration in signal and fundamentals would weaken the challenge.",
   "internal_context_summary": "No recent PM rationale was found in current internal sources.",
   "external_context_summary": "Current external evidence is broadly supportive but still macro-sensitive.",
   "source_refs": []
@@ -364,6 +367,7 @@ Suggested shape:
 ```
 
 This section is where the agent's critical thinking is most visible.
+The PM-facing decision-card fields should be treated as first-class output, not optional commentary.
 
 ---
 

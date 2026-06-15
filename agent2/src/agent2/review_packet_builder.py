@@ -36,6 +36,14 @@ EQUITY_DECOMPOSITION_FIELDS = (
     "valuation_adjustment_bottom_up",
 )
 
+GENERIC_PM_QUESTION_PATTERNS = (
+    "is this still intentional",
+    "why is this still overweight",
+    "why is the fund still overweight",
+    "why is this still underweight",
+    "why is the fund still underweight",
+)
+
 
 def build_review_packet(
     *,
@@ -130,6 +138,7 @@ def build_review_packet(
     )
 
     output_review_date = review_date or date.today().isoformat()
+    challenge_book = _build_challenge_book(material_positions)
     packet = {
         "header": _build_header(
             fund=fund,
@@ -147,8 +156,8 @@ def build_review_packet(
         "signal_summary": _build_signal_summary(material_positions, recurring_themes, risk_context=risk_context),
         "top_movers": _build_top_movers(material_positions),
         "decomposition_summary": _build_decomposition_summary(material_positions),
-        "challenge_book": _build_challenge_book(material_positions),
-        "pm_questions": _build_pm_questions(material_positions, recurring_themes, risk_context=risk_context),
+        "challenge_book": challenge_book,
+        "pm_questions": _build_pm_questions(material_positions, challenge_book, recurring_themes, risk_context=risk_context),
         "portfolio_implications": _build_portfolio_implications(material_positions, recurring_themes, risk_context=risk_context),
         "roadmap": _build_roadmap(material_positions),
         "sharepoint_research_summary": _build_sharepoint_research_summary(material_positions),
@@ -512,14 +521,34 @@ def _build_challenge_book(material_positions: list[dict[str, Any]]) -> list[dict
             continue
         if abs(item["active_weight"]) < 1.5:
             continue
+        primary_pm_question = _challenge_primary_pm_question(item)
+        evidence_needed_next = _challenge_evidence_needed_next(item)
         challenge_items.append(
             {
+                "challenge_id": f"ch_{_slugify(item['acid'])}_{item.get('vir_snapshot_date') or 'current'}",
                 "acid": item["acid"],
                 "label": item["label"],
                 "category": item["category"],
                 "priority": "high" if abs(item["active_weight"]) >= 3.0 else "medium",
+                "challenge_type": _challenge_type(item),
                 "reason": _challenge_reason(item),
-                "question": _challenge_question(item),
+                "question": primary_pm_question,
+                "observation": _challenge_reason(item),
+                "interpretation": _challenge_interpretation(item),
+                "challenge_headline": _challenge_headline(item),
+                "thesis_under_pressure": _challenge_thesis_under_pressure(item),
+                "positioning_tension": _challenge_positioning_tension(item),
+                "model_signal_tension": _challenge_model_signal_tension(item),
+                "vir_decomposition_readthrough": _challenge_vir_decomposition_readthrough(item),
+                "market_context_readthrough": _challenge_market_context_readthrough(item),
+                "pm_decision_fork": _challenge_pm_decision_fork(item),
+                "primary_pm_question": primary_pm_question,
+                "evidence_needed_next": evidence_needed_next,
+                "source_quality": _challenge_source_quality(item),
+                "devils_advocate_statement": _challenge_devils_advocate_statement(item),
+                "what_would_change_view": evidence_needed_next,
+                "internal_context_summary": _challenge_internal_context_summary(item),
+                "external_context_summary": _challenge_market_context_readthrough(item),
                 "source_refs": item["source_refs"],
             }
         )
@@ -528,11 +557,24 @@ def _build_challenge_book(material_positions: list[dict[str, Any]]) -> list[dict
 
 def _build_pm_questions(
     material_positions: list[dict[str, Any]],
+    challenge_book: list[dict[str, Any]],
     recurring_themes: list[dict[str, Any]],
     *,
     risk_context: dict[str, Any],
 ) -> list[dict[str, Any]]:
     questions = []
+    for challenge in challenge_book:
+        if len(questions) >= 6:
+            break
+        questions.append(
+            {
+                "acid": challenge.get("acid", ""),
+                "label": challenge.get("label", ""),
+                "question": challenge.get("primary_pm_question", ""),
+                "why_now": challenge.get("challenge_headline", "") or challenge.get("observation", ""),
+            }
+        )
+
     ranked = sorted(
         material_positions,
         key=lambda item: (
@@ -550,12 +592,15 @@ def _build_pm_questions(
                 continue
         if item["signal_alignment"] == "insufficient_signal" and abs(item["active_weight"]) < 2.0:
             continue
+        question = _challenge_primary_pm_question(item)
+        if any(pattern in question.lower() for pattern in GENERIC_PM_QUESTION_PATTERNS):
+            continue
         questions.append(
             {
                 "acid": item["acid"],
                 "label": item["label"],
-                "question": _challenge_question(item),
-                "why_now": _challenge_reason(item),
+                "question": question,
+                "why_now": _challenge_headline(item),
             }
         )
     if recurring_themes:
@@ -1170,16 +1215,241 @@ def _challenge_reason(item: dict[str, Any]) -> str:
     return "This is a material active position that still needs an explicit current-month rationale."
 
 
-def _challenge_question(item: dict[str, Any]) -> str:
+def _challenge_type(item: dict[str, Any]) -> str:
+    if item["signal_alignment"] == "diverging":
+        return "position_vs_signal_divergence"
+    if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
+        return "mechanical_signal_fragility"
+    return "material_position_needing_refresh"
+
+
+def _challenge_headline(item: dict[str, Any]) -> str:
     if item["signal_alignment"] == "diverging":
         return (
-            f"Why is the fund still {item['positioning_direction']} {item['label']} when both current signals lean {item['vir_direction']}/{item['algo_direction']}?"
+            f"{item['label']} remains {item['positioning_direction']} despite both VIR and algo leaning "
+            f"{item['vir_direction']}/{item['algo_direction']}."
+        )
+    if item["signal_alignment"] == "partially_aligned":
+        return (
+            f"{item['label']} still carries a meaningful {item['positioning_direction']} even though only part of the signal stack agrees."
         )
     if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
         return (
-            f"Does the team still trust the {item['label']} signal if the move is mostly {item['decomposition_driver']} driven rather than broad-based?"
+            f"{item['label']} is still sized materially, but the current signal looks mainly { _friendly_driver_name(item['decomposition_driver']) }-driven."
         )
-    return f"What is the current underwriting case for keeping {item['label']} at this size?"
+    return f"{item['label']} remains a material active expression that needs an explicit current-month defense."
+
+
+def _challenge_interpretation(item: dict[str, Any]) -> str:
+    if item["signal_alignment"] == "diverging":
+        return (
+            "This now looks less like neutral portfolio noise and more like an active choice to hold a view "
+            "that current model evidence is not confirming."
+        )
+    if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
+        return (
+            "The headline move should not be treated as a clean fundamental confirmation until the broader "
+            "evidence stack validates it."
+        )
+    return "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit."
+
+
+def _challenge_thesis_under_pressure(item: dict[str, Any]) -> str:
+    active_thesis = item.get("active_thesis") or {}
+    thesis_text = str(active_thesis.get("thesis_text", "")).strip()
+    if thesis_text:
+        return thesis_text
+    if item["signal_alignment"] == "diverging":
+        return (
+            f"The implicit thesis is that a {item['positioning_direction']} to {item['label']} still deserves this size "
+            "even though the current VIR/algo stack is pointing the other way."
+        )
+    if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
+        return (
+            f"The implicit thesis is that the current {item['label']} signal is robust enough to trust even if the latest move "
+            f"is largely {_friendly_driver_name(item['decomposition_driver'])}-driven."
+        )
+    return f"The implicit thesis is that {item['label']} remains an intentional conviction position rather than legacy implementation residue."
+
+
+def _challenge_positioning_tension(item: dict[str, Any]) -> str:
+    top_sources = _top_security_names(item, limit=2)
+    source_text = f" Top underlying names include {', '.join(top_sources)}." if top_sources else ""
+    return (
+        f"Fund weight is {item['portfolio_weight']:.2f}% versus benchmark {item['benchmark_weight']:.2f}%, "
+        f"leaving a {item['active_weight']:+.2f} pt active {item['positioning_direction']} in {item['label']}."
+        f"{source_text}"
+    )
+
+
+def _challenge_model_signal_tension(item: dict[str, Any]) -> str:
+    vir_now = _format_signal_value(item.get("vir_now"))
+    vir_delta = _format_signal_delta(item.get("vir_delta_mom"))
+    algo_active = _format_pct_value(item.get("algo_active_weight"))
+    return (
+        f"VIR is {item['vir_direction']} at {vir_now}"
+        f"{vir_delta}, while algo active weight is {algo_active} and points {item['algo_direction']}."
+    )
+
+
+def _challenge_vir_decomposition_readthrough(item: dict[str, Any]) -> str:
+    driver = item.get("decomposition_driver", "")
+    if not driver:
+        return "No VIR decomposition row was available in the current packet."
+    if item["decomposition_assessment"] == "broad_based":
+        return (
+            f"The VIR move looks broad-based rather than one-off noise, even though {_friendly_driver_name(driver)} is the largest single contributor."
+        )
+    if item["decomposition_assessment"] == "valuation_led":
+        return (
+            f"The signal is being driven mainly by {_friendly_driver_name(driver)}, so confirmation should come from fresher "
+            "fundamental follow-through rather than treating the headline move as fully underwritten."
+        )
+    if item["decomposition_assessment"] == "currency_led":
+        return (
+            f"The signal is being driven mainly by {_friendly_driver_name(driver)}, so the PM should separate macro/currency effects "
+            "from the underlying asset-class thesis."
+        )
+    return (
+        f"The dominant decomposition input is {_friendly_driver_name(driver)}, which still reads as part of a fundamentally usable signal."
+    )
+
+
+def _challenge_market_context_readthrough(item: dict[str, Any]) -> str:
+    summary = _summary_lead(item.get("sharepoint_research_summary", ""))
+    if summary:
+        return summary
+    return "No matched current research deck was available for a direct market-context readthrough in this packet."
+
+
+def _challenge_pm_decision_fork(item: dict[str, Any]) -> str:
+    direction = item["positioning_direction"]
+    return (
+        f"Decide whether to defend the current {direction} as an intentional thesis, resize it if the evidence no longer supports "
+        "the current scale, or keep it on watch pending fresher signal and underwriting evidence."
+    )
+
+
+def _challenge_primary_pm_question(item: dict[str, Any]) -> str:
+    active_thesis = item.get("active_thesis") or {}
+    thesis_text = str(active_thesis.get("thesis_text", "")).strip()
+    if thesis_text:
+        return (
+            f"What specific current evidence still supports the thesis '{thesis_text}' given the portfolio is {item['active_weight']:+.2f} pts "
+            f"{item['positioning_direction']} and the latest VIR/algo stack is {item['vir_direction']}/{item['algo_direction']}?"
+        )
+    if item["signal_alignment"] == "diverging":
+        return (
+            f"What is the live underwriting case for keeping {item['label']} at {item['active_weight']:+.2f} pts "
+            f"{item['positioning_direction']} when both VIR and algo currently point {item['vir_direction']}/{item['algo_direction']}?"
+        )
+    if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
+        return (
+            f"What evidence would make us trust the {item['label']} view as a durable thesis rather than a mostly "
+            f"{_friendly_driver_name(item['decomposition_driver'])}-led move?"
+        )
+    return f"What current evidence still justifies keeping {item['label']} at this size rather than treating it as a position that needs to be refreshed?"
+
+
+def _challenge_evidence_needed_next(item: dict[str, Any]) -> str:
+    active_thesis = item.get("active_thesis") or {}
+    falsification = str(active_thesis.get("falsification_conditions", "")).strip()
+    if falsification:
+        return falsification
+    if item["signal_alignment"] == "diverging":
+        return (
+            f"Check the next VIR decomposition, top-holding lineage inside {item['label']}, and any updated research or earnings/rates context that would explain why the active position should stay off-signal."
+        )
+    if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
+        return (
+            f"Check whether the next month's signal still leans on {_friendly_driver_name(item['decomposition_driver'])} or broadens into a more durable fundamental confirmation."
+        )
+    return f"Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that {item['label']} is still an intentional expression."
+
+
+def _challenge_source_quality(item: dict[str, Any]) -> str:
+    parts = ["model", "positioning"]
+    if item.get("active_thesis", {}).get("thesis_text"):
+        parts.append("memory")
+    elif item.get("internal_history_excerpt"):
+        parts.append("internal_history")
+    else:
+        parts.append("missing_direct_prior_thesis")
+    if item.get("sharepoint_research_summary"):
+        parts.append("sharepoint_research")
+    return "+".join(parts)
+
+
+def _challenge_internal_context_summary(item: dict[str, Any]) -> str:
+    active_thesis = item.get("active_thesis") or {}
+    thesis_text = str(active_thesis.get("thesis_text", "")).strip()
+    if thesis_text:
+        return thesis_text
+    excerpt = str(item.get("internal_history_excerpt", "")).strip()
+    if excerpt:
+        return _summary_lead(excerpt)
+    return "Direct prior thesis evidence is missing in the current packet."
+
+
+def _challenge_devils_advocate_statement(item: dict[str, Any]) -> str:
+    if item["signal_alignment"] == "diverging":
+        return (
+            f"The portfolio may be carrying legacy conviction in {item['label']} while the current signal stack is already telling a different story."
+        )
+    return (
+        f"The {item['label']} position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies."
+    )
+
+
+def _top_security_names(item: dict[str, Any], *, limit: int) -> list[str]:
+    securities = item.get("source_breakdown", {}).get("securities", [])
+    names = []
+    for security in securities[:limit]:
+        name = str(security.get("security_name", "")).strip()
+        if name:
+            names.append(name)
+    return names
+
+
+def _summary_lead(text: str, *, limit: int = 220) -> str:
+    cleaned = " ".join(str(text).split())
+    if not cleaned:
+        return ""
+    sentence = re.split(r"(?<=[.!?])\s+", cleaned, maxsplit=1)[0]
+    if len(sentence) <= limit:
+        return sentence
+    return sentence[: limit - 3].rstrip() + "..."
+
+
+def _friendly_driver_name(driver: str) -> str:
+    mapping = {
+        "growth": "growth",
+        "yield": "yield",
+        "inflation": "inflation",
+        "currency_usd": "currency",
+        "valuation_adjustment_top_down": "top-down valuation adjustment",
+        "valuation_adjustment_combined": "combined valuation adjustment",
+        "valuation_adjustment_bottom_up": "bottom-up valuation adjustment",
+    }
+    return mapping.get(driver, driver.replace("_", " "))
+
+
+def _format_signal_value(value: float | None) -> str:
+    if value is None:
+        return "missing"
+    return f"{value:+.3f}"
+
+
+def _format_signal_delta(value: float | None) -> str:
+    if value is None:
+        return ""
+    return f" ({value:+.3f} MoM)"
+
+
+def _format_pct_value(value: float | None) -> str:
+    if value is None:
+        return "missing"
+    return f"{value:+.2f} pts"
 
 
 def _guess_benchmark(fund: str) -> str:

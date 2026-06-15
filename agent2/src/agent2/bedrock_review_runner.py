@@ -21,6 +21,14 @@ if str(SRC_ROOT) not in sys.path:
 
 from portfolio_analyst_agent.agent_runtime.llm_client import BedrockClaudeClient  # noqa: E402
 
+GENERIC_PM_QUESTION_PATTERNS = (
+    "is this still intentional",
+    "why is this still overweight",
+    "why is the fund still overweight",
+    "why is this still underweight",
+    "why is the fund still underweight",
+)
+
 
 def run_bedrock_review(
     *,
@@ -66,6 +74,13 @@ def run_bedrock_review(
     )
     response_text = _collect_text(response.content)
     parsed_json = _parse_json_response(response_text)
+    validation_error = ""
+    if parsed_json is not None:
+        try:
+            parsed_json = _validate_review_payload(parsed_json)
+        except ValueError as exc:
+            validation_error = str(exc)
+            parsed_json = None
 
     raw_response_path = output_dir / "bedrock_raw_response.json"
     raw_response_path.write_text(json.dumps(response.raw, indent=2, default=str), encoding="utf-8")
@@ -73,6 +88,8 @@ def run_bedrock_review(
     if parsed_json is not None:
         (output_dir / "bedrock_review.json").write_text(json.dumps(parsed_json, indent=2), encoding="utf-8")
         (output_dir / "bedrock_review.md").write_text(_render_markdown_review(parsed_json, review_packet), encoding="utf-8")
+    elif validation_error:
+        (output_dir / "bedrock_validation_error.txt").write_text(validation_error, encoding="utf-8")
 
     run_manifest = {
         "fund": fund,
@@ -90,10 +107,12 @@ def run_bedrock_review(
             "bedrock_response_text": (output_dir / "bedrock_response.txt").as_posix(),
             "bedrock_review_json": (output_dir / "bedrock_review.json").as_posix() if parsed_json is not None else "",
             "bedrock_review_markdown": (output_dir / "bedrock_review.md").as_posix() if parsed_json is not None else "",
+            "bedrock_validation_error": (output_dir / "bedrock_validation_error.txt").as_posix() if validation_error else "",
         },
         "usage": response.usage,
         "approx_cost_usd": _approx_cost_usd(response.usage),
         "parsed_json_ok": parsed_json is not None,
+        "validation_error": validation_error,
     }
     (output_dir / "run_manifest.json").write_text(json.dumps(run_manifest, indent=2), encoding="utf-8")
     return run_manifest
@@ -129,6 +148,55 @@ def _parse_json_response(text: str) -> dict[str, Any] | None:
         return json.loads(text)
     except json.JSONDecodeError:
         return None
+
+
+def _validate_review_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    required_list_sections = (
+        "current_positioning",
+        "what_changed",
+        "bull_case",
+        "bear_case",
+        "devils_advocate",
+        "challenge_brief",
+        "pm_questions",
+        "follow_up",
+        "dashboard_highlights",
+    )
+    if not isinstance(payload, dict):
+        raise ValueError("Bedrock review payload must be a JSON object.")
+    executive_summary = payload.get("executive_summary")
+    if not isinstance(executive_summary, str) or not executive_summary.strip():
+        raise ValueError("Missing executive_summary in Bedrock review payload.")
+    for section in required_list_sections:
+        rows = payload.get(section)
+        if not isinstance(rows, list):
+            raise ValueError(f"Section {section!r} must be a list.")
+    challenge_brief = payload.get("challenge_brief", [])
+    if not challenge_brief:
+        raise ValueError("challenge_brief must contain at least one PM decision-card item.")
+    for index, item in enumerate(challenge_brief):
+        if not isinstance(item, dict):
+            raise ValueError(f"challenge_brief[{index}] must be an object.")
+        for field in (
+            "label",
+            "challenge_headline",
+            "thesis_under_pressure",
+            "positioning_tension",
+            "model_signal_tension",
+            "vir_decomposition_readthrough",
+            "market_context_readthrough",
+            "pm_decision_fork",
+            "primary_pm_question",
+            "evidence_needed_next",
+            "source_quality",
+        ):
+            value = item.get(field)
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(f"challenge_brief[{index}].{field} must be a non-empty string.")
+        question = item.get("primary_pm_question", "").lower()
+        if any(pattern in question for pattern in GENERIC_PM_QUESTION_PATTERNS):
+            raise ValueError("challenge_brief contains an overly generic PM question.")
+    return payload
 
 
 def _approx_cost_usd(usage: dict[str, Any]) -> float | None:
@@ -172,6 +240,7 @@ def _render_markdown_review(review: dict[str, Any], review_packet: dict[str, Any
     lines.extend(_section_lines("Bull Case", review.get("bull_case", []), ("label", "statement")))
     lines.extend(_section_lines("Bear Case", review.get("bear_case", []), ("label", "statement")))
     lines.extend(_section_lines("Devil's Advocate", review.get("devils_advocate", []), ("label", "statement")))
+    lines.extend(_challenge_brief_lines(review.get("challenge_brief", [])))
     lines.extend(_section_lines("PM Questions", review.get("pm_questions", []), ("label", "question", "why_now")))
     lines.extend(_section_lines("Follow Up", review.get("follow_up", []), ("label", "action")))
     lines.extend(_section_lines("Dashboard Highlights", review.get("dashboard_highlights", []), ("label", "highlight")))
@@ -189,4 +258,28 @@ def _section_lines(title: str, rows: list[dict[str, Any]], fields: tuple[str, ..
         else:
             lines.append(f"- **{first}**")
     lines.append("")
+    return lines
+
+
+def _challenge_brief_lines(rows: list[dict[str, Any]]) -> list[str]:
+    lines = ["## Challenge Brief", ""]
+    for row in rows:
+        label = row.get("label", "")
+        lines.extend([f"### {label}", ""])
+        for field, title in (
+            ("challenge_headline", "Headline"),
+            ("thesis_under_pressure", "Thesis Under Pressure"),
+            ("positioning_tension", "Positioning Tension"),
+            ("model_signal_tension", "Model Signal Tension"),
+            ("vir_decomposition_readthrough", "VIR Decomposition Readthrough"),
+            ("market_context_readthrough", "Market Context Readthrough"),
+            ("pm_decision_fork", "PM Decision Fork"),
+            ("primary_pm_question", "Primary PM Question"),
+            ("evidence_needed_next", "Evidence Needed Next"),
+            ("source_quality", "Source Quality"),
+        ):
+            value = row.get(field, "")
+            if value:
+                lines.append(f"- **{title}:** {value}")
+        lines.append("")
     return lines
