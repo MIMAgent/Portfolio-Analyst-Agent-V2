@@ -10,6 +10,25 @@ class SchemaValidationError(ValueError):
 
 
 COMMON_HEADER_FIELDS = ("fund", "snapshot_date", "as_of_date", "review_run_id")
+PM_CHALLENGE_TEXT_FIELDS = (
+    "challenge_headline",
+    "thesis_under_pressure",
+    "positioning_tension",
+    "model_signal_tension",
+    "vir_decomposition_readthrough",
+    "market_context_readthrough",
+    "pm_decision_fork",
+    "primary_pm_question",
+    "evidence_needed_next",
+    "source_quality",
+)
+GENERIC_PM_QUESTION_PATTERNS = (
+    "is this still intentional",
+    "why is this still overweight",
+    "why is the fund still overweight",
+    "why is this still underweight",
+    "why is the fund still underweight",
+)
 
 
 def validate_change_brief(payload: dict[str, Any], *, fund: str) -> None:
@@ -86,6 +105,10 @@ def validate_challenge_brief(
             accepted_count += 1
         for field in ("acid", "disagreement_statement", "challenge", "next_review_checkpoint"):
             _require_text(item, field)
+        for field in PM_CHALLENGE_TEXT_FIELDS:
+            if field in item and item.get(field) not in (None, ""):
+                _require_text(item, field)
+        _reject_generic_challenge_question(item)
         _require_mapping(item.get("position_summary"), "position_summary")
         _require_list(item, "evidence_pointers")
     if accepted_count == 0:
@@ -99,6 +122,17 @@ def reject_prescriptive_sizing_language(payload: dict[str, Any]) -> None:
         normalized = value.lower()
         if any(term in normalized for term in banned):
             raise SchemaValidationError(f"Prescriptive sizing language rejected at {path}.")
+
+
+def _reject_generic_challenge_question(item: dict[str, Any]) -> None:
+    text = " ".join(
+        str(item.get(field, ""))
+        for field in ("challenge", "primary_pm_question")
+    ).lower()
+    if any(pattern in text for pattern in GENERIC_PM_QUESTION_PATTERNS):
+        raise SchemaValidationError(
+            "Challenge question is too generic; name the thesis, implementation issue, or evidence tension under review."
+        )
 
 
 def _validate_header(header: Any, *, fund: str, required: tuple[str, ...]) -> None:
@@ -145,6 +179,7 @@ def _iter_strings(value: Any, *, path: str = "$"):
 
 
 __all__ = [
+    "PM_CHALLENGE_TEXT_FIELDS",
     "SchemaValidationError",
     "reject_prescriptive_sizing_language",
     "validate_challenge_brief",

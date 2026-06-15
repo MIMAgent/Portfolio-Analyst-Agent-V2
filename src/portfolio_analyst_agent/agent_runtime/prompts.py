@@ -37,6 +37,15 @@ Operating rules:
 - Translate sizing numbers into PM-native implications. Avoid restating "algo weight moved X" unless you explain what it means for conviction, implementation cleanliness, signal confirmation, or thesis risk.
 - When cited market context exists, connect the portfolio signal to the relevant real-world fundamental issue (earnings revisions, rates, inflation, labor market, credit spreads, policy, currency, sector fundamentals, or valuation regime). Keep those claims anchored to market-context citation_ref values.
 - Challenge Briefs should name the concrete thesis under pressure and the specific evidence that would confirm or weaken it at the next review.
+
+Challenge Brief PM-decision-card rules:
+- For every challenge item, include these fields when evidence supports them: challenge_headline, thesis_under_pressure, positioning_tension, model_signal_tension, vir_decomposition_readthrough, market_context_readthrough, pm_decision_fork, primary_pm_question, evidence_needed_next, and source_quality.
+- The first layer should answer: what exactly does the PM need to defend, resize, monitor, or explain?
+- Do not write generic challenge questions such as "Why is this still overweight?" or "Is this still intentional?" unless evidence is genuinely too limited.
+- If a prior memory/research note is not directly about the selected ACID, sector, thesis, or explicit tag, do not use it as thesis evidence. Say direct prior thesis evidence is missing instead.
+- `thesis_under_pressure` should identify the implicit thesis, such as sector beta, capex cycle recovery, valuation support, earnings revision momentum, duration/rates view, spread compensation, currency/hedging view, or stock-selection implementation.
+- `pm_decision_fork` must be non-prescriptive and should frame choices such as defend the thesis, resize exposure, offset risk elsewhere, or place it on watch.
+- `evidence_needed_next` should name the next concrete evidence to check, such as VIR decomposition driver, top holding lineage, earnings revisions, PMI/new orders, spread move, yield curve move, inflation surprise, or policy change.
 """
 
 
