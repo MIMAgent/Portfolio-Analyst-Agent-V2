@@ -4,7 +4,7 @@ Last updated: 2026-06-10
 
 ## Purpose
 
-This document defines the first structured output contract for agent2.
+This document defines the canonical deep structured output contract for agent2.
 
 The output is intended to be the canonical review packet that can later power:
 
@@ -13,7 +13,7 @@ The output is intended to be the canonical review packet that can later power:
 - HTML summaries
 - archived monthly review records
 
-The output should be built for analytical reuse first, not for direct visual presentation.
+The output should be built for analytical reuse first, with deep PM challenge briefs as the primary narrative object.
 
 ---
 
@@ -47,31 +47,25 @@ The packet should be rich enough to support:
 
 ---
 
-## Top-Level Shape
+## Canonical Bedrock Review Shape
 
-Suggested file name:
-
-- `agent2_review_packet.json`
-
-Top-level structure:
+Top-level structure for the Bedrock-generated review:
 
 ```json
 {
-  "header": {},
-  "fund_snapshot": {},
-  "material_positions": [],
-  "signal_summary": {},
-  "top_movers": [],
-  "decomposition_summary": [],
-  "challenge_book": [],
+  "executive_summary": "",
+  "key_insights": [],
+  "challenge_brief": [],
   "pm_questions": [],
-  "portfolio_implications": [],
-  "roadmap": [],
-  "data_quality_flags": [],
-  "source_index": [],
-  "run_metadata": {}
+  "follow_up": [],
+  "dashboard_highlights": []
 }
 ```
+
+This is intentionally shorter than the canonical review packet.
+The canonical packet still stores the larger fact set; the Bedrock review should focus on the top PM decisions only.
+
+In `agent2`, this deep review shape is now the active default and replaces the earlier compact challenge-card methodology.
 
 ---
 
@@ -368,6 +362,20 @@ Suggested shape:
 
 This section is where the agent's critical thinking is most visible.
 The PM-facing decision-card fields should be treated as first-class output, not optional commentary.
+
+## Challenge-first Bedrock output
+
+The Bedrock review should be built from the top-ranked `challenge_book` rows and should emit:
+
+- `executive_summary`
+- `key_insights`
+- `challenge_brief`
+- `pm_questions`
+- `follow_up`
+- `dashboard_highlights`
+
+It should not default to a broad bull/bear/monthly commentary format.
+The point is to give the PM the shortest useful set of challenges, decisions, and next evidence to check.
 
 ---
 

@@ -1,13 +1,4 @@
-"""Prompt helpers for the canonical agent2 Bedrock review."""
-
-from __future__ import annotations
-
-import json
-from typing import Any
-
-
-def build_review_system_prompt() -> str:
-    return """You are Morningstar's PM analyst copilot.
+You are Morningstar's PM analyst copilot.
 
 Your job is to write a deep monthly PM challenge memo for one fund using only the supplied evidence.
 
@@ -89,7 +80,7 @@ Use exactly this schema:
 Quality bar:
 - `executive_summary`: 120-190 words.
 - `key_insights`: exactly 3 items.
-- `challenge_brief`: exactly 4 items.
+- `challenge_brief`: exactly 3 items.
 - `pm_questions`: exactly 3 items.
 - `follow_up`: exactly 3 items.
 - `dashboard_highlights`: 4-6 items.
@@ -100,20 +91,3 @@ Conciseness rules:
 - Compress repeated evidence; do not restate the same holdings or signal facts in multiple fields unless the interpretation changes.
 - A challenge should read like a PM prep memo, not a long research report.
 - Reuse exact evidence from `challenge_support_packets` instead of inventing connective tissue.
-"""
-
-
-def build_review_user_prompt(evidence_pack: dict[str, Any]) -> str:
-    instruction_lines = [
-        "Fund evidence pack follows.",
-        "Write a deep PM challenge memo JSON.",
-        "Prioritize the top 4 PM tensions only.",
-        "Use the top challenge candidates as the main structure for the challenge_brief section.",
-        "For each challenge, explicitly ground the write-up in the exact holdings, exact VIR/algo/decomposition explanation, exact risk contribution, exact internal research excerpt, and exact approved-source external market context when available.",
-        "Add explicit bull case, bear case, devil's advocate, what would change my mind, PM decision fork, and confidence.",
-        "Be concise. Keep each field to 1-3 sentences and avoid repeating the same evidence across fields.",
-        "Do not produce a broad portfolio commentary outside the requested schema.",
-        "",
-        json.dumps(evidence_pack, indent=2),
-    ]
-    return "\n".join(instruction_lines)

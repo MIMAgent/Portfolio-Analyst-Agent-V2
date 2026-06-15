@@ -1695,3 +1695,22 @@ This is the latest checkpoint for Al. The repo now contains a separate `agent2/`
   - `Challenge Brief` output can now carry more decision-useful PM fields such as thesis pressure, positioning tension, model signal tension, decision fork, primary PM question, and next evidence needed.
 - Current default branch:
   - `main`
+# 2026-06-15 - Agent2 Canonical Path Reset
+
+- `agent2` was switched to a single canonical methodology: the deep PM challenge memo path.
+- The old compact / challenge-card branching was removed from `agent2` code paths.
+- Default `agent2` behavior is now:
+  - deep memo review shape
+  - 4 challenge briefs
+  - deep evidence pack with exact holdings, VIR / algo / decomp, risk, research, market context, bull / bear, devil's advocate, and PM decision fork
+- Canonical successful Bedrock run path:
+  - `agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/`
+- Main code files updated:
+  - `agent2/src/agent2/review_prompt.py`
+  - `agent2/src/agent2/evidence_pack_builder.py`
+  - `agent2/src/agent2/bedrock_review_runner.py`
+  - `agent2/scripts/run_bedrock_review.py`
+  - `agent2/README.md`
+  - `agent2/AGENT2_OUTPUT_SCHEMA_V1.md`
+- The old `agent` folder / legacy runtime was left unchanged.
+- Some historical `agent2/data/bedrock_runs/...` prototype folders could not be deleted because Windows / OneDrive returned access denied on those artifacts, but they are no longer part of the active code path.

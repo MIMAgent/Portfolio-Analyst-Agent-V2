@@ -138,7 +138,11 @@ def build_review_packet(
     )
 
     output_review_date = review_date or date.today().isoformat()
-    challenge_book = _build_challenge_book(material_positions)
+    challenge_book = _build_challenge_book(
+        material_positions,
+        risk_context=risk_context,
+        logical_snapshot_date=logical_date,
+    )
     packet = {
         "header": _build_header(
             fund=fund,
@@ -514,7 +518,12 @@ def _build_decomposition_summary(material_positions: list[dict[str, Any]]) -> li
     return rows[:10]
 
 
-def _build_challenge_book(material_positions: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _build_challenge_book(
+    material_positions: list[dict[str, Any]],
+    *,
+    risk_context: dict[str, Any],
+    logical_snapshot_date: str,
+) -> list[dict[str, Any]]:
     challenge_items = []
     for item in material_positions:
         if item["signal_alignment"] == "aligned":
@@ -523,6 +532,12 @@ def _build_challenge_book(material_positions: list[dict[str, Any]]) -> list[dict
             continue
         primary_pm_question = _challenge_primary_pm_question(item)
         evidence_needed_next = _challenge_evidence_needed_next(item)
+        research_status = _challenge_research_status(item, logical_snapshot_date=logical_snapshot_date)
+        challenge_score = _challenge_priority_score(
+            item,
+            risk_context=risk_context,
+            research_status=research_status,
+        )
         challenge_items.append(
             {
                 "challenge_id": f"ch_{_slugify(item['acid'])}_{item.get('vir_snapshot_date') or 'current'}",
@@ -531,6 +546,7 @@ def _build_challenge_book(material_positions: list[dict[str, Any]]) -> list[dict
                 "category": item["category"],
                 "priority": "high" if abs(item["active_weight"]) >= 3.0 else "medium",
                 "challenge_type": _challenge_type(item),
+                "challenge_score": round(challenge_score, 3),
                 "reason": _challenge_reason(item),
                 "question": primary_pm_question,
                 "observation": _challenge_reason(item),
@@ -541,6 +557,8 @@ def _build_challenge_book(material_positions: list[dict[str, Any]]) -> list[dict
                 "model_signal_tension": _challenge_model_signal_tension(item),
                 "vir_decomposition_readthrough": _challenge_vir_decomposition_readthrough(item),
                 "market_context_readthrough": _challenge_market_context_readthrough(item),
+                "measured_risk_readthrough": _challenge_measured_risk_readthrough(item, risk_context=risk_context),
+                "return_attribution_readthrough": _challenge_return_attribution_readthrough(item, risk_context=risk_context),
                 "pm_decision_fork": _challenge_pm_decision_fork(item),
                 "primary_pm_question": primary_pm_question,
                 "evidence_needed_next": evidence_needed_next,
@@ -549,10 +567,20 @@ def _build_challenge_book(material_positions: list[dict[str, Any]]) -> list[dict
                 "what_would_change_view": evidence_needed_next,
                 "internal_context_summary": _challenge_internal_context_summary(item),
                 "external_context_summary": _challenge_market_context_readthrough(item),
+                "research_status": research_status,
+                "top_holding_lineage": _challenge_top_holding_lineage(item),
                 "source_refs": item["source_refs"],
             }
         )
-    return challenge_items[:8]
+    challenge_items.sort(
+        key=lambda row: (
+            row.get("challenge_score", 0.0),
+            abs(float(row.get("priority") == "high")),
+            abs(next((item["active_weight"] for item in material_positions if item["acid"] == row["acid"]), 0.0)),
+        ),
+        reverse=True,
+    )
+    return challenge_items[:6]
 
 
 def _build_pm_questions(
@@ -1322,6 +1350,52 @@ def _challenge_market_context_readthrough(item: dict[str, Any]) -> str:
     return "No matched current research deck was available for a direct market-context readthrough in this packet."
 
 
+def _challenge_measured_risk_readthrough(item: dict[str, Any], *, risk_context: dict[str, Any]) -> str:
+    sector_match = _risk_sector_match(item, risk_context=risk_context)
+    style_match = _risk_style_match(item, risk_context=risk_context)
+    if sector_match:
+        holdings = [
+            security.get("security_name", "")
+            for security in sector_match.get("top_sector_holdings", [])
+            if security.get("security_name")
+        ]
+        holdings_text = f" Key holdings in that risk bucket include {', '.join(holdings[:3])}." if holdings else ""
+        return (
+            f"Measured risk currently points to {sector_match['risk_driver']} as a relevant driver at "
+            f"{sector_match.get('share_of_variance_pct', 0.0):.2f}% of active variance for the mapped "
+            f"{sector_match.get('mapped_sector', item['label'])} bucket.{holdings_text}"
+        )
+    if style_match:
+        return (
+            f"Measured style risk is elevated in {style_match['label']} at {style_match.get('share_of_variance_pct', 0.0):.2f}% "
+            "of active variance, which raises the bar for holding a large style expression without fresh underwriting."
+        )
+    specific = _specific_watch_match(item, risk_context=risk_context)
+    if specific:
+        return (
+            f"This position also appears in the specific-risk watchlist, which means the active weight is large enough "
+            "that position-level outcomes matter even if the top-down signal looks mixed."
+        )
+    return "No direct measured-risk match was found for this challenge candidate in the current risk workbook."
+
+
+def _challenge_return_attribution_readthrough(item: dict[str, Any], *, risk_context: dict[str, Any]) -> str:
+    return_mtd = risk_context.get("return_attribution_mtd", {})
+    if not return_mtd:
+        return "No month-to-date return attribution block was available from the risk workbook."
+    if item["positioning_direction"] == "underweight":
+        contribution = return_mtd.get("period_underweight_return")
+        return (
+            f"Month-to-date underweight positions contributed {contribution:.2f}% if measured on the risk workbook window, "
+            "so keeping a large underweight requires confidence that the thesis still outweighs the recent performance drag."
+        ) if contribution is not None else "Return attribution did not provide a usable underweight contribution figure."
+    contribution = return_mtd.get("period_overweight_return")
+    return (
+        f"Month-to-date overweight positions contributed {contribution:.2f}% over the risk workbook window, "
+        "which helps frame whether this active bet is being paid for in current performance."
+    ) if contribution is not None else "Return attribution did not provide a usable overweight contribution figure."
+
+
 def _challenge_pm_decision_fork(item: dict[str, Any]) -> str:
     direction = item["positioning_direction"]
     return (
@@ -1378,6 +1452,135 @@ def _challenge_source_quality(item: dict[str, Any]) -> str:
     if item.get("sharepoint_research_summary"):
         parts.append("sharepoint_research")
     return "+".join(parts)
+
+
+def _challenge_research_status(item: dict[str, Any], *, logical_snapshot_date: str) -> dict[str, Any]:
+    primary_match = item.get("sharepoint_research", {}).get("primary_match")
+    if not primary_match:
+        return {"status": "missing_research_match", "months_old": None, "folder_month": ""}
+    folder_month = str(primary_match.get("folder_month", "")).strip()
+    if not folder_month:
+        return {"status": "matched_without_month", "months_old": None, "folder_month": ""}
+    months_old = _months_between(folder_month, logical_snapshot_date.replace("-", "")[:6])
+    if months_old is None:
+        return {"status": "matched_without_month", "months_old": None, "folder_month": folder_month}
+    if months_old >= 24:
+        status = "stale_research_match"
+    elif months_old >= 12:
+        status = "aging_research_match"
+    else:
+        status = "current_research_match"
+    return {"status": status, "months_old": months_old, "folder_month": folder_month}
+
+
+def _challenge_top_holding_lineage(item: dict[str, Any]) -> str:
+    securities = item.get("source_breakdown", {}).get("securities", [])
+    if not securities:
+        return "No security lineage was available for this challenge candidate."
+    lines = []
+    for security in securities[:3]:
+        name = str(security.get("security_name", "")).strip()
+        active_weight = security.get("active_weight", 0.0)
+        sources = [
+            f"{source.get('source_name', '')} {float(source.get('portfolio_weight', 0.0)):.2f}%"
+            for source in security.get("sources", [])[:2]
+            if source.get("source_name")
+        ]
+        source_text = f" via {', '.join(sources)}" if sources else ""
+        if name:
+            lines.append(f"{name} ({active_weight:+.2f} pts active){source_text}")
+    return "; ".join(lines) if lines else "No security lineage was available for this challenge candidate."
+
+
+def _challenge_priority_score(
+    item: dict[str, Any],
+    *,
+    risk_context: dict[str, Any],
+    research_status: dict[str, Any],
+) -> float:
+    score = abs(float(item.get("active_weight", 0.0))) * 1.4
+    if item.get("signal_alignment") == "diverging":
+        score += 4.0
+    elif item.get("signal_alignment") == "partially_aligned":
+        score += 2.0
+    if item.get("decomposition_assessment") in {"valuation_led", "currency_led"}:
+        score += 1.0
+    if research_status.get("status") == "stale_research_match":
+        score += 2.0
+    elif research_status.get("status") == "missing_research_match":
+        score += 1.5
+    if item.get("active_thesis", {}).get("thesis_text"):
+        score += 0.5
+    elif item.get("internal_history_excerpt"):
+        score += 0.25
+    else:
+        score += 1.0
+    sector_match = _risk_sector_match(item, risk_context=risk_context)
+    if sector_match:
+        score += min(3.0, float(sector_match.get("share_of_variance_pct", 0.0)) / 1.5)
+    style_match = _risk_style_match(item, risk_context=risk_context)
+    if style_match:
+        score += min(2.0, float(style_match.get("share_of_variance_pct", 0.0)) / 8.0)
+    if _specific_watch_match(item, risk_context=risk_context):
+        score += 1.5
+    return_mtd = risk_context.get("return_attribution_mtd", {})
+    if return_mtd:
+        factor_drag = float(return_mtd.get("active_industry_factor_returns") or 0.0)
+        underweight_drag = float(return_mtd.get("period_underweight_return") or 0.0)
+        overweight_drag = float(return_mtd.get("period_overweight_return") or 0.0)
+        if item.get("positioning_direction") == "underweight" and underweight_drag < 0:
+            score += min(2.0, abs(underweight_drag))
+        if item.get("positioning_direction") == "overweight" and overweight_drag <= 0:
+            score += 1.5
+        if item.get("category") == "Eq Sector" and factor_drag < 0:
+            score += min(1.5, abs(factor_drag))
+    return score
+
+
+def _risk_sector_match(item: dict[str, Any], *, risk_context: dict[str, Any]) -> dict[str, Any] | None:
+    if item.get("category") != "Eq Sector":
+        return None
+    label = str(item.get("label", "")).strip()
+    for row in risk_context.get("likely_holdings_contributors", []):
+        if str(row.get("mapped_sector", "")).strip() == label:
+            return row
+    return None
+
+
+def _risk_style_match(item: dict[str, Any], *, risk_context: dict[str, Any]) -> dict[str, Any] | None:
+    if item.get("category") != "Eq Size / Style":
+        return None
+    label = str(item.get("label", "")).lower()
+    style_rows = risk_context.get("top_style_risk_drivers", [])
+    if any(token in label for token in ("small", "mid", "large")):
+        return next((row for row in style_rows if row.get("label") == "Size"), None)
+    if "growth" in label or "value" in label:
+        return next((row for row in style_rows if row.get("label") in {"Medium-Term Momentum", "Market Sensitivity"}), None)
+    return None
+
+
+def _specific_watch_match(item: dict[str, Any], *, risk_context: dict[str, Any]) -> dict[str, Any] | None:
+    label = str(item.get("label", "")).strip()
+    category = str(item.get("category", "")).strip()
+    return next(
+        (
+            row
+            for row in risk_context.get("specific_risk_watchlist", [])
+            if str(row.get("label", "")).strip() == label and str(row.get("category", "")).strip() == category
+        ),
+        None,
+    )
+
+
+def _months_between(folder_month: str, logical_month: str) -> int | None:
+    if len(folder_month) != 6 or len(logical_month) != 6:
+        return None
+    try:
+        fy, fm = int(folder_month[:4]), int(folder_month[4:6])
+        ly, lm = int(logical_month[:4]), int(logical_month[4:6])
+    except ValueError:
+        return None
+    return (ly - fy) * 12 + (lm - fm)
 
 
 def _challenge_internal_context_summary(item: dict[str, Any]) -> str:

@@ -2,6 +2,7 @@
 .venv/
 __pycache__/
 *.pyc
+*.pyc.*
 .pytest_cache/
 vite.err.log
 vite.out.log
@@ -13,6 +14,7 @@ frontend/Example_frontendV1/dist/
 frontend/Example_frontendV1/dist-server*.log
 frontend/Example_frontendV1/vite-dev*.log
 frontend/Example_frontendV1/vite-preview*.log
+frontend/Example_frontendV1/netlify-quickshare/
 
 # Raw/project input files stay local unless explicitly approved.
 data/*
@@ -31,3 +33,11 @@ artifacts/*
 !artifacts/rolled_exposures/*.csv
 !artifacts/rolled_exposures/*.md
 !artifacts/equity_vir_history.csv.zip
+
+# Agent2 Bedrock run artifacts stay local by default except the canonical
+# reviewed deep-memo output used as the current reference example.
+agent2/data/bedrock_runs/*
+!agent2/data/bedrock_runs/2026-05-31/
+agent2/data/bedrock_runs/2026-05-31/*
+!agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/
+!agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/**
