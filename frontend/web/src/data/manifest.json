@@ -1,0 +1,31 @@
+{
+  "fund": "MStar US Equity",
+  "logical_snapshot_date": "2026-05-31",
+  "review_date": "2026-06-15",
+  "model": "arn:aws:bedrock:us-east-2:819153887176:inference-profile/us.anthropic.claude-sonnet-4-6",
+  "output_style": "deep_challenge_memo",
+  "challenge_count_target": 4,
+  "region_name": "us-east-2",
+  "generated_at": "2026-06-15T18:33:53Z",
+  "artifacts": {
+    "review_packet": "agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/agent2_review_packet.json",
+    "evidence_pack": "agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/evidence_pack.json",
+    "system_prompt": "agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/system_prompt.txt",
+    "user_prompt": "agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/user_prompt.txt",
+    "bedrock_raw_response": "agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/bedrock_raw_response.json",
+    "bedrock_response_text": "agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/bedrock_response.txt",
+    "bedrock_review_json": "agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/bedrock_review.json",
+    "bedrock_review_markdown": "agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/bedrock_review.md",
+    "bedrock_validation_error": ""
+  },
+  "usage": {
+    "inputTokens": 39222,
+    "outputTokens": 7242,
+    "totalTokens": 46464,
+    "cacheReadInputTokens": 0,
+    "cacheWriteInputTokens": 0
+  },
+  "approx_cost_usd": 0.2263,
+  "parsed_json_ok": true,
+  "validation_error": ""
+}
