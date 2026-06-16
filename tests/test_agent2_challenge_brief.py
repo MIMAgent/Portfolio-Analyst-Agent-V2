@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -11,9 +12,34 @@ AGENT2_SRC = ROOT / "agent2" / "src"
 if str(AGENT2_SRC) not in sys.path:
     sys.path.insert(0, str(AGENT2_SRC))
 
-from agent2.bedrock_review_runner import _validate_review_payload
+FIXTURES = Path(__file__).resolve().parent / "fixtures"
+
+from agent2.bedrock_review_runner import (
+    ALLOWED_RECOMMENDED_ACTIONS,
+    _validate_review_payload,
+)
 from agent2.evidence_pack_builder import build_evidence_pack
 from agent2.review_packet_builder import _build_challenge_book, _build_pm_questions
+
+
+def _load_golden_challenge() -> dict:
+    raw = json.loads((FIXTURES / "golden_industrials_challenge.json").read_text(encoding="utf-8"))
+    return {key: value for key, value in raw.items() if not key.startswith("_")}
+
+
+def _deep_memo_payload(challenge: dict) -> dict:
+    return {
+        "executive_summary": "summary",
+        "key_insights": [
+            {"label": "A", "insight": "one", "why_it_matters": "now"},
+            {"label": "B", "insight": "two", "why_it_matters": "now"},
+            {"label": "C", "insight": "three", "why_it_matters": "now"},
+        ],
+        "challenge_brief": [challenge],
+        "pm_questions": [],
+        "follow_up": [],
+        "dashboard_highlights": [],
+    }
 
 
 def _sample_risk_context():
@@ -139,7 +165,7 @@ def test_validate_review_payload_rejects_generic_challenge_questions():
     }
 
     with pytest.raises(ValueError, match="generic PM question"):
-        _validate_review_payload(payload)
+        _validate_review_payload(payload, output_style="challenge_cards")
 
 
 def test_validate_review_payload_accepts_deep_challenge_fields():
@@ -154,6 +180,7 @@ def test_validate_review_payload_accepts_deep_challenge_fields():
             {
                 "label": "Industrials",
                 "challenge_headline": "Industrials remains overweight against the signal stack.",
+                "descriptor": "Sector | both model layers disagree | no live thesis on record",
                 "thesis_under_pressure": "The overweight should still work despite current disagreement.",
                 "positioning_tension": "Fund weight is 15.5% versus benchmark 12.2%.",
                 "model_signal_tension": "VIR and algo both lean underweight.",
@@ -170,6 +197,7 @@ def test_validate_review_payload_accepts_deep_challenge_fields():
                 "devils_advocate": "This may be legacy sleeve positioning rather than refreshed conviction.",
                 "what_would_change_my_mind": "A clear reversal in the valuation driver or fresh research support.",
                 "pm_decision_fork": "Defend, resize, or keep on watch.",
+                "recommended_action": "DOCUMENT OR RESIZE",
                 "primary_pm_question": "Which exact holdings justify this overweight against both signals?",
                 "evidence_needed_next": "Check next month's decomposition and sleeve notes.",
                 "confidence": "Medium confidence because holdings and model evidence are strong, but market context is thin.",
@@ -247,6 +275,41 @@ def test_evidence_pack_can_expand_to_top_four_challenges():
     assert evidence["run_goal"]["challenge_count_target"] == 4
     assert len(evidence["top_challenges"]) == 4
     assert len(evidence["challenge_support_packets"]) == 4
+
+
+def test_golden_challenge_passes_deep_memo_validation_and_meets_bar():
+    challenge = _load_golden_challenge()
+    payload = _deep_memo_payload(challenge)
+
+    validated = _validate_review_payload(payload, output_style="deep_challenge_memo")
+    brief = validated["challenge_brief"][0]
+
+    # New fields are present and the action stays within the non-prescriptive vocabulary.
+    assert brief["descriptor"]
+    assert brief["recommended_action"] in ALLOWED_RECOMMENDED_ACTIONS
+    # The golden bar is synthesis, not a one-liner: the thesis fuses several facts.
+    assert len(brief["thesis_under_pressure"].split()) >= 40
+    # Non-prescriptive guardrail: no trade verbs or target weights leak into the prose.
+    fork = brief["pm_decision_fork"].lower()
+    assert "trim" not in fork and "sell" not in fork and "buy " not in fork
+
+
+def test_validate_review_payload_rejects_out_of_vocabulary_action():
+    challenge = _load_golden_challenge()
+    challenge["recommended_action"] = "TRIM TO BENCHMARK"
+    payload = _deep_memo_payload(challenge)
+
+    with pytest.raises(ValueError, match="recommended_action"):
+        _validate_review_payload(payload, output_style="deep_challenge_memo")
+
+
+def test_validate_review_payload_requires_descriptor_in_deep_memo():
+    challenge = _load_golden_challenge()
+    del challenge["descriptor"]
+    payload = _deep_memo_payload(challenge)
+
+    with pytest.raises(ValueError, match="descriptor"):
+        _validate_review_payload(payload, output_style="deep_challenge_memo")
 
 
 def test_compact_mode_uses_compact_output_style_and_budget():

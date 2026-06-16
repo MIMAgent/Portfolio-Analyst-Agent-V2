@@ -29,6 +29,22 @@ GENERIC_PM_QUESTION_PATTERNS = (
     "why is the fund still underweight",
 )
 
+# Closed vocabulary of process-level review actions. Keeps the agent within the
+# documented non-prescriptive line: it may frame a review fork, but must not
+# recommend a trade, direction, or target weight. See
+# agent2/AGENT2_PHILOSOPHY_AND_OPERATING_MODEL_V1.md and
+# docs/PM_CHALLENGE_CARD_CONTRACT_V1.md.
+ALLOWED_RECOMMENDED_ACTIONS = frozenset(
+    {
+        "REVIEW AT IC",
+        "DOCUMENT",
+        "DOCUMENT OR RESIZE",
+        "DEFEND OR RESIZE",
+        "OFFSET",
+        "WATCH",
+    }
+)
+
 
 def run_bedrock_review(
     *,
@@ -213,6 +229,7 @@ def _validate_review_payload(payload: dict[str, Any], output_style: str = "deep_
         ]
         if output_style == "deep_challenge_memo":
             required_fields[8:8] = [
+                "descriptor",
                 "exact_holdings_causing_it",
                 "exact_vir_algo_decomp_explanation",
                 "exact_risk_contribution",
@@ -222,6 +239,7 @@ def _validate_review_payload(payload: dict[str, Any], output_style: str = "deep_
                 "bear_case",
                 "devils_advocate",
                 "what_would_change_my_mind",
+                "recommended_action",
                 "confidence",
             ]
         for field in required_fields:
@@ -231,6 +249,13 @@ def _validate_review_payload(payload: dict[str, Any], output_style: str = "deep_
         question = item.get("primary_pm_question", "").lower()
         if any(pattern in question for pattern in GENERIC_PM_QUESTION_PATTERNS):
             raise ValueError("challenge_brief contains an overly generic PM question.")
+        if output_style == "deep_challenge_memo":
+            action = item.get("recommended_action", "").strip().upper()
+            if action not in ALLOWED_RECOMMENDED_ACTIONS:
+                raise ValueError(
+                    "challenge_brief recommended_action must be one of "
+                    f"{sorted(ALLOWED_RECOMMENDED_ACTIONS)} to stay within the non-prescriptive policy."
+                )
     return payload
 
 
@@ -303,6 +328,7 @@ def _challenge_brief_lines(rows: list[dict[str, Any]], output_style: str = "deep
         lines.extend([f"### {label}", ""])
         challenge_fields = [
             ("challenge_headline", "Headline"),
+            ("descriptor", "Descriptor"),
             ("thesis_under_pressure", "Thesis Under Pressure"),
             ("positioning_tension", "Positioning Tension"),
             ("model_signal_tension", "Model Signal Tension"),
@@ -310,6 +336,7 @@ def _challenge_brief_lines(rows: list[dict[str, Any]], output_style: str = "deep
             ("market_context_readthrough", "Market Context Readthrough"),
             ("measured_risk_readthrough", "Measured Risk Readthrough"),
             ("pm_decision_fork", "PM Decision Fork"),
+            ("recommended_action", "Recommended Action"),
             ("primary_pm_question", "Primary PM Question"),
             ("evidence_needed_next", "Evidence Needed Next"),
             ("source_quality", "Source Quality"),
