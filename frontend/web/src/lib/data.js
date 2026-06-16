@@ -66,11 +66,27 @@ export const execBullets = (() => {
   return (review.dashboard_highlights || []).map((h) => ({ label: h.label, text: h.highlight, neg: false }))
 })()
 
+// Some sector labels repeat across regional cells (e.g. "Information Technology"
+// for US / EU / EM / AU). Region-qualify those so each row is distinct.
+const REGION = { US: 'US', EU: 'Europe', EM: 'EM', AU: 'Asia', GL: 'Global', DM: 'DM' }
+const labelCounts = positions.reduce((acc, p) => {
+  acc[p.label] = (acc[p.label] || 0) + 1
+  return acc
+}, {})
+function displayName(p) {
+  if ((labelCounts[p.label] || 0) > 1) {
+    const prefix = String(p.acid || '').trim().split(/\s+/)[0]
+    return `${REGION[prefix] || prefix} ${p.label}`.trim()
+  }
+  return p.label
+}
+
 // All material positions mapped for the active-weight chart (filtered + sorted
 // in the component so the bars can be sliced by exposure category).
 export const chartPositions = positions
   .filter((p) => p.label && p.active_weight !== undefined)
   .map((p) => ({
+    name: displayName(p),
     label: p.label,
     acid: p.acid,
     category: p.category || 'Other',
@@ -94,11 +110,11 @@ export const positionCategories = [
     .sort((a, b) => b.count - a.count),
 ]
 
-// Scatter points — active weight (x) vs VIR (y).
+// Scatter points — active weight (x) vs STF (y).
 export const scatterPoints = positions
   .filter((p) => p.active_weight !== undefined && p.vir_now !== undefined && p.vir_now !== null)
   .map((p) => ({
-    label: p.label,
+    label: displayName(p),
     category: p.category || 'Other',
     x: Number(p.active_weight || 0),
     y: Number(p.vir_now || 0),

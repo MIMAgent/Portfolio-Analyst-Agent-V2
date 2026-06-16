@@ -15,10 +15,10 @@ export function DivergingBars({ rows }) {
           ? { left: '50%', width: `${w}%` }
           : { left: `${50 - w}%`, width: `${w}%` }
         return (
-          <div className="bar-row" key={r.label}>
-            <div className={`bar-name${r.off ? ' flag' : ''}`} title={r.label}>
+          <div className="bar-row" key={r.acid || r.name}>
+            <div className={`bar-name${r.off ? ' flag' : ''}`} title={r.name}>
               {r.off && <span className="bar-flag">⚑</span>}
-              {r.label}
+              {r.name}
             </div>
             <div className="bar-track">
               <div className="bar-axis" />
@@ -137,7 +137,7 @@ export function VirScatter({ points }) {
               <rect x={bx} y={by} width={bw} height={40} rx="7" fill="#1b1b1f" opacity="0.96" />
               <text x={bx + 12} y={by + 16} fontSize="11.5" fontWeight="600" fill="#fff" fontFamily="Hanken Grotesk">{hp.label}</text>
               <text x={bx + 12} y={by + 31} fontSize="10.5" fill="#cfcfd4" fontFamily="JetBrains Mono">
-                {signedPts(hp.x)} pts · VIR {num(hp.y, 3)} · {hp.off ? 'off-signal' : 'aligned'}
+                {signedPts(hp.x)} pts · STF {num(hp.y, 3)} · {hp.off ? 'off-signal' : 'aligned'}
               </text>
             </g>
           )
@@ -145,7 +145,7 @@ export function VirScatter({ points }) {
 
         {/* axis titles */}
         <text x={m.l + iw / 2} y={H - 1} textAnchor="middle" fontSize="10.5" fill="#adaca8">Active weight (pts)</text>
-        <text x={13} y={m.t + ih / 2} textAnchor="middle" fontSize="10.5" fill="#adaca8" transform={`rotate(-90 13 ${m.t + ih / 2})`}>VIR</text>
+        <text x={13} y={m.t + ih / 2} textAnchor="middle" fontSize="10.5" fill="#adaca8" transform={`rotate(-90 13 ${m.t + ih / 2})`}>STF</text>
       </svg>
       <div className="scatter-legend">
         <div className="legend-item"><span className="legend-dot" /> Aligned</div>

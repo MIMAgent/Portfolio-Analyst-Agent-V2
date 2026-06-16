@@ -56,7 +56,7 @@ export default function Overview() {
           <div className="panel-head panel-head-row">
             <div>
               <div className="panel-title">Active weight vs benchmark</div>
-              <div className="panel-sub eyebrow">pts · ⚑ off-signal · VIR shown right</div>
+              <div className="panel-sub eyebrow">pts · ⚑ off-signal · STF shown right</div>
             </div>
             <div className="chips chips-sm">
               {positionCategories.map((c) => (
@@ -69,7 +69,7 @@ export default function Overview() {
 
         <div className="panel rise d5">
           <div className="panel-head">
-            <div className="panel-title">VIR signal vs active weight</div>
+            <div className="panel-title">STF signal vs active weight</div>
             <div className="panel-sub eyebrow">Contra-signal quadrants shaded · hover a point for detail</div>
           </div>
           <VirScatter points={scatterPoints} />

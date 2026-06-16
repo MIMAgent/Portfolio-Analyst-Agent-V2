@@ -6,7 +6,7 @@ const PRIORITY_LABEL = { high: 'Urgent', medium: 'Watch', low: 'Monitor' }
 
 function signalTags(c) {
   const tags = []
-  if (isNum(c.vir)) tags.push({ t: `VIR ${c.vir < 0 ? 'Underweight' : 'Overweight'}`, cls: c.vir < 0 ? 'neg' : 'pos' })
+  if (isNum(c.vir)) tags.push({ t: `STF ${c.vir < 0 ? 'Underweight' : 'Overweight'}`, cls: c.vir < 0 ? 'neg' : 'pos' })
   if (isNum(c.algo)) tags.push({ t: `Algo ${c.algo < 0 ? 'Underweight' : 'Overweight'}`, cls: c.algo < 0 ? 'neg' : 'pos' })
   tags.push({ t: PRIORITY_LABEL[c.priority] || c.priority, cls: c.priority === 'high' ? 'neg' : c.priority === 'medium' ? 'warn' : 'pos' })
   const conf = (c.confidence || '').match(/^(high|medium|moderate|low)/i)
@@ -80,7 +80,7 @@ function DeepMemo({ c, index }) {
 
         {c.decomp && (
           <div className="memo-section">
-            <div className="memo-section-title eyebrow">VIR Decomposition</div>
+            <div className="memo-section-title eyebrow">STF Decomposition</div>
             <p>{c.decomp}</p>
           </div>
         )}
