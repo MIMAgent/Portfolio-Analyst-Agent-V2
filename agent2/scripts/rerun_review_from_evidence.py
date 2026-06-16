@@ -46,6 +46,10 @@ def _load_module_by_path(name: str, *candidates: Path) -> ModuleType:
             if spec is None or spec.loader is None:
                 continue
             module = importlib.util.module_from_spec(spec)
+            # Register before exec: dataclasses (e.g. LLMResponse in llm_client)
+            # resolve their namespace via sys.modules[cls.__module__]; without
+            # this a path-loaded module crashes with AttributeError on None.
+            sys.modules[name] = module
             spec.loader.exec_module(module)
             return module
     searched = "\n  ".join(str(c) for c in candidates)
