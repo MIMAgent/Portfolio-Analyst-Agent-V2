@@ -66,24 +66,40 @@ export const execBullets = (() => {
   return (review.dashboard_highlights || []).map((h) => ({ label: h.label, text: h.highlight, neg: false }))
 })()
 
-// Diverging bar chart rows — top material positions by |active weight|.
-export const activeWeightRows = [...positions]
+// All material positions mapped for the active-weight chart (filtered + sorted
+// in the component so the bars can be sliced by exposure category).
+export const chartPositions = positions
   .filter((p) => p.label && p.active_weight !== undefined)
-  .sort((a, b) => Math.abs(Number(b.active_weight || 0)) - Math.abs(Number(a.active_weight || 0)))
-  .slice(0, 15)
   .map((p) => ({
     label: p.label,
     acid: p.acid,
+    category: p.category || 'Other',
     active: Number(p.active_weight || 0),
     vir: Number(p.vir_now ?? NaN),
     off: isOffSignal(p),
   }))
+
+// Filter chips for the bar chart — friendly labels over the raw category field.
+const CATEGORY_LABEL = {
+  'Eq Sector': 'Sector',
+  Country: 'Country',
+  'Eq Size / Style': 'Size / Style',
+  Region: 'Region',
+  'Cash / Other': 'Cash',
+}
+export const positionCategories = [
+  { key: 'All', label: 'All' },
+  ...Array.from(new Set(chartPositions.map((p) => p.category)))
+    .map((c) => ({ key: c, label: CATEGORY_LABEL[c] || c, count: chartPositions.filter((p) => p.category === c).length }))
+    .sort((a, b) => b.count - a.count),
+]
 
 // Scatter points — active weight (x) vs VIR (y).
 export const scatterPoints = positions
   .filter((p) => p.active_weight !== undefined && p.vir_now !== undefined && p.vir_now !== null)
   .map((p) => ({
     label: p.label,
+    category: p.category || 'Other',
     x: Number(p.active_weight || 0),
     y: Number(p.vir_now || 0),
     off: isOffSignal(p),

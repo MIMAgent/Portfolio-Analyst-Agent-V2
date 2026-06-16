@@ -1,4 +1,5 @@
-import { kpis, execBullets, activeWeightRows, scatterPoints, header } from '../lib/data.js'
+import { useMemo, useState } from 'react'
+import { kpis, execBullets, chartPositions, positionCategories, scatterPoints, header } from '../lib/data.js'
 import { isNum, fmtDate } from '../lib/format.js'
 import { DivergingBars, VirScatter } from '../components/Charts.jsx'
 
@@ -11,6 +12,15 @@ function kpiValue(k) {
 }
 
 export default function Overview() {
+  const [cat, setCat] = useState('All')
+
+  const barRows = useMemo(() => {
+    const base = cat === 'All' ? chartPositions : chartPositions.filter((p) => p.category === cat)
+    return [...base]
+      .sort((a, b) => Math.abs(b.active) - Math.abs(a.active))
+      .slice(0, cat === 'All' ? 16 : 20)
+  }, [cat])
+
   return (
     <div className="canvas">
       <section className="kpi-row">
@@ -43,17 +53,24 @@ export default function Overview() {
 
       <section className="grid-2">
         <div className="panel rise d4">
-          <div className="panel-head">
-            <div className="panel-title">Active weight vs benchmark</div>
-            <div className="panel-sub eyebrow">Top 15 by magnitude · pts · ⚑ off-signal · VIR shown right</div>
+          <div className="panel-head panel-head-row">
+            <div>
+              <div className="panel-title">Active weight vs benchmark</div>
+              <div className="panel-sub eyebrow">pts · ⚑ off-signal · VIR shown right</div>
+            </div>
+            <div className="chips chips-sm">
+              {positionCategories.map((c) => (
+                <button key={c.key} className={`chip${cat === c.key ? ' active' : ''}`} onClick={() => setCat(c.key)}>{c.label}</button>
+              ))}
+            </div>
           </div>
-          <DivergingBars rows={activeWeightRows} />
+          <DivergingBars rows={barRows} />
         </div>
 
         <div className="panel rise d5">
           <div className="panel-head">
             <div className="panel-title">VIR signal vs active weight</div>
-            <div className="panel-sub eyebrow">Contra-signal quadrants shaded red</div>
+            <div className="panel-sub eyebrow">Contra-signal quadrants shaded · hover a point for detail</div>
           </div>
           <VirScatter points={scatterPoints} />
         </div>
