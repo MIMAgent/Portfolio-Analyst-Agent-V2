@@ -10,7 +10,13 @@ the evidence/packet builders or the LLM client here.
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
+
+
+# A challenge label must be the exposure/position name (the join key back to the
+# structured evidence), never a sequential placeholder like "Challenge 2".
+_PLACEHOLDER_LABEL = re.compile(r"^\s*challenge\s*\d+\s*$", re.IGNORECASE)
 
 
 GENERIC_PM_QUESTION_PATTERNS = (
@@ -121,6 +127,11 @@ def _validate_review_payload(payload: dict[str, Any], output_style: str = "deep_
             value = item.get(field)
             if not isinstance(value, str) or not value.strip():
                 raise ValueError(f"challenge_brief[{index}].{field} must be a non-empty string.")
+        if _PLACEHOLDER_LABEL.match(item.get("label", "")):
+            raise ValueError(
+                "challenge_brief label must be the exposure name (e.g. 'Industrials'), "
+                "not a placeholder like 'Challenge 1' -- it is the join key to the evidence."
+            )
         question = item.get("primary_pm_question", "").lower()
         if any(pattern in question for pattern in GENERIC_PM_QUESTION_PATTERNS):
             raise ValueError("challenge_brief contains an overly generic PM question.")

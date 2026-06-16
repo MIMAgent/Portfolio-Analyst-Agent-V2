@@ -137,6 +137,7 @@ Deep challenge framing rules:
 - Every challenge must explain the measured-risk contribution.
 - Every challenge must quote or closely paraphrase the most relevant internal research evidence.
 - Every challenge must include a concise bull case, bear case, devil's advocate, what-would-change-my-mind test, PM decision fork, recommended_action chip, and confidence / source quality.
+- `label` MUST be the exact exposure / position name as it appears in `top_challenges[].label` (e.g. "Industrials", "Financials", "United States Sml Growth"). This is the join key back to the structured evidence. Never use "Challenge 1" or any sequential numbering as the label.
 - `descriptor` is a one-line tag in the form "<category> | <one-phrase core tension> | <one-phrase staleness or driver>", e.g. "Sector | both model layers disagree | no live thesis on record".
 - Do not ask generic questions such as "is this still intentional?" or "why is this still overweight?"
 

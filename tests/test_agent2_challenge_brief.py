@@ -303,6 +303,15 @@ def test_validate_review_payload_rejects_out_of_vocabulary_action():
         _validate_review_payload(payload, output_style="deep_challenge_memo")
 
 
+def test_validate_review_payload_rejects_placeholder_label():
+    challenge = _load_golden_challenge()
+    challenge["label"] = "Challenge 1"
+    payload = _deep_memo_payload(challenge)
+
+    with pytest.raises(ValueError, match="exposure name"):
+        _validate_review_payload(payload, output_style="deep_challenge_memo")
+
+
 def test_validate_review_payload_requires_descriptor_in_deep_memo():
     challenge = _load_golden_challenge()
     del challenge["descriptor"]
