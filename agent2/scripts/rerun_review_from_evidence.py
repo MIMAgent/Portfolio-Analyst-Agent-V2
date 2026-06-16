@@ -4,53 +4,91 @@ This is the cheap prompt-iteration loop. The expensive, data-heavy work
 (building the review packet and evidence pack from raw exposures / VIR / risk
 files) is skipped entirely -- we reuse a previously saved ``evidence_pack.json``
 and only re-send it to Bedrock with the current prompt. That isolates the
-prompt as the single variable when tuning challenge-brief output quality, and
-needs none of the raw data inputs, the VIR build, or pandas/openpyxl.
+prompt as the single variable when tuning challenge-brief output quality.
+
+It is deliberately dependency-light: it loads ``review_prompt``,
+``review_validation``, and ``llm_client`` by file path, bypassing every package
+``__init__`` so it needs only the standard library plus ``boto3`` (already
+present in AWS CloudShell). No pandas / openpyxl / repo install required.
+
+It runs in two layouts:
+  * inside the repo checkout (finds the modules in their normal locations), or
+  * as a flat bundle (all the .py files and evidence_pack.json sit next to it).
 
 Use ``--dry-run`` to assemble and write the prompts without calling Bedrock
 (no AWS, no spend) -- handy for sanity-checking before a real run.
 
 Example (AWS CloudShell, SSO creds already present):
 
-    python3 agent2/scripts/rerun_review_from_evidence.py \\
-      --output-root agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-prose-upgrade \\
-      --max-output-tokens 12000
+    python3 rerun_review_from_evidence.py --output-root ./out --max-output-tokens 12000
 """
 
 from __future__ import annotations
 
 import argparse
 from datetime import datetime, timezone
+import importlib.util
 import json
 from pathlib import Path
 import sys
+from types import ModuleType
 
 
-ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "agent2" / "src"
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
+SCRIPT_DIR = Path(__file__).resolve().parent
+# Repo root when running from agent2/scripts/ ; harmless if it doesn't exist.
+REPO_ROOT = SCRIPT_DIR.parents[1]
 
-from agent2.bedrock_review_runner import (  # noqa: E402
-    _approx_cost_usd,
-    _collect_text,
-    _parse_json_response,
-    _render_markdown_review,
-    _validate_review_payload,
+
+def _load_module_by_path(name: str, *candidates: Path) -> ModuleType:
+    for path in candidates:
+        if path.is_file():
+            spec = importlib.util.spec_from_file_location(name, path)
+            if spec is None or spec.loader is None:
+                continue
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            return module
+    searched = "\n  ".join(str(c) for c in candidates)
+    raise FileNotFoundError(f"Could not locate {name}.py. Looked in:\n  {searched}")
+
+
+def _first_existing(*candidates: Path) -> Path | None:
+    for path in candidates:
+        if path.is_file():
+            return path
+    return None
+
+
+# review_prompt and review_validation: flat bundle (next to script) or in-repo.
+_AGENT2 = REPO_ROOT / "agent2" / "src" / "agent2"
+review_prompt = _load_module_by_path(
+    "review_prompt",
+    SCRIPT_DIR / "review_prompt.py",
+    _AGENT2 / "review_prompt.py",
 )
-from agent2.review_prompt import (  # noqa: E402
-    build_review_system_prompt,
-    build_review_user_prompt,
+review_validation = _load_module_by_path(
+    "review_validation",
+    SCRIPT_DIR / "review_validation.py",
+    _AGENT2 / "review_validation.py",
 )
 
-DEFAULT_EVIDENCE_PACK = (
-    ROOT
+build_review_system_prompt = review_prompt.build_review_system_prompt
+build_review_user_prompt = review_prompt.build_review_user_prompt
+_collect_text = review_validation._collect_text
+_parse_json_response = review_validation._parse_json_response
+_validate_review_payload = review_validation._validate_review_payload
+_render_markdown_review = review_validation._render_markdown_review
+_approx_cost_usd = review_validation._approx_cost_usd
+
+DEFAULT_EVIDENCE_PACK = _first_existing(
+    SCRIPT_DIR / "evidence_pack.json",
+    REPO_ROOT
     / "agent2"
     / "data"
     / "bedrock_runs"
     / "2026-05-31"
     / "mstar-us-equity-live-2026-06-15-deepmemo-12k-top4"
-    / "evidence_pack.json"
+    / "evidence_pack.json",
 )
 
 
@@ -58,8 +96,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Re-run an agent2 review from a saved evidence pack.")
     parser.add_argument(
         "--evidence-pack",
-        default=str(DEFAULT_EVIDENCE_PACK),
-        help="Path to a previously saved evidence_pack.json. Defaults to the committed 2026-05-31 run.",
+        default=str(DEFAULT_EVIDENCE_PACK) if DEFAULT_EVIDENCE_PACK else None,
+        required=DEFAULT_EVIDENCE_PACK is None,
+        help="Path to a previously saved evidence_pack.json.",
     )
     parser.add_argument("--output-root", required=True, help="Directory to save the rerun artifacts.")
     parser.add_argument(
@@ -84,6 +123,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="Assemble and write the prompts but do not call Bedrock (no AWS, no spend).",
     )
     return parser
+
+
+def _load_bedrock_client_class():
+    """Load BedrockClaudeClient by path so we skip the heavy package __init__."""
+    module = _load_module_by_path(
+        "paa_llm_client",
+        SCRIPT_DIR / "llm_client.py",
+        REPO_ROOT / "src" / "portfolio_analyst_agent" / "agent_runtime" / "llm_client.py",
+    )
+    return module.BedrockClaudeClient
 
 
 def main() -> int:
@@ -112,10 +161,7 @@ def main() -> int:
         print(f"prompts_written_to={output_dir.as_posix()}")
         return 0
 
-    # Imported lazily so --dry-run works without boto3 installed.
-    sys.path.insert(0, str(ROOT / "src"))
-    from portfolio_analyst_agent.agent_runtime.llm_client import BedrockClaudeClient
-
+    BedrockClaudeClient = _load_bedrock_client_class()
     client = BedrockClaudeClient(
         model=args.model,
         region_name=args.aws_region,
