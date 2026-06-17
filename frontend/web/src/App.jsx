@@ -3,6 +3,7 @@ import { header, challenges, evidence } from './lib/data.js'
 import { pct, signedPct, fmtDate } from './lib/format.js'
 import Overview from './pages/Overview.jsx'
 import ChallengeBrief from './pages/ChallengeBrief.jsx'
+import AgentMemory from './pages/AgentMemory.jsx'
 
 const summary = evidence.risk_and_attribution?.summary || {}
 const mtd = evidence.risk_and_attribution?.return_attribution_mtd || {}
@@ -39,6 +40,7 @@ const TABS = [
   { id: 'signals', label: 'Signals & Decomp' },
   { id: 'fof', label: 'Fund of Funds' },
   { id: 'ic', label: 'IC Prep', count: icQueued },
+  { id: 'memory', label: 'Agent Memory' },
 ]
 
 function Placeholder({ name }) {
@@ -115,6 +117,7 @@ export default function App() {
         {tab === 'signals' && <Placeholder name="Signals & Decomp" />}
         {tab === 'fof' && <Placeholder name="Fund of Funds" />}
         {tab === 'ic' && <Placeholder name="IC Prep" />}
+        {tab === 'memory' && <AgentMemory />}
       </main>
     </div>
   )
