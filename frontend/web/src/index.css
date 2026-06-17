@@ -431,6 +431,17 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 .memo-evidence .eyebrow { color: var(--ink-3); }
 .memo-evidence p { margin: 5px 0 0; font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
 
+/* cited market-context sources */
+.mkt-query { font-family: var(--mono); font-size: 11px; color: var(--ink-4); margin: 4px 0 10px; }
+.mkt-list { display: grid; gap: 10px; }
+.mkt-item { padding: 12px 15px; border: 1px solid var(--line); border-left: 3px solid var(--brand-2); border-radius: var(--r); background: linear-gradient(180deg, #ffffff, #fcfbf8); }
+.mkt-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+.mkt-headline { font-size: 13px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+.mkt-src { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); white-space: nowrap; flex-shrink: 0; }
+.mkt-src a { color: var(--brand-2); text-decoration: none; }
+.mkt-src a:hover { text-decoration: underline; }
+.mkt-narr { margin: 7px 0 0; font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
+
 /* Compact card */
 .compact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; }
 .compact {

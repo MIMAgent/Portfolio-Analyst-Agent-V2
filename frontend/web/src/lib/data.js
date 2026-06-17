@@ -126,6 +126,21 @@ const challengeByLabel = new Map(topChallenges.map((c) => [normKey(c.label), c])
 const supportByAcid = new Map(
   (evidence.challenge_support_packets || []).map((s) => [s.acid, s]),
 )
+const marketByAcid = new Map(
+  (evidence.challenge_market_context || []).map((m) => [m.acid, m]),
+)
+
+// Normalize a market-context row (the two sources use slightly different keys).
+function normMarketRow(r) {
+  return {
+    headline: r.headline,
+    narrative: r.narrative,
+    readthrough: r.fundamental_readthrough,
+    source: r.source_label || r.source,
+    date: r.source_date || r.published_at,
+    url: r.source_url || r.citation || r.url,
+  }
+}
 
 function deriveDescriptor(item, top, signal) {
   if (item.descriptor) return item.descriptor
@@ -143,6 +158,10 @@ function deriveAction(item, top) {
 export const challenges = (review.challenge_brief || []).map((item, i) => {
   const top = challengeByLabel.get(normKey(item.label)) || {}
   const support = supportByAcid.get(top.acid) || {}
+  const market = marketByAcid.get(top.acid) || {}
+  const marketRowsRaw = Array.isArray(market.rows) && market.rows.length
+    ? market.rows
+    : (Array.isArray(support.exact_external_market_context) ? support.exact_external_market_context : [])
   const signal = support.exact_vir_algo_decomp_explanation || {}
   const holdings = Array.isArray(support.exact_holdings_causing_it)
     ? support.exact_holdings_causing_it
@@ -181,6 +200,9 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
     sourceQuality: item.source_quality,
     holdings,
     holdingsProse: item.exact_holdings_causing_it,
+    marketRows: marketRowsRaw.map(normMarketRow).filter((r) => r.headline || r.narrative),
+    marketQuery: market.query_used,
+    marketStatus: market.context_status,
   }
 })
 
