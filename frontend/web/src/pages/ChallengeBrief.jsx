@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { challenges, challengeCategories } from '../lib/data.js'
-import { signedPts, signedPct, num, pct, isNum, titleCase } from '../lib/format.js'
+import { signedPts, signedPct, pct, isNum, titleCase } from '../lib/format.js'
 
 const PRIORITY_LABEL = { high: 'Urgent', medium: 'Watch', low: 'Monitor' }
 
@@ -14,8 +14,18 @@ function signalTags(c) {
   return tags
 }
 
-function Holdings({ rows }) {
-  if (!rows.length) return null
+function Section({ title, children }) {
+  if (!children) return null
+  return (
+    <div className="memo-section">
+      <div className="memo-section-title eyebrow">{title}</div>
+      {children}
+    </div>
+  )
+}
+
+function Holdings({ rows, prose }) {
+  if (!rows?.length) return prose ? <p className="holdings-prose">{prose}</p> : null
   const top = [...rows]
     .sort((a, b) => Math.abs(Number(b.active_weight || 0)) - Math.abs(Number(a.active_weight || 0)))
     .slice(0, 5)
@@ -33,6 +43,45 @@ function Holdings({ rows }) {
           <div className={`holding-num ${Number(h.active_weight) >= 0 ? 'pos' : 'neg'}`}>{signedPct(h.active_weight, 2)}</div>
         </div>
       ))}
+    </div>
+  )
+}
+
+function Cases({ c }) {
+  const cases = [
+    { k: 'bull', label: 'Bull case', body: c.bull },
+    { k: 'bear', label: 'Bear case', body: c.bear },
+    { k: 'devils', label: "Devil's advocate", body: c.devils },
+    { k: 'change', label: 'What would change my mind', body: c.changeMind },
+  ].filter((x) => x.body)
+  if (!cases.length) return null
+  return (
+    <div className="case-grid">
+      {cases.map((x) => (
+        <div className={`case ${x.k}`} key={x.k}>
+          <div className="case-label">{x.label}</div>
+          <p>{x.body}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function ForkOptions({ text }) {
+  if (!text) return null
+  const parts = text.split(/(?=Option [A-Z]:)/g).map((s) => s.trim()).filter(Boolean)
+  if (parts.length <= 1) return <p>{text}</p>
+  return (
+    <div className="fork-list">
+      {parts.map((p, i) => {
+        const m = p.match(/^Option ([A-Z]):\s*([\s\S]*)$/)
+        return (
+          <div className="fork-item" key={i}>
+            <span className="fork-tag">{m ? m[1] : '•'}</span>
+            <span>{m ? m[2] : p}</span>
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -64,36 +113,35 @@ function DeepMemo({ c, index }) {
       </div>
 
       <div className="memo-body">
-        {c.thesis && (
-          <div className="memo-section">
-            <div className="memo-section-title eyebrow">Thesis Under Pressure</div>
-            <p>{c.thesis}</p>
-          </div>
-        )}
+        <Section title="Thesis Under Pressure">{c.thesis && <p>{c.thesis}</p>}</Section>
 
-        {c.holdings.length > 0 && (
-          <div className="memo-section">
-            <div className="memo-section-title eyebrow">Holdings Driving the Exposure</div>
-            <Holdings rows={c.holdings} />
-          </div>
-        )}
+        <div className="memo-cols">
+          <Section title="Positioning Tension">{c.positioning && <p>{c.positioning}</p>}</Section>
+          <Section title="Model Signal Tension">{c.modelTension && <p>{c.modelTension}</p>}</Section>
+        </div>
 
-        {c.decomp && (
-          <div className="memo-section">
-            <div className="memo-section-title eyebrow">STF Decomposition</div>
-            <p>{c.decomp}</p>
-          </div>
-        )}
+        <Section title="Holdings Driving the Exposure">
+          <Holdings rows={c.holdings} prose={c.holdingsProse} />
+        </Section>
 
-        {(c.bull || c.bear) && (
-          <div className="memo-section">
-            <div className="memo-section-title eyebrow">Devil's Advocate</div>
-            <div className="duo">
-              {c.bull && <div className="case bull"><div className="case-label">Bull case</div><p>{c.bull}</p></div>}
-              {c.bear && <div className="case bear"><div className="case-label">Bear case</div><p>{c.bear}</p></div>}
+        <div className="memo-cols">
+          <Section title="STF Decomposition">{c.decomp && <p>{c.decomp}</p>}</Section>
+          <Section title="Measured Risk Contribution">{(c.risk || c.riskExact) && <p>{c.risk || c.riskExact}</p>}</Section>
+        </div>
+
+        {(c.market || c.internalResearch || c.externalContext) && (
+          <Section title="Research & Market Context">
+            <div className="ctx-stack">
+              {c.market && <div className="ctx-block"><div className="ctx-label">House / sector view</div><p>{c.market}</p></div>}
+              {c.internalResearch && <div className="ctx-block"><div className="ctx-label">Internal research</div><p>{c.internalResearch}</p></div>}
+              {c.externalContext && <div className="ctx-block"><div className="ctx-label">External context</div><p>{c.externalContext}</p></div>}
             </div>
-          </div>
+          </Section>
         )}
+
+        <Section title="The Cases"><Cases c={c} /></Section>
+
+        <Section title="PM Decision Fork"><ForkOptions text={c.fork} /></Section>
       </div>
 
       {c.question && (
@@ -103,17 +151,25 @@ function DeepMemo({ c, index }) {
         </div>
       )}
 
+      {c.evidenceNext && (
+        <div className="memo-evidence">
+          <span className="eyebrow">Evidence needed next</span>
+          <p>{c.evidenceNext}</p>
+        </div>
+      )}
+
       <div className="memo-foot">
         {c.action && <span className="tag action">{c.action}</span>}
         {c.confidence && <span className="confidence">{c.confidence}</span>}
         <span className="spacer" />
+        {c.sourceQuality && <span className="source-quality" title={c.sourceQuality}>{c.sourceQuality.split('—')[0].trim()}</span>}
         <button className="btn">Open IC Prep ↗</button>
       </div>
     </article>
   )
 }
 
-function Compact({ c, index }) {
+function Compact({ c }) {
   const owPos = Number(c.activeWeight) >= 0
   return (
     <article className="compact rise">
@@ -161,14 +217,14 @@ export default function ChallengeBrief() {
 
       <div className="cb-banner">
         <span className="flag-icon">⚑</span>
-        <div><b>{filtered.length} position{filtered.length === 1 ? '' : 's'} require PM review before the next IC.</b> Each card fuses active weight, the VIR/algo signal stack, prior internal notes, and matched research into a single decision.</div>
+        <div><b>{filtered.length} position{filtered.length === 1 ? '' : 's'} require PM review before the next IC.</b> Each card fuses active weight, the STF/algo signal stack, prior internal notes, and matched research into a single decision.</div>
       </div>
 
       {mode === 'deep' ? (
         filtered.map((c, i) => <DeepMemo c={c} index={i} key={c.id} />)
       ) : (
         <div className="compact-grid">
-          {filtered.map((c, i) => <Compact c={c} index={i} key={c.id} />)}
+          {filtered.map((c) => <Compact c={c} key={c.id} />)}
         </div>
       )}
     </div>

@@ -164,8 +164,12 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
     positioning: item.positioning_tension,
     modelTension: item.model_signal_tension,
     decomp: item.vir_decomposition_readthrough,
+    decompExact: item.exact_vir_algo_decomp_explanation,
     market: item.market_context_readthrough,
     risk: item.measured_risk_readthrough,
+    riskExact: item.exact_risk_contribution,
+    internalResearch: item.exact_internal_research_excerpt,
+    externalContext: item.exact_external_market_context,
     bull: item.bull_case,
     bear: item.bear_case,
     devils: item.devils_advocate,
@@ -176,6 +180,7 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
     confidence: item.confidence,
     sourceQuality: item.source_quality,
     holdings,
+    holdingsProse: item.exact_holdings_causing_it,
   }
 })
 

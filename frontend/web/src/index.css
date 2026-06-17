@@ -405,8 +405,31 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
   padding: 16px 22px 18px;
 }
 .memo-foot .spacer { flex: 1; }
-.confidence { font-size: 11.5px; color: var(--ink-3); }
+.confidence { font-size: 11.5px; color: var(--ink-3); max-width: 520px; }
 .confidence b { color: var(--ink-2); font-weight: 600; }
+.source-quality { font-family: var(--mono); font-size: 10.5px; color: var(--ink-4); }
+
+/* enriched deep-memo sections */
+.memo-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
+.holdings-prose { font-size: 13px; color: var(--ink-2); line-height: 1.62; margin: 0; }
+
+.ctx-stack { display: grid; gap: 13px; }
+.ctx-block p { margin: 3px 0 0; color: var(--ink-2); line-height: 1.6; font-size: 13px; }
+.ctx-label { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--brand-2); }
+
+.case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.case.devils { background: var(--warn-soft); border-color: var(--warn-line); }
+.case.devils .case-label { color: var(--warn); }
+.case.change { background: var(--good-soft); border-color: #c3e0d0; }
+.case.change .case-label { color: var(--good); }
+
+.fork-list { display: grid; gap: 8px; }
+.fork-item { display: flex; gap: 12px; padding: 11px 14px; background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r); font-size: 13px; color: var(--ink-2); line-height: 1.55; }
+.fork-tag { flex-shrink: 0; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; background: var(--brand); color: #fff; font-size: 11px; font-weight: 700; }
+
+.memo-evidence { margin: 14px 22px 0; padding: 12px 16px; border: 1px dashed var(--line-2); border-radius: var(--r); }
+.memo-evidence .eyebrow { color: var(--ink-3); }
+.memo-evidence p { margin: 5px 0 0; font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
 
 /* Compact card */
 .compact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; }
@@ -439,7 +462,7 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 /* =========================== Responsive =========================== */
 @media (max-width: 1240px) {
   .kpi-row { grid-template-columns: repeat(3, 1fr); }
-  .grid-2, .duo { grid-template-columns: 1fr; }
+  .grid-2, .duo, .memo-cols, .case-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 860px) {
   .sidebar { display: none; }
