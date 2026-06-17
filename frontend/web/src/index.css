@@ -471,6 +471,44 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 }
 
 /* =========================== Responsive =========================== */
+/* =========================== Signals & Decomp / Model Challenge =========================== */
+.regime {
+  display: grid; grid-template-columns: 220px 1fr; gap: 22px; align-items: start;
+  padding: 18px 22px; border: 1px solid var(--line); border-radius: var(--r-lg);
+  background: linear-gradient(180deg, #ffffff, #fcfbf8); box-shadow: var(--shadow-sm);
+  border-left: 3px solid var(--brand-2);
+}
+.regime-name { font-family: var(--display); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; margin-top: 5px; }
+.regime-read { margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.62; }
+
+.decomp { display: flex; flex-direction: column; }
+.decomp-row { display: grid; grid-template-columns: 150px 1fr 56px 76px; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.decomp-row:last-child { border-bottom: none; }
+.decomp-row.dom { background: var(--surface-2); margin: 0 -10px; padding: 8px 10px; border-radius: 8px; border-bottom: none; }
+.decomp-name { font-size: 12.5px; color: var(--ink-2); display: flex; align-items: center; gap: 7px; }
+.dom-tag { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-2); background: var(--pos-soft); padding: 1px 6px; border-radius: 4px; }
+.decomp-val { font-family: var(--mono); font-size: 12px; text-align: right; font-weight: 600; }
+.decomp-val.pos { color: var(--pos); } .decomp-val.neg { color: var(--neg); }
+
+.verdict { padding: 4px 0 16px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+.verdict-badge { display: inline-block; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+.verdict-badge.warn { background: var(--warn-soft); color: var(--warn); border: 1px solid var(--warn-line); }
+.verdict-badge.pos { background: var(--pos-soft); color: var(--pos); border: 1px solid var(--pos-line); }
+.verdict-body { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.62; }
+
+.reliability-list { display: grid; gap: 0; }
+.rel-row { display: grid; grid-template-columns: 14px 150px 1fr; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.rel-row:last-child { border-bottom: none; }
+.rel-dot { width: 9px; height: 9px; border-radius: 50%; align-self: center; }
+.rel-trust { background: var(--pos); } .rel-neutral { background: var(--ink-4); } .rel-discount { background: var(--warn); }
+.rel-name { font-size: 12.5px; color: var(--ink); font-weight: 500; }
+.rel-why { font-size: 12px; color: var(--ink-3); line-height: 1.45; }
+
+.trigger-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.trigger { padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface-2); }
+.trigger-h { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 5px; }
+.trigger p { margin: 0; font-size: 12.5px; color: var(--ink-2); line-height: 1.55; }
+
 /* =========================== Agent Memory (demo) =========================== */
 .demo-banner {
   display: flex; align-items: center; gap: 12px;
@@ -512,8 +550,9 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 
 @media (max-width: 1240px) {
   .kpi-row { grid-template-columns: repeat(3, 1fr); }
-  .grid-2, .duo, .memo-cols, .case-grid { grid-template-columns: 1fr; }
+  .grid-2, .duo, .memo-cols, .case-grid, .trigger-grid { grid-template-columns: 1fr; }
   .ledger-row { grid-template-columns: 1fr; gap: 4px; }
+  .regime { grid-template-columns: 1fr; gap: 10px; }
 }
 @media (max-width: 860px) {
   .sidebar { display: none; }

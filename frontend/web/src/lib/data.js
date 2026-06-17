@@ -110,6 +110,24 @@ export const positionCategories = [
     .sort((a, b) => b.count - a.count),
 ]
 
+// Material positions that carry an STF decomposition — for the model-challenge view.
+export const decompPositions = positions
+  .filter((p) => p.decomposition_values && Math.abs(Number(p.active_weight || 0)) >= 0.8)
+  .map((p) => ({
+    name: displayName(p),
+    acid: p.acid,
+    label: p.label,
+    values: p.decomposition_values,
+    dominant: p.decomposition_driver,
+    assessment: p.decomposition_assessment,
+    vir: Number(p.vir_now ?? NaN),
+    virDelta: Number(p.vir_delta_mom ?? NaN),
+    algo: Number(p.algo_active_weight ?? NaN),
+    active: Number(p.active_weight || 0),
+    off: isOffSignal(p),
+  }))
+  .sort((a, b) => Math.abs(b.active) - Math.abs(a.active))
+
 // Scatter points — active weight (x) vs STF (y).
 export const scatterPoints = positions
   .filter((p) => p.active_weight !== undefined && p.vir_now !== undefined && p.vir_now !== null)

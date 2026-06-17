@@ -3,6 +3,7 @@ import { header, challenges, evidence } from './lib/data.js'
 import { pct, signedPct, fmtDate } from './lib/format.js'
 import Overview from './pages/Overview.jsx'
 import ChallengeBrief from './pages/ChallengeBrief.jsx'
+import SignalsDecomp from './pages/SignalsDecomp.jsx'
 import AgentMemory from './pages/AgentMemory.jsx'
 
 const summary = evidence.risk_and_attribution?.summary || {}
@@ -114,7 +115,7 @@ export default function App() {
 
         {tab === 'overview' && <Overview />}
         {tab === 'challenge' && <ChallengeBrief />}
-        {tab === 'signals' && <Placeholder name="Signals & Decomp" />}
+        {tab === 'signals' && <SignalsDecomp />}
         {tab === 'fof' && <Placeholder name="Fund of Funds" />}
         {tab === 'ic' && <Placeholder name="IC Prep" />}
         {tab === 'memory' && <AgentMemory />}
