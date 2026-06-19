@@ -6,19 +6,52 @@ const PRIORITY_LABEL = { high: 'Urgent', medium: 'Watch', low: 'Monitor' }
 
 function signalTags(c) {
   const tags = []
-  if (isNum(c.vir)) {
-    const rank = isNum(c.stfRank) ? `  ·  #${c.stfRank}/${c.stfUniverseSize} ${c.stfUniverse}` : ''
-    tags.push({ t: `STF ${stfPct(c.vir)}${rank}`, cls: c.vir < 0 ? 'neg' : 'pos' })
-  }
-  if (isNum(c.stfHistPctile)) {
-    const win = c.stfHistWindow === 12 ? '1-yr' : `${c.stfHistWindow}mo`
-    tags.push({ t: `${win} STF: ${ordinal(Math.round(c.stfHistPctile * 100))} pct`, cls: 'ink' })
-  }
+  // STF value stays a chip; its rank + historical percentile are shown visually
+  // in the SignalPosition bars below (no longer duplicated as chips).
+  if (isNum(c.vir)) tags.push({ t: `STF ${stfPct(c.vir)}`, cls: c.vir < 0 ? 'neg' : 'pos' })
   if (isNum(c.algo)) tags.push({ t: `Algo ${c.algo < 0 ? 'Underweight' : 'Overweight'}`, cls: c.algo < 0 ? 'neg' : 'pos' })
   tags.push({ t: PRIORITY_LABEL[c.priority] || c.priority, cls: c.priority === 'high' ? 'neg' : c.priority === 'medium' ? 'warn' : 'pos' })
   const conf = (c.confidence || '').match(/^(high|medium|moderate|low)/i)
   if (conf) tags.push({ t: `Confidence: ${titleCase(conf[1])}`, cls: 'ink' })
   return tags
+}
+
+// Where the STF sits within its peer universe and its own trailing range —
+// dot position = percentile, colored by attractiveness tertile (so a
+// regime-depressed winner reads instantly: high vs peers, low vs own history).
+function PosBar({ label, pctile, marker }) {
+  const x = Math.max(3, Math.min(97, pctile * 100))
+  const tone = pctile >= 0.66 ? 'pos' : pctile <= 0.34 ? 'neg' : 'mid'
+  return (
+    <div className="sigpos-row">
+      <span className="sigpos-label">{label}</span>
+      <div className="sigpos-bar">
+        <span className="sigpos-mid" />
+        <span className={`sigpos-dot ${tone}`} style={{ left: `${x}%` }} />
+      </div>
+      <span className="sigpos-val">{marker}</span>
+    </div>
+  )
+}
+
+function SignalPosition({ c }) {
+  const peerPct = isNum(c.stfRank) && c.stfUniverseSize > 1
+    ? (c.stfUniverseSize - c.stfRank) / (c.stfUniverseSize - 1)
+    : null
+  if (peerPct === null && !isNum(c.stfHistPctile)) return null
+  const win = c.stfHistWindow === 12 ? '1-yr' : `${c.stfHistWindow}mo`
+  return (
+    <div className="sigpos">
+      <div className="sigpos-eyebrow eyebrow">STF signal position</div>
+      {peerPct !== null && (
+        <PosBar label="vs peers" pctile={peerPct} marker={`#${c.stfRank}/${c.stfUniverseSize} ${c.stfUniverse}`} />
+      )}
+      {isNum(c.stfHistPctile) && (
+        <PosBar label={`vs own ${win}`} pctile={c.stfHistPctile} marker={`${ordinal(Math.round(c.stfHistPctile * 100))} pct`} />
+      )}
+      <div className="sigpos-foot">less attractive ← → more attractive · tick = midpoint</div>
+    </div>
+  )
 }
 
 function Section({ title, children }) {
@@ -149,6 +182,8 @@ function DeepMemo({ c, index, onOpenIC }) {
           <Section title="Positioning Tension">{c.positioning && <p>{c.positioning}</p>}</Section>
           <Section title="Model Signal Tension">{c.modelTension && <p>{c.modelTension}</p>}</Section>
         </div>
+
+        <SignalPosition c={c} />
 
         {c.relativeSignal && (
           <Section title="Relative Signal Readthrough">

@@ -413,6 +413,26 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 .memo-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
 .holdings-prose { font-size: 13px; color: var(--ink-2); line-height: 1.62; margin: 0; }
 
+/* STF signal-position bars — rank vs peers + percentile vs own history */
+.sigpos {
+  margin-bottom: 18px; padding: 14px 16px 12px;
+  border: 1px solid var(--line); border-radius: var(--r); background: var(--surface-2);
+}
+.sigpos-eyebrow { margin-bottom: 12px; }
+.sigpos-row { display: grid; grid-template-columns: 66px 1fr 158px; align-items: center; gap: 14px; padding: 6px 0; }
+.sigpos-label { font-size: 11.5px; color: var(--ink-3); }
+.sigpos-bar { position: relative; height: 4px; background: var(--line-2); border-radius: 3px; }
+.sigpos-mid { position: absolute; left: 50%; top: -3px; width: 1px; height: 10px; background: var(--line-strong); }
+.sigpos-dot {
+  position: absolute; top: 50%; width: 12px; height: 12px; border-radius: 50%;
+  transform: translate(-50%, -50%); border: 2px solid var(--surface-2);
+}
+.sigpos-dot.pos { background: var(--pos); box-shadow: 0 0 0 1px var(--pos); }
+.sigpos-dot.neg { background: var(--neg); box-shadow: 0 0 0 1px var(--neg); }
+.sigpos-dot.mid { background: var(--ink-3); box-shadow: 0 0 0 1px var(--ink-3); }
+.sigpos-val { font-family: var(--mono); font-size: 11.5px; color: var(--ink-2); text-align: right; }
+.sigpos-foot { margin-top: 9px; font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-4); }
+
 /* Relative signal readthrough — the absolute-vs-relative STF reconciliation */
 .memo-relative {
   background: var(--pos-soft); border: 1px solid var(--pos-line);
