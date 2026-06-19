@@ -418,10 +418,12 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
   margin-bottom: 18px; padding: 14px 16px 12px;
   border: 1px solid var(--line); border-radius: var(--r); background: var(--surface-2);
 }
-.sigpos-eyebrow { margin-bottom: 12px; }
-.sigpos-row { display: grid; grid-template-columns: 66px 1fr 158px; align-items: center; gap: 14px; padding: 6px 0; }
+.sigpos-eyebrow { margin-bottom: 14px; }
+.sigpos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.sigpos-track-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
 .sigpos-label { font-size: 11.5px; color: var(--ink-3); }
-.sigpos-bar { position: relative; height: 4px; background: var(--line-2); border-radius: 3px; }
+.sigpos-val { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+.sigpos-bar { position: relative; height: 4px; background: var(--line-2); border-radius: 3px; margin: 13px 0 7px; }
 .sigpos-mid { position: absolute; left: 50%; top: -3px; width: 1px; height: 10px; background: var(--line-strong); }
 .sigpos-dot {
   position: absolute; top: 50%; width: 12px; height: 12px; border-radius: 50%;
@@ -430,8 +432,7 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 .sigpos-dot.pos { background: var(--pos); box-shadow: 0 0 0 1px var(--pos); }
 .sigpos-dot.neg { background: var(--neg); box-shadow: 0 0 0 1px var(--neg); }
 .sigpos-dot.mid { background: var(--ink-3); box-shadow: 0 0 0 1px var(--ink-3); }
-.sigpos-val { font-family: var(--mono); font-size: 11.5px; color: var(--ink-2); text-align: right; }
-.sigpos-foot { margin-top: 9px; font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-4); }
+.sigpos-ends { display: flex; justify-content: space-between; font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-4); }
 
 /* Relative signal readthrough — the absolute-vs-relative STF reconciliation */
 .memo-relative {
@@ -685,7 +686,7 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 
 @media (max-width: 1240px) {
   .kpi-row { grid-template-columns: repeat(3, 1fr); }
-  .grid-2, .duo, .memo-cols, .case-grid, .trigger-grid, .ic-cols { grid-template-columns: 1fr; }
+  .grid-2, .duo, .memo-cols, .case-grid, .trigger-grid, .ic-cols, .sigpos-grid { grid-template-columns: 1fr; }
   .ledger-row { grid-template-columns: 1fr; gap: 4px; }
   .regime { grid-template-columns: 1fr; gap: 10px; }
   .fof-roster { grid-template-columns: 1fr; }

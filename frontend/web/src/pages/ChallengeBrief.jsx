@@ -19,17 +19,20 @@ function signalTags(c) {
 // Where the STF sits within its peer universe and its own trailing range —
 // dot position = percentile, colored by attractiveness tertile (so a
 // regime-depressed winner reads instantly: high vs peers, low vs own history).
-function PosBar({ label, pctile, marker }) {
+function PosTrack({ label, pctile, marker }) {
   const x = Math.max(3, Math.min(97, pctile * 100))
   const tone = pctile >= 0.66 ? 'pos' : pctile <= 0.34 ? 'neg' : 'mid'
   return (
-    <div className="sigpos-row">
-      <span className="sigpos-label">{label}</span>
+    <div className="sigpos-track">
+      <div className="sigpos-track-top">
+        <span className="sigpos-label">{label}</span>
+        <span className="sigpos-val">{marker}</span>
+      </div>
       <div className="sigpos-bar">
         <span className="sigpos-mid" />
         <span className={`sigpos-dot ${tone}`} style={{ left: `${x}%` }} />
       </div>
-      <span className="sigpos-val">{marker}</span>
+      <div className="sigpos-ends"><span>less attractive</span><span>more attractive</span></div>
     </div>
   )
 }
@@ -43,13 +46,14 @@ function SignalPosition({ c }) {
   return (
     <div className="sigpos">
       <div className="sigpos-eyebrow eyebrow">STF signal position</div>
-      {peerPct !== null && (
-        <PosBar label="vs peers" pctile={peerPct} marker={`#${c.stfRank}/${c.stfUniverseSize} ${c.stfUniverse}`} />
-      )}
-      {isNum(c.stfHistPctile) && (
-        <PosBar label={`vs own ${win}`} pctile={c.stfHistPctile} marker={`${ordinal(Math.round(c.stfHistPctile * 100))} pct`} />
-      )}
-      <div className="sigpos-foot">less attractive ← → more attractive · tick = midpoint</div>
+      <div className="sigpos-grid">
+        {peerPct !== null && (
+          <PosTrack label="vs peers" pctile={peerPct} marker={`#${c.stfRank}/${c.stfUniverseSize} ${c.stfUniverse}`} />
+        )}
+        {isNum(c.stfHistPctile) && (
+          <PosTrack label={`vs own ${win}`} pctile={c.stfHistPctile} marker={`${ordinal(Math.round(c.stfHistPctile * 100))} pct`} />
+        )}
+      </div>
     </div>
   )
 }
@@ -176,14 +180,14 @@ function DeepMemo({ c, index, onOpenIC }) {
       </div>
 
       <div className="memo-body">
+        <SignalPosition c={c} />
+
         <Section title="Thesis Under Pressure">{c.thesis && <p>{c.thesis}</p>}</Section>
 
         <div className="memo-cols">
           <Section title="Positioning Tension">{c.positioning && <p>{c.positioning}</p>}</Section>
           <Section title="Model Signal Tension">{c.modelTension && <p>{c.modelTension}</p>}</Section>
         </div>
-
-        <SignalPosition c={c} />
 
         {c.relativeSignal && (
           <Section title="Relative Signal Readthrough">
