@@ -45,6 +45,189 @@ GENERIC_PM_QUESTION_PATTERNS = (
 )
 
 
+# --- STF relative-ranking universe -------------------------------------------
+# STF is a valuation/attractiveness signal, not a sizing call. To let the agent
+# reason about *relative* attractiveness, we rank each exposure's STF against its
+# peers in the fund's mandate universe (not the whole model): US funds rank
+# within US, international within ex-US (DM+EM), global funds globally. Universe
+# is then split by category group (sectors / styles / countries / regions).
+# NOTE: this should eventually live in a proper per-fund config.
+FUND_STF_UNIVERSE_SCOPE = {
+    "MStar US Equity": "us",
+    "MStar International Equity": "ex_us",
+    "MStar Global Opportunities": "global",
+    "MStar Global Opp": "global",
+}
+DEFAULT_STF_UNIVERSE_SCOPE = "global"
+STF_HISTORY_WINDOW = 12  # trailing months for the historical STF percentile
+
+_STF_CATEGORY_GROUP = {
+    "Eq Sector": "sectors",
+    "Eq Size / Style": "styles",
+    "Country": "countries",
+    "Region": "regions",
+}
+_STF_SCOPE_LABEL = {"us": "US", "ex_us": "ex-US", "global": "global"}
+
+
+def _fund_universe_scope(fund: str) -> str:
+    return FUND_STF_UNIVERSE_SCOPE.get(fund, DEFAULT_STF_UNIVERSE_SCOPE)
+
+
+def _acid_region(acid: str) -> str:
+    return str(acid or "").strip().split(" ")[0]
+
+
+def _acid_in_scope(acid: str, scope: str) -> bool:
+    region = _acid_region(acid)
+    if scope == "us":
+        return region == "US"
+    if scope == "ex_us":
+        return region != "US"
+    return True  # global
+
+
+def _stf_median(values: list[float]) -> float:
+    if not values:
+        return 0.0
+    ordered = sorted(values)
+    n = len(ordered)
+    mid = n // 2
+    return ordered[mid] if n % 2 else (ordered[mid - 1] + ordered[mid]) / 2
+
+
+def _universe_dominant_driver(members: list[dict[str, Any]]) -> str:
+    # The regime story is "what is dragging this universe negative", so take the
+    # most-negative decomposition component per member and report the mode --
+    # not the largest-absolute driver, which can be a positive tailwind.
+    counts: dict[str, int] = {}
+    for member in members:
+        values = member.get("decomposition_values") or {}
+        negatives = {k: v for k, v in values.items() if v < 0}
+        if not negatives:
+            continue
+        drag_key = min(negatives, key=lambda k: negatives[k])
+        counts[drag_key] = counts.get(drag_key, 0) + 1
+    if not counts:
+        return ""
+    driver, count = max(counts.items(), key=lambda kv: kv[1])
+    # Only report a shared driver if it actually dominates the universe.
+    return driver if count >= max(2, len(members) * 0.4) else ""
+
+
+def _attach_stf_relative_context(material_positions: list[dict[str, Any]], *, scope: str) -> None:
+    """Rank each position's STF within its (fund-scope x category-group) universe.
+
+    Mutates each position in place, adding a `stf_relative_context` dict, or None
+    when the position is out of mandate scope / has no rankable category / lacks
+    an STF value. Rank 1 = most attractive (highest STF).
+    """
+    scope_label = _STF_SCOPE_LABEL.get(scope, scope)
+    universes: dict[str, list[dict[str, Any]]] = {}
+    for position in material_positions:
+        position["stf_relative_context"] = None
+        group = _STF_CATEGORY_GROUP.get(position.get("category", ""))
+        if group is None or position.get("vir_now") is None:
+            continue
+        if not _acid_in_scope(position.get("acid", ""), scope):
+            continue
+        universes.setdefault(f"{scope_label} {group}", []).append(position)
+
+    for label, members in universes.items():
+        members.sort(key=lambda p: p["vir_now"], reverse=True)
+        size = len(members)
+        stf_values = [m["vir_now"] for m in members]
+        median = _stf_median(stf_values)
+        all_negative = all(value < 0 for value in stf_values)
+        dominant_driver = _universe_dominant_driver(members)
+        best, worst = members[0], members[-1]
+        for index, position in enumerate(members):
+            rank = index + 1
+            more_attractive = [m["label"] for m in members[:index]]
+            position["stf_relative_context"] = {
+                "universe": label,
+                "universe_size": size,
+                "rank": rank,
+                "percentile": round((size - rank) / (size - 1), 2) if size > 1 else 1.0,
+                "stf": round(position["vir_now"], 4),
+                "universe_median_stf": round(median, 4),
+                "vs_median": round(position["vir_now"] - median, 4),
+                "more_attractive_peers": more_attractive[:3],
+                "more_attractive_count": len(more_attractive),
+                "universe_best": {"label": best["label"], "stf": round(best["vir_now"], 4)},
+                "universe_worst": {"label": worst["label"], "stf": round(worst["vir_now"], 4)},
+                "universe_all_negative": all_negative,
+                "universe_dominant_driver": dominant_driver,
+            }
+
+
+def _ordinal(n: int) -> str:
+    v = n % 100
+    suffix = {1: "st", 2: "nd", 3: "rd"}.get(v % 10, "th") if not 11 <= v <= 13 else "th"
+    return f"{n}{suffix}"
+
+
+def _load_stf_history_by_acid(vir_history_csv: str | Path, *, acids: list[str], window: int) -> dict[str, list[float]]:
+    """Per-ACID trailing STF series from the VIR history workbook (for the
+    historical percentile). Returns {} if the file is absent or unparseable."""
+    path = Path(vir_history_csv)
+    if not path.exists():
+        return {}
+    wanted = set(acids)
+    rows_by_acid: dict[str, list[tuple[str, float]]] = {}
+    try:
+        with _open_csv_text(path) as handle:
+            reader = csv.DictReader(handle)
+            for row in reader:
+                acid = (row.get("acid") or "").strip()
+                if acid not in wanted:
+                    continue
+                stf = _to_float_or_none(row.get("stf"))
+                if stf is None:
+                    lr = _to_float_or_none(row.get("local_real_vir") or row.get("lr10_combined"))
+                    uc = _to_float_or_none(row.get("unconditional_vir") or row.get("lruc"))
+                    if lr is not None and uc is not None:
+                        stf = lr - uc
+                if stf is None:
+                    continue
+                rows_by_acid.setdefault(acid, []).append(((row.get("snapshot_date") or "").strip(), stf))
+    except Exception:
+        return {}
+    out: dict[str, list[float]] = {}
+    for acid, pairs in rows_by_acid.items():
+        pairs.sort(key=lambda pair: pair[0])
+        series = [value for _, value in pairs][-window:]
+        if len(series) >= 2:
+            out[acid] = series
+    return out
+
+
+def _attach_stf_history_percentile(
+    material_positions: list[dict[str, Any]],
+    *,
+    history_by_acid: dict[str, list[float]],
+    window: int,
+) -> None:
+    """Augment each position's stf_relative_context with where its CURRENT STF
+    sits in its OWN trailing range (time-series, orthogonal to the peer rank)."""
+    for position in material_positions:
+        ctx = position.get("stf_relative_context")
+        if not ctx:
+            continue
+        series = history_by_acid.get(position.get("acid", ""))
+        if not series or len(series) < 2:
+            continue
+        # The series' last point is the current snapshot; rank it against its prior
+        # history (excludes the current point -- no self-counting, no rounding skew).
+        current = series[-1]
+        prior = series[:-1]
+        below = sum(1 for value in prior if value < current)
+        ctx["historical_percentile"] = round(below / len(prior), 2)
+        ctx["history_window_months"] = window
+        ctx["history_low"] = round(min(series), 4)
+        ctx["history_high"] = round(max(series), 4)
+
+
 def build_review_packet(
     *,
     fund: str,
@@ -129,6 +312,16 @@ def build_review_packet(
         )
 
     material_positions.sort(key=lambda item: item["importance_score"], reverse=True)
+    _attach_stf_relative_context(material_positions, scope=_fund_universe_scope(fund))
+    _attach_stf_history_percentile(
+        material_positions,
+        history_by_acid=_load_stf_history_by_acid(
+            vir_history_csv,
+            acids=[item.get("acid", "") for item in material_positions],
+            window=STF_HISTORY_WINDOW,
+        ),
+        window=STF_HISTORY_WINDOW,
+    )
     matched_research_positions = [item for item in material_positions if item.get("sharepoint_research", {}).get("match_status") == "matched"]
     risk_context = _load_risk_context(
         fund=fund,
@@ -464,7 +657,7 @@ def _build_signal_summary(
     if diverging_positions:
         item = diverging_positions[0]
         observations.append(
-            f"The clearest position-versus-signal tension is {item['label']}, where positioning is {item['positioning_direction']} while VIR is {item['vir_direction']} and algo is {item['algo_direction']}."
+            f"The clearest position-versus-signal tension is {item['label']}, where positioning is {item['positioning_direction']} while the STF is {item['vir_direction']} and the algo active weight (relative to benchmark) is {item['algo_direction']}."
         )
     observations.extend(risk_context.get("narrative_observations", [])[:3])
     return {
@@ -555,6 +748,8 @@ def _build_challenge_book(
                 "thesis_under_pressure": _challenge_thesis_under_pressure(item),
                 "positioning_tension": _challenge_positioning_tension(item),
                 "model_signal_tension": _challenge_model_signal_tension(item),
+                "relative_signal_readthrough": _challenge_relative_signal_readthrough(item),
+                "stf_relative_context": item.get("stf_relative_context"),
                 "vir_decomposition_readthrough": _challenge_vir_decomposition_readthrough(item),
                 "market_context_readthrough": _challenge_market_context_readthrough(item),
                 "measured_risk_readthrough": _challenge_measured_risk_readthrough(item, risk_context=risk_context),
@@ -729,7 +924,7 @@ def _build_data_quality_flags(
             {
                 "severity": "medium",
                 "flag": "missing_vir_rows",
-                "message": f"{len(missing_vir)} exposure rows do not have matched VIR context.",
+                "message": f"{len(missing_vir)} exposure rows do not have matched STF context.",
             }
         )
     if missing_algo:
@@ -756,7 +951,7 @@ def _build_data_quality_flags(
                 {
                     "severity": "medium",
                     "flag": "stale_vir_snapshot",
-                    "message": f"The latest matched VIR snapshot in this packet is {latest_vir_snapshot}, older than the labeled review month {logical_snapshot_date}.",
+                    "message": f"The latest matched STF snapshot in this packet is {latest_vir_snapshot}, older than the labeled review month {logical_snapshot_date}.",
                 }
             )
         flags.append(
@@ -824,7 +1019,7 @@ def _build_source_index(
         {
             "source_type": "structured_current",
             "artifact_path": alignment_csv.relative_to(REPO_ROOT).as_posix(),
-            "purpose": "ACID-level fund positioning with VIR and algo joins",
+            "purpose": "ACID-level fund positioning with STF and algo joins",
         },
         {
             "source_type": "structured_lineage",
@@ -839,7 +1034,7 @@ def _build_source_index(
         {
             "source_type": "vir_history",
             "artifact_path": f"{vir_history_csv.relative_to(REPO_ROOT).as_posix()}.zip",
-            "purpose": "VIR history and decomposition fields",
+            "purpose": "STF history and decomposition fields",
         },
     ]
     if risk_report_xlsx and risk_report_xlsx.exists():
@@ -885,7 +1080,7 @@ def _build_headline_summary(material_positions: list[dict[str, Any]]) -> list[st
     biggest_overweight = next((item for item in material_positions if item["active_weight"] > 0), None)
     if biggest_underweight:
         summary.append(
-            f"Largest underweight: {biggest_underweight['label']} ({biggest_underweight['active_weight']:.2f} pts), with VIR {biggest_underweight['vir_direction']} and algo {biggest_underweight['algo_direction']}."
+            f"Largest underweight: {biggest_underweight['label']} ({biggest_underweight['active_weight']:.2f} pts), with STF {biggest_underweight['vir_direction']} and the algo active weight {biggest_underweight['algo_direction']} (relative to benchmark)."
         )
     if biggest_overweight:
         summary.append(
@@ -893,7 +1088,7 @@ def _build_headline_summary(material_positions: list[dict[str, Any]]) -> list[st
         )
     diverging = [item for item in material_positions if item["signal_alignment"] == "diverging"]
     if diverging:
-        summary.append(f"{len(diverging)} material positions are directionally fighting the current VIR/algo read.")
+        summary.append(f"{len(diverging)} material positions are directionally fighting the current STF/algo read.")
     return summary
 
 
@@ -1234,7 +1429,7 @@ def _style_posture_text(item: dict[str, Any], mapping: dict[str, str]) -> str:
 def _challenge_reason(item: dict[str, Any]) -> str:
     if item["signal_alignment"] == "diverging":
         return (
-            f"Positioning is {item['positioning_direction']}, but VIR is {item['vir_direction']} and algo is {item['algo_direction']}."
+            f"Positioning is {item['positioning_direction']}, but the STF is {item['vir_direction']} and the algo active weight (relative to benchmark) is {item['algo_direction']}."
         )
     if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
         return (
@@ -1254,8 +1449,8 @@ def _challenge_type(item: dict[str, Any]) -> str:
 def _challenge_headline(item: dict[str, Any]) -> str:
     if item["signal_alignment"] == "diverging":
         return (
-            f"{item['label']} remains {item['positioning_direction']} despite both VIR and algo leaning "
-            f"{item['vir_direction']}/{item['algo_direction']}."
+            f"{item['label']} remains {item['positioning_direction']} despite both the STF and the algo active weight leaning "
+            f"{item['vir_direction']}/{item['algo_direction']} (relative to benchmark)."
         )
     if item["signal_alignment"] == "partially_aligned":
         return (
@@ -1290,7 +1485,7 @@ def _challenge_thesis_under_pressure(item: dict[str, Any]) -> str:
     if item["signal_alignment"] == "diverging":
         return (
             f"The implicit thesis is that a {item['positioning_direction']} to {item['label']} still deserves this size "
-            "even though the current VIR/algo stack is pointing the other way."
+            "even though the current STF/algo stack is pointing the other way."
         )
     if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
         return (
@@ -1315,18 +1510,18 @@ def _challenge_model_signal_tension(item: dict[str, Any]) -> str:
     vir_delta = _format_signal_delta(item.get("vir_delta_mom"))
     algo_active = _format_pct_value(item.get("algo_active_weight"))
     return (
-        f"VIR is {item['vir_direction']} at {vir_now}"
-        f"{vir_delta}, while algo active weight is {algo_active} and points {item['algo_direction']}."
+        f"STF is {item['vir_direction']} at {vir_now}"
+        f"{vir_delta}, while the algo active weight is {algo_active} (relative to benchmark) and points {item['algo_direction']}."
     )
 
 
 def _challenge_vir_decomposition_readthrough(item: dict[str, Any]) -> str:
     driver = item.get("decomposition_driver", "")
     if not driver:
-        return "No VIR decomposition row was available in the current packet."
+        return "No STF decomposition row was available in the current packet."
     if item["decomposition_assessment"] == "broad_based":
         return (
-            f"The VIR move looks broad-based rather than one-off noise, even though {_friendly_driver_name(driver)} is the largest single contributor."
+            f"The STF move looks broad-based rather than one-off noise, even though {_friendly_driver_name(driver)} is the largest single contributor."
         )
     if item["decomposition_assessment"] == "valuation_led":
         return (
@@ -1341,6 +1536,35 @@ def _challenge_vir_decomposition_readthrough(item: dict[str, Any]) -> str:
     return (
         f"The dominant decomposition input is {_friendly_driver_name(driver)}, which still reads as part of a fundamentally usable signal."
     )
+
+
+def _challenge_relative_signal_readthrough(item: dict[str, Any]) -> str:
+    ctx = item.get("stf_relative_context")
+    if not ctx or item.get("vir_now") is None:
+        return ""
+    stf_pct = f"{item['vir_now'] * 100:+.2f}%"
+    median_pct = f"{ctx['universe_median_stf'] * 100:+.2f}%"
+    universe = ctx["universe"]
+    side = "above" if ctx["vs_median"] >= 0 else "below"
+    base = (
+        f"STF is {stf_pct} in absolute terms but ranks #{ctx['rank']} of {ctx['universe_size']} in {universe} "
+        f"({side} the {median_pct} universe median)"
+    )
+    if ctx.get("universe_all_negative"):
+        driver = ctx.get("universe_dominant_driver", "")
+        driver_text = f" and led by {_friendly_driver_name(driver)}" if driver else ""
+        base += (
+            f" — the whole {universe} complex is negative{driver_text}, a regime backdrop, so this exposure is "
+            "relatively preferred even though the absolute signal is negative"
+        )
+    if ctx.get("historical_percentile") is not None:
+        pct = round(ctx["historical_percentile"] * 100)
+        win = ctx.get("history_window_months", STF_HISTORY_WINDOW)
+        base += (
+            f". Versus its own {win}-month history the current STF is at the {_ordinal(pct)} percentile, "
+            "a separate read from the peer rank"
+        )
+    return base + "."
 
 
 def _challenge_market_context_readthrough(item: dict[str, Any]) -> str:
@@ -1410,12 +1634,12 @@ def _challenge_primary_pm_question(item: dict[str, Any]) -> str:
     if thesis_text:
         return (
             f"What specific current evidence still supports the thesis '{thesis_text}' given the portfolio is {item['active_weight']:+.2f} pts "
-            f"{item['positioning_direction']} and the latest VIR/algo stack is {item['vir_direction']}/{item['algo_direction']}?"
+            f"{item['positioning_direction']} and the latest STF/algo stack is {item['vir_direction']}/{item['algo_direction']}?"
         )
     if item["signal_alignment"] == "diverging":
         return (
             f"What is the live underwriting case for keeping {item['label']} at {item['active_weight']:+.2f} pts "
-            f"{item['positioning_direction']} when both VIR and algo currently point {item['vir_direction']}/{item['algo_direction']}?"
+            f"{item['positioning_direction']} when both the STF and the algo active weight currently point {item['vir_direction']}/{item['algo_direction']}?"
         )
     if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
         return (
@@ -1432,13 +1656,13 @@ def _challenge_evidence_needed_next(item: dict[str, Any]) -> str:
         return falsification
     if item["signal_alignment"] == "diverging":
         return (
-            f"Check the next VIR decomposition, top-holding lineage inside {item['label']}, and any updated research or earnings/rates context that would explain why the active position should stay off-signal."
+            f"Check the next STF decomposition, top-holding lineage inside {item['label']}, and any updated research or earnings/rates context that would explain why the active position should stay off-signal."
         )
     if item["decomposition_assessment"] in {"valuation_led", "currency_led"}:
         return (
             f"Check whether the next month's signal still leans on {_friendly_driver_name(item['decomposition_driver'])} or broadens into a more durable fundamental confirmation."
         )
-    return f"Check the next month's VIR/algo confirmation plus top-holding lineage to confirm that {item['label']} is still an intentional expression."
+    return f"Check the next month's STF/algo confirmation plus top-holding lineage to confirm that {item['label']} is still an intentional expression."
 
 
 def _challenge_source_quality(item: dict[str, Any]) -> str:
@@ -1638,15 +1862,16 @@ def _friendly_driver_name(driver: str) -> str:
 
 
 def _format_signal_value(value: float | None) -> str:
+    # STF is a return-style signal stored as a decimal; surface it as a percentage.
     if value is None:
         return "missing"
-    return f"{value:+.3f}"
+    return f"{value * 100:+.2f}%"
 
 
 def _format_signal_delta(value: float | None) -> str:
     if value is None:
         return ""
-    return f" ({value:+.3f} MoM)"
+    return f" ({value * 100:+.2f}% MoM)"
 
 
 def _format_pct_value(value: float | None) -> str:

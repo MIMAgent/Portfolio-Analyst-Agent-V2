@@ -116,7 +116,7 @@ def test_challenge_book_emits_pm_decision_card_fields():
     assert "Industrials" in challenge["challenge_headline"]
     assert challenge["thesis_under_pressure"].startswith("Maintain baseline thesis tracking")
     assert "Fund weight is" in challenge["positioning_tension"]
-    assert "VIR is underweight" in challenge["model_signal_tension"]
+    assert "STF is underweight" in challenge["model_signal_tension"]
     assert "Measured risk currently points" in challenge["measured_risk_readthrough"]
     assert "Month-to-date overweight positions contributed" in challenge["return_attribution_readthrough"]
     assert challenge["source_quality"] == "model+positioning+memory+sharepoint_research"
