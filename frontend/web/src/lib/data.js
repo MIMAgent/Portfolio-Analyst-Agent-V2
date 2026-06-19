@@ -2,6 +2,7 @@ import evidence from '../data/evidence.json'
 import packet from '../data/packet.json'
 import review from '../data/review.json'
 import manifest from '../data/manifest.json'
+import stfHistory from '../data/stfHistory.json'
 import { normKey } from './format.js'
 
 export { evidence, packet, review, manifest }
@@ -139,6 +140,64 @@ export const scatterPoints = positions
     off: isOffSignal(p),
   }))
 
+// -------- STF rank within its own universe --------
+// STF is a valuation/attractiveness signal, not a sizing call, so we rank it
+// against peers in the SAME universe rather than the whole model: US sectors vs
+// US sectors, ex-US sectors vs ex-US sectors, US styles vs US styles, etc.
+// Universe = region bucket (US vs ex-US) x category group. Rank 1 = most
+// attractive (highest STF). The bundled material positions contain the full US
+// sector (11) and US style (9) sets, so these ranks are exact for US exposures.
+const regionPrefix = (acid) => String(acid || '').trim().split(/\s+/)[0]
+const regionBucket = (acid) => (regionPrefix(acid) === 'US' ? 'US' : 'ex-US')
+const CATEGORY_GROUP = {
+  'Eq Sector': 'sectors',
+  'Eq Size / Style': 'styles',
+  Country: 'countries',
+  Region: 'regions',
+}
+const stfUniverseKey = (p) => {
+  const g = CATEGORY_GROUP[p.category]
+  return g ? `${regionBucket(p.acid)} ${g}` : null
+}
+
+const stfRankByAcid = (() => {
+  const universes = {}
+  for (const p of positions) {
+    if (p.vir_now === undefined || p.vir_now === null) continue
+    const key = stfUniverseKey(p)
+    if (!key) continue
+    ;(universes[key] = universes[key] || []).push(p)
+  }
+  const map = new Map()
+  for (const [label, arr] of Object.entries(universes)) {
+    arr.sort((a, b) => Number(b.vir_now) - Number(a.vir_now))
+    arr.forEach((p, i) => map.set(p.acid, { rank: i + 1, size: arr.length, universe: label }))
+  }
+  return map
+})()
+
+// -------- STF percentile within its own history (time-series, not peers) --------
+// Where the current STF sits in the exposure's own trailing range (stfHistory.json,
+// 12 monthly points). Higher percentile = more attractive vs its own past. This is
+// orthogonal to the peer rank above: a position can be best-in-universe yet near its
+// own 1-yr low (a regime-depressed winner).
+const stfHistByAcid = (() => {
+  const map = new Map()
+  const acids = stfHistory.acids || {}
+  const window = stfHistory.window_months
+  for (const [acid, series] of Object.entries(acids)) {
+    const vals = (series || []).map(Number).filter((v) => !Number.isNaN(v))
+    if (vals.length < 2) continue
+    // The series' last point is the current snapshot; rank it against its prior
+    // history (excludes the current point — no self-counting, no rounding skew).
+    const current = vals[vals.length - 1]
+    const prior = vals.slice(0, -1)
+    const pctile = prior.filter((v) => v < current).length / prior.length
+    map.set(acid, { pctile, window, low: Math.min(...vals), high: Math.max(...vals), n: vals.length })
+  }
+  return map
+})()
+
 // -------- Challenge Brief view model --------
 const challengeByLabel = new Map(topChallenges.map((c) => [normKey(c.label), c]))
 const supportByAcid = new Map(
@@ -177,6 +236,8 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
   const top = challengeByLabel.get(normKey(item.label)) || {}
   const support = supportByAcid.get(top.acid) || {}
   const market = marketByAcid.get(top.acid) || {}
+  const stf = stfRankByAcid.get(top.acid) || {}
+  const stfHist = stfHistByAcid.get(top.acid) || {}
   const marketRowsRaw = Array.isArray(market.rows) && market.rows.length
     ? market.rows
     : (Array.isArray(support.exact_external_market_context) ? support.exact_external_market_context : [])
@@ -195,11 +256,19 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
     headline: item.challenge_headline,
     activeWeight: signal.active_weight,
     vir: signal.vir_now,
+    stfRank: stf.rank,
+    stfUniverseSize: stf.size,
+    stfUniverse: stf.universe,
+    stfHistPctile: stfHist.pctile,
+    stfHistWindow: stfHist.window,
+    stfHistLow: stfHist.low,
+    stfHistHigh: stfHist.high,
     algo: signal.algo_active_weight,
     signalAlignment: signal.signal_alignment,
     thesis: item.thesis_under_pressure,
     positioning: item.positioning_tension,
     modelTension: item.model_signal_tension,
+    relativeSignal: item.relative_signal_readthrough,
     decomp: item.vir_decomposition_readthrough,
     decompExact: item.exact_vir_algo_decomp_explanation,
     market: item.market_context_readthrough,
@@ -225,3 +294,115 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
 })
 
 export const challengeCategories = ['All', ...Array.from(new Set(challenges.map((c) => c.category).filter(Boolean)))]
+
+// -------- Fund of Funds: sleeve look-through --------
+// Each material position carries a source_breakdown: the underlying securities
+// and, per security, which subadvisor sleeves hold it. One pseudo-source is the
+// benchmark itself ("...Market TR USD") — exclude it from sleeve attribution.
+const isBenchSource = (s) => /tr usd|market tr/i.test(s.source_name || '')
+
+// Friendly sleeve names (the raw feed uses long internal mandate codes).
+const SLEEVE_NAMES = {
+  'MS US EQUITY CLEARBRIDGE': 'ClearBridge',
+  'MS US EQ SYSTEMATIC LARGE': 'Systematic Large',
+  'MSTAR USEQ OPPORTUNISTIC': 'Opportunistic',
+  'MSTAR USEQ COMPLETION': 'Completion',
+  'MS US EQUITY MFS': 'MFS',
+  'MS US EQ SYSTEMATIC SMID': 'Systematic SMID',
+  'MS US EQUITY WASATCH': 'Wasatch',
+  'SPDR Portfolio S&P 600 Sm Cap ETF': 'SPDR S&P 600',
+  'SPDR® S&P 600 Small Cap Value ETF': 'SPDR S&P 600 Value',
+}
+export const sleeveLabel = (n) => SLEEVE_NAMES[n] || n
+
+// Per-exposure look-through: for every material position, aggregate the sleeve
+// portfolio weight that builds it, plus the underlying securities and the
+// sleeves holding each.
+export const lookthrough = positions
+  .filter((p) => (p.source_breakdown?.securities || []).length)
+  .map((p) => {
+    const sleeveMap = {}
+    const securities = (p.source_breakdown.securities || []).map((sec) => {
+      const sleeves = []
+      for (const s of sec.sources || []) {
+        if (isBenchSource(s)) continue
+        const w = Number(s.portfolio_weight) || 0
+        if (w === 0) continue
+        sleeves.push({ name: sleeveLabel(s.source_name), weight: w })
+        sleeveMap[s.source_name] = (sleeveMap[s.source_name] || 0) + w
+      }
+      return {
+        name: sec.security_name,
+        port: Number(sec.portfolio_weight) || 0,
+        bench: Number(sec.benchmark_weight) || 0,
+        active: Number(sec.active_weight) || 0,
+        sleeves: sleeves.sort((a, b) => b.weight - a.weight),
+      }
+    })
+    const sleeves = Object.entries(sleeveMap)
+      .map(([name, weight]) => ({ name: sleeveLabel(name), weight }))
+      .sort((a, b) => b.weight - a.weight)
+    const portTotal = sleeves.reduce((s, x) => s + x.weight, 0)
+    return {
+      acid: p.acid,
+      name: displayName(p),
+      label: p.label,
+      category: p.category || 'Other',
+      active: Number(p.active_weight) || 0,
+      port: Number(p.portfolio_weight) || 0,
+      bench: Number(p.benchmark_weight) || 0,
+      securityCount: p.source_breakdown.security_count,
+      sleeves,
+      portTotal,
+      securities: securities.sort((a, b) => Math.abs(b.active) - Math.abs(a.active)),
+      off: isOffSignal(p),
+    }
+  })
+  .sort((a, b) => Math.abs(b.active) - Math.abs(a.active))
+
+// Fund-level sleeve roster across the material *sector* exposures. Sectors are
+// mutually exclusive by security, so summing their sleeve weights gives a clean
+// composition of the equity book by subadvisor.
+export const sleeveRoster = (() => {
+  const map = {}
+  for (const p of positions.filter((p) => p.category === 'Eq Sector')) {
+    for (const sec of p.source_breakdown?.securities || []) {
+      for (const s of sec.sources || []) {
+        if (isBenchSource(s)) continue
+        const w = Number(s.portfolio_weight) || 0
+        if (w === 0) continue
+        map[s.source_name] = (map[s.source_name] || 0) + w
+      }
+    }
+  }
+  const total = Object.values(map).reduce((a, b) => a + b, 0) || 1
+  return Object.entries(map)
+    .map(([name, weight]) => ({ name: sleeveLabel(name), weight, share: (weight / total) * 100 }))
+    .sort((a, b) => b.weight - a.weight)
+})()
+
+// Distinct sleeve names (roster order) — used to assign stable chart colors.
+export const sleeveOrder = sleeveRoster.map((s) => s.name)
+
+export const lookthroughCategories = [
+  'All',
+  ...Array.from(new Set(lookthrough.map((p) => p.category).filter(Boolean))),
+]
+
+// -------- IC Prep: per-challenge decision sheet --------
+// Joins the challenge view model with the PM question and the recommended
+// follow-up, both keyed by exposure label.
+const pmqByLabel = new Map((review.pm_questions || []).map((q) => [normKey(q.label), q]))
+const followByLabel = new Map((review.follow_up || []).map((f) => [normKey(f.label), f]))
+
+export const icPackets = challenges.map((c) => {
+  const q = pmqByLabel.get(normKey(c.label)) || {}
+  const f = followByLabel.get(normKey(c.label)) || {}
+  return {
+    ...c,
+    pmQuestion: q.question || c.question,
+    whyNow: q.why_now,
+    followAction: f.action,
+    followWhy: f.why_it_matters,
+  }
+})

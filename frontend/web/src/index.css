@@ -413,6 +413,14 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 .memo-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
 .holdings-prose { font-size: 13px; color: var(--ink-2); line-height: 1.62; margin: 0; }
 
+/* Relative signal readthrough — the absolute-vs-relative STF reconciliation */
+.memo-relative {
+  background: var(--pos-soft); border: 1px solid var(--pos-line);
+  border-left: 3px solid var(--brand-2); border-radius: var(--r);
+  padding: 12px 16px;
+}
+.memo-relative p { margin: 0; color: var(--ink-2); line-height: 1.6; font-size: 13px; }
+
 .ctx-stack { display: grid; gap: 13px; }
 .ctx-block p { margin: 3px 0 0; color: var(--ink-2); line-height: 1.6; font-size: 13px; }
 .ctx-label { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--brand-2); }
@@ -548,11 +556,120 @@ button { font: inherit; color: inherit; border: none; background: none; cursor: 
 .ledger-date { font-size: 11px; color: var(--ink-3); }
 .ledger-text { font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
 
+/* =========================== Fund of Funds (sleeve look-through) =========================== */
+.fof-stack { display: flex; height: 22px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line-2); background: var(--surface-2); }
+.fof-seg { height: 100%; }
+.fof-seg + .fof-seg { border-left: 1px solid rgba(255, 255, 255, 0.5); }
+
+.fof-roster { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px 28px; margin-top: 16px; }
+.fof-roster-row { display: grid; grid-template-columns: 14px 1fr 52px 64px; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.fof-swatch { width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0; }
+.fof-swatch.sm { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+.fof-sleeve-name { font-size: 12.5px; color: var(--ink); font-weight: 500; }
+.fof-roster-share { font-family: var(--mono); font-size: 12px; color: var(--ink); font-weight: 600; text-align: right; }
+.fof-roster-w { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); text-align: right; }
+
+.fof-chip-w { font-family: var(--mono); font-size: 10.5px; font-weight: 600; margin-left: 7px; }
+.fof-chip-w.pos { color: var(--pos); } .fof-chip-w.neg { color: var(--neg); }
+.chip.active .fof-chip-w { color: rgba(255, 255, 255, 0.85); }
+
+.fof-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 4px 0 18px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+.fof-meta > div { display: flex; flex-direction: column; gap: 4px; }
+.fof-meta b { font-family: var(--mono); font-size: 16px; font-weight: 600; color: var(--ink); }
+
+.fof-sleevebars { display: flex; flex-direction: column; }
+.fof-sleeve-row { display: grid; grid-template-columns: 14px 130px 1fr 56px; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.fof-sleeve-row:last-child { border-bottom: none; }
+.fof-sleeve-w { font-family: var(--mono); font-size: 11.5px; font-weight: 600; color: var(--ink-2); text-align: right; }
+.fof-bar-track { height: 12px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+.fof-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s cubic-bezier(.2,.7,.2,1); }
+.fof-bar-fill.fof-residual { background: repeating-linear-gradient(45deg, var(--line-2) 0, var(--line-2) 4px, var(--surface-2) 4px, var(--surface-2) 8px); }
+.fof-residual-row .fof-sleeve-name { color: var(--ink-3); font-style: italic; }
+.fof-residual-row .fof-sleeve-w { color: var(--ink-3); }
+.fof-coverage { margin-top: 12px; font-size: 11px; color: var(--ink-3); line-height: 1.5; }
+
+.fof-sec-list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.fof-sec { background: var(--surface); padding: 11px 14px; }
+.fof-sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.fof-sec-name { font-size: 12.5px; font-weight: 600; color: var(--ink); }
+.fof-sec-active { font-family: var(--mono); font-size: 12px; font-weight: 600; }
+.fof-sec-active.pos { color: var(--pos); } .fof-sec-active.neg { color: var(--neg); }
+.fof-sec-sub { display: flex; gap: 14px; margin-top: 2px; font-family: var(--mono); font-size: 11px; color: var(--ink-3); }
+.fof-sec-sleeves { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+.fof-sleeve-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2px 8px; border-radius: 6px; font-size: 11px; color: var(--ink-2);
+  background: var(--surface-2); border: 1px solid var(--line-2);
+}
+.fof-sleeve-chip b { font-family: var(--mono); font-weight: 600; color: var(--ink); }
+
+/* =========================== IC Prep (printable decision sheets) =========================== */
+.ic-bar {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+  padding: 16px 20px; margin-bottom: 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow-sm);
+}
+
+.ic-agenda { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.ic-agenda a { display: grid; grid-template-columns: 26px 1fr auto auto; align-items: center; gap: 14px; padding: 11px 16px; background: var(--surface); text-decoration: none; color: inherit; transition: background 0.14s ease; }
+.ic-agenda a:hover { background: var(--surface-2); }
+.ic-agenda-num { width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; font-family: var(--mono); font-size: 11px; font-weight: 700; color: #fff; background: var(--ink-3); }
+.ic-agenda-num.high { background: var(--neg); } .ic-agenda-num.medium { background: var(--warn); } .ic-agenda-num.low { background: var(--pos); }
+.ic-agenda-label { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.ic-agenda-meta { font-size: 11.5px; color: var(--ink-3); }
+.ic-agenda-w { font-family: var(--mono); font-size: 12px; font-weight: 600; }
+.ic-agenda-w.pos { color: var(--pos); } .ic-agenda-w.neg { color: var(--neg); }
+
+.ic-sheet { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--shadow); margin-bottom: 18px; overflow: hidden; padding-bottom: 4px; }
+.ic-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; padding: 18px 24px 14px; border-bottom: 1px solid var(--line); }
+.ic-eyebrow { color: var(--brand-2); margin-bottom: 7px; }
+.ic-title { font-family: var(--display); font-size: 22px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.1; margin: 0; }
+.ic-sub { margin-top: 6px; font-size: 12px; color: var(--ink-3); }
+.ic-head-right { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+.ic-headline { margin: 16px 24px 0; font-size: 14.5px; font-weight: 500; color: var(--ink); line-height: 1.5; }
+
+.ic-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 18px 24px 0; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.ic-metric { background: var(--surface); padding: 11px 14px; display: flex; flex-direction: column; gap: 5px; }
+.ic-metric b { font-family: var(--mono); font-size: 15px; font-weight: 600; color: var(--ink); text-transform: capitalize; }
+.ic-metric b.pos { color: var(--pos); } .ic-metric b.neg { color: var(--neg); }
+.ic-metric-sub { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); text-transform: none; }
+
+.ic-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; margin: 18px 24px 0; }
+.ic-block p { margin: 4px 0 0; font-size: 13px; color: var(--ink-2); line-height: 1.6; }
+.ic-muted { color: var(--ink-3); }
+
+.ic-question { margin: 18px 24px 0; padding: 15px 18px; background: var(--surface-2); border-left: 3px solid var(--brand-2); border-radius: 0 var(--r) var(--r) 0; }
+.ic-question .eyebrow { color: var(--brand-2); margin-bottom: 6px; }
+.ic-question p { margin: 0; font-size: 13.5px; color: var(--ink); line-height: 1.55; font-weight: 500; }
+.ic-whynow { margin-top: 10px; font-size: 12px; color: var(--ink-2); line-height: 1.5; }
+.ic-whynow .eyebrow { display: inline; color: var(--ink-3); margin-right: 4px; }
+
+.ic-decision { margin: 18px 24px 0; padding: 15px 18px; border: 1px solid var(--line-2); border-radius: var(--r); background: linear-gradient(180deg, #ffffff, #fcfbf8); }
+.ic-options { display: grid; gap: 8px; margin-top: 10px; }
+.ic-option { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; color: var(--ink-2); line-height: 1.55; cursor: pointer; }
+.ic-option b { color: var(--ink); font-weight: 700; }
+.ic-check { flex-shrink: 0; margin-top: 2px; width: 16px; height: 16px; border: 1.5px solid var(--line-strong); border-radius: 4px; background: var(--surface); }
+
+.ic-signoff { display: flex; align-items: flex-end; gap: 32px; margin: 22px 24px 18px; padding-top: 18px; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.ic-sign { display: flex; flex-direction: column; gap: 6px; min-width: 200px; }
+.ic-line { height: 1px; background: var(--line-strong); margin-bottom: 2px; }
+.ic-sign-meta { margin-left: auto; font-family: var(--mono); font-size: 10.5px; color: var(--ink-4); align-self: flex-end; }
+
+@media print {
+  .sidebar, .topbar, .tabs, .ic-bar, .ic-agenda { display: none !important; }
+  body { background: #fff; }
+  .canvas { padding: 0; max-width: none; }
+  .ic-sheet { box-shadow: none; border-color: #d2cec2; break-inside: avoid; page-break-inside: avoid; margin-bottom: 0; page-break-after: always; }
+  .rise { animation: none; }
+}
+
 @media (max-width: 1240px) {
   .kpi-row { grid-template-columns: repeat(3, 1fr); }
-  .grid-2, .duo, .memo-cols, .case-grid, .trigger-grid { grid-template-columns: 1fr; }
+  .grid-2, .duo, .memo-cols, .case-grid, .trigger-grid, .ic-cols { grid-template-columns: 1fr; }
   .ledger-row { grid-template-columns: 1fr; gap: 4px; }
   .regime { grid-template-columns: 1fr; gap: 10px; }
+  .fof-roster { grid-template-columns: 1fr; }
+  .ic-metrics { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
   .sidebar { display: none; }

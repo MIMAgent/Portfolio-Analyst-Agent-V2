@@ -4,6 +4,8 @@ import { pct, signedPct, fmtDate } from './lib/format.js'
 import Overview from './pages/Overview.jsx'
 import ChallengeBrief from './pages/ChallengeBrief.jsx'
 import SignalsDecomp from './pages/SignalsDecomp.jsx'
+import FundOfFunds from './pages/FundOfFunds.jsx'
+import ICPrep from './pages/ICPrep.jsx'
 import AgentMemory from './pages/AgentMemory.jsx'
 
 const summary = evidence.risk_and_attribution?.summary || {}
@@ -44,19 +46,14 @@ const TABS = [
   { id: 'memory', label: 'Agent Memory' },
 ]
 
-function Placeholder({ name }) {
-  return (
-    <div className="canvas">
-      <div className="panel rise" style={{ textAlign: 'center', padding: '64px 24px' }}>
-        <div className="panel-title">{name}</div>
-        <div className="panel-sub eyebrow" style={{ marginTop: 8 }}>Next phase — this surface is scoped but not yet built.</div>
-      </div>
-    </div>
-  )
-}
-
 export default function App() {
   const [tab, setTab] = useState('overview')
+  const [icFocus, setIcFocus] = useState(null)
+
+  const openIC = (id) => {
+    setIcFocus(id || null)
+    setTab('ic')
+  }
 
   return (
     <div className="app">
@@ -99,7 +96,7 @@ export default function App() {
           <div className="tb-stat">MTD Active <b className={Number(mtd.active_period_return) < 0 ? 'neg' : 'pos'}>{signedPct(mtd.active_period_return, 2)}</b></div>
           <div className="tb-stat">Active Share <b>{pct(summary.active_share_pct, 1)}</b></div>
           <div className="tb-actions">
-            <button className="btn">IC Prep ↗</button>
+            <button className="btn" onClick={() => openIC()}>IC Prep ↗</button>
             <button className="btn primary">Run Review ↗</button>
           </div>
         </header>
@@ -114,10 +111,10 @@ export default function App() {
         </nav>
 
         {tab === 'overview' && <Overview />}
-        {tab === 'challenge' && <ChallengeBrief />}
+        {tab === 'challenge' && <ChallengeBrief onOpenIC={openIC} />}
         {tab === 'signals' && <SignalsDecomp />}
-        {tab === 'fof' && <Placeholder name="Fund of Funds" />}
-        {tab === 'ic' && <Placeholder name="IC Prep" />}
+        {tab === 'fof' && <FundOfFunds />}
+        {tab === 'ic' && <ICPrep focusId={icFocus} />}
         {tab === 'memory' && <AgentMemory />}
       </main>
     </div>

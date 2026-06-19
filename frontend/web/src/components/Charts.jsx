@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { signedPts, num } from '../lib/format.js'
+import { signedPts, stfPct } from '../lib/format.js'
 
 /* ---------- Diverging active-weight bars (CSS-driven) ---------- */
 export function DivergingBars({ rows }) {
@@ -25,7 +25,7 @@ export function DivergingBars({ rows }) {
               <div className={`bar-fill ${tone}`} style={fillStyle} />
             </div>
             <div className={`bar-val ${positive ? 'pos' : 'neg'}`}>{signedPts(r.active)}</div>
-            <div className="bar-vir">{Number.isNaN(r.vir) ? '—' : num(r.vir, 3)}</div>
+            <div className="bar-vir">{Number.isNaN(r.vir) ? '—' : stfPct(r.vir)}</div>
           </div>
         )
       })}
@@ -76,7 +76,7 @@ export function VirScatter({ points }) {
           <g key={`y${t}`}>
             <line x1={m.l} x2={W - m.r} y1={sy(t)} y2={sy(t)} stroke="#eceae3" strokeWidth="1" />
             <text x={m.l - 9} y={sy(t) + 3} textAnchor="end" fontSize="10.5" fill="#86868f" fontFamily="JetBrains Mono">
-              {t.toFixed(2)}
+              {`${(t * 100).toFixed(0)}%`}
             </text>
           </g>
         ))}
@@ -137,7 +137,7 @@ export function VirScatter({ points }) {
               <rect x={bx} y={by} width={bw} height={40} rx="7" fill="#1b1b1f" opacity="0.96" />
               <text x={bx + 12} y={by + 16} fontSize="11.5" fontWeight="600" fill="#fff" fontFamily="Hanken Grotesk">{hp.label}</text>
               <text x={bx + 12} y={by + 31} fontSize="10.5" fill="#cfcfd4" fontFamily="JetBrains Mono">
-                {signedPts(hp.x)} pts · STF {num(hp.y, 3)} · {hp.off ? 'off-signal' : 'aligned'}
+                {signedPts(hp.x)} pts · STF {stfPct(hp.y)} · {hp.off ? 'off-signal' : 'aligned'}
               </text>
             </g>
           )

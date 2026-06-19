@@ -7,7 +7,7 @@
  */
 import { useMemo, useState } from 'react'
 import { decompPositions } from '../lib/data.js'
-import { signedNum, num } from '../lib/format.js'
+import { stfPct, signedStfPct } from '../lib/format.js'
 
 // Illustrative regime read (would be agent-generated from market context).
 const REGIME = {
@@ -90,7 +90,7 @@ export default function SignalsDecomp() {
                     <div className="bar-axis" />
                     <div className={`bar-fill ${pos ? 'pos' : 'neg'}`} style={pos ? { left: '50%', width: `${w}%` } : { left: `${50 - w}%`, width: `${w}%` }} />
                   </div>
-                  <div className={`decomp-val ${pos ? 'pos' : 'neg'}`}>{signedNum(c.value, 3)}</div>
+                  <div className={`decomp-val ${pos ? 'pos' : 'neg'}`}>{signedStfPct(c.value)}</div>
                   <span className={`tag ${RTAG[c.rel]}`}>{RLABEL[c.rel]}</span>
                 </div>
               )
@@ -107,7 +107,7 @@ export default function SignalsDecomp() {
           <div className="verdict">
             <div className={`verdict-badge ${lowConf ? 'warn' : 'pos'}`}>{lowConf ? 'Low-confidence — discount' : 'High-confidence — trust'}</div>
             <p className="verdict-body">
-              The model reads <b>{modelDir}</b> (STF {num(sel?.vir, 3)}{Number.isNaN(sel?.virDelta) ? '' : `, ${signedNum(sel?.virDelta, 3)} MoM`}).
+              The model reads <b>{modelDir}</b> (STF {stfPct(sel?.vir)}{Number.isNaN(sel?.virDelta) ? '' : `, ${signedStfPct(sel?.virDelta)} MoM`}).
               That read is <b>{dominantShare}%</b> driven by <b>{dominant?.label}</b>
               {lowConf
                 ? ` — the least reliable component in a ${REGIME.name.split(' · ')[0]} regime. The signal's magnitude overstates its conviction; treat the ${modelDir} as soft and weight the corroborated growth/earnings components more heavily.`

@@ -1,12 +1,19 @@
 import { useMemo, useState } from 'react'
 import { challenges, challengeCategories } from '../lib/data.js'
-import { signedPts, signedPct, pct, isNum, titleCase } from '../lib/format.js'
+import { signedPts, signedPct, pct, isNum, titleCase, stfPct, ordinal } from '../lib/format.js'
 
 const PRIORITY_LABEL = { high: 'Urgent', medium: 'Watch', low: 'Monitor' }
 
 function signalTags(c) {
   const tags = []
-  if (isNum(c.vir)) tags.push({ t: `STF ${c.vir < 0 ? 'Underweight' : 'Overweight'}`, cls: c.vir < 0 ? 'neg' : 'pos' })
+  if (isNum(c.vir)) {
+    const rank = isNum(c.stfRank) ? `  ·  #${c.stfRank}/${c.stfUniverseSize} ${c.stfUniverse}` : ''
+    tags.push({ t: `STF ${stfPct(c.vir)}${rank}`, cls: c.vir < 0 ? 'neg' : 'pos' })
+  }
+  if (isNum(c.stfHistPctile)) {
+    const win = c.stfHistWindow === 12 ? '1-yr' : `${c.stfHistWindow}mo`
+    tags.push({ t: `${win} STF: ${ordinal(Math.round(c.stfHistPctile * 100))} pct`, cls: 'ink' })
+  }
   if (isNum(c.algo)) tags.push({ t: `Algo ${c.algo < 0 ? 'Underweight' : 'Overweight'}`, cls: c.algo < 0 ? 'neg' : 'pos' })
   tags.push({ t: PRIORITY_LABEL[c.priority] || c.priority, cls: c.priority === 'high' ? 'neg' : c.priority === 'medium' ? 'warn' : 'pos' })
   const conf = (c.confidence || '').match(/^(high|medium|moderate|low)/i)
@@ -109,7 +116,7 @@ function MarketSources({ rows, query }) {
   )
 }
 
-function DeepMemo({ c, index }) {
+function DeepMemo({ c, index, onOpenIC }) {
   const owPos = Number(c.activeWeight) >= 0
   return (
     <article className="memo rise">
@@ -142,6 +149,12 @@ function DeepMemo({ c, index }) {
           <Section title="Positioning Tension">{c.positioning && <p>{c.positioning}</p>}</Section>
           <Section title="Model Signal Tension">{c.modelTension && <p>{c.modelTension}</p>}</Section>
         </div>
+
+        {c.relativeSignal && (
+          <Section title="Relative Signal Readthrough">
+            <div className="memo-relative"><p>{c.relativeSignal}</p></div>
+          </Section>
+        )}
 
         <Section title="Holdings Driving the Exposure">
           <Holdings rows={c.holdings} prose={c.holdingsProse} />
@@ -192,7 +205,7 @@ function DeepMemo({ c, index }) {
         {c.confidence && <span className="confidence">{c.confidence}</span>}
         <span className="spacer" />
         {c.sourceQuality && <span className="source-quality" title={c.sourceQuality}>{c.sourceQuality.split('—')[0].trim()}</span>}
-        <button className="btn">Open IC Prep ↗</button>
+        <button className="btn" onClick={() => onOpenIC?.(c.id)}>Open IC Prep ↗</button>
       </div>
     </article>
   )
@@ -221,7 +234,7 @@ function Compact({ c }) {
   )
 }
 
-export default function ChallengeBrief() {
+export default function ChallengeBrief({ onOpenIC }) {
   const [cat, setCat] = useState('All')
   const [mode, setMode] = useState('deep')
 
@@ -250,7 +263,7 @@ export default function ChallengeBrief() {
       </div>
 
       {mode === 'deep' ? (
-        filtered.map((c, i) => <DeepMemo c={c} index={i} key={c.id} />)
+        filtered.map((c, i) => <DeepMemo c={c} index={i} key={c.id} onOpenIC={onOpenIC} />)
       ) : (
         <div className="compact-grid">
           {filtered.map((c) => <Compact c={c} key={c.id} />)}
