@@ -284,6 +284,8 @@ def _compact_challenge_candidates(rows: list[dict[str, Any]]) -> list[dict[str, 
                 "thesis_under_pressure": row.get("thesis_under_pressure", ""),
                 "positioning_tension": row.get("positioning_tension", ""),
                 "model_signal_tension": row.get("model_signal_tension", ""),
+                "relative_signal_readthrough": row.get("relative_signal_readthrough", ""),
+                "stf_relative_context": row.get("stf_relative_context"),
                 "vir_decomposition_readthrough": row.get("vir_decomposition_readthrough", ""),
                 "market_context_readthrough": row.get("market_context_readthrough", ""),
                 "measured_risk_readthrough": row.get("measured_risk_readthrough", ""),
@@ -371,6 +373,7 @@ def _support_signal_stack(position: dict[str, Any]) -> dict[str, Any]:
         "decomposition_driver": position.get("decomposition_driver", ""),
         "decomposition_assessment": position.get("decomposition_assessment", ""),
         "decomposition_values": position.get("decomposition_values", {}),
+        "stf_relative_context": position.get("stf_relative_context"),
     }
 
 

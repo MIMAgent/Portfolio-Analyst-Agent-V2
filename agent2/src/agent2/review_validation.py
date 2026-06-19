@@ -218,7 +218,8 @@ def _challenge_brief_lines(rows: list[dict[str, Any]], output_style: str = "deep
             ("thesis_under_pressure", "Thesis Under Pressure"),
             ("positioning_tension", "Positioning Tension"),
             ("model_signal_tension", "Model Signal Tension"),
-            ("vir_decomposition_readthrough", "VIR Decomposition Readthrough"),
+            ("relative_signal_readthrough", "Relative Signal Readthrough"),
+            ("vir_decomposition_readthrough", "STF Decomposition Readthrough"),
             ("market_context_readthrough", "Market Context Readthrough"),
             ("measured_risk_readthrough", "Measured Risk Readthrough"),
             ("pm_decision_fork", "PM Decision Fork"),
@@ -228,9 +229,9 @@ def _challenge_brief_lines(rows: list[dict[str, Any]], output_style: str = "deep
             ("source_quality", "Source Quality"),
         ]
         if output_style == "deep_challenge_memo":
-            challenge_fields[8:8] = [
+            challenge_fields[9:9] = [
                 ("exact_holdings_causing_it", "Exact Holdings Causing It"),
-                ("exact_vir_algo_decomp_explanation", "Exact VIR / Algo / Decomp Explanation"),
+                ("exact_vir_algo_decomp_explanation", "Exact STF / Algo / Decomp Explanation"),
                 ("exact_risk_contribution", "Exact Risk Contribution"),
                 ("exact_internal_research_excerpt", "Exact Internal Research Excerpt"),
                 ("exact_external_market_context", "Exact External Market Context"),
