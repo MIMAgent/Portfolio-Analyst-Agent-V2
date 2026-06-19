@@ -16,23 +16,25 @@ const FUND_GROUPS = [
   {
     label: 'Equity',
     funds: [
-      { name: header.fund || 'MStar US Equity', count: challenges.length, active: true },
-      { name: 'MStar Global Opp', count: 2 },
-      { name: 'MStar Intl Equity', count: 0 },
+      { name: 'US Equity', count: challenges.length, active: true },
+      { name: 'International Equity' },
+      { name: 'Global Opportunistic' },
     ],
   },
   {
     label: 'Fixed Income',
     funds: [
-      { name: 'Core Plus Bond', count: 1 },
-      { name: 'EM Local Debt', count: 0 },
+      { name: 'Alts' },
+      { name: 'Total Return' },
+      { name: 'Municipal Bond' },
+      { name: 'Multisector Bond' },
+      { name: 'Defensive Bond' },
     ],
   },
   {
     label: 'Multi-Asset',
     funds: [
-      { name: 'Target Risk Mod', ok: true },
-      { name: 'Target Risk Aggr', ok: true },
+      { name: 'Global Income' },
     ],
   },
 ]
@@ -72,9 +74,7 @@ export default function App() {
             {g.funds.map((f) => (
               <button key={f.name} className={`nav-item${f.active ? ' active' : ''}`} disabled={!f.active}>
                 <span className="nav-name">{f.name}</span>
-                {f.ok ? (
-                  <span className="nav-badge ok">✓</span>
-                ) : (
+                {Number.isFinite(f.count) && (
                   <span className={`nav-badge${f.count > 0 ? ' alert' : ''}`}>{f.count}</span>
                 )}
               </button>
