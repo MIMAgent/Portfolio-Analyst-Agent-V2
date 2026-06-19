@@ -30,9 +30,11 @@ def build_evidence_pack(
     challenge_market_context = build_challenge_market_context(
         header=review_packet.get("header", {}),
         challenge_candidates=challenge_candidates,
+        positions_by_acid=positions_by_acid,
         refresh_missing=refresh_market_context,
         max_challenges=challenge_count_target,
         max_rows_per_challenge=3,
+        max_rows_per_lens=2,
     )
     market_context_by_acid = {
         str(row.get("acid", "")).strip(): row
@@ -324,6 +326,7 @@ def _build_challenge_support_packets(
                 "exact_risk_contribution": _support_risk_contribution(position, risk_context=risk_context),
                 "exact_internal_research_excerpt": _support_internal_research(position),
                 "exact_external_market_context": _support_external_market_context(market_context),
+                "market_evidence": market_context.get("market_evidence", []),
                 "internal_history_excerpt": str(position.get("internal_history_excerpt", "")).strip()[:320],
                 "top_holding_lineage": row.get("top_holding_lineage", ""),
                 "research_status": row.get("research_status", {}),
