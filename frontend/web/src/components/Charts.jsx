@@ -33,6 +33,103 @@ export function DivergingBars({ rows }) {
   )
 }
 
+/* ---------- Multi-series time-series line chart (SVG, interactive) ---------- */
+export function LineChart({
+  series,            // [{ label, color, values:number[], dash?:bool, width?:number }]
+  dates,             // string[] aligned to values
+  yFormat = (v) => `${(v * 100).toFixed(1)}%`,
+  height = 300,
+  includeZero = false,
+  ticks = 5,
+}) {
+  const [hover, setHover] = useState(null)
+  const W = 760, H = height
+  const m = { t: 18, r: 16, b: 34, l: 52 }
+  const iw = W - m.l - m.r
+  const ih = H - m.t - m.b
+  const n = dates.length
+
+  const all = series.flatMap((s) => s.values.filter((v) => Number.isFinite(v)))
+  let yMin = Math.min(...all)
+  let yMax = Math.max(...all)
+  if (includeZero) { yMin = Math.min(yMin, 0); yMax = Math.max(yMax, 0) }
+  const pad = (yMax - yMin) * 0.12 || Math.abs(yMax) * 0.1 || 0.01
+  yMin -= pad; yMax += pad
+
+  const sx = (i) => m.l + (n <= 1 ? 0 : (i / (n - 1)) * iw)
+  const sy = (v) => m.t + (1 - (v - yMin) / (yMax - yMin)) * ih
+
+  const yTicks = []
+  for (let t = 0; t <= ticks; t++) yTicks.push(yMin + ((yMax - yMin) * t) / ticks)
+  const xIdx = []
+  const step = Math.max(1, Math.round((n - 1) / 5))
+  for (let i = 0; i < n; i += step) xIdx.push(i)
+  // ensure the final date shows, without colliding with the previous tick
+  if (xIdx[xIdx.length - 1] !== n - 1) {
+    if (n - 1 - xIdx[xIdx.length - 1] < step * 0.5) xIdx[xIdx.length - 1] = n - 1
+    else xIdx.push(n - 1)
+  }
+
+  const path = (vals) => vals.map((v, i) => `${i === 0 ? 'M' : 'L'}${sx(i).toFixed(1)},${sy(v).toFixed(1)}`).join(' ')
+  const fmtDate = (d) => (d || '').slice(5)  // MM-DD
+
+  const onMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * W
+    const i = Math.round(((x - m.l) / iw) * (n - 1))
+    setHover(Math.max(0, Math.min(n - 1, i)))
+  }
+
+  return (
+    <div className="lc-wrap">
+      <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label="Time series">
+        {yTicks.map((t, k) => (
+          <g key={k}>
+            <line x1={m.l} x2={W - m.r} y1={sy(t)} y2={sy(t)} stroke="#eceae3" strokeWidth="1" />
+            <text x={m.l - 8} y={sy(t) + 3} textAnchor="end" fontSize="10" fill="#86868f" fontFamily="JetBrains Mono">{yFormat(t)}</text>
+          </g>
+        ))}
+        {includeZero && yMin < 0 && yMax > 0 && (
+          <line x1={m.l} x2={W - m.r} y1={sy(0)} y2={sy(0)} stroke="#c9c6bb" strokeWidth="1" strokeDasharray="3 3" />
+        )}
+        {xIdx.map((i) => (
+          <text key={i} x={sx(i)} y={H - 12} textAnchor="middle" fontSize="10" fill="#86868f" fontFamily="JetBrains Mono">{fmtDate(dates[i])}</text>
+        ))}
+
+        {hover != null && (
+          <line x1={sx(hover)} x2={sx(hover)} y1={m.t} y2={m.t + ih} stroke="#c9c6bb" strokeWidth="1" />
+        )}
+
+        {series.map((s, k) => (
+          <path key={k} d={path(s.values)} fill="none" stroke={s.color} strokeWidth={s.width || 2}
+            strokeDasharray={s.dash ? '5 3' : undefined} strokeLinejoin="round" strokeLinecap="round" />
+        ))}
+
+        {hover != null && series.map((s, k) => (
+          Number.isFinite(s.values[hover]) &&
+          <circle key={k} cx={sx(hover)} cy={sy(s.values[hover])} r="3.5" fill="#fff" stroke={s.color} strokeWidth="2" />
+        ))}
+
+        <rect x={m.l} y={m.t} width={iw} height={ih} fill="transparent"
+          onMouseMove={onMove} onMouseLeave={() => setHover(null)} style={{ cursor: 'crosshair' }} />
+      </svg>
+
+      <div className="lc-legend">
+        {series.map((s, k) => (
+          <div className="lc-leg" key={k}>
+            <span className="lc-swatch" style={{ background: s.color, opacity: s.dash ? 0.55 : 1 }} />
+            {s.label}
+            {hover != null && Number.isFinite(s.values[hover]) && (
+              <b className="lc-val">{yFormat(s.values[hover])}</b>
+            )}
+          </div>
+        ))}
+        <span className="lc-asof">{hover != null ? dates[hover] : `${dates[0]} → ${dates[n - 1]}`}</span>
+      </div>
+    </div>
+  )
+}
+
 /* ---------- VIR vs active-weight scatter (SVG, interactive) ---------- */
 export function VirScatter({ points }) {
   const [hover, setHover] = useState(null)
