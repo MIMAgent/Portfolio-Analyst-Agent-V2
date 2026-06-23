@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { header, challenges, evidence } from './lib/data.js'
 import { pct, signedPct, fmtDate } from './lib/format.js'
 import Overview from './pages/Overview.jsx'
+import FactorRisk from './pages/FactorRisk.jsx'
 import ChallengeBrief from './pages/ChallengeBrief.jsx'
 import SignalsDecomp from './pages/SignalsDecomp.jsx'
 import FundOfFunds from './pages/FundOfFunds.jsx'
@@ -41,6 +42,7 @@ const FUND_GROUPS = [
 
 const TABS = [
   { id: 'overview', label: 'Overview' },
+  { id: 'factorrisk', label: 'Factor Risk' },
   { id: 'challenge', label: 'Challenge Brief', count: challenges.length },
   { id: 'signals', label: 'Signals & Decomp' },
   { id: 'fof', label: 'Fund of Funds' },
@@ -111,6 +113,7 @@ export default function App() {
         </nav>
 
         {tab === 'overview' && <Overview />}
+        {tab === 'factorrisk' && <FactorRisk />}
         {tab === 'challenge' && <ChallengeBrief onOpenIC={openIC} />}
         {tab === 'signals' && <SignalsDecomp />}
         {tab === 'fof' && <FundOfFunds />}

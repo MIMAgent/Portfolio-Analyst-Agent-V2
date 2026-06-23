@@ -3,9 +3,10 @@ import packet from '../data/packet.json'
 import review from '../data/review.json'
 import manifest from '../data/manifest.json'
 import stfHistory from '../data/stfHistory.json'
+import factorRisk from '../data/factorRisk.json'
 import { normKey } from './format.js'
 
-export { evidence, packet, review, manifest }
+export { evidence, packet, review, manifest, factorRisk }
 
 export const header = evidence.header || {}
 export const benchmark = header.benchmark || ''
