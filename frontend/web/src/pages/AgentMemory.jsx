@@ -57,13 +57,13 @@ function Spark() {
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label="Signal trajectory">
       {MONTHS.map((mo, i) => (
-        <text key={mo} x={m.l + (i / (MONTHS.length - 1)) * iw} y={H - 8} textAnchor="middle" fontSize="10" fill="#86868f" fontFamily="JetBrains Mono">{mo}</text>
+        <text key={mo} x={m.l + (i / (MONTHS.length - 1)) * iw} y={H - 8} textAnchor="middle" fontSize="11" fill="#86868f" fontFamily="JetBrains Mono">{mo}</text>
       ))}
       <polyline points={line(STF)} fill="none" stroke="#c0392b" strokeWidth="2" />
       <polyline points={line(ALGO)} fill="none" stroke="#2a4bd7" strokeWidth="2" strokeDasharray="4 3" />
       {pts(STF, '#c0392b')}
       {pts(ALGO, '#2a4bd7')}
-      <text x={m.l} y={m.t - 4} fontSize="10" fill="#c0392b" fontFamily="Hanken Grotesk" fontWeight="600">STF deteriorating →</text>
+      <text x={m.l} y={m.t - 4} fontSize="11" fill="#c0392b" fontFamily="Hanken Grotesk" fontWeight="600">STF deteriorating →</text>
     </svg>
   )
 }
