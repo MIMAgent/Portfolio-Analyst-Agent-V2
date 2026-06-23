@@ -86,14 +86,14 @@ export function LineChart({
         {yTicks.map((t, k) => (
           <g key={k}>
             <line x1={m.l} x2={W - m.r} y1={sy(t)} y2={sy(t)} stroke="#eceae3" strokeWidth="1" />
-            <text x={m.l - 8} y={sy(t) + 3} textAnchor="end" fontSize="10" fill="#86868f" fontFamily="JetBrains Mono">{yFormat(t)}</text>
+            <text x={m.l - 8} y={sy(t) + 3} textAnchor="end" fontSize="11" fill="#86868f" fontFamily="JetBrains Mono">{yFormat(t)}</text>
           </g>
         ))}
         {includeZero && yMin < 0 && yMax > 0 && (
           <line x1={m.l} x2={W - m.r} y1={sy(0)} y2={sy(0)} stroke="#c9c6bb" strokeWidth="1" strokeDasharray="3 3" />
         )}
         {xIdx.map((i) => (
-          <text key={i} x={sx(i)} y={H - 12} textAnchor="middle" fontSize="10" fill="#86868f" fontFamily="JetBrains Mono">{fmtDate(dates[i])}</text>
+          <text key={i} x={sx(i)} y={H - 12} textAnchor="middle" fontSize="11" fill="#86868f" fontFamily="JetBrains Mono">{fmtDate(dates[i])}</text>
         ))}
 
         {hover != null && (
@@ -172,13 +172,13 @@ export function VirScatter({ points }) {
         {yTicks.map((t) => (
           <g key={`y${t}`}>
             <line x1={m.l} x2={W - m.r} y1={sy(t)} y2={sy(t)} stroke="#eceae3" strokeWidth="1" />
-            <text x={m.l - 9} y={sy(t) + 3} textAnchor="end" fontSize="10.5" fill="#86868f" fontFamily="JetBrains Mono">
+            <text x={m.l - 9} y={sy(t) + 3} textAnchor="end" fontSize="11.5" fill="#86868f" fontFamily="JetBrains Mono">
               {`${(t * 100).toFixed(0)}%`}
             </text>
           </g>
         ))}
         {xTicks.map((t) => (
-          <text key={`x${t}`} x={sx(t)} y={H - 16} textAnchor="middle" fontSize="10.5" fill="#86868f" fontFamily="JetBrains Mono">
+          <text key={`x${t}`} x={sx(t)} y={H - 16} textAnchor="middle" fontSize="11.5" fill="#86868f" fontFamily="JetBrains Mono">
             {t > 0 ? `+${t}` : t}
           </text>
         ))}
@@ -232,8 +232,8 @@ export function VirScatter({ points }) {
           return (
             <g pointerEvents="none">
               <rect x={bx} y={by} width={bw} height={40} rx="7" fill="#1b1b1f" opacity="0.96" />
-              <text x={bx + 12} y={by + 16} fontSize="11.5" fontWeight="600" fill="#fff" fontFamily="Hanken Grotesk">{hp.label}</text>
-              <text x={bx + 12} y={by + 31} fontSize="10.5" fill="#cfcfd4" fontFamily="JetBrains Mono">
+              <text x={bx + 12} y={by + 16} fontSize="12.5" fontWeight="600" fill="#fff" fontFamily="Hanken Grotesk">{hp.label}</text>
+              <text x={bx + 12} y={by + 31} fontSize="11.5" fill="#cfcfd4" fontFamily="JetBrains Mono">
                 {signedPts(hp.x)} pts · STF {stfPct(hp.y)} · {hp.off ? 'off-signal' : 'aligned'}
               </text>
             </g>
@@ -241,8 +241,8 @@ export function VirScatter({ points }) {
         })()}
 
         {/* axis titles */}
-        <text x={m.l + iw / 2} y={H - 1} textAnchor="middle" fontSize="10.5" fill="#adaca8">Active weight (pts)</text>
-        <text x={13} y={m.t + ih / 2} textAnchor="middle" fontSize="10.5" fill="#adaca8" transform={`rotate(-90 13 ${m.t + ih / 2})`}>STF</text>
+        <text x={m.l + iw / 2} y={H - 1} textAnchor="middle" fontSize="11.5" fill="#adaca8">Active weight (pts)</text>
+        <text x={13} y={m.t + ih / 2} textAnchor="middle" fontSize="11.5" fill="#adaca8" transform={`rotate(-90 13 ${m.t + ih / 2})`}>STF</text>
       </svg>
       <div className="scatter-legend">
         <div className="legend-item"><span className="legend-dot" /> Aligned</div>
