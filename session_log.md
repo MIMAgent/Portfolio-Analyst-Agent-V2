@@ -1,5 +1,11 @@
 # Session Log
 
+> **Canonical frontend notice (2026-07-21):** `frontend/web` is the
+> repository's only frontend and the application configured for Netlify.
+> `frontend/Example_frontendV1` was deleted. References to that path later in
+> this file are historical only and must not be used for development, data
+> updates, builds, or deployment.
+
 ## Date
 
 - 2026-04-01
@@ -1785,3 +1791,29 @@ This is the latest checkpoint for Al. The repo now contains a separate `agent2/`
   - Holdings
   - Research
   - Run Detail
+
+# 2026-07-21 - July Equity Dashboard Refresh And Netlify Handoff
+
+- Refreshed the July 2026 model, PCT, signal-history, and Axioma risk inputs.
+- Generated the latest Agent2 review artifacts for:
+  - MStar US Equity
+  - MStar International Equity
+  - MStar Global Opportunistic Equity
+- Corrected benchmark metadata from the PCT-derived benchmark exposure rows:
+  - US Equity: Morningstar US Market TR USD
+  - International Equity: Morningstar Gbl xUS NR USD
+  - Global Opportunistic Equity: Morningstar Gbl NR USD
+- Confirmed that the agent reviews used benchmark weights from
+  `fund_benchmark_rolled_exposure` and benchmark contributions from
+  `fund_benchmark_security_contribution`; the prior defect affected only the
+  human-readable benchmark header for International Equity and GOE.
+- Wired all three funds into the production selector in `frontend/web` using
+  `frontend/web/src/data/funds/index.js`.
+- Added each fund's review, evidence, packet, manifest, factor-risk data, and
+  shared signal history to the production frontend.
+- Removed US-specific illustrative claims from cross-fund dashboard views.
+- Deleted the obsolete `frontend/Example_frontendV1` implementation and its
+  legacy handoff documentation. `frontend/web` is now the only frontend.
+- Verified the exact Netlify production build with `npm run build`.
+- Prepared the complete repository worktree for commit and push to the GitHub
+  `main` branch, which is the expected Netlify production deployment trigger.

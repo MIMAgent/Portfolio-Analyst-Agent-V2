@@ -1,0 +1,2838 @@
+{
+  "header": {
+    "fund": "MStar Global Opportunistic Equity",
+    "fund_slug": "mstar-global-opportunistic-equity",
+    "fund_type": "equity",
+    "benchmark": "Morningstar Gbl NR USD",
+    "pm_names": [],
+    "snapshot_date": "2026-06-30",
+    "as_of_date": "2026-06-30",
+    "review_date": "2026-07-21",
+    "review_run_id": "agent2_mstar-global-opportunistic-equity_2026-06-30",
+    "source_snapshot_date": "2026-07-06"
+  },
+  "run_goal": {
+    "instruction": "Write the canonical deep PM challenge memo. Prioritize the top 4 decisions the PM actually needs to defend, resize, monitor, or explain.",
+    "challenge_count_target": 4,
+    "output_style": "deep_challenge_memo"
+  },
+  "fund_shape": {
+    "headline_summary": [
+      "Largest underweight: United States Lrg (-9.03 pts), with STF underweight and the algo active weight underweight (relative to benchmark).",
+      "Largest overweight: United States Sml Value (5.49 pts), with decomposition reading broad_based.",
+      "13 material positions are directionally fighting the current STF/algo read.",
+      "US_EQ risk context: active predicted risk 5.89%, active share 49.6%, risk date used 2026-07-20."
+    ],
+    "largest_overweights": [
+      {
+        "category": "Eq Size / Style",
+        "label": "United States Sml Value",
+        "active_weight": 5.4859607131582315,
+        "benchmark_weight": 1.0280248598757071,
+        "portfolio_weight": 6.513985573033938,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_ea94e33bf749"
+          }
+        ]
+      },
+      {
+        "category": "Eq Size / Style",
+        "label": "United States Mid Value",
+        "active_weight": 3.2412675137977587,
+        "benchmark_weight": 3.283033584832098,
+        "portfolio_weight": 6.524301098629857,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_02ad93b61f6e"
+          }
+        ]
+      },
+      {
+        "category": "Country",
+        "label": "United Kingdom",
+        "active_weight": 2.9557746151693105,
+        "benchmark_weight": 3.0322248388758237,
+        "portfolio_weight": 5.987999454045134,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_f324c8f6d24d"
+          },
+          {
+            "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202602-EQ-UK EQ-Conviction-Thesis Update.pptx",
+            "row_id": "202602-EQ-UK EQ-Conviction-Thesis Update.pptx"
+          }
+        ]
+      }
+    ],
+    "largest_underweights": [
+      {
+        "category": "Eq Size / Style",
+        "label": "United States Lrg",
+        "active_weight": -9.029140187849537,
+        "benchmark_weight": 20.323728381358237,
+        "portfolio_weight": 11.2945881935087,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_9708747c565a"
+          },
+          {
+            "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+            "row_id": "201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Eq Sector",
+        "label": "Information Technology",
+        "active_weight": -8.19100805391913,
+        "benchmark_weight": 22.419107904460667,
+        "portfolio_weight": 14.228099850541536,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_9cc0da8f8f4a"
+          },
+          {
+            "artifact_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+            "row_id": "202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Eq Size / Style",
+        "label": "United States Lrg Growth",
+        "active_weight": -6.702792995658505,
+        "benchmark_weight": 13.6440117799412,
+        "portfolio_weight": 6.941218784282696,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_88e3699a3580"
+          }
+        ]
+      }
+    ],
+    "style_posture": [
+      {
+        "label": "United States Lrg",
+        "active_weight": -9.029140187849537,
+        "interpretation": "Underweight exposure in this size bucket is material enough to shape the portfolio's style posture."
+      },
+      {
+        "label": "United States Sml Value",
+        "active_weight": 5.4859607131582315,
+        "interpretation": "Overweight value exposure remains a meaningful part of the fund shape."
+      },
+      {
+        "label": "United States Lrg Growth",
+        "active_weight": -6.702792995658505,
+        "interpretation": "Underweight growth exposure remains a meaningful part of the fund shape."
+      },
+      {
+        "label": "United States Mid Value",
+        "active_weight": 3.2412675137977587,
+        "interpretation": "Overweight value exposure remains a meaningful part of the fund shape."
+      }
+    ]
+  },
+  "top_challenges": [
+    {
+      "challenge_id": "ch_us-sml-v-eq_2026-06-30",
+      "acid": "US SML V EQ",
+      "label": "United States Sml Value",
+      "category": "Eq Size / Style",
+      "priority": "high",
+      "challenge_score": 13.68,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "United States Sml Value still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United States Sml Value remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 6.51% versus benchmark 1.03%, leaving a +5.49 pt active overweight in United States Sml Value. Top underlying names include H&R Block Inc, International Game Technology PLC.",
+      "model_signal_tension": "STF is underweight at -0.47% (-0.09% MoM), while the algo active weight is +0.76 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -0.47% in absolute terms but ranks #1 of 9 in global styles (above the -2.39% universe median) \u2014 the whole global styles complex is negative and led by top-down valuation adjustment, a regime backdrop, so this exposure is relatively preferred even though the absolute signal is negative. Versus its own 12-month history the current STF is at the 0th percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "global styles",
+        "universe_size": 9,
+        "rank": 1,
+        "percentile": 1.0,
+        "stf": -0.0047,
+        "universe_median_stf": -0.0239,
+        "vs_median": 0.0192,
+        "more_attractive_peers": [],
+        "more_attractive_count": 0,
+        "universe_best": {
+          "label": "United States Sml Value",
+          "stf": -0.0047
+        },
+        "universe_worst": {
+          "label": "United States Lrg Growth",
+          "stf": -0.0496
+        },
+        "universe_all_negative": true,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.0,
+        "history_window_months": 12,
+        "history_low": -0.0047,
+        "history_high": 0.0036
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 2.93% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United States Sml Value at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Sml Value is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "H&R Block Inc (+1.43 pts active) via MS GLOBAL OPP EQ LAZARD 1.44%, Vanguard Total Stock Market ETF 0.00%; International Game Technology PLC (+1.29 pts active) via MS GLOBAL OPP EQ LAZARD 1.29%; Dentsply Sirona Inc (+1.11 pts active) via MS GLOBAL OPP EQ LAZARD 1.11%, Vanguard US Health Care ETF 0.00%"
+    },
+    {
+      "challenge_id": "ch_us-mid-v-eq_2026-06-30",
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "priority": "high",
+      "challenge_score": 9.038,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United States Mid Value remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 6.52% versus benchmark 3.28%, leaving a +3.24 pt active overweight in United States Mid Value. Top underlying names include Omnicom Group Inc, Fiserv Inc.",
+      "model_signal_tension": "STF is underweight at -1.15% (+0.32% MoM), while the algo active weight is +1.25 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -1.15% in absolute terms but ranks #2 of 9 in global styles (above the -2.39% universe median) \u2014 the whole global styles complex is negative and led by top-down valuation adjustment, a regime backdrop, so this exposure is relatively preferred even though the absolute signal is negative. Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "global styles",
+        "universe_size": 9,
+        "rank": 2,
+        "percentile": 0.88,
+        "stf": -0.0115,
+        "universe_median_stf": -0.0239,
+        "vs_median": 0.0124,
+        "more_attractive_peers": [
+          "United States Sml Value"
+        ],
+        "more_attractive_count": 1,
+        "universe_best": {
+          "label": "United States Sml Value",
+          "stf": -0.0047
+        },
+        "universe_worst": {
+          "label": "United States Lrg Growth",
+          "stf": -0.0496
+        },
+        "universe_all_negative": true,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.82,
+        "history_window_months": 12,
+        "history_low": -0.0217,
+        "history_high": -0.0089
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 2.93% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Omnicom Group Inc (+1.40 pts active) via MS GLOBAL OPP EQ LAZARD 1.36%, Vanguard Communication Services ETF 0.05%; Fiserv Inc (+1.35 pts active) via MS GLOBAL OPP EQ LAZARD 1.37%, Vanguard Total Stock Market ETF 0.01%; Cognizant Technology Solutions Corp Class A (+0.59 pts active) via MS GLOBAL OPP EQ LAZARD 0.59%, FIDELITY MSCI INFO. TECH. 0.01%"
+    },
+    {
+      "challenge_id": "ch_us-tl-eq_2026-06-30",
+      "acid": "US TL EQ",
+      "label": "Communication Services",
+      "category": "Eq Sector",
+      "priority": "medium",
+      "challenge_score": 7.207,
+      "challenge_type": "position_vs_signal_divergence",
+      "challenge_headline": "Communication Services remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
+      "thesis_under_pressure": "The implicit thesis is that a overweight to Communication Services still deserves this size even though the current STF/algo stack is pointing the other way.",
+      "positioning_tension": "Fund weight is 7.25% versus benchmark 5.67%, leaving a +1.58 pt active overweight in Communication Services. Top underlying names include Omnicom Group Inc, Meta Platforms Inc Class A.",
+      "model_signal_tension": "STF is underweight at -1.40% (+0.96% MoM), while the algo active weight is -0.73 pts (relative to benchmark) and points underweight.",
+      "relative_signal_readthrough": "STF is -1.40% in absolute terms but ranks #26 of 54 in global sectors (above the -1.55% universe median). Versus its own 12-month history the current STF is at the 91st percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "global sectors",
+        "universe_size": 54,
+        "rank": 26,
+        "percentile": 0.53,
+        "stf": -0.014,
+        "universe_median_stf": -0.0155,
+        "vs_median": 0.0015,
+        "more_attractive_peers": [
+          "Energy",
+          "Consumer Discretionary",
+          "Real Estate"
+        ],
+        "more_attractive_count": 25,
+        "universe_best": {
+          "label": "Energy",
+          "stf": 0.0441
+        },
+        "universe_worst": {
+          "label": "Information Technology",
+          "stf": -0.0785
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.91,
+        "history_window_months": 12,
+        "history_low": -0.0301,
+        "history_high": -0.0138
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
+      "market_context_readthrough": "Equity Sector Review: US Communication Services We are neutral on the sector, but we expect Alphabet and Meta to remain dominant.",
+      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 2.93% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What is the live underwriting case for keeping Communication Services at +1.58 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
+      "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Communication Services, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Omnicom Group Inc (+1.40 pts active) via MS GLOBAL OPP EQ LAZARD 1.36%, Vanguard Communication Services ETF 0.05%; Meta Platforms Inc Class A (+0.17 pts active) via Vanguard Communication Services ETF 1.00%, Vanguard Total Stock Market ETF 0.26%; Alphabet Inc Class A (-0.79 pts active) via Vanguard Communication Services ETF 0.63%, Vanguard Total Stock Market ETF 0.41%"
+    },
+    {
+      "challenge_id": "ch_uk-eq_2026-06-30",
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "priority": "medium",
+      "challenge_score": 7.138,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United Kingdom remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 5.99% versus benchmark 3.03%, leaving a +2.96 pt active overweight in United Kingdom. Top underlying names include Autotrader Group PLC, Diageo PLC.",
+      "model_signal_tension": "STF is underweight at -1.11% (-0.05% MoM), while the algo active weight is +1.78 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -1.11% in absolute terms but ranks #22 of 44 in global countries (above the -1.24% universe median). Versus its own 12-month history the current STF is at the 36th percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "global countries",
+        "universe_size": 44,
+        "rank": 22,
+        "percentile": 0.51,
+        "stf": -0.0111,
+        "universe_median_stf": -0.0124,
+        "vs_median": 0.0013,
+        "more_attractive_peers": [
+          "Indonesia",
+          "Turkey",
+          "Philippines"
+        ],
+        "more_attractive_count": 21,
+        "universe_best": {
+          "label": "Indonesia",
+          "stf": 0.0646
+        },
+        "universe_worst": {
+          "label": "South Korea",
+          "stf": -0.1013
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.36,
+        "history_window_months": 12,
+        "history_low": -0.0195,
+        "history_high": -0.0018
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "UK EQ Update - Feb 2026 Mark Murray Matthew Wilson Ziying Peng Phoebe Chapman Raymond Sham Investment Thesis Supporting Analysis: Financials Healthcare Energy Consumer Staples Industrials FX Risk FV\u2019s Contrarian indic...",
+      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 2.93% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Autotrader Group PLC (+0.97 pts active) via MS GLOBAL OPP EQ LAZARD 0.97%, Franklin FTSE United Kingdom ETF 0.00%; Diageo PLC (+0.75 pts active) via MS GLOBAL OPP EQ LAZARD 0.61%, MS GLBL OPPS EQ CONSUMER 0.10%; Bunzl PLC (+0.77 pts active) via MS GLOBAL OPP EQ LAZARD 0.77%, Franklin FTSE United Kingdom ETF 0.01%"
+    }
+  ],
+  "challenge_market_context": [
+    {
+      "acid": "US SML V EQ",
+      "label": "United States Sml Value",
+      "category": "Eq Size / Style",
+      "query_used": "US United States Sml Value valuation rates style leadership May 2026",
+      "rows": [],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap Value Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US small-cap Value Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_ed8e2e19b240"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap Value Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: US small-cap Value Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_e94b5bd04487"
+        }
+      ]
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "query_used": "US United States Mid Value valuation rates style leadership May 2026",
+      "rows": [],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US mid-cap Value Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US mid-cap Value Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_1e51436d1fa3"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US mid-cap Value Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: US mid-cap Value Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_b38daafbe6b3"
+        }
+      ]
+    },
+    {
+      "acid": "US TL EQ",
+      "label": "Communication Services",
+      "category": "Eq Sector",
+      "query_used": "US TL EQ equity market context May 2026",
+      "rows": [],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US Communication Services sector Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "On the other hand, the Energy (to 0.6% from 8.2%) sector is the only sector that has recorded a decrease in its earnings growth rate since the end of the quarter due to downward revisions to earnings estimates and negative earnings surprises. In the Communication Services sector, the positive EPS surprises reported by Alphabet ($5.11 vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US Communication Services sector Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_d4ac0da9e773"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US Communication Services sector Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US Communication Services sector Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_ac4fb5cc2e90"
+        }
+      ]
+    },
+    {
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "query_used": "United Kingdom equity market earnings valuation macro May 2026",
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c34df78a06c9"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a044487a1fe1"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_fecdba898db0"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a76c130b2002"
+        }
+      ]
+    }
+  ],
+  "challenge_support_packets": [
+    {
+      "challenge_id": "ch_us-sml-v-eq_2026-06-30",
+      "acid": "US SML V EQ",
+      "label": "United States Sml Value",
+      "category": "Eq Size / Style",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "H&R Block Inc",
+          "portfolio_weight": 1.4367,
+          "benchmark_weight": 0.0042,
+          "active_weight": 1.4325,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.4358,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.4358
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0009,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0009
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0042,
+              "active_weight": -0.0042
+            }
+          ]
+        },
+        {
+          "security_name": "International Game Technology PLC",
+          "portfolio_weight": 1.2923,
+          "benchmark_weight": 0.0,
+          "active_weight": 1.2923,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.2923,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.2923
+            }
+          ]
+        },
+        {
+          "security_name": "Dentsply Sirona Inc",
+          "portfolio_weight": 1.1082,
+          "benchmark_weight": 0.0,
+          "active_weight": 1.1082,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.1065,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.1065
+            },
+            {
+              "source_name": "Vanguard US Health Care ETF",
+              "portfolio_weight": 0.0013,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0013
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0004,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0004
+            }
+          ]
+        },
+        {
+          "security_name": "The Campbell's Co",
+          "portfolio_weight": 0.2269,
+          "benchmark_weight": 0.0037,
+          "active_weight": 0.2232,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.2173,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2173
+            },
+            {
+              "source_name": "SPDR Portfolio S&P 600 Sm Cap ETF",
+              "portfolio_weight": 0.0088,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0088
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0008,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0008
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 5.4859607131582315,
+        "portfolio_weight": 6.513985573033938,
+        "benchmark_weight": 1.0280248598757071,
+        "positioning_direction": "overweight",
+        "vir_now": -0.00474795947531656,
+        "vir_delta_mom": -0.0009287498063379473,
+        "vir_direction": "underweight",
+        "algo_active_weight": 0.76,
+        "algo_active_weight_mom": 0.01,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.03299999999999992,
+          "yield": 0.03507288795673117,
+          "inflation": 0.025197173188650446,
+          "currency_usd": 0.0017044904466556599,
+          "valuation_adjustment_top_down": -0.01681135491551433,
+          "valuation_adjustment_combined": -0.002343511550868982,
+          "valuation_adjustment_bottom_up": 0.012124331813776368
+        },
+        "stf_relative_context": {
+          "universe": "global styles",
+          "universe_size": 9,
+          "rank": 1,
+          "percentile": 1.0,
+          "stf": -0.0047,
+          "universe_median_stf": -0.0239,
+          "vs_median": 0.0192,
+          "more_attractive_peers": [],
+          "more_attractive_count": 0,
+          "universe_best": {
+            "label": "United States Sml Value",
+            "stf": -0.0047
+          },
+          "universe_worst": {
+            "label": "United States Lrg Growth",
+            "stf": -0.0496
+          },
+          "universe_all_negative": true,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.0,
+          "history_window_months": 12,
+          "history_low": -0.0047,
+          "history_high": 0.0036
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {
+          "label": "United States Sml Value",
+          "category": "Eq Size / Style",
+          "active_weight": 5.49,
+          "top_sector_holdings": [
+            {
+              "security_name": "H&R Block Inc",
+              "portfolio_weight": 1.44,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.43
+            },
+            {
+              "security_name": "International Game Technology PLC",
+              "portfolio_weight": 1.29,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.29
+            },
+            {
+              "security_name": "Dentsply Sirona Inc",
+              "portfolio_weight": 1.11,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.11
+            }
+          ],
+          "inference_level": "sector_proxy"
+        },
+        "return_attribution_mtd": {
+          "active_period_return": 4.08,
+          "active_period_factor_return": 2.88,
+          "active_period_specific_return": 1.17,
+          "period_overweight_return": 2.93,
+          "period_underweight_return": 1.12,
+          "active_style_factor_returns": 1.73,
+          "active_industry_factor_returns": 0.92,
+          "active_market_factor_returns": null,
+          "window_start": "2026-07-01",
+          "window_end": "2026-07-17"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "",
+        "sharepoint_research_path": "",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "unmatched"
+      },
+      "exact_external_market_context": [],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap Value Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US small-cap Value Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_ed8e2e19b240"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap Value Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: US small-cap Value Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_e94b5bd04487"
+        }
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "H&R Block Inc (+1.43 pts active) via MS GLOBAL OPP EQ LAZARD 1.44%, Vanguard Total Stock Market ETF 0.00%; International Game Technology PLC (+1.29 pts active) via MS GLOBAL OPP EQ LAZARD 1.29%; Dentsply Sirona Inc (+1.11 pts active) via MS GLOBAL OPP EQ LAZARD 1.11%, Vanguard US Health Care ETF 0.00%",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+missing_direct_prior_thesis"
+    },
+    {
+      "challenge_id": "ch_us-mid-v-eq_2026-06-30",
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "Omnicom Group Inc",
+          "portfolio_weight": 1.4148,
+          "benchmark_weight": 0.0181,
+          "active_weight": 1.3966,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.3584,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.3584
+            },
+            {
+              "source_name": "Vanguard Communication Services ETF",
+              "portfolio_weight": 0.0522,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0522
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0042,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0042
+            }
+          ]
+        },
+        {
+          "security_name": "Fiserv Inc",
+          "portfolio_weight": 1.3755,
+          "benchmark_weight": 0.0227,
+          "active_weight": 1.3527,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.3704,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.3704
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0051,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0051
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0227,
+              "active_weight": -0.0227
+            }
+          ]
+        },
+        {
+          "security_name": "Cognizant Technology Solutions Corp Class A",
+          "portfolio_weight": 0.6049,
+          "benchmark_weight": 0.0155,
+          "active_weight": 0.5894,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.5923,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5923
+            },
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 0.0077,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0077
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0049,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0049
+            }
+          ]
+        },
+        {
+          "security_name": "Paychex Inc",
+          "portfolio_weight": 0.4549,
+          "benchmark_weight": 0.0279,
+          "active_weight": 0.4271,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.4491,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4491
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0058,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0058
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0279,
+              "active_weight": -0.0279
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 3.2412675137977587,
+        "portfolio_weight": 6.524301098629857,
+        "benchmark_weight": 3.283033584832098,
+        "positioning_direction": "overweight",
+        "vir_now": -0.011512287597968976,
+        "vir_delta_mom": 0.0031693492213356045,
+        "vir_direction": "underweight",
+        "algo_active_weight": 1.25,
+        "algo_active_weight_mom": 0.06999999999999999,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.018999999999999906,
+          "yield": 0.03895285655077925,
+          "inflation": 0.025197173188650446,
+          "currency_usd": 0.0017044904466556599,
+          "valuation_adjustment_top_down": -0.022039765993901006,
+          "valuation_adjustment_combined": -0.007203281794649907,
+          "valuation_adjustment_bottom_up": 0.0076332024046011915
+        },
+        "stf_relative_context": {
+          "universe": "global styles",
+          "universe_size": 9,
+          "rank": 2,
+          "percentile": 0.88,
+          "stf": -0.0115,
+          "universe_median_stf": -0.0239,
+          "vs_median": 0.0124,
+          "more_attractive_peers": [
+            "United States Sml Value"
+          ],
+          "more_attractive_count": 1,
+          "universe_best": {
+            "label": "United States Sml Value",
+            "stf": -0.0047
+          },
+          "universe_worst": {
+            "label": "United States Lrg Growth",
+            "stf": -0.0496
+          },
+          "universe_all_negative": true,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.82,
+          "history_window_months": 12,
+          "history_low": -0.0217,
+          "history_high": -0.0089
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {},
+        "return_attribution_mtd": {
+          "active_period_return": 4.08,
+          "active_period_factor_return": 2.88,
+          "active_period_specific_return": 1.17,
+          "period_overweight_return": 2.93,
+          "period_underweight_return": 1.12,
+          "active_style_factor_returns": 1.73,
+          "active_industry_factor_returns": 0.92,
+          "active_market_factor_returns": null,
+          "window_start": "2026-07-01",
+          "window_end": "2026-07-17"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "",
+        "sharepoint_research_path": "",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "unmatched"
+      },
+      "exact_external_market_context": [],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US mid-cap Value Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US mid-cap Value Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_1e51436d1fa3"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US mid-cap Value Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: US mid-cap Value Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_b38daafbe6b3"
+        }
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "Omnicom Group Inc (+1.40 pts active) via MS GLOBAL OPP EQ LAZARD 1.36%, Vanguard Communication Services ETF 0.05%; Fiserv Inc (+1.35 pts active) via MS GLOBAL OPP EQ LAZARD 1.37%, Vanguard Total Stock Market ETF 0.01%; Cognizant Technology Solutions Corp Class A (+0.59 pts active) via MS GLOBAL OPP EQ LAZARD 0.59%, FIDELITY MSCI INFO. TECH. 0.01%",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+missing_direct_prior_thesis"
+    },
+    {
+      "challenge_id": "ch_us-tl-eq_2026-06-30",
+      "acid": "US TL EQ",
+      "label": "Communication Services",
+      "category": "Eq Sector",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "Omnicom Group Inc",
+          "portfolio_weight": 1.4148,
+          "benchmark_weight": 0.0181,
+          "active_weight": 1.3966,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.3584,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.3584
+            },
+            {
+              "source_name": "Vanguard Communication Services ETF",
+              "portfolio_weight": 0.0522,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0522
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0042,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0042
+            }
+          ]
+        },
+        {
+          "security_name": "Meta Platforms Inc Class A",
+          "portfolio_weight": 1.252,
+          "benchmark_weight": 1.0789,
+          "active_weight": 0.1731,
+          "sources": [
+            {
+              "source_name": "Vanguard Communication Services ETF",
+              "portfolio_weight": 0.9954,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.9954
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.2566,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2566
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 1.0789,
+              "active_weight": -1.0789
+            }
+          ]
+        },
+        {
+          "security_name": "Alphabet Inc Class A",
+          "portfolio_weight": 1.0454,
+          "benchmark_weight": 1.8312,
+          "active_weight": -0.7858,
+          "sources": [
+            {
+              "source_name": "Vanguard Communication Services ETF",
+              "portfolio_weight": 0.6344,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.6344
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.4109,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4109
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 1.8312,
+              "active_weight": -1.8312
+            }
+          ]
+        },
+        {
+          "security_name": "Alphabet Inc Class C",
+          "portfolio_weight": 0.6605,
+          "benchmark_weight": 1.4574,
+          "active_weight": -0.7969,
+          "sources": [
+            {
+              "source_name": "Vanguard Communication Services ETF",
+              "portfolio_weight": 0.3379,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3379
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.3225,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3225
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 1.4574,
+              "active_weight": -1.4574
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 1.5761244128214162,
+        "portfolio_weight": 7.249956043663301,
+        "benchmark_weight": 5.673831630841884,
+        "positioning_direction": "overweight",
+        "vir_now": -0.013963430767367446,
+        "vir_delta_mom": 0.009594088519162547,
+        "vir_direction": "underweight",
+        "algo_active_weight": -0.73,
+        "algo_active_weight_mom": 1.4000000000000001,
+        "algo_direction": "underweight",
+        "signal_alignment": "diverging",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.030000000000000027,
+          "yield": 0.026150698437028774,
+          "inflation": 0.025197173188650446,
+          "currency_usd": 0.0017044904466556599,
+          "valuation_adjustment_top_down": -0.04294325087552098,
+          "valuation_adjustment_combined": -0.009819542916889579,
+          "valuation_adjustment_bottom_up": 0.02330416504174182
+        },
+        "stf_relative_context": {
+          "universe": "global sectors",
+          "universe_size": 54,
+          "rank": 26,
+          "percentile": 0.53,
+          "stf": -0.014,
+          "universe_median_stf": -0.0155,
+          "vs_median": 0.0015,
+          "more_attractive_peers": [
+            "Energy",
+            "Consumer Discretionary",
+            "Real Estate"
+          ],
+          "more_attractive_count": 25,
+          "universe_best": {
+            "label": "Energy",
+            "stf": 0.0441
+          },
+          "universe_worst": {
+            "label": "Information Technology",
+            "stf": -0.0785
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.91,
+          "history_window_months": 12,
+          "history_low": -0.0301,
+          "history_high": -0.0138
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {},
+        "return_attribution_mtd": {
+          "active_period_return": 4.08,
+          "active_period_factor_return": 2.88,
+          "active_period_specific_return": 1.17,
+          "period_overweight_return": 2.93,
+          "period_underweight_return": 1.12,
+          "active_style_factor_returns": 1.73,
+          "active_industry_factor_returns": 0.92,
+          "active_market_factor_returns": null,
+          "window_start": "2026-07-01",
+          "window_end": "2026-07-17"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "Equity Sector Review: US Communication Services We are neutral on the sector, but we expect Alphabet and Meta to remain dominant. JUNE 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Michael Hodel, CFA Communication Services Sector Director Morningstar Research Services LLC EQUITY SECTOR REVIEW | US COMMUNICATION SERVICES Valuation: Asset Class-Level P",
+        "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202506-EQ-US TL EQ-Com Services Sector Review.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US Communication Services sector Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "On the other hand, the Energy (to 0.6% from 8.2%) sector is the only sector that has recorded a decrease in its earnings growth rate since the end of the quarter due to downward revisions to earnings estimates and negative earnings surprises. In the Communication Services sector, the positive EPS surprises reported by Alphabet ($5.11 vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US Communication Services sector Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_d4ac0da9e773"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US Communication Services sector Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US Communication Services sector Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_ac4fb5cc2e90"
+        }
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "Omnicom Group Inc (+1.40 pts active) via MS GLOBAL OPP EQ LAZARD 1.36%, Vanguard Communication Services ETF 0.05%; Meta Platforms Inc Class A (+0.17 pts active) via Vanguard Communication Services ETF 1.00%, Vanguard Total Stock Market ETF 0.26%; Alphabet Inc Class A (-0.79 pts active) via Vanguard Communication Services ETF 0.63%, Vanguard Total Stock Market ETF 0.41%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+    },
+    {
+      "challenge_id": "ch_uk-eq_2026-06-30",
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "Autotrader Group PLC",
+          "portfolio_weight": 0.9717,
+          "benchmark_weight": 0.0047,
+          "active_weight": 0.967,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.9684,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.9684
+            },
+            {
+              "source_name": "Franklin FTSE United Kingdom ETF",
+              "portfolio_weight": 0.0033,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0033
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0047,
+              "active_weight": -0.0047
+            }
+          ]
+        },
+        {
+          "security_name": "Diageo PLC",
+          "portfolio_weight": 0.7933,
+          "benchmark_weight": 0.0393,
+          "active_weight": 0.7539,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.6088,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.6088
+            },
+            {
+              "source_name": "MS GLBL OPPS EQ CONSUMER",
+              "portfolio_weight": 0.1034,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1034
+            },
+            {
+              "source_name": "ISHARES TRUST     GLOBAL",
+              "portfolio_weight": 0.054,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.054
+            }
+          ]
+        },
+        {
+          "security_name": "Bunzl PLC",
+          "portfolio_weight": 0.7788,
+          "benchmark_weight": 0.0094,
+          "active_weight": 0.7694,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.772,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.772
+            },
+            {
+              "source_name": "Franklin FTSE United Kingdom ETF",
+              "portfolio_weight": 0.0067,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0067
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0094,
+              "active_weight": -0.0094
+            }
+          ]
+        },
+        {
+          "security_name": "Experian PLC",
+          "portfolio_weight": 0.6801,
+          "benchmark_weight": 0.0265,
+          "active_weight": 0.6537,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.6614,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.6614
+            },
+            {
+              "source_name": "Franklin FTSE United Kingdom ETF",
+              "portfolio_weight": 0.0187,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0187
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0265,
+              "active_weight": -0.0265
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 2.9557746151693105,
+        "portfolio_weight": 5.987999454045134,
+        "benchmark_weight": 3.0322248388758237,
+        "positioning_direction": "overweight",
+        "vir_now": -0.011098384146787453,
+        "vir_delta_mom": -0.0004856296665978199,
+        "vir_direction": "underweight",
+        "algo_active_weight": 1.78,
+        "algo_active_weight_mom": 0.02,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.0129999999999999,
+          "yield": 0.042168616877873426,
+          "inflation": 0.022981883270561942,
+          "currency_usd": 0.018750965419954024,
+          "valuation_adjustment_top_down": -0.023783035406971686,
+          "valuation_adjustment_combined": -0.008489964815393991,
+          "valuation_adjustment_bottom_up": 0.006803105776183704
+        },
+        "stf_relative_context": {
+          "universe": "global countries",
+          "universe_size": 44,
+          "rank": 22,
+          "percentile": 0.51,
+          "stf": -0.0111,
+          "universe_median_stf": -0.0124,
+          "vs_median": 0.0013,
+          "more_attractive_peers": [
+            "Indonesia",
+            "Turkey",
+            "Philippines"
+          ],
+          "more_attractive_count": 21,
+          "universe_best": {
+            "label": "Indonesia",
+            "stf": 0.0646
+          },
+          "universe_worst": {
+            "label": "South Korea",
+            "stf": -0.1013
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.36,
+          "history_window_months": 12,
+          "history_low": -0.0195,
+          "history_high": -0.0018
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {},
+        "return_attribution_mtd": {
+          "active_period_return": 4.08,
+          "active_period_factor_return": 2.88,
+          "active_period_specific_return": 1.17,
+          "period_overweight_return": 2.93,
+          "period_underweight_return": 1.12,
+          "active_style_factor_returns": 1.73,
+          "active_industry_factor_returns": 0.92,
+          "active_market_factor_returns": null,
+          "window_start": "2026-07-01",
+          "window_end": "2026-07-17"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "UK EQ Update - Feb 2026 Mark Murray Matthew Wilson Ziying Peng Phoebe Chapman Raymond Sham Investment Thesis Supporting Analysis: Financials Healthcare Energy Consumer Staples Industrials FX Risk FV\u2019s Contrarian indicators Appendix Contents Investment Thesis Investment Thesis Investment Thesis - Continued Previous Thesis Updates",
+        "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202602-EQ-UK EQ-Conviction-Thesis Update.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c34df78a06c9",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a044487a1fe1",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_fecdba898db0"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a76c130b2002"
+        }
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "Autotrader Group PLC (+0.97 pts active) via MS GLOBAL OPP EQ LAZARD 0.97%, Franklin FTSE United Kingdom ETF 0.00%; Diageo PLC (+0.75 pts active) via MS GLOBAL OPP EQ LAZARD 0.61%, MS GLBL OPPS EQ CONSUMER 0.10%; Bunzl PLC (+0.77 pts active) via MS GLOBAL OPP EQ LAZARD 0.77%, Franklin FTSE United Kingdom ETF 0.01%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+    }
+  ],
+  "supporting_positions": {
+    "top_divergences": [
+      {
+        "acid": "US SML V EQ",
+        "label": "United States Sml Value",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 6.513985573033938,
+        "benchmark_weight": 1.0280248598757071,
+        "active_weight": 5.4859607131582315,
+        "vir_now": -0.00474795947531656,
+        "vir_delta_mom": -0.0009287498063379473,
+        "algo_active_weight": 0.76,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "stable",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "",
+        "sharepoint_research_summary": "",
+        "sample_source_securities": "H&R Block Inc; International Game Technology PLC; Dentsply Sirona Inc; The Campbell's Co; RH Class A; Samsonite Group SA; Brown-Forman Corp Registered Shs -B- Non Vtg; Mattel Inc; Lumen Technologies Inc Ordinary Shares; Gaming and Leisure Properties Inc; Molina Healthcare Inc; Viasat Inc; Match Group Inc Ordinary Shares - New; NNN REIT INC REIT USD 0.01; Alexandria Real Estate Equities Inc; PVH Corp; Eastman Chemical Co; JM Smucker Co; Healthcare Realty Trust Inc; Jackson Financial Inc; CarMax Inc; Clorox Co; Sirius XM Holdings Inc; Conagra Brands Inc; Gates Industrial Corp PLC",
+        "source_breakdown": {
+          "security_count": 1433,
+          "securities": [
+            {
+              "security_name": "H&R Block Inc",
+              "portfolio_weight": 1.4367,
+              "benchmark_weight": 0.0042,
+              "active_weight": 1.4325,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 1.4358,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.4358
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.0009,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0009
+                }
+              ]
+            },
+            {
+              "security_name": "International Game Technology PLC",
+              "portfolio_weight": 1.2923,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.2923,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 1.2923,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.2923
+                }
+              ]
+            },
+            {
+              "security_name": "Dentsply Sirona Inc",
+              "portfolio_weight": 1.1082,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.1082,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 1.1065,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.1065
+                },
+                {
+                  "source_name": "Vanguard US Health Care ETF",
+                  "portfolio_weight": 0.0013,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0013
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US MID V EQ",
+        "label": "United States Mid Value",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 6.524301098629857,
+        "benchmark_weight": 3.283033584832098,
+        "active_weight": 3.2412675137977587,
+        "vir_now": -0.011512287597968976,
+        "vir_delta_mom": 0.0031693492213356045,
+        "algo_active_weight": 1.25,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "",
+        "sharepoint_research_summary": "",
+        "sample_source_securities": "Fiserv Inc; Omnicom Group Inc; Cognizant Technology Solutions Corp Class A; Paychex Inc; Becton Dickinson & Co; Warner Bros. Discovery Inc Ordinary Shares - Class A; REALTY INC. CORP; Target Corp; Crown Castle Inc; VICI Properties Inc Ordinary Shares; Keurig Dr Pepper Inc; Elevance Health Inc; Valero Energy Corp; Sysco Corp; The Cigna Group; Kenvue Inc; Kimberly-Clark Corp; Phillips 66; Archer-Daniels-Midland Co; SBA Communications Corp Class A; The Kroger Co; Kinder Morgan Inc Class P; ONEOK Inc; Mid-America Apartment Communities Inc; W.P. Carey Inc",
+        "source_breakdown": {
+          "security_count": 130,
+          "securities": [
+            {
+              "security_name": "Omnicom Group Inc",
+              "portfolio_weight": 1.4148,
+              "benchmark_weight": 0.0181,
+              "active_weight": 1.3966,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 1.3584,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.3584
+                },
+                {
+                  "source_name": "Vanguard Communication Services ETF",
+                  "portfolio_weight": 0.0522,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0522
+                }
+              ]
+            },
+            {
+              "security_name": "Fiserv Inc",
+              "portfolio_weight": 1.3755,
+              "benchmark_weight": 0.0227,
+              "active_weight": 1.3527,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 1.3704,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.3704
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.0051,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0051
+                }
+              ]
+            },
+            {
+              "security_name": "Cognizant Technology Solutions Corp Class A",
+              "portfolio_weight": 0.6049,
+              "benchmark_weight": 0.0155,
+              "active_weight": 0.5894,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 0.5923,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.5923
+                },
+                {
+                  "source_name": "FIDELITY MSCI INFO. TECH.",
+                  "portfolio_weight": 0.0077,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0077
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "UK EQ",
+        "label": "United Kingdom",
+        "category": "Country",
+        "portfolio_weight": 5.987999454045134,
+        "benchmark_weight": 3.0322248388758237,
+        "active_weight": 2.9557746151693105,
+        "vir_now": -0.011098384146787453,
+        "vir_delta_mom": -0.0004856296665978199,
+        "algo_active_weight": 1.78,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "stable",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202602-EQ-UK EQ-Conviction-Thesis Update.pptx",
+        "sharepoint_research_summary": "UK EQ Update - Feb 2026 Mark Murray Matthew Wilson Ziying Peng Phoebe Chapman Raymond Sham Investment Thesis Supporting Analysis: Financials Healthcare Energy Consumer Staples Industrials FX Risk FV\u2019s Contrarian indicato",
+        "sample_source_securities": "Autotrader Group PLC; Bunzl PLC; Experian PLC; Diageo PLC; Severn Trent PLC; HSBC Holdings PLC; ASTRAZENECA PLC; Unilever PLC; British American Tobacco PLC; Shell PLC; Rolls-Royce Holdings PLC; GSK PLC; BP PLC; Rio Tinto PLC Ordinary Shares; Barclays PLC; Lloyds Banking Group PLC; RECKITT BENCKISER GRP. PL; National Grid PLC; Tesco PLC; BAE Systems PLC; NatWest Group PLC; Compass Group PLC; RELX PLC; Anglo American PLC; Imperial Brands PLC",
+        "source_breakdown": {
+          "security_count": 202,
+          "securities": [
+            {
+              "security_name": "Autotrader Group PLC",
+              "portfolio_weight": 0.9717,
+              "benchmark_weight": 0.0047,
+              "active_weight": 0.967,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 0.9684,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.9684
+                },
+                {
+                  "source_name": "Franklin FTSE United Kingdom ETF",
+                  "portfolio_weight": 0.0033,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0033
+                }
+              ]
+            },
+            {
+              "security_name": "Diageo PLC",
+              "portfolio_weight": 0.7933,
+              "benchmark_weight": 0.0393,
+              "active_weight": 0.7539,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 0.6088,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.6088
+                },
+                {
+                  "source_name": "MS GLBL OPPS EQ CONSUMER",
+                  "portfolio_weight": 0.1034,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.1034
+                }
+              ]
+            },
+            {
+              "security_name": "Bunzl PLC",
+              "portfolio_weight": 0.7788,
+              "benchmark_weight": 0.0094,
+              "active_weight": 0.7694,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 0.772,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.772
+                },
+                {
+                  "source_name": "Franklin FTSE United Kingdom ETF",
+                  "portfolio_weight": 0.0067,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0067
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US TL EQ",
+        "label": "Communication Services",
+        "category": "Eq Sector",
+        "portfolio_weight": 7.249956043663301,
+        "benchmark_weight": 5.673831630841884,
+        "active_weight": 1.5761244128214162,
+        "vir_now": -0.013963430767367446,
+        "vir_delta_mom": 0.009594088519162547,
+        "algo_active_weight": -0.73,
+        "signal_alignment": "diverging",
+        "signal_quality": "improving",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202506-EQ-US TL EQ-Com Services Sector Review.pptx",
+        "sharepoint_research_summary": "Equity Sector Review: US Communication Services We are neutral on the sector, but we expect Alphabet and Meta to remain dominant. JUNE 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Inve",
+        "sample_source_securities": "Omnicom Group Inc; Meta Platforms Inc Class A; Alphabet Inc Class A; Alphabet Inc Class C; Verizon Communications Inc; WALT DISNEY CO/THE; AT&T Inc; Netflix Inc; Comcast Corp Class A; T-Mobile US Inc; Warner Bros. Discovery Inc Ordinary Shares - Class A; Electronic Arts Inc; Take-Two Interactive Software Inc; Roblox Corp Ordinary Shares - Class A; Live Nation Entertainment Inc; AST SpaceMobile Inc Ordinary Shares - Class A; Reddit Inc Class A Shares; Liberty Media Corp Registered Shs Series -C- Formula One; Roku Inc Class A; EchoStar Corp Class A; TKO Group Holdings Inc; New York Times Co Class A; Charter Communications Inc Class A; Lumen Technologies Inc Ordinary Shares; NEWS CORP",
+        "source_breakdown": {
+          "security_count": 161,
+          "securities": [
+            {
+              "security_name": "Omnicom Group Inc",
+              "portfolio_weight": 1.4148,
+              "benchmark_weight": 0.0181,
+              "active_weight": 1.3966,
+              "sources": [
+                {
+                  "source_name": "MS GLOBAL OPP EQ LAZARD",
+                  "portfolio_weight": 1.3584,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.3584
+                },
+                {
+                  "source_name": "Vanguard Communication Services ETF",
+                  "portfolio_weight": 0.0522,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0522
+                }
+              ]
+            },
+            {
+              "security_name": "Meta Platforms Inc Class A",
+              "portfolio_weight": 1.252,
+              "benchmark_weight": 1.0789,
+              "active_weight": 0.1731,
+              "sources": [
+                {
+                  "source_name": "Vanguard Communication Services ETF",
+                  "portfolio_weight": 0.9954,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.9954
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.2566,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2566
+                }
+              ]
+            },
+            {
+              "security_name": "Alphabet Inc Class A",
+              "portfolio_weight": 1.0454,
+              "benchmark_weight": 1.8312,
+              "active_weight": -0.7858,
+              "sources": [
+                {
+                  "source_name": "Vanguard Communication Services ETF",
+                  "portfolio_weight": 0.6344,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.6344
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.4109,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4109
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "top_aligned_positions": [
+      {
+        "acid": "US LRG EQ",
+        "label": "United States Lrg",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 11.2945881935087,
+        "benchmark_weight": 20.323728381358237,
+        "active_weight": -9.029140187849537,
+        "vir_now": -0.03614793225181658,
+        "vir_delta_mom": 0.002690317167760581,
+        "algo_active_weight": -8.59,
+        "signal_alignment": "aligned",
+        "signal_quality": "stable",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+        "sharepoint_research_summary": "February 22, 2017 Paul Arnold, CFA Marta Norton, CFA Nabil Salem, CFA Carrie Scherkenbach Mike Stout, CFA Americas Asset Allocation: U.S. Equity Agenda Updates to Valuation Implied Returns Intra-U.S. Analysis Valuations ",
+        "sample_source_securities": "APPLE INC; Meta Platforms Inc Class A; Visa Inc Class A; Alphabet Inc Class A; Microsoft Corp; AMAZON.COM INC; WALMART INC; Alphabet Inc Class C; Costco Wholesale Corp; Micron Technology Inc; Prologis Inc; Coca-Cola Co; Equinix Inc; Caterpillar Inc; Mastercard Inc Class A; Texas Instruments Inc; Oracle Corp; Vertex Pharmaceuticals Inc; SanDisk Corp Ordinary Shares; Stryker Corp; McKesson Corp; Seagate Technology Holdings PLC; Boston Scientific Corp; RTX Corp; Linde PLC",
+        "source_breakdown": {
+          "security_count": 53,
+          "securities": [
+            {
+              "security_name": "APPLE INC",
+              "portfolio_weight": 1.8856,
+              "benchmark_weight": 3.7165,
+              "active_weight": -1.8309,
+              "sources": [
+                {
+                  "source_name": "FIDELITY MSCI INFO. TECH.",
+                  "portfolio_weight": 1.0358,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.0358
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.8498,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.8498
+                }
+              ]
+            },
+            {
+              "security_name": "Microsoft Corp",
+              "portfolio_weight": 1.5177,
+              "benchmark_weight": 2.4257,
+              "active_weight": -0.908,
+              "sources": [
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.6201,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.6201
+                },
+                {
+                  "source_name": "FIDELITY MSCI INFO. TECH.",
+                  "portfolio_weight": 0.5875,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.5875
+                }
+              ]
+            },
+            {
+              "security_name": "Meta Platforms Inc Class A",
+              "portfolio_weight": 1.252,
+              "benchmark_weight": 1.0789,
+              "active_weight": 0.1731,
+              "sources": [
+                {
+                  "source_name": "Vanguard Communication Services ETF",
+                  "portfolio_weight": 0.9954,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.9954
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.2566,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2566
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US IT EQ",
+        "label": "Information Technology",
+        "category": "Eq Sector",
+        "portfolio_weight": 14.228099850541536,
+        "benchmark_weight": 22.419107904460667,
+        "active_weight": -8.19100805391913,
+        "vir_now": -0.05090276443877276,
+        "vir_delta_mom": 0.0058497848425465016,
+        "algo_active_weight": -8.19,
+        "signal_alignment": "aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+        "sharepoint_research_summary": "Equity Sector Review: US Technology We are moderately negative on the sector, but we see the software industry as undervalued. AUGUST 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Inves",
+        "sample_source_securities": "NVIDIA Corp; APPLE INC; Adobe Inc; Microsoft Corp; Cognizant Technology Solutions Corp Class A; Broadcom Inc; Micron Technology Inc; Advanced Micro Devices Inc; Intel Corp; Applied Materials Inc; Cisco Systems Inc; Lam Research Corp; Palo Alto Networks Inc; KLA CORP; Palantir Technologies Inc Ordinary Shares - Class A; Texas Instruments Inc; International Business Machines Corp; Oracle Corp; CrowdStrike Holdings Inc Class A; SanDisk Corp Ordinary Shares; Marvell Technology Inc; Amphenol Corp Class A; Western Digital Corp; Qualcomm Inc; Analog Devices Inc",
+        "source_breakdown": {
+          "security_count": 428,
+          "securities": [
+            {
+              "security_name": "NVIDIA Corp",
+              "portfolio_weight": 1.9658,
+              "benchmark_weight": 4.1055,
+              "active_weight": -2.1397,
+              "sources": [
+                {
+                  "source_name": "FIDELITY MSCI INFO. TECH.",
+                  "portfolio_weight": 1.0617,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.0617
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.9041,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.9041
+                }
+              ]
+            },
+            {
+              "security_name": "APPLE INC",
+              "portfolio_weight": 1.8856,
+              "benchmark_weight": 3.7165,
+              "active_weight": -1.8309,
+              "sources": [
+                {
+                  "source_name": "FIDELITY MSCI INFO. TECH.",
+                  "portfolio_weight": 1.0358,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.0358
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.8498,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.8498
+                }
+              ]
+            },
+            {
+              "security_name": "Microsoft Corp",
+              "portfolio_weight": 1.5177,
+              "benchmark_weight": 2.4257,
+              "active_weight": -0.908,
+              "sources": [
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.6201,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.6201
+                },
+                {
+                  "source_name": "FIDELITY MSCI INFO. TECH.",
+                  "portfolio_weight": 0.5875,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.5875
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US LRG G EQ",
+        "label": "United States Lrg Growth",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 6.941218784282696,
+        "benchmark_weight": 13.6440117799412,
+        "active_weight": -6.702792995658505,
+        "vir_now": -0.04962423052831241,
+        "vir_delta_mom": 0.0024411655527130094,
+        "algo_active_weight": -6.950000000000001,
+        "signal_alignment": "aligned",
+        "signal_quality": "stable",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "",
+        "sharepoint_research_summary": "",
+        "sample_source_securities": "NVIDIA Corp; Eli Lilly and Co; Broadcom Inc; Welltower Inc; Tesla Inc; Advanced Micro Devices Inc; Netflix Inc; Intel Corp; Applied Materials Inc; Lam Research Corp; Palo Alto Networks Inc; Intuitive Surgical Inc; KLA CORP; Palantir Technologies Inc Ordinary Shares - Class A; CrowdStrike Holdings Inc Class A; GE Aerospace; Marvell Technology Inc; Amphenol Corp Class A; Western Digital Corp; Analog Devices Inc; GE Vernova Inc; Arista Networks Inc; AppLovin Corp Ordinary Shares - Class A; Corning Inc; ServiceNow Inc",
+        "source_breakdown": {
+          "security_count": 29,
+          "securities": [
+            {
+              "security_name": "NVIDIA Corp",
+              "portfolio_weight": 1.9658,
+              "benchmark_weight": 4.1055,
+              "active_weight": -2.1397,
+              "sources": [
+                {
+                  "source_name": "FIDELITY MSCI INFO. TECH.",
+                  "portfolio_weight": 1.0617,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.0617
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.9041,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.9041
+                }
+              ]
+            },
+            {
+              "security_name": "Eli Lilly and Co",
+              "portfolio_weight": 0.7335,
+              "benchmark_weight": 0.8408,
+              "active_weight": -0.1074,
+              "sources": [
+                {
+                  "source_name": "Vanguard US Health Care ETF",
+                  "portfolio_weight": 0.5594,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.5594
+                },
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.174,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.174
+                }
+              ]
+            },
+            {
+              "security_name": "Broadcom Inc",
+              "portfolio_weight": 0.6414,
+              "benchmark_weight": 1.5387,
+              "active_weight": -0.8973,
+              "sources": [
+                {
+                  "source_name": "Vanguard Total Stock Market ETF",
+                  "portfolio_weight": 0.3929,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3929
+                },
+                {
+                  "source_name": "FIDELITY MSCI INFO. TECH.",
+                  "portfolio_weight": 0.2485,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2485
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "top_movers": [
+      {
+        "acid": "EM TL EQ",
+        "label": "Communication Services",
+        "category": "Eq Sector",
+        "vir_now": 0.005820988401982391,
+        "vir_delta_mom": 0.02098041365633674,
+        "decomposition_driver": "valuation_adjustment_bottom_up",
+        "decomposition_assessment": "broad_based",
+        "active_weight": 0.825005724750483
+      },
+      {
+        "acid": "AU HC EQ",
+        "label": "Health Care",
+        "category": "Eq Sector",
+        "vir_now": 0.008119684176908296,
+        "vir_delta_mom": -0.017312362771658707,
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "active_weight": 0.5502752735711556
+      },
+      {
+        "acid": "ID EQ",
+        "label": "Indonesia",
+        "category": "Country",
+        "vir_now": 0.06455215058781259,
+        "vir_delta_mom": 0.01644333671244702,
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "active_weight": -0.024300498369970086
+      },
+      {
+        "acid": "AU CS EQ",
+        "label": "Consumer Staples",
+        "category": "Eq Sector",
+        "vir_now": -0.00872977335525088,
+        "vir_delta_mom": -0.015256678656394351,
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "active_weight": -0.005388019458966192
+      }
+    ],
+    "decomposition_focus": [
+      {
+        "acid": "TR EQ",
+        "label": "Turkey",
+        "dominant_driver": "inflation",
+        "dominant_driver_value": 0.1617669243408506,
+        "assessment": "broad_based",
+        "vir_now": 0.029274000824953975,
+        "vir_delta_mom": -0.0034817132582394272,
+        "active_weight": 0.025473630469031283,
+        "values": {
+          "growth": 0.03750000000000009,
+          "yield": 0.030888996982978728,
+          "inflation": 0.1617669243408506,
+          "currency_usd": -0.0868132368353205,
+          "valuation_adjustment_top_down": 0.051102303002076965,
+          "valuation_adjustment_combined": 0.02362079921391902
+        }
+      },
+      {
+        "acid": "KR EQ",
+        "label": "South Korea",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.1190594078094993,
+        "assessment": "broad_based",
+        "vir_now": -0.10129634776876131,
+        "vir_delta_mom": -0.003976711202827166,
+        "active_weight": -2.8266931436166423,
+        "values": {
+          "growth": 0.030000000000000027,
+          "yield": 0.01619583682105779,
+          "inflation": 0.020798748042668347,
+          "currency_usd": 0.049072834721861414,
+          "valuation_adjustment_top_down": -0.1190594078094993,
+          "valuation_adjustment_combined": -0.08452174949623636
+        }
+      },
+      {
+        "acid": "JP IT EQ",
+        "label": "Information Technology",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.10761503526123206,
+        "assessment": "broad_based",
+        "vir_now": -0.07093185884228045,
+        "vir_delta_mom": -0.013627046461277437,
+        "active_weight": -0.5966883731346523,
+        "values": {
+          "growth": 0.03499999999999992,
+          "yield": 0.012031269386258831,
+          "inflation": 0.02064843595828325,
+          "currency_usd": 0.05590389696451692,
+          "valuation_adjustment_top_down": -0.10761503526123206,
+          "valuation_adjustment_combined": -0.05951641726077572
+        }
+      },
+      {
+        "acid": "EM IT EQ",
+        "label": "Information Technology",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.10449959128196906,
+        "assessment": "broad_based",
+        "vir_now": -0.0784610704453966,
+        "vir_delta_mom": -0.0019106758205419405,
+        "active_weight": -3.919432023572546,
+        "values": {
+          "growth": 0.03499999999999992,
+          "yield": 0.013983514365219284,
+          "inflation": 0.017693482644880975,
+          "currency_usd": 0.04269966266009595,
+          "valuation_adjustment_top_down": -0.10449959128196906,
+          "valuation_adjustment_combined": -0.06462708140585527
+        }
+      }
+    ]
+  },
+  "risk_and_attribution": {
+    "summary": {
+      "review_date_requested": "2026-07-21",
+      "risk_date_used": "2026-07-20",
+      "prior_month_end_used": "",
+      "predicted_beta": 0.8245,
+      "active_predicted_beta": -0.1947,
+      "total_predicted_risk_pct": 13.73,
+      "active_predicted_risk_pct": 5.89,
+      "active_share_pct": 49.59,
+      "factor_risk_pct": 13.54,
+      "specific_risk_pct": 2.29,
+      "active_factor_risk_pct": 5.53,
+      "active_specific_risk_pct": 2.04,
+      "active_style_factor_risk_pct": 2.95,
+      "active_industry_factor_risk_pct": 3.1,
+      "active_market_factor_risk_pct": null,
+      "change_vs_prior_month_end": {}
+    },
+    "top_style_risk_drivers": [
+      {
+        "label": "US4 Size",
+        "share_of_variance_pct": 6.62
+      },
+      {
+        "label": "US4 Market Sensitivity",
+        "share_of_variance_pct": 5.13
+      },
+      {
+        "label": "US4 Volatility",
+        "share_of_variance_pct": 3.16
+      }
+    ],
+    "top_industry_risk_drivers": [
+      {
+        "label": "US4 Semiconductors & Semiconductor Equipment",
+        "share_of_variance_pct": 1.78
+      },
+      {
+        "label": "US4 Software",
+        "share_of_variance_pct": 0.67
+      },
+      {
+        "label": "US4 Technology Hardware, Storage & Peripherals",
+        "share_of_variance_pct": 0.56
+      },
+      {
+        "label": "US4 Professional Services",
+        "share_of_variance_pct": 0.37
+      }
+    ],
+    "return_attribution_mtd": {
+      "active_period_return": 4.08,
+      "active_period_factor_return": 2.88,
+      "active_period_specific_return": 1.17,
+      "period_overweight_return": 2.93,
+      "period_underweight_return": 1.12,
+      "active_style_factor_returns": 1.73,
+      "active_industry_factor_returns": 0.92,
+      "active_market_factor_returns": null,
+      "window_start": "2026-07-01",
+      "window_end": "2026-07-17"
+    },
+    "likely_holdings_contributors": [
+      {
+        "risk_driver": "US4 Semiconductors & Semiconductor Equipment",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 1.78,
+        "active_weight": -8.19,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 1.97,
+            "benchmark_weight": 4.11,
+            "active_weight": -2.14
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 1.89,
+            "benchmark_weight": 3.72,
+            "active_weight": -1.83
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 1.52,
+            "benchmark_weight": 2.43,
+            "active_weight": -0.91
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "US4 Software",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 0.67,
+        "active_weight": -8.19,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 1.97,
+            "benchmark_weight": 4.11,
+            "active_weight": -2.14
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 1.89,
+            "benchmark_weight": 3.72,
+            "active_weight": -1.83
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 1.52,
+            "benchmark_weight": 2.43,
+            "active_weight": -0.91
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "US4 Technology Hardware, Storage & Peripherals",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 0.56,
+        "active_weight": -8.19,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 1.97,
+            "benchmark_weight": 4.11,
+            "active_weight": -2.14
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 1.89,
+            "benchmark_weight": 3.72,
+            "active_weight": -1.83
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 1.52,
+            "benchmark_weight": 2.43,
+            "active_weight": -0.91
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "EM4 Semiconductors & Semiconductor Equipment",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 0.32,
+        "active_weight": -8.19,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 1.97,
+            "benchmark_weight": 4.11,
+            "active_weight": -2.14
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 1.89,
+            "benchmark_weight": 3.72,
+            "active_weight": -1.83
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 1.52,
+            "benchmark_weight": 2.43,
+            "active_weight": -0.91
+          }
+        ],
+        "inference_level": "sector_proxy"
+      }
+    ],
+    "specific_risk_watchlist": [
+      {
+        "label": "United States Lrg",
+        "category": "Eq Size / Style",
+        "active_weight": -9.03,
+        "top_sector_holdings": [
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 1.89,
+            "benchmark_weight": 3.72,
+            "active_weight": -1.83
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 1.52,
+            "benchmark_weight": 2.43,
+            "active_weight": -0.91
+          },
+          {
+            "security_name": "Meta Platforms Inc Class A",
+            "portfolio_weight": 1.25,
+            "benchmark_weight": 1.08,
+            "active_weight": 0.17
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "Information Technology",
+        "category": "Eq Sector",
+        "active_weight": -8.19,
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 1.97,
+            "benchmark_weight": 4.11,
+            "active_weight": -2.14
+          },
+          {
+            "security_name": "APPLE INC",
+            "portfolio_weight": 1.89,
+            "benchmark_weight": 3.72,
+            "active_weight": -1.83
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 1.52,
+            "benchmark_weight": 2.43,
+            "active_weight": -0.91
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "United States Lrg Growth",
+        "category": "Eq Size / Style",
+        "active_weight": -6.7,
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 1.97,
+            "benchmark_weight": 4.11,
+            "active_weight": -2.14
+          },
+          {
+            "security_name": "Eli Lilly and Co",
+            "portfolio_weight": 0.73,
+            "benchmark_weight": 0.84,
+            "active_weight": -0.11
+          },
+          {
+            "security_name": "Broadcom Inc",
+            "portfolio_weight": 0.64,
+            "benchmark_weight": 1.54,
+            "active_weight": -0.9
+          }
+        ],
+        "inference_level": "sector_proxy"
+      }
+    ],
+    "narrative_observations": [
+      "Measured active risk is currently most concentrated in industry risk at 3.10%.",
+      "The biggest modeled industry driver is US4 Semiconductors & Semiconductor Equipment at 1.8% of active variance.",
+      "The largest modeled style driver is US4 Size at 6.6% of active variance.",
+      "Within the mapped Information Technology bucket behind US4 Semiconductors & Semiconductor Equipment risk, the largest sector holdings are NVIDIA Corp, APPLE INC, Microsoft Corp."
+    ]
+  },
+  "sharepoint_research_focus": [
+    {
+      "acid": "US LRG EQ",
+      "label": "United States Lrg",
+      "category": "Eq Size / Style",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\201702-EQ-US LRG EQ-US MID EQ-US SML EQ-Size and Style Review.pptx",
+      "research_status": "",
+      "research_summary": "February 22, 2017 Paul Arnold, CFA Marta Norton, CFA Nabil Salem, CFA Carrie Scherkenbach Mike Stout, CFA Americas Asset Allocation: U.S. Equity Agenda Updates to Valuation Implied Returns Intra-U.S. Analysis Valuations and Fundamentals Sentiment Asset Allocat"
+    },
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+      "research_status": "",
+      "research_summary": "Equity Sector Review: US Technology We are moderately negative on the sector, but we see the software industry as undervalued. AUGUST 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Eric Compton"
+    },
+    {
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202602-EQ-UK EQ-Conviction-Thesis Update.pptx",
+      "research_status": "",
+      "research_summary": "UK EQ Update - Feb 2026 Mark Murray Matthew Wilson Ziying Peng Phoebe Chapman Raymond Sham Investment Thesis Supporting Analysis: Financials Healthcare Energy Consumer Staples Industrials FX Risk FV\u2019s Contrarian indicators Appendix Contents Investment Thesis I"
+    },
+    {
+      "acid": "US TL EQ",
+      "label": "Communication Services",
+      "category": "Eq Sector",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202506-EQ-US TL EQ-Com Services Sector Review.pptx",
+      "research_status": "",
+      "research_summary": "Equity Sector Review: US Communication Services We are neutral on the sector, but we expect Alphabet and Meta to remain dominant. JUNE 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Michael Hod"
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
+      "research_path": "C:\\Users\\schuri2\\MORNINGSTAR INC\\MIM Global Research - Final Research (yyyymm-AC-ACID-project title)\\202512-EQ-US FN EQ-US Financials Sector Review .pptx",
+      "research_status": "",
+      "research_summary": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers. DECEMBER 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 47 55 64 71 75 Mark Murray, CFA H"
+    }
+  ],
+  "internal_history_focus": [],
+  "source_drilldowns": [
+    {
+      "acid": "US LRG EQ",
+      "label": "United States Lrg",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "APPLE INC",
+          "portfolio_weight": 1.8856,
+          "benchmark_weight": 3.7165,
+          "active_weight": -1.8309,
+          "sources": [
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 1.0358,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.0358
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.8498,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.8498
+            }
+          ]
+        },
+        {
+          "security_name": "Microsoft Corp",
+          "portfolio_weight": 1.5177,
+          "benchmark_weight": 2.4257,
+          "active_weight": -0.908,
+          "sources": [
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.6201,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.6201
+            },
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 0.5875,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5875
+            }
+          ]
+        },
+        {
+          "security_name": "Meta Platforms Inc Class A",
+          "portfolio_weight": 1.252,
+          "benchmark_weight": 1.0789,
+          "active_weight": 0.1731,
+          "sources": [
+            {
+              "source_name": "Vanguard Communication Services ETF",
+              "portfolio_weight": 0.9954,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.9954
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.2566,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2566
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "top_securities": [
+        {
+          "security_name": "NVIDIA Corp",
+          "portfolio_weight": 1.9658,
+          "benchmark_weight": 4.1055,
+          "active_weight": -2.1397,
+          "sources": [
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 1.0617,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.0617
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.9041,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.9041
+            }
+          ]
+        },
+        {
+          "security_name": "APPLE INC",
+          "portfolio_weight": 1.8856,
+          "benchmark_weight": 3.7165,
+          "active_weight": -1.8309,
+          "sources": [
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 1.0358,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.0358
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.8498,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.8498
+            }
+          ]
+        },
+        {
+          "security_name": "Microsoft Corp",
+          "portfolio_weight": 1.5177,
+          "benchmark_weight": 2.4257,
+          "active_weight": -0.908,
+          "sources": [
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.6201,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.6201
+            },
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 0.5875,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5875
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US SML V EQ",
+      "label": "United States Sml Value",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "H&R Block Inc",
+          "portfolio_weight": 1.4367,
+          "benchmark_weight": 0.0042,
+          "active_weight": 1.4325,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.4358,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.4358
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0009,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0009
+            }
+          ]
+        },
+        {
+          "security_name": "International Game Technology PLC",
+          "portfolio_weight": 1.2923,
+          "benchmark_weight": 0.0,
+          "active_weight": 1.2923,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.2923,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.2923
+            }
+          ]
+        },
+        {
+          "security_name": "Dentsply Sirona Inc",
+          "portfolio_weight": 1.1082,
+          "benchmark_weight": 0.0,
+          "active_weight": 1.1082,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.1065,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.1065
+            },
+            {
+              "source_name": "Vanguard US Health Care ETF",
+              "portfolio_weight": 0.0013,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0013
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US LRG G EQ",
+      "label": "United States Lrg Growth",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "NVIDIA Corp",
+          "portfolio_weight": 1.9658,
+          "benchmark_weight": 4.1055,
+          "active_weight": -2.1397,
+          "sources": [
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 1.0617,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.0617
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.9041,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.9041
+            }
+          ]
+        },
+        {
+          "security_name": "Eli Lilly and Co",
+          "portfolio_weight": 0.7335,
+          "benchmark_weight": 0.8408,
+          "active_weight": -0.1074,
+          "sources": [
+            {
+              "source_name": "Vanguard US Health Care ETF",
+              "portfolio_weight": 0.5594,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5594
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.174,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.174
+            }
+          ]
+        },
+        {
+          "security_name": "Broadcom Inc",
+          "portfolio_weight": 0.6414,
+          "benchmark_weight": 1.5387,
+          "active_weight": -0.8973,
+          "sources": [
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.3929,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3929
+            },
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 0.2485,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2485
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "Omnicom Group Inc",
+          "portfolio_weight": 1.4148,
+          "benchmark_weight": 0.0181,
+          "active_weight": 1.3966,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.3584,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.3584
+            },
+            {
+              "source_name": "Vanguard Communication Services ETF",
+              "portfolio_weight": 0.0522,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0522
+            }
+          ]
+        },
+        {
+          "security_name": "Fiserv Inc",
+          "portfolio_weight": 1.3755,
+          "benchmark_weight": 0.0227,
+          "active_weight": 1.3527,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 1.3704,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.3704
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0051,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0051
+            }
+          ]
+        },
+        {
+          "security_name": "Cognizant Technology Solutions Corp Class A",
+          "portfolio_weight": 0.6049,
+          "benchmark_weight": 0.0155,
+          "active_weight": 0.5894,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.5923,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5923
+            },
+            {
+              "source_name": "FIDELITY MSCI INFO. TECH.",
+              "portfolio_weight": 0.0077,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0077
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "data_quality_flags": [
+    {
+      "severity": "medium",
+      "flag": "missing_vir_rows",
+      "message": "2 exposure rows do not have matched STF context."
+    },
+    {
+      "severity": "medium",
+      "flag": "missing_algo_rows",
+      "message": "4 exposure rows do not have matched algo context."
+    },
+    {
+      "severity": "low",
+      "flag": "logical_vs_source_snapshot_date",
+      "message": "The review month is 2026-06-30, while the source holdings snapshot embedded in the rolled artifact is 2026-07-06."
+    },
+    {
+      "severity": "low",
+      "flag": "algo_scaled_to_percentage_points",
+      "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
+    }
+  ],
+  "cost_guardrails": {
+    "instruction": "Use only the evidence below. Do not produce a broad monthly review. Focus on the top 4 PM decisions and keep every section concise.",
+    "target_output_tokens": 4200
+  }
+}

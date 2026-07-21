@@ -1,37 +1,23 @@
 /*
- * Signals & Decomp — "Challenge the model" surface.
- * The STF decomposition values are REAL (from packet.material_positions).
- * The regime read and per-component reliability verdicts are ILLUSTRATIVE —
- * they demonstrate the agent critiquing its own model: which signal components
- * to trust vs discount given the prevailing market regime.
+ * Signals & Decomp — a fund-specific model diagnostic.
+ * All decomposition values come from the selected fund's review packet.
+ * Confidence is based only on observable signal concentration; the UI does not
+ * assert a market-regime narrative that is absent from the fund evidence.
  */
 import { useMemo, useState } from 'react'
 import { decompPositions } from '../lib/data.js'
 import { stfPct, signedStfPct } from '../lib/format.js'
 
-// Illustrative regime read (would be agent-generated from market context).
-const REGIME = {
-  name: 'Momentum-led · growth-concentrated',
-  read: 'Q1 2026 earnings growth (+28.6% blended) is concentrated in the "Magnificent 7" — Communication Services alone at +48.9%. In this regime, top-down valuation has been a losing signal for ~6 months: cheap stays cheap, momentum compounds. The implication for the STF: valuation-driven underweights are lower-confidence than their magnitude implies, while growth/earnings-momentum components are corroborated by the tape.',
-}
-
-const RELIABILITY = {
-  growth: { v: 'trust', why: 'Earnings momentum confirmed by Q1 beats' },
-  yield: { v: 'neutral', why: 'Rate path stable — modest, non-dominant signal' },
-  inflation: { v: 'neutral', why: 'Cooling, but not driving leadership' },
-  currency_usd: { v: 'trust', why: 'USD trend persistent and corroborated' },
-  valuation_adjustment_top_down: { v: 'discount', why: 'Valuation a losing signal ~6mo in a momentum regime' },
-  valuation_adjustment_bottom_up: { v: 'trust', why: 'Stock-level value still discriminating' },
-  valuation_adjustment_combined: { v: 'discount', why: 'Dominated by the unreliable top-down component' },
-}
 const LABELS = {
-  growth: 'Growth', yield: 'Yield', inflation: 'Inflation', currency_usd: 'Currency (USD)',
-  valuation_adjustment_top_down: 'Valuation — top-down', valuation_adjustment_bottom_up: 'Valuation — bottom-up',
+  growth: 'Growth',
+  yield: 'Yield',
+  inflation: 'Inflation',
+  currency_usd: 'Currency (USD)',
+  valuation_adjustment_top_down: 'Valuation — top-down',
+  valuation_adjustment_bottom_up: 'Valuation — bottom-up',
   valuation_adjustment_combined: 'Valuation — combined',
 }
 const ORDER = ['growth', 'yield', 'inflation', 'currency_usd', 'valuation_adjustment_top_down', 'valuation_adjustment_bottom_up']
-const RTAG = { trust: 'pos', neutral: 'ink', discount: 'warn' }
-const RLABEL = { trust: 'Trust', neutral: 'Neutral', discount: 'Discount' }
 
 export default function SignalsDecomp() {
   const list = decompPositions
@@ -40,28 +26,27 @@ export default function SignalsDecomp() {
 
   const comps = ORDER
     .filter((k) => sel?.values?.[k] !== undefined)
-    .map((k) => ({ k, label: LABELS[k], value: Number(sel.values[k]), rel: RELIABILITY[k]?.v || 'neutral', why: RELIABILITY[k]?.why }))
+    .map((k) => ({ k, label: LABELS[k], value: Number(sel.values[k]) }))
   const maxAbs = Math.max(...comps.map((c) => Math.abs(c.value)), 0.01)
-  const totalAbs = comps.reduce((s, c) => s + Math.abs(c.value), 0) || 1
+  const totalAbs = comps.reduce((sum, c) => sum + Math.abs(c.value), 0) || 1
   const dominant = comps.slice().sort((a, b) => Math.abs(b.value) - Math.abs(a.value))[0]
   const dominantShare = Math.round((Math.abs(dominant?.value || 0) / totalAbs) * 100)
-  const dominantRel = dominant?.rel
+  const concentrated = dominantShare >= 50
   const modelDir = sel?.vir < 0 ? 'underweight' : 'overweight'
-  const lowConf = dominantRel === 'discount'
 
   return (
     <div className="canvas">
       <div className="demo-banner">
-        <span className="demo-tag">Decomp real · verdict illustrative</span>
-        <span>The agent challenges its <b>own model</b>: STF decomposition values are live; the regime read and per-component reliability show where to <b>trust vs discount</b> the signal given current markets.</span>
+        <span className="demo-tag">Live fund data</span>
+        <span>The decomposition and concentration diagnostic come from the selected fund's latest STF review packet.</span>
       </div>
 
       <div className="regime">
         <div className="regime-l">
-          <div className="eyebrow" style={{ color: 'var(--brand-2)' }}>Market regime</div>
-          <div className="regime-name">{REGIME.name}</div>
+          <div className="eyebrow" style={{ color: 'var(--brand-2)' }}>Model diagnostic</div>
+          <div className="regime-name">Evidence-led signal review</div>
         </div>
-        <p className="regime-read">{REGIME.read}</p>
+        <p className="regime-read">This view does not assume the same market regime across funds. It highlights the live signal components and flags when one driver accounts for most of the model read.</p>
       </div>
 
       <div className="cb-toolbar" style={{ marginTop: 18 }}>
@@ -76,52 +61,51 @@ export default function SignalsDecomp() {
         <div className="panel">
           <div className="panel-head">
             <div className="panel-title">STF decomposition — {sel?.name}</div>
-            <div className="panel-sub eyebrow">Live components · reliability tagged by regime</div>
+            <div className="panel-sub eyebrow">Live components · selected fund</div>
           </div>
           <div className="decomp">
             {comps.map((c) => {
-              const w = (Math.abs(c.value) / maxAbs) * 50
-              const pos = c.value > 0
-              const isDom = c.k === dominant?.k
+              const width = (Math.abs(c.value) / maxAbs) * 50
+              const positive = c.value > 0
+              const isDominant = c.k === dominant?.k
               return (
-                <div className={`decomp-row${isDom ? ' dom' : ''}`} key={c.k}>
-                  <div className="decomp-name">{c.label}{isDom && <span className="dom-tag">dominant</span>}</div>
+                <div className={`decomp-row${isDominant ? ' dom' : ''}`} key={c.k}>
+                  <div className="decomp-name">{c.label}{isDominant && <span className="dom-tag">dominant</span>}</div>
                   <div className="bar-track">
                     <div className="bar-axis" />
-                    <div className={`bar-fill ${pos ? 'pos' : 'neg'}`} style={pos ? { left: '50%', width: `${w}%` } : { left: `${50 - w}%`, width: `${w}%` }} />
+                    <div className={`bar-fill ${positive ? 'pos' : 'neg'}`} style={positive ? { left: '50%', width: `${width}%` } : { left: `${50 - width}%`, width: `${width}%` }} />
                   </div>
-                  <div className={`decomp-val ${pos ? 'pos' : 'neg'}`}>{signedStfPct(c.value)}</div>
-                  <span className={`tag ${RTAG[c.rel]}`}>{RLABEL[c.rel]}</span>
+                  <div className={`decomp-val ${positive ? 'pos' : 'neg'}`}>{signedStfPct(c.value)}</div>
                 </div>
               )
             })}
           </div>
         </div>
 
-        <div className="panel" style={{ borderTop: `3px solid ${lowConf ? 'var(--warn)' : 'var(--pos)'}` }}>
+        <div className="panel" style={{ borderTop: `3px solid ${concentrated ? 'var(--warn)' : 'var(--pos)'}` }}>
           <div className="panel-head">
-            <div className="panel-title">Model reliability verdict</div>
-            <div className="panel-sub eyebrow">Should we trust the signal here?</div>
+            <div className="panel-title">Signal concentration verdict</div>
+            <div className="panel-sub eyebrow">How broad is the model read?</div>
           </div>
 
           <div className="verdict">
-            <div className={`verdict-badge ${lowConf ? 'warn' : 'pos'}`}>{lowConf ? 'Low-confidence — discount' : 'High-confidence — trust'}</div>
+            <div className={`verdict-badge ${concentrated ? 'warn' : 'pos'}`}>{concentrated ? 'Concentrated — review' : 'Broad-based signal'}</div>
             <p className="verdict-body">
               The model reads <b>{modelDir}</b> (STF {stfPct(sel?.vir)}{Number.isNaN(sel?.virDelta) ? '' : `, ${signedStfPct(sel?.virDelta)} MoM`}).
-              That read is <b>{dominantShare}%</b> driven by <b>{dominant?.label}</b>
-              {lowConf
-                ? ` — the least reliable component in a ${REGIME.name.split(' · ')[0]} regime. The signal's magnitude overstates its conviction; treat the ${modelDir} as soft and weight the corroborated growth/earnings components more heavily.`
-                : ` — a component that is corroborated by current markets. The signal can be taken at face value.`}
+              The largest component, <b>{dominant?.label}</b>, represents <b>{dominantShare}%</b> of absolute component magnitude.
+              {concentrated
+                ? ' Treat the headline signal with care because its direction depends heavily on one driver.'
+                : ' The signal is distributed across multiple drivers, reducing single-component dependency.'}
             </p>
           </div>
 
           <div className="reliability-list">
-            <div className="eyebrow" style={{ marginBottom: 8 }}>Why, component by component</div>
+            <div className="eyebrow" style={{ marginBottom: 8 }}>Components by absolute magnitude</div>
             {comps.slice().sort((a, b) => Math.abs(b.value) - Math.abs(a.value)).map((c) => (
               <div className="rel-row" key={c.k}>
-                <span className={`rel-dot rel-${c.rel}`} />
+                <span className="rel-dot rel-neutral" />
                 <span className="rel-name">{c.label}</span>
-                <span className="rel-why">{c.why}</span>
+                <span className="rel-why">{signedStfPct(c.value)}</span>
               </div>
             ))}
           </div>
@@ -130,14 +114,14 @@ export default function SignalsDecomp() {
 
       <div className="panel section-gap">
         <div className="panel-head">
-          <div className="panel-title">What would make us discount the model more broadly</div>
-          <div className="panel-sub eyebrow">Regime triggers the agent watches</div>
+          <div className="panel-title">What would reduce confidence in the model read</div>
+          <div className="panel-sub eyebrow">Fund-specific review checks</div>
         </div>
         <div className="trigger-grid">
-          <div className="trigger"><div className="trigger-h">Valuation signal decay</div><p>Top-down valuation has mis-fired ~6 consecutive months — the longer the streak, the more the agent down-weights valuation-driven STF reads.</p></div>
-          <div className="trigger"><div className="trigger-h">Earnings-momentum confirmation</div><p>Q1 beats (+28.6% vs +13.1% est.) corroborate growth components, so growth-led signals get up-weighted vs valuation-led ones.</p></div>
-          <div className="trigger"><div className="trigger-h">Leadership concentration</div><p>Mag-7 concentration means breadth signals and mean-reversion are unreliable; the agent flags single-factor-distorted decompositions.</p></div>
-          <div className="trigger"><div className="trigger-h">Stale model snapshot</div><p>STF snapshot lag vs review date widens model error in fast-moving regimes — surfaced as a confidence haircut.</p></div>
+          <div className="trigger"><div className="trigger-h">Single-driver concentration</div><p>A dominant component can make the headline STF sensitive to one assumption or data revision.</p></div>
+          <div className="trigger"><div className="trigger-h">Signal-position disagreement</div><p>A large gap between STF direction and the live portfolio weight warrants explicit PM review.</p></div>
+          <div className="trigger"><div className="trigger-h">Stale model snapshot</div><p>A widening gap between the signal snapshot and review date can reduce relevance in fast-moving markets.</p></div>
+          <div className="trigger"><div className="trigger-h">Missing corroborating evidence</div><p>Market or research claims should only change confidence when they are present in the selected fund's evidence packet.</p></div>
         </div>
       </div>
     </div>

@@ -21,7 +21,21 @@ DEFAULT_ALIGNMENT_CSV = REPO_ROOT / "artifacts" / "rolled_exposures" / "fund_wei
 DEFAULT_DETAIL_CSV = REPO_ROOT / "artifacts" / "rolled_exposures" / "fund_rolled_exposure_detail.csv"
 DEFAULT_MAPPING_CSV = REPO_ROOT / "data" / "acid_mapping_bootstrap_v1.csv"
 DEFAULT_VIR_HISTORY_CSV = REPO_ROOT / "artifacts" / "vir" / "equity_vir_dataset.csv"
-DEFAULT_US_EQ_RISK_REPORT_XLSX = REPO_ROOT / "data" / "2026-05-31" / "weekly_US_EQ_Time Series Risk Report - Sortable_2026-03-31_2026-06-05.xlsx"
+
+
+RISK_REPORT_GLOB_BY_FUND = {
+    "MStar US Equity": "weekly_US_EQ*Risk Report*.xlsx",
+    "MStar International Equity": "weekly_INTL_EQ*Risk Report*.xlsx",
+    "MStar Global Opportunistic Equity": "weekly_GOE*Risk Report*.xlsx",
+}
+
+
+def _latest_risk_report_for_fund(fund: str) -> Path | None:
+    pattern = RISK_REPORT_GLOB_BY_FUND.get(fund)
+    if not pattern:
+        return None
+    candidates = sorted(REPO_ROOT.glob(f"data/*/{pattern}"))
+    return candidates[-1] if candidates else None
 DEFAULT_INTERNAL_HISTORY_JSON = REPO_ROOT / "agent2" / "data" / "internal_history" / "us_equity_checklists_q2_2026.json"
 DEFAULT_MEMORY_JSON = REPO_ROOT / "artifacts" / "agent_memory" / "memory_records.json"
 DEFAULT_SHAREPOINT_RESEARCH_DIR = DEFAULT_SHAREPOINT_RESEARCH_ROOT
@@ -237,7 +251,7 @@ def build_review_packet(
     detail_csv: str | Path = DEFAULT_DETAIL_CSV,
     mapping_csv: str | Path = DEFAULT_MAPPING_CSV,
     vir_history_csv: str | Path = DEFAULT_VIR_HISTORY_CSV,
-    risk_report_xlsx: str | Path | None = DEFAULT_US_EQ_RISK_REPORT_XLSX,
+    risk_report_xlsx: str | Path | None = None,
     internal_history_json: str | Path | None = DEFAULT_INTERNAL_HISTORY_JSON,
     memory_json: str | Path | None = DEFAULT_MEMORY_JSON,
     sharepoint_research_dir: str | Path | None = DEFAULT_SHAREPOINT_RESEARCH_DIR,
@@ -246,6 +260,7 @@ def build_review_packet(
     fund_rows = [row for row in alignment_rows if row.get("fund", "").strip() == fund]
     if not fund_rows:
         raise ValueError(f"No alignment rows found for fund {fund!r}.")
+    risk_report_xlsx = risk_report_xlsx or _latest_risk_report_for_fund(fund)
 
     selected_snapshot_date = _latest_snapshot_date(fund_rows)
     current_rows = [row for row in fund_rows if row.get("snapshot_date", "").strip() == selected_snapshot_date]
@@ -253,6 +268,11 @@ def build_review_packet(
 
     mapping_index = _load_mapping_index(Path(mapping_csv))
     detail_rows = _load_csv_rows(Path(detail_csv))
+    benchmark = _benchmark_name_from_detail_rows(
+        detail_rows,
+        fund=fund,
+        snapshot_date=selected_snapshot_date,
+    )
     lineage_by_acid = _build_lineage_by_acid(
         detail_rows=detail_rows,
         fund=fund,
@@ -323,14 +343,14 @@ def build_review_packet(
         window=STF_HISTORY_WINDOW,
     )
     matched_research_positions = [item for item in material_positions if item.get("sharepoint_research", {}).get("match_status") == "matched"]
+    output_review_date = review_date or date.today().isoformat()
     risk_context = _load_risk_context(
         fund=fund,
-        logical_snapshot_date=logical_date,
+        risk_as_of_date=output_review_date,
         material_positions=material_positions,
         risk_report_xlsx=risk_report_xlsx,
     )
 
-    output_review_date = review_date or date.today().isoformat()
     challenge_book = _build_challenge_book(
         material_positions,
         risk_context=risk_context,
@@ -342,6 +362,7 @@ def build_review_packet(
             logical_snapshot_date=logical_date,
             review_date=output_review_date,
             source_snapshot_date=selected_snapshot_date,
+            benchmark=benchmark,
             material_positions=material_positions,
             history_payload=history_payload,
             history_fund=history_fund,
@@ -403,6 +424,7 @@ def _build_header(
     logical_snapshot_date: str,
     review_date: str,
     source_snapshot_date: str,
+    benchmark: str,
     material_positions: list[dict[str, Any]],
     history_payload: dict[str, Any] | None,
     history_fund: str,
@@ -417,7 +439,7 @@ def _build_header(
         "fund": fund,
         "fund_slug": _slugify(fund),
         "fund_type": fund_type or "unknown",
-        "benchmark": _guess_benchmark(fund),
+        "benchmark": benchmark,
         "pm_names": pm_names,
         "snapshot_date": logical_snapshot_date,
         "as_of_date": logical_snapshot_date,
@@ -966,7 +988,7 @@ def _build_data_quality_flags(
             {
                 "severity": "medium",
                 "flag": "missing_risk_report_context",
-                "message": "No parsed US_EQ risk report context was available for this packet.",
+                "message": "No parsed risk report context was available for this packet.",
             }
         )
     elif risk_context.get("summary", {}).get("risk_date_used", "") < logical_snapshot_date:
@@ -1042,7 +1064,7 @@ def _build_source_index(
             {
                 "source_type": "risk_report",
                 "artifact_path": risk_report_xlsx.relative_to(REPO_ROOT).as_posix(),
-                "purpose": "US_EQ time-series risk, factor-risk, and return-attribution context",
+                "purpose": "Time-series risk, factor-risk, and return-attribution context",
             }
         )
     if internal_history_json and internal_history_json.exists():
@@ -1104,11 +1126,11 @@ def _load_optional_internal_history(path: str | Path | None) -> dict[str, Any] |
 def _load_risk_context(
     *,
     fund: str,
-    logical_snapshot_date: str,
+    risk_as_of_date: str,
     material_positions: list[dict[str, Any]],
     risk_report_xlsx: str | Path | None,
 ) -> dict[str, Any]:
-    if fund != "MStar US Equity" or not risk_report_xlsx:
+    if fund not in RISK_REPORT_GLOB_BY_FUND or not risk_report_xlsx:
         return {"available": False}
     source = Path(risk_report_xlsx)
     if not source.exists():
@@ -1120,7 +1142,7 @@ def _load_risk_context(
 
     return build_risk_context(
         source,
-        review_date=logical_snapshot_date,
+        review_date=risk_as_of_date,
         material_positions=material_positions,
     )
 
@@ -1880,10 +1902,29 @@ def _format_pct_value(value: float | None) -> str:
     return f"{value:+.2f} pts"
 
 
-def _guess_benchmark(fund: str) -> str:
-    if fund == "MStar US Equity":
-        return "Russell 3000"
-    return ""
+def _benchmark_name_from_detail_rows(
+    rows: list[dict[str, str]],
+    *,
+    fund: str,
+    snapshot_date: str,
+) -> str:
+    """Return the benchmark source name carried by the PCT-derived detail rows."""
+    contribution_by_source: dict[str, float] = {}
+    for row in rows:
+        if row.get("fund", "").strip() != fund:
+            continue
+        if row.get("snapshot_date", "").strip() != snapshot_date:
+            continue
+        benchmark_contribution = abs(_to_float(row.get("fund_benchmark_security_contribution")))
+        if benchmark_contribution <= 1e-12:
+            continue
+        source_name = row.get("account_name", "").strip()
+        if not source_name:
+            continue
+        contribution_by_source[source_name] = contribution_by_source.get(source_name, 0.0) + benchmark_contribution
+    if not contribution_by_source:
+        return ""
+    return max(contribution_by_source, key=contribution_by_source.get)
 
 
 def _normalize_dateish(value: str) -> str:

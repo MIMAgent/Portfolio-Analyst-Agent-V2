@@ -1,12 +1,19 @@
-import evidence from '../data/evidence.json'
-import packet from '../data/packet.json'
-import review from '../data/review.json'
-import manifest from '../data/manifest.json'
-import stfHistory from '../data/stfHistory.json'
-import factorRisk from '../data/factorRisk.json'
+import { DEFAULT_FUND_ID, FUND_OPTIONS, resolveFundDataset } from '../data/funds/index.js'
 import { normKey } from './format.js'
 
+const requestedFundId = typeof window === 'undefined'
+  ? DEFAULT_FUND_ID
+  : new URLSearchParams(window.location.search).get('fund') || DEFAULT_FUND_ID
+const dataset = resolveFundDataset(requestedFundId)
+const { evidence, packet, review, manifest, stfHistory, factorRisk } = dataset
+
 export { evidence, packet, review, manifest, factorRisk }
+export const activeFundId = dataset.id
+export const fundOptions = FUND_OPTIONS.map((fund) => ({
+  id: fund.id,
+  name: fund.navName,
+  count: (fund.evidence.top_challenges || []).length,
+}))
 
 export const header = evidence.header || {}
 export const benchmark = header.benchmark || ''
