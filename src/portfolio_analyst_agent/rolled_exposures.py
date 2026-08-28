@@ -449,6 +449,10 @@ ACCOUNT_BLOCK_FIRST_ROW = 5
 # Minimum count of parsed account rows. A materially smaller result means the layout
 # changed or the parse truncated, and the IC-facing numbers cannot be trusted.
 ACCOUNT_BLOCK_MIN_ROW_COUNT = 70
+# Minimum row the block must REACH. The bond benchmark accounts live at rows 83-88
+# (audit C3). The count guard alone does not imply reaching them -- rows 5..74 satisfy
+# a count of 70 while 83-88 are silently absent -- so both guards are required.
+ACCOUNT_BLOCK_MIN_LAST_ROW = 88
 
 
 def _account_rows(worksheet: Worksheet, fund_blocks: list[FundBlock]) -> list[AccountRow]:
@@ -489,6 +493,13 @@ def _account_rows(worksheet: Worksheet, fund_blocks: list[FundBlock]) -> list[Ac
             f"below the expected minimum {ACCOUNT_BLOCK_MIN_ROW_COUNT}. The Portfolio sheet "
             f"layout may have changed or the parse truncated; refusing to emit possibly-"
             f"incomplete rolled exposures."
+        )
+    if observed_last_row < ACCOUNT_BLOCK_MIN_LAST_ROW:
+        raise ValueError(
+            f"Account block ended at row {observed_last_row}, before the expected minimum "
+            f"extent {ACCOUNT_BLOCK_MIN_LAST_ROW}. The bond benchmark accounts at rows 83-88 "
+            f"would be missing, producing phantom 100% active bets; refusing to emit "
+            f"possibly-incomplete rolled exposures."
         )
     return rows
 

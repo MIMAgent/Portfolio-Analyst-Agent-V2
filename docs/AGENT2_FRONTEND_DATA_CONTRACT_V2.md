@@ -1,6 +1,6 @@
 # Agent2 Frontend Data Contract v2
 
-Last updated: 2026-06-15
+Last updated: 2026-07-21
 
 ## Purpose
 
@@ -20,18 +20,23 @@ This document is intentionally practical.
 
 ## 1. Recommended frontend source files
 
-For the current saved May 2026 US Equity review, the frontend-facing copies are:
+The only production frontend is `frontend/web`, as configured by the repository-root
+`netlify.toml`. Its fund registry is:
 
-- `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-manifest.json`
-- `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-review.json`
-- `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-packet.json`
-- `frontend/Example_frontendV1/src/data/agent2/mstar-us-equity-evidence.json`
+- `frontend/web/src/data/funds/index.js`
 
-These are copied from the canonical run artifacts under:
+Each supported fund has one directory containing `manifest.json`, `review.json`,
+`packet.json`, `evidence.json`, and `factorRisk.json`:
 
-- `agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/`
+- `frontend/web/src/data/funds/us-equity/`
+- `frontend/web/src/data/funds/international-equity/`
+- `frontend/web/src/data/funds/goe/`
 
-For UI work, prefer the frontend copies above.
+Shared signal history is stored at:
+
+- `frontend/web/src/data/signalHistory.json`
+
+For UI work, use these production copies. Do not create a parallel frontend.
 
 ---
 

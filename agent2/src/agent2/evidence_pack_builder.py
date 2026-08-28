@@ -6,7 +6,12 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .market_context_bridge import build_challenge_market_context
+from .market_context_bridge import (
+    REASON_NO_MATCHING_ROW,
+    STATUS_ABSENT,
+    build_challenge_market_context,
+)
+from .path_redaction import redact_paths
 
 
 def build_evidence_pack(
@@ -110,7 +115,7 @@ def build_evidence_pack(
 def write_evidence_pack(evidence_pack: dict[str, Any], output_json: str | Path) -> Path:
     output_path = Path(output_json)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(evidence_pack, indent=2), encoding="utf-8")
+    output_path.write_text(json.dumps(redact_paths(evidence_pack), indent=2), encoding="utf-8")
     return output_path
 
 
@@ -327,6 +332,14 @@ def _build_challenge_support_packets(
                 "exact_internal_research_excerpt": _support_internal_research(position),
                 "exact_external_market_context": _support_external_market_context(market_context),
                 "market_evidence": market_context.get("market_evidence", []),
+                # Explicit presence/absence, so a challenge with no retrievable
+                # research reads as a stated gap rather than an empty list the
+                # model is left to write around.
+                "market_evidence_status": market_context.get("market_evidence_status", STATUS_ABSENT),
+                "market_evidence_absent_reason": market_context.get("market_evidence_absent_reason", REASON_NO_MATCHING_ROW),
+                "market_evidence_note": market_context.get("market_evidence_note", ""),
+                "market_evidence_region": market_context.get("region", ""),
+                "market_evidence_lenses_attempted": market_context.get("lenses_attempted", []),
                 "internal_history_excerpt": str(position.get("internal_history_excerpt", "")).strip()[:320],
                 "top_holding_lineage": row.get("top_holding_lineage", ""),
                 "research_status": row.get("research_status", {}),

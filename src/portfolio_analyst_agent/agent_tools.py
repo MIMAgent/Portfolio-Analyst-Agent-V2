@@ -351,8 +351,14 @@ def search_market_context(
     market_context_csv: str | Path = DEFAULT_MARKET_CONTEXT_CSV,
     max_results: int = 6,
     max_sources: int = 4,
+    relevance_acid: str | None = None,
 ) -> dict[str, Any]:
-    """Search approved web sources and cache citable market-context rows."""
+    """Search approved web sources and cache citable market-context rows.
+
+    ``relevance_acid`` names the exposure a result must be *about* when it is
+    not the same as the scope a row is filed under (lens retrieval files rows
+    under a compound comparison_group). Defaults to ``acid``.
+    """
 
     selected_snapshot = _require_date(snapshot_date, "snapshot_date")
     as_of = _require_date(as_of_date, "as_of_date")
@@ -366,6 +372,7 @@ def search_market_context(
             fund=fund or "",
             acid=acid or "",
             comparison_group=comparison_group or "",
+            relevance_acid=relevance_acid or "",
         ),
         output_csv=market_context_csv,
         max_results=max_results,

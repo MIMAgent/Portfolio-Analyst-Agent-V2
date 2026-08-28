@@ -246,17 +246,17 @@ These should be regenerated from the raw monthly files, not manually edited.
 
 ---
 
-### 2.2 Frontend bundle-style data
+### 2.2 Production frontend data
 
 **Paths**
 
-- `frontend/Example_frontendV1/src/data/monthlyReviewBundle.json`
-- `frontend/Example_frontendV1/src/data/fundWeightsVirAlgo.json`
-- `frontend/Example_frontendV1/src/data/exposureLineage.json`
+- `frontend/web/src/data/funds/index.js`
+- `frontend/web/src/data/funds/<fund-id>/`
+- `frontend/web/src/data/signalHistory.json`
 
 **Type**
 
-- derived presentation bundle
+- derived presentation data and fund registry
 
 **Required**
 
@@ -264,7 +264,7 @@ These should be regenerated from the raw monthly files, not manually edited.
 
 **Primary role**
 
-- useful for UI consumption
+- used by the production Netlify UI
 - not a primary agent input
 
 **Agent2 sections powered**
@@ -273,7 +273,8 @@ These should be regenerated from the raw monthly files, not manually edited.
 
 **Important note**
 
-Agent2 should not depend on the frontend bundle as its source of truth.
+Agent2 should not depend on frontend copies as its source of truth. The only
+production frontend is `frontend/web`; do not create a parallel implementation.
 
 ---
 

@@ -19,16 +19,16 @@ from portfolio_analyst_agent.csv_sources import open_csv_text  # noqa: E402
 from portfolio_analyst_agent.equity_history import DEFAULT_EQUITY_VIR_DATASET_CSV  # noqa: E402
 
 
-FRONTEND_DATA_DIR = ROOT / "frontend" / "Example_frontendV1" / "src" / "data"
-DEFAULT_ALIGNMENT_JSON = FRONTEND_DATA_DIR / "fundWeightsVirAlgo.json"
+FRONTEND_DATA_DIR = ROOT / "frontend" / "web" / "src" / "data"
+DEFAULT_ALIGNMENT_CSV = ROOT / "artifacts" / "rolled_exposures" / "fund_weights_vir_algo_multisignal.csv"
 DEFAULT_OUTPUT = FRONTEND_DATA_DIR / "signalHistory.json"
-DEFAULT_ALGO_WORKBOOK = ROOT / "data" / "2026-05-31" / "Algo LR (3).xlsx"
+DEFAULT_ALGO_WORKBOOK = ROOT / "data" / "2026-06-30" / "Algo LR.xlsx"
 DEFAULT_VIR_HISTORY = ROOT / DEFAULT_EQUITY_VIR_DATASET_CSV
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Build a 12-month frontend signal history JSON.")
-    parser.add_argument("--alignment-json", default=str(DEFAULT_ALIGNMENT_JSON))
+    parser.add_argument("--alignment-csv", default=str(DEFAULT_ALIGNMENT_CSV))
     parser.add_argument("--algo-workbook", default=str(DEFAULT_ALGO_WORKBOOK))
     parser.add_argument("--vir-history", default=str(DEFAULT_VIR_HISTORY))
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT))
@@ -39,7 +39,8 @@ def main() -> int:
     parser = build_parser()
     args = parser.parse_args()
 
-    alignment_rows = json.loads(Path(args.alignment_json).read_text(encoding="utf-8"))
+    with Path(args.alignment_csv).open("r", encoding="utf-8-sig", newline="") as handle:
+        alignment_rows = list(csv.DictReader(handle))
     fund_acids = _build_fund_acids(alignment_rows)
     target_acids = {acid for acids in fund_acids.values() for acid in acids}
 
