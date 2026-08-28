@@ -9,13 +9,6 @@ vite.out.log
 *.log
 *.zip
 
-frontend/Example_frontendV1/node_modules/
-frontend/Example_frontendV1/dist/
-frontend/Example_frontendV1/dist-server*.log
-frontend/Example_frontendV1/vite-dev*.log
-frontend/Example_frontendV1/vite-preview*.log
-frontend/Example_frontendV1/netlify-quickshare/
-
 # Raw/project input files stay local unless explicitly approved.
 data/*
 !data/acid_mapping_bootstrap_v1.csv
