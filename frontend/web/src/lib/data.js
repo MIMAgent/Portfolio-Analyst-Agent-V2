@@ -1,12 +1,19 @@
-import evidence from '../data/evidence.json'
-import packet from '../data/packet.json'
-import review from '../data/review.json'
-import manifest from '../data/manifest.json'
-import stfHistory from '../data/stfHistory.json'
-import factorRisk from '../data/factorRisk.json'
+import { DEFAULT_FUND_ID, FUND_OPTIONS, resolveFundDataset } from '../data/funds/index.js'
 import { normKey } from './format.js'
 
+const requestedFundId = typeof window === 'undefined'
+  ? DEFAULT_FUND_ID
+  : new URLSearchParams(window.location.search).get('fund') || DEFAULT_FUND_ID
+const dataset = resolveFundDataset(requestedFundId)
+const { evidence, packet, review, manifest, stfHistory, factorRisk } = dataset
+
 export { evidence, packet, review, manifest, factorRisk }
+export const activeFundId = dataset.id
+export const fundOptions = FUND_OPTIONS.map((fund) => ({
+  id: fund.id,
+  name: fund.navName,
+  count: (fund.evidence.top_challenges || []).length,
+}))
 
 export const header = evidence.header || {}
 export const benchmark = header.benchmark || ''
@@ -24,6 +31,20 @@ const offSignalCount = positions.filter(isOffSignal).length
 const topChallenges = evidence.top_challenges || []
 const criticalCount = topChallenges.filter((c) => c.priority === 'high').length
 
+// MTD tone and caption are DERIVED, never hardcoded: the underlying figures move
+// every month, and a fixed sign/caption silently goes stale — it read "underweight
+// drag dominant" in garnet while the fund was up on active.
+const mtdActive = Number(mtd.active_period_return)
+const mtdOver = Number(mtd.period_overweight_return)
+const mtdUnder = Number(mtd.period_underweight_return)
+const mtdTone = Number.isFinite(mtdActive) ? (mtdActive < 0 ? 'neg' : 'pos') : 'ink'
+const mtdSub = (() => {
+  if (!Number.isFinite(mtdOver) || !Number.isFinite(mtdUnder)) return 'active vs benchmark'
+  const overLeads = Math.abs(mtdOver) >= Math.abs(mtdUnder)
+  const value = overLeads ? mtdOver : mtdUnder
+  return `${overLeads ? 'overweight' : 'underweight'} ${value < 0 ? 'drag' : 'contribution'} dominant`
+})()
+
 export const kpis = [
   {
     key: 'te', label: 'Tracking Error', tone: 'ink',
@@ -36,9 +57,9 @@ export const kpis = [
     sub: 'vs benchmark',
   },
   {
-    key: 'mtd', label: 'MTD Active Return', tone: 'neg',
+    key: 'mtd', label: 'MTD Active Return', tone: mtdTone,
     value: mtd.active_period_return, unit: '%', signed: true,
-    sub: 'underweight drag dominant',
+    sub: mtdSub,
   },
   {
     key: 'off', label: 'Off-Signal Positions', tone: 'warn',
@@ -70,7 +91,7 @@ export const execBullets = (() => {
 
 // Some sector labels repeat across regional cells (e.g. "Information Technology"
 // for US / EU / EM / AU). Region-qualify those so each row is distinct.
-const REGION = { US: 'US', EU: 'Europe', EM: 'EM', AU: 'Asia', GL: 'Global', DM: 'DM' }
+const REGION = { US: 'US', EU: 'Europe', EM: 'EM', AU: 'Asia', GL: 'Global', DM: 'DM', JP: 'Japan', UK: 'UK', ARAB: 'MENA' }
 const labelCounts = positions.reduce((acc, p) => {
   acc[p.label] = (acc[p.label] || 0) + 1
   return acc
@@ -148,34 +169,22 @@ export const scatterPoints = positions
 // Universe = region bucket (US vs ex-US) x category group. Rank 1 = most
 // attractive (highest STF). The bundled material positions contain the full US
 // sector (11) and US style (9) sets, so these ranks are exact for US exposures.
-const regionPrefix = (acid) => String(acid || '').trim().split(/\s+/)[0]
-const regionBucket = (acid) => (regionPrefix(acid) === 'US' ? 'US' : 'ex-US')
-const CATEGORY_GROUP = {
-  'Eq Sector': 'sectors',
-  'Eq Size / Style': 'styles',
-  Country: 'countries',
-  Region: 'regions',
-}
-const stfUniverseKey = (p) => {
-  const g = CATEGORY_GROUP[p.category]
-  return g ? `${regionBucket(p.acid)} ${g}` : null
-}
-
-const stfRankByAcid = (() => {
-  const universes = {}
-  for (const p of positions) {
-    if (p.vir_now === undefined || p.vir_now === null) continue
-    const key = stfUniverseKey(p)
-    if (!key) continue
-    ;(universes[key] = universes[key] || []).push(p)
-  }
-  const map = new Map()
-  for (const [label, arr] of Object.entries(universes)) {
-    arr.sort((a, b) => Number(b.vir_now) - Number(a.vir_now))
-    arr.forEach((p, i) => map.set(p.acid, { rank: i + 1, size: arr.length, universe: label }))
-  }
-  return map
-})()
+// The packet already carries the authoritative rank in `stf_relative_context` —
+// the same one the agent was given and quotes in its prose. Re-deriving it here
+// (by bucketing acids into US / ex-US) produced a DIFFERENT universe for global
+// funds: GOE's Communication Services is "#26 of 54 global sectors" in the packet
+// and the model's narrative, but a local recompute called it "#4/11 US sectors"
+// and coloured the dot green. Read it through; never recompute it.
+// Positions without context render no rank at all, which is correct — a missing
+// rank is safe, a contradicting one is not.
+const stfRankByAcid = new Map(
+  positions
+    .filter((p) => p.acid && p.stf_relative_context)
+    .map((p) => {
+      const ctx = p.stf_relative_context
+      return [p.acid, { rank: ctx.rank, size: ctx.universe_size, universe: ctx.universe }]
+    }),
+)
 
 // -------- STF percentile within its own history (time-series, not peers) --------
 // Where the current STF sits in the exposure's own trailing range (stfHistory.json,
@@ -248,7 +257,10 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
     : []
   return {
     id: top.challenge_id || `c${i}`,
-    label: item.label,
+    // Sector labels repeat across regional cells, so an unqualified "Industrials"
+    // on an IC sheet does not say WHICH Industrials. displayName already handles
+    // this for the charts; challenges were the one surface that missed it.
+    label: top.acid ? displayName({ label: item.label, acid: top.acid }) : item.label,
     category: top.category || '',
     priority: top.priority || 'medium',
     score: top.challenge_score,
@@ -293,6 +305,9 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
     marketStatus: market.context_status,
   }
 })
+  // The agent computes a challenge_score and the UI ignored it, ordering cards by
+  // position in the review file. Lead with the agent's own most severe item.
+  .sort((a, b) => (Number(b.score) || 0) - (Number(a.score) || 0))
 
 export const challengeCategories = ['All', ...Array.from(new Set(challenges.map((c) => c.category).filter(Boolean)))]
 

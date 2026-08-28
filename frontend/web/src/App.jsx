@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { header, challenges, evidence } from './lib/data.js'
+import { activeFundId, fundOptions, header, challenges, evidence } from './lib/data.js'
 import { pct, signedPct, fmtDate } from './lib/format.js'
 import Overview from './pages/Overview.jsx'
 import FactorRisk from './pages/FactorRisk.jsx'
@@ -8,6 +8,7 @@ import SignalsDecomp from './pages/SignalsDecomp.jsx'
 import FundOfFunds from './pages/FundOfFunds.jsx'
 import ICPrep from './pages/ICPrep.jsx'
 import AgentMemory from './pages/AgentMemory.jsx'
+import HouseView from './pages/HouseView.jsx'
 
 const summary = evidence.risk_and_attribution?.summary || {}
 const mtd = evidence.risk_and_attribution?.return_attribution_mtd || {}
@@ -16,11 +17,7 @@ const icQueued = (evidence.top_challenges || []).length
 const FUND_GROUPS = [
   {
     label: 'Equity',
-    funds: [
-      { name: 'US Equity', count: challenges.length, active: true },
-      { name: 'International Equity' },
-      { name: 'Global Opportunistic' },
-    ],
+    funds: fundOptions.map((fund) => ({ ...fund, active: fund.id === activeFundId })),
   },
   {
     label: 'Fixed Income',
@@ -42,6 +39,8 @@ const FUND_GROUPS = [
 
 const TABS = [
   { id: 'overview', label: 'Overview' },
+  // Cross-sleeve, not fund-scoped: the one tab that reads all three books at once.
+  { id: 'house', label: 'House View' },
   { id: 'factorrisk', label: 'Factor Risk' },
   { id: 'challenge', label: 'Challenge Brief', count: challenges.length },
   { id: 'signals', label: 'Signals & Decomp' },
@@ -59,6 +58,14 @@ export default function App() {
     setTab('ic')
   }
 
+  const selectFund = (fundId) => {
+    if (!fundId || fundId === activeFundId) return
+    const url = new URL(window.location.href)
+    if (fundId === 'us-equity') url.searchParams.delete('fund')
+    else url.searchParams.set('fund', fundId)
+    window.location.assign(url.toString())
+  }
+
   return (
     <div className="app">
       <aside className="sidebar">
@@ -74,7 +81,13 @@ export default function App() {
           <div className="nav-group" key={g.label}>
             <div className="nav-group-label eyebrow">{g.label}</div>
             {g.funds.map((f) => (
-              <button key={f.name} className={`nav-item${f.active ? ' active' : ''}`} disabled={!f.active}>
+              <button
+                key={f.name}
+                className={`nav-item${f.active ? ' active' : ''}`}
+                disabled={!f.id}
+                aria-pressed={f.id ? f.active : undefined}
+                onClick={() => selectFund(f.id)}
+              >
                 <span className="nav-name">{f.name}</span>
                 {Number.isFinite(f.count) && (
                   <span className={`nav-badge${f.count > 0 ? ' alert' : ''}`}>{f.count}</span>
@@ -113,6 +126,7 @@ export default function App() {
         </nav>
 
         {tab === 'overview' && <Overview />}
+        {tab === 'house' && <HouseView />}
         {tab === 'factorrisk' && <FactorRisk />}
         {tab === 'challenge' && <ChallengeBrief onOpenIC={openIC} />}
         {tab === 'signals' && <SignalsDecomp />}

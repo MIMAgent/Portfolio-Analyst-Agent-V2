@@ -1,0 +1,1084 @@
+{
+  "meta": {
+    "portfolio": "US_EQ",
+    "benchmark": "Morningstar US Market TR USD",
+    "riskModel": "US4AxiomaMH",
+    "currency": "USD",
+    "from": "2026-07-01",
+    "to": "2026-07-20",
+    "periods": 13,
+    "holdings": 380,
+    "commonAssetsWeight": 0.9375
+  },
+  "dates": [
+    "2026-07-01",
+    "2026-07-02",
+    "2026-07-06",
+    "2026-07-07",
+    "2026-07-08",
+    "2026-07-09",
+    "2026-07-10",
+    "2026-07-13",
+    "2026-07-14",
+    "2026-07-15",
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-20"
+  ],
+  "series": [
+    {
+      "date": "2026-07-01",
+      "predictedBeta": 0.8575,
+      "historicalBeta": 1.0054,
+      "activeBeta": -0.1433,
+      "totalRisk": 0.1508,
+      "factorRisk": 0.1473,
+      "specificRisk": 0.0324,
+      "activeRisk": 0.0419,
+      "activeFactorRisk": 0.0373,
+      "activeSpecificRisk": 0.0192,
+      "activeStyleRisk": 0.0308,
+      "activeIndustryRisk": 0.0137,
+      "activeMarketRisk": 0.0014,
+      "activeShare": 0.4521
+    },
+    {
+      "date": "2026-07-02",
+      "predictedBeta": 0.8666,
+      "historicalBeta": 0.999,
+      "activeBeta": -0.1343,
+      "totalRisk": 0.1516,
+      "factorRisk": 0.1481,
+      "specificRisk": 0.0324,
+      "activeRisk": 0.0405,
+      "activeFactorRisk": 0.0361,
+      "activeSpecificRisk": 0.0185,
+      "activeStyleRisk": 0.0297,
+      "activeIndustryRisk": 0.0135,
+      "activeMarketRisk": 0.0014,
+      "activeShare": 0.4516
+    },
+    {
+      "date": "2026-07-06",
+      "predictedBeta": 0.871,
+      "historicalBeta": 0.9881,
+      "activeBeta": -0.1299,
+      "totalRisk": 0.1512,
+      "factorRisk": 0.1476,
+      "specificRisk": 0.0328,
+      "activeRisk": 0.0404,
+      "activeFactorRisk": 0.0361,
+      "activeSpecificRisk": 0.0181,
+      "activeStyleRisk": 0.0292,
+      "activeIndustryRisk": 0.0138,
+      "activeMarketRisk": 0.0015,
+      "activeShare": 0.4501
+    },
+    {
+      "date": "2026-07-07",
+      "predictedBeta": 0.8696,
+      "historicalBeta": 0.9976,
+      "activeBeta": -0.1313,
+      "totalRisk": 0.1517,
+      "factorRisk": 0.1481,
+      "specificRisk": 0.0328,
+      "activeRisk": 0.0405,
+      "activeFactorRisk": 0.0362,
+      "activeSpecificRisk": 0.0183,
+      "activeStyleRisk": 0.0293,
+      "activeIndustryRisk": 0.0138,
+      "activeMarketRisk": 0.0016,
+      "activeShare": 0.4509
+    },
+    {
+      "date": "2026-07-08",
+      "predictedBeta": 0.8742,
+      "historicalBeta": 0.9927,
+      "activeBeta": -0.1267,
+      "totalRisk": 0.1503,
+      "factorRisk": 0.1466,
+      "specificRisk": 0.0329,
+      "activeRisk": 0.0395,
+      "activeFactorRisk": 0.0352,
+      "activeSpecificRisk": 0.0178,
+      "activeStyleRisk": 0.0286,
+      "activeIndustryRisk": 0.0136,
+      "activeMarketRisk": 0.0015,
+      "activeShare": 0.4487
+    },
+    {
+      "date": "2026-07-09",
+      "predictedBeta": 0.8743,
+      "historicalBeta": 0.9995,
+      "activeBeta": -0.1266,
+      "totalRisk": 0.1511,
+      "factorRisk": 0.1473,
+      "specificRisk": 0.0337,
+      "activeRisk": 0.0393,
+      "activeFactorRisk": 0.0349,
+      "activeSpecificRisk": 0.018,
+      "activeStyleRisk": 0.0284,
+      "activeIndustryRisk": 0.0136,
+      "activeMarketRisk": 0.0014,
+      "activeShare": 0.4469
+    },
+    {
+      "date": "2026-07-10",
+      "predictedBeta": 0.8733,
+      "historicalBeta": 1.0085,
+      "activeBeta": -0.1276,
+      "totalRisk": 0.1517,
+      "factorRisk": 0.1479,
+      "specificRisk": 0.034,
+      "activeRisk": 0.0395,
+      "activeFactorRisk": 0.0352,
+      "activeSpecificRisk": 0.0179,
+      "activeStyleRisk": 0.0288,
+      "activeIndustryRisk": 0.0133,
+      "activeMarketRisk": 0.0015,
+      "activeShare": 0.4462
+    },
+    {
+      "date": "2026-07-13",
+      "predictedBeta": 0.8739,
+      "historicalBeta": 1.0098,
+      "activeBeta": -0.127,
+      "totalRisk": 0.1514,
+      "factorRisk": 0.1475,
+      "specificRisk": 0.0344,
+      "activeRisk": 0.0392,
+      "activeFactorRisk": 0.0349,
+      "activeSpecificRisk": 0.0179,
+      "activeStyleRisk": 0.0285,
+      "activeIndustryRisk": 0.0134,
+      "activeMarketRisk": 0.0015,
+      "activeShare": 0.4449
+    },
+    {
+      "date": "2026-07-14",
+      "predictedBeta": 0.8796,
+      "historicalBeta": 1.0037,
+      "activeBeta": -0.1213,
+      "totalRisk": 0.1499,
+      "factorRisk": 0.146,
+      "specificRisk": 0.0339,
+      "activeRisk": 0.038,
+      "activeFactorRisk": 0.0337,
+      "activeSpecificRisk": 0.0174,
+      "activeStyleRisk": 0.0275,
+      "activeIndustryRisk": 0.013,
+      "activeMarketRisk": 0.0014,
+      "activeShare": 0.4442
+    },
+    {
+      "date": "2026-07-15",
+      "predictedBeta": 0.877,
+      "historicalBeta": 1.0108,
+      "activeBeta": -0.1239,
+      "totalRisk": 0.1502,
+      "factorRisk": 0.1462,
+      "specificRisk": 0.0344,
+      "activeRisk": 0.0384,
+      "activeFactorRisk": 0.0341,
+      "activeSpecificRisk": 0.0176,
+      "activeStyleRisk": 0.0278,
+      "activeIndustryRisk": 0.0132,
+      "activeMarketRisk": 0.0014,
+      "activeShare": 0.4437
+    },
+    {
+      "date": "2026-07-16",
+      "predictedBeta": 0.8813,
+      "historicalBeta": 1.0115,
+      "activeBeta": -0.1196,
+      "totalRisk": 0.1508,
+      "factorRisk": 0.1467,
+      "specificRisk": 0.0353,
+      "activeRisk": 0.0372,
+      "activeFactorRisk": 0.0329,
+      "activeSpecificRisk": 0.0173,
+      "activeStyleRisk": 0.0267,
+      "activeIndustryRisk": 0.013,
+      "activeMarketRisk": 0.0014,
+      "activeShare": 0.4414
+    },
+    {
+      "date": "2026-07-17",
+      "predictedBeta": 0.8853,
+      "historicalBeta": 1.0015,
+      "activeBeta": -0.1156,
+      "totalRisk": 0.1491,
+      "factorRisk": 0.1449,
+      "specificRisk": 0.035,
+      "activeRisk": 0.0367,
+      "activeFactorRisk": 0.0326,
+      "activeSpecificRisk": 0.017,
+      "activeStyleRisk": 0.0264,
+      "activeIndustryRisk": 0.0128,
+      "activeMarketRisk": 0.0014,
+      "activeShare": 0.4419
+    },
+    {
+      "date": "2026-07-20",
+      "predictedBeta": 0.8845,
+      "historicalBeta": 0.9985,
+      "activeBeta": -0.1164,
+      "totalRisk": 0.1489,
+      "factorRisk": 0.1448,
+      "specificRisk": 0.0348,
+      "activeRisk": 0.0365,
+      "activeFactorRisk": 0.0324,
+      "activeSpecificRisk": 0.0169,
+      "activeStyleRisk": 0.0264,
+      "activeIndustryRisk": 0.0127,
+      "activeMarketRisk": 0.0014,
+      "activeShare": 0.442
+    }
+  ],
+  "returns": [
+    {
+      "date": "2026-07-01",
+      "portfolio": 0.00459,
+      "benchmark": -0.00243,
+      "active": 0.00702
+    },
+    {
+      "date": "2026-07-02",
+      "portfolio": 0.00617,
+      "benchmark": -0.00039,
+      "active": 0.00656
+    },
+    {
+      "date": "2026-07-06",
+      "portfolio": 0.00473,
+      "benchmark": 0.0074,
+      "active": -0.00267
+    },
+    {
+      "date": "2026-07-07",
+      "portfolio": -0.00261,
+      "benchmark": -0.00523,
+      "active": 0.00262
+    },
+    {
+      "date": "2026-07-08",
+      "portfolio": -0.00749,
+      "benchmark": -0.00333,
+      "active": -0.00416
+    },
+    {
+      "date": "2026-07-09",
+      "portfolio": 0.00754,
+      "benchmark": 0.00858,
+      "active": -0.00104
+    },
+    {
+      "date": "2026-07-10",
+      "portfolio": 0.00533,
+      "benchmark": 0.00345,
+      "active": 0.00188
+    },
+    {
+      "date": "2026-07-13",
+      "portfolio": -0.00325,
+      "benchmark": -0.00787,
+      "active": 0.00463
+    },
+    {
+      "date": "2026-07-14",
+      "portfolio": 0.00015,
+      "benchmark": 0.0039,
+      "active": -0.00376
+    },
+    {
+      "date": "2026-07-15",
+      "portfolio": 0.00653,
+      "benchmark": 0.00341,
+      "active": 0.00312
+    },
+    {
+      "date": "2026-07-16",
+      "portfolio": 0.00301,
+      "benchmark": -0.00507,
+      "active": 0.00807
+    },
+    {
+      "date": "2026-07-17",
+      "portfolio": -0.01035,
+      "benchmark": -0.00964,
+      "active": -0.00071
+    }
+  ],
+  "attribution": {
+    "portfolio": 0.0142,
+    "benchmark": -0.0074,
+    "active": 0.0217,
+    "activeFactor": 0.0196,
+    "activeSpecific": 0.0019,
+    "activeStyle": 0.016,
+    "activeIndustry": 0.0034,
+    "activeMarket": 0.0002,
+    "periods": 12,
+    "from": "2026-07-01",
+    "to": "2026-07-17"
+  },
+  "styleExposure": {
+    "asOf": "2026-07-20",
+    "factors": [
+      {
+        "name": "Medium-Term Momentum",
+        "current": -0.2266,
+        "start": -0.2812,
+        "series": [
+          -0.2812,
+          -0.2672,
+          -0.2536,
+          -0.2551,
+          -0.2455,
+          -0.2432,
+          -0.2506,
+          -0.2482,
+          -0.2391,
+          -0.2442,
+          -0.2343,
+          -0.2255,
+          -0.2266
+        ]
+      },
+      {
+        "name": "Market Sensitivity",
+        "current": -0.1683,
+        "start": -0.1976,
+        "series": [
+          -0.1976,
+          -0.1921,
+          -0.1836,
+          -0.1877,
+          -0.1821,
+          -0.182,
+          -0.1852,
+          -0.1849,
+          -0.1771,
+          -0.1814,
+          -0.1754,
+          -0.1673,
+          -0.1683
+        ]
+      },
+      {
+        "name": "Growth",
+        "current": -0.1295,
+        "start": -0.1514,
+        "series": [
+          -0.1514,
+          -0.1478,
+          -0.1455,
+          -0.1448,
+          -0.1434,
+          -0.1441,
+          -0.1383,
+          -0.1385,
+          -0.1331,
+          -0.1357,
+          -0.1327,
+          -0.1296,
+          -0.1295
+        ]
+      },
+      {
+        "name": "Size",
+        "current": -0.1104,
+        "start": -0.1144,
+        "series": [
+          -0.1144,
+          -0.1141,
+          -0.1142,
+          -0.1145,
+          -0.1146,
+          -0.1135,
+          -0.1116,
+          -0.1121,
+          -0.1114,
+          -0.1107,
+          -0.1094,
+          -0.1112,
+          -0.1104
+        ]
+      },
+      {
+        "name": "Dividend Yield",
+        "current": 0.0983,
+        "start": 0.1037,
+        "series": [
+          0.1037,
+          0.103,
+          0.1009,
+          0.1011,
+          0.1006,
+          0.1005,
+          0.0997,
+          0.0994,
+          0.0977,
+          0.0988,
+          0.097,
+          0.0955,
+          0.0983
+        ]
+      },
+      {
+        "name": "Exchange Rate Sensitivity",
+        "current": -0.0737,
+        "start": -0.082,
+        "series": [
+          -0.082,
+          -0.0842,
+          -0.0798,
+          -0.0818,
+          -0.0805,
+          -0.0804,
+          -0.0767,
+          -0.0763,
+          -0.0766,
+          -0.0766,
+          -0.0759,
+          -0.0774,
+          -0.0737
+        ]
+      },
+      {
+        "name": "Volatility",
+        "current": 0.054,
+        "start": 0.0291,
+        "series": [
+          0.0291,
+          0.037,
+          0.0397,
+          0.0403,
+          0.0448,
+          0.0444,
+          0.0418,
+          0.0434,
+          0.0473,
+          0.0461,
+          0.0504,
+          0.0535,
+          0.054
+        ]
+      },
+      {
+        "name": "Value",
+        "current": 0.0333,
+        "start": 0.0388,
+        "series": [
+          0.0388,
+          0.0378,
+          0.0368,
+          0.0368,
+          0.0372,
+          0.0367,
+          0.0359,
+          0.0356,
+          0.0345,
+          0.0341,
+          0.0333,
+          0.0335,
+          0.0333
+        ]
+      },
+      {
+        "name": "Earnings Yield",
+        "current": 0.0309,
+        "start": 0.0314,
+        "series": [
+          0.0314,
+          0.032,
+          0.0302,
+          0.0309,
+          0.0306,
+          0.0304,
+          0.0316,
+          0.0317,
+          0.0319,
+          0.0316,
+          0.0307,
+          0.0308,
+          0.0309
+        ]
+      },
+      {
+        "name": "Profitability",
+        "current": -0.0272,
+        "start": -0.027,
+        "series": [
+          -0.027,
+          -0.0276,
+          -0.0286,
+          -0.0278,
+          -0.0286,
+          -0.0282,
+          -0.0257,
+          -0.0265,
+          -0.0247,
+          -0.025,
+          -0.0253,
+          -0.0266,
+          -0.0272
+        ]
+      },
+      {
+        "name": "MidCap",
+        "current": 0.0249,
+        "start": 0.0239,
+        "series": [
+          0.0239,
+          0.0232,
+          0.0237,
+          0.0238,
+          0.0244,
+          0.0236,
+          0.0236,
+          0.0239,
+          0.0236,
+          0.024,
+          0.0243,
+          0.0248,
+          0.0249
+        ]
+      },
+      {
+        "name": "Liquidity",
+        "current": -0.0056,
+        "start": -0.0382,
+        "series": [
+          -0.0382,
+          -0.0303,
+          -0.0218,
+          -0.0253,
+          -0.0176,
+          -0.0192,
+          -0.0236,
+          -0.0218,
+          -0.0146,
+          -0.0188,
+          -0.0132,
+          -0.0044,
+          -0.0056
+        ]
+      },
+      {
+        "name": "Leverage",
+        "current": -0.0016,
+        "start": -0.003,
+        "series": [
+          -0.003,
+          -0.0039,
+          -0.0051,
+          -0.0045,
+          -0.0044,
+          -0.0033,
+          -0.003,
+          -0.002,
+          -0.0031,
+          -0.0019,
+          -0.0022,
+          -0.002,
+          -0.0016
+        ]
+      }
+    ]
+  },
+  "contributors": [
+    {
+      "name": "Market Sensitivity",
+      "group": "Style",
+      "pctVar": 0.2003,
+      "isCov": false
+    },
+    {
+      "name": "Medium-Term Momentum",
+      "group": "Style",
+      "pctVar": 0.1641,
+      "isCov": false
+    },
+    {
+      "name": "Size",
+      "group": "Style",
+      "pctVar": 0.0912,
+      "isCov": false
+    },
+    {
+      "name": "Industry-Covariance",
+      "group": "Industry",
+      "pctVar": 0.037,
+      "isCov": true
+    },
+    {
+      "name": "Style-Covariance",
+      "group": "Style",
+      "pctVar": 0.0356,
+      "isCov": true
+    },
+    {
+      "name": "Semiconductors & Semiconductor Equipment",
+      "group": "Industry",
+      "pctVar": 0.0271,
+      "isCov": false
+    },
+    {
+      "name": "Technology Hardware, Storage & Peripherals",
+      "group": "Industry",
+      "pctVar": 0.0154,
+      "isCov": false
+    },
+    {
+      "name": "Volatility",
+      "group": "Style",
+      "pctVar": 0.0118,
+      "isCov": false
+    },
+    {
+      "name": "Growth",
+      "group": "Style",
+      "pctVar": 0.0096,
+      "isCov": false
+    },
+    {
+      "name": "Capital Markets",
+      "group": "Industry",
+      "pctVar": 0.0091,
+      "isCov": false
+    },
+    {
+      "name": "Life Sciences Tools & Services",
+      "group": "Industry",
+      "pctVar": 0.0049,
+      "isCov": false
+    },
+    {
+      "name": "Automobiles",
+      "group": "Industry",
+      "pctVar": 0.0043,
+      "isCov": false
+    },
+    {
+      "name": "Pharmaceuticals",
+      "group": "Industry",
+      "pctVar": 0.0029,
+      "isCov": false
+    },
+    {
+      "name": "Exchange Rate Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0028,
+      "isCov": false
+    },
+    {
+      "name": "Food & Staples Retailing",
+      "group": "Industry",
+      "pctVar": 0.0028,
+      "isCov": false
+    },
+    {
+      "name": "Dividend Yield",
+      "group": "Style",
+      "pctVar": 0.0026,
+      "isCov": false
+    },
+    {
+      "name": "Health Care Equipment & Supplies",
+      "group": "Industry",
+      "pctVar": 0.0025,
+      "isCov": false
+    },
+    {
+      "name": "Aerospace & Defense",
+      "group": "Industry",
+      "pctVar": 0.002,
+      "isCov": false
+    },
+    {
+      "name": "Market Intercept",
+      "group": "Market",
+      "pctVar": 0.0015,
+      "isCov": false
+    },
+    {
+      "name": "Beverages",
+      "group": "Industry",
+      "pctVar": 0.001,
+      "isCov": false
+    },
+    {
+      "name": "Profitability",
+      "group": "Style",
+      "pctVar": 0.0009,
+      "isCov": false
+    },
+    {
+      "name": "Electrical Equipment",
+      "group": "Industry",
+      "pctVar": 0.0009,
+      "isCov": false
+    },
+    {
+      "name": "Internet Software & Services",
+      "group": "Industry",
+      "pctVar": 0.0009,
+      "isCov": false
+    },
+    {
+      "name": "Software",
+      "group": "Industry",
+      "pctVar": 0.0009,
+      "isCov": false
+    },
+    {
+      "name": "Value",
+      "group": "Style",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "Chemicals",
+      "group": "Industry",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "Metals & Mining",
+      "group": "Industry",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "Electric Utilities",
+      "group": "Industry",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "Earnings Yield",
+      "group": "Style",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "Biotechnology",
+      "group": "Industry",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "Building Products",
+      "group": "Industry",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "Construction & Engineering",
+      "group": "Industry",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "Specialty Retail",
+      "group": "Industry",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "Trading Companies & Distributors",
+      "group": "Industry",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "Communications Equipment",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "MidCap",
+      "group": "Style",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Banks",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Consumer Finance",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Health Care Providers & Services",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Household Products",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Airlines",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Equity Real Estate Investment Trusts (REITs)",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Food Products",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Hotels, Restaurants & Leisure",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Machinery",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Multiline Retail",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Oil, Gas & Consumable Fuels",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Professional Services",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Road & Rail",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Air Freight & Logistics",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Auto Components",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Diversified Telecommunication Services",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Energy Equipment & Services",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Independent Power and Renewable Electricity Producers",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Industrial Conglomerates",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Insurance",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "IT Services",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Multi-Utilities",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Real Estate Management & Development",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Textiles, Apparel & Luxury Goods",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Leverage",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Liquidity",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Commercial Services & Supplies",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Construction Materials",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Containers & Packaging",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Distributors",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Diversified Consumer Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Diversified Financial Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Electronic Equipment, Instruments & Components",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Gas Utilities",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Health Care Technology",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Household Durables",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Leisure Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Marine",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Media",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Mortgage Real Estate Investment Trusts (REITs)",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Paper & Forest Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Personal Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Tobacco",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Water Utilities",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Wireless Telecommunication Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Market-Covariance",
+      "group": "Market",
+      "pctVar": -0.0,
+      "isCov": true
+    }
+  ]
+}

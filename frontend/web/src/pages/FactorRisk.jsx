@@ -1,9 +1,4 @@
-/*
- * Factor Risk — REAL Axioma data (US4AxiomaMH medium-horizon fundamental model).
- * Every number on this tab comes straight from the weekly Time Series Risk Report
- * (US_EQ vs Morningstar US Market TR USD, 2026-04-01 → 2026-06-08). Nothing illustrative.
- * It independently corroborates the agent's STF read: the book is defensive, anti-momentum.
- */
+/* Every number on this tab comes from the selected fund's weekly Axioma report. */
 import { factorRisk as fr } from '../lib/data.js'
 import { LineChart } from '../components/Charts.jsx'
 import { pct, signedPct, signedNum, fmtDate } from '../lib/format.js'
@@ -15,6 +10,18 @@ const dates = fr.dates
 const A = fr.attribution
 
 const fmtR = (v) => `${(v * 100).toFixed(2)}%`
+
+// Direction words are DERIVED. This caption previously asserted tracking error
+// "climbed" and bets were "getting bigger" while the chart above it fell — the
+// prose was written once against one month's numbers and never moved again.
+const dTE = last.activeRisk - first.activeRisk
+const dFactor = last.activeFactorRisk - first.activeFactorRisk
+const dSpecific = last.activeSpecificRisk - first.activeSpecificRisk
+const teVerb = dTE >= 0 ? 'climbed' : 'fell'
+const teNoun = dTE >= 0 ? 'rise' : 'decline'
+const teSize = dTE >= 0 ? 'getting bigger' : 'getting smaller'
+const teLed = Math.abs(dFactor) >= Math.abs(dSpecific) ? 'factor-led' : 'specific-led'
+const specVerb = dSpecific >= 0 ? 'grew' : 'fell'
 const fmtB = (v) => v.toFixed(2)
 
 // ---- KPI strip ----
@@ -23,17 +30,17 @@ const KPIS = [
   {
     label: 'Active Tracking Risk',
     val: fmtR(last.activeRisk), tone: 'warn',
-    sub: `${signedPct((last.activeRisk - first.activeRisk) * 100)} since Apr 1 — widening`,
+    sub: `${signedPct((last.activeRisk - first.activeRisk) * 100)} since ${fmtDate(fr.meta.from)}`,
   },
   {
     label: 'Predicted Beta',
     val: fmtB(last.predictedBeta), tone: 'ink',
-    sub: `${signedNum(last.predictedBeta - first.predictedBeta, 2)} — de-risked vs market`,
+    sub: `${signedNum(last.predictedBeta - first.predictedBeta, 2)} over report window`,
   },
   {
     label: 'Active Beta',
-    val: signedNum(last.activeBeta, 2), tone: 'neg',
-    sub: `below-market tilt, from ${signedNum(first.activeBeta, 2)}`,
+    val: signedNum(last.activeBeta, 2), tone: last.activeBeta < 0 ? 'neg' : 'pos',
+    sub: `from ${signedNum(first.activeBeta, 2)}`,
   },
   {
     label: 'Active Share',
@@ -59,7 +66,15 @@ const rDates = fr.returns.map((r) => r.date)
 // ---- Risk-budget concentration (top contributors, ex-covariance) ----
 const contribTop = fr.contributors.filter((c) => !c.isCov && c.pctVar > 0.003).slice(0, 9)
 const contribMax = Math.max(...contribTop.map((c) => c.pctVar), 0.01)
-const GROUP_COLOR = { Style: '#2a4bd7', Industry: '#8a8780', Market: '#d08700' }
+const GROUP_COLOR = {
+  Style: '#2a4bd7',
+  Country: '#1f9d6b',
+  Industry: '#8a8780',
+  Currency: '#d08700',
+  Local: '#7857a5',
+  Market: '#d08700',
+  Other: '#86868f',
+}
 const SHORT_NAME = {
   'Semiconductors & Semiconductor Equipment': 'Semiconductors',
   'Technology Hardware, Storage & Peripherals': 'Tech Hardware',
@@ -101,7 +116,7 @@ export default function FactorRisk() {
         <span className="demo-tag" style={{ background: 'var(--pos-soft)', color: 'var(--pos)', borderColor: 'var(--pos-line)' }}>Real data · Axioma</span>
         <span>
           Ex-ante factor risk from the <b>{fr.meta.riskModel}</b> model — {fr.meta.portfolio} vs {fr.meta.benchmark},
-          {' '}{fmtDate(fr.meta.from)} → {fmtDate(fr.meta.to)} ({fr.meta.periods} periods). Independently corroborates the STF read: a <b>defensive, anti-momentum</b> book.
+          {' '}{fmtDate(fr.meta.from)} → {fmtDate(fr.meta.to)} ({fr.meta.periods} periods).
         </span>
       </div>
 
@@ -132,8 +147,8 @@ export default function FactorRisk() {
           ]}
         />
         <p className="fr-note">
-          Tracking error climbed from <b>{fmtR(first.activeRisk)}</b> to <b>{fmtR(last.activeRisk)}</b> — the active bets are getting bigger.
-          The rise is factor-led, but specific risk grew too ({fmtR(first.activeSpecificRisk)} → {fmtR(last.activeSpecificRisk)}).
+          Tracking error {teVerb} from <b>{fmtR(first.activeRisk)}</b> to <b>{fmtR(last.activeRisk)}</b> — the active bets are {teSize}.
+          The {teNoun} is {teLed}; specific risk {specVerb} ({fmtR(first.activeSpecificRisk)} → {fmtR(last.activeSpecificRisk)}).
         </p>
       </div>
 
@@ -142,7 +157,7 @@ export default function FactorRisk() {
         <div className="panel">
           <div className="panel-head">
             <div className="panel-title">Cumulative return — portfolio vs benchmark</div>
-            <div className="panel-sub eyebrow">Compounded daily · the active gap widening</div>
+            <div className="panel-sub eyebrow">Compounded daily · selected report window</div>
           </div>
           <LineChart
             dates={rDates}
@@ -155,9 +170,9 @@ export default function FactorRisk() {
             ]}
           />
           <p className="fr-note">
-            The portfolio compounded <b>{fmtR(A.portfolio)}</b> against the benchmark's <b>{fmtR(A.benchmark)}</b> — a
-            {' '}<b style={{ color: 'var(--neg)' }}>{signedPct(A.active * 100)}</b> active shortfall that opened up <b>steadily</b>, not in a single shock.
-            The defensive beta (now {signedNum(last.activeBeta, 2)} active) lagged a rising tape the whole way.
+            The portfolio compounded <b>{fmtR(A.portfolio)}</b> against the benchmark's <b>{fmtR(A.benchmark)}</b>,
+            producing <b style={{ color: A.active < 0 ? 'var(--neg)' : 'var(--pos)' }}>{signedPct(A.active * 100)}</b> active return.
+            Current active beta is {signedNum(last.activeBeta, 2)}.
           </p>
         </div>
 
@@ -184,7 +199,8 @@ export default function FactorRisk() {
             ))}
           </div>
           <p className="fr-note">
-            Three style bets — <b>Market Sensitivity</b>, <b>Momentum</b>, <b>Size</b> — are ~41% of tracking error. The active risk is concentrated, not diffuse.
+            The largest modeled contributors are <b>{contribTop.slice(0, 3).map((item) => item.name).join(', ')}</b>.
+            Their contribution should be read alongside the selected fund's challenge cards and holdings.
           </p>
         </div>
       </div>
@@ -214,21 +230,22 @@ export default function FactorRisk() {
             })}
           </div>
           <p className="fr-note">
-            Short <b>Momentum</b> (−{Math.abs(styles.find((s) => s.name.includes('Momentum'))?.current ?? 0).toFixed(2)}), Market-Sensitivity and Growth; long Dividend Yield and Value — a textbook defensive / value tilt.
+            The largest current style exposures are <b>{styles.slice(0, 4).map((item) => item.name).join(', ')}</b>.
+            The sparklines show whether each exposure is strengthening or fading during this report window.
           </p>
         </div>
 
         {/* Return attribution */}
-        <div className="panel" style={{ borderTop: '3px solid var(--neg)' }}>
+        <div className="panel" style={{ borderTop: `3px solid var(${A.active < 0 ? '--neg' : '--pos'})` }}>
           <div className="panel-head">
-            <div className="panel-title">What it cost — active return attribution</div>
+            <div className="panel-title">Active return attribution</div>
             <div className="panel-sub eyebrow">Cumulative {fmtDate(A.from)} → {fmtDate(A.to)}</div>
           </div>
 
           <div className="fr-attrib-head">
             <div className="fr-att-big">
               <div className="eyebrow">Active return</div>
-              <div className="fr-att-num neg">{signedPct(A.active * 100)}</div>
+              <div className={`fr-att-num ${A.active < 0 ? 'neg' : 'pos'}`}>{signedPct(A.active * 100)}</div>
             </div>
             <div className="fr-att-vs">
               <div><span>Portfolio</span><b>{signedPct(A.portfolio * 100)}</b></div>
@@ -253,7 +270,8 @@ export default function FactorRisk() {
             })}
           </div>
           <p className="fr-note">
-            The defensive, anti-momentum posture fought a <b>+{(A.benchmark * 100).toFixed(1)}%</b> up-market — exactly when low-beta lags. Industry bets were the largest drag.
+            Factor attribution contributed <b>{signedPct(A.activeFactor * 100)}</b> and stock-specific attribution contributed
+            {' '}<b>{signedPct(A.activeSpecific * 100)}</b> over the report window.
           </p>
         </div>
       </div>
@@ -262,12 +280,12 @@ export default function FactorRisk() {
       <div className="regime section-gap">
         <div className="regime-l">
           <div className="eyebrow" style={{ color: 'var(--brand-2)' }}>Model corroboration</div>
-          <div className="regime-name">Axioma agrees with the STF</div>
+          <div className="regime-name">Risk context for the challenge review</div>
         </div>
         <p className="regime-read">
-          An independent fundamental risk model reaches the same posture the agent's STF implies: <b>defensive beta, short momentum and growth, long yield and value</b>.
-          That convergence is the actionable signal — but it also flags the risk: this stance has <b>underperformed by {Math.abs(A.active * 100).toFixed(1)} pts</b> in a momentum-led tape.
-          The question for the IC is whether to defend the tilt or resize it — the same fork surfaced on the Challenge Brief.
+          The selected fund is running <b>{fmtR(last.activeRisk)}</b> active tracking risk with <b>{pct(last.activeShare * 100, 1)}</b> active share.
+          The factor, industry, country, currency, and stock-specific results above provide an independent check on the agent's positioning and STF conclusions.
+          Use the Challenge Brief to decide which concentrations should be defended, documented, or resized.
         </p>
       </div>
     </div>

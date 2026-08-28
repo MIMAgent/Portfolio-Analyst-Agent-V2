@@ -1,0 +1,3017 @@
+{
+  "header": {
+    "fund": "MStar International Equity",
+    "fund_slug": "mstar-international-equity",
+    "fund_type": "equity",
+    "benchmark": "Morningstar Gbl xUS NR USD",
+    "pm_names": [],
+    "snapshot_date": "2026-06-30",
+    "as_of_date": "2026-06-30",
+    "review_date": "2026-07-21",
+    "review_run_id": "agent2_mstar-international-equity_2026-06-30",
+    "source_snapshot_date": "2026-07-06"
+  },
+  "run_goal": {
+    "instruction": "Write the canonical deep PM challenge memo. Prioritize the top 4 decisions the PM actually needs to defend, resize, monitor, or explain.",
+    "challenge_count_target": 4,
+    "output_style": "deep_challenge_memo"
+  },
+  "fund_shape": {
+    "headline_summary": [
+      "Largest underweight: Canada (-4.47 pts), with STF underweight and the algo active weight underweight (relative to benchmark).",
+      "Largest overweight: Industrials (2.71 pts), with decomposition reading broad_based.",
+      "23 material positions are directionally fighting the current STF/algo read.",
+      "US_EQ risk context: active predicted risk 2.79%, active share 70.8%, risk date used 2026-07-20."
+    ],
+    "largest_overweights": [
+      {
+        "category": "Eq Sector",
+        "label": "Industrials",
+        "active_weight": 2.7130768264174865,
+        "benchmark_weight": 7.064305655563377,
+        "portfolio_weight": 9.777382481980863,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_869bb8e476b0"
+          },
+          {
+            "artifact_path": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+            "row_id": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Country",
+        "label": "United Kingdom",
+        "active_weight": 3.0336607434501364,
+        "benchmark_weight": 7.752766033830822,
+        "portfolio_weight": 10.786426777280958,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_9b21ea0083f0"
+          },
+          {
+            "artifact_path": "202602-EQ-UK EQ-Conviction-Thesis Update.pptx",
+            "row_id": "202602-EQ-UK EQ-Conviction-Thesis Update.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Country",
+        "label": "France",
+        "active_weight": 2.7991353009347346,
+        "benchmark_weight": 4.722103404254437,
+        "portfolio_weight": 7.521238705189171,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_85cb076a6558"
+          },
+          {
+            "artifact_path": "202410-XA-GARFR-Monthly Update.pptx",
+            "row_id": "202410-XA-GARFR-Monthly Update.pptx"
+          }
+        ]
+      }
+    ],
+    "largest_underweights": [
+      {
+        "category": "Country",
+        "label": "Canada",
+        "active_weight": -4.470493065444598,
+        "benchmark_weight": 7.634044626654953,
+        "portfolio_weight": 3.1635515612103555,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_4c408a956ca9"
+          },
+          {
+            "artifact_path": "202002-EQ-CA EQ-Fair Value.pptx",
+            "row_id": "202002-EQ-CA EQ-Fair Value.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Country",
+        "label": "India",
+        "active_weight": -2.600470171623252,
+        "benchmark_weight": 4.466560922491648,
+        "portfolio_weight": 1.8660907508683955,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_0434662648ce"
+          },
+          {
+            "artifact_path": "202607 - FX - Hedging Cost Methodology.pptx",
+            "row_id": "202607 - FX - Hedging Cost Methodology.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Country",
+        "label": "Australia",
+        "active_weight": -2.2853756076605207,
+        "benchmark_weight": 3.9507998974811445,
+        "portfolio_weight": 1.6654242898206237,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_c0e737c8bd98"
+          },
+          {
+            "artifact_path": "202506-EQ-AU Equity Market Review - Final-Internal Slides.pptx",
+            "row_id": "202506-EQ-AU Equity Market Review - Final-Internal Slides.pptx"
+          }
+        ]
+      }
+    ],
+    "style_posture": []
+  },
+  "top_challenges": [
+    {
+      "challenge_id": "ch_eu-id-eq_2026-06-30",
+      "acid": "EU ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "priority": "medium",
+      "challenge_score": 9.798,
+      "challenge_type": "position_vs_signal_divergence",
+      "challenge_headline": "Industrials remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
+      "thesis_under_pressure": "Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.",
+      "positioning_tension": "Fund weight is 9.78% versus benchmark 7.06%, leaving a +2.71 pt active overweight in Industrials. Top underlying names include Atlas Copco AB Class A, BAE Systems PLC.",
+      "model_signal_tension": "STF is underweight at -3.43% (-0.25% MoM), while the algo active weight is -0.86 pts (relative to benchmark) and points underweight.",
+      "relative_signal_readthrough": "STF is -3.43% in absolute terms but ranks #35 of 43 in ex-US sectors (below the -1.35% universe median). Versus its own 12-month history the current STF is at the 9th percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "ex-US sectors",
+        "universe_size": 43,
+        "rank": 35,
+        "percentile": 0.19,
+        "stf": -0.0343,
+        "universe_median_stf": -0.0135,
+        "vs_median": -0.0208,
+        "more_attractive_peers": [
+          "Energy",
+          "Consumer Discretionary",
+          "Real Estate"
+        ],
+        "more_attractive_count": 34,
+        "universe_best": {
+          "label": "Energy",
+          "stf": 0.0441
+        },
+        "universe_worst": {
+          "label": "Information Technology",
+          "stf": -0.0785
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.09,
+        "history_window_months": 12,
+        "history_low": -0.0367,
+        "history_high": -0.0227
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
+      "market_context_readthrough": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued.",
+      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.56% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What specific current evidence still supports the thesis 'Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.' given the portfolio is +2.71 pts overweight and the latest STF/algo stack is underweight/underweight?",
+      "evidence_needed_next": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+      "source_quality": "model+positioning+memory+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Atlas Copco AB Class A (+0.63 pts active) via MS INTL EQ 2 LEND ACCT 0.54%, MS INT'L EQUITY HARDING 0.21%; BAE Systems PLC (+0.57 pts active) via MS INT'L EQUITY HARDING 0.47%, MS INTL EQ GLOB EX US OPP 0.28%; SKF AB Class B (+0.68 pts active) via MS INTL EQ 2 LEND ACCT 0.52%, MS INTL EQ GLOB EX US OPP 0.19%"
+    },
+    {
+      "challenge_id": "ch_uk-eq_2026-06-30",
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "priority": "high",
+      "challenge_score": 8.747,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United Kingdom remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 10.79% versus benchmark 7.75%, leaving a +3.03 pt active overweight in United Kingdom. Top underlying names include Shell PLC, BAE Systems PLC.",
+      "model_signal_tension": "STF is underweight at -1.11% (-0.05% MoM), while the algo active weight is +1.78 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -1.11% in absolute terms but ranks #22 of 44 in ex-US countries (above the -1.24% universe median). Versus its own 12-month history the current STF is at the 36th percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "ex-US countries",
+        "universe_size": 44,
+        "rank": 22,
+        "percentile": 0.51,
+        "stf": -0.0111,
+        "universe_median_stf": -0.0124,
+        "vs_median": 0.0013,
+        "more_attractive_peers": [
+          "Indonesia",
+          "Turkey",
+          "Philippines"
+        ],
+        "more_attractive_count": 21,
+        "universe_best": {
+          "label": "Indonesia",
+          "stf": 0.0646
+        },
+        "universe_worst": {
+          "label": "South Korea",
+          "stf": -0.1013
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.36,
+        "history_window_months": 12,
+        "history_low": -0.0195,
+        "history_high": -0.0018
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "UK EQ Update - Feb 2026 Mark Murray Matthew Wilson Ziying Peng Phoebe Chapman Raymond Sham Investment Thesis Supporting Analysis: Financials Healthcare Energy Consumer Staples Industrials FX Risk FV\u2019s Contrarian indic...",
+      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.56% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Shell PLC (+0.58 pts active) via MS INT'L EQUITY HARDING 0.65%, MS INTL EQ GLOB EX US OPP 0.41%; BAE Systems PLC (+0.57 pts active) via MS INT'L EQUITY HARDING 0.47%, MS INTL EQ GLOB EX US OPP 0.28%; GSK PLC (+0.49 pts active) via MS INTL EQ 2 LEND ACCT 0.47%, MS INTL EQ GLOB EX US OPP 0.26%"
+    },
+    {
+      "challenge_id": "ch_fr-eq_2026-06-30",
+      "acid": "FR EQ",
+      "label": "France",
+      "category": "Country",
+      "priority": "medium",
+      "challenge_score": 8.419,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "France still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that France remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 7.52% versus benchmark 4.72%, leaving a +2.80 pt active overweight in France. Top underlying names include BNP Paribas Act. Cat.A, Lvmh Moet Hennessy Louis Vuitton SE.",
+      "model_signal_tension": "STF is underweight at -1.38% (-0.27% MoM), while the algo active weight is +1.61 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -1.38% in absolute terms but ranks #23 of 44 in ex-US countries (below the -1.24% universe median). Versus its own 12-month history the current STF is at the 18th percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "ex-US countries",
+        "universe_size": 44,
+        "rank": 23,
+        "percentile": 0.49,
+        "stf": -0.0138,
+        "universe_median_stf": -0.0124,
+        "vs_median": -0.0013,
+        "more_attractive_peers": [
+          "Indonesia",
+          "Turkey",
+          "Philippines"
+        ],
+        "more_attractive_count": 22,
+        "universe_best": {
+          "label": "Indonesia",
+          "stf": 0.0646
+        },
+        "universe_worst": {
+          "label": "South Korea",
+          "stf": -0.1013
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.18,
+        "history_window_months": 12,
+        "history_low": -0.0194,
+        "history_high": -0.0078
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "Global Aggregate Reward for Risk Medium Conviction Score ARFR Committee: Mike Coop, Paul Arnold, Mike Stout, Sean Neethling, James Foot Deck prepared by: Noah Kaplan, Johanna Zhu, James Foot October 2024 Data as at 30...",
+      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed 0.56% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping France at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that France is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "BNP Paribas Act. Cat.A (+0.61 pts active) via MS INT'L EQUITY HARRIS 0.44%, MS INTL EQ GLOB EX US OPP 0.43%; Lvmh Moet Hennessy Louis Vuitton SE (+0.41 pts active) via MS INTL EQ GLOB EX US OPP 0.38%, MS INT'L EQUITY HARRIS 0.34%; Safran SA (+0.24 pts active) via MS INTL EQ GLOB EX US OPP 0.31%, MS INT'L EQUITY HARDING 0.25%"
+    },
+    {
+      "challenge_id": "ch_in-eq_2026-06-30",
+      "acid": "IN EQ",
+      "label": "India",
+      "category": "Country",
+      "priority": "medium",
+      "challenge_score": 8.141,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "India still carries a meaningful underweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that India remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 1.87% versus benchmark 4.47%, leaving a -2.60 pt active underweight in India. Top underlying names include Tata Consultancy Services Ltd, Axis Bank Ltd.",
+      "model_signal_tension": "STF is underweight at -1.02% (+0.21% MoM), while the algo active weight is +1.38 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -1.02% in absolute terms but ranks #18 of 44 in ex-US countries (above the -1.24% universe median). Versus its own 12-month history the current STF is at the 91st percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "ex-US countries",
+        "universe_size": 44,
+        "rank": 18,
+        "percentile": 0.6,
+        "stf": -0.0102,
+        "universe_median_stf": -0.0124,
+        "vs_median": 0.0022,
+        "more_attractive_peers": [
+          "Indonesia",
+          "Turkey",
+          "Philippines"
+        ],
+        "more_attractive_count": 17,
+        "universe_best": {
+          "label": "Indonesia",
+          "stf": 0.0646
+        },
+        "universe_worst": {
+          "label": "South Korea",
+          "stf": -0.1013
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.91,
+        "history_window_months": 12,
+        "history_low": -0.0221,
+        "history_high": -0.0065
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though growth is the largest single contributor.",
+      "market_context_readthrough": "July 2026 Currency Hedging Cost Assumptions Hedged-Return Methodology HEDGING METHODOLOGY How we build a hedged return Morningstar Multi Asset Research | 2 See Important Disclosures at the end of this report.",
+      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
+      "return_attribution_readthrough": "Month-to-date underweight positions contributed 1.47% if measured on the risk workbook window, so keeping a large underweight requires confidence that the thesis still outweighs the recent performance drag.",
+      "pm_decision_fork": "Decide whether to defend the current underweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping India at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that India is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Tata Consultancy Services Ltd (+0.37 pts active) via MS INTL EQ 2 LEND ACCT 0.31%, MS INT'L EQUITY LAZARD 0.11%; Axis Bank Ltd (+0.21 pts active) via MS INT'L EQUITY HARRIS 0.18%, MS INT'L EQUITY LAZARD 0.11%; HDFC BANK LTD ADR (+0.24 pts active) via MS INT'L EQUITY HARDING 0.24%"
+    }
+  ],
+  "challenge_market_context": [
+    {
+      "acid": "EU ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "query_used": "US industrials sector valuation manufacturing PMI new orders earnings May 2026",
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US industrials sector valuation manufacturing PMI new orders earnings May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_526e04001deb"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US industrials sector valuation manufacturing PMI new orders earnings May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_e0ec6616f1bb"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US Industrials sector Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "These two sectors have also been the largest contributors to the increase in the overall earnings growth rate for the index since March 31, led by the positive EPS surprises reported by Alphabet, Amazon.com, and Meta Platforms . On the other hand, the Energy (to 0.6% from 8.2%) sector is the only sector that has recorded a decrease in its earnings growth rate since the end of the quarter due to downward revisions to earnings estimates and negative earnings surprises.",
+          "fundamental_readthrough": "Approved-source web context for query: US Industrials sector Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_aef8b17a58f3"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US Industrials sector Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US Industrials sector Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_5a7eb3ac1475"
+        }
+      ]
+    },
+    {
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "query_used": "United Kingdom equity market earnings valuation macro May 2026",
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c34df78a06c9"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a044487a1fe1"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_fecdba898db0"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a76c130b2002"
+        }
+      ]
+    },
+    {
+      "acid": "FR EQ",
+      "label": "France",
+      "category": "Country",
+      "query_used": "France equity market earnings valuation macro May 2026",
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: France equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_3f15d0d42e05"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: France equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_ef9fe7f77902"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "France equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: France equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_918ab6175942"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "France equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: France equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_ab91576c6014"
+        }
+      ]
+    },
+    {
+      "acid": "IN EQ",
+      "label": "India",
+      "category": "Country",
+      "query_used": "India equity market earnings valuation macro May 2026",
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: India equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_1945346066fd"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: India equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_7acf78ce3171"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "India equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: India equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_6d643d520a6e"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "India equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: India equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_e13e7c75dacd"
+        }
+      ]
+    }
+  ],
+  "challenge_support_packets": [
+    {
+      "challenge_id": "ch_eu-id-eq_2026-06-30",
+      "acid": "EU ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "Atlas Copco AB Class A",
+          "portfolio_weight": 0.7501,
+          "benchmark_weight": 0.1165,
+          "active_weight": 0.6336,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.5421,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5421
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.208,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.208
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1165,
+              "active_weight": -0.1165
+            }
+          ]
+        },
+        {
+          "security_name": "BAE Systems PLC",
+          "portfolio_weight": 0.7481,
+          "benchmark_weight": 0.1742,
+          "active_weight": 0.5739,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.4689,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4689
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.2792,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2792
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1742,
+              "active_weight": -0.1742
+            }
+          ]
+        },
+        {
+          "security_name": "SKF AB Class B",
+          "portfolio_weight": 0.7027,
+          "benchmark_weight": 0.0264,
+          "active_weight": 0.6763,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.5151,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5151
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.1876,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1876
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0264,
+              "active_weight": -0.0264
+            }
+          ]
+        },
+        {
+          "security_name": "Epiroc AB Ordinary Shares - Class A",
+          "portfolio_weight": 0.6968,
+          "benchmark_weight": 0.0388,
+          "active_weight": 0.658,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.4035,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4035
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.2933,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2933
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0388,
+              "active_weight": -0.0388
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 2.7130768264174865,
+        "portfolio_weight": 9.777382481980863,
+        "benchmark_weight": 7.064305655563377,
+        "positioning_direction": "overweight",
+        "vir_now": -0.03431154467663522,
+        "vir_delta_mom": -0.002473673473023519,
+        "vir_direction": "underweight",
+        "algo_active_weight": -0.86,
+        "algo_active_weight_mom": -0.18,
+        "algo_direction": "underweight",
+        "signal_alignment": "diverging",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.018999999999999906,
+          "yield": 0.02429698294997959,
+          "inflation": 0.0179801945043631,
+          "currency_usd": 0.019599326294685415,
+          "valuation_adjustment_top_down": -0.05297413758674763,
+          "valuation_adjustment_combined": -0.02648530679746297,
+          "valuation_adjustment_bottom_up": 3.5239918216856125e-06
+        },
+        "stf_relative_context": {
+          "universe": "ex-US sectors",
+          "universe_size": 43,
+          "rank": 35,
+          "percentile": 0.19,
+          "stf": -0.0343,
+          "universe_median_stf": -0.0135,
+          "vs_median": -0.0208,
+          "more_attractive_peers": [
+            "Energy",
+            "Consumer Discretionary",
+            "Real Estate"
+          ],
+          "more_attractive_count": 34,
+          "universe_best": {
+            "label": "Energy",
+            "stf": 0.0441
+          },
+          "universe_worst": {
+            "label": "Information Technology",
+            "stf": -0.0785
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.09,
+          "history_window_months": 12,
+          "history_low": -0.0367,
+          "history_high": -0.0227
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {
+          "label": "Industrials",
+          "category": "Eq Sector",
+          "active_weight": 2.71,
+          "top_sector_holdings": [
+            {
+              "security_name": "Atlas Copco AB Class A",
+              "portfolio_weight": 0.75,
+              "benchmark_weight": 0.12,
+              "active_weight": 0.63
+            },
+            {
+              "security_name": "BAE Systems PLC",
+              "portfolio_weight": 0.75,
+              "benchmark_weight": 0.17,
+              "active_weight": 0.57
+            },
+            {
+              "security_name": "SKF AB Class B",
+              "portfolio_weight": 0.7,
+              "benchmark_weight": 0.03,
+              "active_weight": 0.68
+            }
+          ],
+          "inference_level": "sector_proxy"
+        },
+        "return_attribution_mtd": {
+          "active_period_return": 2.07,
+          "active_period_factor_return": 1.54,
+          "active_period_specific_return": 0.53,
+          "period_overweight_return": 0.56,
+          "period_underweight_return": 1.47,
+          "active_style_factor_returns": 1.3,
+          "active_industry_factor_returns": 0.12,
+          "active_market_factor_returns": null,
+          "window_start": "2026-07-01",
+          "window_end": "2026-07-17"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.",
+        "active_thesis_falsification_conditions": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Brian Bernard, CFA, CPA Industrials Sector Director Morningstar Research Services LLC Valuation : Asset",
+        "sharepoint_research_path": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US industrials sector valuation manufacturing PMI new orders earnings May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_526e04001deb",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US industrials sector valuation manufacturing PMI new orders earnings May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_e0ec6616f1bb",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US Industrials sector Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "These two sectors have also been the largest contributors to the increase in the overall earnings growth rate for the index since March 31, led by the positive EPS surprises reported by Alphabet, Amazon.com, and Meta Platforms . On the other hand, the Energy (to 0.6% from 8.2%) sector is the only sector that has recorded a decrease in its earnings growth rate since the end of the quarter due to downward revisions to earnings estimates and negative earnings surprises.",
+          "fundamental_readthrough": "Approved-source web context for query: US Industrials sector Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_aef8b17a58f3"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US Industrials sector Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US Industrials sector Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_5a7eb3ac1475"
+        }
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "Atlas Copco AB Class A (+0.63 pts active) via MS INTL EQ 2 LEND ACCT 0.54%, MS INT'L EQUITY HARDING 0.21%; BAE Systems PLC (+0.57 pts active) via MS INT'L EQUITY HARDING 0.47%, MS INTL EQ GLOB EX US OPP 0.28%; SKF AB Class B (+0.68 pts active) via MS INTL EQ 2 LEND ACCT 0.52%, MS INTL EQ GLOB EX US OPP 0.19%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+memory+sharepoint_research"
+    },
+    {
+      "challenge_id": "ch_uk-eq_2026-06-30",
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "Shell PLC",
+          "portfolio_weight": 1.0594,
+          "benchmark_weight": 0.4841,
+          "active_weight": 0.5753,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.649,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.649
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.4105,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4105
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.4841,
+              "active_weight": -0.4841
+            }
+          ]
+        },
+        {
+          "security_name": "BAE Systems PLC",
+          "portfolio_weight": 0.7481,
+          "benchmark_weight": 0.1742,
+          "active_weight": 0.5739,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.4689,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4689
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.2792,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2792
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1742,
+              "active_weight": -0.1742
+            }
+          ]
+        },
+        {
+          "security_name": "GSK PLC",
+          "portfolio_weight": 0.7309,
+          "benchmark_weight": 0.2428,
+          "active_weight": 0.4881,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.4727,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4727
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.2583,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2583
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.2428,
+              "active_weight": -0.2428
+            }
+          ]
+        },
+        {
+          "security_name": "Compass Group PLC",
+          "portfolio_weight": 0.6877,
+          "benchmark_weight": 0.1256,
+          "active_weight": 0.562,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARRIS",
+              "portfolio_weight": 0.3959,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3959
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.2918,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2918
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1256,
+              "active_weight": -0.1256
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 3.0336607434501364,
+        "portfolio_weight": 10.786426777280958,
+        "benchmark_weight": 7.752766033830822,
+        "positioning_direction": "overweight",
+        "vir_now": -0.011098384146787453,
+        "vir_delta_mom": -0.0004856296665978199,
+        "vir_direction": "underweight",
+        "algo_active_weight": 1.78,
+        "algo_active_weight_mom": 0.02,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.0129999999999999,
+          "yield": 0.042168616877873426,
+          "inflation": 0.022981883270561942,
+          "currency_usd": 0.018750965419954024,
+          "valuation_adjustment_top_down": -0.023783035406971686,
+          "valuation_adjustment_combined": -0.008489964815393991,
+          "valuation_adjustment_bottom_up": 0.006803105776183704
+        },
+        "stf_relative_context": {
+          "universe": "ex-US countries",
+          "universe_size": 44,
+          "rank": 22,
+          "percentile": 0.51,
+          "stf": -0.0111,
+          "universe_median_stf": -0.0124,
+          "vs_median": 0.0013,
+          "more_attractive_peers": [
+            "Indonesia",
+            "Turkey",
+            "Philippines"
+          ],
+          "more_attractive_count": 21,
+          "universe_best": {
+            "label": "Indonesia",
+            "stf": 0.0646
+          },
+          "universe_worst": {
+            "label": "South Korea",
+            "stf": -0.1013
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.36,
+          "history_window_months": 12,
+          "history_low": -0.0195,
+          "history_high": -0.0018
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {
+          "label": "United Kingdom",
+          "category": "Country",
+          "active_weight": 3.03,
+          "top_sector_holdings": [
+            {
+              "security_name": "Shell PLC",
+              "portfolio_weight": 1.06,
+              "benchmark_weight": 0.48,
+              "active_weight": 0.58
+            },
+            {
+              "security_name": "BAE Systems PLC",
+              "portfolio_weight": 0.75,
+              "benchmark_weight": 0.17,
+              "active_weight": 0.57
+            },
+            {
+              "security_name": "GSK PLC",
+              "portfolio_weight": 0.73,
+              "benchmark_weight": 0.24,
+              "active_weight": 0.49
+            }
+          ],
+          "inference_level": "sector_proxy"
+        },
+        "return_attribution_mtd": {
+          "active_period_return": 2.07,
+          "active_period_factor_return": 1.54,
+          "active_period_specific_return": 0.53,
+          "period_overweight_return": 0.56,
+          "period_underweight_return": 1.47,
+          "active_style_factor_returns": 1.3,
+          "active_industry_factor_returns": 0.12,
+          "active_market_factor_returns": null,
+          "window_start": "2026-07-01",
+          "window_end": "2026-07-17"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "UK EQ Update - Feb 2026 Mark Murray Matthew Wilson Ziying Peng Phoebe Chapman Raymond Sham Investment Thesis Supporting Analysis: Financials Healthcare Energy Consumer Staples Industrials FX Risk FV\u2019s Contrarian indicators Appendix Contents Investment Thesis Investment Thesis Investment Thesis - Continued Previous Thesis Updates",
+        "sharepoint_research_path": "202602-EQ-UK EQ-Conviction-Thesis Update.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c34df78a06c9",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a044487a1fe1",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_fecdba898db0"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a76c130b2002"
+        }
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "Shell PLC (+0.58 pts active) via MS INT'L EQUITY HARDING 0.65%, MS INTL EQ GLOB EX US OPP 0.41%; BAE Systems PLC (+0.57 pts active) via MS INT'L EQUITY HARDING 0.47%, MS INTL EQ GLOB EX US OPP 0.28%; GSK PLC (+0.49 pts active) via MS INTL EQ 2 LEND ACCT 0.47%, MS INTL EQ GLOB EX US OPP 0.26%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+    },
+    {
+      "challenge_id": "ch_fr-eq_2026-06-30",
+      "acid": "FR EQ",
+      "label": "France",
+      "category": "Country",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "BNP Paribas Act. Cat.A",
+          "portfolio_weight": 0.8738,
+          "benchmark_weight": 0.2661,
+          "active_weight": 0.6077,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARRIS",
+              "portfolio_weight": 0.4438,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4438
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.43,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.43
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.2661,
+              "active_weight": -0.2661
+            }
+          ]
+        },
+        {
+          "security_name": "Lvmh Moet Hennessy Louis Vuitton SE",
+          "portfolio_weight": 0.7222,
+          "benchmark_weight": 0.3162,
+          "active_weight": 0.406,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.3778,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3778
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARRIS",
+              "portfolio_weight": 0.3444,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3444
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.3162,
+              "active_weight": -0.3162
+            }
+          ]
+        },
+        {
+          "security_name": "Safran SA",
+          "portfolio_weight": 0.556,
+          "benchmark_weight": 0.316,
+          "active_weight": 0.24,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.3051,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3051
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.2509,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2509
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.316,
+              "active_weight": -0.316
+            }
+          ]
+        },
+        {
+          "security_name": "SCHNEIDER ELEC. SE",
+          "portfolio_weight": 0.5211,
+          "benchmark_weight": 0.3903,
+          "active_weight": 0.1308,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.3015,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3015
+            },
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.2196,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2196
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.3903,
+              "active_weight": -0.3903
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 2.7991353009347346,
+        "portfolio_weight": 7.521238705189171,
+        "benchmark_weight": 4.722103404254437,
+        "positioning_direction": "overweight",
+        "vir_now": -0.0137838077379464,
+        "vir_delta_mom": -0.0026837683293634562,
+        "vir_direction": "underweight",
+        "algo_active_weight": 1.6099999999999999,
+        "algo_active_weight_mom": -0.11,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.015099999999999891,
+          "yield": 0.032647511768172245,
+          "inflation": 0.01944588085319654,
+          "currency_usd": 0.01531823132783705,
+          "valuation_adjustment_top_down": -0.025119212825004844,
+          "valuation_adjustment_combined": -0.009446571020550354,
+          "valuation_adjustment_bottom_up": 0.006226070783904136
+        },
+        "stf_relative_context": {
+          "universe": "ex-US countries",
+          "universe_size": 44,
+          "rank": 23,
+          "percentile": 0.49,
+          "stf": -0.0138,
+          "universe_median_stf": -0.0124,
+          "vs_median": -0.0013,
+          "more_attractive_peers": [
+            "Indonesia",
+            "Turkey",
+            "Philippines"
+          ],
+          "more_attractive_count": 22,
+          "universe_best": {
+            "label": "Indonesia",
+            "stf": 0.0646
+          },
+          "universe_worst": {
+            "label": "South Korea",
+            "stf": -0.1013
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.18,
+          "history_window_months": 12,
+          "history_low": -0.0194,
+          "history_high": -0.0078
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {
+          "label": "France",
+          "category": "Country",
+          "active_weight": 2.8,
+          "top_sector_holdings": [
+            {
+              "security_name": "BNP Paribas Act. Cat.A",
+              "portfolio_weight": 0.87,
+              "benchmark_weight": 0.27,
+              "active_weight": 0.61
+            },
+            {
+              "security_name": "Lvmh Moet Hennessy Louis Vuitton SE",
+              "portfolio_weight": 0.72,
+              "benchmark_weight": 0.32,
+              "active_weight": 0.41
+            },
+            {
+              "security_name": "Safran SA",
+              "portfolio_weight": 0.56,
+              "benchmark_weight": 0.32,
+              "active_weight": 0.24
+            }
+          ],
+          "inference_level": "sector_proxy"
+        },
+        "return_attribution_mtd": {
+          "active_period_return": 2.07,
+          "active_period_factor_return": 1.54,
+          "active_period_specific_return": 0.53,
+          "period_overweight_return": 0.56,
+          "period_underweight_return": 1.47,
+          "active_style_factor_returns": 1.3,
+          "active_industry_factor_returns": 0.12,
+          "active_market_factor_returns": null,
+          "window_start": "2026-07-01",
+          "window_end": "2026-07-17"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "Global Aggregate Reward for Risk Medium Conviction Score ARFR Committee: Mike Coop, Paul Arnold, Mike Stout, Sean Neethling, James Foot Deck prepared by: Noah Kaplan, Johanna Zhu, James Foot October 2024 Data as at 30 September 2024 Aggregate Reward for Risk Conviction Sore Conviction Score: Medium Capital Supply The score has been maintained at Medium , underpinned by a Medium score for debt supply and a Medium scor",
+        "sharepoint_research_path": "202410-XA-GARFR-Monthly Update.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: France equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_3f15d0d42e05",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: France equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_ef9fe7f77902",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "France equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: France equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_918ab6175942"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "France equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: France equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_ab91576c6014"
+        }
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "BNP Paribas Act. Cat.A (+0.61 pts active) via MS INT'L EQUITY HARRIS 0.44%, MS INTL EQ GLOB EX US OPP 0.43%; Lvmh Moet Hennessy Louis Vuitton SE (+0.41 pts active) via MS INTL EQ GLOB EX US OPP 0.38%, MS INT'L EQUITY HARRIS 0.34%; Safran SA (+0.24 pts active) via MS INTL EQ GLOB EX US OPP 0.31%, MS INT'L EQUITY HARDING 0.25%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+    },
+    {
+      "challenge_id": "ch_in-eq_2026-06-30",
+      "acid": "IN EQ",
+      "label": "India",
+      "category": "Country",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "Tata Consultancy Services Ltd",
+          "portfolio_weight": 0.4196,
+          "benchmark_weight": 0.0495,
+          "active_weight": 0.3701,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.308,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.308
+            },
+            {
+              "source_name": "MS INT'L EQUITY LAZARD",
+              "portfolio_weight": 0.1116,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1116
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0495,
+              "active_weight": -0.0495
+            }
+          ]
+        },
+        {
+          "security_name": "Axis Bank Ltd",
+          "portfolio_weight": 0.2857,
+          "benchmark_weight": 0.0723,
+          "active_weight": 0.2135,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARRIS",
+              "portfolio_weight": 0.1766,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1766
+            },
+            {
+              "source_name": "MS INT'L EQUITY LAZARD",
+              "portfolio_weight": 0.1091,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1091
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0723,
+              "active_weight": -0.0723
+            }
+          ]
+        },
+        {
+          "security_name": "HDFC BANK LTD ADR",
+          "portfolio_weight": 0.237,
+          "benchmark_weight": 0.0,
+          "active_weight": 0.237,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.237,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.237
+            }
+          ]
+        },
+        {
+          "security_name": "HDFC BANK LTD",
+          "portfolio_weight": 0.1872,
+          "benchmark_weight": 0.2153,
+          "active_weight": -0.0281,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.1872,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1872
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.2153,
+              "active_weight": -0.2153
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": -2.600470171623252,
+        "portfolio_weight": 1.8660907508683955,
+        "benchmark_weight": 4.466560922491648,
+        "positioning_direction": "underweight",
+        "vir_now": -0.010206960975281523,
+        "vir_delta_mom": 0.0020972603238738063,
+        "vir_direction": "underweight",
+        "algo_active_weight": 1.38,
+        "algo_active_weight_mom": 0.19,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "growth",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.04499999999999993,
+          "yield": 0.012924969843661805,
+          "inflation": 0.038837306488215484,
+          "currency_usd": 0.031185626923023957,
+          "valuation_adjustment_top_down": -0.019696064470686614,
+          "valuation_adjustment_combined": -0.007026274770079111,
+          "valuation_adjustment_bottom_up": 0.005643514930528393
+        },
+        "stf_relative_context": {
+          "universe": "ex-US countries",
+          "universe_size": 44,
+          "rank": 18,
+          "percentile": 0.6,
+          "stf": -0.0102,
+          "universe_median_stf": -0.0124,
+          "vs_median": 0.0022,
+          "more_attractive_peers": [
+            "Indonesia",
+            "Turkey",
+            "Philippines"
+          ],
+          "more_attractive_count": 17,
+          "universe_best": {
+            "label": "Indonesia",
+            "stf": 0.0646
+          },
+          "universe_worst": {
+            "label": "South Korea",
+            "stf": -0.1013
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.91,
+          "history_window_months": 12,
+          "history_low": -0.0221,
+          "history_high": -0.0065
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {
+          "label": "India",
+          "category": "Country",
+          "active_weight": -2.6,
+          "top_sector_holdings": [
+            {
+              "security_name": "Tata Consultancy Services Ltd",
+              "portfolio_weight": 0.42,
+              "benchmark_weight": 0.05,
+              "active_weight": 0.37
+            },
+            {
+              "security_name": "Axis Bank Ltd",
+              "portfolio_weight": 0.29,
+              "benchmark_weight": 0.07,
+              "active_weight": 0.21
+            },
+            {
+              "security_name": "HDFC BANK LTD ADR",
+              "portfolio_weight": 0.24,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.24
+            }
+          ],
+          "inference_level": "sector_proxy"
+        },
+        "return_attribution_mtd": {
+          "active_period_return": 2.07,
+          "active_period_factor_return": 1.54,
+          "active_period_specific_return": 0.53,
+          "period_overweight_return": 0.56,
+          "period_underweight_return": 1.47,
+          "active_style_factor_returns": 1.3,
+          "active_industry_factor_returns": 0.12,
+          "active_market_factor_returns": null,
+          "window_start": "2026-07-01",
+          "window_end": "2026-07-17"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "July 2026 Currency Hedging Cost Assumptions Hedged-Return Methodology HEDGING METHODOLOGY How we build a hedged return Morningstar Multi Asset Research | 2 See Important Disclosures at the end of this report. For every currency in the coverage universe, we publish a forward-looking, USD-hedged expected return at five horizons (1, 10, 20, 30, and UC). Each figure is built in two steps - an expected cash return for the",
+        "sharepoint_research_path": "202607 - FX - Hedging Cost Methodology.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: India equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_1945346066fd",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: India equity market earnings valuation macro May 2026",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_7acf78ce3171",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "India equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: India equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_6d643d520a6e"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "India equity market Q1 2026 earnings growth revisions guidance",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Guidance is classified as positive if the estimate (or mid -point of a range of estimates) provided by the company is higher than the mean EPS estimate the day before the guidance was issued. Earnings: S&P 500 Expected to Report Earnings Growth of 23% for CY 2026 For the first quarter, S&P 500 companies are reporting year-over-year growth in earnings of 28.6% and year-over-year growth in revenues of 11.8%.",
+          "fundamental_readthrough": "Approved-source web context for query: India equity market Q1 2026 earnings growth revisions guidance",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_e13e7c75dacd"
+        }
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "Tata Consultancy Services Ltd (+0.37 pts active) via MS INTL EQ 2 LEND ACCT 0.31%, MS INT'L EQUITY LAZARD 0.11%; Axis Bank Ltd (+0.21 pts active) via MS INT'L EQUITY HARRIS 0.18%, MS INT'L EQUITY LAZARD 0.11%; HDFC BANK LTD ADR (+0.24 pts active) via MS INT'L EQUITY HARDING 0.24%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+    }
+  ],
+  "supporting_positions": {
+    "top_divergences": [
+      {
+        "acid": "EU ID EQ",
+        "label": "Industrials",
+        "category": "Eq Sector",
+        "portfolio_weight": 9.777382481980863,
+        "benchmark_weight": 7.064305655563377,
+        "active_weight": 2.7130768264174865,
+        "vir_now": -0.03431154467663522,
+        "vir_delta_mom": -0.002473673473023519,
+        "algo_active_weight": -0.86,
+        "signal_alignment": "diverging",
+        "signal_quality": "stable",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {
+          "thesis_id": "ths_0e5b6cf4d912",
+          "fund": "MStar International Equity",
+          "acid": "EU ID EQ",
+          "thesis_text": "Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.",
+          "thesis_drivers": [
+            "valuation_adjustment_top_down"
+          ],
+          "last_affirmed_snapshot_date": "2026-04-06",
+          "last_affirmed_stf": -0.0366980208921893,
+          "last_affirmed_decomp": "{\"growth\":0.0189999999999999,\"yield\":0.0241694367075922,\"inflation\":0.0173395224207185,\"currency_usd\":0.0145667832991156,\"valuation_adjustment_top_down\":-0.0549497694269507,\"valuation_adjustment_combined\":-0.028702117369756,\"valuation_adjustment_bottom_up\":-0.002454465312561299}",
+          "falsification_conditions": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+          "status": "active",
+          "review_state": "proposed",
+          "created_at": "2026-04-29T00:00:00Z",
+          "updated_at": "2026-04-29T00:00:00Z",
+          "created_by_review_run_id": "manual_thesis_seed_2026-04-29",
+          "last_updated_by_review_run_id": "manual_thesis_seed_2026-04-29",
+          "visibility_scope": "personal",
+          "evidence_pointers": [
+            {
+              "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+              "row_id": "fms_03a2430b4cf4"
+            }
+          ]
+        },
+        "sharepoint_research_path": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+        "sharepoint_research_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 ",
+        "sample_source_securities": "Atlas Copco AB Class A; SKF AB Class B; Legrand SA; BAE Systems PLC; Alfa Laval AB; Epiroc AB Ordinary Shares - Class A; Sunbelt Rentals Holdings Inc; DSV AS; KONE Oyj Class B; Safran SA; SCHNEIDER ELEC. SE; Bunzl PLC; Geberit AG; Airbus SE; Daimler Truck Holding AG Ordinary Shares; Ryanair Holdings PLC ADR; Brenntag SE; Assa Abloy AB Class B; Kingspan Group PLC; Experian PLC; IMCD NV; Bureau Veritas SA; RENTOKIL INITIAL PLC; SGS AG; Thales",
+        "source_breakdown": {
+          "security_count": 267,
+          "securities": [
+            {
+              "security_name": "Atlas Copco AB Class A",
+              "portfolio_weight": 0.7501,
+              "benchmark_weight": 0.1165,
+              "active_weight": 0.6336,
+              "sources": [
+                {
+                  "source_name": "MS INTL EQ 2 LEND ACCT",
+                  "portfolio_weight": 0.5421,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.5421
+                },
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.208,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.208
+                }
+              ]
+            },
+            {
+              "security_name": "BAE Systems PLC",
+              "portfolio_weight": 0.7481,
+              "benchmark_weight": 0.1742,
+              "active_weight": 0.5739,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.4689,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4689
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.2792,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2792
+                }
+              ]
+            },
+            {
+              "security_name": "SKF AB Class B",
+              "portfolio_weight": 0.7027,
+              "benchmark_weight": 0.0264,
+              "active_weight": 0.6763,
+              "sources": [
+                {
+                  "source_name": "MS INTL EQ 2 LEND ACCT",
+                  "portfolio_weight": 0.5151,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.5151
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.1876,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.1876
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "UK EQ",
+        "label": "United Kingdom",
+        "category": "Country",
+        "portfolio_weight": 10.786426777280958,
+        "benchmark_weight": 7.752766033830822,
+        "active_weight": 3.0336607434501364,
+        "vir_now": -0.011098384146787453,
+        "vir_delta_mom": -0.0004856296665978199,
+        "algo_active_weight": 1.78,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "stable",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "202602-EQ-UK EQ-Conviction-Thesis Update.pptx",
+        "sharepoint_research_summary": "UK EQ Update - Feb 2026 Mark Murray Matthew Wilson Ziying Peng Phoebe Chapman Raymond Sham Investment Thesis Supporting Analysis: Financials Healthcare Energy Consumer Staples Industrials FX Risk FV\u2019s Contrarian indicato",
+        "sample_source_securities": "Shell PLC; Rio Tinto PLC Ordinary Shares; GSK PLC; BAE Systems PLC; Compass Group PLC; Haleon PLC; Sunbelt Rentals Holdings Inc; RECKITT BENCKISER GRP. PL; Unilever PLC; Bunzl PLC; 3i Group Ord; Jupiter Fund Management PLC; Diageo PLC; BIG YELLOW GRP. PLC; ASTRAZENECA PLC; Imperial Brands PLC; Croda International PLC; HSBC Holdings PLC; London Stock Exchange Group PLC; British American Tobacco PLC; Experian PLC; Ninety One PLC Ordinary Shares; Haleon PLC ADR; RENTOKIL INITIAL PLC; SSE PLC",
+        "source_breakdown": {
+          "security_count": 195,
+          "securities": [
+            {
+              "security_name": "Shell PLC",
+              "portfolio_weight": 1.0594,
+              "benchmark_weight": 0.4841,
+              "active_weight": 0.5753,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.649,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.649
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.4105,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4105
+                }
+              ]
+            },
+            {
+              "security_name": "BAE Systems PLC",
+              "portfolio_weight": 0.7481,
+              "benchmark_weight": 0.1742,
+              "active_weight": 0.5739,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.4689,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4689
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.2792,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2792
+                }
+              ]
+            },
+            {
+              "security_name": "GSK PLC",
+              "portfolio_weight": 0.7309,
+              "benchmark_weight": 0.2428,
+              "active_weight": 0.4881,
+              "sources": [
+                {
+                  "source_name": "MS INTL EQ 2 LEND ACCT",
+                  "portfolio_weight": 0.4727,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4727
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.2583,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2583
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "FR EQ",
+        "label": "France",
+        "category": "Country",
+        "portfolio_weight": 7.521238705189171,
+        "benchmark_weight": 4.722103404254437,
+        "active_weight": 2.7991353009347346,
+        "vir_now": -0.0137838077379464,
+        "vir_delta_mom": -0.0026837683293634562,
+        "algo_active_weight": 1.6099999999999999,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "stable",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "202410-XA-GARFR-Monthly Update.pptx",
+        "sharepoint_research_summary": "Global Aggregate Reward for Risk Medium Conviction Score ARFR Committee: Mike Coop, Paul Arnold, Mike Stout, Sean Neethling, James Foot Deck prepared by: Noah Kaplan, Johanna Zhu, James Foot October 2024 Data as at 30 Se",
+        "sample_source_securities": "Legrand SA; BNP Paribas Act. Cat.A; Lvmh Moet Hennessy Louis Vuitton SE; TotalEnergies SE; Accor SA; Safran SA; SCHNEIDER ELEC. SE; L'Oreal SA; Dassault Systemes SE; Air Liquide SA; Pernod Ricard SA; DANONE SA; Publicis Groupe SA; Edenred SE; KERING SA; Bureau Veritas SA; Capgemini SE; Veolia Environnement SA; Thales; Gaztransport et technigaz SA; Sanofi SA; AXA SA; Vinci SA; Hermes International SA; Engie SA",
+        "source_breakdown": {
+          "security_count": 114,
+          "securities": [
+            {
+              "security_name": "BNP Paribas Act. Cat.A",
+              "portfolio_weight": 0.8738,
+              "benchmark_weight": 0.2661,
+              "active_weight": 0.6077,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARRIS",
+                  "portfolio_weight": 0.4438,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4438
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.43,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.43
+                }
+              ]
+            },
+            {
+              "security_name": "Lvmh Moet Hennessy Louis Vuitton SE",
+              "portfolio_weight": 0.7222,
+              "benchmark_weight": 0.3162,
+              "active_weight": 0.406,
+              "sources": [
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.3778,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3778
+                },
+                {
+                  "source_name": "MS INT'L EQUITY HARRIS",
+                  "portfolio_weight": 0.3444,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3444
+                }
+              ]
+            },
+            {
+              "security_name": "Safran SA",
+              "portfolio_weight": 0.556,
+              "benchmark_weight": 0.316,
+              "active_weight": 0.24,
+              "sources": [
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.3051,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3051
+                },
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.2509,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2509
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "MX EQ",
+        "label": "Mexico",
+        "category": "Country",
+        "portfolio_weight": 2.9959651500340176,
+        "benchmark_weight": 0.6032463574804638,
+        "active_weight": 2.392718792553554,
+        "vir_now": -0.0050276942106556866,
+        "vir_delta_mom": 0.003628037574846976,
+        "algo_active_weight": 0.41000000000000003,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "inflation",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "202409-EQ-MX EQ-Conviction Update_final.pptx",
+        "sharepoint_research_summary": "Mexico Equity Conviction Update Oct 11, 2024 Asset Class Lead: Gary Supporting Team: Joe, Hamza, Matt, Shivika, Alaina, and Joselyn Overview of Mexico Weighting within MSCI ACWI Sector, company, and size-style breakdown ",
+        "sample_source_securities": "Fomento Economico Mexicano SAB de CV ADR; FOMENTO ECONOMICO MEXICAN; Grupo Financiero Banorte SAB de CV Class O; Bolsa Mexicana de Valores SAB de CV Class A; AMERICA MOVIL SAB DE  ADR; Fibra Danhos; America Movil SAB de CV Ordinary Shares - Class B; Grupo Aeroportuario del Pacifico SAB de CV ADR; Wal - Mart de Mexico SAB de CV; Vista Energy SAB de CV ADR; Kimberly - Clark de Mexico SAB de CV Class A; Ternium SA ADR; Grupo Mexico SAB de CV Class B; Cemex SAB de CV; Arca Continental SAB de CV Class B Ordinary Shares; Grupo Aeroportuario del Pacifico SAB de CV Class B; Industrias Penoles SAB de CV; Fresnillo PLC; Coca-Cola Femsa SAB de CV CPO Terms:3 Shs-B- + 5 Shs-L-; Grupo Financiero Inbursa SAB de CV Series O; Grupo Aeroportuario del Sureste SAB de CV Class B; Vista Energy SAB de CV Registered Shs Series -A-; PROLOGIS PROP. MEXICO SA; Fibra Uno Administracion SA de CV Certificados Bursatiles Fiduciarios Inmob; Grupo Carso SAB de CV Class A1",
+        "source_breakdown": {
+          "security_count": 50,
+          "securities": [
+            {
+              "security_name": "Fomento Economico Mexicano SAB de CV ADR",
+              "portfolio_weight": 0.7205,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.7205,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.5628,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.5628
+                },
+                {
+                  "source_name": "MS INT'L EQUITY HARRIS",
+                  "portfolio_weight": 0.1577,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.1577
+                }
+              ]
+            },
+            {
+              "security_name": "Grupo Financiero Banorte SAB de CV Class O",
+              "portfolio_weight": 0.5926,
+              "benchmark_weight": 0.0667,
+              "active_weight": 0.5259,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.2274,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2274
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.1931,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.1931
+                }
+              ]
+            },
+            {
+              "security_name": "FOMENTO ECONOMICO MEXICAN",
+              "portfolio_weight": 0.29,
+              "benchmark_weight": 0.0575,
+              "active_weight": 0.2326,
+              "sources": [
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.29,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.29
+                },
+                {
+                  "source_name": "Morningstar Gbl xUS NR USD",
+                  "portfolio_weight": 0.0,
+                  "benchmark_weight": 0.0575,
+                  "active_weight": -0.0575
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "top_aligned_positions": [
+      {
+        "acid": "CA EQ",
+        "label": "Canada",
+        "category": "Country",
+        "portfolio_weight": 3.1635515612103555,
+        "benchmark_weight": 7.634044626654953,
+        "active_weight": -4.470493065444598,
+        "vir_now": -0.04198654936804732,
+        "vir_delta_mom": 0.0012846826145606269,
+        "algo_active_weight": -0.32,
+        "signal_alignment": "aligned",
+        "signal_quality": "stable",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "202002-EQ-CA EQ-Fair Value.pptx",
+        "sharepoint_research_summary": "Mike Stathakis Canada 2020 FV Review Real Yield Fair Value Review Long-term measures \u2013 Current 10-year real FV @ 2.44% is slightly below LT average 2 3 Real 10yr under current assumptions (Current = 2.44%) Real 10yr long",
+        "sample_source_securities": "Manulife Financial Corp; Canadian National Railway Co; Alimentation Couche-Tard Inc; The Toronto-Dominion Bank; Rogers Communications Inc Shs -B- Non-Voting; Parex Resources Inc; Bank of Montreal; Magna International Inc; BRP Inc Shs Subord.Voting; LINAMAR CORP; Winpak Ltd; Canadian Pacific Kansas City Ltd; Royal Bank of Canada; Shopify Inc Registered Shs -A- Subord Vtg; Enbridge Inc; Bank of Nova Scotia; Canadian Imperial Bank of Commerce; Canadian Natural Resources Ltd; Agnico Eagle Mines Ltd; Brookfield Corp Registered Shs -A- Limited Vtg; TC Energy Corp; Barrick Mining Corp; Suncor Energy Inc; National Bank of Canada; Wheaton Precious Metals Corp",
+        "source_breakdown": {
+          "security_count": 210,
+          "securities": [
+            {
+              "security_name": "Canadian National Railway Co",
+              "portfolio_weight": 1.016,
+              "benchmark_weight": 0.1505,
+              "active_weight": 0.8655,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.552,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.552
+                },
+                {
+                  "source_name": "MS INTL EQ 2 LEND ACCT",
+                  "portfolio_weight": 0.464,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.464
+                }
+              ]
+            },
+            {
+              "security_name": "Manulife Financial Corp",
+              "portfolio_weight": 0.6869,
+              "benchmark_weight": 0.1568,
+              "active_weight": 0.5302,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.6869,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.6869
+                },
+                {
+                  "source_name": "Morningstar Gbl xUS NR USD",
+                  "portfolio_weight": 0.0,
+                  "benchmark_weight": 0.1568,
+                  "active_weight": -0.1568
+                }
+              ]
+            },
+            {
+              "security_name": "Alimentation Couche-Tard Inc",
+              "portfolio_weight": 0.2779,
+              "benchmark_weight": 0.0996,
+              "active_weight": 0.1782,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.2779,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2779
+                },
+                {
+                  "source_name": "Morningstar Gbl xUS NR USD",
+                  "portfolio_weight": 0.0,
+                  "benchmark_weight": 0.0996,
+                  "active_weight": -0.0996
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "EU FN EQ",
+        "label": "Financials",
+        "category": "Eq Sector",
+        "portfolio_weight": 6.31015953770411,
+        "benchmark_weight": 8.84543376480193,
+        "active_weight": -2.53527422709782,
+        "vir_now": -0.0362375163712321,
+        "vir_delta_mom": -0.004778143589823092,
+        "algo_active_weight": -1.76,
+        "signal_alignment": "aligned",
+        "signal_quality": "weakening",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "202311-EQ-EU FN EQ-Conviction Update.pptx",
+        "sharepoint_research_summary": "MIM Mark Murray Deniz Gokmen October 2023 European Financials Conviction update MER Johann Scholtz Niklas Kammer Items for Backlog Key Questions Performance & contributors to the index Absolute valuation Relative valuati",
+        "sample_source_securities": "Banco Bilbao Vizcaya Argentaria SA; Allianz SE; BNP Paribas Act. Cat.A; Skandinaviska Enskilda Banken AB Class A; 3i Group Ord; DWS Group GmbH & Co KGaA; Jupiter Fund Management PLC; HSBC Holdings PLC; London Stock Exchange Group PLC; Edenred SE; ASR NEDERLAND NV; Nordea Bank Abp; Ninety One PLC Ordinary Shares; INTESA SANPAOLO SPA; ING GROEP NV; UBS Group AG Registered Shares; Julius Baer Gruppe AG; Nexi SpA; Svenska Handelsbanken AB Class A; VZ Holding AG; Adyen NV; Partners Group Holding AG; Plus500 Ltd; AJ Bell PLC; Schroders PLC",
+        "source_breakdown": {
+          "security_count": 198,
+          "securities": [
+            {
+              "security_name": "BNP Paribas Act. Cat.A",
+              "portfolio_weight": 0.8738,
+              "benchmark_weight": 0.2661,
+              "active_weight": 0.6077,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARRIS",
+                  "portfolio_weight": 0.4438,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4438
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.43,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.43
+                }
+              ]
+            },
+            {
+              "security_name": "Banco Bilbao Vizcaya Argentaria SA",
+              "portfolio_weight": 0.8178,
+              "benchmark_weight": 0.3261,
+              "active_weight": 0.4917,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.6072,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.6072
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.2105,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2105
+                }
+              ]
+            },
+            {
+              "security_name": "Allianz SE",
+              "portfolio_weight": 0.725,
+              "benchmark_weight": 0.4105,
+              "active_weight": 0.3144,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.54,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.54
+                },
+                {
+                  "source_name": "MS INT'L EQUITY HARRIS",
+                  "portfolio_weight": 0.185,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.185
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "EM TL EQ",
+        "label": "Communication Services",
+        "category": "Eq Sector",
+        "portfolio_weight": 3.735022339574729,
+        "benchmark_weight": 1.8577575987720487,
+        "active_weight": 1.8772647408026804,
+        "vir_now": 0.005820988401982391,
+        "vir_delta_mom": 0.02098041365633674,
+        "algo_active_weight": 1.4500000000000002,
+        "signal_alignment": "aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "valuation_adjustment_bottom_up",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "no_recent_rationale_found",
+        "internal_history_excerpt": "",
+        "active_thesis": {},
+        "sharepoint_research_path": "201809-EQ-Wld TL EQ-Fundamental Review - Global_Equity_World Communication Services (GICS Reclassification).pptx",
+        "sharepoint_research_summary": "1 Communication Services Sector \u2013 GICS Change Overview New Industry Classification for Communication Services Sector 2 Changes to Current GICS Classification 3 Industry Reclassification Map MSCI World Index Sector Weight",
+        "sample_source_securities": "TENCENT HLDGS. LTD; NetEase Inc Ordinary Shares; NAVER CORP; NetEase Inc ADR; Chunghwa Telecom Co Ltd; AMERICA MOVIL SAB DE  ADR; Indus Towers Ltd Ordinary Shares; PT Telkom Indonesia (Persero) Tbk Registered Shs Series -B-; America Movil SAB de CV Ordinary Shares - Class B; Tencent Music Entertainment Group ADR; VODACOM GRP. LTD; PT Telkom Indonesia (Persero) Tbk ADR; Saudi Telecom Co; KT Corp; Xinhua Winshare Publishing & Media Co Ltd Class H; Bharti Airtel Ltd; Baidu Inc; MTN Group Ltd; Emirates Telecommunications Group Co PJSC; Kuaishou Technology Ordinary Shares - Class B; Advanced Info Service PCL; Kakao Corp; International Games System Co Ltd; Etihad Etisalat Co JSC; SK Telecom Co Ltd",
+        "source_breakdown": {
+          "security_count": 133,
+          "securities": [
+            {
+              "security_name": "TENCENT HLDGS. LTD",
+              "portfolio_weight": 0.9107,
+              "benchmark_weight": 0.7558,
+              "active_weight": 0.1549,
+              "sources": [
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.4371,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4371
+                },
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.2427,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2427
+                }
+              ]
+            },
+            {
+              "security_name": "NetEase Inc Ordinary Shares",
+              "portfolio_weight": 0.6667,
+              "benchmark_weight": 0.1037,
+              "active_weight": 0.563,
+              "sources": [
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.4092,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4092
+                },
+                {
+                  "source_name": "MS INT'L EQUITY LAZARD",
+                  "portfolio_weight": 0.2575,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2575
+                }
+              ]
+            },
+            {
+              "security_name": "NAVER CORP",
+              "portfolio_weight": 0.3761,
+              "benchmark_weight": 0.0416,
+              "active_weight": 0.3345,
+              "sources": [
+                {
+                  "source_name": "MS INT'L EQUITY HARDING",
+                  "portfolio_weight": 0.2863,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2863
+                },
+                {
+                  "source_name": "MS INTL EQ GLOB EX US OPP",
+                  "portfolio_weight": 0.0897,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0897
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "top_movers": [
+      {
+        "acid": "EM TL EQ",
+        "label": "Communication Services",
+        "category": "Eq Sector",
+        "vir_now": 0.005820988401982391,
+        "vir_delta_mom": 0.02098041365633674,
+        "decomposition_driver": "valuation_adjustment_bottom_up",
+        "decomposition_assessment": "broad_based",
+        "active_weight": 1.8772647408026804
+      },
+      {
+        "acid": "AU HC EQ",
+        "label": "Health Care",
+        "category": "Eq Sector",
+        "vir_now": 0.008119684176908296,
+        "vir_delta_mom": -0.017312362771658707,
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "active_weight": 0.07034224954644314
+      },
+      {
+        "acid": "ID EQ",
+        "label": "Indonesia",
+        "category": "Country",
+        "vir_now": 0.06455215058781259,
+        "vir_delta_mom": 0.01644333671244702,
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "active_weight": 0.6655292269068563
+      },
+      {
+        "acid": "AU CS EQ",
+        "label": "Consumer Staples",
+        "category": "Eq Sector",
+        "vir_now": -0.00872977335525088,
+        "vir_delta_mom": -0.015256678656394351,
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "active_weight": -0.2138873690757663
+      }
+    ],
+    "decomposition_focus": [
+      {
+        "acid": "TR EQ",
+        "label": "Turkey",
+        "dominant_driver": "inflation",
+        "dominant_driver_value": 0.1617669243408506,
+        "assessment": "broad_based",
+        "vir_now": 0.029274000824953975,
+        "vir_delta_mom": -0.0034817132582394272,
+        "active_weight": -0.14226143466071017,
+        "values": {
+          "growth": 0.03750000000000009,
+          "yield": 0.030888996982978728,
+          "inflation": 0.1617669243408506,
+          "currency_usd": -0.0868132368353205,
+          "valuation_adjustment_top_down": 0.051102303002076965,
+          "valuation_adjustment_combined": 0.02362079921391902
+        }
+      },
+      {
+        "acid": "KR EQ",
+        "label": "South Korea",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.1190594078094993,
+        "assessment": "broad_based",
+        "vir_now": -0.10129634776876131,
+        "vir_delta_mom": -0.003976711202827166,
+        "active_weight": -2.0207068225508307,
+        "values": {
+          "growth": 0.030000000000000027,
+          "yield": 0.01619583682105779,
+          "inflation": 0.020798748042668347,
+          "currency_usd": 0.049072834721861414,
+          "valuation_adjustment_top_down": -0.1190594078094993,
+          "valuation_adjustment_combined": -0.08452174949623636
+        }
+      },
+      {
+        "acid": "JP IT EQ",
+        "label": "Information Technology",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.10761503526123206,
+        "assessment": "broad_based",
+        "vir_now": -0.07093185884228045,
+        "vir_delta_mom": -0.013627046461277437,
+        "active_weight": 0.7250061940909931,
+        "values": {
+          "growth": 0.03499999999999992,
+          "yield": 0.012031269386258831,
+          "inflation": 0.02064843595828325,
+          "currency_usd": 0.05590389696451692,
+          "valuation_adjustment_top_down": -0.10761503526123206,
+          "valuation_adjustment_combined": -0.05951641726077572
+        }
+      },
+      {
+        "acid": "EM IT EQ",
+        "label": "Information Technology",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.10449959128196906,
+        "assessment": "broad_based",
+        "vir_now": -0.0784610704453966,
+        "vir_delta_mom": -0.0019106758205419405,
+        "active_weight": -2.4978895500356337,
+        "values": {
+          "growth": 0.03499999999999992,
+          "yield": 0.013983514365219284,
+          "inflation": 0.017693482644880975,
+          "currency_usd": 0.04269966266009595,
+          "valuation_adjustment_top_down": -0.10449959128196906,
+          "valuation_adjustment_combined": -0.06462708140585527
+        }
+      }
+    ]
+  },
+  "risk_and_attribution": {
+    "summary": {
+      "review_date_requested": "2026-07-21",
+      "risk_date_used": "2026-07-20",
+      "prior_month_end_used": "",
+      "predicted_beta": 0.9517,
+      "active_predicted_beta": -0.0483,
+      "total_predicted_risk_pct": 16.87,
+      "active_predicted_risk_pct": 2.79,
+      "active_share_pct": 70.84,
+      "factor_risk_pct": 16.72,
+      "specific_risk_pct": 2.24,
+      "active_factor_risk_pct": 2.34,
+      "active_specific_risk_pct": 1.51,
+      "active_style_factor_risk_pct": 1.28,
+      "active_industry_factor_risk_pct": 1.14,
+      "active_market_factor_risk_pct": null,
+      "change_vs_prior_month_end": {}
+    },
+    "top_style_risk_drivers": [
+      {
+        "label": "DM4 Medium-Term Momentum",
+        "share_of_variance_pct": 5.49
+      },
+      {
+        "label": "EM4 Medium-Term Momentum",
+        "share_of_variance_pct": 2.42
+      },
+      {
+        "label": "EM4 Market Sensitivity",
+        "share_of_variance_pct": 2.36
+      }
+    ],
+    "top_industry_risk_drivers": [
+      {
+        "label": "DM4 Banks",
+        "share_of_variance_pct": 3.58
+      },
+      {
+        "label": "DM4 Metals & Mining",
+        "share_of_variance_pct": 1.22
+      },
+      {
+        "label": "EM4 Semiconductors & Semiconductor Equipment",
+        "share_of_variance_pct": 0.97
+      },
+      {
+        "label": "DM4 Machinery",
+        "share_of_variance_pct": 0.93
+      }
+    ],
+    "return_attribution_mtd": {
+      "active_period_return": 2.07,
+      "active_period_factor_return": 1.54,
+      "active_period_specific_return": 0.53,
+      "period_overweight_return": 0.56,
+      "period_underweight_return": 1.47,
+      "active_style_factor_returns": 1.3,
+      "active_industry_factor_returns": 0.12,
+      "active_market_factor_returns": null,
+      "window_start": "2026-07-01",
+      "window_end": "2026-07-17"
+    },
+    "likely_holdings_contributors": [
+      {
+        "risk_driver": "DM4 Banks",
+        "mapped_sector": "Financials",
+        "share_of_variance_pct": 3.58,
+        "active_weight": 0.07,
+        "signal_alignment": "diverging",
+        "top_sector_holdings": [
+          {
+            "security_name": "AIA Group Ltd",
+            "portfolio_weight": 0.76,
+            "benchmark_weight": 0.22,
+            "active_weight": 0.54
+          },
+          {
+            "security_name": "ASX Ltd",
+            "portfolio_weight": 0.4,
+            "benchmark_weight": 0.02,
+            "active_weight": 0.39
+          },
+          {
+            "security_name": "DBS Group Holdings Ltd",
+            "portfolio_weight": 0.36,
+            "benchmark_weight": 0.24,
+            "active_weight": 0.13
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "EM4 Semiconductors & Semiconductor Equipment",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 0.97,
+        "active_weight": 1.04,
+        "signal_alignment": "diverging",
+        "top_sector_holdings": [
+          {
+            "security_name": "ASML Holding NV",
+            "portfolio_weight": 1.76,
+            "benchmark_weight": 1.63,
+            "active_weight": 0.13
+          },
+          {
+            "security_name": "SAP SE",
+            "portfolio_weight": 0.67,
+            "benchmark_weight": 0.37,
+            "active_weight": 0.3
+          },
+          {
+            "security_name": "Dassault Systemes SE",
+            "portfolio_weight": 0.38,
+            "benchmark_weight": 0.03,
+            "active_weight": 0.34
+          }
+        ],
+        "inference_level": "sector_proxy"
+      }
+    ],
+    "specific_risk_watchlist": [
+      {
+        "label": "Canada",
+        "category": "Country",
+        "active_weight": -4.47,
+        "top_sector_holdings": [
+          {
+            "security_name": "Canadian National Railway Co",
+            "portfolio_weight": 1.02,
+            "benchmark_weight": 0.15,
+            "active_weight": 0.87
+          },
+          {
+            "security_name": "Manulife Financial Corp",
+            "portfolio_weight": 0.69,
+            "benchmark_weight": 0.16,
+            "active_weight": 0.53
+          },
+          {
+            "security_name": "Alimentation Couche-Tard Inc",
+            "portfolio_weight": 0.28,
+            "benchmark_weight": 0.1,
+            "active_weight": 0.18
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "United Kingdom",
+        "category": "Country",
+        "active_weight": 3.03,
+        "top_sector_holdings": [
+          {
+            "security_name": "Shell PLC",
+            "portfolio_weight": 1.06,
+            "benchmark_weight": 0.48,
+            "active_weight": 0.58
+          },
+          {
+            "security_name": "BAE Systems PLC",
+            "portfolio_weight": 0.75,
+            "benchmark_weight": 0.17,
+            "active_weight": 0.57
+          },
+          {
+            "security_name": "GSK PLC",
+            "portfolio_weight": 0.73,
+            "benchmark_weight": 0.24,
+            "active_weight": 0.49
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "France",
+        "category": "Country",
+        "active_weight": 2.8,
+        "top_sector_holdings": [
+          {
+            "security_name": "BNP Paribas Act. Cat.A",
+            "portfolio_weight": 0.87,
+            "benchmark_weight": 0.27,
+            "active_weight": 0.61
+          },
+          {
+            "security_name": "Lvmh Moet Hennessy Louis Vuitton SE",
+            "portfolio_weight": 0.72,
+            "benchmark_weight": 0.32,
+            "active_weight": 0.41
+          },
+          {
+            "security_name": "Safran SA",
+            "portfolio_weight": 0.56,
+            "benchmark_weight": 0.32,
+            "active_weight": 0.24
+          }
+        ],
+        "inference_level": "sector_proxy"
+      }
+    ],
+    "narrative_observations": [
+      "Measured active risk is currently most concentrated in specific risk at 1.51%.",
+      "The biggest modeled industry driver is DM4 Banks at 3.6% of active variance.",
+      "The largest modeled style driver is DM4 Medium-Term Momentum at 5.5% of active variance.",
+      "Within the mapped Financials bucket behind DM4 Banks risk, the largest sector holdings are AIA Group Ltd, ASX Ltd, DBS Group Holdings Ltd."
+    ]
+  },
+  "sharepoint_research_focus": [
+    {
+      "acid": "EU ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "research_path": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+      "research_status": "",
+      "research_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 Mark Murray, CFA Head of Capital Market "
+    },
+    {
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "research_path": "202602-EQ-UK EQ-Conviction-Thesis Update.pptx",
+      "research_status": "",
+      "research_summary": "UK EQ Update - Feb 2026 Mark Murray Matthew Wilson Ziying Peng Phoebe Chapman Raymond Sham Investment Thesis Supporting Analysis: Financials Healthcare Energy Consumer Staples Industrials FX Risk FV\u2019s Contrarian indicators Appendix Contents Investment Thesis I"
+    },
+    {
+      "acid": "CA EQ",
+      "label": "Canada",
+      "category": "Country",
+      "research_path": "202002-EQ-CA EQ-Fair Value.pptx",
+      "research_status": "",
+      "research_summary": "Mike Stathakis Canada 2020 FV Review Real Yield Fair Value Review Long-term measures \u2013 Current 10-year real FV @ 2.44% is slightly below LT average 2 3 Real 10yr under current assumptions (Current = 2.44%) Real 10yr long-term average 2.90% (1960-Dec 2019) Real"
+    },
+    {
+      "acid": "FR EQ",
+      "label": "France",
+      "category": "Country",
+      "research_path": "202410-XA-GARFR-Monthly Update.pptx",
+      "research_status": "",
+      "research_summary": "Global Aggregate Reward for Risk Medium Conviction Score ARFR Committee: Mike Coop, Paul Arnold, Mike Stout, Sean Neethling, James Foot Deck prepared by: Noah Kaplan, Johanna Zhu, James Foot October 2024 Data as at 30 September 2024 Aggregate Reward for Risk C"
+    },
+    {
+      "acid": "MX EQ",
+      "label": "Mexico",
+      "category": "Country",
+      "research_path": "202409-EQ-MX EQ-Conviction Update_final.pptx",
+      "research_status": "",
+      "research_summary": "Mexico Equity Conviction Update Oct 11, 2024 Asset Class Lead: Gary Supporting Team: Joe, Hamza, Matt, Shivika, Alaina, and Joselyn Overview of Mexico Weighting within MSCI ACWI Sector, company, and size-style breakdown Performance Recap Overview of performanc"
+    }
+  ],
+  "internal_history_focus": [],
+  "source_drilldowns": [
+    {
+      "acid": "EU ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "top_securities": [
+        {
+          "security_name": "Atlas Copco AB Class A",
+          "portfolio_weight": 0.7501,
+          "benchmark_weight": 0.1165,
+          "active_weight": 0.6336,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.5421,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5421
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.208,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.208
+            }
+          ]
+        },
+        {
+          "security_name": "BAE Systems PLC",
+          "portfolio_weight": 0.7481,
+          "benchmark_weight": 0.1742,
+          "active_weight": 0.5739,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.4689,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4689
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.2792,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2792
+            }
+          ]
+        },
+        {
+          "security_name": "SKF AB Class B",
+          "portfolio_weight": 0.7027,
+          "benchmark_weight": 0.0264,
+          "active_weight": 0.6763,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.5151,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5151
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.1876,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1876
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "top_securities": [
+        {
+          "security_name": "Shell PLC",
+          "portfolio_weight": 1.0594,
+          "benchmark_weight": 0.4841,
+          "active_weight": 0.5753,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.649,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.649
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.4105,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4105
+            }
+          ]
+        },
+        {
+          "security_name": "BAE Systems PLC",
+          "portfolio_weight": 0.7481,
+          "benchmark_weight": 0.1742,
+          "active_weight": 0.5739,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.4689,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4689
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.2792,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2792
+            }
+          ]
+        },
+        {
+          "security_name": "GSK PLC",
+          "portfolio_weight": 0.7309,
+          "benchmark_weight": 0.2428,
+          "active_weight": 0.4881,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.4727,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4727
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.2583,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2583
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "CA EQ",
+      "label": "Canada",
+      "category": "Country",
+      "top_securities": [
+        {
+          "security_name": "Canadian National Railway Co",
+          "portfolio_weight": 1.016,
+          "benchmark_weight": 0.1505,
+          "active_weight": 0.8655,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.552,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.552
+            },
+            {
+              "source_name": "MS INTL EQ 2 LEND ACCT",
+              "portfolio_weight": 0.464,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.464
+            }
+          ]
+        },
+        {
+          "security_name": "Manulife Financial Corp",
+          "portfolio_weight": 0.6869,
+          "benchmark_weight": 0.1568,
+          "active_weight": 0.5302,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.6869,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.6869
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1568,
+              "active_weight": -0.1568
+            }
+          ]
+        },
+        {
+          "security_name": "Alimentation Couche-Tard Inc",
+          "portfolio_weight": 0.2779,
+          "benchmark_weight": 0.0996,
+          "active_weight": 0.1782,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.2779,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2779
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0996,
+              "active_weight": -0.0996
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "FR EQ",
+      "label": "France",
+      "category": "Country",
+      "top_securities": [
+        {
+          "security_name": "BNP Paribas Act. Cat.A",
+          "portfolio_weight": 0.8738,
+          "benchmark_weight": 0.2661,
+          "active_weight": 0.6077,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARRIS",
+              "portfolio_weight": 0.4438,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4438
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.43,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.43
+            }
+          ]
+        },
+        {
+          "security_name": "Lvmh Moet Hennessy Louis Vuitton SE",
+          "portfolio_weight": 0.7222,
+          "benchmark_weight": 0.3162,
+          "active_weight": 0.406,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.3778,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3778
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARRIS",
+              "portfolio_weight": 0.3444,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3444
+            }
+          ]
+        },
+        {
+          "security_name": "Safran SA",
+          "portfolio_weight": 0.556,
+          "benchmark_weight": 0.316,
+          "active_weight": 0.24,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.3051,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3051
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.2509,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2509
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "MX EQ",
+      "label": "Mexico",
+      "category": "Country",
+      "top_securities": [
+        {
+          "security_name": "Fomento Economico Mexicano SAB de CV ADR",
+          "portfolio_weight": 0.7205,
+          "benchmark_weight": 0.0,
+          "active_weight": 0.7205,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.5628,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5628
+            },
+            {
+              "source_name": "MS INT'L EQUITY HARRIS",
+              "portfolio_weight": 0.1577,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1577
+            }
+          ]
+        },
+        {
+          "security_name": "Grupo Financiero Banorte SAB de CV Class O",
+          "portfolio_weight": 0.5926,
+          "benchmark_weight": 0.0667,
+          "active_weight": 0.5259,
+          "sources": [
+            {
+              "source_name": "MS INT'L EQUITY HARDING",
+              "portfolio_weight": 0.2274,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2274
+            },
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.1931,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1931
+            }
+          ]
+        },
+        {
+          "security_name": "FOMENTO ECONOMICO MEXICAN",
+          "portfolio_weight": 0.29,
+          "benchmark_weight": 0.0575,
+          "active_weight": 0.2326,
+          "sources": [
+            {
+              "source_name": "MS INTL EQ GLOB EX US OPP",
+              "portfolio_weight": 0.29,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.29
+            },
+            {
+              "source_name": "Morningstar Gbl xUS NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0575,
+              "active_weight": -0.0575
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "data_quality_flags": [
+    {
+      "severity": "medium",
+      "flag": "missing_vir_rows",
+      "message": "1 exposure rows do not have matched STF context."
+    },
+    {
+      "severity": "medium",
+      "flag": "missing_algo_rows",
+      "message": "3 exposure rows do not have matched algo context."
+    },
+    {
+      "severity": "low",
+      "flag": "logical_vs_source_snapshot_date",
+      "message": "The review month is 2026-06-30, while the source holdings snapshot embedded in the rolled artifact is 2026-07-06."
+    },
+    {
+      "severity": "low",
+      "flag": "algo_scaled_to_percentage_points",
+      "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
+    }
+  ],
+  "cost_guardrails": {
+    "instruction": "Use only the evidence below. Do not produce a broad monthly review. Focus on the top 4 PM decisions and keep every section concise.",
+    "target_output_tokens": 4200
+  }
+}

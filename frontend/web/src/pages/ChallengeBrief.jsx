@@ -164,9 +164,17 @@ function DeepMemo({ c, index, onOpenIC }) {
             <span className="eyebrow">Challenge {index + 1}</span>
             <span style={{ color: 'var(--line-strong)' }}>·</span>
             <span className="eyebrow" style={{ color: 'var(--ink-3)' }}>{c.category}</span>
+            {isNum(c.score) && <>
+              <span style={{ color: 'var(--line-strong)' }}>·</span>
+              <span className="eyebrow" style={{ color: 'var(--ink-3)' }}>score {Number(c.score).toFixed(2)}</span>
+            </>}
           </div>
           <div className="memo-title">{c.label}</div>
           {c.descriptor && <div className="memo-descriptor">{c.descriptor}</div>}
+          {/* The agent's one-line verdict. It was generated on every run, carried
+              into the view model, rendered on IC Prep — and missing from the tab
+              whose whole purpose is to show challenges. */}
+          {c.headline && <p className="memo-headline">{c.headline}</p>}
           <div className="tag-row" style={{ marginTop: 12 }}>
             {signalTags(c).map((t) => <span key={t.t} className={`tag ${t.cls}`}>{t.t}</span>)}
           </div>

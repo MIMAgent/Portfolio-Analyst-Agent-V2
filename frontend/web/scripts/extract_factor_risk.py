@@ -26,7 +26,7 @@ def main():
         ws = wb[name]
         data = list(ws.iter_rows(values_only=True))
         hdr = data[0]
-        body = [row for row in data[1:] if row[2]]  # has Period Description
+        body = [row for row in data[1:] if len(row) > 2 and row[2]]  # has Period Description
         idx = {h: i for i, h in enumerate(hdr)}
         return hdr, body, idx
 
@@ -38,6 +38,12 @@ def main():
 
     def col(body, idx, name):
         return [r(row[idx[name]]) for row in body]
+
+    def value(row, idx, name, default=0.0):
+        i = idx.get(name)
+        if i is None or i >= len(row):
+            return default
+        return row[i]
 
     dates = [row[2] for row in rd]
 
@@ -57,7 +63,7 @@ def main():
             "activeSpecificRisk": r(row[ri["Active Specific Risk"]]),
             "activeStyleRisk": r(row[ri["Active Style Factor Risk"]]),
             "activeIndustryRisk": r(row[ri["Active Industry Factor Risk"]]),
-            "activeMarketRisk": r(row[ri["Active Market Factor Risk"]]),
+            "activeMarketRisk": r(value(row, ri, "Active Market Factor Risk")),
             "activeShare": r(row[ri["Active Share"]]),
         })
 
@@ -71,7 +77,10 @@ def main():
         return round(p - 1, 4)
 
     def cum_sum(name):  # arithmetic sum for additive attribution lines
-        return round(sum(row[rti[name]] for row in rt if isinstance(row[rti[name]], (int, float))), 4)
+        i = rti.get(name)
+        if i is None:
+            return 0.0
+        return round(sum(row[i] for row in rt if i < len(row) and isinstance(row[i], (int, float))), 4)
 
     returns = [{
         "date": row[2],
@@ -116,7 +125,10 @@ def main():
         v = last[i]
         if not isinstance(v, (int, float)):
             continue
-        grp = "Style" if h.startswith("Style") else ("Industry" if h.startswith("Industry") else "Market")
+        grp = next(
+            (name for name in ("Style", "Country", "Industry", "Currency", "Local", "Market") if h.startswith(name)),
+            "Other",
+        )
         contributors.append({
             "name": h.split(" - ", 1)[1] if " - " in h else h,
             "group": grp,
@@ -125,12 +137,19 @@ def main():
         })
     contributors.sort(key=lambda c: -(c["pctVar"] or 0))
 
+    settings = {}
+    for row in wb["Report Settings"].iter_rows(values_only=True):
+        text = str(row[0] or "").strip() if row else ""
+        if ":" in text:
+            key, val = text.split(":", 1)
+            settings[key.strip()] = val.strip()
+
     out = {
         "meta": {
-            "portfolio": "US_EQ",
-            "benchmark": "Morningstar US Market TR USD",
-            "riskModel": "US4AxiomaMH",
-            "currency": "USD",
+            "portfolio": settings.get("Portfolio", ""),
+            "benchmark": settings.get("Benchmark", ""),
+            "riskModel": settings.get("Risk Model", ""),
+            "currency": settings.get("Base Currency", ""),
             "from": dates[0],
             "to": dates[-1],
             "periods": len(dates),

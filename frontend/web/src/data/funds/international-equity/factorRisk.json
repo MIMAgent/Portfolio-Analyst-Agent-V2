@@ -1,0 +1,2701 @@
+{
+  "meta": {
+    "portfolio": "INTL_EQ_portfolio",
+    "benchmark": "Morningstar Global Markets xUS NR USD Index",
+    "riskModel": "WWLM4AxiomaMH",
+    "currency": "USD",
+    "from": "2026-07-01",
+    "to": "2026-07-20",
+    "periods": 14,
+    "holdings": 404,
+    "commonAssetsWeight": 0.8724
+  },
+  "dates": [
+    "2026-07-01",
+    "2026-07-02",
+    "2026-07-03",
+    "2026-07-06",
+    "2026-07-07",
+    "2026-07-08",
+    "2026-07-09",
+    "2026-07-10",
+    "2026-07-13",
+    "2026-07-14",
+    "2026-07-15",
+    "2026-07-16",
+    "2026-07-17",
+    "2026-07-20"
+  ],
+  "series": [
+    {
+      "date": "2026-07-01",
+      "predictedBeta": 0.9295,
+      "historicalBeta": 0.934,
+      "activeBeta": -0.0705,
+      "totalRisk": 0.1735,
+      "factorRisk": 0.1719,
+      "specificRisk": 0.0239,
+      "activeRisk": 0.0301,
+      "activeFactorRisk": 0.0254,
+      "activeSpecificRisk": 0.0161,
+      "activeStyleRisk": 0.0136,
+      "activeIndustryRisk": 0.0113,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7081
+    },
+    {
+      "date": "2026-07-02",
+      "predictedBeta": 0.9252,
+      "historicalBeta": 0.9347,
+      "activeBeta": -0.0748,
+      "totalRisk": 0.1724,
+      "factorRisk": 0.1708,
+      "specificRisk": 0.0234,
+      "activeRisk": 0.0311,
+      "activeFactorRisk": 0.0266,
+      "activeSpecificRisk": 0.0162,
+      "activeStyleRisk": 0.0141,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7096
+    },
+    {
+      "date": "2026-07-03",
+      "predictedBeta": 0.9382,
+      "historicalBeta": 0.9381,
+      "activeBeta": -0.0618,
+      "totalRisk": 0.1727,
+      "factorRisk": 0.1711,
+      "specificRisk": 0.0231,
+      "activeRisk": 0.0298,
+      "activeFactorRisk": 0.0254,
+      "activeSpecificRisk": 0.0156,
+      "activeStyleRisk": 0.0139,
+      "activeIndustryRisk": 0.0117,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7103
+    },
+    {
+      "date": "2026-07-06",
+      "predictedBeta": 0.9357,
+      "historicalBeta": 0.9396,
+      "activeBeta": -0.0643,
+      "totalRisk": 0.174,
+      "factorRisk": 0.1724,
+      "specificRisk": 0.0232,
+      "activeRisk": 0.0303,
+      "activeFactorRisk": 0.0257,
+      "activeSpecificRisk": 0.016,
+      "activeStyleRisk": 0.0141,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7107
+    },
+    {
+      "date": "2026-07-07",
+      "predictedBeta": 0.9379,
+      "historicalBeta": 0.9399,
+      "activeBeta": -0.0621,
+      "totalRisk": 0.1734,
+      "factorRisk": 0.1718,
+      "specificRisk": 0.0236,
+      "activeRisk": 0.0299,
+      "activeFactorRisk": 0.0253,
+      "activeSpecificRisk": 0.0158,
+      "activeStyleRisk": 0.0139,
+      "activeIndustryRisk": 0.0116,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7103
+    },
+    {
+      "date": "2026-07-08",
+      "predictedBeta": 0.9402,
+      "historicalBeta": 0.9352,
+      "activeBeta": -0.0598,
+      "totalRisk": 0.172,
+      "factorRisk": 0.1705,
+      "specificRisk": 0.0231,
+      "activeRisk": 0.0297,
+      "activeFactorRisk": 0.0253,
+      "activeSpecificRisk": 0.0155,
+      "activeStyleRisk": 0.0141,
+      "activeIndustryRisk": 0.0116,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7106
+    },
+    {
+      "date": "2026-07-09",
+      "predictedBeta": 0.9456,
+      "historicalBeta": 0.9364,
+      "activeBeta": -0.0544,
+      "totalRisk": 0.1727,
+      "factorRisk": 0.1712,
+      "specificRisk": 0.0233,
+      "activeRisk": 0.0289,
+      "activeFactorRisk": 0.0244,
+      "activeSpecificRisk": 0.0154,
+      "activeStyleRisk": 0.0135,
+      "activeIndustryRisk": 0.0114,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7091
+    },
+    {
+      "date": "2026-07-10",
+      "predictedBeta": 0.9454,
+      "historicalBeta": 0.9391,
+      "activeBeta": -0.0546,
+      "totalRisk": 0.1721,
+      "factorRisk": 0.1705,
+      "specificRisk": 0.0233,
+      "activeRisk": 0.0288,
+      "activeFactorRisk": 0.0243,
+      "activeSpecificRisk": 0.0155,
+      "activeStyleRisk": 0.0136,
+      "activeIndustryRisk": 0.0115,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7086
+    },
+    {
+      "date": "2026-07-13",
+      "predictedBeta": 0.9444,
+      "historicalBeta": 0.9395,
+      "activeBeta": -0.0556,
+      "totalRisk": 0.1719,
+      "factorRisk": 0.1703,
+      "specificRisk": 0.0232,
+      "activeRisk": 0.0289,
+      "activeFactorRisk": 0.0244,
+      "activeSpecificRisk": 0.0156,
+      "activeStyleRisk": 0.0136,
+      "activeIndustryRisk": 0.0115,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7092
+    },
+    {
+      "date": "2026-07-14",
+      "predictedBeta": 0.9485,
+      "historicalBeta": 0.9358,
+      "activeBeta": -0.0515,
+      "totalRisk": 0.1705,
+      "factorRisk": 0.169,
+      "specificRisk": 0.0229,
+      "activeRisk": 0.0285,
+      "activeFactorRisk": 0.024,
+      "activeSpecificRisk": 0.0153,
+      "activeStyleRisk": 0.0133,
+      "activeIndustryRisk": 0.0116,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7095
+    },
+    {
+      "date": "2026-07-15",
+      "predictedBeta": 0.9506,
+      "historicalBeta": 0.9379,
+      "activeBeta": -0.0494,
+      "totalRisk": 0.1708,
+      "factorRisk": 0.1692,
+      "specificRisk": 0.023,
+      "activeRisk": 0.028,
+      "activeFactorRisk": 0.0234,
+      "activeSpecificRisk": 0.0153,
+      "activeStyleRisk": 0.013,
+      "activeIndustryRisk": 0.0115,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7091
+    },
+    {
+      "date": "2026-07-16",
+      "predictedBeta": 0.9433,
+      "historicalBeta": 0.9402,
+      "activeBeta": -0.0567,
+      "totalRisk": 0.1707,
+      "factorRisk": 0.1691,
+      "specificRisk": 0.0228,
+      "activeRisk": 0.0294,
+      "activeFactorRisk": 0.0248,
+      "activeSpecificRisk": 0.0158,
+      "activeStyleRisk": 0.0136,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.71
+    },
+    {
+      "date": "2026-07-17",
+      "predictedBeta": 0.9477,
+      "historicalBeta": 0.9382,
+      "activeBeta": -0.0523,
+      "totalRisk": 0.1689,
+      "factorRisk": 0.1674,
+      "specificRisk": 0.0226,
+      "activeRisk": 0.0286,
+      "activeFactorRisk": 0.0242,
+      "activeSpecificRisk": 0.0153,
+      "activeStyleRisk": 0.0131,
+      "activeIndustryRisk": 0.0117,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7089
+    },
+    {
+      "date": "2026-07-20",
+      "predictedBeta": 0.9517,
+      "historicalBeta": 0.9357,
+      "activeBeta": -0.0483,
+      "totalRisk": 0.1687,
+      "factorRisk": 0.1672,
+      "specificRisk": 0.0224,
+      "activeRisk": 0.0279,
+      "activeFactorRisk": 0.0234,
+      "activeSpecificRisk": 0.0151,
+      "activeStyleRisk": 0.0128,
+      "activeIndustryRisk": 0.0114,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7084
+    }
+  ],
+  "returns": [
+    {
+      "date": "2026-07-01",
+      "portfolio": -0.00239,
+      "benchmark": -0.00216,
+      "active": -0.00023
+    },
+    {
+      "date": "2026-07-02",
+      "portfolio": 0.00869,
+      "benchmark": 0.00199,
+      "active": 0.0067
+    },
+    {
+      "date": "2026-07-03",
+      "portfolio": 0.00912,
+      "benchmark": 0.01262,
+      "active": -0.0035
+    },
+    {
+      "date": "2026-07-06",
+      "portfolio": -0.00047,
+      "benchmark": -0.00226,
+      "active": 0.00178
+    },
+    {
+      "date": "2026-07-07",
+      "portfolio": -0.00578,
+      "benchmark": -0.00959,
+      "active": 0.00381
+    },
+    {
+      "date": "2026-07-08",
+      "portfolio": -0.01045,
+      "benchmark": -0.01245,
+      "active": 0.00199
+    },
+    {
+      "date": "2026-07-09",
+      "portfolio": 0.0048,
+      "benchmark": 0.00534,
+      "active": -0.00053
+    },
+    {
+      "date": "2026-07-10",
+      "portfolio": 0.00454,
+      "benchmark": 0.00484,
+      "active": -0.0003
+    },
+    {
+      "date": "2026-07-13",
+      "portfolio": -0.00516,
+      "benchmark": -0.01015,
+      "active": 0.00498
+    },
+    {
+      "date": "2026-07-14",
+      "portfolio": 0.00344,
+      "benchmark": 0.00465,
+      "active": -0.00122
+    },
+    {
+      "date": "2026-07-15",
+      "portfolio": 0.00662,
+      "benchmark": 0.00982,
+      "active": -0.0032
+    },
+    {
+      "date": "2026-07-16",
+      "portfolio": 0.00053,
+      "benchmark": -0.00667,
+      "active": 0.0072
+    },
+    {
+      "date": "2026-07-17",
+      "portfolio": -0.01186,
+      "benchmark": -0.01496,
+      "active": 0.0031
+    }
+  ],
+  "attribution": {
+    "portfolio": 0.0013,
+    "benchmark": -0.0193,
+    "active": 0.0207,
+    "activeFactor": 0.0153,
+    "activeSpecific": 0.0053,
+    "activeStyle": 0.013,
+    "activeIndustry": 0.0012,
+    "activeMarket": 0.0,
+    "periods": 13,
+    "from": "2026-07-01",
+    "to": "2026-07-17"
+  },
+  "styleExposure": {
+    "asOf": "2026-07-20",
+    "factors": [
+      {
+        "name": "DM4 Medium-Term Momentum",
+        "current": -0.1458,
+        "start": -0.1844,
+        "series": [
+          -0.1844,
+          -0.1898,
+          -0.1855,
+          -0.184,
+          -0.1782,
+          -0.1744,
+          -0.1682,
+          -0.1688,
+          -0.1668,
+          -0.1658,
+          -0.1596,
+          -0.1609,
+          -0.1555,
+          -0.1458
+        ]
+      },
+      {
+        "name": "EM4 Dividend Yield",
+        "current": 0.1392,
+        "start": 0.1441,
+        "series": [
+          0.1441,
+          0.1454,
+          0.1419,
+          0.1438,
+          0.1419,
+          0.143,
+          0.1369,
+          0.1375,
+          0.1388,
+          0.138,
+          0.138,
+          0.1411,
+          0.1401,
+          0.1392
+        ]
+      },
+      {
+        "name": "DM4 Leverage",
+        "current": -0.1375,
+        "start": -0.1306,
+        "series": [
+          -0.1306,
+          -0.1292,
+          -0.1334,
+          -0.1329,
+          -0.1342,
+          -0.1349,
+          -0.1355,
+          -0.1352,
+          -0.1369,
+          -0.1364,
+          -0.1363,
+          -0.1375,
+          -0.1375,
+          -0.1375
+        ]
+      },
+      {
+        "name": "EM4 Medium-Term Momentum",
+        "current": -0.1173,
+        "start": -0.1321,
+        "series": [
+          -0.1321,
+          -0.1396,
+          -0.1301,
+          -0.1338,
+          -0.13,
+          -0.1269,
+          -0.1233,
+          -0.1233,
+          -0.1242,
+          -0.1204,
+          -0.12,
+          -0.1302,
+          -0.1243,
+          -0.1173
+        ]
+      },
+      {
+        "name": "EM4 Market Sensitivity",
+        "current": -0.0779,
+        "start": -0.0876,
+        "series": [
+          -0.0876,
+          -0.0892,
+          -0.082,
+          -0.0906,
+          -0.0864,
+          -0.0831,
+          -0.0801,
+          -0.0805,
+          -0.0844,
+          -0.0794,
+          -0.0804,
+          -0.0856,
+          -0.0819,
+          -0.0779
+        ]
+      },
+      {
+        "name": "DM4 Profitability",
+        "current": 0.0713,
+        "start": 0.0692,
+        "series": [
+          0.0692,
+          0.0672,
+          0.0684,
+          0.0674,
+          0.0686,
+          0.0706,
+          0.0694,
+          0.0683,
+          0.0694,
+          0.0703,
+          0.0706,
+          0.0705,
+          0.0703,
+          0.0713
+        ]
+      },
+      {
+        "name": "EM4 Leverage",
+        "current": -0.0707,
+        "start": -0.0697,
+        "series": [
+          -0.0697,
+          -0.0679,
+          -0.0692,
+          -0.0688,
+          -0.0689,
+          -0.0687,
+          -0.0693,
+          -0.0694,
+          -0.0689,
+          -0.0694,
+          -0.0691,
+          -0.0673,
+          -0.0687,
+          -0.0707
+        ]
+      },
+      {
+        "name": "DM4 Growth",
+        "current": -0.0621,
+        "start": -0.0674,
+        "series": [
+          -0.0674,
+          -0.0674,
+          -0.0666,
+          -0.0679,
+          -0.0674,
+          -0.0653,
+          -0.067,
+          -0.0678,
+          -0.0672,
+          -0.0662,
+          -0.0659,
+          -0.064,
+          -0.0638,
+          -0.0621
+        ]
+      },
+      {
+        "name": "EM4 Growth",
+        "current": -0.0584,
+        "start": -0.0657,
+        "series": [
+          -0.0657,
+          -0.0636,
+          -0.0596,
+          -0.062,
+          -0.0609,
+          -0.0607,
+          -0.0593,
+          -0.0601,
+          -0.0605,
+          -0.0578,
+          -0.0582,
+          -0.0612,
+          -0.0587,
+          -0.0584
+        ]
+      },
+      {
+        "name": "EM4 Volatility",
+        "current": -0.0568,
+        "start": -0.0685,
+        "series": [
+          -0.0685,
+          -0.0687,
+          -0.0652,
+          -0.0645,
+          -0.0645,
+          -0.0623,
+          -0.0597,
+          -0.0598,
+          -0.0576,
+          -0.0559,
+          -0.0556,
+          -0.0629,
+          -0.0584,
+          -0.0568
+        ]
+      },
+      {
+        "name": "EM4 Earnings Yield",
+        "current": 0.0515,
+        "start": 0.0504,
+        "series": [
+          0.0504,
+          0.0525,
+          0.0538,
+          0.0536,
+          0.0521,
+          0.0531,
+          0.0525,
+          0.0519,
+          0.0526,
+          0.0541,
+          0.0533,
+          0.0529,
+          0.0539,
+          0.0515
+        ]
+      },
+      {
+        "name": "DM4 Market Sensitivity",
+        "current": 0.0493,
+        "start": 0.0397,
+        "series": [
+          0.0397,
+          0.0361,
+          0.0376,
+          0.0375,
+          0.0382,
+          0.0397,
+          0.0444,
+          0.0414,
+          0.0411,
+          0.0415,
+          0.0421,
+          0.0425,
+          0.0436,
+          0.0493
+        ]
+      },
+      {
+        "name": "DM4 Volatility",
+        "current": -0.0475,
+        "start": -0.0564,
+        "series": [
+          -0.0564,
+          -0.06,
+          -0.0589,
+          -0.0606,
+          -0.0582,
+          -0.0549,
+          -0.054,
+          -0.0562,
+          -0.0563,
+          -0.054,
+          -0.0537,
+          -0.0566,
+          -0.053,
+          -0.0475
+        ]
+      },
+      {
+        "name": "EM4 Profitability",
+        "current": 0.0431,
+        "start": 0.0465,
+        "series": [
+          0.0465,
+          0.0407,
+          0.0429,
+          0.0414,
+          0.0429,
+          0.0425,
+          0.0435,
+          0.0427,
+          0.0428,
+          0.044,
+          0.0431,
+          0.0408,
+          0.0418,
+          0.0431
+        ]
+      },
+      {
+        "name": "DM4 Value",
+        "current": -0.0427,
+        "start": -0.0381,
+        "series": [
+          -0.0381,
+          -0.0369,
+          -0.0372,
+          -0.0368,
+          -0.0377,
+          -0.0391,
+          -0.0386,
+          -0.0379,
+          -0.0386,
+          -0.0391,
+          -0.0396,
+          -0.04,
+          -0.0408,
+          -0.0427
+        ]
+      },
+      {
+        "name": "EM4 Exchange Rate Sensitivity",
+        "current": 0.0333,
+        "start": 0.0447,
+        "series": [
+          0.0447,
+          0.0443,
+          0.0437,
+          0.0411,
+          0.042,
+          0.0407,
+          0.0413,
+          0.0414,
+          0.0366,
+          0.0369,
+          0.0369,
+          0.038,
+          0.0375,
+          0.0333
+        ]
+      },
+      {
+        "name": "DM4 Size",
+        "current": -0.0283,
+        "start": -0.028,
+        "series": [
+          -0.028,
+          -0.0285,
+          -0.0285,
+          -0.0283,
+          -0.0284,
+          -0.0286,
+          -0.0281,
+          -0.029,
+          -0.0293,
+          -0.0292,
+          -0.0294,
+          -0.0287,
+          -0.0287,
+          -0.0283
+        ]
+      },
+      {
+        "name": "DM4 Liquidity",
+        "current": -0.0254,
+        "start": -0.0242,
+        "series": [
+          -0.0242,
+          -0.0275,
+          -0.0285,
+          -0.0294,
+          -0.0285,
+          -0.0292,
+          -0.0293,
+          -0.0291,
+          -0.029,
+          -0.0279,
+          -0.0276,
+          -0.0294,
+          -0.0288,
+          -0.0254
+        ]
+      },
+      {
+        "name": "EM4 Size",
+        "current": -0.0123,
+        "start": -0.0128,
+        "series": [
+          -0.0128,
+          -0.016,
+          -0.0139,
+          -0.0153,
+          -0.0138,
+          -0.0139,
+          -0.0134,
+          -0.0128,
+          -0.0133,
+          -0.0122,
+          -0.0124,
+          -0.0145,
+          -0.014,
+          -0.0123
+        ]
+      },
+      {
+        "name": "DM4 Dividend Yield",
+        "current": -0.0101,
+        "start": -0.0017,
+        "series": [
+          -0.0017,
+          0.0022,
+          -0.0005,
+          -0.0,
+          -0.0014,
+          -0.0033,
+          -0.0058,
+          -0.005,
+          -0.0042,
+          -0.0043,
+          -0.004,
+          -0.0043,
+          -0.0052,
+          -0.0101
+        ]
+      },
+      {
+        "name": "EM4 Value",
+        "current": 0.0089,
+        "start": 0.0125,
+        "series": [
+          0.0125,
+          0.0139,
+          0.0125,
+          0.0136,
+          0.0122,
+          0.0121,
+          0.0109,
+          0.0108,
+          0.0113,
+          0.0101,
+          0.0101,
+          0.0117,
+          0.0107,
+          0.0089
+        ]
+      },
+      {
+        "name": "EM4 Liquidity",
+        "current": 0.0087,
+        "start": -0.0028,
+        "series": [
+          -0.0028,
+          0.0012,
+          0.0028,
+          0.0021,
+          0.003,
+          0.0045,
+          0.0059,
+          0.0058,
+          0.0061,
+          0.0078,
+          0.0078,
+          0.0072,
+          0.0074,
+          0.0087
+        ]
+      },
+      {
+        "name": "US4 Volatility",
+        "current": 0.0067,
+        "start": 0.0062,
+        "series": [
+          0.0062,
+          0.0065,
+          0.0068,
+          0.0067,
+          0.0067,
+          0.0069,
+          0.0069,
+          0.0069,
+          0.0069,
+          0.0069,
+          0.0069,
+          0.0068,
+          0.0067,
+          0.0067
+        ]
+      },
+      {
+        "name": "US4 Medium-Term Momentum",
+        "current": -0.006,
+        "start": -0.0057,
+        "series": [
+          -0.0057,
+          -0.0058,
+          -0.006,
+          -0.006,
+          -0.0059,
+          -0.006,
+          -0.0059,
+          -0.0059,
+          -0.0059,
+          -0.006,
+          -0.006,
+          -0.0059,
+          -0.0059,
+          -0.006
+        ]
+      },
+      {
+        "name": "US4 Exchange Rate Sensitivity",
+        "current": 0.0043,
+        "start": 0.0034,
+        "series": [
+          0.0034,
+          0.0036,
+          0.004,
+          0.0039,
+          0.0038,
+          0.0041,
+          0.0041,
+          0.0041,
+          0.0039,
+          0.0041,
+          0.0041,
+          0.0044,
+          0.0043,
+          0.0043
+        ]
+      },
+      {
+        "name": "US4 Growth",
+        "current": 0.0036,
+        "start": 0.0032,
+        "series": [
+          0.0032,
+          0.0034,
+          0.0036,
+          0.0036,
+          0.0035,
+          0.0037,
+          0.0035,
+          0.0035,
+          0.0034,
+          0.0035,
+          0.0035,
+          0.0036,
+          0.0035,
+          0.0036
+        ]
+      },
+      {
+        "name": "US4 Size",
+        "current": -0.0036,
+        "start": -0.0036,
+        "series": [
+          -0.0036,
+          -0.0036,
+          -0.0036,
+          -0.0036,
+          -0.0036,
+          -0.0036,
+          -0.0037,
+          -0.0037,
+          -0.0037,
+          -0.0036,
+          -0.0035,
+          -0.0036,
+          -0.0036,
+          -0.0036
+        ]
+      },
+      {
+        "name": "US4 Liquidity",
+        "current": 0.0032,
+        "start": 0.0027,
+        "series": [
+          0.0027,
+          0.0028,
+          0.0028,
+          0.0028,
+          0.0029,
+          0.003,
+          0.0031,
+          0.0033,
+          0.0033,
+          0.0034,
+          0.0034,
+          0.0032,
+          0.0032,
+          0.0032
+        ]
+      },
+      {
+        "name": "DM4 Exchange Rate Sensitivity",
+        "current": -0.0026,
+        "start": -0.005,
+        "series": [
+          -0.005,
+          -0.0055,
+          -0.0056,
+          -0.0049,
+          -0.0052,
+          -0.0063,
+          -0.0039,
+          -0.0043,
+          -0.0008,
+          -0.0022,
+          -0.0029,
+          -0.0022,
+          -0.0024,
+          -0.0026
+        ]
+      },
+      {
+        "name": "US4 Leverage",
+        "current": -0.0025,
+        "start": -0.0019,
+        "series": [
+          -0.0019,
+          -0.002,
+          -0.0022,
+          -0.0022,
+          -0.0021,
+          -0.0024,
+          -0.0023,
+          -0.0022,
+          -0.0021,
+          -0.0023,
+          -0.0024,
+          -0.0025,
+          -0.0024,
+          -0.0025
+        ]
+      },
+      {
+        "name": "US4 Dividend Yield",
+        "current": -0.0019,
+        "start": -0.0034,
+        "series": [
+          -0.0034,
+          -0.0034,
+          -0.0035,
+          -0.0035,
+          -0.0035,
+          -0.0036,
+          -0.0036,
+          -0.0036,
+          -0.0019,
+          -0.0021,
+          -0.0021,
+          -0.0019,
+          -0.0018,
+          -0.0019
+        ]
+      },
+      {
+        "name": "US4 Market Sensitivity",
+        "current": -0.0017,
+        "start": -0.0017,
+        "series": [
+          -0.0017,
+          -0.0018,
+          -0.0019,
+          -0.0018,
+          -0.0019,
+          -0.002,
+          -0.0021,
+          -0.0021,
+          -0.0021,
+          -0.0021,
+          -0.0021,
+          -0.0018,
+          -0.0017,
+          -0.0017
+        ]
+      },
+      {
+        "name": "US4 Value",
+        "current": -0.0004,
+        "start": -0.0004,
+        "series": [
+          -0.0004,
+          -0.0004,
+          -0.0004,
+          -0.0004,
+          -0.0004,
+          -0.0005,
+          -0.0004,
+          -0.0004,
+          -0.0003,
+          -0.0004,
+          -0.0004,
+          -0.0004,
+          -0.0004,
+          -0.0004
+        ]
+      },
+      {
+        "name": "US4 Earnings Yield",
+        "current": 0.0003,
+        "start": 0.0002,
+        "series": [
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0001,
+          0.0002,
+          0.0002,
+          0.0002,
+          0.0001,
+          0.0001,
+          0.0003,
+          0.0003,
+          0.0003
+        ]
+      },
+      {
+        "name": "DM4 Earnings Yield",
+        "current": -0.0002,
+        "start": 0.0039,
+        "series": [
+          0.0039,
+          0.0057,
+          0.0045,
+          0.0047,
+          0.0039,
+          0.004,
+          0.0034,
+          0.0027,
+          0.0017,
+          0.002,
+          0.0014,
+          0.0017,
+          0.0016,
+          -0.0002
+        ]
+      },
+      {
+        "name": "US4 Profitability",
+        "current": 0.0,
+        "start": -0.0,
+        "series": [
+          -0.0,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0,
+          0.0,
+          -0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ]
+  },
+  "contributors": [
+    {
+      "name": "Industry-Covariance",
+      "group": "Industry",
+      "pctVar": 0.0655,
+      "isCov": true
+    },
+    {
+      "name": "Style-Covariance",
+      "group": "Style",
+      "pctVar": 0.0647,
+      "isCov": true
+    },
+    {
+      "name": "DM4 Medium-Term Momentum",
+      "group": "Style",
+      "pctVar": 0.0549,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Banks",
+      "group": "Industry",
+      "pctVar": 0.0358,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Developed Market",
+      "group": "Local",
+      "pctVar": 0.0344,
+      "isCov": false
+    },
+    {
+      "name": "Country-Covariance",
+      "group": "Country",
+      "pctVar": 0.0305,
+      "isCov": true
+    },
+    {
+      "name": "EM4 Medium-Term Momentum",
+      "group": "Style",
+      "pctVar": 0.0242,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Market Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0236,
+      "isCov": false
+    },
+    {
+      "name": "Brazil",
+      "group": "Country",
+      "pctVar": 0.0208,
+      "isCov": false
+    },
+    {
+      "name": "India",
+      "group": "Country",
+      "pctVar": 0.0193,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Emerging Market",
+      "group": "Local",
+      "pctVar": 0.0182,
+      "isCov": false
+    },
+    {
+      "name": "Canada",
+      "group": "Country",
+      "pctVar": 0.014,
+      "isCov": false
+    },
+    {
+      "name": "Mexico",
+      "group": "Country",
+      "pctVar": 0.0123,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Metals & Mining",
+      "group": "Industry",
+      "pctVar": 0.0122,
+      "isCov": false
+    },
+    {
+      "name": "China",
+      "group": "Country",
+      "pctVar": 0.0118,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Volatility",
+      "group": "Style",
+      "pctVar": 0.01,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Semiconductors & Semiconductor Equipment",
+      "group": "Industry",
+      "pctVar": 0.0097,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Machinery",
+      "group": "Industry",
+      "pctVar": 0.0093,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Market Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0086,
+      "isCov": false
+    },
+    {
+      "name": "BRL",
+      "group": "Currency",
+      "pctVar": 0.0083,
+      "isCov": false
+    },
+    {
+      "name": "Japan",
+      "group": "Country",
+      "pctVar": 0.0078,
+      "isCov": false
+    },
+    {
+      "name": "Korea, Republic of",
+      "group": "Country",
+      "pctVar": 0.0076,
+      "isCov": false
+    },
+    {
+      "name": "Taiwan",
+      "group": "Country",
+      "pctVar": 0.0061,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Volatility",
+      "group": "Style",
+      "pctVar": 0.006,
+      "isCov": false
+    },
+    {
+      "name": "GBP",
+      "group": "Currency",
+      "pctVar": 0.006,
+      "isCov": false
+    },
+    {
+      "name": "CAD",
+      "group": "Currency",
+      "pctVar": 0.0058,
+      "isCov": false
+    },
+    {
+      "name": "MXN",
+      "group": "Currency",
+      "pctVar": 0.0055,
+      "isCov": false
+    },
+    {
+      "name": "Australia",
+      "group": "Country",
+      "pctVar": 0.0053,
+      "isCov": false
+    },
+    {
+      "name": "AUD",
+      "group": "Currency",
+      "pctVar": 0.0053,
+      "isCov": false
+    },
+    {
+      "name": "JPY",
+      "group": "Currency",
+      "pctVar": 0.0053,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Leverage",
+      "group": "Style",
+      "pctVar": 0.0044,
+      "isCov": false
+    },
+    {
+      "name": "Indonesia",
+      "group": "Country",
+      "pctVar": 0.0043,
+      "isCov": false
+    },
+    {
+      "name": "United Kingdom",
+      "group": "Country",
+      "pctVar": 0.004,
+      "isCov": false
+    },
+    {
+      "name": "United States",
+      "group": "Country",
+      "pctVar": 0.0036,
+      "isCov": false
+    },
+    {
+      "name": "SEK",
+      "group": "Currency",
+      "pctVar": 0.0035,
+      "isCov": false
+    },
+    {
+      "name": "EUR",
+      "group": "Currency",
+      "pctVar": 0.0033,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Dividend Yield",
+      "group": "Style",
+      "pctVar": 0.0025,
+      "isCov": false
+    },
+    {
+      "name": "INR",
+      "group": "Currency",
+      "pctVar": 0.0025,
+      "isCov": false
+    },
+    {
+      "name": "France",
+      "group": "Country",
+      "pctVar": 0.0023,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Oil, Gas & Consumable Fuels",
+      "group": "Industry",
+      "pctVar": 0.0023,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Textiles, Apparel & Luxury Goods",
+      "group": "Industry",
+      "pctVar": 0.0022,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Entertainment",
+      "group": "Industry",
+      "pctVar": 0.0021,
+      "isCov": false
+    },
+    {
+      "name": "Sweden",
+      "group": "Country",
+      "pctVar": 0.002,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Beverages",
+      "group": "Industry",
+      "pctVar": 0.0019,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Electrical Equipment",
+      "group": "Industry",
+      "pctVar": 0.0019,
+      "isCov": false
+    },
+    {
+      "name": "CHF",
+      "group": "Currency",
+      "pctVar": 0.0018,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Size",
+      "group": "Style",
+      "pctVar": 0.0015,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Household Products",
+      "group": "Industry",
+      "pctVar": 0.0015,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Beverages",
+      "group": "Industry",
+      "pctVar": 0.0015,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Growth",
+      "group": "Style",
+      "pctVar": 0.0014,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Profitability",
+      "group": "Style",
+      "pctVar": 0.0014,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Electric Utilities",
+      "group": "Industry",
+      "pctVar": 0.0014,
+      "isCov": false
+    },
+    {
+      "name": "US4 Internet Software & Services",
+      "group": "Industry",
+      "pctVar": 0.0013,
+      "isCov": false
+    },
+    {
+      "name": "KRW",
+      "group": "Currency",
+      "pctVar": 0.0013,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Multiline Retail",
+      "group": "Industry",
+      "pctVar": 0.0012,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Growth",
+      "group": "Style",
+      "pctVar": 0.0011,
+      "isCov": false
+    },
+    {
+      "name": "Saudi Arabia",
+      "group": "Country",
+      "pctVar": 0.0011,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Pharmaceuticals",
+      "group": "Industry",
+      "pctVar": 0.0011,
+      "isCov": false
+    },
+    {
+      "name": "Peru",
+      "group": "Country",
+      "pctVar": 0.001,
+      "isCov": false
+    },
+    {
+      "name": "South Africa",
+      "group": "Country",
+      "pctVar": 0.001,
+      "isCov": false
+    },
+    {
+      "name": "ZAR",
+      "group": "Currency",
+      "pctVar": 0.001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Size",
+      "group": "Style",
+      "pctVar": 0.0009,
+      "isCov": false
+    },
+    {
+      "name": "Israel",
+      "group": "Country",
+      "pctVar": 0.0009,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Biotechnology, Life Sciences Tools & Services",
+      "group": "Industry",
+      "pctVar": 0.0009,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Earnings Yield",
+      "group": "Style",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "Germany",
+      "group": "Country",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Aerospace & Defense",
+      "group": "Industry",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Software",
+      "group": "Industry",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Leverage",
+      "group": "Style",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "Italy",
+      "group": "Country",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "Switzerland",
+      "group": "Country",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Capital Markets",
+      "group": "Industry",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Health Care Equipment & Supplies",
+      "group": "Industry",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "EM4 IT Services",
+      "group": "Industry",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "Domestic China",
+      "group": "Local",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Value",
+      "group": "Style",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Diversified Telecommunication Services",
+      "group": "Industry",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Electronic Equipment, Instruments & Components",
+      "group": "Industry",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Real Estate Management & Development",
+      "group": "Industry",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Profitability",
+      "group": "Style",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Equity Real Estate Investment Trusts (REITs)",
+      "group": "Industry",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Food & Staples Retailing",
+      "group": "Industry",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "TWD",
+      "group": "Currency",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Multi-Utilities",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Interactive Media & Services",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "US4 Trading Companies & Distributors",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "CNY",
+      "group": "Currency",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "US4 Volatility",
+      "group": "Style",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Denmark",
+      "group": "Country",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Poland",
+      "group": "Country",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Singapore",
+      "group": "Country",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "Spain",
+      "group": "Country",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "United Arab Emirates",
+      "group": "Country",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Automobiles",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Construction & Engineering",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Hotels, Restaurants & Leisure",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Industrial Conglomerates",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Insurance",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Personal Products",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Semiconductors & Semiconductor Equipment",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Wireless Telecommunication Services",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Automobiles",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Household Durables",
+      "group": "Industry",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "ILS",
+      "group": "Currency",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Liquidity",
+      "group": "Style",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Exchange Rate Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "US4 Medium-Term Momentum",
+      "group": "Style",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "US4 Size",
+      "group": "Style",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Hungary",
+      "group": "Country",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Ireland",
+      "group": "Country",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Netherlands",
+      "group": "Country",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "Thailand",
+      "group": "Country",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Auto Components",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Building Products",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Health Care Technology",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Life Sciences Tools & Services",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Professional Services",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Technology Hardware, Storage & Peripherals",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Banks, Thrifts & Mortgage Finance",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Capital Markets",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Diversified Telecommunication Services",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Electronic Equipment, Instruments & Components",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "DKK",
+      "group": "Currency",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "HUF",
+      "group": "Currency",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "PEN",
+      "group": "Currency",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Value",
+      "group": "Style",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Austria",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Chile",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Colombia",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Greece",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Kuwait",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Norway",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Qatar",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Turkey",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Airlines",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Communications Equipment",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Energy Equipment & Services",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Household Durables",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Independent Power and Renewable Electricity Producers",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 IT Services",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Marine",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Road & Rail",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Specialty Retail",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Transportation Infrastructure",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Aerospace & Defense",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Airlines",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Chemicals",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Communications Equipment",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Consumer Finance",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Diversified Financial Services & Mortgage REITs",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Electric Utilities",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Food & Staples Retailing",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Industrial Conglomerates",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Machinery",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Multi-Utilities & Independent Power Producers & Traders",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Real Estate Management & Development",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Specialty Retail",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Tobacco",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "US4 Energy Equipment & Services",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "CLP",
+      "group": "Currency",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "IDR",
+      "group": "Currency",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "NOK",
+      "group": "Currency",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "PLN",
+      "group": "Currency",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Dividend Yield",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Earnings Yield",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Exchange Rate Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Liquidity",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Dividend Yield",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Earnings Yield",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Exchange Rate Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Growth",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Leverage",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Liquidity",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Market Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Profitability",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Value",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Belgium",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Czech Republic",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Egypt",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Finland",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Hong Kong",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Luxembourg",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Malaysia",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "New Zealand",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Nigeria",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Philippines",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Portugal",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Ukraine",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Air Freight & Logistics",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Biotechnology",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Chemicals",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Commercial Services & Supplies",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Construction Materials",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Consumer Finance",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Containers & Packaging",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Distributors",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Diversified Consumer Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Diversified Financial Services & Mortgage REITs",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Entertainment",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Food Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Gas Utilities",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Health Care Providers & Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Interactive Media & Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Leisure Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Media",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Multiline Retail",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Paper & Forest Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Tobacco",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Trading Companies & Distributors",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Water Utilities",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Air Freight & Logistics",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Auto Components",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Building Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Commercial & Professional Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Construction & Engineering",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Construction Materials",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Containers & Packaging",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Distributors",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Diversified Consumer Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Electrical Equipment",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Energy Equipment & Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Equity Real Estate Investment Trusts (REITs)",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Food Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Gas Utilities",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Health Care Equipment, Supplies & Technology",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Health Care Providers & Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Hotels, Restaurants & Leisure",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Household Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Insurance",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Leisure Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Marine",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Media",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Metals & Mining",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Oil, Gas & Consumable Fuels",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Paper & Forest Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Personal Products",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Pharmaceuticals",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Road & Rail",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Software",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Technology Hardware, Storage & Peripherals",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Textiles, Apparel & Luxury Goods",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Trading Companies & Distributors",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Transportation Infrastructure",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Water Utilities",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Wireless Telecommunication Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "US4 Hotels, Restaurants & Leisure",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "AED",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "COP",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "CZK",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EGP",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "HKD",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "KWD",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "MYR",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "NGN",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "NZD",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "PHP",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "QAR",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "SAR",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "SGD",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "THB",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "TRY",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "UAH",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "USD",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Currency-Covariance",
+      "group": "Currency",
+      "pctVar": -0.0167,
+      "isCov": true
+    },
+    {
+      "name": "Local-Covariance",
+      "group": "Local",
+      "pctVar": -0.0385,
+      "isCov": true
+    }
+  ]
+}

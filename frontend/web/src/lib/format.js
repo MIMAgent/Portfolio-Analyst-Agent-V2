@@ -49,6 +49,21 @@ export function ordinal(n) {
   return `${i}${s[(v - 20) % 10] || s[v] || s[0]}`
 }
 
+// Dollar figures are carried in millions throughout house.js.
+export function usdM(v, d = 1) {
+  if (!isNum(v)) return '—'
+  const n = Number(v)
+  if (Math.abs(n) >= 1000) return `$${(n / 1000).toFixed(2)}bn`
+  return `$${n.toFixed(d)}m`
+}
+
+export function signedUsdM(v, d = 1) {
+  if (!isNum(v)) return '—'
+  const n = Number(v)
+  const body = Math.abs(n) >= 1000 ? `$${(Math.abs(n) / 1000).toFixed(2)}bn` : `$${Math.abs(n).toFixed(d)}m`
+  return `${n < 0 ? '−' : '+'}${body}`
+}
+
 export function normKey(v) {
   return String(v || '').toLowerCase().replace(/[^a-z0-9]+/g, '')
 }
