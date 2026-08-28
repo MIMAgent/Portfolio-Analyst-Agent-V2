@@ -1,0 +1,17 @@
+# Line endings are normalised to LF in the repository AND in the working tree.
+# Without eol=lf, core.autocrlf=true rewrites every checked-out file to CRLF and
+# the next status shows hundreds of whole-file diffs that bury real changes.
+* text=auto eol=lf
+
+# Binary payloads git must not touch.
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+*.xlsx binary
+*.xls  binary
+*.woff  binary
+*.woff2 binary
