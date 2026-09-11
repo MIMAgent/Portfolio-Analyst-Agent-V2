@@ -1,0 +1,12 @@
+{
+  "_note": "Sleeve size, used to weight cross-sleeve comparisons in lib/house.js. Supplied by the PM on 2026-08-27; not yet emitted by the pipeline. When review_packet_builder starts writing fund size into the packet header, read it from there and retire this file.",
+  "_coverage": "UNCONFIRMED whether these three sleeves are the complete equity book. Until confirmed, the House View must call itself a three-sleeve aggregate, never a house total.",
+  "currency": "USD",
+  "asOf": "2026-06-30",
+  "precision": "approximate",
+  "funds": {
+    "us-equity": { "aumMillions": 1900 },
+    "international-equity": { "aumMillions": 1000 },
+    "goe": { "aumMillions": 450 }
+  }
+}

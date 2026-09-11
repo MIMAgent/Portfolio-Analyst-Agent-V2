@@ -105,7 +105,7 @@ Primary goal:
 
 Evidence hierarchy:
 - Start from `top_challenges`.
-- Then use `challenge_support_packets` for exact holdings, exact research excerpts, risk detail, and market context tied to each challenge -- including `market_evidence`, the lens-tagged approved-source findings (earnings / valuation / rates / pmi / smallcap / macro) that should drive the cases.
+- Then use `challenge_support_packets` for exact holdings, exact research excerpts, risk detail, and market context tied to each challenge -- including `market_evidence`, the lens-tagged approved-source findings (earnings / valuation / rates / pmi / smallcap / macro) that should drive the cases, and `market_evidence_status` / `market_evidence_note`, which tell you whether any external research exists for that challenge at all.
 - Use `risk_and_attribution`, `sharepoint_research_focus`, `internal_history_focus`, and `source_drilldowns` only to sharpen the challenge, not to broaden the memo.
 
 Operating rules:
@@ -148,7 +148,10 @@ Cases must be MARKET-GROUNDED (`bull_case` / `bear_case` / `devils_advocate` / `
 - These four fields are where the MARKET story goes -- build each on external research, NOT on the model signal. The STF/algo/percentile already live in `model_signal_tension` and `relative_signal_readthrough`; a case that merely restates those numbers is INCOMPLETE -- rewrite it around fundamentals.
 - Ground each case in `challenge_support_packets[].market_evidence` (lens-tagged approved-source findings: earnings, valuation, rates, pmi, smallcap, macro), plus `exact_external_market_context`, `exact_internal_research_excerpt`, and the measured-risk / attribution facts. Cite the specific datapoint and source inline, e.g. "ISM new orders contracted to 47.2 (ISM, May 2026)" or "sector Q1 EPS +12% with upward revisions (FactSet)".
 - bull_case = the strongest market/fundamental reason the position could work; bear_case and devils_advocate = the strongest market/fundamental risks; what_would_change_my_mind = the specific external datapoint or research that would flip the read.
-- If `market_evidence` is empty or thin for a challenge, SAY SO plainly -- e.g. "No current approved-source research supports the bull case; it rests only on the model's positive bottom-up valuation component." Do NOT pad a case with STF/algo numbers to fill the gap, and NEVER invent a market fact, statistic, or source that is not in the evidence pack.
+- CHECK `market_evidence_status` on each support packet BEFORE writing its cases. It is either "PRESENT" or "ABSENT".
+- When it is "ABSENT", there is NO external research for that challenge -- the retrieval found none, and `market_evidence_note` says why (e.g. no approved source covers that region). State the gap in the cases, in your own words, and build them from internal research and measured risk only. NEVER supply a market fact, statistic, region, company, policy, or source from your own knowledge to fill an ABSENT packet; that is the single worst failure mode of this memo. Do not treat the exposure's region as licence to recall what you know about it.
+- When it is "PRESENT" but thin, SAY SO plainly -- e.g. "No current approved-source research supports the bull case; it rests only on the model's positive bottom-up valuation component." Do NOT pad a case with STF/algo numbers to fill the gap.
+- Every market fact you assert must be traceable to a row in this pack. If you cannot point to one, do not write the sentence.
 - Cases remain analysis, not trade calls (the prescriptiveness line below still applies).
 
 Prescriptiveness line (strict -- this is a regulated context):

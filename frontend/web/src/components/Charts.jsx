@@ -86,14 +86,14 @@ export function LineChart({
         {yTicks.map((t, k) => (
           <g key={k}>
             <line x1={m.l} x2={W - m.r} y1={sy(t)} y2={sy(t)} stroke="#eceae3" strokeWidth="1" />
-            <text x={m.l - 8} y={sy(t) + 3} textAnchor="end" fontSize="11" fill="#86868f" fontFamily="JetBrains Mono">{yFormat(t)}</text>
+            <text x={m.l - 8} y={sy(t) + 3} textAnchor="end" fontSize="11" fill="var(--ink-3)" fontFamily="JetBrains Mono">{yFormat(t)}</text>
           </g>
         ))}
         {includeZero && yMin < 0 && yMax > 0 && (
           <line x1={m.l} x2={W - m.r} y1={sy(0)} y2={sy(0)} stroke="#c9c6bb" strokeWidth="1" strokeDasharray="3 3" />
         )}
         {xIdx.map((i) => (
-          <text key={i} x={sx(i)} y={H - 12} textAnchor="middle" fontSize="11" fill="#86868f" fontFamily="JetBrains Mono">{fmtDate(dates[i])}</text>
+          <text key={i} x={sx(i)} y={H - 12} textAnchor="middle" fontSize="11" fill="var(--ink-3)" fontFamily="JetBrains Mono">{fmtDate(dates[i])}</text>
         ))}
 
         {hover != null && (
@@ -172,13 +172,13 @@ export function VirScatter({ points }) {
         {yTicks.map((t) => (
           <g key={`y${t}`}>
             <line x1={m.l} x2={W - m.r} y1={sy(t)} y2={sy(t)} stroke="#eceae3" strokeWidth="1" />
-            <text x={m.l - 9} y={sy(t) + 3} textAnchor="end" fontSize="11.5" fill="#86868f" fontFamily="JetBrains Mono">
+            <text x={m.l - 9} y={sy(t) + 3} textAnchor="end" fontSize="11.5" fill="var(--ink-3)" fontFamily="JetBrains Mono">
               {`${(t * 100).toFixed(0)}%`}
             </text>
           </g>
         ))}
         {xTicks.map((t) => (
-          <text key={`x${t}`} x={sx(t)} y={H - 16} textAnchor="middle" fontSize="11.5" fill="#86868f" fontFamily="JetBrains Mono">
+          <text key={`x${t}`} x={sx(t)} y={H - 16} textAnchor="middle" fontSize="11.5" fill="var(--ink-3)" fontFamily="JetBrains Mono">
             {t > 0 ? `+${t}` : t}
           </text>
         ))}
@@ -241,8 +241,8 @@ export function VirScatter({ points }) {
         })()}
 
         {/* axis titles */}
-        <text x={m.l + iw / 2} y={H - 1} textAnchor="middle" fontSize="11.5" fill="#adaca8">Active weight (pts)</text>
-        <text x={13} y={m.t + ih / 2} textAnchor="middle" fontSize="11.5" fill="#adaca8" transform={`rotate(-90 13 ${m.t + ih / 2})`}>STF</text>
+        <text x={m.l + iw / 2} y={H - 4} textAnchor="middle" fontSize="12" fill="var(--ink-3)">Active weight (pts)</text>
+        <text x={13} y={m.t + ih / 2} textAnchor="middle" fontSize="12" fill="var(--ink-3)" transform={`rotate(-90 13 ${m.t + ih / 2})`}>STF (%)</text>
       </svg>
       <div className="scatter-legend">
         <div className="legend-item"><span className="legend-dot" /> Aligned</div>

@@ -13,6 +13,7 @@ from typing import Any
 from zipfile import ZipFile
 
 from .internal_history_retrieval import load_internal_history, retrieve_relevant_history, summarize_recurring_themes
+from .path_redaction import redact_paths
 from .sharepoint_research import DEFAULT_SHAREPOINT_RESEARCH_ROOT, build_research_index, match_research_for_position
 
 
@@ -414,7 +415,7 @@ def build_review_packet(
 def write_review_packet(packet: dict[str, Any], output_json: str | Path) -> Path:
     output_path = Path(output_json)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(packet, indent=2), encoding="utf-8")
+    output_path.write_text(json.dumps(redact_paths(packet), indent=2), encoding="utf-8")
     return output_path
 
 

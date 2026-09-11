@@ -21,6 +21,12 @@ from urllib.parse import parse_qs, quote_plus, unquote, urlparse
 from urllib.request import Request, urlopen
 
 from .market_context_ingest import MARKET_CONTEXT_COLUMNS
+from .market_context_regions import (
+    category_tokens,
+    conflicting_region_codes,
+    parse_acid,
+    region_tokens,
+)
 from .market_context_sources import DEFAULT_APPROVED_SOURCES_PATH, load_approved_market_context_sources
 from .row_ids import generic_row_id
 
@@ -41,6 +47,15 @@ class SearchDefaults:
     acid: str = ""
     comparison_group: str = ""
     priority: str = "2"
+    # The ACID a result must be *about*, when it differs from the ACID a row is
+    # *filed under*. Lens retrieval files rows under a compound comparison_group
+    # so each lens stays separately addressable, which would otherwise leave the
+    # relevance gate with no exposure to check against.
+    relevance_acid: str = ""
+
+
+def _relevance_acid(defaults: SearchDefaults) -> str:
+    return defaults.relevance_acid or defaults.acid
 
 
 def search_market_context_web(
@@ -70,7 +85,7 @@ def search_market_context_web(
         raise ValueError("max_sources must be positive.")
 
     sources_payload = load_approved_market_context_sources(approved_sources_path)
-    sources = _select_sources(sources_payload["sources"], acid=defaults.acid, query=query, max_sources=max_sources)
+    sources = _select_sources(sources_payload["sources"], acid=_relevance_acid(defaults), query=query, max_sources=max_sources)
     rows: list[dict[str, str]] = []
     searched_domains: list[str] = []
     diagnostics: list[dict[str, Any]] = []
@@ -371,7 +386,7 @@ def _fallback_rows_from_source(
     if source_url.lower().endswith(".pdf"):
         try:
             pdf_bytes = _fetch_bytes(source_url, timeout_seconds=timeout_seconds, max_bytes=25_000_000)
-            snippets = _relevant_snippets(_extract_pdf_text(pdf_bytes), query=query, acid=defaults.acid, limit=2)
+            snippets = _relevant_snippets(_extract_pdf_text(pdf_bytes), query=query, acid=_relevance_acid(defaults), limit=2)
         except OSError as exc:
             return [], f"pdf_fetch_failed:{exc.__class__.__name__}"
     else:
@@ -380,7 +395,7 @@ def _fallback_rows_from_source(
             metadata = _html_metadata(html)
             title = metadata.get("title") or title
             candidate = metadata.get("description", "")
-            if _is_relevant(candidate or title, query=query, acid=defaults.acid):
+            if _is_relevant(candidate or title, query=query, acid=_relevance_acid(defaults)):
                 snippets = [candidate or title]
         except OSError as exc:
             return [], f"html_fetch_failed:{exc.__class__.__name__}"
@@ -523,7 +538,26 @@ def _is_relevant(text: str, *, query: str, acid: str = "") -> bool:
     acid_words = _acid_required_words(acid)
     if acid_words and not text_words.intersection(acid_words):
         return False
+    if _is_region_mismatch(text_words, acid=acid):
+        return False
     return True
+
+
+def _is_region_mismatch(text_words: set[str], *, acid: str) -> bool:
+    """True when the passage is about a different bloc than the exposure.
+
+    Approved sources are overwhelmingly US-scoped, so without this an ISM or
+    FactSet excerpt about US manufacturing is happily filed against ``EU ID EQ``
+    and read back as European evidence.
+    """
+
+    parts = parse_acid(acid)
+    conflicting = conflicting_region_codes(parts.region_code)
+    if not conflicting:
+        return False
+    if text_words.intersection(region_tokens(parts.region_code)):
+        return False
+    return any(text_words.intersection(region_tokens(other)) for other in conflicting)
 
 
 def _is_navigation_text(text: str) -> bool:
@@ -538,14 +572,27 @@ def _is_navigation_text(text: str) -> bool:
     return any(marker in lowered for marker in navigation_markers)
 
 
+# Hand-tuned word sets for the ACIDs the retrieval was originally calibrated
+# against. Everything else derives from the ACID's category code, so a new
+# exposure is gated rather than waved through.
+_TUNED_ACID_WORDS = {
+    "US IT EQ": {"technology", "tech", "information", "software", "semiconductor", "semiconductors", "ai", "data", "capex"},
+    "US LRG G EQ": {"growth", "large", "cap", "magnificent", "megacap", "mega", "technology", "ai", "valuation"},
+    "US LRG EQ": {"large", "cap", "s&p", "sp500", "broad", "earnings", "valuation"},
+    "US ID EQ": {"industrial", "industrials", "manufacturing", "orders", "pmi", "capex", "cyclical", "defense", "aerospace"},
+}
+
+
 def _acid_required_words(acid: str) -> set[str]:
-    required = {
-        "US IT EQ": {"technology", "tech", "information", "software", "semiconductor", "semiconductors", "ai", "data", "capex"},
-        "US LRG G EQ": {"growth", "large", "cap", "magnificent", "megacap", "mega", "technology", "ai", "valuation"},
-        "US LRG EQ": {"large", "cap", "s&p", "sp500", "broad", "earnings", "valuation"},
-        "US ID EQ": {"industrial", "industrials", "manufacturing", "orders", "pmi", "capex", "cyclical", "defense", "aerospace"},
-    }
-    return required.get(acid, set())
+    acid = str(acid or "").strip()
+    if acid in _TUNED_ACID_WORDS:
+        return set(_TUNED_ACID_WORDS[acid])
+    parts = parse_acid(acid)
+    if parts.category_code:
+        return category_tokens(parts.category_code)
+    # A country or region exposure has no sector topic; require the passage to
+    # name the place instead.
+    return region_tokens(parts.region_code)
 
 
 def _dedupe_text(values: list[str]) -> list[str]:

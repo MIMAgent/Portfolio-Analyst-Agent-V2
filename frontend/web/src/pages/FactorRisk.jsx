@@ -10,6 +10,18 @@ const dates = fr.dates
 const A = fr.attribution
 
 const fmtR = (v) => `${(v * 100).toFixed(2)}%`
+
+// Direction words are DERIVED. This caption previously asserted tracking error
+// "climbed" and bets were "getting bigger" while the chart above it fell — the
+// prose was written once against one month's numbers and never moved again.
+const dTE = last.activeRisk - first.activeRisk
+const dFactor = last.activeFactorRisk - first.activeFactorRisk
+const dSpecific = last.activeSpecificRisk - first.activeSpecificRisk
+const teVerb = dTE >= 0 ? 'climbed' : 'fell'
+const teNoun = dTE >= 0 ? 'rise' : 'decline'
+const teSize = dTE >= 0 ? 'getting bigger' : 'getting smaller'
+const teLed = Math.abs(dFactor) >= Math.abs(dSpecific) ? 'factor-led' : 'specific-led'
+const specVerb = dSpecific >= 0 ? 'grew' : 'fell'
 const fmtB = (v) => v.toFixed(2)
 
 // ---- KPI strip ----
@@ -27,7 +39,7 @@ const KPIS = [
   },
   {
     label: 'Active Beta',
-    val: signedNum(last.activeBeta, 2), tone: 'neg',
+    val: signedNum(last.activeBeta, 2), tone: last.activeBeta < 0 ? 'neg' : 'pos',
     sub: `from ${signedNum(first.activeBeta, 2)}`,
   },
   {
@@ -135,8 +147,8 @@ export default function FactorRisk() {
           ]}
         />
         <p className="fr-note">
-          Tracking error climbed from <b>{fmtR(first.activeRisk)}</b> to <b>{fmtR(last.activeRisk)}</b> — the active bets are getting bigger.
-          The rise is factor-led, but specific risk grew too ({fmtR(first.activeSpecificRisk)} → {fmtR(last.activeSpecificRisk)}).
+          Tracking error {teVerb} from <b>{fmtR(first.activeRisk)}</b> to <b>{fmtR(last.activeRisk)}</b> — the active bets are {teSize}.
+          The {teNoun} is {teLed}; specific risk {specVerb} ({fmtR(first.activeSpecificRisk)} → {fmtR(last.activeSpecificRisk)}).
         </p>
       </div>
 
@@ -224,16 +236,16 @@ export default function FactorRisk() {
         </div>
 
         {/* Return attribution */}
-        <div className="panel" style={{ borderTop: '3px solid var(--neg)' }}>
+        <div className="panel" style={{ borderTop: `3px solid var(${A.active < 0 ? '--neg' : '--pos'})` }}>
           <div className="panel-head">
-            <div className="panel-title">What it cost — active return attribution</div>
+            <div className="panel-title">Active return attribution</div>
             <div className="panel-sub eyebrow">Cumulative {fmtDate(A.from)} → {fmtDate(A.to)}</div>
           </div>
 
           <div className="fr-attrib-head">
             <div className="fr-att-big">
               <div className="eyebrow">Active return</div>
-              <div className="fr-att-num neg">{signedPct(A.active * 100)}</div>
+              <div className={`fr-att-num ${A.active < 0 ? 'neg' : 'pos'}`}>{signedPct(A.active * 100)}</div>
             </div>
             <div className="fr-att-vs">
               <div><span>Portfolio</span><b>{signedPct(A.portfolio * 100)}</b></div>
