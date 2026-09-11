@@ -34,3 +34,10 @@ agent2/data/bedrock_runs/*
 agent2/data/bedrock_runs/2026-05-31/*
 !agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/
 !agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/**
+
+# Frontend build/output and transient screenshot helpers (from main).
+node_modules
+dist
+*.local
+shot-*.png
+shot.mjs
