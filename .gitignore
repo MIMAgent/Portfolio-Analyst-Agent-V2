@@ -1,36 +1,5 @@
-.env
-.venv/
-__pycache__/
-*.pyc
-*.pyc.*
-.pytest_cache/
-vite.err.log
-vite.out.log
-*.log
-*.zip
-
-# Raw/project input files stay local unless explicitly approved.
-data/*
-!data/acid_mapping_bootstrap_v1.csv
-!data/2026-05-31/
-!data/2026-05-31/**
-
-# Generated artifacts stay local by default. Keep only curated runtime fixtures
-# that make the demo/review harness reproducible from a fresh clone.
-artifacts/*
-!artifacts/agent_memory/
-!artifacts/agent_memory/memory_records.json
-!artifacts/monthly_review/
-!artifacts/monthly_review/**
-!artifacts/rolled_exposures/
-!artifacts/rolled_exposures/*.csv
-!artifacts/rolled_exposures/*.md
-!artifacts/equity_vir_history.csv.zip
-
-# Agent2 Bedrock run artifacts stay local by default except the canonical
-# reviewed deep-memo output used as the current reference example.
-agent2/data/bedrock_runs/*
-!agent2/data/bedrock_runs/2026-05-31/
-agent2/data/bedrock_runs/2026-05-31/*
-!agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/
-!agent2/data/bedrock_runs/2026-05-31/mstar-us-equity-live-2026-06-15-deepmemo-12k-top4/**
+node_modules
+dist
+*.local
+shot-*.png
+shot.mjs
