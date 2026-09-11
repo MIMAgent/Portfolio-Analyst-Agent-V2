@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { challenges, challengeCategories } from '../lib/data.js'
 import { signedPts, signedPct, pct, isNum, titleCase, stfPct, ordinal } from '../lib/format.js'
+import { MarketProvenance } from '../components/Provenance.jsx'
 
 const PRIORITY_LABEL = { high: 'Urgent', medium: 'Watch', low: 'Monitor' }
 
@@ -130,29 +131,6 @@ function ForkOptions({ text }) {
   )
 }
 
-function MarketSources({ rows, query }) {
-  if (!rows?.length) return null
-  return (
-    <div className="mkt-wrap">
-      {query && <div className="mkt-query">Searched: {query}</div>}
-      <div className="mkt-list">
-        {rows.slice(0, 4).map((r, i) => (
-          <div className="mkt-item" key={i}>
-            <div className="mkt-head">
-              <div className="mkt-headline">{r.headline || 'Market context'}</div>
-              <div className="mkt-src">
-                {r.source}{r.date ? ` · ${r.date}` : ''}
-                {r.url ? <> · <a href={r.url} target="_blank" rel="noreferrer">source ↗</a></> : ''}
-              </div>
-            </div>
-            {r.narrative && <p className="mkt-narr">{r.narrative}</p>}
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
 function DeepMemo({ c, index, onOpenIC }) {
   const owPos = Number(c.activeWeight) >= 0
   return (
@@ -212,21 +190,16 @@ function DeepMemo({ c, index, onOpenIC }) {
           <Section title="Measured Risk Contribution">{(c.risk || c.riskExact) && <p>{c.risk || c.riskExact}</p>}</Section>
         </div>
 
-        {(c.market || c.internalResearch || c.externalContext || c.marketRows?.length) && (
-          <Section title="Research & Market Context">
-            <div className="ctx-stack">
-              {c.market && <div className="ctx-block"><div className="ctx-label">House / sector view</div><p>{c.market}</p></div>}
-              {c.internalResearch && <div className="ctx-block"><div className="ctx-label">Internal research</div><p>{c.internalResearch}</p></div>}
-              {c.externalContext && <div className="ctx-block"><div className="ctx-label">External read</div><p>{c.externalContext}</p></div>}
-            </div>
-            {c.marketRows?.length > 0 && (
-              <div className="ctx-block" style={{ marginTop: 14 }}>
-                <div className="ctx-label">Approved-source market context</div>
-                <MarketSources rows={c.marketRows} query={c.marketQuery} />
-              </div>
-            )}
-          </Section>
-        )}
+        {/* Always rendered. Absence of external research is itself a finding —
+            it tells the PM the cases below rest on internal evidence only. */}
+        <Section title="Research & Market Context">
+          <div className="ctx-stack">
+            {c.market && <div className="ctx-block"><div className="ctx-label">House / sector view</div><p>{c.market}</p></div>}
+            {c.internalResearch && <div className="ctx-block"><div className="ctx-label">Internal research</div><p>{c.internalResearch}</p></div>}
+            {c.externalContext && <div className="ctx-block"><div className="ctx-label">External read</div><p>{c.externalContext}</p></div>}
+          </div>
+          <MarketProvenance c={c} />
+        </Section>
 
         <Section title="The Cases"><Cases c={c} /></Section>
 

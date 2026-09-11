@@ -7,6 +7,7 @@
 import { useEffect } from 'react'
 import { icPackets, header } from '../lib/data.js'
 import { signedPts, stfPct, fmtDate, isNum, ordinal } from '../lib/format.js'
+import { EvidenceBasis } from '../components/Provenance.jsx'
 
 const PRIORITY_LABEL = { high: 'Urgent — decide at IC', medium: 'Watch', low: 'Monitor' }
 
@@ -98,6 +99,10 @@ function Sheet({ c, index }) {
           {c.whyNow && <div className="ic-whynow"><span className="eyebrow">Why now</span> {c.whyNow}</div>}
         </div>
       )}
+
+      {/* What the cases are built on. A PM signing a decision should not have to
+          open another tab to find out there is no external research behind it. */}
+      <EvidenceBasis c={c} />
 
       <div className="ic-block ic-decision">
         <div className="memo-section-title eyebrow">Decision — select one</div>

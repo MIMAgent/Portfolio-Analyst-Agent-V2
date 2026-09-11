@@ -1,5 +1,6 @@
 import { DEFAULT_FUND_ID, FUND_OPTIONS, resolveFundDataset } from '../data/funds/index.js'
 import { normKey } from './format.js'
+import { absenceCopy, acidRegion, isRegionMismatch, marketState } from './provenance.js'
 
 const requestedFundId = typeof window === 'undefined'
   ? DEFAULT_FUND_ID
@@ -229,6 +230,40 @@ function normMarketRow(r) {
   }
 }
 
+// Whether the research behind a challenge speaks to that challenge's market.
+// `market_evidence_status` and its siblings come from the agent; when a packet
+// predates that fix the same answer is derived from the ACID and source labels.
+// (The previous mapping read `market.context_status` — a field no builder has
+// ever emitted, so it was always undefined.)
+function marketProvenance({ top, market, support, rows }) {
+  const exposureRegion = acidRegion(top.acid)
+  const marketRows = rows
+    .map(normMarketRow)
+    .filter((r) => r.headline || r.narrative)
+    .map((r) => ({ ...r, offRegion: isRegionMismatch(exposureRegion, r.source) }))
+  const lenses = market.lenses_attempted || []
+  const state = marketState({
+    status: market.market_evidence_status ?? support.market_evidence_status,
+    rows: marketRows,
+    lenses,
+    exposureRegion,
+  })
+  return {
+    marketRows,
+    marketQuery: market.query_used,
+    marketState: state,
+    marketRegion: exposureRegion,
+    marketLenses: lenses,
+    marketAbsentCopy:
+      state === 'absent'
+        ? absenceCopy({
+            note: market.market_evidence_note ?? support.market_evidence_note,
+            label: top.label,
+          })
+        : '',
+  }
+}
+
 function deriveDescriptor(item, top, signal) {
   if (item.descriptor) return item.descriptor
   const cat = top?.category || ''
@@ -300,9 +335,7 @@ export const challenges = (review.challenge_brief || []).map((item, i) => {
     sourceQuality: item.source_quality,
     holdings,
     holdingsProse: item.exact_holdings_causing_it,
-    marketRows: marketRowsRaw.map(normMarketRow).filter((r) => r.headline || r.narrative),
-    marketQuery: market.query_used,
-    marketStatus: market.context_status,
+    ...marketProvenance({ top, market, support, rows: marketRowsRaw }),
   }
 })
   // The agent computes a challenge_score and the UI ignored it, ordering cards by
