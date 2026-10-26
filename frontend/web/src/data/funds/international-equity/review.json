@@ -1,213 +1,190 @@
 {
-  "executive_summary": "Largest underweight: Canada (-4.72 pts), with STF underweight and the algo active weight underweight (relative to benchmark). Largest overweight: France (2.88 pts), with decomposition reading broad_based. 23 material positions are directionally fighting the current STF/algo read. The largest current active expression is Canada at -4.72 percentage points, with aligned signal support. The clearest position-versus-signal tension is France, where positioning is overweight while the STF is underweight and the algo active weight (relative to benchmark) is overweight. Measured active risk is currently most concentrated in specific risk at 1.51%. Risk context uses the latest business-day row on or before 2026-09-30: 2026-07-20.",
+  "executive_summary": "MStar International Equity enters the October review with four positions where the portfolio direction and the signal stack are in tension and where no live, dated underwriting thesis is on record. France (+2.88 pts overweight) is flagged on the specific-risk watchlist with an STF of -0.46% that is at its 12-month high and an algo active weight pointing the same overweight direction, but the only research in the pack is a global ARFR note from October 2024\u2014there is no France-specific equity thesis. India (-2.44 pts underweight) sits in a structurally opposing position: the STF is negative but the algo active weight (relative to benchmark) is +1.31 pts overweight, creating a split signal against a -2.44 pt fund position with no direct India research on file. European Information Technology (+1.52 pts overweight) is the most clearly off-signal challenge: both the STF (-3.05%, ranked 36th of 43 ex-US sectors) and the algo active weight (-0.06 pts) are underweight, the only supporting research dates from February 2017, and no approved-source external market evidence matched this period. European Industrials (+1.79 pts) carries a recorded but thin baseline thesis and the same double-underweight signal conflict. Collectively these four positions represent the decisions the PM most urgently needs to defend, document, or resize.",
   "key_insights": [
     {
       "label": "France",
-      "insight": "France still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "why_it_matters": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit."
-    },
-    {
-      "label": "India",
-      "insight": "India still carries a meaningful underweight even though only part of the signal stack agrees.",
-      "why_it_matters": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit."
+      "insight": "France is the fund's largest country overweight (+2.88 pts) and appears on the specific-risk watchlist, yet its STF at -0.46% is at the 12-month high and the supporting research is an 18-month-old global ARFR note with no France-specific equity underwriting.",
+      "why_it_matters": "The overweight may be well-founded\u2014the algo agrees direction\u2014but without a current thesis it cannot be defended at IC if market conditions shift."
     },
     {
       "label": "Information Technology",
-      "insight": "Information Technology remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
-      "why_it_matters": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming."
+      "insight": "The European IT overweight (+1.52 pts) is the only challenge where both model layers (STF -3.05%, algo active weight -0.06 pts) are simultaneously pointing underweight, and the closest internal research is a 2017 global technology fair-value review.",
+      "why_it_matters": "This is the clearest position-vs-signal divergence in the fund; the measured risk contribution (0.97% of active variance via EM4 Semiconductors) is live, but the thesis holding it is not."
     },
     {
-      "label": "Industrials",
-      "insight": "Industrials remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
-      "why_it_matters": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming."
+      "label": "India",
+      "insight": "India's -2.44 pt underweight is held against an algo active weight of +1.31 pts (relative to benchmark) and an STF that has improved +0.38% MoM to its 12-month best; the matched internal research is a China equity note, not an India thesis.",
+      "why_it_matters": "The signal stack is beginning to point toward India, and the fund's position is running counter to both the algo direction and the improving STF trend, raising the cost of continued inaction."
     }
   ],
   "challenge_brief": [
     {
       "label": "France",
-      "challenge_headline": "France still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "descriptor": "Country | material position needing refresh | medium priority",
-      "thesis_under_pressure": "The implicit thesis is that France remains an intentional conviction position rather than legacy implementation residue.",
-      "positioning_tension": "Fund weight is 7.21% versus benchmark 4.33%, leaving a +2.88 pt active overweight in France. Top underlying names include BNP Paribas Act. Cat.A, Lvmh Moet Hennessy Louis Vuitton SE.",
-      "model_signal_tension": "STF is underweight at -0.46% (+0.92% MoM), while the algo active weight is +2.14 pts (relative to benchmark) and points overweight.",
-      "relative_signal_readthrough": "STF is -0.46% in absolute terms but ranks #15 of 44 in ex-US countries (above the -1.47% universe median). Versus its own 12-month history the current STF is at the 100th percentile, a separate read from the peer rank.",
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
-      "market_context_readthrough": "Global Aggregate Reward for Risk Medium Conviction Score ARFR Committee: Mike Coop, Paul Arnold, Mike Stout, Sean Neethling, James Foot Deck prepared by: Noah Kaplan, Johanna Zhu, James Foot October 2024 Data as at 30...",
-      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "exact_holdings_causing_it": "BNP Paribas Act. Cat.A (+0.53 pts active) via MS INTL EQ GLOB EX US OPP 0.38%, MS INT'L EQUITY HARRIS 0.38%; Lvmh Moet Hennessy Louis Vuitton SE (+0.38 pts active) via MS INT'L EQUITY HARRIS 0.32%, MS INTL EQ GLOB EX US OPP 0.30%; Legrand SA (+0.42 pts active) via MS INTL EQ 2 LEND ACCT 0.51%, Morningstar Gbl xUS NR USD 0.00%",
-      "exact_vir_algo_decomp_explanation": "STF is underweight at -0.46% (+0.92% MoM), while the algo active weight is +2.14 pts (relative to benchmark) and points overweight.",
-      "exact_risk_contribution": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "exact_internal_research_excerpt": "Direct prior thesis evidence is missing in the current packet.",
-      "exact_external_market_context": "Global Aggregate Reward for Risk Medium Conviction Score ARFR Committee: Mike Coop, Paul Arnold, Mike Stout, Sean Neethling, James Foot Deck prepared by: Noah Kaplan, Johanna Zhu, James Foot October 2024 Data as at 30...",
-      "bull_case": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
-      "bear_case": "This is a material active position that still needs an explicit current-month rationale.",
-      "devils_advocate": "The France position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
-      "what_would_change_my_mind": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that France is still an intentional expression.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
-      "recommended_action": "DEFEND OR RESIZE",
-      "primary_pm_question": "What current evidence still justifies keeping France at this size rather than treating it as a position that needs to be refreshed?",
-      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that France is still an intentional expression.",
-      "confidence": "Structured packet summary; optional model narrative was not run.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+      "challenge_headline": "France +2.88 pt overweight sits on specific-risk watchlist with a split signal stack and no live France-specific equity thesis.",
+      "descriptor": "Country | algo-confirms overweight but STF off-signal | research 18 months stale, no live thesis",
+      "thesis_under_pressure": "No direct France equity thesis is on record; the implicit case must be reconstructed from subadvisor holdings (BNP Paribas via Harris and Glob Ex US Opp, LVMH via Harris and Glob Ex US Opp, Legrand via Lend Acct). The closest research is a global ARFR deck from October 2024 scoring a Medium conviction on aggregate reward for risk, which is not equity-specific and predates this snapshot by 12 months. Without a documented equity-level thesis, it is not possible to determine whether the +2.88 pt overweight is conviction or aggregated subadvisor residue.",
+      "positioning_tension": "At 7.21% vs 4.33% benchmark, France is the fund's single largest country overweight and lands on the specific-risk watchlist, meaning idiosyncratic security outcomes here matter at fund level. The overweight is built from at least four separate subadvisor sleeves rather than a single mandate decision, which raises the question of whether the aggregate was ever explicitly approved.",
+      "model_signal_tension": "STF is -0.46% (+0.92% MoM), technically off-signal but improving rapidly and now at its 12-month high. The algo active weight is +2.14 pts (relative to benchmark), which is directionally consistent with the portfolio overweight\u2014so the two model layers partially agree, but the STF's negative absolute sign means the position is not fully endorsed by the signal stack.",
+      "relative_signal_readthrough": "At -0.46%, France's STF ranks 15th of 44 ex-US countries, well above the universe median of -1.47%\u2014making France a 'relatively preferred' name even with a negative absolute read. However, the 100th historical percentile (12-month high of -0.04%) means France is currently at the best point of its own recent range, so peer outperformance and historical improvement both point in the same direction; the relative read softens but does not eliminate the off-signal concern.",
+      "vir_decomposition_readthrough": "The STF decomposition is broad-based with yield the largest single positive contributor (+3.40%) and valuation_adjustment_top_down the main drag (-1.94%). The MoM improvement of +0.92% is similarly broad rather than driven by one component flip, which suggests the improving trend is structural rather than transient noise.",
+      "market_context_readthrough": "The approved-source external context retrieved consists of two FactSet Earnings Insight excerpts from May 2026 focused entirely on S&P 500 Q1 2026 earnings (28.6% blended growth rate, Magnificent 7 driven)\u2014these are US equity data and carry no direct readthrough to French equities. No France-specific approved-source market evidence is present in this pack.",
+      "measured_risk_readthrough": "France is on the specific-risk watchlist with active weight 2.88 pts; top watchlist holdings are BNP Paribas (0.53 pts active), LVMH (0.38 pts), and Legrand (0.42 pts). DM4 Banks is the fund's largest industry risk driver at 3.58% of active variance, and BNP Paribas feeds directly into that bucket\u2014so the France overweight is not risk-neutral even at the sector level.",
+      "exact_holdings_causing_it": "BNP Paribas Act. Cat.A (+0.53 pts active): 0.38% via MS INTL EQ GLOB EX US OPP, 0.38% via MS INT'L EQUITY HARRIS. Lvmh Moet Hennessy Louis Vuitton SE (+0.38 pts active): 0.32% via MS INT'L EQUITY HARRIS, 0.30% via MS INTL EQ GLOB EX US OPP. Legrand SA (+0.42 pts active): 0.51% via MS INTL EQ 2 LEND ACCT. Schneider Electric (+0.12 pts active): 0.29% via MS INT'L EQUITY HARDING, 0.21% via MS INTL EQ 2 LEND ACCT.",
+      "exact_vir_algo_decomp_explanation": "STF -0.46% (+0.92% MoM); decomposition: growth +1.51%, yield +3.40%, inflation +1.97%, currency_usd -0.31%, valuation_adjustment_top_down -1.94%, valuation_adjustment_combined -0.17%, valuation_adjustment_bottom_up +1.60%. Algo active weight +2.14 pts (relative to benchmark), +0.31 pts MoM\u2014both layers improving but STF remains negative.",
+      "exact_risk_contribution": "France is on the specific-risk watchlist at 2.88 pts active weight (sector_proxy inference level). BNP Paribas also loads into DM4 Banks, the fund's top industry risk driver at 3.58% of active variance, meaning the France overweight has a secondary channel into the largest measured industry risk in the fund.",
+      "exact_internal_research_excerpt": "Global Aggregate Reward for Risk Medium Conviction Score (ARFR Committee: Mike Coop, Paul Arnold, Mike Stout, Sean Neethling, James Foot; data as at 30 September 2024): 'The score has been maintained at Medium, underpinned by a Medium score for debt supply.' This is a cross-asset ARFR note, not a France equity-level thesis; no active_thesis_text or falsification conditions are recorded in the evidence pack.",
+      "exact_external_market_context": "Only US-focused approved-source data is present: FactSet Earnings Insight (2026-05-29) reports Q1 2026 S&P 500 blended EPS growth of 28.6% vs 13.1% initial estimate, with positive guidance balance for Q2 2026 (56 positive vs 46 negative). This data does not pertain to French equities and cannot be used to build a France-specific case.",
+      "bull_case": "The algo active weight (+2.14 pts relative to benchmark) and the STF at its 12-month best (-0.46%) both confirm the overweight is at least partially signal-endorsed; if yield and inflation components continue to improve, the STF could flip positive, validating the current size. The internal ARFR note (October 2024) assessed global aggregate reward for risk at Medium conviction, which would be consistent with maintaining an overweight in a relatively-preferred country.",
+      "bear_case": "No France-specific approved-source research is in this pack, and no equity-level thesis is on record to anchor the position; if any of the top holdings (BNP Paribas, LVMH, Legrand) disappoint, there is no documented valuation floor to lean on. BNP Paribas also contributes to DM4 Banks, the fund's largest measured industry risk driver (3.58% of active variance), amplifying the downside if European financials reprice.",
+      "devils_advocate": "The +2.88 pt overweight may be an emergent multi-sleeve aggregate\u2014four separate subadvisors each holding French names\u2014rather than a deliberate country-level call; if that is the case, the apparent alignment between the algo direction and the portfolio weight is coincidental rather than intentional, and the position has no owner at the fund level.",
+      "what_would_change_my_mind": "A documented, dated France equity thesis with explicit falsification conditions would shift this from 'refresh required' to 'monitored conviction'; alternatively, evidence that the STF flips positive and the ARFR score upgrades to High would provide model-level cover even absent a bespoke note.",
+      "pm_decision_fork": "The PM must determine: (1) is this an intentional country overweight with a recoverable thesis, or an unmanaged multi-sleeve aggregate? (2) Does the algo alignment at +2.14 pts provide sufficient cover to hold the current size through the next review? (3) If BNP Paribas continues to drive DM4 Banks risk above 3.5% of active variance, does a sub-position offset make more sense than a country-level resize?",
+      "recommended_action": "DOCUMENT OR RESIZE",
+      "primary_pm_question": "Is the +2.88 pt France overweight a deliberate country conviction backed by a current equity thesis, or an undocumented aggregate of subadvisor positions that no one at the fund level has explicitly approved?",
+      "evidence_needed_next": "A France equity underwriting note (or explicit confirmation that the October 2024 ARFR provides sufficient cover), plus a check on whether the BNP Paribas sub-position is being independently sized against the DM4 Banks risk budget.",
+      "confidence": "Medium \u2014 the signal stack is partially supportive (algo agrees, STF at 12-month best) but no live thesis exists and the research is stale.",
+      "source_quality": "model+positioning+stale_cross_asset_research (Oct 2024 ARFR)+no_france_equity_thesis"
     },
     {
       "label": "India",
-      "challenge_headline": "India still carries a meaningful underweight even though only part of the signal stack agrees.",
-      "descriptor": "Country | material position needing refresh | medium priority",
-      "thesis_under_pressure": "The implicit thesis is that India remains an intentional conviction position rather than legacy implementation residue.",
-      "positioning_tension": "Fund weight is 1.82% versus benchmark 4.26%, leaving a -2.44 pt active underweight in India. Top underlying names include Tata Consultancy Services Ltd, Axis Bank Ltd.",
-      "model_signal_tension": "STF is underweight at -0.64% (+0.38% MoM), while the algo active weight is +1.31 pts (relative to benchmark) and points overweight.",
-      "relative_signal_readthrough": "STF is -0.64% in absolute terms but ranks #17 of 44 in ex-US countries (above the -1.47% universe median). Versus its own 12-month history the current STF is at the 100th percentile, a separate read from the peer rank.",
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though growth is the largest single contributor.",
-      "market_context_readthrough": "Equity Market Review: China We maintain a neutral stance on the broad China market, but there is some upside potential at the stock level.",
-      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "exact_holdings_causing_it": "Tata Consultancy Services Ltd (+0.37 pts active) via MS INTL EQ 2 LEND ACCT 0.32%, MS INT'L EQUITY LAZARD 0.10%; Axis Bank Ltd (+0.22 pts active) via MS INT'L EQUITY HARRIS 0.20%, MS INT'L EQUITY LAZARD 0.09%; HDFC BANK LTD ADR (+0.18 pts active) via MS INT'L EQUITY HARDING 0.18%",
-      "exact_vir_algo_decomp_explanation": "STF is underweight at -0.64% (+0.38% MoM), while the algo active weight is +1.31 pts (relative to benchmark) and points overweight.",
-      "exact_risk_contribution": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "exact_internal_research_excerpt": "Direct prior thesis evidence is missing in the current packet.",
-      "exact_external_market_context": "Equity Market Review: China We maintain a neutral stance on the broad China market, but there is some upside potential at the stock level.",
-      "bull_case": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
-      "bear_case": "This is a material active position that still needs an explicit current-month rationale.",
-      "devils_advocate": "The India position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
-      "what_would_change_my_mind": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that India is still an intentional expression.",
-      "pm_decision_fork": "Decide whether to defend the current underweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
-      "recommended_action": "DEFEND OR RESIZE",
-      "primary_pm_question": "What current evidence still justifies keeping India at this size rather than treating it as a position that needs to be refreshed?",
-      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that India is still an intentional expression.",
-      "confidence": "Structured packet summary; optional model narrative was not run.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+      "challenge_headline": "India -2.44 pt underweight is running against a rising STF and a strongly overweight algo signal, with the matched internal research being a China note.",
+      "descriptor": "Country | underweight fights improving STF and +1.31 pt algo overweight | no India thesis on record",
+      "thesis_under_pressure": "No India-specific equity thesis is on file; the fund holds 1.82% vs a 4.26% benchmark weight, implying a -2.44 pt underweight that is directionally opposite to the algo active weight (+1.31 pts relative to benchmark, overweight). The matched internal research (China Equity Market Review, July 2025) carries no India content, confirming the absence of underwriting support. The underweight may reflect a deliberate valuation call, but without documentation it cannot be distinguished from implementation lag.",
+      "positioning_tension": "At 1.82% vs 4.26% benchmark, the -2.44 pt India underweight is the fund's second-largest country underweight, and India is on the specific-risk watchlist. The top names that are actively held\u2014Tata Consultancy Services (+0.37 pts), Axis Bank (+0.22 pts), HDFC Bank ADR (+0.18 pts)\u2014are individually overweight within what is an overall underweight country position, suggesting the subadvisors have selective exposure rather than a clean country-level short.",
+      "model_signal_tension": "STF is -0.64% (+0.38% MoM), improving and now at its 12-month best (historical percentile 100th). The algo active weight is +1.31 pts (relative to benchmark), overweight\u2014directly contrary to the -2.44 pt portfolio underweight. The signal alignment is 'partially_aligned' because the STF is still negative even though improving, but the algo is unambiguously overweight, creating the core tension.",
+      "relative_signal_readthrough": "India's STF of -0.64% ranks 17th of 44 ex-US countries, above the universe median of -1.47% (vs_median +0.84%)\u2014placing India in the 'relatively preferred' half of its universe despite a negative absolute read. At its 12-month high, India's STF is at the top of its own recent range (history_low -2.21% to current -0.64%), so both axes are pointing constructively. The relative read dominates: India is not unattractive on the evidence available; holding a large underweight requires an active bear case that is not documented.",
+      "vir_decomposition_readthrough": "Growth is the largest positive driver (+4.50%), with inflation (+3.90%) and yield (+1.34%) also positive; the only drag is valuation_adjustment_top_down (-1.32%). The MoM improvement of +0.38% is broad-based, not concentrated in one component, which increases confidence that the trend is durable rather than a single-factor spike.",
+      "market_context_readthrough": "The two FactSet Earnings Insight rows retrieved (May 2026) are US S&P 500 earnings data and carry no direct India readthrough. No India-specific approved-source market evidence is present in this pack. The internal research match (202507-EQ-CN EQ) covers China, not India, and states a neutral stance with stock-level upside\u2014not applicable to India positioning.",
+      "measured_risk_readthrough": "India is on the specific-risk watchlist at -2.44 pts active weight; top holdings by active weight within the country are TCS (+0.37 pts), Axis Bank (+0.22 pts), and HDFC Bank ADR (+0.18 pts). The idiosyncratic risk from these concentrated long positions within an overall underweight country creates an unusual risk profile: the fund is short the country beta but long a handful of large-cap Indian names.",
+      "exact_holdings_causing_it": "Tata Consultancy Services Ltd (+0.37 pts active): 0.32% via MS INTL EQ 2 LEND ACCT, 0.10% via MS INT'L EQUITY LAZARD. Axis Bank Ltd (+0.22 pts active): 0.20% via MS INT'L EQUITY HARRIS, 0.09% via MS INT'L EQUITY LAZARD. HDFC BANK LTD ADR (+0.18 pts active): 0.18% via MS INT'L EQUITY HARDING. HDFC BANK LTD (listed): -0.02 pts active net (portfolio 0.17% vs benchmark 0.19%).",
+      "exact_vir_algo_decomp_explanation": "STF -0.64% (+0.38% MoM); decomposition: growth +4.50%, yield +1.34%, inflation +3.90%, currency_usd +1.32%, valuation_adjustment_top_down -1.32%, valuation_adjustment_combined -0.38%, valuation_adjustment_bottom_up +0.56%. Algo active weight +1.31 pts (relative to benchmark), +0.19 pts MoM\u2014algo direction is overweight and strengthening.",
+      "exact_risk_contribution": "India on specific-risk watchlist at -2.44 pts active weight. Holdings within India are individually overweight (TCS +0.37, Axis Bank +0.22, HDFC ADR +0.18), creating a split profile: country-level short with name-level longs. No sector-level industry factor risk bucket was directly matched to India in the risk workbook.",
+      "exact_internal_research_excerpt": "The matched SharePoint research (202507-EQ-CN EQ-Equity Market Review CN) states: 'We maintain a neutral stance on the broad China market, but there is some upside potential at the stock level.' This is China content; no India equity thesis, active_thesis_text, or falsification conditions are recorded for this fund.",
+      "exact_external_market_context": "Only US-focused approved-source data is present: FactSet Earnings Insight (2026-05-29) reports Q1 2026 S&P 500 blended EPS growth of 28.6%. This does not pertain to Indian equities and cannot ground a bull or bear case for India.",
+      "bull_case": "The internal research shows no bear thesis for India, and the model's growth component (+4.50%) and the algo active weight (+1.31 pts overweight relative to benchmark) both point constructively; if the valuation_adjustment_top_down drag (-1.32%) continues to moderate, the STF could flip positive and the underweight would be fully off-signal. Selectively held names (TCS, Axis Bank) suggest subadvisors see stock-level value even if a top-down underweight is maintained.",
+      "bear_case": "No approved-source India market evidence is in this pack to support a bear case; the case for maintaining the underweight must rest entirely on the negative absolute STF (-0.64%) and the top-down valuation adjustment drag, which are both improving and do not provide a stable foundation for a large underweight. The China neutral note (the only available internal research) provides no India-specific insight.",
+      "devils_advocate": "The three subadvisors holding Indian names (LEND ACCT, Harris, Harding, Lazard) are each individually overweight within India, so the country-level underweight may simply reflect a missing or underweight fourth sleeve rather than a deliberate top-down call\u2014in which case the position reflects implementation gap rather than thesis.",
+      "what_would_change_my_mind": "A documented India-specific equity bear thesis with valuation-based falsification conditions would justify maintaining the underweight; absent that, a continued MoM improvement in STF toward zero combined with the algo remaining at +1.31 pts overweight would make the underweight indefensible without fresh underwriting.",
+      "pm_decision_fork": "The PM must decide: (1) can the underweight be defended at IC with only the negative absolute STF as cover, given the algo is pointing the other direction? (2) Is the split between country-level underweight and individual stock overweights coherent, or is it an unintended product of subadvisor aggregation? (3) Does the absence of any India research constitute an evidence gap that must be closed before the next review?",
+      "recommended_action": "DOCUMENT OR RESIZE",
+      "primary_pm_question": "What is the current bear case for a -2.44 pt India underweight when the algo active weight is +1.31 pts overweight, the STF is at its 12-month best, and no India equity thesis is on file?",
+      "evidence_needed_next": "An India equity review note or a documented top-down country thesis with falsification conditions; also a reconciliation of why subadvisors are individually overweight within an overall underweight country position.",
+      "confidence": "Medium-low \u2014 two of the three signal reads (algo direction, STF historical percentile) argue against the underweight; only the negative absolute STF provides partial cover.",
+      "source_quality": "model+positioning+no_india_thesis+mismatched_china_research"
     },
     {
       "label": "Information Technology",
-      "challenge_headline": "Information Technology remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
-      "descriptor": "Eq Sector | position vs signal divergence | medium priority",
-      "thesis_under_pressure": "The implicit thesis is that a overweight to Information Technology still deserves this size even though the current STF/algo stack is pointing the other way.",
-      "positioning_tension": "Fund weight is 4.75% versus benchmark 3.23%, leaving a +1.52 pt active overweight in Information Technology. Top underlying names include ASML Holding NV, SAP SE.",
-      "model_signal_tension": "STF is underweight at -3.05% (+1.53% MoM), while the algo active weight is -0.06 pts (relative to benchmark) and points underweight.",
-      "relative_signal_readthrough": "STF is -3.05% in absolute terms but ranks #36 of 43 in ex-US sectors (below the -1.31% universe median). Versus its own 12-month history the current STF is at the 18th percentile, a separate read from the peer rank.",
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
-      "market_context_readthrough": "February, 2017 Global Sectors Q1 2017 Fair Value Review Technology Follow-up Technology: Current Fair Values (as of 12/31/2016) 2 \u2026 Technology: Proposed Fair Values (as of 12/31/2016) - Revised 3 \u2026 Asset Class Name Tr...",
-      "measured_risk_readthrough": "Measured risk currently points to EM4 Semiconductors & Semiconductor Equipment as a relevant driver at 0.97% of active variance for the mapped Information Technology bucket. Key holdings in that risk bucket include ASML Holding NV, SAP SE, Dassault Systemes SE.",
-      "exact_holdings_causing_it": "ASML Holding NV (+0.16 pts active) via MS INT'L EQUITY HARDING 0.65%, MS INTL EQ GLOB EX US OPP 0.61%; SAP SE (+0.44 pts active) via MS INTL EQ GLOB EX US OPP 0.51%, MS INT'L EQUITY HARRIS 0.39%; Dassault Systemes SE (+0.45 pts active) via MS INT'L EQUITY HARDING 0.25%, MS INT'L EQUITY HARRIS 0.24%",
-      "exact_vir_algo_decomp_explanation": "STF is underweight at -3.05% (+1.53% MoM), while the algo active weight is -0.06 pts (relative to benchmark) and points underweight.",
-      "exact_risk_contribution": "Measured risk currently points to EM4 Semiconductors & Semiconductor Equipment as a relevant driver at 0.97% of active variance for the mapped Information Technology bucket. Key holdings in that risk bucket include ASML Holding NV, SAP SE, Dassault Systemes SE.",
-      "exact_internal_research_excerpt": "Direct prior thesis evidence is missing in the current packet.",
-      "exact_external_market_context": "February, 2017 Global Sectors Q1 2017 Fair Value Review Technology Follow-up Technology: Current Fair Values (as of 12/31/2016) 2 \u2026 Technology: Proposed Fair Values (as of 12/31/2016) - Revised 3 \u2026 Asset Class Name Tr...",
-      "bull_case": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming.",
-      "bear_case": "Positioning is overweight, but the STF is underweight and the algo active weight (relative to benchmark) is underweight.",
-      "devils_advocate": "The portfolio may be carrying legacy conviction in Information Technology while the current signal stack is already telling a different story.",
-      "what_would_change_my_mind": "Check the next STF decomposition, top-holding lineage inside Information Technology, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "challenge_headline": "European IT +1.52 pt overweight is fully diverging from both STF (-3.05%) and algo (-0.06 pts), with only a 2017 internal research note and no approved-source external evidence.",
+      "descriptor": "Eq Sector | both model layers underweight vs portfolio overweight | internal research 9 years stale, no external evidence",
+      "thesis_under_pressure": "No live IT thesis is on record; the closest internal research is a February 2017 Global Sectors fair-value review that references 2016 year-end data (AC World Info Technology trend PE 20x, TPO 48.74%). That note is 9 years old and cannot be treated as active underwriting. The +1.52 pt overweight is built across multiple subadvisors (Harding, Harris, Glob Ex US Opp, Lend Acct) with no single sleeve holding the position as an explicit sector bet, suggesting this is an emergent aggregate rather than a deliberate top-down overweight.",
+      "positioning_tension": "At 4.75% vs 3.23% benchmark, the +1.52 pt overweight is being driven primarily by SAP SE (+0.44 pts active, held by Glob Ex US Opp and Harris), Dassault Systemes (+0.45 pts, held by Harding and Harris), and HEXAGON AB (+0.31 pts, held entirely by Harris). ASML (+0.16 pts active) is more broadly distributed but adds incremental weight. These are four separate subadvisor conviction names, not a coordinated sector allocation\u2014so the aggregate overweight was never approved at sector level.",
+      "model_signal_tension": "STF -3.05% (+1.53% MoM) is improving but remains deeply negative and sits at only the 18th historical percentile over 12 months\u2014meaning this level is still toward the unattractive end of its own recent range despite the recovery. The algo active weight is -0.06 pts (relative to benchmark), underweight, and moved -0.38 pts MoM\u2014the algo is diverging further from the portfolio position. Both layers are unambiguously off-signal.",
+      "relative_signal_readthrough": "At -3.05%, European IT ranks 36th of 43 ex-US sectors, well below the universe median of -1.31% (vs_median -1.74%)\u2014meaning IT is not merely off-signal in absolute terms but is also near the bottom of its peer universe. The 18th historical percentile (own 12-month range -4.58% to -0.37%) indicates the sector has been cheap on a model basis for most of the trailing year but has not recovered enough to approach its own historical highs. The absolute and relative reads are aligned: IT is unattractive both absolutely and versus peers, making the overweight the most structurally exposed position in this memo.",
+      "vir_decomposition_readthrough": "Valuation_adjustment_top_down (-6.09%) dominates and is the universe-wide driver, but growth (+3.80%), yield (+1.34%), and inflation (+1.95%) are all positive offsets. The broad-based assessment means the drag is not a single anomalous component; the improvement of +1.53% MoM is the largest positive MoM move among the four challenges, but from a deeply negative base.",
+      "market_context_readthrough": "No approved-source research matched European information technology sector for this period (market_evidence_status: ABSENT). No external market evidence exists in this pack for European IT; cases cannot be grounded in approved-source data and must rest solely on the signal stack and internal research.",
+      "measured_risk_readthrough": "EM4 Semiconductors & Semiconductor Equipment contributes 0.97% of active variance and maps to Information Technology, with ASML (1.79% portfolio weight), SAP (0.90%), and Dassault Systemes (0.49%) as the primary holdings. Although ASML's absolute active weight is only +0.16 pts, its sheer size means it drives measured risk; SAP (+0.44 pts) and Dassault (+0.45 pts) are the larger active positions and both sit above benchmark weight in a sector the model rates unattractive.",
+      "exact_holdings_causing_it": "ASML Holding NV (+0.16 pts active): 0.65% via MS INT'L EQUITY HARDING, 0.61% via MS INTL EQ GLOB EX US OPP. SAP SE (+0.44 pts active): 0.51% via MS INTL EQ GLOB EX US OPP, 0.39% via MS INT'L EQUITY HARRIS. Dassault Systemes SE (+0.45 pts active): 0.25% via MS INT'L EQUITY HARDING, 0.24% via MS INT'L EQUITY HARRIS. HEXAGON AB (+0.31 pts active): 0.36% entirely via MS INT'L EQUITY HARRIS.",
+      "exact_vir_algo_decomp_explanation": "STF -3.05% (+1.53% MoM); decomposition: growth +3.80%, yield +1.34%, inflation +1.95%, currency_usd -0.19%, valuation_adjustment_top_down -6.09%, valuation_adjustment_combined -2.30%, valuation_adjustment_bottom_up +1.50%. Algo active weight -0.06 pts (relative to benchmark), -0.38 pts MoM\u2014algo is moving further underweight while portfolio remains overweight.",
+      "exact_risk_contribution": "EM4 Semiconductors & Semiconductor Equipment: 0.97% of active variance, active weight +1.52 pts, signal_alignment diverging. Key holdings: ASML (active +0.16 pts), SAP (+0.44 pts), Dassault (+0.45 pts).",
+      "exact_internal_research_excerpt": "SharePoint: '201702-EQ-Wld IT20 EQ-Fundamental Review - Global_Equity_World Information Technology.pptx' (February 2017, data as of 12/31/2016): 'AC World Info Technology Trend Fair PE 20.00, TPO_t+1 48.74%, TPO 65.00%, DPO_t+1 35.60%.' This note is 9 years old; no active_thesis_text, falsification conditions, or updated sector research is recorded for this fund.",
+      "exact_external_market_context": "No approved-source research matched European information technology sector for this period (market_evidence_status: ABSENT, reason: no_approved_source_row_matched). No external market facts for European IT can be cited from this pack.",
+      "bull_case": "The STF improved +1.53% MoM\u2014the largest improvement in the memo\u2014and the growth decomposition component (+3.80%) is positive; if the top-down valuation drag continues to moderate, the STF could approach -1.31% (peer median) within a few months, which would narrow the gap between signal and position. SAP and ASML are franchise-quality names where subadvisor conviction may be stock-specific rather than sector-level, and no approved-source evidence contradicts a constructive stock view on these names.",
+      "bear_case": "No approved-source European IT market evidence is present in this pack to support or contradict any fundamental view; the bear case rests entirely on the model signals: STF -3.05% ranks 36th of 43 ex-US sectors, the algo active weight is moving further underweight (-0.38 pts MoM), and the only internal research is 9 years old. The valuation_adjustment_top_down component at -6.09% is more than double the sector median drag and has been persistent across the 12-month history.",
+      "devils_advocate": "The +1.52 pt overweight is an emergent aggregate of at least four subadvisors each holding individual names they find attractive on a stock basis (SAP, Dassault, HEXAGON, ASML)\u2014none of them may be intending a sector-level bet. In that case, the 'overweight' is not a thesis to defend but a coordination problem to manage at the fund level, and the PM's job is aggregation governance rather than sector underwriting.",
+      "what_would_change_my_mind": "Approved-source European IT sector research showing that the valuation_adjustment_top_down component is reverting (e.g., earnings revisions closing the fair-value gap for European software/semis) would allow the PM to hold the position with documented cover; absent that, a flip in the algo active weight from underweight to overweight would be the minimum model-level threshold to maintain the overweight.",
+      "pm_decision_fork": "The PM must decide: (1) can the overweight be defended solely on bottom-up subadvisor conviction when both top-down layers disagree? (2) Does the EM4 Semiconductors risk contribution (0.97% of active variance) warrant an explicit risk budget decision rather than passive aggregation? (3) What is the plan if the algo continues to move further underweight while the portfolio stays static?",
       "recommended_action": "DEFEND OR RESIZE",
-      "primary_pm_question": "What is the live underwriting case for keeping Information Technology at +1.52 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
-      "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Information Technology, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
-      "confidence": "Structured packet summary; optional model narrative was not run.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+      "primary_pm_question": "What is the live underwriting case for maintaining a +1.52 pt European IT overweight when STF is -3.05% (36th of 43 peers), the algo active weight is -0.06 pts and moving more negative, and the only internal research dates from 2017?",
+      "evidence_needed_next": "An updated European IT or global technology sector review with current fair-value estimates, plus a subadvisor-level check confirming whether SAP/Dassault/HEXAGON/ASML are held as stock picks or as sector expressions.",
+      "confidence": "High that a challenge exists \u2014 both signal layers are unambiguously off-signal, research is stale, and no external evidence is available to support the position.",
+      "source_quality": "model+positioning+stale_2017_research+no_external_evidence_ABSENT"
     },
     {
       "label": "Industrials",
-      "challenge_headline": "Industrials remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
-      "descriptor": "Eq Sector | position vs signal divergence | medium priority",
-      "thesis_under_pressure": "Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.",
-      "positioning_tension": "Fund weight is 8.41% versus benchmark 6.62%, leaving a +1.79 pt active overweight in Industrials. Top underlying names include BAE Systems PLC, ATLAS COPCO AB.",
-      "model_signal_tension": "STF is underweight at -2.93% (+0.50% MoM), while the algo active weight is -0.70 pts (relative to benchmark) and points underweight.",
-      "relative_signal_readthrough": "STF is -2.93% in absolute terms but ranks #35 of 43 in ex-US sectors (below the -1.31% universe median). Versus its own 12-month history the current STF is at the 45th percentile, a separate read from the peer rank.",
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
-      "market_context_readthrough": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued.",
-      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "exact_holdings_causing_it": "BAE Systems PLC (+0.70 pts active) via MS INT'L EQUITY HARDING 0.43%, MS INTL EQ GLOB EX US OPP 0.28%; ATLAS COPCO AB (+0.62 pts active) via MS INTL EQ 2 LEND ACCT 0.54%, MS INT'L EQUITY HARDING 0.20%; SKF AB Class B (+0.59 pts active) via MS INTL EQ 2 LEND ACCT 0.42%, MS INTL EQ GLOB EX US OPP 0.20%",
-      "exact_vir_algo_decomp_explanation": "STF is underweight at -2.93% (+0.50% MoM), while the algo active weight is -0.70 pts (relative to benchmark) and points underweight.",
-      "exact_risk_contribution": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "exact_internal_research_excerpt": "Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.",
-      "exact_external_market_context": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued.",
-      "bull_case": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming.",
-      "bear_case": "Positioning is overweight, but the STF is underweight and the algo active weight (relative to benchmark) is underweight.",
-      "devils_advocate": "The portfolio may be carrying legacy conviction in Industrials while the current signal stack is already telling a different story.",
-      "what_would_change_my_mind": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
-      "recommended_action": "DEFEND OR RESIZE",
-      "primary_pm_question": "What specific current evidence still supports the thesis 'Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.' given the portfolio is +1.79 pts overweight and the latest STF/algo stack is underweight/underweight?",
-      "evidence_needed_next": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
-      "confidence": "Structured packet summary; optional model narrative was not run.",
-      "source_quality": "model+positioning+memory+sharepoint_research"
+      "challenge_headline": "European Industrials +1.79 pt overweight carries a documented baseline thesis but both model layers remain underweight with the valuation drag still dominant.",
+      "descriptor": "Eq Sector | both model layers underweight vs portfolio overweight | thin baseline thesis recorded April 2026",
+      "thesis_under_pressure": "A baseline thesis was recorded on April 29, 2026 (last affirmed snapshot: 2026-04-06): 'Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.' The falsification condition is: 'Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.' The dominant driver is still valuation_adjustment_top_down (-4.93%) and has not rotated, so the thesis is technically unfalsified\u2014but the overweight persists at +1.79 pts against both a negative STF (-2.93%) and a negative algo active weight (-0.70 pts relative to benchmark), with the thesis language being a monitoring placeholder rather than a conviction statement.",
+      "positioning_tension": "At 8.41% vs 6.62% benchmark, the +1.79 pt overweight is driven by BAE Systems PLC (+0.70 pts active, via Harding 0.43%, Glob Ex US Opp 0.28%), ATLAS COPCO AB (+0.62 pts, via Lend Acct 0.54%, Harding 0.20%), SKF AB Class B (+0.59 pts, via Lend Acct 0.42%, Glob Ex US Opp 0.20%), and Legrand SA (+0.42 pts, via Lend Acct 0.51%). Multiple subadvisors hold different names, suggesting again an emergent aggregate\u2014defense (BAE), industrials (Atlas Copco, SKF), and electricals (Legrand) are economically distinct sub-themes rolled into a single sector overweight.",
+      "model_signal_tension": "STF -2.93% (+0.50% MoM) is improving modestly but remains at the 45th percentile of its own 12-month range (history_low -3.67%, history_high -2.27%), meaning the current level is near the midpoint of its own recent range\u2014neither at a historically attractive point nor at its worst. The algo active weight is -0.70 pts (relative to benchmark), +0.10 pts MoM, pointing underweight with no sign of flipping. Both layers point underweight.",
+      "relative_signal_readthrough": "Industrials STF of -2.93% ranks 35th of 43 ex-US sectors, below the universe median of -1.31% (vs_median -1.62%). Unlike France or India (which rank above their peer medians), Industrials is both absolutely negative and below its universe median, providing no 'relatively preferred' offset. The 45th historical percentile means the signal is near the middle of its own range\u2014not historically extreme in either direction\u2014which reduces urgency but does not change the directional read.",
+      "vir_decomposition_readthrough": "Valuation_adjustment_top_down (-4.93%) dominates the drag; growth (+1.90%), yield (+2.48%), inflation (+1.83%), and currency_usd (+0.18%) are all positive but insufficient to offset. The MoM improvement of +0.50% is modest and concentrated in the same valuation_adjustment_top_down driver\u2014the thesis falsification condition (driver rotation) has not been triggered, but the improvement is small enough that the position's signal gap is not closing materially.",
+      "market_context_readthrough": "The two FactSet Earnings Insight rows retrieved (May 2026) cover US S&P 500 Q1 2026 earnings (28.6% blended growth, positive Q2 guidance balance). This is US-market data; there is no European Industrials-specific approved-source market evidence in this pack. The SharePoint research (202506-EQ-US ID EQ) is a US Industrials Sector Report from May 2025 stating a neutral stance with some undervalued industries\u2014this covers US industrials, not European, and is 16 months old relative to the review date.",
+      "measured_risk_readthrough": "No direct measured-risk bucket was matched to European Industrials in the risk workbook. DM4 Machinery does appear in the top industry risk drivers at 0.93% of active variance, which is a plausible proxy, but the link was not confirmed in the pack. The absence of a direct risk match means the active risk contribution of this position cannot be precisely quantified from available evidence.",
+      "exact_holdings_causing_it": "BAE Systems PLC (+0.70 pts active): 0.43% via MS INT'L EQUITY HARDING, 0.28% via MS INTL EQ GLOB EX US OPP. ATLAS COPCO AB (+0.62 pts active): 0.54% via MS INTL EQ 2 LEND ACCT, 0.20% via MS INT'L EQUITY HARDING. SKF AB Class B (+0.59 pts active): 0.42% via MS INTL EQ 2 LEND ACCT, 0.20% via MS INTL EQ GLOB EX US OPP. Legrand SA (+0.42 pts active): 0.51% entirely via MS INTL EQ 2 LEND ACCT.",
+      "exact_vir_algo_decomp_explanation": "STF -2.93% (+0.50% MoM); decomposition: growth +1.90%, yield +2.48%, inflation +1.83%, currency_usd +0.18%, valuation_adjustment_top_down -4.93%, valuation_adjustment_combined -2.21%, valuation_adjustment_bottom_up +0.52%. Algo active weight -0.70 pts (relative to benchmark), +0.10 pts MoM\u2014both layers underweight, neither close to flipping.",
+      "exact_risk_contribution": "No direct sector risk match confirmed in the risk workbook for European Industrials. DM4 Machinery (0.93% of active variance) is a plausible proxy but not explicitly linked in the pack. Active weight +1.79 pts; no specific-risk watchlist entry for this sector.",
+      "exact_internal_research_excerpt": "Active thesis (recorded 2026-04-29, last affirmed 2026-04-06): 'Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.' Falsification conditions: 'Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.' SharePoint: US Industrials Sector Report (May 2025) \u2014 'We have a neutral stance on the industrials sector, but some industries are undervalued' \u2014 covers US, not European industrials.",
+      "exact_external_market_context": "FactSet Earnings Insight (2026-05-29): Q1 2026 S&P 500 blended EPS growth 28.6% vs 13.1% initial estimate; Q2 2026 guidance balance positive (56 positive vs 46 negative S&P 500 companies). This is US earnings data; no European industrials earnings or PMI data is present in this pack. The available evidence cannot support a fundamental bull or bear case for European industrials specifically.",
+      "bull_case": "The baseline thesis remains technically unfalsified: valuation_adjustment_top_down is still the dominant driver and has not rotated, which is precisely the condition the PM set for reassessment. The US Industrials internal research (May 2025) identifies that 'some industries are undervalued,' and names like BAE Systems (defense, high order book visibility) and Atlas Copco (industrial automation) may be held on stock-specific grounds that survive a negative sector-level STF.",
+      "bear_case": "No approved-source European industrials market evidence (PMI, earnings, order data) is in this pack; the bear case rests on the signal stack alone: STF -2.93% ranks 35th of 43 peers, both model layers point underweight, and the +0.50% MoM STF improvement is insufficient to change direction. The baseline thesis is explicitly a placeholder ('maintain baseline tracking'), not a conviction argument, which means the position has no active defense if the PM is challenged at IC.",
+      "devils_advocate": "BAE Systems, Atlas Copco, SKF, and Legrand represent defense, industrial automation, bearings, and electrical infrastructure\u2014four distinct industrial sub-themes held by different subadvisors, none of whom may be expressing a European Industrials sector view. The sector overweight is the sum of uncoordinated stock picks, and the thesis filed is a self-described tracking placeholder rather than an underwriting rationale.",
+      "what_would_change_my_mind": "The falsification condition is already defined: a rotation of the dominant decomposition driver away from valuation_adjustment_top_down, or a material weakening of that driver (currently -4.93%), would trigger reassessment. Quantitatively, a move of valuation_adjustment_top_down above -3.00% (i.e., narrowing the drag by roughly 200 bps) alongside an algo flip to overweight would constitute a signal-level green light for the current size.",
+      "pm_decision_fork": "The PM must decide: (1) is the existing baseline thesis\u2014a monitoring placeholder from April 2026\u2014adequate documentation for a +1.79 pt overweight at IC? (2) Given that BAE/Atlas Copco/SKF are held on stock-specific logic, should the sector-level analysis be replaced by holding-level documentation? (3) If DM4 Machinery risk (0.93% active variance proxy) is growing, does the Industrials overweight need a risk budget cap?",
+      "recommended_action": "DOCUMENT",
+      "primary_pm_question": "Does the April 2026 baseline thesis placeholder constitute sufficient IC-defensible documentation for a +1.79 pt Industrials overweight against a double-underweight signal stack, and have the falsification conditions moved closer to being triggered?",
+      "evidence_needed_next": "An updated European Industrials note or explicit subadvisor rationale for BAE/Atlas Copco/SKF positions; PMI and order-book data for European manufacturing would either confirm or undermine the growth and yield components supporting the positive side of the STF decomposition.",
+      "confidence": "Medium \u2014 the thesis is filed and unfalsified, but it is explicitly a monitoring placeholder rather than a conviction statement, and neither model layer supports the overweight.",
+      "source_quality": "model+positioning+thin_placeholder_thesis (Apr 2026)+US_industrials_research_not_European"
     }
   ],
   "pm_questions": [
     {
       "label": "France",
-      "question": "What current evidence still justifies keeping France at this size rather than treating it as a position that needs to be refreshed?",
-      "why_now": "France still carries a meaningful overweight even though only part of the signal stack agrees."
-    },
-    {
-      "label": "India",
-      "question": "What current evidence still justifies keeping India at this size rather than treating it as a position that needs to be refreshed?",
-      "why_now": "India still carries a meaningful underweight even though only part of the signal stack agrees."
+      "question": "Is the +2.88 pt France overweight an intentional country conviction that can be defended at IC with a dated equity thesis, or is it an unmanaged aggregate of subadvisor positions that no single sleeve owner has underwritten at country level?",
+      "why_now": "France is on the specific-risk watchlist, BNP Paribas feeds the fund's largest measured industry risk driver (DM4 Banks 3.58% of active variance), and the closest research is an 18-month-old global ARFR note\u2014the October review is the right moment to either document or resize."
     },
     {
       "label": "Information Technology",
-      "question": "What is the live underwriting case for keeping Information Technology at +1.52 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
-      "why_now": "Information Technology remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark)."
+      "question": "Given that both the STF (-3.05%, ranked 36th of 43 peers) and the algo active weight (-0.06 pts, moving more negative at -0.38 pts MoM) are pointing underweight, what is the specific stock-level or sector-level evidence that justifies maintaining the +1.52 pt European IT overweight, and who owns that thesis at fund level?",
+      "why_now": "The only internal research dates from 2017, no approved-source external evidence is in the pack, and the algo is diverging further from the portfolio\u2014the position cannot survive IC scrutiny without a named underwriter and a current rationale."
     },
     {
-      "label": "Industrials",
-      "question": "What specific current evidence still supports the thesis 'Maintain baseline thesis tracking for the European industrials overweight so future decomposition changes can be evaluated explicitly.' given the portfolio is +1.79 pts overweight and the latest STF/algo stack is underweight/underweight?",
-      "why_now": "Industrials remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark)."
+      "label": "India",
+      "question": "With India's STF at its 12-month best and the algo active weight at +1.31 pts overweight, what is the live fundamental or valuation argument for maintaining a -2.44 pt underweight, and does the split between country-level underweight and stock-level overweights in TCS, Axis Bank, and HDFC reflect an intentional view or a subadvisor coordination gap?",
+      "why_now": "The signal stack is shifting toward India (both STF MoM improvement and algo direction) and the position is not backed by India-specific research\u2014inaction is itself an active decision that needs to be documented before the next review."
     }
   ],
   "follow_up": [
     {
+      "label": "Information Technology",
+      "action": "Commission an updated European IT sector review (or confirm whether the existing 2017 global technology fair-value note has a live successor) and obtain subadvisor-level documentation from Harding, Harris, Glob Ex US Opp, and Lend Acct confirming whether SAP, Dassault, HEXAGON, and ASML are held as stock picks or as sector expressions.",
+      "why_it_matters": "Without this documentation, the +1.52 pt overweight against a double-underweight signal stack (STF -3.05%, algo -0.06 pts and moving more negative) cannot be defended at IC, and the EM4 Semiconductors risk contribution (0.97% active variance) is running without an explicit owner."
+    },
+    {
       "label": "France",
-      "action": "Review the security-level construction underneath France and decide whether the current expression is still the cleanest way to hold the view.",
-      "why_it_matters": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that France is still an intentional expression."
+      "action": "Establish whether a France equity underwriting note exists outside the October 2024 ARFR deck, and map the BNP Paribas sub-position against the DM4 Banks risk budget (3.58% of active variance) to determine whether a position-level offset is warranted independent of the country-level decision.",
+      "why_it_matters": "France is the fund's largest country overweight, sits on the specific-risk watchlist, and its top holding directly amplifies the fund's single largest measured industry risk driver\u2014two separate risk channels require two separate owner decisions."
     },
     {
       "label": "India",
-      "action": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that India is still an intentional expression.",
-      "why_it_matters": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that India is still an intentional expression."
-    },
-    {
-      "label": "Information Technology",
-      "action": "Review the security-level construction underneath Information Technology and decide whether the current expression is still the cleanest way to hold the view.",
-      "why_it_matters": "Check the next STF decomposition, top-holding lineage inside Information Technology, and any updated research or earnings/rates context that would explain why the active position should stay off-signal."
-    },
-    {
-      "label": "Industrials",
-      "action": "Review the security-level construction underneath Industrials and decide whether the current expression is still the cleanest way to hold the view.",
-      "why_it_matters": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially."
+      "action": "Produce or locate a current India equity thesis that addresses the STF-at-12-month-best / algo-overweight tension, and reconcile the country-level underweight (-2.44 pts) with the stock-level overweights in TCS, Axis Bank, and HDFC ADR across at least three subadvisors.",
+      "why_it_matters": "The signal stack is beginning to point constructively toward India and the position is running counter to it without any documented rationale; the longer this goes without resolution, the harder it becomes to explain at IC if India outperforms."
     }
   ],
   "dashboard_highlights": [
     {
-      "label": "Packet highlight 1",
-      "highlight": "Largest underweight: Canada (-4.72 pts), with STF underweight and the algo active weight underweight (relative to benchmark)."
+      "label": "France",
+      "highlight": "+2.88 pt overweight (7.21% vs 4.33%), specific-risk watchlist, STF -0.46% at 12-month best, algo +2.14 pts overweight\u2014partially aligned but no live France equity thesis; closest research is Oct 2024 global ARFR note."
     },
     {
-      "label": "Packet highlight 2",
-      "highlight": "Largest overweight: France (2.88 pts), with decomposition reading broad_based."
+      "label": "India",
+      "highlight": "-2.44 pt underweight (1.82% vs 4.26%), STF -0.64% at 12-month best (+0.38% MoM), algo +1.31 pts overweight\u2014portfolio runs counter to both improving signal reads with no India-specific research on file."
     },
     {
-      "label": "Packet highlight 3",
-      "highlight": "23 material positions are directionally fighting the current STF/algo read."
+      "label": "Information Technology",
+      "highlight": "+1.52 pt overweight (4.75% vs 3.23%), STF -3.05% ranked 36th of 43 ex-US sectors, algo -0.06 pts moving more negative; ABSENT external evidence, 2017 internal research only\u2014most clearly diverging position in the fund."
     },
     {
-      "label": "Packet highlight 4",
-      "highlight": "US_EQ risk context: active predicted risk 2.79%, active share 70.8%, risk date used 2026-07-20."
+      "label": "Industrials",
+      "highlight": "+1.79 pt overweight (8.41% vs 6.62%), STF -2.93% ranked 35th of 43 peers, algo -0.70 pts\u2014baseline thesis filed April 2026 is a monitoring placeholder; valuation drag dominant driver has not rotated, falsification condition untriggered but unchallenged."
     },
     {
-      "label": "Missing Vir Rows",
-      "highlight": "2 exposure rows do not have matched STF context."
+      "label": "DM4 Banks risk",
+      "highlight": "Largest industry risk driver at 3.58% of active variance; BNP Paribas (+0.53 pts active, via two France sleeves) is the primary contributor\u2014France country overweight and DM4 Banks risk are not independent decisions."
     },
     {
-      "label": "Missing Algo Rows",
-      "highlight": "4 exposure rows do not have matched algo context."
-    },
-    {
-      "label": "Logical Vs Source Snapshot Date",
-      "highlight": "The review month is 2026-09-30, while the source holdings snapshot embedded in the rolled artifact is 2026-10-06."
-    },
-    {
-      "label": "Algo Scaled To Percentage Points",
-      "highlight": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
+      "label": "Research staleness",
+      "highlight": "Three of four challenged positions carry research that is either absent (IT: 2017 global note), mismatched (India: China equity note), or cross-asset and pre-snapshot (France: Oct 2024 ARFR); only Industrials has a filed (but thin) thesis dated within the review year."
     }
   ]
 }

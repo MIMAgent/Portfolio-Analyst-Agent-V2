@@ -1,213 +1,190 @@
 {
-  "executive_summary": "Largest underweight: Information Technology (-6.39 pts), with STF underweight and the algo active weight underweight (relative to benchmark). Largest overweight: United States Mid Value (7.35 pts), with decomposition reading broad_based. 16 material positions are directionally fighting the current STF/algo read. The largest current active expression is United States Mid Value at 7.35 percentage points, with partially_aligned signal support. The clearest position-versus-signal tension is United States Mid Value, where positioning is overweight while the STF is underweight and the algo active weight (relative to benchmark) is overweight. Measured active risk is currently most concentrated in industry risk at 3.10%. Risk context uses the latest business-day row on or before 2026-09-30: 2026-07-20.",
+  "executive_summary": "MStar Global Opportunistic Equity carries four off-signal positions that collectively demand PM attention at the October IC. The fund's largest active bet is a +7.35 pt overweight to United States Mid Value (11.02% vs 3.67% benchmark), driven entirely by the Lazard sleeve with no documented fund-level thesis and now flagged on the specific-risk watchlist. Communication Services (+2.80 pts) is the only challenge where both model layers \u2014 STF -1.49% and algo active weight -1.41 pts \u2014 simultaneously point underweight, yet the overweight persists; internal research rates the sector neutral. United Kingdom (+3.38 pts) is partially supported by an improving STF (+0.28% MoM) and a positive algo read, but the most recent conviction update dates to May 2024 and records no change since December 2022. Health Care (+1.61 pts) faces the sharpest deterioration: STF has fallen -0.33% MoM to its 12-month low, both model layers are underweight, and the position is concentrated in a single Lazard name (Dentsply Sirona, +0.83 pts active) with no current approved-source market evidence in the pack.",
   "key_insights": [
     {
       "label": "United States Mid Value",
-      "insight": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "why_it_matters": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit."
+      "insight": "The +7.35 pt overweight is the fund's largest active bet and is driven almost entirely by a single subadvisor (MS GLOBAL OPP EQ LAZARD), accumulating in names like Omnicom (+1.52 pts), Fiserv (+1.35 pts), and Cognizant (+1.11 pts) that no documented fund-level thesis underwrites.",
+      "why_it_matters": "The position lands on the specific-risk watchlist; without a fund-level thesis on record, it cannot be defended as intentional conviction \u2014 it is effectively an emergent subadvisor aggregate that the PM needs to own or disclaim."
     },
     {
       "label": "Communication Services",
-      "insight": "Communication Services remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
-      "why_it_matters": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming."
-    },
-    {
-      "label": "United Kingdom",
-      "insight": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "why_it_matters": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit."
+      "insight": "This is the fund's cleanest signal-versus-position divergence: both STF (-1.49%, -0.09% MoM) and the algo active weight (-1.41 pts relative to benchmark) point underweight while the fund sits +2.80 pts overweight, with the June 2025 internal review explicitly stating a neutral sector stance.",
+      "why_it_matters": "Unlike the partially-aligned challenges, there is no model layer supporting the overweight; the PM must either articulate a fundamental override or acknowledge this as an unintended residual."
     },
     {
       "label": "Health Care",
-      "insight": "Health Care remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
-      "why_it_matters": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming."
+      "insight": "STF has deteriorated to its 12-month trough (-1.51%, now at the 0th historical percentile), the algo active weight has shifted further underweight (-0.43 pts MoM to -0.88 pts), and the sector overweight (+1.61 pts) is largely a function of one undocumented Lazard name (Dentsply Sirona, +0.83 pts) with no external research in the pack.",
+      "why_it_matters": "The signal deterioration is directional and sustained rather than noise-driven; the absence of any approved-source market support means the overweight rests solely on a January 2025 internal note that flags only selective sub-industry value."
     }
   ],
   "challenge_brief": [
     {
       "label": "United States Mid Value",
-      "challenge_headline": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "descriptor": "Eq Size / Style | material position needing refresh | high priority",
-      "thesis_under_pressure": "The implicit thesis is that United States Mid Value remains an intentional conviction position rather than legacy implementation residue.",
-      "positioning_tension": "Fund weight is 11.02% versus benchmark 3.67%, leaving a +7.35 pt active overweight in United States Mid Value. Top underlying names include Omnicom Group Inc, Fiserv Inc.",
-      "model_signal_tension": "STF is underweight at -0.54% (+0.62% MoM), while the algo active weight is +1.60 pts (relative to benchmark) and points overweight.",
-      "relative_signal_readthrough": "STF is -0.54% in absolute terms but ranks #2 of 9 in global styles (above the -2.15% universe median). Versus its own 12-month history the current STF is at the 100th percentile, a separate read from the peer rank.",
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
-      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
-      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "exact_holdings_causing_it": "Omnicom Group Inc (+1.52 pts active) via MS GLOBAL OPP EQ LAZARD 1.37%, Vanguard Communication Services ETF 0.08%; Fiserv Inc (+1.35 pts active) via MS GLOBAL OPP EQ LAZARD 1.37%, Vanguard Total Stock Market ETF 0.00%; Cognizant Technology Solutions Corp Class A (+1.11 pts active) via MS GLOBAL OPP EQ LAZARD 1.12%, FIDELITY MSCI INFO. TECH. 0.01%",
-      "exact_vir_algo_decomp_explanation": "STF is underweight at -0.54% (+0.62% MoM), while the algo active weight is +1.60 pts (relative to benchmark) and points overweight.",
-      "exact_risk_contribution": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "exact_internal_research_excerpt": "Direct prior thesis evidence is missing in the current packet.",
-      "exact_external_market_context": "No matched current research deck was available for a direct market-context readthrough in this packet.",
-      "bull_case": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
-      "bear_case": "This is a material active position that still needs an explicit current-month rationale.",
-      "devils_advocate": "The United States Mid Value position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
-      "what_would_change_my_mind": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "challenge_headline": "Largest fund overweight (+7.35 pts) is a subadvisor aggregate with no fund-level thesis and sits on the specific-risk watchlist despite a partly-supportive model.",
+      "descriptor": "Eq Size/Style | emergent subadvisor aggregate, no fund-level thesis | specific-risk watchlist flagged",
+      "thesis_under_pressure": "No fund-level thesis is on record for this overweight. The position is assembled almost entirely through MS GLOBAL OPP EQ LAZARD conviction in Omnicom (+1.52 pts), Fiserv (+1.35 pts), and Cognizant (+1.11 pts), supplemented marginally by ETF exposures. Without a documented fund rationale, the bet cannot be distinguished from Lazard implementation residue that has aggregated to an unintended 7-point active weight.",
+      "positioning_tension": "The fund holds 11.02% versus a benchmark weight of 3.67%, a +7.35 pt active overweight that is the largest single active bet in the portfolio. This overweight is spread across 129 securities, but the top three names alone account for roughly 4 pts of the active position, all sourced through the Lazard sleeve \u2014 so the PM is effectively inheriting a subadvisor sector tilt without a fund-level sign-off.",
+      "model_signal_tension": "STF is -0.54% (+0.62% MoM improvement), placing it negative in absolute terms but improving. The algo active weight is +1.60 pts (relative to benchmark), directionally aligned with the overweight. The partial alignment means the model does not cleanly condemn the position, but the STF is still negative \u2014 the model is not endorsing it either, and the gap between a +7.35 pt fund active weight and a +1.60 pt algo active weight suggests the portfolio is running roughly 4.5x the model's implied conviction.",
+      "relative_signal_readthrough": "STF -0.54% ranks #2 of 9 global styles (above the -2.15% universe median by +1.62%), making United States Mid Value the second-most-attractive style on the model. Separately, the current STF sits at the 100th percentile of its own 12-month history (range: -2.17% to -0.54%), meaning this is simultaneously the best relative rank and the highest absolute STF the exposure has seen in a year. The relative read is the dominant framing here: while the STF is negative, it is as good as it has been, and only United States Sml Value (STF +0.39%) is more attractive in the universe. This softens the off-signal framing but does not justify a +7.35 pt overweight versus a +1.60 pt algo read.",
+      "vir_decomposition_readthrough": "The STF decomposition shows yield (+4.03%) and inflation (+2.51%) as positive contributors, with top-down valuation adjustment (-1.54%) and currency (-1.68%) as offsets. The +0.62% MoM improvement is broad-based rather than a single-component swing, which makes it more credible \u2014 but the valuation adjustment remaining negative means the model is not fully endorsing the style on a fundamental basis.",
+      "market_context_readthrough": "No approved-source research matched US mid-cap value equities for this period. There is no external market evidence in this pack; cases must rest on internal research and model signals only.",
+      "measured_risk_readthrough": "United States Mid Value appears on the specific-risk watchlist with a 7.35 pt active weight, and US4 Size is the largest modeled style risk driver at 6.62% of active variance. This means the size tilt embedded in the mid-cap overweight is the single biggest style risk contributor in the fund \u2014 it is not a marginal bet.",
+      "exact_holdings_causing_it": "Omnicom Group Inc: portfolio 1.53%, benchmark 0.02%, active +1.52 pts \u2014 sourced 1.37% via MS GLOBAL OPP EQ LAZARD. Fiserv Inc: portfolio 1.37%, benchmark 0.02%, active +1.35 pts \u2014 sourced 1.37% via Lazard. Cognizant Technology Solutions Corp Class A: portfolio 1.13%, benchmark 0.02%, active +1.11 pts \u2014 sourced 1.12% via Lazard. Nike Inc Class B: portfolio 0.65%, active +0.62 pts \u2014 split across Lazard (0.42%), Consumer sleeve (0.13%), and Direct Equities basket (0.09%).",
+      "exact_vir_algo_decomp_explanation": "STF now -0.54% (expressed from -0.005357), +0.62% MoM delta. Algo active weight +1.60 pts relative to benchmark, +0.47 pts MoM. Signal alignment: partially_aligned. Decomposition dominant driver: yield (+4.03%). Full decomposition: growth +1.90%, yield +4.03%, inflation +2.51%, currency_usd -1.68%, valuation_adjustment_top_down -1.54%, valuation_adjustment_bottom_up +1.04%, valuation_adjustment_combined -0.25%.",
+      "exact_risk_contribution": "United States Mid Value is on the specific-risk watchlist (active weight 7.35 pts). US4 Size is the largest modeled style risk driver at 6.62% of active variance. No direct measured-risk decomposition row is available for this exposure in the current risk workbook; the specific-risk flag and the size factor contribution are the best available proxies.",
+      "exact_internal_research_excerpt": "No internal research match exists for United States Mid Value. The sharepoint_match_status is 'unmatched' and no active thesis text is on record. This is a material evidence gap.",
+      "exact_external_market_context": "No approved-source research matched US mid-cap value equities for this period (market_evidence_status: ABSENT). No external market facts are available in this pack and none are asserted.",
+      "bull_case": "The model's relative read is the strongest available argument: STF -0.54% ranks #2 of 9 global styles and is at its 12-month high, suggesting mid-cap value is the most attractively positioned style after small-cap value on a top-down basis. If the Lazard sleeve names (Omnicom, Fiserv, Cognizant) carry idiosyncratic bottom-up value that the top-down model underweights, the subadvisor-level conviction could be legitimate \u2014 but no approved-source evidence or internal research in this pack corroborates that.",
+      "bear_case": "No approved-source external research supports the overweight, no fund-level thesis is documented, and the position is running at roughly 4.5x the model's implied active weight. The specific-risk watchlist flag means the concentration in a handful of Lazard names is already registering as a risk concern; if those names disappoint, the fund has no documented buffer.",
+      "devils_advocate": "Even if the Lazard sleeve has a legitimate bottom-up case for Omnicom, Fiserv, and Cognizant individually, the sector-level aggregate was never approved as a +7.35 pt fund-level style bet. The risk is not necessarily that each name is wrong \u2014 it is that the fund is inadvertently carrying a large unhedged mid-cap value tilt that no IC decision ratified.",
+      "what_would_change_my_mind": "A documented fund-level thesis for the United States Mid Value overweight at this scale, or confirmation that the Lazard sleeve's active weight is intentionally allowed to aggregate to this size at the fund level, combined with a positive turn in the STF to above zero, would shift the framing from 'undefended residue' to 'approved conviction'.",
+      "pm_decision_fork": "Either (a) formally document and defend the +7.35 pt overweight as an intentional fund-level conviction supported by a refreshed research rationale, or (b) treat it as an emergent Lazard aggregate that exceeds sanctioned fund-level sizing and bring it to IC for a sizing review.",
       "recommended_action": "REVIEW AT IC",
-      "primary_pm_question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
-      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
-      "confidence": "Structured packet summary; optional model narrative was not run.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis"
+      "primary_pm_question": "Is the +7.35 pt United States Mid Value overweight a deliberate fund-level bet, or is it an unreviewed aggregate of Lazard sleeve positions that has never been signed off at the fund level?",
+      "evidence_needed_next": "Fund-level thesis document for this overweight; confirmation of whether Lazard sleeve sizing is governed at the fund level; next month's STF/algo to check whether the improving trend continues.",
+      "confidence": "High that the documentation gap is real. Moderate that the signal partially softens the risk (STF improving, algo aligned). Low that the current size is intentionally sanctioned.",
+      "source_quality": "Model signals and positioning data are current. No internal research, no external market evidence. Risk contribution inferred via specific-risk watchlist and factor proxy."
     },
     {
       "label": "Communication Services",
-      "challenge_headline": "Communication Services remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
-      "descriptor": "Eq Sector | position vs signal divergence | medium priority",
-      "thesis_under_pressure": "The implicit thesis is that a overweight to Communication Services still deserves this size even though the current STF/algo stack is pointing the other way.",
-      "positioning_tension": "Fund weight is 8.85% versus benchmark 6.05%, leaving a +2.80 pt active overweight in Communication Services. Top underlying names include META PLATFORMS INC, ALPHABET INC.",
-      "model_signal_tension": "STF is underweight at -1.49% (-0.09% MoM), while the algo active weight is -1.41 pts (relative to benchmark) and points underweight.",
-      "relative_signal_readthrough": "STF is -1.49% in absolute terms but ranks #26 of 54 in global sectors (above the -1.52% universe median). Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
-      "market_context_readthrough": "Equity Sector Review: US Communication Services We are neutral on the sector, but we expect Alphabet and Meta to remain dominant.",
-      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "exact_holdings_causing_it": "META PLATFORMS INC (+0.31 pts active) via Vanguard Communication Services ETF 1.13%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.45%; ALPHABET INC (-0.07 pts active) via Vanguard Communication Services ETF 0.78%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.70%; Omnicom Group Inc (+1.52 pts active) via MS GLOBAL OPP EQ LAZARD 1.37%, Vanguard Communication Services ETF 0.08%",
-      "exact_vir_algo_decomp_explanation": "STF is underweight at -1.49% (-0.09% MoM), while the algo active weight is -1.41 pts (relative to benchmark) and points underweight.",
-      "exact_risk_contribution": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "exact_internal_research_excerpt": "Direct prior thesis evidence is missing in the current packet.",
-      "exact_external_market_context": "Equity Sector Review: US Communication Services We are neutral on the sector, but we expect Alphabet and Meta to remain dominant.",
-      "bull_case": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming.",
-      "bear_case": "Positioning is overweight, but the STF is underweight and the algo active weight (relative to benchmark) is underweight.",
-      "devils_advocate": "The portfolio may be carrying legacy conviction in Communication Services while the current signal stack is already telling a different story.",
-      "what_would_change_my_mind": "Check the next STF decomposition, top-holding lineage inside Communication Services, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "challenge_headline": "Both model layers point underweight yet the fund holds a +2.80 pt overweight, with internal research neutral and the largest active name (Omnicom, +1.52 pts) a cross-classification from the Lazard sleeve.",
+      "descriptor": "Eq Sector | full signal divergence, both STF and algo underweight | June 2025 internal research neutral",
+      "thesis_under_pressure": "The June 2025 internal sector review (202506-EQ-US TL EQ-Com Services Sector Review.pptx) takes a neutral stance \u2014 'we expect Alphabet and Meta to remain dominant' \u2014 but does not provide a positive overweight thesis. No active thesis text is on record in the evidence pack. The +2.80 pt overweight therefore has no documented conviction behind it at either the fund or research level.",
+      "positioning_tension": "Fund weight 8.85% vs benchmark 6.05%, a +2.80 pt active overweight. The single largest driver is Omnicom Group Inc (+1.52 pts active, entirely via Lazard), a name whose primary sector classification is Communication Services but whose economic exposure resembles advertising/media rather than the Alphabet/Meta digital platforms the internal research discusses. Meta is only modestly overweight (+0.31 pts) and Alphabet is effectively flat (-0.07 pts for ALPHABET INC, -0.82 pts for Alphabet Class C combined).",
+      "model_signal_tension": "STF -1.49% (-0.09% MoM, continuing to deteriorate). Algo active weight -1.41 pts relative to benchmark (-1.39 pts MoM move, the sharpest single-month deterioration among the four challenges). Both model layers are directionally underweight and moving further in that direction \u2014 this is the only challenge in this memo where neither signal provides any support for the current overweight.",
+      "relative_signal_readthrough": "STF -1.49% ranks #26 of 54 global sectors, essentially at the universe median (vs_median +0.03%), so the relative read provides no material comfort. The historical percentile is 82nd over 12 months (range -3.01% to -1.38%), meaning the STF is near the better end of its own recent range \u2014 but that range is entirely negative, and the MoM direction is worsening. The absolute negative sign and median peer rank are the dominant reads; the historical percentile is not a compensating factor.",
+      "vir_decomposition_readthrough": "Decomposition dominant driver is valuation_adjustment_top_down (-4.08%), which is the single largest drag and is structurally driven rather than transient. Positive contributors (growth +3.00%, yield +2.57%, inflation +2.51%) do not offset the valuation penalty. Bottom-up valuation is positive (+2.02%) but insufficient. The broad-based assessment confirms no single component reversal will flip the STF sign.",
+      "market_context_readthrough": "No approved-source research matched US Communication Services for this period (market_evidence_status: ABSENT). The only available context is the internal June 2025 sector review, which rates the sector neutral. No external market facts are available in this pack.",
+      "measured_risk_readthrough": "No direct measured-risk row was found for Communication Services in the current risk workbook. The sector does not appear in the top industry risk drivers, suggesting the active weight is not currently the dominant risk contributor \u2014 but the absence of a risk flag does not validate the off-signal positioning.",
+      "exact_holdings_causing_it": "META PLATFORMS INC: portfolio 1.70%, benchmark 1.39%, active +0.31 pts \u2014 sourced via Vanguard Communication Services ETF (1.13%) and Direct Equities basket (0.45%). ALPHABET INC: portfolio 1.68%, benchmark 1.75%, active -0.07 pts. Alphabet Inc Class C: portfolio 0.59%, benchmark 1.41%, active -0.82 pts. Omnicom Group Inc: portfolio 1.53%, benchmark 0.02%, active +1.52 pts \u2014 sourced 1.37% via Lazard. Net Alphabet (both share classes combined) is actively underweight by approximately -0.89 pts; the overweight is carried almost entirely by Omnicom and to a lesser extent Meta.",
+      "exact_vir_algo_decomp_explanation": "STF now -1.49% (from -0.014908), -0.09% MoM. Algo active weight -1.41 pts relative to benchmark, -1.39 pts MoM. Signal alignment: diverging. Decomposition dominant driver: valuation_adjustment_top_down (-4.08%). Full decomposition: growth +3.00%, yield +2.57%, inflation +2.51%, currency_usd -1.68%, valuation_adjustment_top_down -4.08%, valuation_adjustment_bottom_up +2.02%, valuation_adjustment_combined -1.03%.",
+      "exact_risk_contribution": "Communication Services does not appear in the specific-risk watchlist or the top industry risk driver table in the current risk workbook. No measured active risk contribution is directly quantified for this exposure in this pack.",
+      "exact_internal_research_excerpt": "June 2025 sector review (202506-EQ-US TL EQ-Com Services Sector Review.pptx): 'We are neutral on the sector, but we expect Alphabet and Meta to remain dominant.' No active overweight thesis is documented. The internal research stance is neutral, not constructive.",
+      "exact_external_market_context": "No approved-source research matched US Communication Services for this period (market_evidence_status: ABSENT). No external market facts are asserted.",
+      "bull_case": "The internal research identifies Alphabet and Meta as structural dominants, and the bottom-up valuation component of the STF is positive (+2.02%), suggesting some individual names within the sector are not expensive on a bottom-up basis. If the Lazard sleeve's Omnicom position reflects a specific advertising-cycle recovery thesis, that could justify a modest overweight \u2014 but no such thesis is documented in this pack.",
+      "bear_case": "The top-down valuation adjustment (-4.08%) is the sector's dominant STF drag and is broad-based, meaning the sector-level price is structurally elevated relative to the model's fair value assessment. The algo active weight has moved -1.39 pts in a single month, the sharpest deterioration among the four challenges, suggesting momentum is accelerating against the position. No approved-source external research is available to counter this.",
+      "devils_advocate": "The +2.80 pt overweight is arithmetically driven by Omnicom (+1.52 pts), a name whose advertising-services business has limited operational overlap with the digital platforms Alphabet and Meta that the sector review discusses. If the overweight is really a Lazard-specific Omnicom call misclassified as a sector bet, the PM is carrying sector-level signal risk for a sub-industry position that should be evaluated on its own terms.",
+      "what_would_change_my_mind": "A documented fundamental overweight thesis for the Communication Services sector as a whole, or a reclassification of Omnicom as a standalone conviction name with explicit fund-level sign-off that is distinct from the sector-level active weight, combined with a stabilization of the algo active weight, would shift the assessment. Absent that, a halt to the MoM STF deterioration would be the minimum threshold.",
+      "pm_decision_fork": "Either (a) document a specific fundamental case for holding +2.80 pts overweight against both model signals and the neutral internal research stance, or (b) acknowledge this as an unintended aggregate \u2014 primarily the Omnicom Lazard position \u2014 and decide whether that name warrants a standalone carve-out or whether the sector-level overweight should be unwound.",
       "recommended_action": "DEFEND OR RESIZE",
-      "primary_pm_question": "What is the live underwriting case for keeping Communication Services at +2.80 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
-      "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Communication Services, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
-      "confidence": "Structured packet summary; optional model narrative was not run.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+      "primary_pm_question": "Given that both STF (-1.49%) and the algo active weight (-1.41 pts) are underweight and the internal research is explicitly neutral, what is the specific fundamental case that justifies maintaining a +2.80 pt overweight in Communication Services this month?",
+      "evidence_needed_next": "A fund-level thesis for the sector overweight; Omnicom holding-level rationale from Lazard; next STF decomposition to confirm whether the top-down valuation drag is widening or stabilizing.",
+      "confidence": "High that this is a genuine signal-versus-position divergence with no documented thesis. High that Omnicom is the mechanical driver. No approved-source evidence available to moderate the bear case.",
+      "source_quality": "Model signals current (Sep 2026). Internal research dated June 2025, neutral stance. No external market evidence. No risk attribution match."
     },
     {
       "label": "United Kingdom",
-      "challenge_headline": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "descriptor": "Country | material position needing refresh | high priority",
-      "thesis_under_pressure": "The implicit thesis is that United Kingdom remains an intentional conviction position rather than legacy implementation residue.",
-      "positioning_tension": "Fund weight is 6.37% versus benchmark 2.99%, leaving a +3.38 pt active overweight in United Kingdom. Top underlying names include Autotrader Group PLC, Bunzl PLC.",
-      "model_signal_tension": "STF is underweight at -0.83% (+0.28% MoM), while the algo active weight is +1.65 pts (relative to benchmark) and points overweight.",
-      "relative_signal_readthrough": "STF is -0.83% in absolute terms but ranks #19 of 44 in global countries (above the -1.47% universe median). Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
-      "market_context_readthrough": "2024-05 UK EQ Conviction Update Conviction Table 2024 NEW Conviction Level OLD Conviction Level ((Dec 2022) Comment Overall Conviction Medium Medium Since the last update there have been no changes to any of the pillars.",
-      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "exact_holdings_causing_it": "Autotrader Group PLC (+0.90 pts active) via MS GLOBAL OPP EQ LAZARD 0.90%, Franklin FTSE United Kingdom ETF 0.00%; Bunzl PLC (+0.75 pts active) via MS GLOBAL OPP EQ LAZARD 0.69%, MS GLOBAL OPP BASKET 12 - Direct Equities 0.06%; Diageo PLC (+0.58 pts active) via MS GLBL OPPS EQ CONSUMER 0.23%, MS GLOBAL OPP EQ LAZARD 0.22%",
-      "exact_vir_algo_decomp_explanation": "STF is underweight at -0.83% (+0.28% MoM), while the algo active weight is +1.65 pts (relative to benchmark) and points overweight.",
-      "exact_risk_contribution": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "exact_internal_research_excerpt": "Direct prior thesis evidence is missing in the current packet.",
-      "exact_external_market_context": "2024-05 UK EQ Conviction Update Conviction Table 2024 NEW Conviction Level OLD Conviction Level ((Dec 2022) Comment Overall Conviction Medium Medium Since the last update there have been no changes to any of the pillars.",
-      "bull_case": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
-      "bear_case": "This is a material active position that still needs an explicit current-month rationale.",
-      "devils_advocate": "The United Kingdom position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
-      "what_would_change_my_mind": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
-      "recommended_action": "REVIEW AT IC",
-      "primary_pm_question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
-      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
-      "confidence": "Structured packet summary; optional model narrative was not run.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+      "challenge_headline": "UK overweight (+3.38 pts) is partially supported by an improving STF and a positive algo read, but the only conviction document is 17 months old and recorded no change from a December 2022 baseline.",
+      "descriptor": "Country | partially aligned but conviction stale since May 2024 | last update unchanged from Dec 2022",
+      "thesis_under_pressure": "The May 2024 conviction update (202405-EQ-UK EQ-Conviction Update.pptx) holds overall conviction at Medium \u2014 unchanged since December 2022 \u2014 and notes no changes to any pillars. The fair-to-spread, which was positive at +0.25% at the prior update, had turned negative by the time of the May 2024 document. With no update since, the thesis rests on a four-pillar framework that has not been refreshed in 17 months, during which UK macro conditions have evolved materially.",
+      "positioning_tension": "Fund weight 6.37% vs benchmark 2.99%, a +3.38 pt active overweight. The overweight is constructed predominantly through the Lazard sleeve: Autotrader Group PLC (+0.90 pts, 0.90% via Lazard), Bunzl PLC (+0.75 pts, 0.69% via Lazard plus 0.06% Direct Equities), Diageo PLC (+0.58 pts, split across Consumer sleeve 0.23%, Lazard 0.22%, Direct Equities 0.08%), and Rentokil Initial PLC (+0.46 pts, 0.44% via Lazard). These are idiosyncratic, quality-oriented UK names \u2014 but the fund-level exposure is large enough that the country-level active weight is a meaningful portfolio driver.",
+      "model_signal_tension": "STF -0.83% (+0.28% MoM improvement), so the signal is negative but moving in the right direction. The algo active weight is +1.65 pts (relative to benchmark, +0.12 pts MoM), aligned with the overweight. Partial alignment means one model layer (algo) endorses the position; the STF is still negative but improving. The fund's +3.38 pt active weight is still roughly double the algo's +1.65 pt read, meaning the portfolio is running at approximately 2x the model's implied conviction.",
+      "relative_signal_readthrough": "STF -0.83% ranks #19 of 44 global countries (above the -1.47% universe median by +0.64%), placing UK in the upper-middle tier of the country universe. The historical percentile is 82nd over 12 months (range -1.95% to -0.26%), meaning the STF is near the better end of its own recent range. These two reads are aligned: UK is both relatively attractive in the peer universe and at a historically elevated level within its own range. The partially supportive model read is the key differentiating factor versus Communication Services and Health Care \u2014 but it does not offset the stale conviction documentation.",
+      "vir_decomposition_readthrough": "Dominant driver is yield (+4.26%), with growth (+1.30%) and inflation (+2.28%) also positive. The top-down valuation adjustment (-2.13%) remains the main drag, but bottom-up valuation is positive (+0.89%). The +0.28% MoM improvement is broad-based, consistent with a gradual re-rating rather than a single-factor spike. Currency is zero for UK (GBP/USD effect neutralized in this decomposition), removing one source of volatility.",
+      "market_context_readthrough": "The only matched external data in the pack is FactSet Earnings Insight (May 2026), which covers S&P 500 aggregate earnings \u2014 Q1 2026 blended YoY growth of 28.6% versus a 13.1% estimate at quarter-end, with positive EPS guidance for Q2 2026 (56 companies positive vs 46 negative). This data is US-centric and May-dated; it does not directly address UK equity fundamentals. No UK-specific approved-source earnings, valuation, or macro data is available in this pack for September 2026.",
+      "measured_risk_readthrough": "No direct measured-risk match was found for United Kingdom in the current risk workbook. The country exposure does not appear in the top industry or style risk driver tables, suggesting it is not currently the dominant active risk contributor \u2014 though the +3.38 pt active weight at the country level is non-trivial.",
+      "exact_holdings_causing_it": "Autotrader Group PLC: portfolio 0.90%, benchmark 0.004%, active +0.90 pts \u2014 sourced 0.90% via Lazard. Bunzl PLC: portfolio 0.76%, active +0.75 pts \u2014 Lazard 0.69%, Direct Equities 0.06%. Diageo PLC: portfolio 0.62%, active +0.58 pts \u2014 Consumer sleeve 0.23%, Lazard 0.22%, Direct Equities 0.08%. Rentokil Initial PLC: portfolio 0.46%, active +0.46 pts \u2014 Lazard 0.44%, Direct Equities 0.02%.",
+      "exact_vir_algo_decomp_explanation": "STF now -0.83% (from -0.008321), +0.28% MoM. Algo active weight +1.65 pts relative to benchmark, +0.12 pts MoM. Signal alignment: partially_aligned. Decomposition dominant driver: yield (+4.26%). Full decomposition: growth +1.30%, yield +4.26%, inflation +2.28%, currency_usd 0.00%, valuation_adjustment_top_down -2.13%, valuation_adjustment_bottom_up +0.89%, valuation_adjustment_combined -0.62%.",
+      "exact_risk_contribution": "No direct measured-risk match found for United Kingdom in the current risk workbook. No active variance share is quantified for this exposure in this pack.",
+      "exact_internal_research_excerpt": "May 2024 UK EQ Conviction Update (202405-EQ-UK EQ-Conviction Update.pptx): 'Overall Conviction: Medium (unchanged from Dec 2022). Since the last update there have been no changes to any of the pillars. The fair-to-spread was positive at +0.25% [at the prior update]; as of now it is negative.' No subsequent update is on record.",
+      "exact_external_market_context": "FactSet Earnings Insight (2026-05-29): Q1 2026 blended S&P 500 earnings growth 28.6% vs 13.1% estimate; Q2 2026 EPS guidance 56 positive vs 46 negative S&P 500 companies. This data is US-specific and dated four months prior to the review period; it does not provide UK-specific evidence and is not relied upon as UK market context.",
+      "bull_case": "The algo active weight (+1.65 pts) and an improving STF (+0.28% MoM, now at the 82nd historical percentile and ranked 19th of 44 countries) provide partial model support. The UK names held \u2014 Autotrader, Bunzl, Diageo, Rentokil \u2014 are quality compounders with international revenue bases, which may partly insulate them from domestic UK macro headwinds. However, no approved-source research in this pack confirms this thesis for September 2026.",
+      "bear_case": "The May 2024 conviction document recorded a fair-to-spread that had already turned negative, and conviction has not been updated since December 2022 in substance. With no fresh internal or external research in this pack covering UK equity fundamentals for September 2026, the overweight is carried by staleness rather than live conviction. At roughly 2x the model's algo-implied weight, the position is oversized relative to available evidence.",
+      "devils_advocate": "Even accepting that the UK names are quality businesses, the country-level active overweight of +3.38 pts at the fund level is an aggregate of multiple sleeves (Lazard, Consumer, Direct Equities) that may each have independent name-level rationales without any of them intending a country-level bet of this magnitude. The lack of a fund-level country thesis since December 2022 makes it impossible to confirm the overweight is intentionally sized.",
+      "what_would_change_my_mind": "A refreshed UK conviction update (post-2024) that documents a positive fair-to-spread and updated pillar assessments, combined with the STF turning positive, would justify maintaining or increasing the overweight. Conversely, if the STF MoM improvement reverses in the next reading, the partial-alignment argument weakens significantly.",
+      "pm_decision_fork": "Either (a) commission a fresh UK conviction update and document the fund-level rationale for a +3.38 pt country overweight, using the improving STF and algo alignment as supportive context, or (b) flag the position for a sizing review given the 17-month documentation gap and the STF still in negative territory.",
+      "recommended_action": "DOCUMENT OR RESIZE",
+      "primary_pm_question": "Given that the last substantive UK conviction update dates to December 2022 and the fair-to-spread had already turned negative in May 2024, what is the current fund-level basis for a +3.38 pt country overweight?",
+      "evidence_needed_next": "A refreshed UK EQ conviction update covering current fair-to-spread, macro, and pillar assessments; confirmation of whether the improving STF trend is expected to continue; sleeve-level rationale from Lazard for the top four UK names.",
+      "confidence": "Moderate. The improving model signals provide genuine partial support, but documentation staleness is a hard fact. No UK-specific external evidence available in this pack.",
+      "source_quality": "Model signals current. Internal research 17 months old with no substantive change since Dec 2022. External context (FactSet) is US-centric and four months prior \u2014 not usable as UK evidence."
     },
     {
       "label": "Health Care",
-      "challenge_headline": "Health Care remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
-      "descriptor": "Eq Sector | position vs signal divergence | medium priority",
-      "thesis_under_pressure": "The implicit thesis is that a overweight to Health Care still deserves this size even though the current STF/algo stack is pointing the other way.",
-      "positioning_tension": "Fund weight is 7.63% versus benchmark 6.02%, leaving a +1.61 pt active overweight in Health Care. Top underlying names include Dentsply Sirona Inc, Eli Lilly and Co.",
-      "model_signal_tension": "STF is underweight at -1.51% (-0.33% MoM), while the algo active weight is -0.88 pts (relative to benchmark) and points underweight.",
-      "relative_signal_readthrough": "STF is -1.51% in absolute terms but ranks #27 of 54 in global sectors (above the -1.52% universe median). Versus its own 12-month history the current STF is at the 0th percentile, a separate read from the peer rank.",
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
-      "market_context_readthrough": "Equity Sector Review: US Healthcare We\u2019re neutral overall, but see good value in some industries, such as healthcare plans.",
-      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "exact_holdings_causing_it": "Dentsply Sirona Inc (+0.83 pts active) via MS GLOBAL OPP EQ LAZARD 0.83%, Vanguard US Health Care ETF 0.00%; Eli Lilly and Co (-0.19 pts active) via Vanguard US Health Care ETF 0.51%, Vanguard Total Stock Market ETF 0.10%; Johnson & Johnson (-0.14 pts active) via Vanguard US Health Care ETF 0.35%, Vanguard Total Stock Market ETF 0.07%",
-      "exact_vir_algo_decomp_explanation": "STF is underweight at -1.51% (-0.33% MoM), while the algo active weight is -0.88 pts (relative to benchmark) and points underweight.",
-      "exact_risk_contribution": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "exact_internal_research_excerpt": "Direct prior thesis evidence is missing in the current packet.",
-      "exact_external_market_context": "Equity Sector Review: US Healthcare We\u2019re neutral overall, but see good value in some industries, such as healthcare plans.",
-      "bull_case": "This now looks less like neutral portfolio noise and more like an active choice to hold a view that current model evidence is not confirming.",
-      "bear_case": "Positioning is overweight, but the STF is underweight and the algo active weight (relative to benchmark) is underweight.",
-      "devils_advocate": "The portfolio may be carrying legacy conviction in Health Care while the current signal stack is already telling a different story.",
-      "what_would_change_my_mind": "Check the next STF decomposition, top-holding lineage inside Health Care, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "challenge_headline": "Health Care overweight (+1.61 pts) faces accelerating signal deterioration \u2014 STF at its 12-month trough and both model layers underweight \u2014 with the position concentrated in a single undocumented Lazard name and no external research in the pack.",
+      "descriptor": "Eq Sector | both model layers underweight, STF at 12-month low | Jan 2025 internal research neutral, no external evidence",
+      "thesis_under_pressure": "The January 2025 internal sector review (202501-EQ-US HC EQ-Conviction.pptx) rates Health Care neutral overall but identifies healthcare plans as a sub-industry with good value. No active overweight thesis is documented at the fund level. The position is dominated by Dentsply Sirona (+0.83 pts, entirely via Lazard) \u2014 a dental equipment name that does not map to the 'healthcare plans' sub-industry the internal research highlights \u2014 making it unclear whether the internal research provides any support for the actual holdings driving the overweight.",
+      "positioning_tension": "Fund weight 7.63% vs benchmark 6.02%, a +1.61 pt active overweight. The overweight is driven almost entirely by Dentsply Sirona Inc (+0.83 pts, 0.83% via Lazard) and Becton Dickinson (+0.33 pts, split across Lazard and Direct Equities), while the two largest sector names by benchmark weight are actively underweight: Eli Lilly (-0.19 pts) and Johnson & Johnson (-0.14 pts). The overweight is thus a sub-industry bet on medical equipment/dental, not a broad Healthcare conviction \u2014 and that sub-industry bet has no documented fund-level rationale.",
+      "model_signal_tension": "STF -1.51% (-0.33% MoM), the sharpest single-month deterioration among the four challenges. Algo active weight -0.88 pts relative to benchmark (-0.43 pts MoM). Both model layers are underweight and moving further underweight \u2014 this is the most directionally deteriorating signal in the memo. The signal_alignment is 'diverging', confirming no model layer supports the overweight.",
+      "relative_signal_readthrough": "STF -1.51% ranks #27 of 54 global sectors, essentially at the universe median (-1.52%), with vs_median of just +0.01% \u2014 Health Care offers negligible relative attractiveness versus peers. More critically, the historical percentile is 0th over 12 months: this is the worst STF reading the sector has produced in the trailing year (range -1.51% to -0.10%). Unlike Communication Services where the historical percentile provided some comfort, here the two axes converge on the same negative read \u2014 median-ranked versus peers and at its own historical worst. There is no axis from which to soften the signal.",
+      "vir_decomposition_readthrough": "Dominant driver is yield (+2.93%), with growth (+2.25%) and inflation (+2.51%) as positive contributors. But top-down valuation adjustment (-1.74%) and bottom-up valuation (-0.38%) are both negative \u2014 unusually, the bottom-up component is also a drag, meaning even security-level valuation within the sector is not providing an offset. The -0.33% MoM deterioration is broad-based, making it structural rather than a single-component reversal.",
+      "market_context_readthrough": "No approved-source research matched US Health Care for this period (market_evidence_status: ABSENT). The only available research is the January 2025 internal sector review. No external market facts are available in this pack and none are asserted.",
+      "measured_risk_readthrough": "No direct measured-risk match was found for Health Care in the current risk workbook. US4 Professional Services appears in the top industry risk drivers at 0.37% of active variance \u2014 a marginal contribution \u2014 which may partially reflect the healthcare services exposure but is not a direct match. The absence of a prominent risk flag does not validate the off-signal overweight.",
+      "exact_holdings_causing_it": "Dentsply Sirona Inc: portfolio 0.83%, benchmark 0.00%, active +0.83 pts \u2014 sourced 0.83% via Lazard (benchmark weight is zero, making this a pure off-benchmark name). Becton Dickinson & Co: portfolio 0.37%, benchmark 0.04%, active +0.33 pts \u2014 Lazard 0.24%, Direct Equities 0.10%. Eli Lilly and Co: portfolio 0.61%, benchmark 0.80%, active -0.19 pts. Johnson & Johnson: portfolio 0.41%, benchmark 0.55%, active -0.14 pts.",
+      "exact_vir_algo_decomp_explanation": "STF now -1.51% (from -0.015093), -0.33% MoM. Algo active weight -0.88 pts relative to benchmark, -0.43 pts MoM. Signal alignment: diverging. Decomposition dominant driver: yield (+2.93%). Full decomposition: growth +2.25%, yield +2.93%, inflation +2.51%, currency_usd -1.68%, valuation_adjustment_top_down -1.74%, valuation_adjustment_bottom_up -0.38%, valuation_adjustment_combined -1.06%.",
+      "exact_risk_contribution": "No direct measured-risk match found for Health Care in the current risk workbook. US4 Professional Services contributes 0.37% of active variance (a marginal proxy for healthcare services exposure). No larger risk contribution is quantified for this sector in this pack.",
+      "exact_internal_research_excerpt": "January 2025 Health Care sector review (202501-EQ-US HC EQ-Conviction.pptx): 'We are neutral overall, but see good value in some industries, such as healthcare plans.' The holdings driving the fund's overweight (Dentsply Sirona \u2014 dental equipment; Becton Dickinson \u2014 medical devices) do not map to the 'healthcare plans' sub-industry identified as attractive in the internal research.",
+      "exact_external_market_context": "No approved-source research matched US Health Care for this period (market_evidence_status: ABSENT). No external market facts are asserted.",
+      "bull_case": "Yield (+2.93%) and growth (+2.25%) components of the STF are positive, suggesting some fundamental cash-flow support for the sector. If Dentsply Sirona and Becton Dickinson carry specific recovery or restructuring catalysts that the Lazard sleeve has underwritten at the name level, those positions could generate alpha independent of the sector-level signal \u2014 but no such thesis is documented in this pack.",
+      "bear_case": "The STF has deteriorated to its 12-month trough (-1.51%) with a -0.33% MoM move that is both the largest single-month decline in this memo and the first time the bottom-up valuation component has turned negative (-0.38%), indicating even stock-level valuation is no longer supportive. Dentsply Sirona is a zero-benchmark-weight name with no approved-source coverage in this pack; the entire overweight rests on a single undocumented Lazard call.",
+      "devils_advocate": "The internal research's 'good value in healthcare plans' thesis is not expressed in the fund's holdings at all \u2014 the overweight is in dental equipment (Dentsply) and medical devices (Becton Dickinson), both off-benchmark names. There is a risk that the internal research is being used to justify a sector overweight that is actually driven by entirely different sub-industries for which no internal or external thesis exists.",
+      "what_would_change_my_mind": "A documented holding-level thesis for Dentsply Sirona and Becton Dickinson from the Lazard sleeve, combined with a halt in the STF deterioration (particularly a stabilization of the bottom-up valuation component), would provide a basis for monitoring rather than action. If the STF continues to decline next month, the case for an active review strengthens materially.",
+      "pm_decision_fork": "Either (a) obtain and document Lazard's specific rationale for Dentsply Sirona and Becton Dickinson as off-benchmark conviction names, and confirm they are being evaluated as standalone positions rather than a sector-level bet, or (b) bring the sector overweight to IC given the full signal divergence, the 12-month STF trough, and the absence of a fund-level thesis.",
       "recommended_action": "DEFEND OR RESIZE",
-      "primary_pm_question": "What is the live underwriting case for keeping Health Care at +1.61 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
-      "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Health Care, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
-      "confidence": "Structured packet summary; optional model narrative was not run.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+      "primary_pm_question": "Given that the STF is at its 12-month worst, the algo active weight is underweight and deteriorating, and the only internal research supporting selective value points to sub-industries not held in the fund, what is the current case for maintaining the +1.61 pt Health Care overweight?",
+      "evidence_needed_next": "Lazard holding-level rationale for Dentsply Sirona (off-benchmark) and Becton Dickinson; next month's STF to determine whether the bottom-up valuation drag is a trend; any updated Health Care sector review post-January 2025.",
+      "confidence": "High that the signal deterioration is real and directional. High that the holding-level thesis is undocumented. No external evidence available to moderate either case.",
+      "source_quality": "Model signals current (Sep 2026). Internal research dated January 2025, neutral stance with no match to actual holdings. No external market evidence. No risk attribution match."
     }
   ],
   "pm_questions": [
     {
       "label": "United States Mid Value",
-      "question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
-      "why_now": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees."
+      "question": "Is the +7.35 pt United States Mid Value overweight a deliberate fund-level decision, or is it an unreviewed aggregate of Lazard sleeve positions (Omnicom +1.52 pts, Fiserv +1.35 pts, Cognizant +1.11 pts) that has never been sanctioned at the IC level \u2014 and if it is deliberate, where is the fund-level thesis?",
+      "why_now": "The position is on the specific-risk watchlist, US4 Size is the largest modeled style risk driver at 6.62% of active variance, and the fund is running at roughly 4.5x the algo's implied conviction (+7.35 pts vs +1.60 pts algo) with no documented rationale."
     },
     {
       "label": "Communication Services",
-      "question": "What is the live underwriting case for keeping Communication Services at +2.80 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
-      "why_now": "Communication Services remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark)."
-    },
-    {
-      "label": "United Kingdom",
-      "question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
-      "why_now": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees."
+      "question": "The algo active weight deteriorated by -1.39 pts in a single month to -1.41 pts while the fund remains +2.80 pts overweight with an STF of -1.49% and internal research explicitly neutral: what specific fundamental development or name-level conviction justifies maintaining this position against both model signals this month?",
+      "why_now": "This is the only challenge where both model layers are underweight and moving further underweight simultaneously, and the Omnicom position (+1.52 pts via Lazard) \u2014 the mechanical driver of the overweight \u2014 is a name that does not map to the internal research's Alphabet/Meta thesis."
     },
     {
       "label": "Health Care",
-      "question": "What is the live underwriting case for keeping Health Care at +1.61 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
-      "why_now": "Health Care remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark)."
+      "question": "The Health Care STF has fallen to its 12-month trough (-1.51%) with the bottom-up valuation component now also negative (-0.38%), while Dentsply Sirona \u2014 the single largest active holding and a zero-benchmark-weight name \u2014 carries no documented fund-level thesis: is this a monitored Lazard conviction name or an unintended off-benchmark residual?",
+      "why_now": "The MoM signal deterioration (-0.33% STF, -0.43 pts algo) is the sharpest in the memo and is accelerating; without a documented name-level thesis for the zero-benchmark position driving the overweight, the PM cannot articulate what would need to change for the position to be sized down."
     }
   ],
   "follow_up": [
     {
-      "label": "United States Mid Value",
-      "action": "Review the security-level construction underneath United States Mid Value and decide whether the current expression is still the cleanest way to hold the view.",
-      "why_it_matters": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression."
-    },
-    {
-      "label": "Communication Services",
-      "action": "Review the security-level construction underneath Communication Services and decide whether the current expression is still the cleanest way to hold the view.",
-      "why_it_matters": "Check the next STF decomposition, top-holding lineage inside Communication Services, and any updated research or earnings/rates context that would explain why the active position should stay off-signal."
-    },
-    {
       "label": "United Kingdom",
-      "action": "Review the security-level construction underneath United Kingdom and decide whether the current expression is still the cleanest way to hold the view.",
-      "why_it_matters": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression."
+      "action": "Commission a refresh of the UK EQ conviction update, explicitly repricing the fair-to-spread and reassessing all pillars against current conditions, and document the fund-level basis for the +3.38 pt country overweight.",
+      "why_it_matters": "The last substantive conviction update dates to December 2022; the May 2024 document recorded no changes and noted the fair-to-spread had already turned negative. A 17-month documentation gap on a +3.38 pt active country position is not defensible at IC, even with a partially supportive model."
+    },
+    {
+      "label": "United States Mid Value",
+      "action": "Obtain from the Lazard sleeve a holding-level rationale for Omnicom, Fiserv, and Cognizant as individual conviction names, and determine whether the Lazard mandate governance framework sanctions the current aggregate fund-level style overweight of +7.35 pts or whether a fund-level sizing cap applies.",
+      "why_it_matters": "Without clarifying whether the overweight is a deliberate multi-sleeve aggregate or an unreviewed Lazard implementation output, the PM cannot answer the IC's ownership question, and the specific-risk watchlist flag will persist unresolved."
     },
     {
       "label": "Health Care",
-      "action": "Review the security-level construction underneath Health Care and decide whether the current expression is still the cleanest way to hold the view.",
-      "why_it_matters": "Check the next STF decomposition, top-holding lineage inside Health Care, and any updated research or earnings/rates context that would explain why the active position should stay off-signal."
+      "action": "Request Lazard's specific investment thesis for Dentsply Sirona Inc as an off-benchmark (zero benchmark weight) position, and update the Health Care sector review beyond its January 2025 vintage to assess whether the current holdings align with any constructive sub-industry thesis.",
+      "why_it_matters": "Dentsply Sirona is the mechanical driver of the Health Care overweight and sits at a zero benchmark weight, meaning the fund bears full idiosyncratic risk on the name with no model support and no documented thesis \u2014 the highest-risk documentation gap in the sector challenges."
     }
   ],
   "dashboard_highlights": [
     {
-      "label": "Packet highlight 1",
-      "highlight": "Largest underweight: Information Technology (-6.39 pts), with STF underweight and the algo active weight underweight (relative to benchmark)."
+      "label": "United States Mid Value",
+      "highlight": "+7.35 pt active overweight (fund's largest bet), specific-risk watchlist flagged, entirely Lazard-driven, no fund-level thesis on record; STF -0.54% (+0.62% MoM) ranks #2/9 global styles but fund runs at 4.5x algo implied weight (+1.60 pts)."
     },
     {
-      "label": "Packet highlight 2",
-      "highlight": "Largest overweight: United States Mid Value (7.35 pts), with decomposition reading broad_based."
+      "label": "Communication Services",
+      "highlight": "Full signal divergence: STF -1.49% (-0.09% MoM) and algo active weight -1.41 pts (relative to benchmark, -1.39 pts MoM) both underweight while fund holds +2.80 pts overweight; internal research explicitly neutral (June 2025); no external evidence in pack."
     },
     {
-      "label": "Packet highlight 3",
-      "highlight": "16 material positions are directionally fighting the current STF/algo read."
+      "label": "Health Care",
+      "highlight": "STF at 12-month trough -1.51% (-0.33% MoM, 0th historical percentile); algo active weight -0.88 pts (-0.43 pts MoM); overweight driven by zero-benchmark Dentsply Sirona (+0.83 pts, Lazard) with no documented thesis and bottom-up valuation now negative."
     },
     {
-      "label": "Packet highlight 4",
-      "highlight": "US_EQ risk context: active predicted risk 5.89%, active share 49.6%, risk date used 2026-07-20."
+      "label": "United Kingdom",
+      "highlight": "+3.38 pt overweight partially supported (STF -0.83% +0.28% MoM, algo +1.65 pts), but conviction document dated May 2024 with no substantive change since December 2022 and fair-to-spread already negative at last update."
     },
     {
-      "label": "Missing Vir Rows",
-      "highlight": "3 exposure rows do not have matched STF context."
+      "label": "Signal Architecture",
+      "highlight": "16 material positions are fighting the STF/algo read; US4 Size is the largest modeled style risk driver (6.62% of active variance); active predicted risk 5.89%, active share 49.6% \u2014 the fund is running concentrated active bets with incomplete documentation support."
     },
     {
-      "label": "Missing Algo Rows",
-      "highlight": "5 exposure rows do not have matched algo context."
-    },
-    {
-      "label": "Logical Vs Source Snapshot Date",
-      "highlight": "The review month is 2026-09-30, while the source holdings snapshot embedded in the rolled artifact is 2026-10-06."
-    },
-    {
-      "label": "Algo Scaled To Percentage Points",
-      "highlight": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
+      "label": "Research Staleness",
+      "highlight": "Two of the four top challenges have internal research that is either neutral (Communication Services, June 2025; Health Care, January 2025) or materially stale (UK, May 2024/December 2022 vintage); United States Mid Value has no research match at all. No approved-source external evidence is available for three of the four challenges."
     }
   ]
 }
