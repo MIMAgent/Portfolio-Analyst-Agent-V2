@@ -21,7 +21,7 @@
       "Largest underweight: Information Technology (-6.39 pts), with STF underweight and the algo active weight underweight (relative to benchmark).",
       "Largest overweight: United States Mid Value (7.35 pts), with decomposition reading broad_based.",
       "16 material positions are directionally fighting the current STF/algo read.",
-      "US_EQ risk context: active predicted risk 5.89%, active share 49.6%, risk date used 2026-07-20."
+      "US_EQ risk context: active predicted risk 6.61%, active share 51.7%, risk date used 2026-09-30."
     ],
     "largest_overweights": [
       {
@@ -151,7 +151,7 @@
       "label": "United States Mid Value",
       "category": "Eq Size / Style",
       "priority": "high",
-      "challenge_score": 16.289,
+      "challenge_score": 17.789,
       "challenge_type": "material_position_needing_refresh",
       "challenge_headline": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees.",
       "thesis_under_pressure": "The implicit thesis is that United States Mid Value remains an intentional conviction position rather than legacy implementation residue.",
@@ -188,7 +188,7 @@
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
       "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
       "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
       "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
@@ -206,7 +206,7 @@
       "label": "Communication Services",
       "category": "Eq Sector",
       "priority": "medium",
-      "challenge_score": 8.926,
+      "challenge_score": 11.496,
       "challenge_type": "position_vs_signal_divergence",
       "challenge_headline": "Communication Services remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
       "thesis_under_pressure": "The implicit thesis is that a overweight to Communication Services still deserves this size even though the current STF/algo stack is pointing the other way.",
@@ -245,7 +245,7 @@
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
       "market_context_readthrough": "Equity Sector Review: US Communication Services We are neutral on the sector, but we expect Alphabet and Meta to remain dominant.",
       "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What is the live underwriting case for keeping Communication Services at +2.80 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
       "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Communication Services, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
@@ -258,69 +258,12 @@
       "top_holding_lineage": "META PLATFORMS INC (+0.31 pts active) via Vanguard Communication Services ETF 1.13%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.45%; ALPHABET INC (-0.07 pts active) via Vanguard Communication Services ETF 0.78%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.70%; Omnicom Group Inc (+1.52 pts active) via MS GLOBAL OPP EQ LAZARD 1.37%, Vanguard Communication Services ETF 0.08%"
     },
     {
-      "challenge_id": "ch_uk-eq_2026-09-30",
-      "acid": "UK EQ",
-      "label": "United Kingdom",
-      "category": "Country",
-      "priority": "high",
-      "challenge_score": 7.729,
-      "challenge_type": "material_position_needing_refresh",
-      "challenge_headline": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "thesis_under_pressure": "The implicit thesis is that United Kingdom remains an intentional conviction position rather than legacy implementation residue.",
-      "positioning_tension": "Fund weight is 6.37% versus benchmark 2.99%, leaving a +3.38 pt active overweight in United Kingdom. Top underlying names include Autotrader Group PLC, Bunzl PLC.",
-      "model_signal_tension": "STF is underweight at -0.83% (+0.28% MoM), while the algo active weight is +1.65 pts (relative to benchmark) and points overweight.",
-      "relative_signal_readthrough": "STF is -0.83% in absolute terms but ranks #19 of 44 in global countries (above the -1.47% universe median). Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
-      "stf_relative_context": {
-        "universe": "global countries",
-        "universe_size": 44,
-        "rank": 19,
-        "percentile": 0.58,
-        "stf": -0.0083,
-        "universe_median_stf": -0.0147,
-        "vs_median": 0.0064,
-        "more_attractive_peers": [
-          "Indonesia",
-          "Turkey",
-          "Qatar"
-        ],
-        "more_attractive_count": 18,
-        "universe_best": {
-          "label": "Indonesia",
-          "stf": 0.0557
-        },
-        "universe_worst": {
-          "label": "Taiwan",
-          "stf": -0.0529
-        },
-        "universe_all_negative": false,
-        "universe_dominant_driver": "valuation_adjustment_top_down",
-        "historical_percentile": 0.82,
-        "history_window_months": 12,
-        "history_low": -0.0195,
-        "history_high": -0.0026
-      },
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
-      "market_context_readthrough": "2024-05 UK EQ Conviction Update Conviction Table 2024 NEW Conviction Level OLD Conviction Level ((Dec 2022) Comment Overall Conviction Medium Medium Since the last update there have been no changes to any of the pillars.",
-      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
-      "primary_pm_question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
-      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
-      "research_status": {
-        "status": "matched_without_month",
-        "months_old": null,
-        "folder_month": ""
-      },
-      "top_holding_lineage": "Autotrader Group PLC (+0.90 pts active) via MS GLOBAL OPP EQ LAZARD 0.90%, Franklin FTSE United Kingdom ETF 0.00%; Bunzl PLC (+0.75 pts active) via MS GLOBAL OPP EQ LAZARD 0.69%, MS GLOBAL OPP BASKET 12 - Direct Equities 0.06%; Diageo PLC (+0.58 pts active) via MS GLBL OPPS EQ CONSUMER 0.23%, MS GLOBAL OPP EQ LAZARD 0.22%"
-    },
-    {
       "challenge_id": "ch_us-hc-eq_2026-09-30",
       "acid": "US HC EQ",
       "label": "Health Care",
       "category": "Eq Sector",
       "priority": "medium",
-      "challenge_score": 7.251,
+      "challenge_score": 9.821,
       "challenge_type": "position_vs_signal_divergence",
       "challenge_headline": "Health Care remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
       "thesis_under_pressure": "The implicit thesis is that a overweight to Health Care still deserves this size even though the current STF/algo stack is pointing the other way.",
@@ -359,7 +302,7 @@
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
       "market_context_readthrough": "Equity Sector Review: US Healthcare We\u2019re neutral overall, but see good value in some industries, such as healthcare plans.",
       "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What is the live underwriting case for keeping Health Care at +1.61 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
       "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Health Care, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
@@ -370,6 +313,63 @@
         "folder_month": ""
       },
       "top_holding_lineage": "Dentsply Sirona Inc (+0.83 pts active) via MS GLOBAL OPP EQ LAZARD 0.83%, Vanguard US Health Care ETF 0.00%; Eli Lilly and Co (-0.19 pts active) via Vanguard US Health Care ETF 0.51%, Vanguard Total Stock Market ETF 0.10%; Johnson & Johnson (-0.14 pts active) via Vanguard US Health Care ETF 0.35%, Vanguard Total Stock Market ETF 0.07%"
+    },
+    {
+      "challenge_id": "ch_us-re-eq_2026-09-30",
+      "acid": "US RE EQ",
+      "label": "Real Estate",
+      "category": "Eq Sector",
+      "priority": "medium",
+      "challenge_score": 9.348,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "Real Estate still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that Real Estate remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 3.90% versus benchmark 1.20%, leaving a +2.70 pt active overweight in Real Estate. Top underlying names include American Tower Corp, Prologis Inc.",
+      "model_signal_tension": "STF is underweight at -0.41% (+0.96% MoM), while the algo active weight is +1.95 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -0.41% in absolute terms but ranks #16 of 54 in global sectors (above the -1.52% universe median). Versus its own 12-month history the current STF is at the 100th percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "global sectors",
+        "universe_size": 54,
+        "rank": 16,
+        "percentile": 0.72,
+        "stf": -0.0041,
+        "universe_median_stf": -0.0152,
+        "vs_median": 0.0111,
+        "more_attractive_peers": [
+          "Energy",
+          "Real Estate",
+          "Consumer Discretionary"
+        ],
+        "more_attractive_count": 15,
+        "universe_best": {
+          "label": "Energy",
+          "stf": 0.0294
+        },
+        "universe_worst": {
+          "label": "Financials",
+          "stf": -0.057
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 1.0,
+        "history_window_months": 12,
+        "history_low": -0.0159,
+        "history_high": -0.0041
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "1 Investment opportunity \u2013 Conviction level Recommendations September 2017 Conviction Level Comment Overall Conviction Low US REITs offer a poor reward for risk on both an absolute and relative basis with contrarian i...",
+      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping Real Estate at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that Real Estate is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "American Tower Corp (+0.29 pts active) via MS GLOBAL OPP EQ LAZARD 0.22%, Schwab US REIT ETF\u2122 0.14%; Prologis Inc (+0.22 pts active) via Schwab US REIT ETF\u2122 0.26%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.05%; Welltower Inc (+0.17 pts active) via Schwab US REIT ETF\u2122 0.30%, Vanguard Total Stock Market ETF 0.02%"
     }
   ],
   "challenge_market_context": [
@@ -412,46 +412,6 @@
       "market_evidence_note": "No approved-source research matched US communication services sector for this period. There is no external market evidence in this pack for it; say so rather than asserting market facts."
     },
     {
-      "acid": "UK EQ",
-      "label": "United Kingdom",
-      "category": "Country",
-      "region_code": "UK",
-      "region": "UK",
-      "period": "September 2026",
-      "query_used": "United Kingdom equity market earnings valuation macro September 2026",
-      "lenses_attempted": [
-        "earnings",
-        "valuation",
-        "macro"
-      ],
-      "rows": [
-        {
-          "headline": "FactSet Earnings Insight excerpt 2",
-          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
-          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
-          "pm_question": "",
-          "source_label": "FactSet Earnings Insight",
-          "source_date": "2026-05-29",
-          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
-          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c34df78a06c9"
-        },
-        {
-          "headline": "FactSet Earnings Insight excerpt 1",
-          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
-          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
-          "pm_question": "",
-          "source_label": "FactSet Earnings Insight",
-          "source_date": "2026-05-29",
-          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
-          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a044487a1fe1"
-        }
-      ],
-      "market_evidence": [],
-      "market_evidence_status": "PRESENT",
-      "market_evidence_absent_reason": "",
-      "market_evidence_note": ""
-    },
-    {
       "acid": "US HC EQ",
       "label": "Health Care",
       "category": "Eq Sector",
@@ -469,6 +429,25 @@
       "market_evidence_status": "ABSENT",
       "market_evidence_absent_reason": "no_approved_source_row_matched",
       "market_evidence_note": "No approved-source research matched US health care sector for this period. There is no external market evidence in this pack for it; say so rather than asserting market facts."
+    },
+    {
+      "acid": "US RE EQ",
+      "label": "Real Estate",
+      "category": "Eq Sector",
+      "region_code": "US",
+      "region": "US",
+      "period": "September 2026",
+      "query_used": "US real estate sector valuation earnings September 2026",
+      "lenses_attempted": [
+        "earnings",
+        "valuation",
+        "macro"
+      ],
+      "rows": [],
+      "market_evidence": [],
+      "market_evidence_status": "ABSENT",
+      "market_evidence_absent_reason": "no_approved_source_row_matched",
+      "market_evidence_note": "No approved-source research matched US real estate sector for this period. There is no external market evidence in this pack for it; say so rather than asserting market facts."
     }
   ],
   "challenge_support_packets": [
@@ -663,7 +642,18 @@
           ],
           "inference_level": "sector_proxy"
         },
-        "return_attribution_mtd": {}
+        "return_attribution_mtd": {
+          "active_period_return": -2.74,
+          "active_period_factor_return": -2.32,
+          "active_period_specific_return": -0.43,
+          "period_overweight_return": -3.91,
+          "period_underweight_return": 1.21,
+          "active_style_factor_returns": -1.15,
+          "active_industry_factor_returns": -1.07,
+          "active_market_factor_returns": null,
+          "window_start": "2026-09-01",
+          "window_end": "2026-09-30"
+        }
       },
       "exact_internal_research_excerpt": {
         "active_thesis_text": "",
@@ -862,7 +852,18 @@
         "sector_or_industry_match": {},
         "style_match": {},
         "specific_risk_watch_match": {},
-        "return_attribution_mtd": {}
+        "return_attribution_mtd": {
+          "active_period_return": -2.74,
+          "active_period_factor_return": -2.32,
+          "active_period_specific_return": -0.43,
+          "period_overweight_return": -3.91,
+          "period_underweight_return": 1.21,
+          "active_style_factor_returns": -1.15,
+          "active_industry_factor_returns": -1.07,
+          "active_market_factor_returns": null,
+          "window_start": "2026-09-01",
+          "window_end": "2026-09-30"
+        }
       },
       "exact_internal_research_excerpt": {
         "active_thesis_text": "",
@@ -886,226 +887,6 @@
       ],
       "internal_history_excerpt": "",
       "top_holding_lineage": "META PLATFORMS INC (+0.31 pts active) via Vanguard Communication Services ETF 1.13%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.45%; ALPHABET INC (-0.07 pts active) via Vanguard Communication Services ETF 0.78%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.70%; Omnicom Group Inc (+1.52 pts active) via MS GLOBAL OPP EQ LAZARD 1.37%, Vanguard Communication Services ETF 0.08%",
-      "research_status": {
-        "status": "matched_without_month",
-        "months_old": null,
-        "folder_month": ""
-      },
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
-    },
-    {
-      "challenge_id": "ch_uk-eq_2026-09-30",
-      "acid": "UK EQ",
-      "label": "United Kingdom",
-      "category": "Country",
-      "exact_holdings_causing_it": [
-        {
-          "security_name": "Autotrader Group PLC",
-          "portfolio_weight": 0.9031,
-          "benchmark_weight": 0.0043,
-          "active_weight": 0.8988,
-          "sources": [
-            {
-              "source_name": "MS GLOBAL OPP EQ LAZARD",
-              "portfolio_weight": 0.9001,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.9001
-            },
-            {
-              "source_name": "Franklin FTSE United Kingdom ETF",
-              "portfolio_weight": 0.003,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.003
-            },
-            {
-              "source_name": "Morningstar Gbl NR USD",
-              "portfolio_weight": 0.0,
-              "benchmark_weight": 0.0043,
-              "active_weight": -0.0043
-            }
-          ]
-        },
-        {
-          "security_name": "Bunzl PLC",
-          "portfolio_weight": 0.7598,
-          "benchmark_weight": 0.0093,
-          "active_weight": 0.7505,
-          "sources": [
-            {
-              "source_name": "MS GLOBAL OPP EQ LAZARD",
-              "portfolio_weight": 0.6882,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.6882
-            },
-            {
-              "source_name": "MS GLOBAL OPP BASKET 12 - Direct Equities",
-              "portfolio_weight": 0.0648,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.0648
-            },
-            {
-              "source_name": "Franklin FTSE United Kingdom ETF",
-              "portfolio_weight": 0.0068,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.0068
-            }
-          ]
-        },
-        {
-          "security_name": "Diageo PLC",
-          "portfolio_weight": 0.6225,
-          "benchmark_weight": 0.0416,
-          "active_weight": 0.5809,
-          "sources": [
-            {
-              "source_name": "MS GLBL OPPS EQ CONSUMER",
-              "portfolio_weight": 0.2316,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.2316
-            },
-            {
-              "source_name": "MS GLOBAL OPP EQ LAZARD",
-              "portfolio_weight": 0.2181,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.2181
-            },
-            {
-              "source_name": "MS GLOBAL OPP BASKET 12 - Direct Equities",
-              "portfolio_weight": 0.0816,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.0816
-            }
-          ]
-        },
-        {
-          "security_name": "Rentokil Initial PLC",
-          "portfolio_weight": 0.4637,
-          "benchmark_weight": 0.0086,
-          "active_weight": 0.4551,
-          "sources": [
-            {
-              "source_name": "MS GLOBAL OPP EQ LAZARD",
-              "portfolio_weight": 0.435,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.435
-            },
-            {
-              "source_name": "MS GLOBAL OPP BASKET 12 - Direct Equities",
-              "portfolio_weight": 0.0227,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.0227
-            },
-            {
-              "source_name": "Franklin FTSE United Kingdom ETF",
-              "portfolio_weight": 0.0061,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.0061
-            }
-          ]
-        }
-      ],
-      "exact_vir_algo_decomp_explanation": {
-        "active_weight": 3.377929721762283,
-        "portfolio_weight": 6.372827924823384,
-        "benchmark_weight": 2.9948982030611013,
-        "positioning_direction": "overweight",
-        "vir_now": -0.008320552458061757,
-        "vir_delta_mom": 0.002777831688725696,
-        "vir_direction": "underweight",
-        "algo_active_weight": 1.6500000000000001,
-        "algo_active_weight_mom": 0.12,
-        "algo_direction": "overweight",
-        "signal_alignment": "partially_aligned",
-        "decomposition_driver": "yield",
-        "decomposition_assessment": "broad_based",
-        "decomposition_values": {
-          "growth": 0.0129999999999999,
-          "yield": 0.04260452455897783,
-          "inflation": 0.022768521338711656,
-          "currency_usd": 0.0,
-          "valuation_adjustment_top_down": -0.021296359016692135,
-          "valuation_adjustment_combined": -0.0061780951138922235,
-          "valuation_adjustment_bottom_up": 0.008940168788907688
-        },
-        "stf_relative_context": {
-          "universe": "global countries",
-          "universe_size": 44,
-          "rank": 19,
-          "percentile": 0.58,
-          "stf": -0.0083,
-          "universe_median_stf": -0.0147,
-          "vs_median": 0.0064,
-          "more_attractive_peers": [
-            "Indonesia",
-            "Turkey",
-            "Qatar"
-          ],
-          "more_attractive_count": 18,
-          "universe_best": {
-            "label": "Indonesia",
-            "stf": 0.0557
-          },
-          "universe_worst": {
-            "label": "Taiwan",
-            "stf": -0.0529
-          },
-          "universe_all_negative": false,
-          "universe_dominant_driver": "valuation_adjustment_top_down",
-          "historical_percentile": 0.82,
-          "history_window_months": 12,
-          "history_low": -0.0195,
-          "history_high": -0.0026
-        }
-      },
-      "exact_risk_contribution": {
-        "sector_or_industry_match": {},
-        "style_match": {},
-        "specific_risk_watch_match": {},
-        "return_attribution_mtd": {}
-      },
-      "exact_internal_research_excerpt": {
-        "active_thesis_text": "",
-        "active_thesis_falsification_conditions": "",
-        "internal_history_excerpt": "",
-        "sharepoint_research_summary": "2024-05 UK EQ Conviction Update Conviction Table 2024 NEW Conviction Level OLD Conviction Level ((Dec 2022) Comment Overall Conviction Medium Medium Since the last update there have been no changes to any of the pillars. We therefore leave the overall conviction unchanged at a Medium. Absolute Valuation Medium Medium At the last conviction update the fair to spread was positive at +0.25%, as of now it is negative at ",
-        "sharepoint_research_path": "202405-EQ-UK EQ-Conviction Update.pptx",
-        "sharepoint_research_month": "",
-        "sharepoint_match_status": "matched"
-      },
-      "exact_external_market_context": [
-        {
-          "headline": "FactSet Earnings Insight excerpt 2",
-          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
-          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
-          "pm_question": "",
-          "source": "FactSet Earnings Insight",
-          "published_at": "2026-05-29",
-          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_c34df78a06c9",
-          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
-        },
-        {
-          "headline": "FactSet Earnings Insight excerpt 1",
-          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
-          "fundamental_readthrough": "Approved-source web context for query: United Kingdom equity market earnings valuation macro May 2026",
-          "pm_question": "",
-          "source": "FactSet Earnings Insight",
-          "published_at": "2026-05-29",
-          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_a044487a1fe1",
-          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
-        }
-      ],
-      "market_evidence": [],
-      "market_evidence_status": "PRESENT",
-      "market_evidence_absent_reason": "",
-      "market_evidence_note": "",
-      "market_evidence_region": "UK",
-      "market_evidence_lenses_attempted": [
-        "earnings",
-        "valuation",
-        "macro"
-      ],
-      "internal_history_excerpt": "",
-      "top_holding_lineage": "Autotrader Group PLC (+0.90 pts active) via MS GLOBAL OPP EQ LAZARD 0.90%, Franklin FTSE United Kingdom ETF 0.00%; Bunzl PLC (+0.75 pts active) via MS GLOBAL OPP EQ LAZARD 0.69%, MS GLOBAL OPP BASKET 12 - Direct Equities 0.06%; Diageo PLC (+0.58 pts active) via MS GLBL OPPS EQ CONSUMER 0.23%, MS GLOBAL OPP EQ LAZARD 0.22%",
       "research_status": {
         "status": "matched_without_month",
         "months_old": null,
@@ -1281,7 +1062,18 @@
         "sector_or_industry_match": {},
         "style_match": {},
         "specific_risk_watch_match": {},
-        "return_attribution_mtd": {}
+        "return_attribution_mtd": {
+          "active_period_return": -2.74,
+          "active_period_factor_return": -2.32,
+          "active_period_specific_return": -0.43,
+          "period_overweight_return": -3.91,
+          "period_underweight_return": 1.21,
+          "active_style_factor_returns": -1.15,
+          "active_industry_factor_returns": -1.07,
+          "active_market_factor_returns": null,
+          "window_start": "2026-09-01",
+          "window_end": "2026-09-30"
+        }
       },
       "exact_internal_research_excerpt": {
         "active_thesis_text": "",
@@ -1305,6 +1097,216 @@
       ],
       "internal_history_excerpt": "",
       "top_holding_lineage": "Dentsply Sirona Inc (+0.83 pts active) via MS GLOBAL OPP EQ LAZARD 0.83%, Vanguard US Health Care ETF 0.00%; Eli Lilly and Co (-0.19 pts active) via Vanguard US Health Care ETF 0.51%, Vanguard Total Stock Market ETF 0.10%; Johnson & Johnson (-0.14 pts active) via Vanguard US Health Care ETF 0.35%, Vanguard Total Stock Market ETF 0.07%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research"
+    },
+    {
+      "challenge_id": "ch_us-re-eq_2026-09-30",
+      "acid": "US RE EQ",
+      "label": "Real Estate",
+      "category": "Eq Sector",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "American Tower Corp",
+          "portfolio_weight": 0.3589,
+          "benchmark_weight": 0.0662,
+          "active_weight": 0.2927,
+          "sources": [
+            {
+              "source_name": "MS GLOBAL OPP EQ LAZARD",
+              "portfolio_weight": 0.2155,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2155
+            },
+            {
+              "source_name": "Schwab US REIT ETF\u2122",
+              "portfolio_weight": 0.1351,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1351
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0083,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0083
+            }
+          ]
+        },
+        {
+          "security_name": "Prologis Inc",
+          "portfolio_weight": 0.3292,
+          "benchmark_weight": 0.1071,
+          "active_weight": 0.2221,
+          "sources": [
+            {
+              "source_name": "Schwab US REIT ETF\u2122",
+              "portfolio_weight": 0.2615,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2615
+            },
+            {
+              "source_name": "MS GLOBAL OPP BASKET 11 - Direct Equities",
+              "portfolio_weight": 0.0542,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0542
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0135,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0135
+            }
+          ]
+        },
+        {
+          "security_name": "Welltower Inc",
+          "portfolio_weight": 0.3175,
+          "benchmark_weight": 0.1439,
+          "active_weight": 0.1735,
+          "sources": [
+            {
+              "source_name": "Schwab US REIT ETF\u2122",
+              "portfolio_weight": 0.3006,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3006
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0169,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0169
+            },
+            {
+              "source_name": "Morningstar Gbl NR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1439,
+              "active_weight": -0.1439
+            }
+          ]
+        },
+        {
+          "security_name": "REALTY INC. CORP",
+          "portfolio_weight": 0.2315,
+          "benchmark_weight": 0.0431,
+          "active_weight": 0.1883,
+          "sources": [
+            {
+              "source_name": "Schwab US REIT ETF\u2122",
+              "portfolio_weight": 0.1149,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1149
+            },
+            {
+              "source_name": "MS GLOBAL OPP BASKET 11 - Direct Equities",
+              "portfolio_weight": 0.1108,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1108
+            },
+            {
+              "source_name": "Vanguard Total Stock Market ETF",
+              "portfolio_weight": 0.0058,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0058
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 2.6983213282266734,
+        "portfolio_weight": 3.902740605575118,
+        "benchmark_weight": 1.204419277348445,
+        "positioning_direction": "overweight",
+        "vir_now": -0.004118427744430386,
+        "vir_delta_mom": 0.009551798296248748,
+        "vir_direction": "underweight",
+        "algo_active_weight": 1.95,
+        "algo_active_weight_mom": 0.08,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.004999999999999893,
+          "yield": 0.03196683598586554,
+          "inflation": 0.02513185115549854,
+          "currency_usd": -0.016786299656005754,
+          "valuation_adjustment_top_down": -0.02509971547060219,
+          "valuation_adjustment_combined": -0.00476145644805559,
+          "valuation_adjustment_bottom_up": 0.015576802574491011
+        },
+        "stf_relative_context": {
+          "universe": "global sectors",
+          "universe_size": 54,
+          "rank": 16,
+          "percentile": 0.72,
+          "stf": -0.0041,
+          "universe_median_stf": -0.0152,
+          "vs_median": 0.0111,
+          "more_attractive_peers": [
+            "Energy",
+            "Real Estate",
+            "Consumer Discretionary"
+          ],
+          "more_attractive_count": 15,
+          "universe_best": {
+            "label": "Energy",
+            "stf": 0.0294
+          },
+          "universe_worst": {
+            "label": "Financials",
+            "stf": -0.057
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 1.0,
+          "history_window_months": 12,
+          "history_low": -0.0159,
+          "history_high": -0.0041
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {},
+        "return_attribution_mtd": {
+          "active_period_return": -2.74,
+          "active_period_factor_return": -2.32,
+          "active_period_specific_return": -0.43,
+          "period_overweight_return": -3.91,
+          "period_underweight_return": 1.21,
+          "active_style_factor_returns": -1.15,
+          "active_industry_factor_returns": -1.07,
+          "active_market_factor_returns": null,
+          "window_start": "2026-09-01",
+          "window_end": "2026-09-30"
+        }
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "",
+        "sharepoint_research_summary": "1 Investment opportunity \u2013 Conviction level Recommendations September 2017 Conviction Level Comment Overall Conviction Low US REITs offer a poor reward for risk on both an absolute and relative basis with contrarian indicators pointing to excessive investor optimism. Taken together, the reward for risk and contrarian indictors warrant a \u201cLow\u201d conviction for US REITs. Absolute Valuation Low US REITs are significantly ",
+        "sharepoint_research_path": "201709-EQ-US RE EQ-Fundamental Review.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [],
+      "market_evidence": [],
+      "market_evidence_status": "ABSENT",
+      "market_evidence_absent_reason": "no_approved_source_row_matched",
+      "market_evidence_note": "No approved-source research matched US real estate sector for this period. There is no external market evidence in this pack for it; say so rather than asserting market facts.",
+      "market_evidence_region": "US",
+      "market_evidence_lenses_attempted": [
+        "earnings",
+        "valuation",
+        "macro"
+      ],
+      "internal_history_excerpt": "",
+      "top_holding_lineage": "American Tower Corp (+0.29 pts active) via MS GLOBAL OPP EQ LAZARD 0.22%, Schwab US REIT ETF\u2122 0.14%; Prologis Inc (+0.22 pts active) via Schwab US REIT ETF\u2122 0.26%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.05%; Welltower Inc (+0.17 pts active) via Schwab US REIT ETF\u2122 0.30%, Vanguard Total Stock Market ETF 0.02%",
       "research_status": {
         "status": "matched_without_month",
         "months_old": null,
@@ -2039,97 +2041,72 @@
   },
   "risk_and_attribution": {
     "summary": {
-      "review_date_requested": "2026-10-26",
-      "risk_date_used": "2026-07-20",
-      "prior_month_end_used": "2026-07-20",
-      "predicted_beta": 0.8245,
-      "active_predicted_beta": -0.1947,
-      "total_predicted_risk_pct": 13.73,
-      "active_predicted_risk_pct": 5.89,
-      "active_share_pct": 49.59,
-      "factor_risk_pct": 13.54,
-      "specific_risk_pct": 2.29,
-      "active_factor_risk_pct": 5.53,
-      "active_specific_risk_pct": 2.04,
-      "active_style_factor_risk_pct": 2.95,
-      "active_industry_factor_risk_pct": 3.1,
+      "review_date_requested": "2026-09-30",
+      "risk_date_used": "2026-09-30",
+      "prior_month_end_used": "",
+      "predicted_beta": 0.7466,
+      "active_predicted_beta": -0.2728,
+      "total_predicted_risk_pct": 11.49,
+      "active_predicted_risk_pct": 6.61,
+      "active_share_pct": 51.69,
+      "factor_risk_pct": 11.26,
+      "specific_risk_pct": 2.32,
+      "active_factor_risk_pct": 6.26,
+      "active_specific_risk_pct": 2.12,
+      "active_style_factor_risk_pct": 3.07,
+      "active_industry_factor_risk_pct": 3.42,
       "active_market_factor_risk_pct": null,
-      "change_vs_prior_month_end": {
-        "active_predicted_risk_change_pct": 0.0,
-        "active_share_change_pct": 0.0,
-        "active_factor_risk_change_pct": 0.0,
-        "active_specific_risk_change_pct": 0.0,
-        "active_style_factor_risk_change_pct": 0.0,
-        "active_industry_factor_risk_change_pct": 0.0,
-        "active_market_factor_risk_change_pct": null
-      }
+      "change_vs_prior_month_end": {}
     },
     "top_style_risk_drivers": [
       {
-        "label": "US4 Size",
-        "share_of_variance_pct": 6.62
-      },
-      {
         "label": "US4 Market Sensitivity",
-        "share_of_variance_pct": 5.13
+        "share_of_variance_pct": 5.91
       },
       {
-        "label": "US4 Volatility",
-        "share_of_variance_pct": 3.16
+        "label": "US4 Size",
+        "share_of_variance_pct": 2.68
+      },
+      {
+        "label": "US4 Medium-Term Momentum",
+        "share_of_variance_pct": 2.54
       }
     ],
     "top_industry_risk_drivers": [
       {
         "label": "US4 Semiconductors & Semiconductor Equipment",
-        "share_of_variance_pct": 1.78
-      },
-      {
-        "label": "US4 Software",
-        "share_of_variance_pct": 0.67
+        "share_of_variance_pct": 2.29
       },
       {
         "label": "US4 Technology Hardware, Storage & Peripherals",
-        "share_of_variance_pct": 0.56
+        "share_of_variance_pct": 0.55
       },
       {
-        "label": "US4 Professional Services",
+        "label": "US4 Media",
         "share_of_variance_pct": 0.37
+      },
+      {
+        "label": "US4 Software",
+        "share_of_variance_pct": 0.3
       }
     ],
-    "return_attribution_mtd": {},
+    "return_attribution_mtd": {
+      "active_period_return": -2.74,
+      "active_period_factor_return": -2.32,
+      "active_period_specific_return": -0.43,
+      "period_overweight_return": -3.91,
+      "period_underweight_return": 1.21,
+      "active_style_factor_returns": -1.15,
+      "active_industry_factor_returns": -1.07,
+      "active_market_factor_returns": null,
+      "window_start": "2026-09-01",
+      "window_end": "2026-09-30"
+    },
     "likely_holdings_contributors": [
       {
         "risk_driver": "US4 Semiconductors & Semiconductor Equipment",
         "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 1.78,
-        "active_weight": -6.39,
-        "signal_alignment": "aligned",
-        "top_sector_holdings": [
-          {
-            "security_name": "NVIDIA Corp",
-            "portfolio_weight": 2.61,
-            "benchmark_weight": 4.61,
-            "active_weight": -2.0
-          },
-          {
-            "security_name": "Microsoft Corp",
-            "portfolio_weight": 2.36,
-            "benchmark_weight": 3.3,
-            "active_weight": -0.94
-          },
-          {
-            "security_name": "Apple Inc",
-            "portfolio_weight": 1.82,
-            "benchmark_weight": 4.21,
-            "active_weight": -2.4
-          }
-        ],
-        "inference_level": "sector_proxy"
-      },
-      {
-        "risk_driver": "US4 Software",
-        "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 0.67,
+        "share_of_variance_pct": 2.29,
         "active_weight": -6.39,
         "signal_alignment": "aligned",
         "top_sector_holdings": [
@@ -2157,7 +2134,35 @@
       {
         "risk_driver": "US4 Technology Hardware, Storage & Peripherals",
         "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 0.56,
+        "share_of_variance_pct": 0.55,
+        "active_weight": -6.39,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 2.61,
+            "benchmark_weight": 4.61,
+            "active_weight": -2.0
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 2.36,
+            "benchmark_weight": 3.3,
+            "active_weight": -0.94
+          },
+          {
+            "security_name": "Apple Inc",
+            "portfolio_weight": 1.82,
+            "benchmark_weight": 4.21,
+            "active_weight": -2.4
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "US4 Software",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 0.3,
         "active_weight": -6.39,
         "signal_alignment": "aligned",
         "top_sector_holdings": [
@@ -2185,7 +2190,7 @@
       {
         "risk_driver": "EM4 Semiconductors & Semiconductor Equipment",
         "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 0.32,
+        "share_of_variance_pct": 0.26,
         "active_weight": -6.39,
         "signal_alignment": "aligned",
         "top_sector_holdings": [
@@ -2292,9 +2297,9 @@
       }
     ],
     "narrative_observations": [
-      "Measured active risk is currently most concentrated in industry risk at 3.10%.",
-      "The biggest modeled industry driver is US4 Semiconductors & Semiconductor Equipment at 1.8% of active variance.",
-      "The largest modeled style driver is US4 Size at 6.6% of active variance.",
+      "Measured active risk is currently most concentrated in industry risk at 3.42%.",
+      "The biggest modeled industry driver is US4 Semiconductors & Semiconductor Equipment at 2.3% of active variance.",
+      "The largest modeled style driver is US4 Market Sensitivity at 5.9% of active variance.",
       "Within the mapped Information Technology bucket behind US4 Semiconductors & Semiconductor Equipment risk, the largest sector holdings are NVIDIA Corp, Microsoft Corp, Apple Inc."
     ]
   },
@@ -2698,11 +2703,6 @@
       "severity": "low",
       "flag": "algo_scaled_to_percentage_points",
       "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
-    },
-    {
-      "severity": "low",
-      "flag": "risk_context_pre_month_end",
-      "message": "Risk context uses the latest business-day row on or before 2026-09-30: 2026-07-20."
     }
   ],
   "cost_guardrails": {

@@ -24,7 +24,7 @@
       "Largest underweight: United States Lrg Growth (-7.93 pts), with STF underweight and the algo active weight underweight (relative to benchmark).",
       "Largest overweight: Industrials (2.20 pts), with decomposition reading broad_based.",
       "19 material positions are directionally fighting the current STF/algo read.",
-      "US_EQ risk context: active predicted risk 3.65%, active share 44.2%, risk date used 2026-07-20."
+      "US_EQ risk context: active predicted risk 3.38%, active share 40.8%, risk date used 2026-09-30."
     ],
     "largest_overweights": [
       {
@@ -174,7 +174,7 @@
       "label": "United States Sml Growth",
       "category": "Eq Size / Style",
       "priority": "medium",
-      "challenge_score": 10.473,
+      "challenge_score": 11.973,
       "challenge_type": "material_position_needing_refresh",
       "challenge_headline": "United States Sml Growth still carries a meaningful overweight even though only part of the signal stack agrees.",
       "thesis_under_pressure": "The implicit thesis is that United States Sml Growth remains an intentional conviction position rather than legacy implementation residue.",
@@ -212,8 +212,8 @@
       },
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though growth is the largest single contributor.",
       "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
-      "measured_risk_readthrough": "Measured style risk is elevated in Market Sensitivity at 20.03% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "measured_risk_readthrough": "Measured style risk is elevated in Market Sensitivity at 22.19% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -1.92% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What current evidence still justifies keeping United States Sml Growth at this size rather than treating it as a position that needs to be refreshed?",
       "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Sml Growth is still an intentional expression.",
@@ -231,7 +231,7 @@
       "label": "United States Mid Value",
       "category": "Eq Size / Style",
       "priority": "medium",
-      "challenge_score": 10.11,
+      "challenge_score": 10.973,
       "challenge_type": "material_position_needing_refresh",
       "challenge_headline": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees.",
       "thesis_under_pressure": "The implicit thesis is that United States Mid Value remains an intentional conviction position rather than legacy implementation residue.",
@@ -267,8 +267,8 @@
       },
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
       "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
-      "measured_risk_readthrough": "Measured style risk is elevated in Size at 9.12% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "measured_risk_readthrough": "Measured style risk is elevated in Size at 4.02% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -1.92% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
       "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
@@ -286,7 +286,7 @@
       "label": "Industrials",
       "category": "Eq Sector",
       "priority": "medium",
-      "challenge_score": 7.576,
+      "challenge_score": 9.456,
       "challenge_type": "position_vs_signal_divergence",
       "challenge_headline": "Industrials remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
       "thesis_under_pressure": "Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.",
@@ -325,7 +325,7 @@
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
       "market_context_readthrough": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued.",
       "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -1.92% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What specific current evidence still supports the thesis 'Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.' given the portfolio is +2.20 pts overweight and the latest STF/algo stack is underweight/underweight?",
       "evidence_needed_next": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
@@ -338,60 +338,61 @@
       "top_holding_lineage": "Union Pacific Corp (+0.58 pts active) via MS US EQ SYSTEMATIC LARGE 0.45%, MS US EQUITY MFS 0.35%; Eaton Corp PLC (+0.52 pts active) via MS US EQUITY CLEARBRIDGE 0.43%, MS US EQUITY MFS 0.26%; RTX Corp (+0.28 pts active) via MS US EQUITY MFS 0.41%, MS US EQUITY CLEARBRIDGE 0.22%"
     },
     {
-      "challenge_id": "ch_us-sml-eq_2026-09-30",
-      "acid": "US SML EQ",
-      "label": "United States Sml",
-      "category": "Eq Size / Style",
+      "challenge_id": "ch_us-fn-eq_2026-09-30",
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
       "priority": "medium",
-      "challenge_score": 7.254,
-      "challenge_type": "material_position_needing_refresh",
-      "challenge_headline": "United States Sml still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "thesis_under_pressure": "The implicit thesis is that United States Sml remains an intentional conviction position rather than legacy implementation residue.",
-      "positioning_tension": "Fund weight is 5.44% versus benchmark 2.93%, leaving a +2.50 pt active overweight in United States Sml. Top underlying names include Casella Waste Systems Inc Class A, HEALTHPEAK PROPS. INC.",
-      "model_signal_tension": "STF is underweight at -0.97% (+1.11% MoM), while the algo active weight is +1.21 pts (relative to benchmark) and points overweight.",
-      "relative_signal_readthrough": "STF is -0.97% in absolute terms but ranks #3 of 9 in US styles (above the -2.15% universe median). Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
+      "challenge_score": 8.969,
+      "challenge_type": "position_vs_signal_divergence",
+      "challenge_headline": "Financials remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
+      "thesis_under_pressure": "The implicit thesis is that a overweight to Financials still deserves this size even though the current STF/algo stack is pointing the other way.",
+      "positioning_tension": "Fund weight is 13.01% versus benchmark 11.36%, leaving a +1.66 pt active overweight in Financials. Top underlying names include Visa Inc Class A, BlackRock Inc.",
+      "model_signal_tension": "STF is underweight at -1.53% (+0.39% MoM), while the algo active weight is -2.11 pts (relative to benchmark) and points underweight.",
+      "relative_signal_readthrough": "STF is -1.53% in absolute terms but ranks #6 of 11 in US sectors (above the -1.53% universe median) \u2014 the whole US sectors complex is negative and led by top-down valuation adjustment, a regime backdrop, so this exposure is relatively preferred even though the absolute signal is negative. Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
       "stf_relative_context": {
-        "universe": "US styles",
-        "universe_size": 9,
-        "rank": 3,
-        "percentile": 0.75,
-        "stf": -0.0097,
-        "universe_median_stf": -0.0215,
-        "vs_median": 0.0118,
+        "universe": "US sectors",
+        "universe_size": 11,
+        "rank": 6,
+        "percentile": 0.5,
+        "stf": -0.0153,
+        "universe_median_stf": -0.0153,
+        "vs_median": 0.0,
         "more_attractive_peers": [
-          "United States Sml Value",
-          "United States Mid Value"
+          "Real Estate",
+          "Utilities",
+          "Consumer Staples"
         ],
-        "more_attractive_count": 2,
+        "more_attractive_count": 5,
         "universe_best": {
-          "label": "United States Sml Value",
-          "stf": 0.0039
+          "label": "Real Estate",
+          "stf": -0.0041
         },
         "universe_worst": {
-          "label": "United States Lrg Growth",
-          "stf": -0.045
+          "label": "Information Technology",
+          "stf": -0.0524
         },
-        "universe_all_negative": false,
+        "universe_all_negative": true,
         "universe_dominant_driver": "valuation_adjustment_top_down",
         "historical_percentile": 0.82,
         "history_window_months": 12,
-        "history_low": -0.0208,
-        "history_high": -0.0075
+        "history_low": -0.0271,
+        "history_high": -0.012
       },
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though growth is the largest single contributor.",
-      "market_context_readthrough": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cycl...",
-      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers.",
+      "measured_risk_readthrough": "Measured risk currently points to Capital Markets as a relevant driver at 0.78% of active variance for the mapped Financials bucket. Key holdings in that risk bucket include Visa Inc Class A, BlackRock Inc, JPMorgan Chase & Co.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -1.92% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
-      "primary_pm_question": "What current evidence still justifies keeping United States Sml at this size rather than treating it as a position that needs to be refreshed?",
-      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Sml is still an intentional expression.",
+      "primary_pm_question": "What is the live underwriting case for keeping Financials at +1.66 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
+      "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Financials, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
       "source_quality": "model+positioning+internal_history+sharepoint_research",
       "research_status": {
         "status": "matched_without_month",
         "months_old": null,
         "folder_month": ""
       },
-      "top_holding_lineage": "Casella Waste Systems Inc Class A (+0.26 pts active) via MS US EQUITY WASATCH 0.26%, SPDR Portfolio S&P 600 Sm Cap ETF 0.00%; HEALTHPEAK PROPS. INC (+0.24 pts active) via MSTAR USEQ OPPORTUNISTIC 0.26%, Morningstar US Market TR USD 0.00%; Ollie's Bargain Outlet Holdings Inc (+0.22 pts active) via MS US EQUITY WASATCH 0.23%, Morningstar US Market TR USD 0.00%"
+      "top_holding_lineage": "Visa Inc Class A (+0.83 pts active) via MS US EQUITY CLEARBRIDGE 0.86%, MS US EQ SYSTEMATIC LARGE 0.83%; BlackRock Inc (+0.82 pts active) via MS US EQ SYSTEMATIC LARGE 0.58%, MS US EQUITY MFS 0.31%; JPMorgan Chase & Co (-0.42 pts active) via MS US EQUITY MFS 0.81%, Morningstar US Market TR USD 0.00%"
     }
   ],
   "challenge_market_context": [
@@ -591,17 +592,17 @@
       "market_evidence_note": ""
     },
     {
-      "acid": "US SML EQ",
-      "label": "United States Sml",
-      "category": "Eq Size / Style",
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
       "region_code": "US",
       "region": "US",
       "period": "September 2026",
-      "query_used": "US small-cap equities valuation rates style leadership September 2026",
+      "query_used": "US financials sector valuation rates spreads earnings September 2026",
       "lenses_attempted": [
         "earnings",
         "valuation",
-        "smallcap"
+        "rates"
       ],
       "rows": [
         {
@@ -628,7 +629,7 @@
       "market_evidence": [
         {
           "lens": "earnings",
-          "query_used": "US small-cap equities earnings growth revisions guidance September 2026",
+          "query_used": "US financials sector earnings growth revisions guidance September 2026",
           "headline": "FactSet Earnings Insight excerpt 2",
           "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
           "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
@@ -640,7 +641,7 @@
         },
         {
           "lens": "earnings",
-          "query_used": "US small-cap equities earnings growth revisions guidance September 2026",
+          "query_used": "US financials sector earnings growth revisions guidance September 2026",
           "headline": "FactSet Earnings Insight excerpt 1",
           "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
           "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
@@ -801,7 +802,7 @@
         "sector_or_industry_match": {},
         "style_match": {
           "label": "Market Sensitivity",
-          "share_of_variance_pct": 20.03
+          "share_of_variance_pct": 22.19
         },
         "specific_risk_watch_match": {
           "label": "United States Sml Growth",
@@ -829,7 +830,18 @@
           ],
           "inference_level": "sector_proxy"
         },
-        "return_attribution_mtd": {}
+        "return_attribution_mtd": {
+          "active_period_return": -1.56,
+          "active_period_factor_return": -1.43,
+          "active_period_specific_return": -0.13,
+          "period_overweight_return": -1.92,
+          "period_underweight_return": 0.35,
+          "active_style_factor_returns": -1.06,
+          "active_industry_factor_returns": -0.38,
+          "active_market_factor_returns": 0.01,
+          "window_start": "2026-09-01",
+          "window_end": "2026-09-30"
+        }
       },
       "exact_internal_research_excerpt": {
         "active_thesis_text": "",
@@ -1060,7 +1072,7 @@
         "sector_or_industry_match": {},
         "style_match": {
           "label": "Size",
-          "share_of_variance_pct": 9.12
+          "share_of_variance_pct": 4.02
         },
         "specific_risk_watch_match": {
           "label": "United States Mid Value",
@@ -1088,7 +1100,18 @@
           ],
           "inference_level": "sector_proxy"
         },
-        "return_attribution_mtd": {}
+        "return_attribution_mtd": {
+          "active_period_return": -1.56,
+          "active_period_factor_return": -1.43,
+          "active_period_specific_return": -0.13,
+          "period_overweight_return": -1.92,
+          "period_underweight_return": 0.35,
+          "active_style_factor_returns": -1.06,
+          "active_industry_factor_returns": -0.38,
+          "active_market_factor_returns": 0.01,
+          "window_start": "2026-09-01",
+          "window_end": "2026-09-30"
+        }
       },
       "exact_internal_research_excerpt": {
         "active_thesis_text": "",
@@ -1333,7 +1356,18 @@
         "sector_or_industry_match": {},
         "style_match": {},
         "specific_risk_watch_match": {},
-        "return_attribution_mtd": {}
+        "return_attribution_mtd": {
+          "active_period_return": -1.56,
+          "active_period_factor_return": -1.43,
+          "active_period_specific_return": -0.13,
+          "period_overweight_return": -1.92,
+          "period_underweight_return": 0.35,
+          "active_style_factor_returns": -1.06,
+          "active_industry_factor_returns": -0.38,
+          "active_market_factor_returns": 0.01,
+          "window_start": "2026-09-01",
+          "window_end": "2026-09-30"
+        }
       },
       "exact_internal_research_excerpt": {
         "active_thesis_text": "Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.",
@@ -1411,193 +1445,213 @@
       "source_quality": "model+positioning+memory+sharepoint_research"
     },
     {
-      "challenge_id": "ch_us-sml-eq_2026-09-30",
-      "acid": "US SML EQ",
-      "label": "United States Sml",
-      "category": "Eq Size / Style",
+      "challenge_id": "ch_us-fn-eq_2026-09-30",
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
       "exact_holdings_causing_it": [
         {
-          "security_name": "Casella Waste Systems Inc Class A",
-          "portfolio_weight": 0.2663,
-          "benchmark_weight": 0.007,
-          "active_weight": 0.2593,
+          "security_name": "Visa Inc Class A",
+          "portfolio_weight": 1.6853,
+          "benchmark_weight": 0.8577,
+          "active_weight": 0.8276,
           "sources": [
             {
-              "source_name": "MS US EQUITY WASATCH",
-              "portfolio_weight": 0.2634,
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.8572,
               "benchmark_weight": 0.0,
-              "active_weight": 0.2634
+              "active_weight": 0.8572
             },
             {
-              "source_name": "SPDR Portfolio S&P 600 Sm Cap ETF",
-              "portfolio_weight": 0.003,
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.8281,
               "benchmark_weight": 0.0,
-              "active_weight": 0.003
+              "active_weight": 0.8281
             },
             {
               "source_name": "Morningstar US Market TR USD",
               "portfolio_weight": 0.0,
-              "benchmark_weight": 0.007,
-              "active_weight": -0.007
+              "benchmark_weight": 0.8577,
+              "active_weight": -0.8577
             }
           ]
         },
         {
-          "security_name": "HEALTHPEAK PROPS. INC",
-          "portfolio_weight": 0.264,
-          "benchmark_weight": 0.0195,
-          "active_weight": 0.2445,
+          "security_name": "BlackRock Inc",
+          "portfolio_weight": 1.0249,
+          "benchmark_weight": 0.206,
+          "active_weight": 0.8189,
           "sources": [
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.5778,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5778
+            },
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3091,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3091
+            },
             {
               "source_name": "MSTAR USEQ OPPORTUNISTIC",
-              "portfolio_weight": 0.264,
+              "portfolio_weight": 0.1379,
               "benchmark_weight": 0.0,
-              "active_weight": 0.264
-            },
-            {
-              "source_name": "Morningstar US Market TR USD",
-              "portfolio_weight": 0.0,
-              "benchmark_weight": 0.0195,
-              "active_weight": -0.0195
+              "active_weight": 0.1379
             }
           ]
         },
         {
-          "security_name": "Ollie's Bargain Outlet Holdings Inc",
-          "portfolio_weight": 0.2309,
-          "benchmark_weight": 0.0073,
-          "active_weight": 0.2237,
+          "security_name": "JPMorgan Chase & Co",
+          "portfolio_weight": 0.8078,
+          "benchmark_weight": 1.2306,
+          "active_weight": -0.4228,
           "sources": [
             {
-              "source_name": "MS US EQUITY WASATCH",
-              "portfolio_weight": 0.2309,
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.8078,
               "benchmark_weight": 0.0,
-              "active_weight": 0.2309
+              "active_weight": 0.8078
             },
             {
               "source_name": "Morningstar US Market TR USD",
               "portfolio_weight": 0.0,
-              "benchmark_weight": 0.0073,
-              "active_weight": -0.0073
+              "benchmark_weight": 1.2306,
+              "active_weight": -1.2306
             }
           ]
         },
         {
-          "security_name": "CTS Corp",
-          "portfolio_weight": 0.1798,
-          "benchmark_weight": 0.0,
-          "active_weight": 0.1798,
+          "security_name": "American Express Co",
+          "portfolio_weight": 0.7561,
+          "benchmark_weight": 0.2255,
+          "active_weight": 0.5305,
           "sources": [
             {
-              "source_name": "MS US EQUITY WASATCH",
-              "portfolio_weight": 0.1376,
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.442,
               "benchmark_weight": 0.0,
-              "active_weight": 0.1376
+              "active_weight": 0.442
             },
             {
-              "source_name": "MS US EQ SYSTEMATIC SMID",
-              "portfolio_weight": 0.0401,
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.314,
               "benchmark_weight": 0.0,
-              "active_weight": 0.0401
+              "active_weight": 0.314
             },
             {
-              "source_name": "SPDR\u00ae S&P 600 Small Cap Value ETF",
-              "portfolio_weight": 0.0011,
-              "benchmark_weight": 0.0,
-              "active_weight": 0.0011
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.2255,
+              "active_weight": -0.2255
             }
           ]
         }
       ],
       "exact_vir_algo_decomp_explanation": {
-        "active_weight": 2.5026562822611615,
-        "portfolio_weight": 5.435985108929628,
-        "benchmark_weight": 2.933328826668466,
+        "active_weight": 1.6566475735401696,
+        "portfolio_weight": 13.014323030469974,
+        "benchmark_weight": 11.357675456929805,
         "positioning_direction": "overweight",
-        "vir_now": -0.009711496323225682,
-        "vir_delta_mom": 0.01108474317301189,
+        "vir_now": -0.015260640103511303,
+        "vir_delta_mom": 0.00385886864810403,
         "vir_direction": "underweight",
-        "algo_active_weight": 1.21,
-        "algo_active_weight_mom": 0.66,
-        "algo_direction": "overweight",
-        "signal_alignment": "partially_aligned",
-        "decomposition_driver": "growth",
+        "algo_active_weight": -2.11,
+        "algo_active_weight_mom": 1.09,
+        "algo_direction": "underweight",
+        "signal_alignment": "diverging",
+        "decomposition_driver": "yield",
         "decomposition_assessment": "broad_based",
         "decomposition_values": {
-          "growth": 0.040000000000000036,
-          "yield": 0.02611572252819644,
+          "growth": 0.018000000000000016,
+          "yield": 0.036590859125729625,
           "inflation": 0.02513185115549854,
           "currency_usd": -0.016786299656005754,
-          "valuation_adjustment_top_down": -0.023534693647608074,
-          "valuation_adjustment_combined": -0.006756941203290623,
-          "valuation_adjustment_bottom_up": 0.010020811241026828
+          "valuation_adjustment_top_down": -0.027448363258758546,
+          "valuation_adjustment_combined": -0.011641944233046098,
+          "valuation_adjustment_bottom_up": 0.004164474792666351
         },
         "stf_relative_context": {
-          "universe": "US styles",
-          "universe_size": 9,
-          "rank": 3,
-          "percentile": 0.75,
-          "stf": -0.0097,
-          "universe_median_stf": -0.0215,
-          "vs_median": 0.0118,
+          "universe": "US sectors",
+          "universe_size": 11,
+          "rank": 6,
+          "percentile": 0.5,
+          "stf": -0.0153,
+          "universe_median_stf": -0.0153,
+          "vs_median": 0.0,
           "more_attractive_peers": [
-            "United States Sml Value",
-            "United States Mid Value"
+            "Real Estate",
+            "Utilities",
+            "Consumer Staples"
           ],
-          "more_attractive_count": 2,
+          "more_attractive_count": 5,
           "universe_best": {
-            "label": "United States Sml Value",
-            "stf": 0.0039
+            "label": "Real Estate",
+            "stf": -0.0041
           },
           "universe_worst": {
-            "label": "United States Lrg Growth",
-            "stf": -0.045
+            "label": "Information Technology",
+            "stf": -0.0524
           },
-          "universe_all_negative": false,
+          "universe_all_negative": true,
           "universe_dominant_driver": "valuation_adjustment_top_down",
           "historical_percentile": 0.82,
           "history_window_months": 12,
-          "history_low": -0.0208,
-          "history_high": -0.0075
+          "history_low": -0.0271,
+          "history_high": -0.012
         }
       },
       "exact_risk_contribution": {
-        "sector_or_industry_match": {},
-        "style_match": {},
-        "specific_risk_watch_match": {
-          "label": "United States Sml",
-          "category": "Eq Size / Style",
-          "active_weight": 2.5,
+        "sector_or_industry_match": {
+          "risk_driver": "Capital Markets",
+          "mapped_sector": "Financials",
+          "share_of_variance_pct": 0.78,
+          "active_weight": 1.66,
+          "signal_alignment": "diverging",
           "top_sector_holdings": [
             {
-              "security_name": "Casella Waste Systems Inc Class A",
-              "portfolio_weight": 0.27,
-              "benchmark_weight": 0.01,
-              "active_weight": 0.26
+              "security_name": "Visa Inc Class A",
+              "portfolio_weight": 1.69,
+              "benchmark_weight": 0.86,
+              "active_weight": 0.83
             },
             {
-              "security_name": "HEALTHPEAK PROPS. INC",
-              "portfolio_weight": 0.26,
-              "benchmark_weight": 0.02,
-              "active_weight": 0.24
+              "security_name": "BlackRock Inc",
+              "portfolio_weight": 1.02,
+              "benchmark_weight": 0.21,
+              "active_weight": 0.82
             },
             {
-              "security_name": "Ollie's Bargain Outlet Holdings Inc",
-              "portfolio_weight": 0.23,
-              "benchmark_weight": 0.01,
-              "active_weight": 0.22
+              "security_name": "JPMorgan Chase & Co",
+              "portfolio_weight": 0.81,
+              "benchmark_weight": 1.23,
+              "active_weight": -0.42
             }
           ],
           "inference_level": "sector_proxy"
         },
-        "return_attribution_mtd": {}
+        "style_match": {},
+        "specific_risk_watch_match": {},
+        "return_attribution_mtd": {
+          "active_period_return": -1.56,
+          "active_period_factor_return": -1.43,
+          "active_period_specific_return": -0.13,
+          "period_overweight_return": -1.92,
+          "period_underweight_return": 0.35,
+          "active_style_factor_returns": -1.06,
+          "active_industry_factor_returns": -0.38,
+          "active_market_factor_returns": 0.01,
+          "window_start": "2026-09-01",
+          "window_end": "2026-09-30"
+        }
       },
       "exact_internal_research_excerpt": {
         "active_thesis_text": "",
         "active_thesis_falsification_conditions": "",
-        "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Larg",
-        "sharepoint_research_summary": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cyclicals accounting for the majority. They also have lower international revenue exposure and less concentration. We find sector exposure can explain a large proportion of the returns of US Small Caps. Howe",
-        "sharepoint_research_path": "202505-EQ-US SML EQ-Conviction Update.pptx",
+        "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few points to our IT holdings to reflect the direction of VIRs, STFs, and the Algo.  On VIR and STF, IT ranks 5th and 8th, respectively.  We note that, excluding the MER P/FV adjustment,",
+        "sharepoint_research_summary": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers. DECEMBER 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 47 55 64 71 75 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe, LLC Sean Dunlop, CFA Director of Equity Research, Financials Morningstar Research Se",
+        "sharepoint_research_path": "202512-EQ-US FN EQ-US Financials Sector Review .pptx",
         "sharepoint_research_month": "",
         "sharepoint_match_status": "matched"
       },
@@ -1626,7 +1680,7 @@
       "market_evidence": [
         {
           "lens": "earnings",
-          "query_used": "US small-cap equities earnings growth revisions guidance September 2026",
+          "query_used": "US financials sector earnings growth revisions guidance September 2026",
           "headline": "FactSet Earnings Insight excerpt 2",
           "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
           "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
@@ -1638,7 +1692,7 @@
         },
         {
           "lens": "earnings",
-          "query_used": "US small-cap equities earnings growth revisions guidance September 2026",
+          "query_used": "US financials sector earnings growth revisions guidance September 2026",
           "headline": "FactSet Earnings Insight excerpt 1",
           "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
           "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
@@ -1656,10 +1710,10 @@
       "market_evidence_lenses_attempted": [
         "earnings",
         "valuation",
-        "smallcap"
+        "rates"
       ],
-      "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Smal",
-      "top_holding_lineage": "Casella Waste Systems Inc Class A (+0.26 pts active) via MS US EQUITY WASATCH 0.26%, SPDR Portfolio S&P 600 Sm Cap ETF 0.00%; HEALTHPEAK PROPS. INC (+0.24 pts active) via MSTAR USEQ OPPORTUNISTIC 0.26%, Morningstar US Market TR USD 0.00%; Ollie's Bargain Outlet Holdings Inc (+0.22 pts active) via MS US EQUITY WASATCH 0.23%, Morningstar US Market TR USD 0.00%",
+      "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few points to our IT holdings to reflect the direction of VIRs, STFs, and the Algo.  On VIR and STF, IT ran",
+      "top_holding_lineage": "Visa Inc Class A (+0.83 pts active) via MS US EQUITY CLEARBRIDGE 0.86%, MS US EQ SYSTEMATIC LARGE 0.83%; BlackRock Inc (+0.82 pts active) via MS US EQ SYSTEMATIC LARGE 0.58%, MS US EQUITY MFS 0.31%; JPMorgan Chase & Co (-0.42 pts active) via MS US EQUITY MFS 0.81%, Morningstar US Market TR USD 0.00%",
       "research_status": {
         "status": "matched_without_month",
         "months_old": null,
@@ -2413,69 +2467,72 @@
   },
   "risk_and_attribution": {
     "summary": {
-      "review_date_requested": "2026-10-26",
-      "risk_date_used": "2026-07-20",
-      "prior_month_end_used": "2026-07-20",
-      "predicted_beta": 0.8845,
-      "active_predicted_beta": -0.1164,
-      "total_predicted_risk_pct": 14.89,
-      "active_predicted_risk_pct": 3.65,
-      "active_share_pct": 44.2,
-      "factor_risk_pct": 14.48,
-      "specific_risk_pct": 3.48,
-      "active_factor_risk_pct": 3.24,
-      "active_specific_risk_pct": 1.69,
-      "active_style_factor_risk_pct": 2.64,
-      "active_industry_factor_risk_pct": 1.27,
-      "active_market_factor_risk_pct": 0.14,
-      "change_vs_prior_month_end": {
-        "active_predicted_risk_change_pct": 0.0,
-        "active_share_change_pct": 0.0,
-        "active_factor_risk_change_pct": 0.0,
-        "active_specific_risk_change_pct": 0.0,
-        "active_style_factor_risk_change_pct": 0.0,
-        "active_industry_factor_risk_change_pct": 0.0,
-        "active_market_factor_risk_change_pct": 0.0
-      }
+      "review_date_requested": "2026-09-30",
+      "risk_date_used": "2026-09-30",
+      "prior_month_end_used": "",
+      "predicted_beta": 0.87,
+      "active_predicted_beta": -0.1309,
+      "total_predicted_risk_pct": 12.96,
+      "active_predicted_risk_pct": 3.38,
+      "active_share_pct": 40.8,
+      "factor_risk_pct": 12.36,
+      "specific_risk_pct": 3.88,
+      "active_factor_risk_pct": 2.96,
+      "active_specific_risk_pct": 1.63,
+      "active_style_factor_risk_pct": 2.49,
+      "active_industry_factor_risk_pct": 1.06,
+      "active_market_factor_risk_pct": 0.1,
+      "change_vs_prior_month_end": {}
     },
     "top_style_risk_drivers": [
       {
         "label": "Market Sensitivity",
-        "share_of_variance_pct": 20.03
+        "share_of_variance_pct": 22.19
       },
       {
         "label": "Medium-Term Momentum",
-        "share_of_variance_pct": 16.41
+        "share_of_variance_pct": 15.91
       },
       {
         "label": "Size",
-        "share_of_variance_pct": 9.12
+        "share_of_variance_pct": 4.02
       }
     ],
     "top_industry_risk_drivers": [
       {
         "label": "Semiconductors & Semiconductor Equipment",
-        "share_of_variance_pct": 2.71
+        "share_of_variance_pct": 2.59
       },
       {
         "label": "Technology Hardware, Storage & Peripherals",
-        "share_of_variance_pct": 1.54
+        "share_of_variance_pct": 1.28
       },
       {
         "label": "Capital Markets",
-        "share_of_variance_pct": 0.91
+        "share_of_variance_pct": 0.78
       },
       {
-        "label": "Life Sciences Tools & Services",
-        "share_of_variance_pct": 0.49
+        "label": "Health Care Equipment & Supplies",
+        "share_of_variance_pct": 0.46
       }
     ],
-    "return_attribution_mtd": {},
+    "return_attribution_mtd": {
+      "active_period_return": -1.56,
+      "active_period_factor_return": -1.43,
+      "active_period_specific_return": -0.13,
+      "period_overweight_return": -1.92,
+      "period_underweight_return": 0.35,
+      "active_style_factor_returns": -1.06,
+      "active_industry_factor_returns": -0.38,
+      "active_market_factor_returns": 0.01,
+      "window_start": "2026-09-01",
+      "window_end": "2026-09-30"
+    },
     "likely_holdings_contributors": [
       {
         "risk_driver": "Semiconductors & Semiconductor Equipment",
         "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 2.71,
+        "share_of_variance_pct": 2.59,
         "active_weight": 0.62,
         "signal_alignment": "diverging",
         "top_sector_holdings": [
@@ -2503,7 +2560,7 @@
       {
         "risk_driver": "Technology Hardware, Storage & Peripherals",
         "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 1.54,
+        "share_of_variance_pct": 1.28,
         "active_weight": 0.62,
         "signal_alignment": "diverging",
         "top_sector_holdings": [
@@ -2531,7 +2588,7 @@
       {
         "risk_driver": "Capital Markets",
         "mapped_sector": "Financials",
-        "share_of_variance_pct": 0.91,
+        "share_of_variance_pct": 0.78,
         "active_weight": 1.66,
         "signal_alignment": "diverging",
         "top_sector_holdings": [
@@ -2557,9 +2614,9 @@
         "inference_level": "sector_proxy"
       },
       {
-        "risk_driver": "Life Sciences Tools & Services",
+        "risk_driver": "Health Care Equipment & Supplies",
         "mapped_sector": "Health Care",
-        "share_of_variance_pct": 0.49,
+        "share_of_variance_pct": 0.46,
         "active_weight": 0.68,
         "signal_alignment": "diverging",
         "top_sector_holdings": [
@@ -2666,9 +2723,9 @@
       }
     ],
     "narrative_observations": [
-      "Measured active risk is currently most concentrated in style risk at 2.64%.",
-      "The biggest modeled industry driver is Semiconductors & Semiconductor Equipment at 2.7% of active variance.",
-      "The largest modeled style driver is Market Sensitivity at 20.0% of active variance.",
+      "Measured active risk is currently most concentrated in style risk at 2.49%.",
+      "The biggest modeled industry driver is Semiconductors & Semiconductor Equipment at 2.6% of active variance.",
+      "The largest modeled style driver is Market Sensitivity at 22.2% of active variance.",
       "Within the mapped Information Technology bucket behind Semiconductors & Semiconductor Equipment risk, the largest sector holdings are Taiwan Semiconductor Manufacturing Co Ltd ADR, Camtek Ltd, Nova Ltd."
     ]
   },
@@ -3140,11 +3197,6 @@
       "severity": "low",
       "flag": "algo_scaled_to_percentage_points",
       "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
-    },
-    {
-      "severity": "low",
-      "flag": "risk_context_pre_month_end",
-      "message": "Risk context uses the latest business-day row on or before 2026-09-30: 2026-07-20."
     }
   ],
   "cost_guardrails": {

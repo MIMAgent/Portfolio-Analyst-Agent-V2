@@ -2,17 +2,18 @@
 One-time extractor: Axioma weekly Time Series Risk Report (xlsx) -> src/data/factorRisk.json
 Keeps the web app static (no xlsx parsing in the browser), matching the stfHistory.json pattern.
 
-Run from frontend/web:  py scripts/extract_factor_risk.py
+Run from frontend/web:  py scripts/extract_factor_risk.py [source] [output] [as-of-date]
 """
 import json
 import os
+import sys
 import openpyxl
 
-SRC = os.path.join(
+DEFAULT_SRC = os.path.join(
     os.path.dirname(__file__), "..", "..", "..", "data", "2026-05-31",
     "weekly_US_EQ_Time Series Risk Report - Sortable_2026-03-31_2026-06-05.xlsx",
 )
-OUT = os.path.join(os.path.dirname(__file__), "..", "src", "data", "factorRisk.json")
+DEFAULT_OUT = os.path.join(os.path.dirname(__file__), "..", "src", "data", "factorRisk.json")
 
 
 def r(x, n=4):
@@ -20,13 +21,18 @@ def r(x, n=4):
 
 
 def main():
-    wb = openpyxl.load_workbook(SRC, read_only=True, data_only=True)
+    source = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SRC
+    output = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_OUT
+    as_of_date = sys.argv[3] if len(sys.argv) > 3 else None
+    wb = openpyxl.load_workbook(source, read_only=True, data_only=True)
 
     def rows(name):
         ws = wb[name]
         data = list(ws.iter_rows(values_only=True))
         hdr = data[0]
         body = [row for row in data[1:] if len(row) > 2 and row[2]]  # has Period Description
+        if as_of_date:
+            body = [row for row in body if str(row[2])[:10] <= as_of_date]
         idx = {h: i for i, h in enumerate(hdr)}
         return hdr, body, idx
 
@@ -164,9 +170,9 @@ def main():
         "contributors": contributors,
     }
 
-    with open(OUT, "w") as fh:
+    with open(output, "w") as fh:
         json.dump(out, fh, indent=2)
-    print(f"wrote {OUT}  ({len(series)} periods, {len(styleFactors)} styles, {len(contributors)} contributors)")
+    print(f"wrote {output}  ({len(series)} periods, {len(styleFactors)} styles, {len(contributors)} contributors)")
 
 
 if __name__ == "__main__":

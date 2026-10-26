@@ -29,6 +29,7 @@ import argparse
 from datetime import datetime, timezone
 import importlib.util
 import json
+import os
 from pathlib import Path
 import sys
 from types import ModuleType
@@ -37,6 +38,22 @@ from types import ModuleType
 SCRIPT_DIR = Path(__file__).resolve().parent
 # Repo root when running from agent2/scripts/ ; harmless if it doesn't exist.
 REPO_ROOT = SCRIPT_DIR.parents[1]
+
+
+def _load_repo_env(path: Path) -> None:
+    """Load repository credentials for local reruns before boto3 resolves auth."""
+    if not path.exists():
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or "=" not in stripped:
+            continue
+        key, value = stripped.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip("\"'")
+        if key:
+            os.environ[key] = value
+    os.environ.setdefault("AWS_EC2_METADATA_DISABLED", "true")
 
 
 def _load_module_by_path(name: str, *candidates: Path) -> ModuleType:
@@ -141,6 +158,7 @@ def _load_bedrock_client_class():
 
 def main() -> int:
     args = build_parser().parse_args()
+    _load_repo_env(REPO_ROOT / ".env")
 
     evidence_path = Path(args.evidence_pack)
     if not evidence_path.exists():

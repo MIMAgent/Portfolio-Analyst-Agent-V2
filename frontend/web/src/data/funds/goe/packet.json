@@ -383,7 +383,7 @@
       "Largest underweight: Information Technology (-6.39 pts), with STF underweight and the algo active weight underweight (relative to benchmark).",
       "Largest overweight: United States Mid Value (7.35 pts), with decomposition reading broad_based.",
       "16 material positions are directionally fighting the current STF/algo read.",
-      "US_EQ risk context: active predicted risk 5.89%, active share 49.6%, risk date used 2026-07-20."
+      "US_EQ risk context: active predicted risk 6.61%, active share 51.7%, risk date used 2026-09-30."
     ]
   },
   "material_positions": [
@@ -64407,125 +64407,100 @@
   ],
   "risk_context": {
     "available": true,
-    "source_file": "weekly_GOE_portfolio_Time Series Risk Report - Sortable_2026-06-30_2026-07-17.xlsx",
+    "source_file": "monthly_GOE_portfolio_Time Series Risk Report - Sortable_2026-08-31_2026-09-30.xlsx",
     "portfolio_code": "GOE_portfolio",
     "benchmark": "Morningstar Global Markets NR USD",
-    "date_range": "2026-06-30 to 2026-07-17",
+    "date_range": "2026-08-31 to 2026-09-30",
     "report_generated_with": "",
     "summary": {
-      "review_date_requested": "2026-10-26",
-      "risk_date_used": "2026-07-20",
-      "prior_month_end_used": "2026-07-20",
-      "predicted_beta": 0.8245,
-      "active_predicted_beta": -0.1947,
-      "total_predicted_risk_pct": 13.73,
-      "active_predicted_risk_pct": 5.89,
-      "active_share_pct": 49.59,
-      "factor_risk_pct": 13.54,
-      "specific_risk_pct": 2.29,
-      "active_factor_risk_pct": 5.53,
-      "active_specific_risk_pct": 2.04,
-      "active_style_factor_risk_pct": 2.95,
-      "active_industry_factor_risk_pct": 3.1,
+      "review_date_requested": "2026-09-30",
+      "risk_date_used": "2026-09-30",
+      "prior_month_end_used": "",
+      "predicted_beta": 0.7466,
+      "active_predicted_beta": -0.2728,
+      "total_predicted_risk_pct": 11.49,
+      "active_predicted_risk_pct": 6.61,
+      "active_share_pct": 51.69,
+      "factor_risk_pct": 11.26,
+      "specific_risk_pct": 2.32,
+      "active_factor_risk_pct": 6.26,
+      "active_specific_risk_pct": 2.12,
+      "active_style_factor_risk_pct": 3.07,
+      "active_industry_factor_risk_pct": 3.42,
       "active_market_factor_risk_pct": null,
-      "change_vs_prior_month_end": {
-        "active_predicted_risk_change_pct": 0.0,
-        "active_share_change_pct": 0.0,
-        "active_factor_risk_change_pct": 0.0,
-        "active_specific_risk_change_pct": 0.0,
-        "active_style_factor_risk_change_pct": 0.0,
-        "active_industry_factor_risk_change_pct": 0.0,
-        "active_market_factor_risk_change_pct": null
-      }
+      "change_vs_prior_month_end": {}
     },
     "portfolio_coverage": {
-      "asset_count": 67,
-      "common_asset_count": 49,
-      "common_asset_weight_pct": 90.65,
-      "cash_weight_pct": 1.61
+      "asset_count": 69,
+      "common_asset_count": 50,
+      "common_asset_weight_pct": 91.69,
+      "cash_weight_pct": 1.21
     },
     "top_style_risk_drivers": [
       {
-        "label": "US4 Size",
-        "share_of_variance_pct": 6.62
-      },
-      {
         "label": "US4 Market Sensitivity",
-        "share_of_variance_pct": 5.13
+        "share_of_variance_pct": 5.91
       },
       {
-        "label": "US4 Volatility",
-        "share_of_variance_pct": 3.16
+        "label": "US4 Size",
+        "share_of_variance_pct": 2.68
       },
       {
         "label": "US4 Medium-Term Momentum",
-        "share_of_variance_pct": 2.84
+        "share_of_variance_pct": 2.54
+      },
+      {
+        "label": "US4 Volatility",
+        "share_of_variance_pct": 1.85
       },
       {
         "label": "DM4 Medium-Term Momentum",
-        "share_of_variance_pct": 1.14
+        "share_of_variance_pct": 0.85
       }
     ],
     "top_industry_risk_drivers": [
       {
         "label": "US4 Semiconductors & Semiconductor Equipment",
-        "share_of_variance_pct": 1.78
-      },
-      {
-        "label": "US4 Software",
-        "share_of_variance_pct": 0.67
+        "share_of_variance_pct": 2.29
       },
       {
         "label": "US4 Technology Hardware, Storage & Peripherals",
-        "share_of_variance_pct": 0.56
+        "share_of_variance_pct": 0.55
       },
       {
-        "label": "US4 Professional Services",
+        "label": "US4 Media",
         "share_of_variance_pct": 0.37
       },
       {
-        "label": "US4 Equity Real Estate Investment Trusts (REITs)",
-        "share_of_variance_pct": 0.35
+        "label": "US4 Software",
+        "share_of_variance_pct": 0.3
       },
       {
         "label": "EM4 Semiconductors & Semiconductor Equipment",
-        "share_of_variance_pct": 0.32
+        "share_of_variance_pct": 0.26
+      },
+      {
+        "label": "US4 Equity Real Estate Investment Trusts (REITs)",
+        "share_of_variance_pct": 0.26
       }
     ],
-    "return_attribution_mtd": {},
+    "return_attribution_mtd": {
+      "active_period_return": -2.74,
+      "active_period_factor_return": -2.32,
+      "active_period_specific_return": -0.43,
+      "period_overweight_return": -3.91,
+      "period_underweight_return": 1.21,
+      "active_style_factor_returns": -1.15,
+      "active_industry_factor_returns": -1.07,
+      "active_market_factor_returns": null,
+      "window_start": "2026-09-01",
+      "window_end": "2026-09-30"
+    },
     "likely_holdings_contributors": [
       {
         "risk_driver": "US4 Semiconductors & Semiconductor Equipment",
         "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 1.78,
-        "active_weight": -6.39,
-        "signal_alignment": "aligned",
-        "top_sector_holdings": [
-          {
-            "security_name": "NVIDIA Corp",
-            "portfolio_weight": 2.61,
-            "benchmark_weight": 4.61,
-            "active_weight": -2.0
-          },
-          {
-            "security_name": "Microsoft Corp",
-            "portfolio_weight": 2.36,
-            "benchmark_weight": 3.3,
-            "active_weight": -0.94
-          },
-          {
-            "security_name": "Apple Inc",
-            "portfolio_weight": 1.82,
-            "benchmark_weight": 4.21,
-            "active_weight": -2.4
-          }
-        ],
-        "inference_level": "sector_proxy"
-      },
-      {
-        "risk_driver": "US4 Software",
-        "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 0.67,
+        "share_of_variance_pct": 2.29,
         "active_weight": -6.39,
         "signal_alignment": "aligned",
         "top_sector_holdings": [
@@ -64553,7 +64528,35 @@
       {
         "risk_driver": "US4 Technology Hardware, Storage & Peripherals",
         "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 0.56,
+        "share_of_variance_pct": 0.55,
+        "active_weight": -6.39,
+        "signal_alignment": "aligned",
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 2.61,
+            "benchmark_weight": 4.61,
+            "active_weight": -2.0
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 2.36,
+            "benchmark_weight": 3.3,
+            "active_weight": -0.94
+          },
+          {
+            "security_name": "Apple Inc",
+            "portfolio_weight": 1.82,
+            "benchmark_weight": 4.21,
+            "active_weight": -2.4
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "US4 Software",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 0.3,
         "active_weight": -6.39,
         "signal_alignment": "aligned",
         "top_sector_holdings": [
@@ -64581,7 +64584,7 @@
       {
         "risk_driver": "EM4 Semiconductors & Semiconductor Equipment",
         "mapped_sector": "Information Technology",
-        "share_of_variance_pct": 0.32,
+        "share_of_variance_pct": 0.26,
         "active_weight": -6.39,
         "signal_alignment": "aligned",
         "top_sector_holdings": [
@@ -64740,9 +64743,9 @@
       }
     ],
     "narrative_observations": [
-      "Measured active risk is currently most concentrated in industry risk at 3.10%.",
-      "The biggest modeled industry driver is US4 Semiconductors & Semiconductor Equipment at 1.8% of active variance.",
-      "The largest modeled style driver is US4 Size at 6.6% of active variance.",
+      "Measured active risk is currently most concentrated in industry risk at 3.42%.",
+      "The biggest modeled industry driver is US4 Semiconductors & Semiconductor Equipment at 2.3% of active variance.",
+      "The largest modeled style driver is US4 Market Sensitivity at 5.9% of active variance.",
       "Within the mapped Information Technology bucket behind US4 Semiconductors & Semiconductor Equipment risk, the largest sector holdings are NVIDIA Corp, Microsoft Corp, Apple Inc."
     ]
   },
@@ -64844,9 +64847,9 @@
     "fund_level_observations": [
       "The largest current active expression is United States Mid Value at 7.35 percentage points, with partially_aligned signal support.",
       "The clearest position-versus-signal tension is United States Mid Value, where positioning is overweight while the STF is underweight and the algo active weight (relative to benchmark) is overweight.",
-      "Measured active risk is currently most concentrated in industry risk at 3.10%.",
-      "The biggest modeled industry driver is US4 Semiconductors & Semiconductor Equipment at 1.8% of active variance.",
-      "The largest modeled style driver is US4 Size at 6.6% of active variance."
+      "Measured active risk is currently most concentrated in industry risk at 3.42%.",
+      "The biggest modeled industry driver is US4 Semiconductors & Semiconductor Equipment at 2.3% of active variance.",
+      "The largest modeled style driver is US4 Market Sensitivity at 5.9% of active variance."
     ]
   },
   "top_movers": [
@@ -65131,7 +65134,7 @@
       "category": "Eq Size / Style",
       "priority": "high",
       "challenge_type": "material_position_needing_refresh",
-      "challenge_score": 16.289,
+      "challenge_score": 17.789,
       "reason": "This is a material active position that still needs an explicit current-month rationale.",
       "question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
       "observation": "This is a material active position that still needs an explicit current-month rationale.",
@@ -65171,7 +65174,7 @@
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
       "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
       "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
       "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
@@ -65200,7 +65203,7 @@
       "category": "Eq Sector",
       "priority": "medium",
       "challenge_type": "position_vs_signal_divergence",
-      "challenge_score": 8.926,
+      "challenge_score": 11.496,
       "reason": "Positioning is overweight, but the STF is underweight and the algo active weight (relative to benchmark) is underweight.",
       "question": "What is the live underwriting case for keeping Communication Services at +2.80 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
       "observation": "Positioning is overweight, but the STF is underweight and the algo active weight (relative to benchmark) is underweight.",
@@ -65242,7 +65245,7 @@
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
       "market_context_readthrough": "Equity Sector Review: US Communication Services We are neutral on the sector, but we expect Alphabet and Meta to remain dominant.",
       "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What is the live underwriting case for keeping Communication Services at +2.80 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
       "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Communication Services, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
@@ -65269,88 +65272,13 @@
       ]
     },
     {
-      "challenge_id": "ch_uk-eq_2026-09-30",
-      "acid": "UK EQ",
-      "label": "United Kingdom",
-      "category": "Country",
-      "priority": "high",
-      "challenge_type": "material_position_needing_refresh",
-      "challenge_score": 7.729,
-      "reason": "This is a material active position that still needs an explicit current-month rationale.",
-      "question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
-      "observation": "This is a material active position that still needs an explicit current-month rationale.",
-      "interpretation": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
-      "challenge_headline": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees.",
-      "thesis_under_pressure": "The implicit thesis is that United Kingdom remains an intentional conviction position rather than legacy implementation residue.",
-      "positioning_tension": "Fund weight is 6.37% versus benchmark 2.99%, leaving a +3.38 pt active overweight in United Kingdom. Top underlying names include Autotrader Group PLC, Bunzl PLC.",
-      "model_signal_tension": "STF is underweight at -0.83% (+0.28% MoM), while the algo active weight is +1.65 pts (relative to benchmark) and points overweight.",
-      "relative_signal_readthrough": "STF is -0.83% in absolute terms but ranks #19 of 44 in global countries (above the -1.47% universe median). Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
-      "stf_relative_context": {
-        "universe": "global countries",
-        "universe_size": 44,
-        "rank": 19,
-        "percentile": 0.58,
-        "stf": -0.0083,
-        "universe_median_stf": -0.0147,
-        "vs_median": 0.0064,
-        "more_attractive_peers": [
-          "Indonesia",
-          "Turkey",
-          "Qatar"
-        ],
-        "more_attractive_count": 18,
-        "universe_best": {
-          "label": "Indonesia",
-          "stf": 0.0557
-        },
-        "universe_worst": {
-          "label": "Taiwan",
-          "stf": -0.0529
-        },
-        "universe_all_negative": false,
-        "universe_dominant_driver": "valuation_adjustment_top_down",
-        "historical_percentile": 0.82,
-        "history_window_months": 12,
-        "history_low": -0.0195,
-        "history_high": -0.0026
-      },
-      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
-      "market_context_readthrough": "2024-05 UK EQ Conviction Update Conviction Table 2024 NEW Conviction Level OLD Conviction Level ((Dec 2022) Comment Overall Conviction Medium Medium Since the last update there have been no changes to any of the pillars.",
-      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
-      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
-      "primary_pm_question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
-      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
-      "devils_advocate_statement": "The United Kingdom position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
-      "what_would_change_view": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
-      "internal_context_summary": "Direct prior thesis evidence is missing in the current packet.",
-      "external_context_summary": "2024-05 UK EQ Conviction Update Conviction Table 2024 NEW Conviction Level OLD Conviction Level ((Dec 2022) Comment Overall Conviction Medium Medium Since the last update there have been no changes to any of the pillars.",
-      "research_status": {
-        "status": "matched_without_month",
-        "months_old": null,
-        "folder_month": ""
-      },
-      "top_holding_lineage": "Autotrader Group PLC (+0.90 pts active) via MS GLOBAL OPP EQ LAZARD 0.90%, Franklin FTSE United Kingdom ETF 0.00%; Bunzl PLC (+0.75 pts active) via MS GLOBAL OPP EQ LAZARD 0.69%, MS GLOBAL OPP BASKET 12 - Direct Equities 0.06%; Diageo PLC (+0.58 pts active) via MS GLBL OPPS EQ CONSUMER 0.23%, MS GLOBAL OPP EQ LAZARD 0.22%",
-      "source_refs": [
-        {
-          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
-          "row_id": "fms_5626d137ae4f"
-        },
-        {
-          "artifact_path": "202405-EQ-UK EQ-Conviction Update.pptx",
-          "row_id": "202405-EQ-UK EQ-Conviction Update.pptx"
-        }
-      ]
-    },
-    {
       "challenge_id": "ch_us-hc-eq_2026-09-30",
       "acid": "US HC EQ",
       "label": "Health Care",
       "category": "Eq Sector",
       "priority": "medium",
       "challenge_type": "position_vs_signal_divergence",
-      "challenge_score": 7.251,
+      "challenge_score": 9.821,
       "reason": "Positioning is overweight, but the STF is underweight and the algo active weight (relative to benchmark) is underweight.",
       "question": "What is the live underwriting case for keeping Health Care at +1.61 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
       "observation": "Positioning is overweight, but the STF is underweight and the algo active weight (relative to benchmark) is underweight.",
@@ -65392,7 +65320,7 @@
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
       "market_context_readthrough": "Equity Sector Review: US Healthcare We\u2019re neutral overall, but see good value in some industries, such as healthcare plans.",
       "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What is the live underwriting case for keeping Health Care at +1.61 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
       "evidence_needed_next": "Check the next STF decomposition, top-holding lineage inside Health Care, and any updated research or earnings/rates context that would explain why the active position should stay off-signal.",
@@ -65425,7 +65353,7 @@
       "category": "Eq Sector",
       "priority": "medium",
       "challenge_type": "material_position_needing_refresh",
-      "challenge_score": 6.778,
+      "challenge_score": 9.348,
       "reason": "This is a material active position that still needs an explicit current-month rationale.",
       "question": "What current evidence still justifies keeping Real Estate at this size rather than treating it as a position that needs to be refreshed?",
       "observation": "This is a material active position that still needs an explicit current-month rationale.",
@@ -65467,7 +65395,7 @@
       "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
       "market_context_readthrough": "1 Investment opportunity \u2013 Conviction level Recommendations September 2017 Conviction Level Comment Overall Conviction Low US REITs offer a poor reward for risk on both an absolute and relative basis with contrarian i...",
       "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
       "primary_pm_question": "What current evidence still justifies keeping Real Estate at this size rather than treating it as a position that needs to be refreshed?",
       "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that Real Estate is still an intentional expression.",
@@ -65494,45 +65422,152 @@
       ]
     },
     {
-      "challenge_id": "ch_usd-cash_current",
-      "acid": "USD Cash",
-      "label": "USD Cash",
-      "category": "Cash / Other",
-      "priority": "medium",
+      "challenge_id": "ch_uk-eq_2026-09-30",
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "category": "Country",
+      "priority": "high",
       "challenge_type": "material_position_needing_refresh",
-      "challenge_score": 5.686,
+      "challenge_score": 9.229,
       "reason": "This is a material active position that still needs an explicit current-month rationale.",
-      "question": "What current evidence still justifies keeping USD Cash at this size rather than treating it as a position that needs to be refreshed?",
+      "question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
       "observation": "This is a material active position that still needs an explicit current-month rationale.",
       "interpretation": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
-      "challenge_headline": "USD Cash remains a material active expression that needs an explicit current-month defense.",
-      "thesis_under_pressure": "The implicit thesis is that USD Cash remains an intentional conviction position rather than legacy implementation residue.",
-      "positioning_tension": "Fund weight is 2.28% versus benchmark 0.00%, leaving a +2.28 pt active overweight in USD Cash. Top underlying names include USD Cash & Equivalents.",
-      "model_signal_tension": "STF is missing at missing, while the algo active weight is missing (relative to benchmark) and points missing.",
-      "relative_signal_readthrough": "",
-      "stf_relative_context": null,
-      "vir_decomposition_readthrough": "No STF decomposition row was available in the current packet.",
-      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "challenge_headline": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United Kingdom remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 6.37% versus benchmark 2.99%, leaving a +3.38 pt active overweight in United Kingdom. Top underlying names include Autotrader Group PLC, Bunzl PLC.",
+      "model_signal_tension": "STF is underweight at -0.83% (+0.28% MoM), while the algo active weight is +1.65 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -0.83% in absolute terms but ranks #19 of 44 in global countries (above the -1.47% universe median). Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "global countries",
+        "universe_size": 44,
+        "rank": 19,
+        "percentile": 0.58,
+        "stf": -0.0083,
+        "universe_median_stf": -0.0147,
+        "vs_median": 0.0064,
+        "more_attractive_peers": [
+          "Indonesia",
+          "Turkey",
+          "Qatar"
+        ],
+        "more_attractive_count": 18,
+        "universe_best": {
+          "label": "Indonesia",
+          "stf": 0.0557
+        },
+        "universe_worst": {
+          "label": "Taiwan",
+          "stf": -0.0529
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.82,
+        "history_window_months": 12,
+        "history_low": -0.0195,
+        "history_high": -0.0026
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "2024-05 UK EQ Conviction Update Conviction Table 2024 NEW Conviction Level OLD Conviction Level ((Dec 2022) Comment Overall Conviction Medium Medium Since the last update there have been no changes to any of the pillars.",
       "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
-      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
       "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
-      "primary_pm_question": "What current evidence still justifies keeping USD Cash at this size rather than treating it as a position that needs to be refreshed?",
-      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that USD Cash is still an intentional expression.",
-      "source_quality": "model+positioning+missing_direct_prior_thesis",
-      "devils_advocate_statement": "The USD Cash position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
-      "what_would_change_view": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that USD Cash is still an intentional expression.",
+      "primary_pm_question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
+      "devils_advocate_statement": "The United Kingdom position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
+      "what_would_change_view": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United Kingdom is still an intentional expression.",
       "internal_context_summary": "Direct prior thesis evidence is missing in the current packet.",
-      "external_context_summary": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "external_context_summary": "2024-05 UK EQ Conviction Update Conviction Table 2024 NEW Conviction Level OLD Conviction Level ((Dec 2022) Comment Overall Conviction Medium Medium Since the last update there have been no changes to any of the pillars.",
       "research_status": {
-        "status": "missing_research_match",
+        "status": "matched_without_month",
         "months_old": null,
         "folder_month": ""
       },
-      "top_holding_lineage": "USD Cash & Equivalents (+2.28 pts active) via NI TREASURY PORTFOLIO 1.50%, MS GLOBAL OPP EQ LAZARD 0.53%",
+      "top_holding_lineage": "Autotrader Group PLC (+0.90 pts active) via MS GLOBAL OPP EQ LAZARD 0.90%, Franklin FTSE United Kingdom ETF 0.00%; Bunzl PLC (+0.75 pts active) via MS GLOBAL OPP EQ LAZARD 0.69%, MS GLOBAL OPP BASKET 12 - Direct Equities 0.06%; Diageo PLC (+0.58 pts active) via MS GLBL OPPS EQ CONSUMER 0.23%, MS GLOBAL OPP EQ LAZARD 0.22%",
       "source_refs": [
         {
           "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
-          "row_id": "falg_02713a0e83f0"
+          "row_id": "fms_5626d137ae4f"
+        },
+        {
+          "artifact_path": "202405-EQ-UK EQ-Conviction Update.pptx",
+          "row_id": "202405-EQ-UK EQ-Conviction Update.pptx"
+        }
+      ]
+    },
+    {
+      "challenge_id": "ch_us-cs-eq_2026-09-30",
+      "acid": "US CS EQ",
+      "label": "Consumer Staples",
+      "category": "Eq Sector",
+      "priority": "medium",
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_score": 8.23,
+      "reason": "This is a material active position that still needs an explicit current-month rationale.",
+      "question": "What current evidence still justifies keeping Consumer Staples at this size rather than treating it as a position that needs to be refreshed?",
+      "observation": "This is a material active position that still needs an explicit current-month rationale.",
+      "interpretation": "The position may still be valid, but the evidence base should be refreshed rather than rolled forward by habit.",
+      "challenge_headline": "Consumer Staples still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that Consumer Staples remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 4.60% versus benchmark 2.70%, leaving a +1.90 pt active overweight in Consumer Staples. Top underlying names include The Campbell's Co, Walmart Inc.",
+      "model_signal_tension": "STF is underweight at -1.01% (+0.44% MoM), while the algo active weight is +2.16 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -1.01% in absolute terms but ranks #21 of 54 in global sectors (above the -1.52% universe median). Versus its own 12-month history the current STF is at the 91st percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "global sectors",
+        "universe_size": 54,
+        "rank": 21,
+        "percentile": 0.62,
+        "stf": -0.0101,
+        "universe_median_stf": -0.0152,
+        "vs_median": 0.0051,
+        "more_attractive_peers": [
+          "Energy",
+          "Real Estate",
+          "Consumer Discretionary"
+        ],
+        "more_attractive_count": 20,
+        "universe_best": {
+          "label": "Energy",
+          "stf": 0.0294
+        },
+        "universe_worst": {
+          "label": "Financials",
+          "stf": -0.057
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.91,
+        "history_window_months": 12,
+        "history_low": -0.0288,
+        "history_high": -0.0068
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "Equity Sector Review: US Consumer Defensive Despite being moderately overvalued , we see pockets of opportunity, particularly in alcoholic beverages.",
+      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
+      "return_attribution_readthrough": "Month-to-date overweight positions contributed -3.91% over the risk workbook window, which helps frame whether this active bet is being paid for in current performance.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping Consumer Staples at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that Consumer Staples is still an intentional expression.",
+      "source_quality": "model+positioning+missing_direct_prior_thesis+sharepoint_research",
+      "devils_advocate_statement": "The Consumer Staples position may still be right, but the evidence could be narrower and more mechanical than the current sizing implies.",
+      "what_would_change_view": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that Consumer Staples is still an intentional expression.",
+      "internal_context_summary": "Direct prior thesis evidence is missing in the current packet.",
+      "external_context_summary": "Equity Sector Review: US Consumer Defensive Despite being moderately overvalued , we see pockets of opportunity, particularly in alcoholic beverages.",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "The Campbell's Co (+0.43 pts active) via MS GLOBAL OPP EQ LAZARD 0.44%, Vanguard Total Stock Market ETF 0.00%; Walmart Inc (-0.03 pts active) via ISHARES TRUST     GLOBAL 0.32%, Vanguard Total Stock Market ETF 0.05%; The Estee Lauder Companies Inc Class A (+0.32 pts active) via MS GLBL OPPS EQ CONSUMER 0.22%, MS GLOBAL OPP BASKET 11 - Direct Equities 0.09%",
+      "source_refs": [
+        {
+          "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+          "row_id": "fms_92be7e21e804"
+        },
+        {
+          "artifact_path": "202505-EQ-US CS EQ-Consumer Defensive Sector Review.pptx",
+          "row_id": "202505-EQ-US CS EQ-Consumer Defensive Sector Review.pptx"
         }
       ]
     }
@@ -65551,12 +65586,6 @@
       "why_now": "Communication Services remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark)."
     },
     {
-      "acid": "UK EQ",
-      "label": "United Kingdom",
-      "question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
-      "why_now": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees."
-    },
-    {
       "acid": "US HC EQ",
       "label": "Health Care",
       "question": "What is the live underwriting case for keeping Health Care at +1.61 pts overweight when both the STF and the algo active weight currently point underweight/underweight?",
@@ -65569,16 +65598,22 @@
       "why_now": "Real Estate still carries a meaningful overweight even though only part of the signal stack agrees."
     },
     {
-      "acid": "USD Cash",
-      "label": "USD Cash",
-      "question": "What current evidence still justifies keeping USD Cash at this size rather than treating it as a position that needs to be refreshed?",
-      "why_now": "USD Cash remains a material active expression that needs an explicit current-month defense."
+      "acid": "UK EQ",
+      "label": "United Kingdom",
+      "question": "What current evidence still justifies keeping United Kingdom at this size rather than treating it as a position that needs to be refreshed?",
+      "why_now": "United Kingdom still carries a meaningful overweight even though only part of the signal stack agrees."
+    },
+    {
+      "acid": "US CS EQ",
+      "label": "Consumer Staples",
+      "question": "What current evidence still justifies keeping Consumer Staples at this size rather than treating it as a position that needs to be refreshed?",
+      "why_now": "Consumer Staples still carries a meaningful overweight even though only part of the signal stack agrees."
     },
     {
       "acid": "",
       "label": "US4 Semiconductors & Semiconductor Equipment",
       "question": "What is the underwriting case for keeping US4 Semiconductors & Semiconductor Equipment as a leading source of active risk right now?",
-      "why_now": "It is the largest modeled industry risk driver at 1.8% of active variance."
+      "why_now": "It is the largest modeled industry risk driver at 2.3% of active variance."
     }
   ],
   "portfolio_implications": [
@@ -65592,7 +65627,7 @@
     },
     {
       "type": "measured_risk_context",
-      "statement": "Measured active risk is 5.89% with 49.6% active share, so PM debate should separate conviction from raw risk budget use."
+      "statement": "Measured active risk is 6.61% with 51.7% active share, so PM debate should separate conviction from raw risk budget use."
     }
   ],
   "roadmap": [
@@ -65796,11 +65831,6 @@
       "severity": "low",
       "flag": "algo_scaled_to_percentage_points",
       "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
-    },
-    {
-      "severity": "low",
-      "flag": "risk_context_pre_month_end",
-      "message": "Risk context uses the latest business-day row on or before 2026-09-30: 2026-07-20."
     }
   ],
   "source_index": [
@@ -65826,7 +65856,7 @@
     },
     {
       "source_type": "risk_report",
-      "artifact_path": "data/2026-06-30/weekly_GOE_portfolio_Time Series Risk Report - Sortable_2026-06-30_2026-07-17.xlsx",
+      "artifact_path": "data/2026-09-30/monthly_GOE_portfolio_Time Series Risk Report - Sortable_2026-08-31_2026-09-30.xlsx",
       "purpose": "Time-series risk, factor-risk, and return-attribution context"
     },
     {
@@ -65855,6 +65885,6 @@
     "history_fund_name": "",
     "matched_sharepoint_research_count": 83,
     "risk_context_available": true,
-    "risk_date_used": "2026-07-20"
+    "risk_date_used": "2026-09-30"
   }
 }

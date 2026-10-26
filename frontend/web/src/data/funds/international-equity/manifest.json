@@ -6,24 +6,23 @@
   "output_style": "deep_challenge_memo",
   "challenge_count_target": 4,
   "region_name": "us-east-2",
-  "generated_at": "2026-10-26T17:58:20Z",
+  "generated_at": "2026-10-26T18:46:21Z",
   "artifacts": {
     "review_packet": "agent2/data/review_packets/2026-09-30/mstar-international-equity/agent2_review_packet.json",
     "evidence_pack": "agent2/data/review_packets/2026-09-30/mstar-international-equity/evidence_pack.json",
     "frontend_review": "frontend/web/src/data/funds/international-equity/review.json"
   },
   "usage": {
-    "inputTokens": 41584,
-    "outputTokens": 11769,
-    "totalTokens": 53353,
+    "inputTokens": 42500,
+    "outputTokens": 11455,
+    "totalTokens": 53955,
     "cacheReadInputTokens": 0,
     "cacheWriteInputTokens": 0
   },
-  "approx_cost_usd": 0.3013,
+  "approx_cost_usd": 0.2993,
   "parsed_json_ok": true,
   "validation_error": "",
   "data_limitations": [
-    "No September risk report was provided; factor-risk context remains based on the latest available July 20 observation.",
     "No September fixed-income model was provided; unmatched fixed-income STF rows remain unavailable."
   ]
 }

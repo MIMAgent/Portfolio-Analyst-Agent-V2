@@ -4,1104 +4,1582 @@
     "benchmark": "Morningstar Global Markets xUS NR USD Index",
     "riskModel": "WWLM4AxiomaMH",
     "currency": "USD",
-    "from": "2026-07-01",
-    "to": "2026-07-20",
-    "periods": 14,
-    "holdings": 404,
-    "commonAssetsWeight": 0.8724
+    "from": "2026-09-01",
+    "to": "2026-09-30",
+    "periods": 22,
+    "holdings": 422,
+    "commonAssetsWeight": 0.8673
   },
   "dates": [
-    "2026-07-01",
-    "2026-07-02",
-    "2026-07-03",
-    "2026-07-06",
-    "2026-07-07",
-    "2026-07-08",
-    "2026-07-09",
-    "2026-07-10",
-    "2026-07-13",
-    "2026-07-14",
-    "2026-07-15",
-    "2026-07-16",
-    "2026-07-17",
-    "2026-07-20"
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-07",
+    "2026-09-08",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-14",
+    "2026-09-15",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-09-18",
+    "2026-09-21",
+    "2026-09-22",
+    "2026-09-23",
+    "2026-09-24",
+    "2026-09-25",
+    "2026-09-28",
+    "2026-09-29",
+    "2026-09-30"
   ],
   "series": [
     {
-      "date": "2026-07-01",
-      "predictedBeta": 0.9295,
-      "historicalBeta": 0.934,
-      "activeBeta": -0.0705,
-      "totalRisk": 0.1735,
-      "factorRisk": 0.1719,
-      "specificRisk": 0.0239,
-      "activeRisk": 0.0301,
-      "activeFactorRisk": 0.0254,
-      "activeSpecificRisk": 0.0161,
-      "activeStyleRisk": 0.0136,
-      "activeIndustryRisk": 0.0113,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.7081
-    },
-    {
-      "date": "2026-07-02",
-      "predictedBeta": 0.9252,
-      "historicalBeta": 0.9347,
-      "activeBeta": -0.0748,
-      "totalRisk": 0.1724,
-      "factorRisk": 0.1708,
-      "specificRisk": 0.0234,
-      "activeRisk": 0.0311,
-      "activeFactorRisk": 0.0266,
-      "activeSpecificRisk": 0.0162,
-      "activeStyleRisk": 0.0141,
+      "date": "2026-09-01",
+      "predictedBeta": 0.9367,
+      "historicalBeta": 0.9243,
+      "activeBeta": -0.0633,
+      "totalRisk": 0.1583,
+      "factorRisk": 0.1565,
+      "specificRisk": 0.024,
+      "activeRisk": 0.0292,
+      "activeFactorRisk": 0.0244,
+      "activeSpecificRisk": 0.016,
+      "activeStyleRisk": 0.0135,
       "activeIndustryRisk": 0.0118,
       "activeMarketRisk": 0.0,
-      "activeShare": 0.7096
+      "activeShare": 0.7069
     },
     {
-      "date": "2026-07-03",
-      "predictedBeta": 0.9382,
-      "historicalBeta": 0.9381,
-      "activeBeta": -0.0618,
-      "totalRisk": 0.1727,
-      "factorRisk": 0.1711,
-      "specificRisk": 0.0231,
-      "activeRisk": 0.0298,
-      "activeFactorRisk": 0.0254,
-      "activeSpecificRisk": 0.0156,
-      "activeStyleRisk": 0.0139,
+      "date": "2026-09-02",
+      "predictedBeta": 0.9343,
+      "historicalBeta": 0.9228,
+      "activeBeta": -0.0657,
+      "totalRisk": 0.1573,
+      "factorRisk": 0.1555,
+      "specificRisk": 0.0239,
+      "activeRisk": 0.0296,
+      "activeFactorRisk": 0.0249,
+      "activeSpecificRisk": 0.0161,
+      "activeStyleRisk": 0.0137,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7077
+    },
+    {
+      "date": "2026-09-03",
+      "predictedBeta": 0.941,
+      "historicalBeta": 0.9224,
+      "activeBeta": -0.059,
+      "totalRisk": 0.1565,
+      "factorRisk": 0.1546,
+      "specificRisk": 0.0239,
+      "activeRisk": 0.0287,
+      "activeFactorRisk": 0.0238,
+      "activeSpecificRisk": 0.0159,
+      "activeStyleRisk": 0.0132,
       "activeIndustryRisk": 0.0117,
       "activeMarketRisk": 0.0,
-      "activeShare": 0.7103
+      "activeShare": 0.7067
     },
     {
-      "date": "2026-07-06",
-      "predictedBeta": 0.9357,
-      "historicalBeta": 0.9396,
-      "activeBeta": -0.0643,
-      "totalRisk": 0.174,
-      "factorRisk": 0.1724,
-      "specificRisk": 0.0232,
-      "activeRisk": 0.0303,
-      "activeFactorRisk": 0.0257,
-      "activeSpecificRisk": 0.016,
-      "activeStyleRisk": 0.0141,
-      "activeIndustryRisk": 0.0118,
+      "date": "2026-09-04",
+      "predictedBeta": 0.9415,
+      "historicalBeta": 0.9231,
+      "activeBeta": -0.0585,
+      "totalRisk": 0.1554,
+      "factorRisk": 0.1536,
+      "specificRisk": 0.0238,
+      "activeRisk": 0.0284,
+      "activeFactorRisk": 0.0236,
+      "activeSpecificRisk": 0.0157,
+      "activeStyleRisk": 0.0131,
+      "activeIndustryRisk": 0.0119,
       "activeMarketRisk": 0.0,
-      "activeShare": 0.7107
+      "activeShare": 0.7074
     },
     {
-      "date": "2026-07-07",
-      "predictedBeta": 0.9379,
-      "historicalBeta": 0.9399,
-      "activeBeta": -0.0621,
-      "totalRisk": 0.1734,
-      "factorRisk": 0.1718,
-      "specificRisk": 0.0236,
-      "activeRisk": 0.0299,
-      "activeFactorRisk": 0.0253,
-      "activeSpecificRisk": 0.0158,
-      "activeStyleRisk": 0.0139,
-      "activeIndustryRisk": 0.0116,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.7103
-    },
-    {
-      "date": "2026-07-08",
-      "predictedBeta": 0.9402,
-      "historicalBeta": 0.9352,
-      "activeBeta": -0.0598,
-      "totalRisk": 0.172,
-      "factorRisk": 0.1705,
-      "specificRisk": 0.0231,
-      "activeRisk": 0.0297,
-      "activeFactorRisk": 0.0253,
-      "activeSpecificRisk": 0.0155,
-      "activeStyleRisk": 0.0141,
-      "activeIndustryRisk": 0.0116,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.7106
-    },
-    {
-      "date": "2026-07-09",
-      "predictedBeta": 0.9456,
-      "historicalBeta": 0.9364,
-      "activeBeta": -0.0544,
-      "totalRisk": 0.1727,
-      "factorRisk": 0.1712,
-      "specificRisk": 0.0233,
-      "activeRisk": 0.0289,
-      "activeFactorRisk": 0.0244,
-      "activeSpecificRisk": 0.0154,
-      "activeStyleRisk": 0.0135,
-      "activeIndustryRisk": 0.0114,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.7091
-    },
-    {
-      "date": "2026-07-10",
-      "predictedBeta": 0.9454,
-      "historicalBeta": 0.9391,
-      "activeBeta": -0.0546,
-      "totalRisk": 0.1721,
-      "factorRisk": 0.1705,
-      "specificRisk": 0.0233,
-      "activeRisk": 0.0288,
-      "activeFactorRisk": 0.0243,
-      "activeSpecificRisk": 0.0155,
-      "activeStyleRisk": 0.0136,
-      "activeIndustryRisk": 0.0115,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.7086
-    },
-    {
-      "date": "2026-07-13",
-      "predictedBeta": 0.9444,
-      "historicalBeta": 0.9395,
-      "activeBeta": -0.0556,
-      "totalRisk": 0.1719,
-      "factorRisk": 0.1703,
-      "specificRisk": 0.0232,
-      "activeRisk": 0.0289,
-      "activeFactorRisk": 0.0244,
-      "activeSpecificRisk": 0.0156,
-      "activeStyleRisk": 0.0136,
-      "activeIndustryRisk": 0.0115,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.7092
-    },
-    {
-      "date": "2026-07-14",
-      "predictedBeta": 0.9485,
-      "historicalBeta": 0.9358,
-      "activeBeta": -0.0515,
-      "totalRisk": 0.1705,
-      "factorRisk": 0.169,
-      "specificRisk": 0.0229,
-      "activeRisk": 0.0285,
-      "activeFactorRisk": 0.024,
-      "activeSpecificRisk": 0.0153,
-      "activeStyleRisk": 0.0133,
-      "activeIndustryRisk": 0.0116,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.7095
-    },
-    {
-      "date": "2026-07-15",
-      "predictedBeta": 0.9506,
-      "historicalBeta": 0.9379,
-      "activeBeta": -0.0494,
-      "totalRisk": 0.1708,
-      "factorRisk": 0.1692,
-      "specificRisk": 0.023,
-      "activeRisk": 0.028,
+      "date": "2026-09-07",
+      "predictedBeta": 0.9416,
+      "historicalBeta": 0.9266,
+      "activeBeta": -0.0584,
+      "totalRisk": 0.155,
+      "factorRisk": 0.1531,
+      "specificRisk": 0.0242,
+      "activeRisk": 0.0283,
       "activeFactorRisk": 0.0234,
-      "activeSpecificRisk": 0.0153,
-      "activeStyleRisk": 0.013,
-      "activeIndustryRisk": 0.0115,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.7091
-    },
-    {
-      "date": "2026-07-16",
-      "predictedBeta": 0.9433,
-      "historicalBeta": 0.9402,
-      "activeBeta": -0.0567,
-      "totalRisk": 0.1707,
-      "factorRisk": 0.1691,
-      "specificRisk": 0.0228,
-      "activeRisk": 0.0294,
-      "activeFactorRisk": 0.0248,
       "activeSpecificRisk": 0.0158,
-      "activeStyleRisk": 0.0136,
-      "activeIndustryRisk": 0.0118,
-      "activeMarketRisk": 0.0,
-      "activeShare": 0.71
-    },
-    {
-      "date": "2026-07-17",
-      "predictedBeta": 0.9477,
-      "historicalBeta": 0.9382,
-      "activeBeta": -0.0523,
-      "totalRisk": 0.1689,
-      "factorRisk": 0.1674,
-      "specificRisk": 0.0226,
-      "activeRisk": 0.0286,
-      "activeFactorRisk": 0.0242,
-      "activeSpecificRisk": 0.0153,
       "activeStyleRisk": 0.0131,
       "activeIndustryRisk": 0.0117,
       "activeMarketRisk": 0.0,
-      "activeShare": 0.7089
+      "activeShare": 0.7069
     },
     {
-      "date": "2026-07-20",
-      "predictedBeta": 0.9517,
-      "historicalBeta": 0.9357,
-      "activeBeta": -0.0483,
-      "totalRisk": 0.1687,
-      "factorRisk": 0.1672,
-      "specificRisk": 0.0224,
-      "activeRisk": 0.0279,
-      "activeFactorRisk": 0.0234,
-      "activeSpecificRisk": 0.0151,
-      "activeStyleRisk": 0.0128,
-      "activeIndustryRisk": 0.0114,
+      "date": "2026-09-08",
+      "predictedBeta": 0.9349,
+      "historicalBeta": 0.9262,
+      "activeBeta": -0.0651,
+      "totalRisk": 0.1547,
+      "factorRisk": 0.1527,
+      "specificRisk": 0.0244,
+      "activeRisk": 0.0291,
+      "activeFactorRisk": 0.0243,
+      "activeSpecificRisk": 0.016,
+      "activeStyleRisk": 0.0137,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7063
+    },
+    {
+      "date": "2026-09-09",
+      "predictedBeta": 0.9335,
+      "historicalBeta": 0.924,
+      "activeBeta": -0.0665,
+      "totalRisk": 0.1534,
+      "factorRisk": 0.1514,
+      "specificRisk": 0.0244,
+      "activeRisk": 0.0293,
+      "activeFactorRisk": 0.0246,
+      "activeSpecificRisk": 0.0159,
+      "activeStyleRisk": 0.0139,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7069
+    },
+    {
+      "date": "2026-09-10",
+      "predictedBeta": 0.9317,
+      "historicalBeta": 0.9239,
+      "activeBeta": -0.0683,
+      "totalRisk": 0.1532,
+      "factorRisk": 0.1512,
+      "specificRisk": 0.0245,
+      "activeRisk": 0.0299,
+      "activeFactorRisk": 0.025,
+      "activeSpecificRisk": 0.0163,
+      "activeStyleRisk": 0.0142,
+      "activeIndustryRisk": 0.012,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.708
+    },
+    {
+      "date": "2026-09-11",
+      "predictedBeta": 0.9288,
+      "historicalBeta": 0.9224,
+      "activeBeta": -0.0712,
+      "totalRisk": 0.1522,
+      "factorRisk": 0.1502,
+      "specificRisk": 0.0243,
+      "activeRisk": 0.0302,
+      "activeFactorRisk": 0.0255,
+      "activeSpecificRisk": 0.0163,
+      "activeStyleRisk": 0.0143,
+      "activeIndustryRisk": 0.012,
       "activeMarketRisk": 0.0,
       "activeShare": 0.7084
+    },
+    {
+      "date": "2026-09-14",
+      "predictedBeta": 0.937,
+      "historicalBeta": 0.9245,
+      "activeBeta": -0.063,
+      "totalRisk": 0.1512,
+      "factorRisk": 0.1493,
+      "specificRisk": 0.0243,
+      "activeRisk": 0.0289,
+      "activeFactorRisk": 0.024,
+      "activeSpecificRisk": 0.016,
+      "activeStyleRisk": 0.0135,
+      "activeIndustryRisk": 0.0117,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7069
+    },
+    {
+      "date": "2026-09-15",
+      "predictedBeta": 0.9357,
+      "historicalBeta": 0.9227,
+      "activeBeta": -0.0643,
+      "totalRisk": 0.1499,
+      "factorRisk": 0.148,
+      "specificRisk": 0.0237,
+      "activeRisk": 0.0292,
+      "activeFactorRisk": 0.0246,
+      "activeSpecificRisk": 0.0159,
+      "activeStyleRisk": 0.0136,
+      "activeIndustryRisk": 0.0121,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7079
+    },
+    {
+      "date": "2026-09-16",
+      "predictedBeta": 0.9376,
+      "historicalBeta": 0.9231,
+      "activeBeta": -0.0624,
+      "totalRisk": 0.1498,
+      "factorRisk": 0.1479,
+      "specificRisk": 0.0237,
+      "activeRisk": 0.0287,
+      "activeFactorRisk": 0.024,
+      "activeSpecificRisk": 0.0158,
+      "activeStyleRisk": 0.0133,
+      "activeIndustryRisk": 0.0119,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.707
+    },
+    {
+      "date": "2026-09-17",
+      "predictedBeta": 0.9381,
+      "historicalBeta": 0.9243,
+      "activeBeta": -0.0619,
+      "totalRisk": 0.1495,
+      "factorRisk": 0.1476,
+      "specificRisk": 0.0238,
+      "activeRisk": 0.0286,
+      "activeFactorRisk": 0.0237,
+      "activeSpecificRisk": 0.0159,
+      "activeStyleRisk": 0.0132,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.707
+    },
+    {
+      "date": "2026-09-18",
+      "predictedBeta": 0.9421,
+      "historicalBeta": 0.9253,
+      "activeBeta": -0.0579,
+      "totalRisk": 0.1499,
+      "factorRisk": 0.148,
+      "specificRisk": 0.024,
+      "activeRisk": 0.0278,
+      "activeFactorRisk": 0.023,
+      "activeSpecificRisk": 0.0157,
+      "activeStyleRisk": 0.0127,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7069
+    },
+    {
+      "date": "2026-09-21",
+      "predictedBeta": 0.937,
+      "historicalBeta": 0.9268,
+      "activeBeta": -0.063,
+      "totalRisk": 0.1493,
+      "factorRisk": 0.1473,
+      "specificRisk": 0.0244,
+      "activeRisk": 0.0285,
+      "activeFactorRisk": 0.0235,
+      "activeSpecificRisk": 0.0161,
+      "activeStyleRisk": 0.0131,
+      "activeIndustryRisk": 0.0117,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7067
+    },
+    {
+      "date": "2026-09-22",
+      "predictedBeta": 0.9361,
+      "historicalBeta": 0.9279,
+      "activeBeta": -0.0639,
+      "totalRisk": 0.1495,
+      "factorRisk": 0.1475,
+      "specificRisk": 0.0246,
+      "activeRisk": 0.0284,
+      "activeFactorRisk": 0.0234,
+      "activeSpecificRisk": 0.016,
+      "activeStyleRisk": 0.0131,
+      "activeIndustryRisk": 0.0118,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7063
+    },
+    {
+      "date": "2026-09-23",
+      "predictedBeta": 0.9363,
+      "historicalBeta": 0.9314,
+      "activeBeta": -0.0637,
+      "totalRisk": 0.1491,
+      "factorRisk": 0.147,
+      "specificRisk": 0.0247,
+      "activeRisk": 0.0284,
+      "activeFactorRisk": 0.0234,
+      "activeSpecificRisk": 0.0161,
+      "activeStyleRisk": 0.013,
+      "activeIndustryRisk": 0.0117,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7059
+    },
+    {
+      "date": "2026-09-24",
+      "predictedBeta": 0.9303,
+      "historicalBeta": 0.9292,
+      "activeBeta": -0.0697,
+      "totalRisk": 0.1479,
+      "factorRisk": 0.1458,
+      "specificRisk": 0.0247,
+      "activeRisk": 0.0292,
+      "activeFactorRisk": 0.0243,
+      "activeSpecificRisk": 0.0162,
+      "activeStyleRisk": 0.0135,
+      "activeIndustryRisk": 0.0117,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7066
+    },
+    {
+      "date": "2026-09-25",
+      "predictedBeta": 0.9301,
+      "historicalBeta": 0.9286,
+      "activeBeta": -0.0699,
+      "totalRisk": 0.1473,
+      "factorRisk": 0.1452,
+      "specificRisk": 0.0247,
+      "activeRisk": 0.0291,
+      "activeFactorRisk": 0.0242,
+      "activeSpecificRisk": 0.0162,
+      "activeStyleRisk": 0.0136,
+      "activeIndustryRisk": 0.0117,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7063
+    },
+    {
+      "date": "2026-09-28",
+      "predictedBeta": 0.9314,
+      "historicalBeta": 0.9305,
+      "activeBeta": -0.0686,
+      "totalRisk": 0.1471,
+      "factorRisk": 0.145,
+      "specificRisk": 0.0247,
+      "activeRisk": 0.0291,
+      "activeFactorRisk": 0.0241,
+      "activeSpecificRisk": 0.0162,
+      "activeStyleRisk": 0.0136,
+      "activeIndustryRisk": 0.0116,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.7062
+    },
+    {
+      "date": "2026-09-29",
+      "predictedBeta": 0.9316,
+      "historicalBeta": 0.9179,
+      "activeBeta": -0.0684,
+      "totalRisk": 0.1462,
+      "factorRisk": 0.1442,
+      "specificRisk": 0.0246,
+      "activeRisk": 0.0287,
+      "activeFactorRisk": 0.0239,
+      "activeSpecificRisk": 0.016,
+      "activeStyleRisk": 0.0134,
+      "activeIndustryRisk": 0.0115,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.706
+    },
+    {
+      "date": "2026-09-30",
+      "predictedBeta": 0.9431,
+      "historicalBeta": 0.9267,
+      "activeBeta": -0.0569,
+      "totalRisk": 0.1474,
+      "factorRisk": 0.1452,
+      "specificRisk": 0.0255,
+      "activeRisk": 0.0266,
+      "activeFactorRisk": 0.0217,
+      "activeSpecificRisk": 0.0154,
+      "activeStyleRisk": 0.0123,
+      "activeIndustryRisk": 0.0109,
+      "activeMarketRisk": 0.0,
+      "activeShare": 0.6974
     }
   ],
   "returns": [
     {
-      "date": "2026-07-01",
-      "portfolio": -0.00239,
-      "benchmark": -0.00216,
-      "active": -0.00023
+      "date": "2026-09-01",
+      "portfolio": -0.00408,
+      "benchmark": -0.00209,
+      "active": -0.002
     },
     {
-      "date": "2026-07-02",
-      "portfolio": 0.00869,
-      "benchmark": 0.00199,
-      "active": 0.0067
+      "date": "2026-09-02",
+      "portfolio": -0.0047,
+      "benchmark": -0.00745,
+      "active": 0.00274
     },
     {
-      "date": "2026-07-03",
-      "portfolio": 0.00912,
-      "benchmark": 0.01262,
-      "active": -0.0035
+      "date": "2026-09-03",
+      "portfolio": 0.00613,
+      "benchmark": 0.00943,
+      "active": -0.0033
     },
     {
-      "date": "2026-07-06",
-      "portfolio": -0.00047,
-      "benchmark": -0.00226,
-      "active": 0.00178
+      "date": "2026-09-04",
+      "portfolio": 0.00467,
+      "benchmark": 0.00373,
+      "active": 0.00094
     },
     {
-      "date": "2026-07-07",
-      "portfolio": -0.00578,
-      "benchmark": -0.00959,
-      "active": 0.00381
+      "date": "2026-09-07",
+      "portfolio": 0.00231,
+      "benchmark": 0.00887,
+      "active": -0.00657
     },
     {
-      "date": "2026-07-08",
-      "portfolio": -0.01045,
-      "benchmark": -0.01245,
-      "active": 0.00199
+      "date": "2026-09-08",
+      "portfolio": -0.00492,
+      "benchmark": -0.0051,
+      "active": 0.00018
     },
     {
-      "date": "2026-07-09",
-      "portfolio": 0.0048,
-      "benchmark": 0.00534,
-      "active": -0.00053
+      "date": "2026-09-09",
+      "portfolio": -0.00667,
+      "benchmark": -0.00354,
+      "active": -0.00313
     },
     {
-      "date": "2026-07-10",
-      "portfolio": 0.00454,
-      "benchmark": 0.00484,
-      "active": -0.0003
+      "date": "2026-09-10",
+      "portfolio": -0.00669,
+      "benchmark": -0.00752,
+      "active": 0.00083
     },
     {
-      "date": "2026-07-13",
-      "portfolio": -0.00516,
-      "benchmark": -0.01015,
-      "active": 0.00498
+      "date": "2026-09-11",
+      "portfolio": -0.00191,
+      "benchmark": -0.00424,
+      "active": 0.00234
     },
     {
-      "date": "2026-07-14",
-      "portfolio": 0.00344,
-      "benchmark": 0.00465,
-      "active": -0.00122
+      "date": "2026-09-14",
+      "portfolio": -0.0051,
+      "benchmark": -0.00892,
+      "active": 0.00382
     },
     {
-      "date": "2026-07-15",
-      "portfolio": 0.00662,
-      "benchmark": 0.00982,
-      "active": -0.0032
+      "date": "2026-09-15",
+      "portfolio": -0.00398,
+      "benchmark": -0.00642,
+      "active": 0.00244
     },
     {
-      "date": "2026-07-16",
-      "portfolio": 0.00053,
-      "benchmark": -0.00667,
-      "active": 0.0072
+      "date": "2026-09-16",
+      "portfolio": 0.00275,
+      "benchmark": 0.00377,
+      "active": -0.00102
     },
     {
-      "date": "2026-07-17",
-      "portfolio": -0.01186,
-      "benchmark": -0.01496,
-      "active": 0.0031
+      "date": "2026-09-17",
+      "portfolio": 0.00165,
+      "benchmark": 0.003,
+      "active": -0.00135
+    },
+    {
+      "date": "2026-09-18",
+      "portfolio": -0.00503,
+      "benchmark": -0.00202,
+      "active": -0.00301
+    },
+    {
+      "date": "2026-09-21",
+      "portfolio": 0.00791,
+      "benchmark": 0.00838,
+      "active": -0.00048
+    },
+    {
+      "date": "2026-09-22",
+      "portfolio": 0.0046,
+      "benchmark": 0.00263,
+      "active": 0.00197
+    },
+    {
+      "date": "2026-09-23",
+      "portfolio": -0.00783,
+      "benchmark": -0.00528,
+      "active": -0.00255
+    },
+    {
+      "date": "2026-09-24",
+      "portfolio": -0.00745,
+      "benchmark": -0.00816,
+      "active": 0.00071
+    },
+    {
+      "date": "2026-09-25",
+      "portfolio": 0.00539,
+      "benchmark": 0.00589,
+      "active": -0.0005
+    },
+    {
+      "date": "2026-09-28",
+      "portfolio": -0.00429,
+      "benchmark": -0.00722,
+      "active": 0.00293
+    },
+    {
+      "date": "2026-09-29",
+      "portfolio": -0.00169,
+      "benchmark": -0.0042,
+      "active": 0.00251
+    },
+    {
+      "date": "2026-09-30",
+      "portfolio": -0.00036,
+      "benchmark": 0.00252,
+      "active": -0.00288
     }
   ],
   "attribution": {
-    "portfolio": 0.0013,
-    "benchmark": -0.0193,
-    "active": 0.0207,
-    "activeFactor": 0.0153,
-    "activeSpecific": 0.0053,
-    "activeStyle": 0.013,
-    "activeIndustry": 0.0012,
+    "portfolio": -0.0291,
+    "benchmark": -0.024,
+    "active": -0.0054,
+    "activeFactor": -0.0046,
+    "activeSpecific": -0.0008,
+    "activeStyle": -0.001,
+    "activeIndustry": -0.0029,
     "activeMarket": 0.0,
-    "periods": 13,
-    "from": "2026-07-01",
-    "to": "2026-07-17"
+    "periods": 22,
+    "from": "2026-09-01",
+    "to": "2026-09-30"
   },
   "styleExposure": {
-    "asOf": "2026-07-20",
+    "asOf": "2026-09-30",
     "factors": [
       {
-        "name": "DM4 Medium-Term Momentum",
-        "current": -0.1458,
-        "start": -0.1844,
+        "name": "DM4 Leverage",
+        "current": -0.131,
+        "start": -0.131,
         "series": [
-          -0.1844,
-          -0.1898,
-          -0.1855,
-          -0.184,
-          -0.1782,
-          -0.1744,
-          -0.1682,
-          -0.1688,
-          -0.1668,
-          -0.1658,
-          -0.1596,
-          -0.1609,
-          -0.1555,
-          -0.1458
+          -0.131,
+          -0.1292,
+          -0.1294,
+          -0.1314,
+          -0.1311,
+          -0.1319,
+          -0.1317,
+          -0.1311,
+          -0.1311,
+          -0.1332,
+          -0.1337,
+          -0.1331,
+          -0.1335,
+          -0.135,
+          -0.1339,
+          -0.1341,
+          -0.1324,
+          -0.1336,
+          -0.133,
+          -0.1337,
+          -0.135,
+          -0.131
         ]
       },
       {
         "name": "EM4 Dividend Yield",
-        "current": 0.1392,
-        "start": 0.1441,
+        "current": 0.1236,
+        "start": 0.1261,
         "series": [
-          0.1441,
-          0.1454,
-          0.1419,
-          0.1438,
-          0.1419,
-          0.143,
-          0.1369,
-          0.1375,
-          0.1388,
-          0.138,
-          0.138,
-          0.1411,
-          0.1401,
-          0.1392
+          0.1261,
+          0.129,
+          0.1269,
+          0.1275,
+          0.1275,
+          0.129,
+          0.1313,
+          0.1331,
+          0.1329,
+          0.1315,
+          0.1327,
+          0.1336,
+          0.1342,
+          0.1313,
+          0.1334,
+          0.1325,
+          0.1316,
+          0.1343,
+          0.1337,
+          0.131,
+          0.1285,
+          0.1236
         ]
       },
       {
-        "name": "DM4 Leverage",
-        "current": -0.1375,
-        "start": -0.1306,
+        "name": "DM4 Medium-Term Momentum",
+        "current": -0.1206,
+        "start": -0.1162,
         "series": [
-          -0.1306,
-          -0.1292,
-          -0.1334,
-          -0.1329,
-          -0.1342,
-          -0.1349,
-          -0.1355,
-          -0.1352,
-          -0.1369,
-          -0.1364,
-          -0.1363,
-          -0.1375,
-          -0.1375,
-          -0.1375
-        ]
-      },
-      {
-        "name": "EM4 Medium-Term Momentum",
-        "current": -0.1173,
-        "start": -0.1321,
-        "series": [
-          -0.1321,
-          -0.1396,
-          -0.1301,
-          -0.1338,
-          -0.13,
-          -0.1269,
+          -0.1162,
+          -0.1172,
+          -0.1162,
+          -0.1171,
+          -0.1165,
+          -0.1184,
+          -0.1203,
+          -0.1221,
           -0.1233,
-          -0.1233,
-          -0.1242,
-          -0.1204,
-          -0.12,
-          -0.1302,
-          -0.1243,
-          -0.1173
+          -0.1205,
+          -0.1208,
+          -0.1182,
+          -0.1183,
+          -0.1175,
+          -0.1189,
+          -0.119,
+          -0.1197,
+          -0.122,
+          -0.1237,
+          -0.1282,
+          -0.1289,
+          -0.1206
         ]
       },
       {
         "name": "EM4 Market Sensitivity",
-        "current": -0.0779,
-        "start": -0.0876,
+        "current": -0.0999,
+        "start": -0.0882,
         "series": [
-          -0.0876,
-          -0.0892,
-          -0.082,
-          -0.0906,
-          -0.0864,
-          -0.0831,
-          -0.0801,
-          -0.0805,
-          -0.0844,
-          -0.0794,
-          -0.0804,
-          -0.0856,
-          -0.0819,
-          -0.0779
-        ]
-      },
-      {
-        "name": "DM4 Profitability",
-        "current": 0.0713,
-        "start": 0.0692,
-        "series": [
-          0.0692,
-          0.0672,
-          0.0684,
-          0.0674,
-          0.0686,
-          0.0706,
-          0.0694,
-          0.0683,
-          0.0694,
-          0.0703,
-          0.0706,
-          0.0705,
-          0.0703,
-          0.0713
+          -0.0882,
+          -0.0898,
+          -0.0862,
+          -0.0843,
+          -0.0912,
+          -0.0951,
+          -0.097,
+          -0.0998,
+          -0.1014,
+          -0.1016,
+          -0.1028,
+          -0.1013,
+          -0.1015,
+          -0.0981,
+          -0.1045,
+          -0.1048,
+          -0.1051,
+          -0.109,
+          -0.1089,
+          -0.1083,
+          -0.1052,
+          -0.0999
         ]
       },
       {
         "name": "EM4 Leverage",
-        "current": -0.0707,
-        "start": -0.0697,
+        "current": -0.0764,
+        "start": -0.0738,
         "series": [
-          -0.0697,
-          -0.0679,
-          -0.0692,
-          -0.0688,
-          -0.0689,
-          -0.0687,
-          -0.0693,
-          -0.0694,
-          -0.0689,
-          -0.0694,
-          -0.0691,
-          -0.0673,
-          -0.0687,
-          -0.0707
+          -0.0738,
+          -0.073,
+          -0.0737,
+          -0.0732,
+          -0.0744,
+          -0.0724,
+          -0.0728,
+          -0.0733,
+          -0.0728,
+          -0.073,
+          -0.0727,
+          -0.0722,
+          -0.0729,
+          -0.0727,
+          -0.0733,
+          -0.073,
+          -0.0729,
+          -0.072,
+          -0.0722,
+          -0.0723,
+          -0.0711,
+          -0.0764
+        ]
+      },
+      {
+        "name": "EM4 Medium-Term Momentum",
+        "current": -0.0735,
+        "start": -0.0987,
+        "series": [
+          -0.0987,
+          -0.1025,
+          -0.0964,
+          -0.0946,
+          -0.0948,
+          -0.1005,
+          -0.1026,
+          -0.1031,
+          -0.105,
+          -0.0976,
+          -0.101,
+          -0.097,
+          -0.0955,
+          -0.0887,
+          -0.0897,
+          -0.0887,
+          -0.0886,
+          -0.0939,
+          -0.0943,
+          -0.0908,
+          -0.0863,
+          -0.0735
         ]
       },
       {
         "name": "DM4 Growth",
-        "current": -0.0621,
-        "start": -0.0674,
+        "current": -0.0695,
+        "start": -0.0693,
         "series": [
+          -0.0693,
           -0.0674,
-          -0.0674,
-          -0.0666,
-          -0.0679,
-          -0.0674,
-          -0.0653,
-          -0.067,
-          -0.0678,
-          -0.0672,
-          -0.0662,
-          -0.0659,
-          -0.064,
-          -0.0638,
-          -0.0621
-        ]
-      },
-      {
-        "name": "EM4 Growth",
-        "current": -0.0584,
-        "start": -0.0657,
-        "series": [
-          -0.0657,
-          -0.0636,
-          -0.0596,
-          -0.062,
-          -0.0609,
-          -0.0607,
-          -0.0593,
-          -0.0601,
-          -0.0605,
-          -0.0578,
-          -0.0582,
-          -0.0612,
-          -0.0587,
-          -0.0584
-        ]
-      },
-      {
-        "name": "EM4 Volatility",
-        "current": -0.0568,
-        "start": -0.0685,
-        "series": [
-          -0.0685,
           -0.0687,
-          -0.0652,
-          -0.0645,
-          -0.0645,
-          -0.0623,
-          -0.0597,
-          -0.0598,
-          -0.0576,
-          -0.0559,
-          -0.0556,
-          -0.0629,
-          -0.0584,
-          -0.0568
+          -0.0677,
+          -0.0691,
+          -0.0699,
+          -0.0696,
+          -0.0691,
+          -0.0697,
+          -0.0696,
+          -0.0678,
+          -0.0686,
+          -0.0669,
+          -0.0677,
+          -0.0683,
+          -0.0684,
+          -0.0713,
+          -0.0702,
+          -0.0705,
+          -0.0711,
+          -0.0696,
+          -0.0695
         ]
       },
       {
-        "name": "EM4 Earnings Yield",
-        "current": 0.0515,
-        "start": 0.0504,
+        "name": "DM4 Profitability",
+        "current": 0.067,
+        "start": 0.0592,
         "series": [
-          0.0504,
-          0.0525,
-          0.0538,
-          0.0536,
-          0.0521,
-          0.0531,
-          0.0525,
-          0.0519,
-          0.0526,
-          0.0541,
-          0.0533,
-          0.0529,
-          0.0539,
-          0.0515
-        ]
-      },
-      {
-        "name": "DM4 Market Sensitivity",
-        "current": 0.0493,
-        "start": 0.0397,
-        "series": [
-          0.0397,
-          0.0361,
-          0.0376,
-          0.0375,
-          0.0382,
-          0.0397,
-          0.0444,
-          0.0414,
-          0.0411,
-          0.0415,
-          0.0421,
-          0.0425,
-          0.0436,
-          0.0493
-        ]
-      },
-      {
-        "name": "DM4 Volatility",
-        "current": -0.0475,
-        "start": -0.0564,
-        "series": [
-          -0.0564,
-          -0.06,
-          -0.0589,
-          -0.0606,
-          -0.0582,
-          -0.0549,
-          -0.054,
-          -0.0562,
-          -0.0563,
-          -0.054,
-          -0.0537,
-          -0.0566,
-          -0.053,
-          -0.0475
-        ]
-      },
-      {
-        "name": "EM4 Profitability",
-        "current": 0.0431,
-        "start": 0.0465,
-        "series": [
-          0.0465,
-          0.0407,
-          0.0429,
-          0.0414,
-          0.0429,
-          0.0425,
-          0.0435,
-          0.0427,
-          0.0428,
-          0.044,
-          0.0431,
-          0.0408,
-          0.0418,
-          0.0431
+          0.0592,
+          0.0582,
+          0.0581,
+          0.0597,
+          0.06,
+          0.0599,
+          0.0597,
+          0.0603,
+          0.06,
+          0.0614,
+          0.0625,
+          0.0623,
+          0.0633,
+          0.0639,
+          0.0628,
+          0.0623,
+          0.0616,
+          0.0616,
+          0.0605,
+          0.0605,
+          0.0612,
+          0.067
         ]
       },
       {
         "name": "DM4 Value",
-        "current": -0.0427,
-        "start": -0.0381,
+        "current": -0.0547,
+        "start": -0.0502,
         "series": [
-          -0.0381,
-          -0.0369,
-          -0.0372,
-          -0.0368,
-          -0.0377,
-          -0.0391,
-          -0.0386,
-          -0.0379,
-          -0.0386,
-          -0.0391,
-          -0.0396,
-          -0.04,
-          -0.0408,
-          -0.0427
+          -0.0502,
+          -0.0496,
+          -0.0501,
+          -0.0513,
+          -0.051,
+          -0.0507,
+          -0.0506,
+          -0.0503,
+          -0.0507,
+          -0.0508,
+          -0.0515,
+          -0.051,
+          -0.0518,
+          -0.0522,
+          -0.0514,
+          -0.0509,
+          -0.0515,
+          -0.052,
+          -0.0517,
+          -0.0524,
+          -0.0525,
+          -0.0547
+        ]
+      },
+      {
+        "name": "EM4 Growth",
+        "current": -0.0546,
+        "start": -0.0606,
+        "series": [
+          -0.0606,
+          -0.0618,
+          -0.0597,
+          -0.0592,
+          -0.0604,
+          -0.0621,
+          -0.0634,
+          -0.0646,
+          -0.0647,
+          -0.0639,
+          -0.0633,
+          -0.0628,
+          -0.0633,
+          -0.0614,
+          -0.0643,
+          -0.0641,
+          -0.0642,
+          -0.0654,
+          -0.0651,
+          -0.0646,
+          -0.061,
+          -0.0546
+        ]
+      },
+      {
+        "name": "EM4 Profitability",
+        "current": 0.0478,
+        "start": 0.0434,
+        "series": [
+          0.0434,
+          0.0421,
+          0.0435,
+          0.0432,
+          0.0437,
+          0.0418,
+          0.041,
+          0.0411,
+          0.0404,
+          0.0408,
+          0.0411,
+          0.0415,
+          0.0421,
+          0.0423,
+          0.0412,
+          0.0408,
+          0.0406,
+          0.04,
+          0.0406,
+          0.0404,
+          0.0399,
+          0.0478
+        ]
+      },
+      {
+        "name": "EM4 Earnings Yield",
+        "current": 0.0416,
+        "start": 0.0396,
+        "series": [
+          0.0396,
+          0.0404,
+          0.0397,
+          0.0405,
+          0.0404,
+          0.0406,
+          0.0414,
+          0.0418,
+          0.0415,
+          0.0414,
+          0.0425,
+          0.042,
+          0.042,
+          0.0426,
+          0.0425,
+          0.0416,
+          0.041,
+          0.0415,
+          0.0412,
+          0.0409,
+          0.0388,
+          0.0416
         ]
       },
       {
         "name": "EM4 Exchange Rate Sensitivity",
-        "current": 0.0333,
-        "start": 0.0447,
+        "current": 0.04,
+        "start": 0.0289,
         "series": [
-          0.0447,
-          0.0443,
-          0.0437,
-          0.0411,
-          0.042,
-          0.0407,
-          0.0413,
-          0.0414,
-          0.0366,
-          0.0369,
-          0.0369,
-          0.038,
-          0.0375,
-          0.0333
-        ]
-      },
-      {
-        "name": "DM4 Size",
-        "current": -0.0283,
-        "start": -0.028,
-        "series": [
-          -0.028,
-          -0.0285,
-          -0.0285,
-          -0.0283,
-          -0.0284,
-          -0.0286,
-          -0.0281,
-          -0.029,
-          -0.0293,
-          -0.0292,
-          -0.0294,
-          -0.0287,
-          -0.0287,
-          -0.0283
+          0.0289,
+          0.0291,
+          0.0301,
+          0.0291,
+          0.0323,
+          0.0319,
+          0.0308,
+          0.032,
+          0.0313,
+          0.0312,
+          0.0304,
+          0.0298,
+          0.0308,
+          0.0317,
+          0.033,
+          0.0315,
+          0.0313,
+          0.0314,
+          0.0309,
+          0.0303,
+          0.0302,
+          0.04
         ]
       },
       {
         "name": "DM4 Liquidity",
-        "current": -0.0254,
-        "start": -0.0242,
+        "current": -0.0359,
+        "start": -0.0382,
         "series": [
-          -0.0242,
-          -0.0275,
-          -0.0285,
-          -0.0294,
-          -0.0285,
-          -0.0292,
-          -0.0293,
-          -0.0291,
-          -0.029,
-          -0.0279,
-          -0.0276,
-          -0.0294,
-          -0.0288,
-          -0.0254
+          -0.0382,
+          -0.0388,
+          -0.0362,
+          -0.0368,
+          -0.0366,
+          -0.0374,
+          -0.0393,
+          -0.0407,
+          -0.04,
+          -0.0373,
+          -0.0369,
+          -0.0373,
+          -0.0378,
+          -0.038,
+          -0.0382,
+          -0.0386,
+          -0.0374,
+          -0.0382,
+          -0.0387,
+          -0.0414,
+          -0.0402,
+          -0.0359
         ]
       },
       {
-        "name": "EM4 Size",
-        "current": -0.0123,
-        "start": -0.0128,
+        "name": "DM4 Volatility",
+        "current": -0.0289,
+        "start": -0.0458,
         "series": [
-          -0.0128,
-          -0.016,
-          -0.0139,
-          -0.0153,
-          -0.0138,
-          -0.0139,
-          -0.0134,
-          -0.0128,
-          -0.0133,
-          -0.0122,
-          -0.0124,
-          -0.0145,
-          -0.014,
-          -0.0123
+          -0.0458,
+          -0.0463,
+          -0.0437,
+          -0.0441,
+          -0.0417,
+          -0.0445,
+          -0.0454,
+          -0.0459,
+          -0.0446,
+          -0.0386,
+          -0.0356,
+          -0.035,
+          -0.0346,
+          -0.0334,
+          -0.0333,
+          -0.0322,
+          -0.0319,
+          -0.031,
+          -0.0322,
+          -0.034,
+          -0.0329,
+          -0.0289
+        ]
+      },
+      {
+        "name": "DM4 Market Sensitivity",
+        "current": 0.0273,
+        "start": 0.0447,
+        "series": [
+          0.0447,
+          0.0457,
+          0.0475,
+          0.0469,
+          0.0416,
+          0.0407,
+          0.0401,
+          0.0394,
+          0.0386,
+          0.0366,
+          0.0394,
+          0.0398,
+          0.0395,
+          0.0401,
+          0.0362,
+          0.034,
+          0.0348,
+          0.0318,
+          0.0321,
+          0.0325,
+          0.0334,
+          0.0273
+        ]
+      },
+      {
+        "name": "DM4 Size",
+        "current": -0.0216,
+        "start": -0.0234,
+        "series": [
+          -0.0234,
+          -0.0235,
+          -0.024,
+          -0.024,
+          -0.024,
+          -0.0238,
+          -0.0237,
+          -0.0234,
+          -0.0236,
+          -0.0245,
+          -0.0243,
+          -0.0241,
+          -0.024,
+          -0.0245,
+          -0.0241,
+          -0.0232,
+          -0.0228,
+          -0.0225,
+          -0.0226,
+          -0.0225,
+          -0.0228,
+          -0.0216
         ]
       },
       {
         "name": "DM4 Dividend Yield",
-        "current": -0.0101,
-        "start": -0.0017,
+        "current": -0.0102,
+        "start": -0.0164,
         "series": [
-          -0.0017,
-          0.0022,
-          -0.0005,
-          -0.0,
-          -0.0014,
-          -0.0033,
-          -0.0058,
-          -0.005,
-          -0.0042,
-          -0.0043,
-          -0.004,
-          -0.0043,
-          -0.0052,
-          -0.0101
+          -0.0164,
+          -0.0177,
+          -0.0187,
+          -0.0204,
+          -0.0199,
+          -0.017,
+          -0.0161,
+          -0.0137,
+          -0.0126,
+          -0.0153,
+          -0.0168,
+          -0.0168,
+          -0.0175,
+          -0.0178,
+          -0.0164,
+          -0.016,
+          -0.0157,
+          -0.0163,
+          -0.0144,
+          -0.0146,
+          -0.0144,
+          -0.0102
         ]
       },
       {
-        "name": "EM4 Value",
-        "current": 0.0089,
-        "start": 0.0125,
+        "name": "DM4 Earnings Yield",
+        "current": -0.0091,
+        "start": -0.0071,
         "series": [
-          0.0125,
-          0.0139,
-          0.0125,
-          0.0136,
-          0.0122,
-          0.0121,
-          0.0109,
-          0.0108,
-          0.0113,
-          0.0101,
-          0.0101,
-          0.0117,
-          0.0107,
-          0.0089
+          -0.0071,
+          -0.0079,
+          -0.0087,
+          -0.0093,
+          -0.009,
+          -0.0096,
+          -0.0091,
+          -0.0081,
+          -0.008,
+          -0.0083,
+          -0.0074,
+          -0.0083,
+          -0.0081,
+          -0.0087,
+          -0.0082,
+          -0.0072,
+          -0.0088,
+          -0.0089,
+          -0.008,
+          -0.0092,
+          -0.0091,
+          -0.0091
         ]
       },
       {
         "name": "EM4 Liquidity",
-        "current": 0.0087,
-        "start": -0.0028,
+        "current": 0.0074,
+        "start": 0.0068,
         "series": [
-          -0.0028,
-          0.0012,
-          0.0028,
-          0.0021,
-          0.003,
-          0.0045,
-          0.0059,
-          0.0058,
-          0.0061,
-          0.0078,
-          0.0078,
+          0.0068,
           0.0072,
-          0.0074,
-          0.0087
+          0.0091,
+          0.0094,
+          0.0094,
+          0.0076,
+          0.0066,
+          0.0065,
+          0.0072,
+          0.0086,
+          0.0079,
+          0.0083,
+          0.0076,
+          0.0088,
+          0.0096,
+          0.0084,
+          0.0081,
+          0.008,
+          0.0083,
+          0.0087,
+          0.0033,
+          0.0074
         ]
       },
       {
         "name": "US4 Volatility",
-        "current": 0.0067,
-        "start": 0.0062,
+        "current": 0.0069,
+        "start": 0.008,
         "series": [
-          0.0062,
-          0.0065,
+          0.008,
+          0.0079,
+          0.0079,
+          0.0077,
+          0.0076,
+          0.0075,
+          0.0074,
+          0.0075,
+          0.0075,
+          0.0074,
+          0.0076,
+          0.0075,
+          0.0074,
+          0.007,
+          0.0069,
+          0.0069,
           0.0068,
-          0.0067,
-          0.0067,
+          0.007,
+          0.0071,
+          0.007,
           0.0069,
-          0.0069,
-          0.0069,
-          0.0069,
-          0.0069,
-          0.0069,
-          0.0068,
-          0.0067,
-          0.0067
+          0.0069
         ]
       },
       {
-        "name": "US4 Medium-Term Momentum",
+        "name": "EM4 Size",
         "current": -0.006,
-        "start": -0.0057,
+        "start": -0.0088,
         "series": [
-          -0.0057,
-          -0.0058,
-          -0.006,
-          -0.006,
-          -0.0059,
-          -0.006,
-          -0.0059,
-          -0.0059,
-          -0.0059,
-          -0.006,
-          -0.006,
-          -0.0059,
-          -0.0059,
+          -0.0088,
+          -0.0097,
+          -0.0081,
+          -0.0075,
+          -0.0071,
+          -0.0085,
+          -0.009,
+          -0.01,
+          -0.0109,
+          -0.0086,
+          -0.0096,
+          -0.0097,
+          -0.0097,
+          -0.0082,
+          -0.009,
+          -0.0087,
+          -0.008,
+          -0.0103,
+          -0.0102,
+          -0.0097,
+          -0.0092,
           -0.006
         ]
       },
       {
         "name": "US4 Exchange Rate Sensitivity",
-        "current": 0.0043,
-        "start": 0.0034,
+        "current": 0.0053,
+        "start": 0.0056,
         "series": [
-          0.0034,
-          0.0036,
-          0.004,
-          0.0039,
-          0.0038,
-          0.0041,
-          0.0041,
-          0.0041,
-          0.0039,
-          0.0041,
-          0.0041,
-          0.0044,
-          0.0043,
-          0.0043
+          0.0056,
+          0.0056,
+          0.0056,
+          0.0056,
+          0.0055,
+          0.0054,
+          0.0054,
+          0.0055,
+          0.0055,
+          0.0056,
+          0.0058,
+          0.0058,
+          0.0057,
+          0.0055,
+          0.0055,
+          0.0055,
+          0.0054,
+          0.0055,
+          0.0056,
+          0.0055,
+          0.0054,
+          0.0053
         ]
       },
       {
-        "name": "US4 Growth",
-        "current": 0.0036,
-        "start": 0.0032,
+        "name": "US4 Medium-Term Momentum",
+        "current": -0.0052,
+        "start": -0.0064,
         "series": [
-          0.0032,
-          0.0034,
-          0.0036,
-          0.0036,
-          0.0035,
-          0.0037,
-          0.0035,
-          0.0035,
-          0.0034,
-          0.0035,
-          0.0035,
-          0.0036,
-          0.0035,
-          0.0036
+          -0.0064,
+          -0.0064,
+          -0.0065,
+          -0.0063,
+          -0.0059,
+          -0.0059,
+          -0.0057,
+          -0.0056,
+          -0.0055,
+          -0.0055,
+          -0.006,
+          -0.006,
+          -0.0059,
+          -0.0056,
+          -0.0055,
+          -0.0055,
+          -0.0054,
+          -0.0056,
+          -0.0056,
+          -0.0055,
+          -0.0053,
+          -0.0052
         ]
       },
       {
-        "name": "US4 Size",
-        "current": -0.0036,
-        "start": -0.0036,
+        "name": "EM4 Volatility",
+        "current": -0.0049,
+        "start": -0.028,
         "series": [
-          -0.0036,
-          -0.0036,
-          -0.0036,
-          -0.0036,
-          -0.0036,
-          -0.0036,
-          -0.0037,
-          -0.0037,
-          -0.0037,
-          -0.0036,
-          -0.0035,
-          -0.0036,
-          -0.0036,
-          -0.0036
+          -0.028,
+          -0.0295,
+          -0.0258,
+          -0.0257,
+          -0.0197,
+          -0.0224,
+          -0.0231,
+          -0.0229,
+          -0.0238,
+          -0.0159,
+          -0.0176,
+          -0.0155,
+          -0.0151,
+          -0.0127,
+          -0.0099,
+          -0.0099,
+          -0.011,
+          -0.012,
+          -0.0126,
+          -0.0105,
+          -0.0094,
+          -0.0049
         ]
       },
       {
         "name": "US4 Liquidity",
-        "current": 0.0032,
-        "start": 0.0027,
+        "current": 0.0037,
+        "start": 0.003,
         "series": [
-          0.0027,
-          0.0028,
-          0.0028,
-          0.0028,
-          0.0029,
           0.003,
           0.0031,
-          0.0033,
-          0.0033,
-          0.0034,
-          0.0034,
           0.0032,
           0.0032,
-          0.0032
+          0.0034,
+          0.0034,
+          0.0035,
+          0.0038,
+          0.0038,
+          0.0038,
+          0.0039,
+          0.0039,
+          0.0036,
+          0.0036,
+          0.0035,
+          0.0035,
+          0.0035,
+          0.0036,
+          0.0036,
+          0.0035,
+          0.0037,
+          0.0037
         ]
       },
       {
-        "name": "DM4 Exchange Rate Sensitivity",
-        "current": -0.0026,
-        "start": -0.005,
+        "name": "US4 Size",
+        "current": -0.0033,
+        "start": -0.0033,
         "series": [
-          -0.005,
-          -0.0055,
-          -0.0056,
-          -0.0049,
-          -0.0052,
-          -0.0063,
-          -0.0039,
-          -0.0043,
-          -0.0008,
-          -0.0022,
-          -0.0029,
-          -0.0022,
-          -0.0024,
-          -0.0026
-        ]
-      },
-      {
-        "name": "US4 Leverage",
-        "current": -0.0025,
-        "start": -0.0019,
-        "series": [
-          -0.0019,
-          -0.002,
-          -0.0022,
-          -0.0022,
-          -0.0021,
-          -0.0024,
-          -0.0023,
-          -0.0022,
-          -0.0021,
-          -0.0023,
-          -0.0024,
-          -0.0025,
-          -0.0024,
-          -0.0025
-        ]
-      },
-      {
-        "name": "US4 Dividend Yield",
-        "current": -0.0019,
-        "start": -0.0034,
-        "series": [
+          -0.0033,
+          -0.0033,
+          -0.0033,
+          -0.0032,
+          -0.0033,
+          -0.0033,
+          -0.0033,
+          -0.0034,
           -0.0034,
           -0.0034,
           -0.0035,
           -0.0035,
-          -0.0035,
-          -0.0036,
-          -0.0036,
-          -0.0036,
-          -0.0019,
-          -0.0021,
-          -0.0021,
-          -0.0019,
-          -0.0018,
-          -0.0019
+          -0.0034,
+          -0.0034,
+          -0.0034,
+          -0.0034,
+          -0.0034,
+          -0.0034,
+          -0.0034,
+          -0.0034,
+          -0.0034,
+          -0.0033
         ]
       },
       {
         "name": "US4 Market Sensitivity",
-        "current": -0.0017,
-        "start": -0.0017,
+        "current": -0.0031,
+        "start": -0.0034,
         "series": [
+          -0.0034,
+          -0.0034,
+          -0.0034,
+          -0.0033,
+          -0.0032,
+          -0.0032,
+          -0.0032,
+          -0.0032,
+          -0.0032,
+          -0.0032,
+          -0.0033,
+          -0.0033,
+          -0.0032,
+          -0.0031,
+          -0.003,
+          -0.0031,
+          -0.003,
+          -0.0031,
+          -0.0032,
+          -0.0032,
+          -0.0032,
+          -0.0031
+        ]
+      },
+      {
+        "name": "DM4 Exchange Rate Sensitivity",
+        "current": -0.0029,
+        "start": 0.013,
+        "series": [
+          0.013,
+          0.013,
+          0.0163,
+          0.0154,
+          0.0141,
+          0.0139,
+          0.0146,
+          0.0141,
+          0.0132,
+          0.0134,
+          0.0137,
+          0.0133,
+          0.0135,
+          0.0132,
+          0.0102,
+          0.0076,
+          0.0071,
+          0.0054,
+          0.0059,
+          0.003,
+          0.0044,
+          -0.0029
+        ]
+      },
+      {
+        "name": "US4 Growth",
+        "current": 0.0029,
+        "start": 0.0037,
+        "series": [
+          0.0037,
+          0.0035,
+          0.0037,
+          0.0037,
+          0.0034,
+          0.0034,
+          0.0033,
+          0.0033,
+          0.0033,
+          0.0033,
+          0.0037,
+          0.0037,
+          0.0037,
+          0.0034,
+          0.0032,
+          0.0033,
+          0.003,
+          0.0032,
+          0.0032,
+          0.0032,
+          0.003,
+          0.0029
+        ]
+      },
+      {
+        "name": "US4 Leverage",
+        "current": -0.0022,
+        "start": -0.003,
+        "series": [
+          -0.003,
+          -0.0031,
+          -0.0031,
+          -0.0031,
+          -0.0028,
+          -0.0028,
+          -0.0027,
+          -0.0026,
+          -0.0025,
+          -0.0024,
+          -0.0028,
+          -0.0028,
+          -0.0027,
+          -0.0024,
+          -0.0023,
+          -0.0023,
+          -0.0021,
+          -0.0023,
+          -0.0023,
+          -0.0023,
+          -0.0022,
+          -0.0022
+        ]
+      },
+      {
+        "name": "US4 Dividend Yield",
+        "current": -0.0015,
+        "start": -0.0024,
+        "series": [
+          -0.0024,
+          -0.0024,
+          -0.0025,
+          -0.0025,
+          -0.0024,
+          -0.0024,
+          -0.0024,
+          -0.0024,
+          -0.0024,
+          -0.0024,
+          -0.0027,
+          -0.0027,
+          -0.0026,
+          -0.0025,
           -0.0017,
-          -0.0018,
-          -0.0019,
-          -0.0018,
-          -0.0019,
-          -0.002,
-          -0.0021,
-          -0.0021,
-          -0.0021,
-          -0.0021,
-          -0.0021,
-          -0.0018,
           -0.0017,
-          -0.0017
+          -0.0015,
+          -0.0016,
+          -0.0016,
+          -0.0016,
+          -0.0015,
+          -0.0015
         ]
       },
       {
         "name": "US4 Value",
-        "current": -0.0004,
-        "start": -0.0004,
+        "current": -0.0005,
+        "start": -0.0006,
         "series": [
-          -0.0004,
-          -0.0004,
-          -0.0004,
-          -0.0004,
-          -0.0004,
+          -0.0006,
+          -0.0007,
+          -0.0007,
+          -0.0007,
+          -0.0007,
+          -0.0007,
+          -0.0006,
+          -0.0006,
+          -0.0006,
+          -0.0006,
+          -0.0007,
+          -0.0007,
+          -0.0007,
+          -0.0006,
+          -0.0006,
+          -0.0006,
           -0.0005,
-          -0.0004,
-          -0.0004,
-          -0.0003,
-          -0.0004,
-          -0.0004,
-          -0.0004,
-          -0.0004,
+          -0.0006,
+          -0.0006,
+          -0.0006,
+          -0.0005,
+          -0.0005
+        ]
+      },
+      {
+        "name": "EM4 Value",
+        "current": -0.0004,
+        "start": 0.0043,
+        "series": [
+          0.0043,
+          0.0052,
+          0.0033,
+          0.004,
+          0.0039,
+          0.0056,
+          0.0068,
+          0.0069,
+          0.007,
+          0.0058,
+          0.0065,
+          0.0056,
+          0.0054,
+          0.005,
+          0.0057,
+          0.0056,
+          0.0057,
+          0.0068,
+          0.0065,
+          0.006,
+          0.0055,
           -0.0004
         ]
       },
       {
-        "name": "US4 Earnings Yield",
-        "current": 0.0003,
-        "start": 0.0002,
-        "series": [
-          0.0002,
-          0.0002,
-          0.0002,
-          0.0002,
-          0.0002,
-          0.0001,
-          0.0002,
-          0.0002,
-          0.0002,
-          0.0001,
-          0.0001,
-          0.0003,
-          0.0003,
-          0.0003
-        ]
-      },
-      {
-        "name": "DM4 Earnings Yield",
-        "current": -0.0002,
-        "start": 0.0039,
-        "series": [
-          0.0039,
-          0.0057,
-          0.0045,
-          0.0047,
-          0.0039,
-          0.004,
-          0.0034,
-          0.0027,
-          0.0017,
-          0.002,
-          0.0014,
-          0.0017,
-          0.0016,
-          -0.0002
-        ]
-      },
-      {
         "name": "US4 Profitability",
-        "current": 0.0,
-        "start": -0.0,
+        "current": 0.0004,
+        "start": 0.0004,
         "series": [
-          -0.0,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0003,
+          0.0003,
+          0.0004,
+          0.0004,
+          0.0006,
+          0.0006,
+          0.0005,
+          0.0005,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004,
+          0.0004
+        ]
+      },
+      {
+        "name": "US4 Earnings Yield",
+        "current": 0.0001,
+        "start": -0.0001,
+        "series": [
+          -0.0001,
+          -0.0002,
+          -0.0002,
+          -0.0002,
+          -0.0002,
+          -0.0002,
+          -0.0002,
+          -0.0002,
+          0.0001,
+          0.0001,
+          0.0,
+          0.0,
+          0.0,
           0.0001,
           0.0001,
           0.0001,
           0.0001,
           0.0001,
-          0.0,
-          0.0,
-          -0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
+          0.0001,
+          0.0001,
+          0.0001,
+          0.0001
         ]
       }
     ]
@@ -1110,301 +1588,265 @@
     {
       "name": "Industry-Covariance",
       "group": "Industry",
-      "pctVar": 0.0655,
+      "pctVar": 0.068,
       "isCov": true
     },
     {
       "name": "Style-Covariance",
       "group": "Style",
-      "pctVar": 0.0647,
+      "pctVar": 0.0676,
       "isCov": true
+    },
+    {
+      "name": "EM4 Market Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0577,
+      "isCov": false
     },
     {
       "name": "DM4 Medium-Term Momentum",
       "group": "Style",
-      "pctVar": 0.0549,
+      "pctVar": 0.0551,
       "isCov": false
     },
     {
       "name": "DM4 Banks",
       "group": "Industry",
-      "pctVar": 0.0358,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Developed Market",
-      "group": "Local",
-      "pctVar": 0.0344,
+      "pctVar": 0.0322,
       "isCov": false
     },
     {
       "name": "Country-Covariance",
       "group": "Country",
-      "pctVar": 0.0305,
+      "pctVar": 0.0274,
       "isCov": true
     },
     {
-      "name": "EM4 Medium-Term Momentum",
-      "group": "Style",
-      "pctVar": 0.0242,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Market Sensitivity",
-      "group": "Style",
-      "pctVar": 0.0236,
-      "isCov": false
-    },
-    {
-      "name": "Brazil",
-      "group": "Country",
-      "pctVar": 0.0208,
-      "isCov": false
-    },
-    {
-      "name": "India",
-      "group": "Country",
-      "pctVar": 0.0193,
+      "name": "DM4 Developed Market",
+      "group": "Local",
+      "pctVar": 0.0253,
       "isCov": false
     },
     {
       "name": "EM4 Emerging Market",
       "group": "Local",
-      "pctVar": 0.0182,
-      "isCov": false
-    },
-    {
-      "name": "Canada",
-      "group": "Country",
-      "pctVar": 0.014,
-      "isCov": false
-    },
-    {
-      "name": "Mexico",
-      "group": "Country",
-      "pctVar": 0.0123,
+      "pctVar": 0.0201,
       "isCov": false
     },
     {
       "name": "DM4 Metals & Mining",
       "group": "Industry",
+      "pctVar": 0.0188,
+      "isCov": false
+    },
+    {
+      "name": "Brazil",
+      "group": "Country",
+      "pctVar": 0.0187,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Medium-Term Momentum",
+      "group": "Style",
+      "pctVar": 0.0126,
+      "isCov": false
+    },
+    {
+      "name": "India",
+      "group": "Country",
       "pctVar": 0.0122,
       "isCov": false
     },
     {
-      "name": "China",
+      "name": "Canada",
       "group": "Country",
-      "pctVar": 0.0118,
+      "pctVar": 0.0115,
       "isCov": false
     },
     {
-      "name": "EM4 Volatility",
-      "group": "Style",
-      "pctVar": 0.01,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Semiconductors & Semiconductor Equipment",
-      "group": "Industry",
-      "pctVar": 0.0097,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Machinery",
-      "group": "Industry",
-      "pctVar": 0.0093,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Market Sensitivity",
-      "group": "Style",
-      "pctVar": 0.0086,
-      "isCov": false
-    },
-    {
-      "name": "BRL",
-      "group": "Currency",
-      "pctVar": 0.0083,
-      "isCov": false
-    },
-    {
-      "name": "Japan",
-      "group": "Country",
-      "pctVar": 0.0078,
-      "isCov": false
-    },
-    {
-      "name": "Korea, Republic of",
+      "name": "Mexico",
       "group": "Country",
       "pctVar": 0.0076,
       "isCov": false
     },
     {
-      "name": "Taiwan",
+      "name": "China",
       "group": "Country",
-      "pctVar": 0.0061,
+      "pctVar": 0.007,
       "isCov": false
     },
     {
-      "name": "DM4 Volatility",
-      "group": "Style",
-      "pctVar": 0.006,
-      "isCov": false
-    },
-    {
-      "name": "GBP",
-      "group": "Currency",
-      "pctVar": 0.006,
-      "isCov": false
-    },
-    {
-      "name": "CAD",
-      "group": "Currency",
-      "pctVar": 0.0058,
-      "isCov": false
-    },
-    {
-      "name": "MXN",
-      "group": "Currency",
-      "pctVar": 0.0055,
-      "isCov": false
-    },
-    {
-      "name": "Australia",
+      "name": "Japan",
       "group": "Country",
-      "pctVar": 0.0053,
+      "pctVar": 0.0069,
       "isCov": false
     },
     {
-      "name": "AUD",
+      "name": "BRL",
       "group": "Currency",
-      "pctVar": 0.0053,
+      "pctVar": 0.0069,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Semiconductors & Semiconductor Equipment",
+      "group": "Industry",
+      "pctVar": 0.0067,
       "isCov": false
     },
     {
       "name": "JPY",
       "group": "Currency",
-      "pctVar": 0.0053,
+      "pctVar": 0.0061,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Machinery",
+      "group": "Industry",
+      "pctVar": 0.0059,
+      "isCov": false
+    },
+    {
+      "name": "CAD",
+      "group": "Currency",
+      "pctVar": 0.0055,
+      "isCov": false
+    },
+    {
+      "name": "MXN",
+      "group": "Currency",
+      "pctVar": 0.0038,
       "isCov": false
     },
     {
       "name": "DM4 Leverage",
       "group": "Style",
-      "pctVar": 0.0044,
+      "pctVar": 0.0037,
       "isCov": false
     },
     {
-      "name": "Indonesia",
+      "name": "EM4 Technology Hardware, Storage & Peripherals",
+      "group": "Industry",
+      "pctVar": 0.0034,
+      "isCov": false
+    },
+    {
+      "name": "Australia",
       "group": "Country",
-      "pctVar": 0.0043,
+      "pctVar": 0.0029,
       "isCov": false
     },
     {
-      "name": "United Kingdom",
+      "name": "DM4 Market Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0028,
+      "isCov": false
+    },
+    {
+      "name": "Taiwan",
       "group": "Country",
-      "pctVar": 0.004,
-      "isCov": false
-    },
-    {
-      "name": "United States",
-      "group": "Country",
-      "pctVar": 0.0036,
-      "isCov": false
-    },
-    {
-      "name": "SEK",
-      "group": "Currency",
-      "pctVar": 0.0035,
+      "pctVar": 0.0028,
       "isCov": false
     },
     {
       "name": "EUR",
       "group": "Currency",
-      "pctVar": 0.0033,
+      "pctVar": 0.0028,
       "isCov": false
     },
     {
-      "name": "EM4 Dividend Yield",
+      "name": "Korea, Republic of",
+      "group": "Country",
+      "pctVar": 0.0027,
+      "isCov": false
+    },
+    {
+      "name": "United States",
+      "group": "Country",
+      "pctVar": 0.0026,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Volatility",
       "group": "Style",
       "pctVar": 0.0025,
       "isCov": false
     },
     {
-      "name": "INR",
+      "name": "AUD",
       "group": "Currency",
       "pctVar": 0.0025,
       "isCov": false
     },
     {
-      "name": "France",
-      "group": "Country",
-      "pctVar": 0.0023,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Oil, Gas & Consumable Fuels",
-      "group": "Industry",
-      "pctVar": 0.0023,
+      "name": "GBP",
+      "group": "Currency",
+      "pctVar": 0.0025,
       "isCov": false
     },
     {
       "name": "DM4 Textiles, Apparel & Luxury Goods",
       "group": "Industry",
+      "pctVar": 0.0023,
+      "isCov": false
+    },
+    {
+      "name": "France",
+      "group": "Country",
       "pctVar": 0.0022,
       "isCov": false
     },
     {
-      "name": "EM4 Entertainment",
-      "group": "Industry",
+      "name": "INR",
+      "group": "Currency",
       "pctVar": 0.0021,
-      "isCov": false
-    },
-    {
-      "name": "Sweden",
-      "group": "Country",
-      "pctVar": 0.002,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Beverages",
-      "group": "Industry",
-      "pctVar": 0.0019,
       "isCov": false
     },
     {
       "name": "DM4 Electrical Equipment",
       "group": "Industry",
+      "pctVar": 0.002,
+      "isCov": false
+    },
+    {
+      "name": "United Kingdom",
+      "group": "Country",
       "pctVar": 0.0019,
       "isCov": false
     },
     {
-      "name": "CHF",
-      "group": "Currency",
-      "pctVar": 0.0018,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Size",
-      "group": "Style",
-      "pctVar": 0.0015,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Household Products",
+      "name": "EM4 Entertainment",
       "group": "Industry",
-      "pctVar": 0.0015,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Beverages",
-      "group": "Industry",
-      "pctVar": 0.0015,
+      "pctVar": 0.0019,
       "isCov": false
     },
     {
       "name": "DM4 Growth",
       "group": "Style",
-      "pctVar": 0.0014,
+      "pctVar": 0.0018,
+      "isCov": false
+    },
+    {
+      "name": "SEK",
+      "group": "Currency",
+      "pctVar": 0.0018,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Software",
+      "group": "Industry",
+      "pctVar": 0.0017,
+      "isCov": false
+    },
+    {
+      "name": "US4 Internet Software & Services",
+      "group": "Industry",
+      "pctVar": 0.0017,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Dividend Yield",
+      "group": "Style",
+      "pctVar": 0.0016,
       "isCov": false
     },
     {
@@ -1414,27 +1856,39 @@
       "isCov": false
     },
     {
-      "name": "DM4 Electric Utilities",
+      "name": "DM4 Beverages",
       "group": "Industry",
       "pctVar": 0.0014,
       "isCov": false
     },
     {
-      "name": "US4 Internet Software & Services",
-      "group": "Industry",
-      "pctVar": 0.0013,
+      "name": "DM4 Value",
+      "group": "Style",
+      "pctVar": 0.0012,
       "isCov": false
     },
     {
-      "name": "KRW",
-      "group": "Currency",
-      "pctVar": 0.0013,
+      "name": "Indonesia",
+      "group": "Country",
+      "pctVar": 0.0012,
       "isCov": false
     },
     {
-      "name": "EM4 Multiline Retail",
+      "name": "DM4 Household Products",
       "group": "Industry",
       "pctVar": 0.0012,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Beverages",
+      "group": "Industry",
+      "pctVar": 0.0012,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Size",
+      "group": "Style",
+      "pctVar": 0.0011,
       "isCov": false
     },
     {
@@ -1444,122 +1898,104 @@
       "isCov": false
     },
     {
-      "name": "Saudi Arabia",
-      "group": "Country",
-      "pctVar": 0.0011,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Pharmaceuticals",
+      "name": "DM4 Electric Utilities",
       "group": "Industry",
       "pctVar": 0.0011,
       "isCov": false
     },
     {
-      "name": "Peru",
-      "group": "Country",
-      "pctVar": 0.001,
-      "isCov": false
-    },
-    {
-      "name": "South Africa",
-      "group": "Country",
-      "pctVar": 0.001,
-      "isCov": false
-    },
-    {
-      "name": "ZAR",
-      "group": "Currency",
-      "pctVar": 0.001,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Size",
-      "group": "Style",
-      "pctVar": 0.0009,
-      "isCov": false
-    },
-    {
-      "name": "Israel",
-      "group": "Country",
-      "pctVar": 0.0009,
+      "name": "DM4 Semiconductors & Semiconductor Equipment",
+      "group": "Industry",
+      "pctVar": 0.0011,
       "isCov": false
     },
     {
       "name": "EM4 Biotechnology, Life Sciences Tools & Services",
       "group": "Industry",
-      "pctVar": 0.0009,
+      "pctVar": 0.0011,
       "isCov": false
     },
     {
-      "name": "EM4 Earnings Yield",
-      "group": "Style",
-      "pctVar": 0.0008,
+      "name": "EM4 Multiline Retail",
+      "group": "Industry",
+      "pctVar": 0.0011,
       "isCov": false
     },
     {
-      "name": "Germany",
+      "name": "Sweden",
       "group": "Country",
-      "pctVar": 0.0008,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Aerospace & Defense",
-      "group": "Industry",
-      "pctVar": 0.0008,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Software",
-      "group": "Industry",
-      "pctVar": 0.0008,
+      "pctVar": 0.001,
       "isCov": false
     },
     {
       "name": "EM4 Leverage",
       "group": "Style",
-      "pctVar": 0.0007,
-      "isCov": false
-    },
-    {
-      "name": "Italy",
-      "group": "Country",
-      "pctVar": 0.0007,
-      "isCov": false
-    },
-    {
-      "name": "Switzerland",
-      "group": "Country",
-      "pctVar": 0.0007,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Capital Markets",
-      "group": "Industry",
-      "pctVar": 0.0007,
+      "pctVar": 0.0009,
       "isCov": false
     },
     {
       "name": "DM4 Health Care Equipment & Supplies",
       "group": "Industry",
+      "pctVar": 0.0009,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Capital Markets",
+      "group": "Industry",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Oil, Gas & Consumable Fuels",
+      "group": "Industry",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Pharmaceuticals",
+      "group": "Industry",
+      "pctVar": 0.0008,
+      "isCov": false
+    },
+    {
+      "name": "Israel",
+      "group": "Country",
       "pctVar": 0.0007,
       "isCov": false
     },
     {
-      "name": "EM4 IT Services",
+      "name": "Peru",
+      "group": "Country",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "Saudi Arabia",
+      "group": "Country",
+      "pctVar": 0.0007,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Interactive Media & Services",
       "group": "Industry",
       "pctVar": 0.0007,
       "isCov": false
     },
     {
-      "name": "Domestic China",
-      "group": "Local",
+      "name": "CHF",
+      "group": "Currency",
       "pctVar": 0.0007,
       "isCov": false
     },
     {
-      "name": "DM4 Value",
+      "name": "EM4 Profitability",
       "group": "Style",
+      "pctVar": 0.0006,
+      "isCov": false
+    },
+    {
+      "name": "Germany",
+      "group": "Country",
       "pctVar": 0.0006,
       "isCov": false
     },
@@ -1570,63 +2006,111 @@
       "isCov": false
     },
     {
-      "name": "DM4 Electronic Equipment, Instruments & Components",
+      "name": "Italy",
+      "group": "Country",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "South Africa",
+      "group": "Country",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Insurance",
       "group": "Industry",
-      "pctVar": 0.0006,
+      "pctVar": 0.0005,
       "isCov": false
     },
     {
       "name": "DM4 Real Estate Management & Development",
       "group": "Industry",
-      "pctVar": 0.0006,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Profitability",
-      "group": "Style",
       "pctVar": 0.0005,
       "isCov": false
     },
     {
-      "name": "DM4 Equity Real Estate Investment Trusts (REITs)",
+      "name": "DM4 Wireless Telecommunication Services",
       "group": "Industry",
       "pctVar": 0.0005,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Food & Staples Retailing",
-      "group": "Industry",
-      "pctVar": 0.0005,
-      "isCov": false
-    },
-    {
-      "name": "TWD",
-      "group": "Currency",
-      "pctVar": 0.0005,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Multi-Utilities",
-      "group": "Industry",
-      "pctVar": 0.0004,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Interactive Media & Services",
-      "group": "Industry",
-      "pctVar": 0.0004,
       "isCov": false
     },
     {
       "name": "US4 Trading Companies & Distributors",
       "group": "Industry",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "KRW",
+      "group": "Currency",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "ZAR",
+      "group": "Currency",
+      "pctVar": 0.0005,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Liquidity",
+      "group": "Style",
       "pctVar": 0.0004,
       "isCov": false
     },
     {
-      "name": "CNY",
-      "group": "Currency",
+      "name": "EM4 Earnings Yield",
+      "group": "Style",
       "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Aerospace & Defense",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Automobiles",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Food & Staples Retailing",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Hotels, Restaurants & Leisure",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Capital Markets",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Household Durables",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "EM4 IT Services",
+      "group": "Industry",
+      "pctVar": 0.0004,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Exchange Rate Sensitivity",
+      "group": "Style",
+      "pctVar": 0.0003,
       "isCov": false
     },
     {
@@ -1636,25 +2120,7 @@
       "isCov": false
     },
     {
-      "name": "Denmark",
-      "group": "Country",
-      "pctVar": 0.0003,
-      "isCov": false
-    },
-    {
-      "name": "Poland",
-      "group": "Country",
-      "pctVar": 0.0003,
-      "isCov": false
-    },
-    {
-      "name": "Singapore",
-      "group": "Country",
-      "pctVar": 0.0003,
-      "isCov": false
-    },
-    {
-      "name": "Spain",
+      "name": "Switzerland",
       "group": "Country",
       "pctVar": 0.0003,
       "isCov": false
@@ -1666,31 +2132,13 @@
       "isCov": false
     },
     {
-      "name": "DM4 Automobiles",
+      "name": "DM4 Equity Real Estate Investment Trusts (REITs)",
       "group": "Industry",
       "pctVar": 0.0003,
       "isCov": false
     },
     {
-      "name": "DM4 Construction & Engineering",
-      "group": "Industry",
-      "pctVar": 0.0003,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Hotels, Restaurants & Leisure",
-      "group": "Industry",
-      "pctVar": 0.0003,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Industrial Conglomerates",
-      "group": "Industry",
-      "pctVar": 0.0003,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Insurance",
+      "name": "DM4 Multi-Utilities",
       "group": "Industry",
       "pctVar": 0.0003,
       "isCov": false
@@ -1702,43 +2150,37 @@
       "isCov": false
     },
     {
-      "name": "DM4 Semiconductors & Semiconductor Equipment",
+      "name": "DM4 Professional Services",
       "group": "Industry",
       "pctVar": 0.0003,
       "isCov": false
     },
     {
-      "name": "DM4 Wireless Telecommunication Services",
+      "name": "DM4 Technology Hardware, Storage & Peripherals",
       "group": "Industry",
       "pctVar": 0.0003,
       "isCov": false
     },
     {
-      "name": "EM4 Automobiles",
-      "group": "Industry",
-      "pctVar": 0.0003,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Household Durables",
-      "group": "Industry",
-      "pctVar": 0.0003,
-      "isCov": false
-    },
-    {
-      "name": "ILS",
+      "name": "CNY",
       "group": "Currency",
       "pctVar": 0.0003,
       "isCov": false
     },
     {
-      "name": "DM4 Liquidity",
+      "name": "TWD",
+      "group": "Currency",
+      "pctVar": 0.0003,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Size",
       "group": "Style",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "EM4 Exchange Rate Sensitivity",
+      "name": "US4 Market Sensitivity",
       "group": "Style",
       "pctVar": 0.0002,
       "isCov": false
@@ -1750,19 +2192,7 @@
       "isCov": false
     },
     {
-      "name": "US4 Size",
-      "group": "Style",
-      "pctVar": 0.0002,
-      "isCov": false
-    },
-    {
-      "name": "Hungary",
-      "group": "Country",
-      "pctVar": 0.0002,
-      "isCov": false
-    },
-    {
-      "name": "Ireland",
+      "name": "Denmark",
       "group": "Country",
       "pctVar": 0.0002,
       "isCov": false
@@ -1774,19 +2204,31 @@
       "isCov": false
     },
     {
+      "name": "Singapore",
+      "group": "Country",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
       "name": "Thailand",
       "group": "Country",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "DM4 Auto Components",
+      "name": "DM4 Building Products",
       "group": "Industry",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "DM4 Building Products",
+      "name": "DM4 Construction & Engineering",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Electronic Equipment, Instruments & Components",
       "group": "Industry",
       "pctVar": 0.0002,
       "isCov": false
@@ -1798,67 +2240,61 @@
       "isCov": false
     },
     {
+      "name": "DM4 IT Services",
+      "group": "Industry",
+      "pctVar": 0.0002,
+      "isCov": false
+    },
+    {
       "name": "DM4 Life Sciences Tools & Services",
       "group": "Industry",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "DM4 Professional Services",
+      "name": "DM4 Marine",
       "group": "Industry",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "DM4 Technology Hardware, Storage & Peripherals",
+      "name": "DM4 Specialty Retail",
       "group": "Industry",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "EM4 Banks, Thrifts & Mortgage Finance",
+      "name": "EM4 Automobiles",
       "group": "Industry",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "EM4 Capital Markets",
+      "name": "EM4 Machinery",
       "group": "Industry",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "EM4 Diversified Telecommunication Services",
+      "name": "EM4 Real Estate Management & Development",
       "group": "Industry",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "EM4 Electronic Equipment, Instruments & Components",
-      "group": "Industry",
-      "pctVar": 0.0002,
-      "isCov": false
-    },
-    {
-      "name": "DKK",
+      "name": "ILS",
       "group": "Currency",
       "pctVar": 0.0002,
       "isCov": false
     },
     {
-      "name": "HUF",
-      "group": "Currency",
-      "pctVar": 0.0002,
+      "name": "EM4 Volatility",
+      "group": "Style",
+      "pctVar": 0.0001,
       "isCov": false
     },
     {
-      "name": "PEN",
-      "group": "Currency",
-      "pctVar": 0.0002,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Value",
+      "name": "US4 Size",
       "group": "Style",
       "pctVar": 0.0001,
       "isCov": false
@@ -1870,19 +2306,19 @@
       "isCov": false
     },
     {
-      "name": "Chile",
-      "group": "Country",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "Colombia",
-      "group": "Country",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
       "name": "Greece",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Hungary",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Ireland",
       "group": "Country",
       "pctVar": 0.0001,
       "isCov": false
@@ -1894,13 +2330,19 @@
       "isCov": false
     },
     {
-      "name": "Norway",
+      "name": "Poland",
       "group": "Country",
       "pctVar": 0.0001,
       "isCov": false
     },
     {
       "name": "Qatar",
+      "group": "Country",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "Spain",
       "group": "Country",
       "pctVar": 0.0001,
       "isCov": false
@@ -1918,6 +2360,18 @@
       "isCov": false
     },
     {
+      "name": "DM4 Auto Components",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Commercial Services & Supplies",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
       "name": "DM4 Communications Equipment",
       "group": "Industry",
       "pctVar": 0.0001,
@@ -1930,25 +2384,19 @@
       "isCov": false
     },
     {
+      "name": "DM4 Entertainment",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Gas Utilities",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
       "name": "DM4 Household Durables",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Independent Power and Renewable Electricity Producers",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "DM4 IT Services",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Marine",
       "group": "Industry",
       "pctVar": 0.0001,
       "isCov": false
@@ -1960,37 +2408,13 @@
       "isCov": false
     },
     {
-      "name": "DM4 Specialty Retail",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Transportation Infrastructure",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
       "name": "EM4 Aerospace & Defense",
       "group": "Industry",
       "pctVar": 0.0001,
       "isCov": false
     },
     {
-      "name": "EM4 Airlines",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
       "name": "EM4 Chemicals",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Communications Equipment",
       "group": "Industry",
       "pctVar": 0.0001,
       "isCov": false
@@ -2008,7 +2432,19 @@
       "isCov": false
     },
     {
+      "name": "EM4 Diversified Telecommunication Services",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
       "name": "EM4 Electric Utilities",
+      "group": "Industry",
+      "pctVar": 0.0001,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Electronic Equipment, Instruments & Components",
       "group": "Industry",
       "pctVar": 0.0001,
       "isCov": false
@@ -2026,25 +2462,7 @@
       "isCov": false
     },
     {
-      "name": "EM4 Machinery",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Multi-Utilities & Independent Power Producers & Traders",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Real Estate Management & Development",
-      "group": "Industry",
-      "pctVar": 0.0001,
-      "isCov": false
-    },
-    {
-      "name": "EM4 Specialty Retail",
+      "name": "EM4 Marine",
       "group": "Industry",
       "pctVar": 0.0001,
       "isCov": false
@@ -2062,26 +2480,26 @@
       "isCov": false
     },
     {
-      "name": "CLP",
+      "name": "DKK",
       "group": "Currency",
       "pctVar": 0.0001,
       "isCov": false
     },
     {
-      "name": "IDR",
+      "name": "HUF",
       "group": "Currency",
       "pctVar": 0.0001,
       "isCov": false
     },
     {
-      "name": "NOK",
+      "name": "PEN",
       "group": "Currency",
       "pctVar": 0.0001,
       "isCov": false
     },
     {
-      "name": "PLN",
-      "group": "Currency",
+      "name": "Domestic China",
+      "group": "Local",
       "pctVar": 0.0001,
       "isCov": false
     },
@@ -2105,6 +2523,12 @@
     },
     {
       "name": "EM4 Liquidity",
+      "group": "Style",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Value",
       "group": "Style",
       "pctVar": 0.0,
       "isCov": false
@@ -2146,12 +2570,6 @@
       "isCov": false
     },
     {
-      "name": "US4 Market Sensitivity",
-      "group": "Style",
-      "pctVar": 0.0,
-      "isCov": false
-    },
-    {
       "name": "US4 Profitability",
       "group": "Style",
       "pctVar": 0.0,
@@ -2165,6 +2583,18 @@
     },
     {
       "name": "Belgium",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Chile",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "Colombia",
       "group": "Country",
       "pctVar": 0.0,
       "isCov": false
@@ -2218,6 +2648,12 @@
       "isCov": false
     },
     {
+      "name": "Norway",
+      "group": "Country",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
       "name": "Philippines",
       "group": "Country",
       "pctVar": 0.0,
@@ -2249,12 +2685,6 @@
     },
     {
       "name": "DM4 Chemicals",
-      "group": "Industry",
-      "pctVar": 0.0,
-      "isCov": false
-    },
-    {
-      "name": "DM4 Commercial Services & Supplies",
       "group": "Industry",
       "pctVar": 0.0,
       "isCov": false
@@ -2296,25 +2726,25 @@
       "isCov": false
     },
     {
-      "name": "DM4 Entertainment",
-      "group": "Industry",
-      "pctVar": 0.0,
-      "isCov": false
-    },
-    {
       "name": "DM4 Food Products",
       "group": "Industry",
       "pctVar": 0.0,
       "isCov": false
     },
     {
-      "name": "DM4 Gas Utilities",
+      "name": "DM4 Health Care Providers & Services",
       "group": "Industry",
       "pctVar": 0.0,
       "isCov": false
     },
     {
-      "name": "DM4 Health Care Providers & Services",
+      "name": "DM4 Independent Power and Renewable Electricity Producers",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "DM4 Industrial Conglomerates",
       "group": "Industry",
       "pctVar": 0.0,
       "isCov": false
@@ -2362,6 +2792,12 @@
       "isCov": false
     },
     {
+      "name": "DM4 Transportation Infrastructure",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
       "name": "DM4 Water Utilities",
       "group": "Industry",
       "pctVar": 0.0,
@@ -2374,7 +2810,19 @@
       "isCov": false
     },
     {
+      "name": "EM4 Airlines",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
       "name": "EM4 Auto Components",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Banks, Thrifts & Mortgage Finance",
       "group": "Industry",
       "pctVar": 0.0,
       "isCov": false
@@ -2387,6 +2835,12 @@
     },
     {
       "name": "EM4 Commercial & Professional Services",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Communications Equipment",
       "group": "Industry",
       "pctVar": 0.0,
       "isCov": false
@@ -2488,12 +2942,6 @@
       "isCov": false
     },
     {
-      "name": "EM4 Marine",
-      "group": "Industry",
-      "pctVar": 0.0,
-      "isCov": false
-    },
-    {
       "name": "EM4 Media",
       "group": "Industry",
       "pctVar": 0.0,
@@ -2501,6 +2949,12 @@
     },
     {
       "name": "EM4 Metals & Mining",
+      "group": "Industry",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "EM4 Multi-Utilities & Independent Power Producers & Traders",
       "group": "Industry",
       "pctVar": 0.0,
       "isCov": false
@@ -2542,7 +2996,7 @@
       "isCov": false
     },
     {
-      "name": "EM4 Technology Hardware, Storage & Peripherals",
+      "name": "EM4 Specialty Retail",
       "group": "Industry",
       "pctVar": 0.0,
       "isCov": false
@@ -2590,6 +3044,12 @@
       "isCov": false
     },
     {
+      "name": "CLP",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
       "name": "COP",
       "group": "Currency",
       "pctVar": 0.0,
@@ -2614,6 +3074,12 @@
       "isCov": false
     },
     {
+      "name": "IDR",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
       "name": "KWD",
       "group": "Currency",
       "pctVar": 0.0,
@@ -2632,6 +3098,12 @@
       "isCov": false
     },
     {
+      "name": "NOK",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
       "name": "NZD",
       "group": "Currency",
       "pctVar": 0.0,
@@ -2639,6 +3111,12 @@
     },
     {
       "name": "PHP",
+      "group": "Currency",
+      "pctVar": 0.0,
+      "isCov": false
+    },
+    {
+      "name": "PLN",
       "group": "Currency",
       "pctVar": 0.0,
       "isCov": false
@@ -2688,13 +3166,13 @@
     {
       "name": "Currency-Covariance",
       "group": "Currency",
-      "pctVar": -0.0167,
+      "pctVar": -0.0083,
       "isCov": true
     },
     {
       "name": "Local-Covariance",
       "group": "Local",
-      "pctVar": -0.0385,
+      "pctVar": -0.034,
       "isCov": true
     }
   ]

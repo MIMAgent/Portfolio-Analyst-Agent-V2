@@ -25,9 +25,9 @@ DEFAULT_VIR_HISTORY_CSV = REPO_ROOT / "artifacts" / "vir" / "equity_vir_dataset.
 
 
 RISK_REPORT_GLOB_BY_FUND = {
-    "MStar US Equity": "weekly_US_EQ*Risk Report*.xlsx",
-    "MStar International Equity": "weekly_INTL_EQ*Risk Report*.xlsx",
-    "MStar Global Opportunistic Equity": "weekly_GOE*Risk Report*.xlsx",
+    "MStar US Equity": "*_US_EQ*Risk Report*.xlsx",
+    "MStar International Equity": "*_INTL_EQ*Risk Report*.xlsx",
+    "MStar Global Opportunistic Equity": "*_GOE*Risk Report*.xlsx",
 }
 
 
@@ -347,7 +347,7 @@ def build_review_packet(
     output_review_date = review_date or date.today().isoformat()
     risk_context = _load_risk_context(
         fund=fund,
-        risk_as_of_date=output_review_date,
+        risk_as_of_date=logical_date,
         material_positions=material_positions,
         risk_report_xlsx=risk_report_xlsx,
     )
