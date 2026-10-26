@@ -8,7 +8,6 @@ import SignalsDecomp from './pages/SignalsDecomp.jsx'
 import FundOfFunds from './pages/FundOfFunds.jsx'
 import ICPrep from './pages/ICPrep.jsx'
 import AgentMemory from './pages/AgentMemory.jsx'
-import HouseView from './pages/HouseView.jsx'
 
 const summary = evidence.risk_and_attribution?.summary || {}
 const mtd = evidence.risk_and_attribution?.return_attribution_mtd || {}
@@ -39,8 +38,6 @@ const FUND_GROUPS = [
 
 const TABS = [
   { id: 'overview', label: 'Overview' },
-  // Cross-sleeve, not fund-scoped: the one tab that reads all three books at once.
-  { id: 'house', label: 'House View' },
   { id: 'factorrisk', label: 'Factor Risk' },
   { id: 'challenge', label: 'Challenge Brief', count: challenges.length },
   { id: 'signals', label: 'Signals & Decomp' },
@@ -126,7 +123,6 @@ export default function App() {
         </nav>
 
         {tab === 'overview' && <Overview />}
-        {tab === 'house' && <HouseView />}
         {tab === 'factorrisk' && <FactorRisk />}
         {tab === 'challenge' && <ChallengeBrief onOpenIC={openIC} />}
         {tab === 'signals' && <SignalsDecomp />}
