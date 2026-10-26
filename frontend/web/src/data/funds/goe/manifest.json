@@ -1,31 +1,27 @@
 {
   "fund": "MStar Global Opportunistic Equity",
-  "logical_snapshot_date": "2026-06-30",
-  "review_date": "2026-07-21",
-  "model": "us.anthropic.claude-sonnet-4-6",
-  "output_style": "deep_challenge_memo",
+  "logical_snapshot_date": "2026-09-30",
+  "review_date": "2026-10-26",
+  "model": "",
+  "output_style": "deterministic_packet_fallback",
   "challenge_count_target": 4,
-  "region_name": "us-east-2",
-  "generated_at": "2026-07-21T19:55:11Z",
+  "region_name": "",
+  "generated_at": "2026-10-26T16:32:37Z",
   "artifacts": {
-    "review_packet": "agent2/data/bedrock_runs/2026-06-30/mstar-global-opportunistic-equity-live-2026-07-21-deepmemo-18k-top4/agent2_review_packet.json",
-    "evidence_pack": "agent2/data/bedrock_runs/2026-06-30/mstar-global-opportunistic-equity-live-2026-07-21-deepmemo-18k-top4/evidence_pack.json",
-    "system_prompt": "agent2/data/bedrock_runs/2026-06-30/mstar-global-opportunistic-equity-live-2026-07-21-deepmemo-18k-top4/system_prompt.txt",
-    "user_prompt": "agent2/data/bedrock_runs/2026-06-30/mstar-global-opportunistic-equity-live-2026-07-21-deepmemo-18k-top4/user_prompt.txt",
-    "bedrock_raw_response": "agent2/data/bedrock_runs/2026-06-30/mstar-global-opportunistic-equity-live-2026-07-21-deepmemo-18k-top4/bedrock_raw_response.json",
-    "bedrock_response_text": "agent2/data/bedrock_runs/2026-06-30/mstar-global-opportunistic-equity-live-2026-07-21-deepmemo-18k-top4/bedrock_response.txt",
-    "bedrock_review_json": "agent2/data/bedrock_runs/2026-06-30/mstar-global-opportunistic-equity-live-2026-07-21-deepmemo-18k-top4/bedrock_review.json",
-    "bedrock_review_markdown": "agent2/data/bedrock_runs/2026-06-30/mstar-global-opportunistic-equity-live-2026-07-21-deepmemo-18k-top4/bedrock_review.md",
-    "bedrock_validation_error": ""
+    "review_packet": "agent2/data/review_packets/2026-09-30/mstar-global-opportunistic-equity/agent2_review_packet.json",
+    "evidence_pack": "agent2/data/review_packets/2026-09-30/mstar-global-opportunistic-equity/evidence_pack.json",
+    "frontend_review": "frontend/web/src/data/funds/goe/review.json"
   },
   "usage": {
-    "inputTokens": 42848,
-    "outputTokens": 11580,
-    "totalTokens": 54428,
-    "cacheReadInputTokens": 0,
-    "cacheWriteInputTokens": 0
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "totalTokens": 0
   },
-  "approx_cost_usd": 0.3022,
-  "parsed_json_ok": true,
-  "validation_error": ""
+  "approx_cost_usd": 0.0,
+  "parsed_json_ok": false,
+  "validation_error": "AWS Bedrock narrative was not run because the configured session token is expired. Frontend review text was generated deterministically from the structured September packet.",
+  "data_limitations": [
+    "No September risk report was provided; factor-risk context remains based on the latest available July 20 observation.",
+    "No September fixed-income model was provided; unmatched fixed-income STF rows remain unavailable."
+  ]
 }

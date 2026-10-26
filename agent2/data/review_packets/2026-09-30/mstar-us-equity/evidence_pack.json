@@ -1,0 +1,3154 @@
+{
+  "header": {
+    "fund": "MStar US Equity",
+    "fund_slug": "mstar-us-equity",
+    "fund_type": "equity",
+    "benchmark": "Morningstar US Market TR USD",
+    "pm_names": [
+      "Doug McGraw",
+      "Mike Budzinski"
+    ],
+    "snapshot_date": "2026-09-30",
+    "as_of_date": "2026-09-30",
+    "review_date": "2026-10-26",
+    "review_run_id": "agent2_mstar-us-equity_2026-09-30",
+    "source_snapshot_date": "2026-10-06"
+  },
+  "run_goal": {
+    "instruction": "Write the canonical deep PM challenge memo. Prioritize the top 4 decisions the PM actually needs to defend, resize, monitor, or explain.",
+    "challenge_count_target": 4,
+    "output_style": "deep_challenge_memo"
+  },
+  "fund_shape": {
+    "headline_summary": [
+      "Largest underweight: United States Lrg Growth (-7.93 pts), with STF underweight and the algo active weight underweight (relative to benchmark).",
+      "Largest overweight: Industrials (2.20 pts), with decomposition reading broad_based.",
+      "19 material positions are directionally fighting the current STF/algo read.",
+      "US_EQ risk context: active predicted risk 3.65%, active share 44.2%, risk date used 2026-07-20."
+    ],
+    "largest_overweights": [
+      {
+        "category": "Eq Sector",
+        "label": "Industrials",
+        "active_weight": 2.1973847641537034,
+        "benchmark_weight": 8.858466456613403,
+        "portfolio_weight": 11.055851220767106,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_1041f3ea9237"
+          },
+          {
+            "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+            "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+          },
+          {
+            "artifact_path": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+            "row_id": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Eq Size / Style",
+        "label": "United States Sml",
+        "active_weight": 2.5026562822611615,
+        "benchmark_weight": 2.933328826668466,
+        "portfolio_weight": 5.435985108929628,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_b81859485774"
+          },
+          {
+            "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+            "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+          },
+          {
+            "artifact_path": "202505-EQ-US SML EQ-Conviction Update.pptx",
+            "row_id": "202505-EQ-US SML EQ-Conviction Update.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Eq Size / Style",
+        "label": "United States Mid Value",
+        "active_weight": 2.657151785686647,
+        "benchmark_weight": 5.911467635412944,
+        "portfolio_weight": 8.56861942109959,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_3db434fe0f9a"
+          },
+          {
+            "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+            "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+          }
+        ]
+      }
+    ],
+    "largest_underweights": [
+      {
+        "category": "Eq Size / Style",
+        "label": "United States Lrg Growth",
+        "active_weight": -7.929263650821746,
+        "benchmark_weight": 22.658860936455607,
+        "portfolio_weight": 14.729597285633862,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_785114fa1d69"
+          },
+          {
+            "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+            "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+          }
+        ]
+      },
+      {
+        "category": "Eq Sector",
+        "label": "Information Technology",
+        "active_weight": -3.9282949915144556,
+        "benchmark_weight": 37.98831480467406,
+        "portfolio_weight": 34.060019813159606,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_9601ecc014f6"
+          },
+          {
+            "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+            "row_id": "April 2026 Mutual Fund Checklist - US Equity.docx"
+          },
+          {
+            "artifact_path": "202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+            "row_id": "202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx"
+          }
+        ]
+      },
+      {
+        "category": "Eq Sector",
+        "label": "Consumer Discretionary",
+        "active_weight": -0.04951172180685279,
+        "benchmark_weight": 0.08085996765601286,
+        "portfolio_weight": 0.03134824584916007,
+        "source_refs": [
+          {
+            "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+            "row_id": "fms_a938c0f1341e"
+          },
+          {
+            "artifact_path": "agent2/data/internal_history/us_equity_checklists_q2_2026.json",
+            "row_id": "May 2026 Mutual Fund Checklist - US Equity.docx"
+          }
+        ]
+      }
+    ],
+    "style_posture": [
+      {
+        "label": "United States Lrg Growth",
+        "active_weight": -7.929263650821746,
+        "interpretation": "Underweight growth exposure remains a meaningful part of the fund shape."
+      },
+      {
+        "label": "United States Sml",
+        "active_weight": 2.5026562822611615,
+        "interpretation": "Overweight exposure in this size bucket is material enough to shape the portfolio's style posture."
+      },
+      {
+        "label": "United States Mid Value",
+        "active_weight": 2.657151785686647,
+        "interpretation": "Overweight value exposure remains a meaningful part of the fund shape."
+      },
+      {
+        "label": "United States Sml Growth",
+        "active_weight": 2.3024073836018903,
+        "interpretation": "Overweight growth exposure remains a meaningful part of the fund shape."
+      }
+    ]
+  },
+  "top_challenges": [
+    {
+      "challenge_id": "ch_us-sml-g-eq_2026-09-30",
+      "acid": "US SML G EQ",
+      "label": "United States Sml Growth",
+      "category": "Eq Size / Style",
+      "priority": "medium",
+      "challenge_score": 10.473,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "United States Sml Growth still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United States Sml Growth remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 3.76% versus benchmark 1.45%, leaving a +2.30 pt active overweight in United States Sml Growth. Top underlying names include HealthEquity Inc, Guidewire Software Inc.",
+      "model_signal_tension": "STF is underweight at -2.15% (+1.37% MoM), while the algo active weight is +0.23 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -2.15% in absolute terms but ranks #5 of 9 in US styles (above the -2.15% universe median). Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "US styles",
+        "universe_size": 9,
+        "rank": 5,
+        "percentile": 0.5,
+        "stf": -0.0215,
+        "universe_median_stf": -0.0215,
+        "vs_median": 0.0,
+        "more_attractive_peers": [
+          "United States Sml Value",
+          "United States Mid Value",
+          "United States Sml"
+        ],
+        "more_attractive_count": 4,
+        "universe_best": {
+          "label": "United States Sml Value",
+          "stf": 0.0039
+        },
+        "universe_worst": {
+          "label": "United States Lrg Growth",
+          "stf": -0.045
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.82,
+        "history_window_months": 12,
+        "history_low": -0.0353,
+        "history_high": -0.0173
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though growth is the largest single contributor.",
+      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "measured_risk_readthrough": "Measured style risk is elevated in Market Sensitivity at 20.03% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
+      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United States Sml Growth at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Sml Growth is still an intentional expression.",
+      "source_quality": "model+positioning+internal_history",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "HealthEquity Inc (+0.39 pts active) via MS US EQUITY WASATCH 0.40%, Morningstar US Market TR USD 0.00%; Guidewire Software Inc (+0.28 pts active) via MSTAR USEQ OPPORTUNISTIC 0.18%, MS US EQUITY WASATCH 0.12%; Global E Online Ltd (+0.23 pts active) via MS US EQUITY WASATCH 0.23%"
+    },
+    {
+      "challenge_id": "ch_us-mid-v-eq_2026-09-30",
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "priority": "medium",
+      "challenge_score": 10.11,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "United States Mid Value still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United States Mid Value remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 8.57% versus benchmark 5.91%, leaving a +2.66 pt active overweight in United States Mid Value. Top underlying names include The Cigna Group, Duke Energy Corp.",
+      "model_signal_tension": "STF is underweight at -0.54% (+0.62% MoM), while the algo active weight is +1.60 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -0.54% in absolute terms but ranks #2 of 9 in US styles (above the -2.15% universe median). Versus its own 12-month history the current STF is at the 100th percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "US styles",
+        "universe_size": 9,
+        "rank": 2,
+        "percentile": 0.88,
+        "stf": -0.0054,
+        "universe_median_stf": -0.0215,
+        "vs_median": 0.0162,
+        "more_attractive_peers": [
+          "United States Sml Value"
+        ],
+        "more_attractive_count": 1,
+        "universe_best": {
+          "label": "United States Sml Value",
+          "stf": 0.0039
+        },
+        "universe_worst": {
+          "label": "United States Lrg Growth",
+          "stf": -0.045
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 1.0,
+        "history_window_months": 12,
+        "history_low": -0.0217,
+        "history_high": -0.0054
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though yield is the largest single contributor.",
+      "market_context_readthrough": "No matched current research deck was available for a direct market-context readthrough in this packet.",
+      "measured_risk_readthrough": "Measured style risk is elevated in Size at 9.12% of active variance, which raises the bar for holding a large style expression without fresh underwriting.",
+      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United States Mid Value at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Mid Value is still an intentional expression.",
+      "source_quality": "model+positioning+internal_history",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "The Cigna Group (+0.41 pts active) via MS US EQUITY MFS 0.51%, Morningstar US Market TR USD 0.00%; Duke Energy Corp (+0.33 pts active) via MS US EQUITY MFS 0.31%, MSTAR USEQ OPPORTUNISTIC 0.14%; The Travelers Companies Inc (+0.24 pts active) via MS US EQUITY MFS 0.35%, Morningstar US Market TR USD 0.00%"
+    },
+    {
+      "challenge_id": "ch_us-id-eq_2026-09-30",
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "priority": "medium",
+      "challenge_score": 7.576,
+      "challenge_type": "position_vs_signal_divergence",
+      "challenge_headline": "Industrials remains overweight despite both the STF and the algo active weight leaning underweight/underweight (relative to benchmark).",
+      "thesis_under_pressure": "Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.",
+      "positioning_tension": "Fund weight is 11.06% versus benchmark 8.86%, leaving a +2.20 pt active overweight in Industrials. Top underlying names include Union Pacific Corp, Eaton Corp PLC.",
+      "model_signal_tension": "STF is underweight at -3.28% (+1.39% MoM), while the algo active weight is -2.56 pts (relative to benchmark) and points underweight.",
+      "relative_signal_readthrough": "STF is -3.28% in absolute terms but ranks #10 of 11 in US sectors (below the -1.53% universe median) \u2014 the whole US sectors complex is negative and led by top-down valuation adjustment, a regime backdrop, so this exposure is relatively preferred even though the absolute signal is negative. Versus its own 12-month history the current STF is at the 64th percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "US sectors",
+        "universe_size": 11,
+        "rank": 10,
+        "percentile": 0.1,
+        "stf": -0.0328,
+        "universe_median_stf": -0.0153,
+        "vs_median": -0.0175,
+        "more_attractive_peers": [
+          "Real Estate",
+          "Utilities",
+          "Consumer Staples"
+        ],
+        "more_attractive_count": 9,
+        "universe_best": {
+          "label": "Real Estate",
+          "stf": -0.0041
+        },
+        "universe_worst": {
+          "label": "Information Technology",
+          "stf": -0.0524
+        },
+        "universe_all_negative": true,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.64,
+        "history_window_months": 12,
+        "history_low": -0.0467,
+        "history_high": -0.0306
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though top-down valuation adjustment is the largest single contributor.",
+      "market_context_readthrough": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued.",
+      "measured_risk_readthrough": "No direct measured-risk match was found for this challenge candidate in the current risk workbook.",
+      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What specific current evidence still supports the thesis 'Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.' given the portfolio is +2.20 pts overweight and the latest STF/algo stack is underweight/underweight?",
+      "evidence_needed_next": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+      "source_quality": "model+positioning+memory+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Union Pacific Corp (+0.58 pts active) via MS US EQ SYSTEMATIC LARGE 0.45%, MS US EQUITY MFS 0.35%; Eaton Corp PLC (+0.52 pts active) via MS US EQUITY CLEARBRIDGE 0.43%, MS US EQUITY MFS 0.26%; RTX Corp (+0.28 pts active) via MS US EQUITY MFS 0.41%, MS US EQUITY CLEARBRIDGE 0.22%"
+    },
+    {
+      "challenge_id": "ch_us-sml-eq_2026-09-30",
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "priority": "medium",
+      "challenge_score": 7.254,
+      "challenge_type": "material_position_needing_refresh",
+      "challenge_headline": "United States Sml still carries a meaningful overweight even though only part of the signal stack agrees.",
+      "thesis_under_pressure": "The implicit thesis is that United States Sml remains an intentional conviction position rather than legacy implementation residue.",
+      "positioning_tension": "Fund weight is 5.44% versus benchmark 2.93%, leaving a +2.50 pt active overweight in United States Sml. Top underlying names include Casella Waste Systems Inc Class A, HEALTHPEAK PROPS. INC.",
+      "model_signal_tension": "STF is underweight at -0.97% (+1.11% MoM), while the algo active weight is +1.21 pts (relative to benchmark) and points overweight.",
+      "relative_signal_readthrough": "STF is -0.97% in absolute terms but ranks #3 of 9 in US styles (above the -2.15% universe median). Versus its own 12-month history the current STF is at the 82nd percentile, a separate read from the peer rank.",
+      "stf_relative_context": {
+        "universe": "US styles",
+        "universe_size": 9,
+        "rank": 3,
+        "percentile": 0.75,
+        "stf": -0.0097,
+        "universe_median_stf": -0.0215,
+        "vs_median": 0.0118,
+        "more_attractive_peers": [
+          "United States Sml Value",
+          "United States Mid Value"
+        ],
+        "more_attractive_count": 2,
+        "universe_best": {
+          "label": "United States Sml Value",
+          "stf": 0.0039
+        },
+        "universe_worst": {
+          "label": "United States Lrg Growth",
+          "stf": -0.045
+        },
+        "universe_all_negative": false,
+        "universe_dominant_driver": "valuation_adjustment_top_down",
+        "historical_percentile": 0.82,
+        "history_window_months": 12,
+        "history_low": -0.0208,
+        "history_high": -0.0075
+      },
+      "vir_decomposition_readthrough": "The STF move looks broad-based rather than one-off noise, even though growth is the largest single contributor.",
+      "market_context_readthrough": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cycl...",
+      "measured_risk_readthrough": "This position also appears in the specific-risk watchlist, which means the active weight is large enough that position-level outcomes matter even if the top-down signal looks mixed.",
+      "return_attribution_readthrough": "No month-to-date return attribution block was available from the risk workbook.",
+      "pm_decision_fork": "Decide whether to defend the current overweight as an intentional thesis, resize it if the evidence no longer supports the current scale, or keep it on watch pending fresher signal and underwriting evidence.",
+      "primary_pm_question": "What current evidence still justifies keeping United States Sml at this size rather than treating it as a position that needs to be refreshed?",
+      "evidence_needed_next": "Check the next month's STF/algo confirmation plus top-holding lineage to confirm that United States Sml is still an intentional expression.",
+      "source_quality": "model+positioning+internal_history+sharepoint_research",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "top_holding_lineage": "Casella Waste Systems Inc Class A (+0.26 pts active) via MS US EQUITY WASATCH 0.26%, SPDR Portfolio S&P 600 Sm Cap ETF 0.00%; HEALTHPEAK PROPS. INC (+0.24 pts active) via MSTAR USEQ OPPORTUNISTIC 0.26%, Morningstar US Market TR USD 0.00%; Ollie's Bargain Outlet Holdings Inc (+0.22 pts active) via MS US EQUITY WASATCH 0.23%, Morningstar US Market TR USD 0.00%"
+    }
+  ],
+  "challenge_market_context": [
+    {
+      "acid": "US SML G EQ",
+      "label": "United States Sml Growth",
+      "category": "Eq Size / Style",
+      "region_code": "US",
+      "region": "US",
+      "period": "September 2026",
+      "query_used": "US small-cap growth equities valuation earnings momentum market leadership September 2026",
+      "lenses_attempted": [
+        "earnings",
+        "valuation",
+        "smallcap"
+      ],
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap growth equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap growth equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence_status": "PRESENT",
+      "market_evidence_absent_reason": "",
+      "market_evidence_note": ""
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "region_code": "US",
+      "region": "US",
+      "period": "September 2026",
+      "query_used": "US mid-cap value equities valuation rates style leadership September 2026",
+      "lenses_attempted": [
+        "earnings",
+        "valuation",
+        "smallcap"
+      ],
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US mid-cap value equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US mid-cap value equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence_status": "PRESENT",
+      "market_evidence_absent_reason": "",
+      "market_evidence_note": ""
+    },
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "region_code": "US",
+      "region": "US",
+      "period": "September 2026",
+      "query_used": "US industrials sector valuation manufacturing PMI new orders earnings September 2026",
+      "lenses_attempted": [
+        "earnings",
+        "valuation",
+        "pmi"
+      ],
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US industrials sector earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US industrials sector earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence_status": "PRESENT",
+      "market_evidence_absent_reason": "",
+      "market_evidence_note": ""
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "region_code": "US",
+      "region": "US",
+      "period": "September 2026",
+      "query_used": "US small-cap equities valuation rates style leadership September 2026",
+      "lenses_attempted": [
+        "earnings",
+        "valuation",
+        "smallcap"
+      ],
+      "rows": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence_status": "PRESENT",
+      "market_evidence_absent_reason": "",
+      "market_evidence_note": ""
+    }
+  ],
+  "challenge_support_packets": [
+    {
+      "challenge_id": "ch_us-sml-g-eq_2026-09-30",
+      "acid": "US SML G EQ",
+      "label": "United States Sml Growth",
+      "category": "Eq Size / Style",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "HealthEquity Inc",
+          "portfolio_weight": 0.3963,
+          "benchmark_weight": 0.0103,
+          "active_weight": 0.386,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.3963,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3963
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0103,
+              "active_weight": -0.0103
+            }
+          ]
+        },
+        {
+          "security_name": "Guidewire Software Inc",
+          "portfolio_weight": 0.2922,
+          "benchmark_weight": 0.0162,
+          "active_weight": 0.2761,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.175,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.175
+            },
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.1172,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1172
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0162,
+              "active_weight": -0.0162
+            }
+          ]
+        },
+        {
+          "security_name": "Global E Online Ltd",
+          "portfolio_weight": 0.2289,
+          "benchmark_weight": 0.0,
+          "active_weight": 0.2289,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.2289,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2289
+            }
+          ]
+        },
+        {
+          "security_name": "AAON Inc",
+          "portfolio_weight": 0.1875,
+          "benchmark_weight": 0.0078,
+          "active_weight": 0.1797,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.1875,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1875
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0078,
+              "active_weight": -0.0078
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 2.3024073836018903,
+        "portfolio_weight": 3.756726801874122,
+        "benchmark_weight": 1.4543194182722312,
+        "positioning_direction": "overweight",
+        "vir_now": -0.02154315170994467,
+        "vir_delta_mom": 0.013721335947404878,
+        "vir_direction": "underweight",
+        "algo_active_weight": 0.22999999999999998,
+        "algo_active_weight_mom": 0.13,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "growth",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.04600000000000004,
+          "yield": 0.01561082874245372,
+          "inflation": 0.02513185115549854,
+          "currency_usd": -0.016786299656005754,
+          "valuation_adjustment_top_down": -0.04000695178990932,
+          "valuation_adjustment_combined": -0.01711661611127957,
+          "valuation_adjustment_bottom_up": 0.005773719567350177
+        },
+        "stf_relative_context": {
+          "universe": "US styles",
+          "universe_size": 9,
+          "rank": 5,
+          "percentile": 0.5,
+          "stf": -0.0215,
+          "universe_median_stf": -0.0215,
+          "vs_median": 0.0,
+          "more_attractive_peers": [
+            "United States Sml Value",
+            "United States Mid Value",
+            "United States Sml"
+          ],
+          "more_attractive_count": 4,
+          "universe_best": {
+            "label": "United States Sml Value",
+            "stf": 0.0039
+          },
+          "universe_worst": {
+            "label": "United States Lrg Growth",
+            "stf": -0.045
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.82,
+          "history_window_months": 12,
+          "history_low": -0.0353,
+          "history_high": -0.0173
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {
+          "label": "Market Sensitivity",
+          "share_of_variance_pct": 20.03
+        },
+        "specific_risk_watch_match": {
+          "label": "United States Sml Growth",
+          "category": "Eq Size / Style",
+          "active_weight": 2.3,
+          "top_sector_holdings": [
+            {
+              "security_name": "HealthEquity Inc",
+              "portfolio_weight": 0.4,
+              "benchmark_weight": 0.01,
+              "active_weight": 0.39
+            },
+            {
+              "security_name": "Guidewire Software Inc",
+              "portfolio_weight": 0.29,
+              "benchmark_weight": 0.02,
+              "active_weight": 0.28
+            },
+            {
+              "security_name": "Global E Online Ltd",
+              "portfolio_weight": 0.23,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.23
+            }
+          ],
+          "inference_level": "sector_proxy"
+        },
+        "return_attribution_mtd": {}
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Larg",
+        "sharepoint_research_summary": "",
+        "sharepoint_research_path": "",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "unmatched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap growth equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap growth equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence_status": "PRESENT",
+      "market_evidence_absent_reason": "",
+      "market_evidence_note": "",
+      "market_evidence_region": "US",
+      "market_evidence_lenses_attempted": [
+        "earnings",
+        "valuation",
+        "smallcap"
+      ],
+      "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Smal",
+      "top_holding_lineage": "HealthEquity Inc (+0.39 pts active) via MS US EQUITY WASATCH 0.40%, Morningstar US Market TR USD 0.00%; Guidewire Software Inc (+0.28 pts active) via MSTAR USEQ OPPORTUNISTIC 0.18%, MS US EQUITY WASATCH 0.12%; Global E Online Ltd (+0.23 pts active) via MS US EQUITY WASATCH 0.23%",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+internal_history"
+    },
+    {
+      "challenge_id": "ch_us-mid-v-eq_2026-09-30",
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "The Cigna Group",
+          "portfolio_weight": 0.5109,
+          "benchmark_weight": 0.0968,
+          "active_weight": 0.4141,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.5109,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5109
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0968,
+              "active_weight": -0.0968
+            }
+          ]
+        },
+        {
+          "security_name": "Duke Energy Corp",
+          "portfolio_weight": 0.4507,
+          "benchmark_weight": 0.1241,
+          "active_weight": 0.3266,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3135,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3135
+            },
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.1373,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1373
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1241,
+              "active_weight": -0.1241
+            }
+          ]
+        },
+        {
+          "security_name": "The Travelers Companies Inc",
+          "portfolio_weight": 0.3479,
+          "benchmark_weight": 0.1039,
+          "active_weight": 0.2439,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3479,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3479
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1039,
+              "active_weight": -0.1039
+            }
+          ]
+        },
+        {
+          "security_name": "MONDELEZ INTL. INC",
+          "portfolio_weight": 0.3126,
+          "benchmark_weight": 0.1034,
+          "active_weight": 0.2092,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.2907,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2907
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.0219,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0219
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1034,
+              "active_weight": -0.1034
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 2.657151785686647,
+        "portfolio_weight": 8.56861942109959,
+        "benchmark_weight": 5.911467635412944,
+        "positioning_direction": "overweight",
+        "vir_now": -0.005356891912582609,
+        "vir_delta_mom": 0.006155395685386367,
+        "vir_direction": "underweight",
+        "algo_active_weight": 1.6,
+        "algo_active_weight_mom": 0.47000000000000003,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.018999999999999906,
+          "yield": 0.04028446725258276,
+          "inflation": 0.02513185115549854,
+          "currency_usd": -0.016786299656005754,
+          "valuation_adjustment_top_down": -0.015372072384151059,
+          "valuation_adjustment_combined": -0.0024694398087981018,
+          "valuation_adjustment_bottom_up": 0.010433192766554855
+        },
+        "stf_relative_context": {
+          "universe": "US styles",
+          "universe_size": 9,
+          "rank": 2,
+          "percentile": 0.88,
+          "stf": -0.0054,
+          "universe_median_stf": -0.0215,
+          "vs_median": 0.0162,
+          "more_attractive_peers": [
+            "United States Sml Value"
+          ],
+          "more_attractive_count": 1,
+          "universe_best": {
+            "label": "United States Sml Value",
+            "stf": 0.0039
+          },
+          "universe_worst": {
+            "label": "United States Lrg Growth",
+            "stf": -0.045
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 1.0,
+          "history_window_months": 12,
+          "history_low": -0.0217,
+          "history_high": -0.0054
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {
+          "label": "Size",
+          "share_of_variance_pct": 9.12
+        },
+        "specific_risk_watch_match": {
+          "label": "United States Mid Value",
+          "category": "Eq Size / Style",
+          "active_weight": 2.66,
+          "top_sector_holdings": [
+            {
+              "security_name": "The Cigna Group",
+              "portfolio_weight": 0.51,
+              "benchmark_weight": 0.1,
+              "active_weight": 0.41
+            },
+            {
+              "security_name": "Duke Energy Corp",
+              "portfolio_weight": 0.45,
+              "benchmark_weight": 0.12,
+              "active_weight": 0.33
+            },
+            {
+              "security_name": "The Travelers Companies Inc",
+              "portfolio_weight": 0.35,
+              "benchmark_weight": 0.1,
+              "active_weight": 0.24
+            }
+          ],
+          "inference_level": "sector_proxy"
+        },
+        "return_attribution_mtd": {}
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Larg",
+        "sharepoint_research_summary": "",
+        "sharepoint_research_path": "",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "unmatched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US mid-cap value equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US mid-cap value equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence_status": "PRESENT",
+      "market_evidence_absent_reason": "",
+      "market_evidence_note": "",
+      "market_evidence_region": "US",
+      "market_evidence_lenses_attempted": [
+        "earnings",
+        "valuation",
+        "smallcap"
+      ],
+      "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Smal",
+      "top_holding_lineage": "The Cigna Group (+0.41 pts active) via MS US EQUITY MFS 0.51%, Morningstar US Market TR USD 0.00%; Duke Energy Corp (+0.33 pts active) via MS US EQUITY MFS 0.31%, MSTAR USEQ OPPORTUNISTIC 0.14%; The Travelers Companies Inc (+0.24 pts active) via MS US EQUITY MFS 0.35%, Morningstar US Market TR USD 0.00%",
+      "research_status": {
+        "status": "missing_research_match",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+internal_history"
+    },
+    {
+      "challenge_id": "ch_us-id-eq_2026-09-30",
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "Union Pacific Corp",
+          "portfolio_weight": 0.8067,
+          "benchmark_weight": 0.2258,
+          "active_weight": 0.5809,
+          "sources": [
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.455,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.455
+            },
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3517,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3517
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.2258,
+              "active_weight": -0.2258
+            }
+          ]
+        },
+        {
+          "security_name": "Eaton Corp PLC",
+          "portfolio_weight": 0.7522,
+          "benchmark_weight": 0.2338,
+          "active_weight": 0.5184,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.4258,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4258
+            },
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.2611,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2611
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.0653,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0653
+            }
+          ]
+        },
+        {
+          "security_name": "RTX Corp",
+          "portfolio_weight": 0.6339,
+          "benchmark_weight": 0.3505,
+          "active_weight": 0.2834,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.4129,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4129
+            },
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.2209,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2209
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.3505,
+              "active_weight": -0.3505
+            }
+          ]
+        },
+        {
+          "security_name": "General Dynamics Corp",
+          "portfolio_weight": 0.5584,
+          "benchmark_weight": 0.1128,
+          "active_weight": 0.4456,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3019,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3019
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.2565,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2565
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1128,
+              "active_weight": -0.1128
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 2.1973847641537034,
+        "portfolio_weight": 11.055851220767106,
+        "benchmark_weight": 8.858466456613403,
+        "positioning_direction": "overweight",
+        "vir_now": -0.03277713680904411,
+        "vir_delta_mom": 0.013928970282446107,
+        "vir_direction": "underweight",
+        "algo_active_weight": -2.56,
+        "algo_active_weight_mom": 0.05,
+        "algo_direction": "underweight",
+        "signal_alignment": "diverging",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.020000000000000018,
+          "yield": 0.028854208422388273,
+          "inflation": 0.02513185115549854,
+          "currency_usd": -0.016786299656005754,
+          "valuation_adjustment_top_down": -0.04916169570174567,
+          "valuation_adjustment_combined": -0.026342588695615232,
+          "valuation_adjustment_bottom_up": -0.0035234816894847976
+        },
+        "stf_relative_context": {
+          "universe": "US sectors",
+          "universe_size": 11,
+          "rank": 10,
+          "percentile": 0.1,
+          "stf": -0.0328,
+          "universe_median_stf": -0.0153,
+          "vs_median": -0.0175,
+          "more_attractive_peers": [
+            "Real Estate",
+            "Utilities",
+            "Consumer Staples"
+          ],
+          "more_attractive_count": 9,
+          "universe_best": {
+            "label": "Real Estate",
+            "stf": -0.0041
+          },
+          "universe_worst": {
+            "label": "Information Technology",
+            "stf": -0.0524
+          },
+          "universe_all_negative": true,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.64,
+          "history_window_months": 12,
+          "history_low": -0.0467,
+          "history_high": -0.0306
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {},
+        "return_attribution_mtd": {}
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.",
+        "active_thesis_falsification_conditions": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+        "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few points to our IT holdings to reflect the direction of VIRs, STFs, and the Algo.  On VIR and STF, IT ranks 5th and 8th, respectively.  We note that, excluding the MER P/FV adjustment,",
+        "sharepoint_research_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Brian Bernard, CFA, CPA Industrials Sector Director Morningstar Research Services LLC Valuation : Asset",
+        "sharepoint_research_path": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US industrials sector earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US industrials sector earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence_status": "PRESENT",
+      "market_evidence_absent_reason": "",
+      "market_evidence_note": "",
+      "market_evidence_region": "US",
+      "market_evidence_lenses_attempted": [
+        "earnings",
+        "valuation",
+        "pmi"
+      ],
+      "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few points to our IT holdings to reflect the direction of VIRs, STFs, and the Algo.  On VIR and STF, IT ran",
+      "top_holding_lineage": "Union Pacific Corp (+0.58 pts active) via MS US EQ SYSTEMATIC LARGE 0.45%, MS US EQUITY MFS 0.35%; Eaton Corp PLC (+0.52 pts active) via MS US EQUITY CLEARBRIDGE 0.43%, MS US EQUITY MFS 0.26%; RTX Corp (+0.28 pts active) via MS US EQUITY MFS 0.41%, MS US EQUITY CLEARBRIDGE 0.22%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+memory+sharepoint_research"
+    },
+    {
+      "challenge_id": "ch_us-sml-eq_2026-09-30",
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "exact_holdings_causing_it": [
+        {
+          "security_name": "Casella Waste Systems Inc Class A",
+          "portfolio_weight": 0.2663,
+          "benchmark_weight": 0.007,
+          "active_weight": 0.2593,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.2634,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2634
+            },
+            {
+              "source_name": "SPDR Portfolio S&P 600 Sm Cap ETF",
+              "portfolio_weight": 0.003,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.003
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.007,
+              "active_weight": -0.007
+            }
+          ]
+        },
+        {
+          "security_name": "HEALTHPEAK PROPS. INC",
+          "portfolio_weight": 0.264,
+          "benchmark_weight": 0.0195,
+          "active_weight": 0.2445,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.264,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.264
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0195,
+              "active_weight": -0.0195
+            }
+          ]
+        },
+        {
+          "security_name": "Ollie's Bargain Outlet Holdings Inc",
+          "portfolio_weight": 0.2309,
+          "benchmark_weight": 0.0073,
+          "active_weight": 0.2237,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.2309,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2309
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0073,
+              "active_weight": -0.0073
+            }
+          ]
+        },
+        {
+          "security_name": "CTS Corp",
+          "portfolio_weight": 0.1798,
+          "benchmark_weight": 0.0,
+          "active_weight": 0.1798,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.1376,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1376
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC SMID",
+              "portfolio_weight": 0.0401,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0401
+            },
+            {
+              "source_name": "SPDR\u00ae S&P 600 Small Cap Value ETF",
+              "portfolio_weight": 0.0011,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.0011
+            }
+          ]
+        }
+      ],
+      "exact_vir_algo_decomp_explanation": {
+        "active_weight": 2.5026562822611615,
+        "portfolio_weight": 5.435985108929628,
+        "benchmark_weight": 2.933328826668466,
+        "positioning_direction": "overweight",
+        "vir_now": -0.009711496323225682,
+        "vir_delta_mom": 0.01108474317301189,
+        "vir_direction": "underweight",
+        "algo_active_weight": 1.21,
+        "algo_active_weight_mom": 0.66,
+        "algo_direction": "overweight",
+        "signal_alignment": "partially_aligned",
+        "decomposition_driver": "growth",
+        "decomposition_assessment": "broad_based",
+        "decomposition_values": {
+          "growth": 0.040000000000000036,
+          "yield": 0.02611572252819644,
+          "inflation": 0.02513185115549854,
+          "currency_usd": -0.016786299656005754,
+          "valuation_adjustment_top_down": -0.023534693647608074,
+          "valuation_adjustment_combined": -0.006756941203290623,
+          "valuation_adjustment_bottom_up": 0.010020811241026828
+        },
+        "stf_relative_context": {
+          "universe": "US styles",
+          "universe_size": 9,
+          "rank": 3,
+          "percentile": 0.75,
+          "stf": -0.0097,
+          "universe_median_stf": -0.0215,
+          "vs_median": 0.0118,
+          "more_attractive_peers": [
+            "United States Sml Value",
+            "United States Mid Value"
+          ],
+          "more_attractive_count": 2,
+          "universe_best": {
+            "label": "United States Sml Value",
+            "stf": 0.0039
+          },
+          "universe_worst": {
+            "label": "United States Lrg Growth",
+            "stf": -0.045
+          },
+          "universe_all_negative": false,
+          "universe_dominant_driver": "valuation_adjustment_top_down",
+          "historical_percentile": 0.82,
+          "history_window_months": 12,
+          "history_low": -0.0208,
+          "history_high": -0.0075
+        }
+      },
+      "exact_risk_contribution": {
+        "sector_or_industry_match": {},
+        "style_match": {},
+        "specific_risk_watch_match": {
+          "label": "United States Sml",
+          "category": "Eq Size / Style",
+          "active_weight": 2.5,
+          "top_sector_holdings": [
+            {
+              "security_name": "Casella Waste Systems Inc Class A",
+              "portfolio_weight": 0.27,
+              "benchmark_weight": 0.01,
+              "active_weight": 0.26
+            },
+            {
+              "security_name": "HEALTHPEAK PROPS. INC",
+              "portfolio_weight": 0.26,
+              "benchmark_weight": 0.02,
+              "active_weight": 0.24
+            },
+            {
+              "security_name": "Ollie's Bargain Outlet Holdings Inc",
+              "portfolio_weight": 0.23,
+              "benchmark_weight": 0.01,
+              "active_weight": 0.22
+            }
+          ],
+          "inference_level": "sector_proxy"
+        },
+        "return_attribution_mtd": {}
+      },
+      "exact_internal_research_excerpt": {
+        "active_thesis_text": "",
+        "active_thesis_falsification_conditions": "",
+        "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Small Cap ETF holdings contribute to a fund level overweight MFS and Systematic Larg",
+        "sharepoint_research_summary": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cyclicals accounting for the majority. They also have lower international revenue exposure and less concentration. We find sector exposure can explain a large proportion of the returns of US Small Caps. Howe",
+        "sharepoint_research_path": "202505-EQ-US SML EQ-Conviction Update.pptx",
+        "sharepoint_research_month": "",
+        "sharepoint_match_status": "matched"
+      },
+      "exact_external_market_context": [
+        {
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        },
+        {
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source": "FactSet Earnings Insight",
+          "published_at": "2026-05-29",
+          "citation": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1",
+          "url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf"
+        }
+      ],
+      "market_evidence": [
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 2",
+          "narrative": "Three \u201cMagnificent 7\u201d Companies Have Led Increase in Earnings since March 31 The blended (year-over-year) earnings growth rate for Q1 2026 of 28.6% is above the estimate of 13.1% at the end of the first quarter (March 31). Ten sectors have recorded an increase in their earnings growth rate or a decrease in their earnings decline since the end of the quarter due to upward revisions to EPS estimates and positive earnings surprises , led by the Communication Services (to 48.9% vs.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_f6a08545c950"
+        },
+        {
+          "lens": "earnings",
+          "query_used": "US small-cap equities earnings growth revisions guidance September 2026",
+          "headline": "FactSet Earnings Insight excerpt 1",
+          "narrative": "Ten sectors are reporting (or have reported) higher earnings today (compared to March 31) due to positive EPS surprises and upward revisions to EPS estimates. \u2022 Earnings Guidance: For Q2 2026, 46 S&P 500 companies have issued negative EPS guidance and 56 S&P 500 companies have issued positive EPS guidance.",
+          "fundamental_readthrough": "Approved-source web context for query: US equity market May 2026 sector performance earnings",
+          "pm_question": "",
+          "source_label": "FactSet Earnings Insight",
+          "source_date": "2026-05-29",
+          "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_052926A.pdf",
+          "citation_ref": "csv:artifacts/market_context/monthly_market_context.csv#row_id=mctx_4c3be886afb1"
+        }
+      ],
+      "market_evidence_status": "PRESENT",
+      "market_evidence_absent_reason": "",
+      "market_evidence_note": "",
+      "market_evidence_region": "US",
+      "market_evidence_lenses_attempted": [
+        "earnings",
+        "valuation",
+        "smallcap"
+      ],
+      "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight Industrials Small Cap indices have a higher Industrials weighting than Large Cap indices, so our Smal",
+      "top_holding_lineage": "Casella Waste Systems Inc Class A (+0.26 pts active) via MS US EQUITY WASATCH 0.26%, SPDR Portfolio S&P 600 Sm Cap ETF 0.00%; HEALTHPEAK PROPS. INC (+0.24 pts active) via MSTAR USEQ OPPORTUNISTIC 0.26%, Morningstar US Market TR USD 0.00%; Ollie's Bargain Outlet Holdings Inc (+0.22 pts active) via MS US EQUITY WASATCH 0.23%, Morningstar US Market TR USD 0.00%",
+      "research_status": {
+        "status": "matched_without_month",
+        "months_old": null,
+        "folder_month": ""
+      },
+      "source_quality": "model+positioning+internal_history+sharepoint_research"
+    }
+  ],
+  "supporting_positions": {
+    "top_divergences": [
+      {
+        "acid": "US ID EQ",
+        "label": "Industrials",
+        "category": "Eq Sector",
+        "portfolio_weight": 11.055851220767106,
+        "benchmark_weight": 8.858466456613403,
+        "active_weight": 2.1973847641537034,
+        "vir_now": -0.03277713680904411,
+        "vir_delta_mom": 0.013928970282446107,
+        "algo_active_weight": -2.56,
+        "signal_alignment": "diverging",
+        "signal_quality": "improving",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "matched_prior_rationale",
+        "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at ",
+        "active_thesis": {
+          "thesis_id": "ths_7d2a38f0f6a1",
+          "fund": "MStar US Equity",
+          "acid": "US ID EQ",
+          "thesis_text": "Maintain baseline thesis tracking for the US industrials overweight so future decomposition changes can be evaluated explicitly.",
+          "thesis_drivers": [
+            "valuation_adjustment_top_down"
+          ],
+          "last_affirmed_snapshot_date": "2026-04-06",
+          "last_affirmed_stf": -0.0440526031682848,
+          "last_affirmed_decomp": "{\"growth\":0.02,\"yield\":0.0278291907492728,\"inflation\":0.0245560585345919,\"currency_usd\":0.0,\"valuation_adjustment_top_down\":-0.0575146444220777,\"valuation_adjustment_combined\":-0.0363920481918165,\"valuation_adjustment_bottom_up\":-0.015269451961555304}",
+          "falsification_conditions": "Revisit if the dominant decomposition driver rotates away from valuation_adjustment_top_down or if the prior dominant driver weakens materially.",
+          "status": "active",
+          "review_state": "proposed",
+          "created_at": "2026-04-29T00:00:00Z",
+          "updated_at": "2026-04-29T00:00:00Z",
+          "created_by_review_run_id": "manual_thesis_seed_2026-04-29",
+          "last_updated_by_review_run_id": "manual_thesis_seed_2026-04-29",
+          "visibility_scope": "personal",
+          "evidence_pointers": [
+            {
+              "artifact_path": "artifacts/rolled_exposures/fund_weights_vir_algo_multisignal.csv",
+              "row_id": "fms_120bf174c7ce"
+            }
+          ]
+        },
+        "sharepoint_research_path": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+        "sharepoint_research_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 ",
+        "sample_source_securities": "Union Pacific Corp; W.W. Grainger Inc; Eaton Corp PLC; RTX Corp; Boeing Co; EMERSON ELEC. CO; General Dynamics Corp; Lockheed Martin Corp; Casella Waste Systems Inc Class A; ROCKWELL AUTOMATION INC; Honeywell International Inc; PACCAR Inc; Illinois Tool Works Inc; CNH Industrial NV; AAON Inc; Uber Technologies Inc; FASTENAL CO; Equifax Inc; OTIS WORLDWIDE CORP; Kadant Inc; VERTIV HLDGS. CO; Caterpillar Inc; IDEX CORP; NORTHROP GRUMMAN CORP; Ingersoll Rand Inc",
+        "source_breakdown": {
+          "security_count": 282,
+          "securities": [
+            {
+              "security_name": "Union Pacific Corp",
+              "portfolio_weight": 0.8067,
+              "benchmark_weight": 0.2258,
+              "active_weight": 0.5809,
+              "sources": [
+                {
+                  "source_name": "MS US EQ SYSTEMATIC LARGE",
+                  "portfolio_weight": 0.455,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.455
+                },
+                {
+                  "source_name": "MS US EQUITY MFS",
+                  "portfolio_weight": 0.3517,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3517
+                }
+              ]
+            },
+            {
+              "security_name": "Eaton Corp PLC",
+              "portfolio_weight": 0.7522,
+              "benchmark_weight": 0.2338,
+              "active_weight": 0.5184,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY CLEARBRIDGE",
+                  "portfolio_weight": 0.4258,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4258
+                },
+                {
+                  "source_name": "MS US EQUITY MFS",
+                  "portfolio_weight": 0.2611,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2611
+                }
+              ]
+            },
+            {
+              "security_name": "RTX Corp",
+              "portfolio_weight": 0.6339,
+              "benchmark_weight": 0.3505,
+              "active_weight": 0.2834,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY MFS",
+                  "portfolio_weight": 0.4129,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4129
+                },
+                {
+                  "source_name": "MS US EQUITY CLEARBRIDGE",
+                  "portfolio_weight": 0.2209,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2209
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US SML EQ",
+        "label": "United States Sml",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 5.435985108929628,
+        "benchmark_weight": 2.933328826668466,
+        "active_weight": 2.5026562822611615,
+        "vir_now": -0.009711496323225682,
+        "vir_delta_mom": 0.01108474317301189,
+        "algo_active_weight": 1.21,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "growth",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "matched_prior_rationale",
+        "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Syste",
+        "active_thesis": {},
+        "sharepoint_research_path": "202505-EQ-US SML EQ-Conviction Update.pptx",
+        "sharepoint_research_summary": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cyclica",
+        "sample_source_securities": "HEALTHPEAK PROPS. INC; Casella Waste Systems Inc Class A; Ollie's Bargain Outlet Holdings Inc; Tyler Technologies Inc; Kadant Inc; CTS Corp; RLI Corp; Champion Homes Inc; Halozyme Therapeutics Inc; CCC Intelligent Solutions Holdings Inc; ROBERT HALF INC; XPEL Inc; MASCO CORP; EVERCORE INC; Standex International Corp; Allison Transmission Holdings Inc; Trex Co Inc; Moelis & Co Class A; SEI Investments Co; Freshpet Inc; Align Technology Inc; Balchem Corp; Ralliant Corp; ENPRO INC; Preformed Line Products Co",
+        "source_breakdown": {
+          "security_count": 428,
+          "securities": [
+            {
+              "security_name": "Casella Waste Systems Inc Class A",
+              "portfolio_weight": 0.2663,
+              "benchmark_weight": 0.007,
+              "active_weight": 0.2593,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY WASATCH",
+                  "portfolio_weight": 0.2634,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2634
+                },
+                {
+                  "source_name": "SPDR Portfolio S&P 600 Sm Cap ETF",
+                  "portfolio_weight": 0.003,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.003
+                }
+              ]
+            },
+            {
+              "security_name": "HEALTHPEAK PROPS. INC",
+              "portfolio_weight": 0.264,
+              "benchmark_weight": 0.0195,
+              "active_weight": 0.2445,
+              "sources": [
+                {
+                  "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                  "portfolio_weight": 0.264,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.264
+                },
+                {
+                  "source_name": "Morningstar US Market TR USD",
+                  "portfolio_weight": 0.0,
+                  "benchmark_weight": 0.0195,
+                  "active_weight": -0.0195
+                }
+              ]
+            },
+            {
+              "security_name": "Ollie's Bargain Outlet Holdings Inc",
+              "portfolio_weight": 0.2309,
+              "benchmark_weight": 0.0073,
+              "active_weight": 0.2237,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY WASATCH",
+                  "portfolio_weight": 0.2309,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2309
+                },
+                {
+                  "source_name": "Morningstar US Market TR USD",
+                  "portfolio_weight": 0.0,
+                  "benchmark_weight": 0.0073,
+                  "active_weight": -0.0073
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US MID V EQ",
+        "label": "United States Mid Value",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 8.56861942109959,
+        "benchmark_weight": 5.911467635412944,
+        "active_weight": 2.657151785686647,
+        "vir_now": -0.005356891912582609,
+        "vir_delta_mom": 0.006155395685386367,
+        "algo_active_weight": 1.6,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "matched_prior_rationale",
+        "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Syste",
+        "active_thesis": {},
+        "sharepoint_research_path": "",
+        "sharepoint_research_summary": "",
+        "sample_source_securities": "The Cigna Group; The Travelers Companies Inc; Duke Energy Corp; MONDELEZ INTL. INC; Dominion Energy Inc; US BANCORP; INTERNATIONAL FLAVORS & F; XCEL ENERGY INC; Edison International; Biogen Inc; Elevance Health Inc; PNC Financial Services Group Inc; CRH PLC; OTIS WORLDWIDE CORP; REALTY INC. CORP; Constellation Brands Inc Class A; Cognizant Technology Solutions Corp Class A; GE HealthCare Technologies Inc Common Stock; PPG Industries Inc; EOG RES. INC; Becton Dickinson & Co; Kimberly-Clark Corp; Nike Inc Class B; Eversource Energy; Crown Castle Inc",
+        "source_breakdown": {
+          "security_count": 129,
+          "securities": [
+            {
+              "security_name": "The Cigna Group",
+              "portfolio_weight": 0.5109,
+              "benchmark_weight": 0.0968,
+              "active_weight": 0.4141,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY MFS",
+                  "portfolio_weight": 0.5109,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.5109
+                },
+                {
+                  "source_name": "Morningstar US Market TR USD",
+                  "portfolio_weight": 0.0,
+                  "benchmark_weight": 0.0968,
+                  "active_weight": -0.0968
+                }
+              ]
+            },
+            {
+              "security_name": "Duke Energy Corp",
+              "portfolio_weight": 0.4507,
+              "benchmark_weight": 0.1241,
+              "active_weight": 0.3266,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY MFS",
+                  "portfolio_weight": 0.3135,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3135
+                },
+                {
+                  "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                  "portfolio_weight": 0.1373,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.1373
+                }
+              ]
+            },
+            {
+              "security_name": "The Travelers Companies Inc",
+              "portfolio_weight": 0.3479,
+              "benchmark_weight": 0.1039,
+              "active_weight": 0.2439,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY MFS",
+                  "portfolio_weight": 0.3479,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3479
+                },
+                {
+                  "source_name": "Morningstar US Market TR USD",
+                  "portfolio_weight": 0.0,
+                  "benchmark_weight": 0.1039,
+                  "active_weight": -0.1039
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US SML G EQ",
+        "label": "United States Sml Growth",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 3.756726801874122,
+        "benchmark_weight": 1.4543194182722312,
+        "active_weight": 2.3024073836018903,
+        "vir_now": -0.02154315170994467,
+        "vir_delta_mom": 0.013721335947404878,
+        "algo_active_weight": 0.22999999999999998,
+        "signal_alignment": "partially_aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "growth",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "matched_prior_rationale",
+        "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Syste",
+        "active_thesis": {},
+        "sharepoint_research_path": "",
+        "sharepoint_research_summary": "",
+        "sample_source_securities": "HealthEquity Inc; Global E Online Ltd; AAON Inc; Guidewire Software Inc; Paymentus Holdings Inc Class A; NOVANTA INC; Procore Technologies Inc; Repligen Corp; Ensign Group Inc; Federal Signal Corp; CSW Industrials Inc; PDF Solutions Inc; StoneX Group Inc; FABRINET; The Vita Coco Co Inc; ESCO Technologies Inc; Everus Construction Group Inc; PJT Partners Inc Class A; Loar Holdings Inc; SailPoint Inc; Bel Fuse Inc Class B; ServiceTitan Inc Class A Ordinary Shares; Valvoline Inc; Goosehead Insurance Inc Class A; JFrog Ltd Ordinary Shares",
+        "source_breakdown": {
+          "security_count": 229,
+          "securities": [
+            {
+              "security_name": "HealthEquity Inc",
+              "portfolio_weight": 0.3963,
+              "benchmark_weight": 0.0103,
+              "active_weight": 0.386,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY WASATCH",
+                  "portfolio_weight": 0.3963,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3963
+                },
+                {
+                  "source_name": "Morningstar US Market TR USD",
+                  "portfolio_weight": 0.0,
+                  "benchmark_weight": 0.0103,
+                  "active_weight": -0.0103
+                }
+              ]
+            },
+            {
+              "security_name": "Guidewire Software Inc",
+              "portfolio_weight": 0.2922,
+              "benchmark_weight": 0.0162,
+              "active_weight": 0.2761,
+              "sources": [
+                {
+                  "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                  "portfolio_weight": 0.175,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.175
+                },
+                {
+                  "source_name": "MS US EQUITY WASATCH",
+                  "portfolio_weight": 0.1172,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.1172
+                }
+              ]
+            },
+            {
+              "security_name": "Global E Online Ltd",
+              "portfolio_weight": 0.2289,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2289,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY WASATCH",
+                  "portfolio_weight": 0.2289,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2289
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "top_aligned_positions": [
+      {
+        "acid": "US LRG G EQ",
+        "label": "United States Lrg Growth",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 14.729597285633862,
+        "benchmark_weight": 22.658860936455607,
+        "active_weight": -7.929263650821746,
+        "vir_now": -0.04497722623534814,
+        "vir_delta_mom": 0.004647004292964274,
+        "algo_active_weight": -6.92,
+        "signal_alignment": "aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "matched_prior_rationale",
+        "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at ",
+        "active_thesis": {},
+        "sharepoint_research_path": "",
+        "sharepoint_research_summary": "",
+        "sample_source_securities": "NVIDIA Corp; Broadcom Inc; Palo Alto Networks Inc; Lam Research Corp; Arista Networks Inc; Applied Materials Inc; TESLA INC; KLA CORP; Micron Technology Inc; Boeing Co; Datadog Inc Class A; FORTINET INC; Marvell Technology Inc; Space Exploration Technologies Corp Class A; Advanced Micro Devices Inc; Eli Lilly and Co; SEAGATE TECHNOLOGY HOLDIN; Intel Corp; Palantir Technologies Inc Ordinary Shares - Class A; CrowdStrike Holdings Inc Class A; GE Vernova Inc; Welltower Inc; Western Digital Corp; Dell Technologies Inc Ordinary Shares - Class C; Corning Inc",
+        "source_breakdown": {
+          "security_count": 28,
+          "securities": [
+            {
+              "security_name": "NVIDIA Corp",
+              "portfolio_weight": 6.3294,
+              "benchmark_weight": 7.4464,
+              "active_weight": -1.1171,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY CLEARBRIDGE",
+                  "portfolio_weight": 3.1325,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 3.1325
+                },
+                {
+                  "source_name": "MS US EQ SYSTEMATIC LARGE",
+                  "portfolio_weight": 1.6655,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.6655
+                }
+              ]
+            },
+            {
+              "security_name": "Broadcom Inc",
+              "portfolio_weight": 1.898,
+              "benchmark_weight": 2.2959,
+              "active_weight": -0.3979,
+              "sources": [
+                {
+                  "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                  "portfolio_weight": 1.019,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.019
+                },
+                {
+                  "source_name": "MS US EQ SYSTEMATIC LARGE",
+                  "portfolio_weight": 0.4618,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4618
+                }
+              ]
+            },
+            {
+              "security_name": "Palo Alto Networks Inc",
+              "portfolio_weight": 1.2653,
+              "benchmark_weight": 0.4528,
+              "active_weight": 0.8125,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY CLEARBRIDGE",
+                  "portfolio_weight": 0.8295,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.8295
+                },
+                {
+                  "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                  "portfolio_weight": 0.4358,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.4358
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US IT EQ",
+        "label": "Information Technology",
+        "category": "Eq Sector",
+        "portfolio_weight": 34.060019813159606,
+        "benchmark_weight": 37.98831480467406,
+        "active_weight": -3.9282949915144556,
+        "vir_now": -0.05244822457551049,
+        "vir_delta_mom": -0.0015454601367377307,
+        "algo_active_weight": -8.64,
+        "signal_alignment": "aligned",
+        "signal_quality": "stable",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "matched_prior_rationale",
+        "internal_history_excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at ",
+        "active_thesis": {},
+        "sharepoint_research_path": "202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+        "sharepoint_research_summary": "Equity Sector Review: US Technology We are moderately negative on the sector, but we see the software industry as undervalued. AUGUST 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Inves",
+        "sample_source_securities": "NVIDIA Corp; Microsoft Corp; Apple Inc; Broadcom Inc; Palo Alto Networks Inc; CISCO SYS. INC; Lam Research Corp; Arista Networks Inc; Applied Materials Inc; Analog Devices Inc; Texas Instruments Inc; KLA CORP; Micron Technology Inc; ServiceNow Inc; Accenture PLC Class A; ORACLE CORP; AMPHENOL CORP; NXP Semiconductors NV; Salesforce Inc; Synopsys Inc; Qualcomm Inc; Datadog Inc Class A; FORTINET INC; Adobe Inc; Marvell Technology Inc",
+        "source_breakdown": {
+          "security_count": 227,
+          "securities": [
+            {
+              "security_name": "NVIDIA Corp",
+              "portfolio_weight": 6.3294,
+              "benchmark_weight": 7.4464,
+              "active_weight": -1.1171,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY CLEARBRIDGE",
+                  "portfolio_weight": 3.1325,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 3.1325
+                },
+                {
+                  "source_name": "MS US EQ SYSTEMATIC LARGE",
+                  "portfolio_weight": 1.6655,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.6655
+                }
+              ]
+            },
+            {
+              "security_name": "Apple Inc",
+              "portfolio_weight": 5.638,
+              "benchmark_weight": 6.8009,
+              "active_weight": -1.1629,
+              "sources": [
+                {
+                  "source_name": "MS US EQ SYSTEMATIC LARGE",
+                  "portfolio_weight": 1.5687,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.5687
+                },
+                {
+                  "source_name": "MSTAR USEQ COMPLETION",
+                  "portfolio_weight": 1.4595,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.4595
+                }
+              ]
+            },
+            {
+              "security_name": "Microsoft Corp",
+              "portfolio_weight": 5.4608,
+              "benchmark_weight": 5.3348,
+              "active_weight": 0.126,
+              "sources": [
+                {
+                  "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                  "portfolio_weight": 1.7875,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.7875
+                },
+                {
+                  "source_name": "MS US EQUITY MFS",
+                  "portfolio_weight": 1.1688,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 1.1688
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "acid": "US MID G EQ",
+        "label": "United States Mid Growth",
+        "category": "Eq Size / Style",
+        "portfolio_weight": 3.0423370130052474,
+        "benchmark_weight": 5.071527971388807,
+        "active_weight": -2.02919095838356,
+        "vir_now": -0.026843226680813334,
+        "vir_delta_mom": 0.010773604376312695,
+        "algo_active_weight": -2.54,
+        "signal_alignment": "aligned",
+        "signal_quality": "improving",
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "internal_history_status": "matched_prior_rationale",
+        "internal_history_excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Syste",
+        "active_thesis": {},
+        "sharepoint_research_path": "",
+        "sharepoint_research_summary": "",
+        "sample_source_securities": "Nasdaq Inc; Airbnb Inc Ordinary Shares - Class A; MONSTER BEVERAGE CORP; Synopsys Inc; The Estee Lauder Companies Inc Class A; Monolithic Power Systems Inc; Teradyne Inc; VERTIV HLDGS. CO; Medline Inc Ordinary Shares - Class A; Ciena Corp; Texas Pacific Land Corp; Edwards Lifesciences Corp; MEDPACE HLDGS. INC; Qnity Electronics Inc; ARES MGT. CORP; Alnylam Pharmaceuticals Inc; Lumentum Holdings Inc; Curtiss-Wright Corp; ITT Inc; Heico Corp; Ubiquiti Inc; Old Dominion Freight Line Inc Ordinary Shares; Keysight Technologies Inc; QUANTA SERVS. INC; CADENCE DESIGN SYS. INC",
+        "source_breakdown": {
+          "security_count": 97,
+          "securities": [
+            {
+              "security_name": "Airbnb Inc Ordinary Shares - Class A",
+              "portfolio_weight": 0.4728,
+              "benchmark_weight": 0.0907,
+              "active_weight": 0.3822,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY CLEARBRIDGE",
+                  "portfolio_weight": 0.2403,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2403
+                },
+                {
+                  "source_name": "MSTAR USEQ OPPORTUNISTIC",
+                  "portfolio_weight": 0.2325,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.2325
+                }
+              ]
+            },
+            {
+              "security_name": "Nasdaq Inc",
+              "portfolio_weight": 0.4011,
+              "benchmark_weight": 0.0565,
+              "active_weight": 0.3445,
+              "sources": [
+                {
+                  "source_name": "MS US EQUITY MFS",
+                  "portfolio_weight": 0.3808,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.3808
+                },
+                {
+                  "source_name": "MS US EQ SYSTEMATIC SMID",
+                  "portfolio_weight": 0.0203,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.0203
+                }
+              ]
+            },
+            {
+              "security_name": "Teradyne Inc",
+              "portfolio_weight": 0.2793,
+              "benchmark_weight": 0.0879,
+              "active_weight": 0.1914,
+              "sources": [
+                {
+                  "source_name": "MS US EQ SYSTEMATIC LARGE",
+                  "portfolio_weight": 0.1532,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.1532
+                },
+                {
+                  "source_name": "MS US EQ SYSTEMATIC SMID",
+                  "portfolio_weight": 0.126,
+                  "benchmark_weight": 0.0,
+                  "active_weight": 0.126
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "top_movers": [
+      {
+        "acid": "EM IT EQ",
+        "label": "Information Technology",
+        "category": "Eq Sector",
+        "vir_now": -0.049233382934065734,
+        "vir_delta_mom": 0.02922768751133087,
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "active_weight": 0.6177142541907075
+      },
+      {
+        "acid": "US UT EQ",
+        "label": "Utilities",
+        "category": "Eq Sector",
+        "vir_now": -0.008031432807958594,
+        "vir_delta_mom": 0.01775254040758001,
+        "decomposition_driver": "yield",
+        "decomposition_assessment": "broad_based",
+        "active_weight": -0.10137064303264665
+      },
+      {
+        "acid": "NL EQ",
+        "label": "Netherlands",
+        "category": "Country",
+        "vir_now": -0.03784424600155622,
+        "vir_delta_mom": 0.016637812479388225,
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "active_weight": 0.6425742344156308
+      },
+      {
+        "acid": "EU IT EQ",
+        "label": "Information Technology",
+        "category": "Eq Sector",
+        "vir_now": -0.03046908434175205,
+        "vir_delta_mom": 0.015291717064698895,
+        "decomposition_driver": "valuation_adjustment_top_down",
+        "decomposition_assessment": "broad_based",
+        "active_weight": 0.4472310806055892
+      }
+    ],
+    "decomposition_focus": [
+      {
+        "acid": "TW EQ",
+        "label": "Taiwan",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.08866144957380684,
+        "assessment": "broad_based",
+        "vir_now": -0.05287674181505794,
+        "vir_delta_mom": 0.007265613934370974,
+        "active_weight": 0.5108137860276154,
+        "values": {
+          "growth": 0.030999999999999917,
+          "yield": 0.01854143450256779,
+          "inflation": 0.015057790690170325,
+          "currency_usd": 0.02001801139729875,
+          "valuation_adjustment_top_down": -0.08866144957380684,
+          "valuation_adjustment_combined": -0.03963396776146477
+        }
+      },
+      {
+        "acid": "EM IT EQ",
+        "label": "Information Technology",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.08705183996424248,
+        "assessment": "broad_based",
+        "vir_now": -0.049233382934065734,
+        "vir_delta_mom": 0.02922768751133087,
+        "active_weight": 0.6177142541907075,
+        "values": {
+          "growth": 0.03499999999999992,
+          "yield": 0.015425437897531643,
+          "inflation": 0.017554758665549824,
+          "currency_usd": 0.01805596309709001,
+          "valuation_adjustment_top_down": -0.08705183996424248,
+          "valuation_adjustment_combined": -0.037780932633856734
+        }
+      },
+      {
+        "acid": "US IT EQ",
+        "label": "Information Technology",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.08438263407400759,
+        "assessment": "broad_based",
+        "vir_now": -0.05244822457551049,
+        "vir_delta_mom": -0.0015454601367377307,
+        "active_weight": -3.9282949915144556,
+        "values": {
+          "growth": 0.031500000000000083,
+          "yield": 0.02046974894268953,
+          "inflation": 0.02513185115549854,
+          "currency_usd": -0.016786299656005754,
+          "valuation_adjustment_top_down": -0.08438263407400759,
+          "valuation_adjustment_combined": -0.03810424444018312
+        }
+      },
+      {
+        "acid": "US LRG G EQ",
+        "label": "United States Lrg Growth",
+        "dominant_driver": "valuation_adjustment_top_down",
+        "dominant_driver_value": -0.08281813093885348,
+        "assessment": "broad_based",
+        "vir_now": -0.04497722623534814,
+        "vir_delta_mom": 0.004647004292964274,
+        "active_weight": -7.929263650821746,
+        "values": {
+          "growth": 0.03400000000000003,
+          "yield": 0.018147810598553374,
+          "inflation": 0.02513185115549854,
+          "currency_usd": -0.016786299656005754,
+          "valuation_adjustment_top_down": -0.08281813093885348,
+          "valuation_adjustment_combined": -0.03593051204599684
+        }
+      }
+    ]
+  },
+  "risk_and_attribution": {
+    "summary": {
+      "review_date_requested": "2026-10-26",
+      "risk_date_used": "2026-07-20",
+      "prior_month_end_used": "2026-07-20",
+      "predicted_beta": 0.8845,
+      "active_predicted_beta": -0.1164,
+      "total_predicted_risk_pct": 14.89,
+      "active_predicted_risk_pct": 3.65,
+      "active_share_pct": 44.2,
+      "factor_risk_pct": 14.48,
+      "specific_risk_pct": 3.48,
+      "active_factor_risk_pct": 3.24,
+      "active_specific_risk_pct": 1.69,
+      "active_style_factor_risk_pct": 2.64,
+      "active_industry_factor_risk_pct": 1.27,
+      "active_market_factor_risk_pct": 0.14,
+      "change_vs_prior_month_end": {
+        "active_predicted_risk_change_pct": 0.0,
+        "active_share_change_pct": 0.0,
+        "active_factor_risk_change_pct": 0.0,
+        "active_specific_risk_change_pct": 0.0,
+        "active_style_factor_risk_change_pct": 0.0,
+        "active_industry_factor_risk_change_pct": 0.0,
+        "active_market_factor_risk_change_pct": 0.0
+      }
+    },
+    "top_style_risk_drivers": [
+      {
+        "label": "Market Sensitivity",
+        "share_of_variance_pct": 20.03
+      },
+      {
+        "label": "Medium-Term Momentum",
+        "share_of_variance_pct": 16.41
+      },
+      {
+        "label": "Size",
+        "share_of_variance_pct": 9.12
+      }
+    ],
+    "top_industry_risk_drivers": [
+      {
+        "label": "Semiconductors & Semiconductor Equipment",
+        "share_of_variance_pct": 2.71
+      },
+      {
+        "label": "Technology Hardware, Storage & Peripherals",
+        "share_of_variance_pct": 1.54
+      },
+      {
+        "label": "Capital Markets",
+        "share_of_variance_pct": 0.91
+      },
+      {
+        "label": "Life Sciences Tools & Services",
+        "share_of_variance_pct": 0.49
+      }
+    ],
+    "return_attribution_mtd": {},
+    "likely_holdings_contributors": [
+      {
+        "risk_driver": "Semiconductors & Semiconductor Equipment",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 2.71,
+        "active_weight": 0.62,
+        "signal_alignment": "diverging",
+        "top_sector_holdings": [
+          {
+            "security_name": "Taiwan Semiconductor Manufacturing Co Ltd ADR",
+            "portfolio_weight": 0.51,
+            "benchmark_weight": 0.0,
+            "active_weight": 0.51
+          },
+          {
+            "security_name": "Camtek Ltd",
+            "portfolio_weight": 0.15,
+            "benchmark_weight": 0.0,
+            "active_weight": 0.15
+          },
+          {
+            "security_name": "Nova Ltd",
+            "portfolio_weight": 0.07,
+            "benchmark_weight": 0.0,
+            "active_weight": 0.07
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "Technology Hardware, Storage & Peripherals",
+        "mapped_sector": "Information Technology",
+        "share_of_variance_pct": 1.54,
+        "active_weight": 0.62,
+        "signal_alignment": "diverging",
+        "top_sector_holdings": [
+          {
+            "security_name": "Taiwan Semiconductor Manufacturing Co Ltd ADR",
+            "portfolio_weight": 0.51,
+            "benchmark_weight": 0.0,
+            "active_weight": 0.51
+          },
+          {
+            "security_name": "Camtek Ltd",
+            "portfolio_weight": 0.15,
+            "benchmark_weight": 0.0,
+            "active_weight": 0.15
+          },
+          {
+            "security_name": "Nova Ltd",
+            "portfolio_weight": 0.07,
+            "benchmark_weight": 0.0,
+            "active_weight": 0.07
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "Capital Markets",
+        "mapped_sector": "Financials",
+        "share_of_variance_pct": 0.91,
+        "active_weight": 1.66,
+        "signal_alignment": "diverging",
+        "top_sector_holdings": [
+          {
+            "security_name": "Visa Inc Class A",
+            "portfolio_weight": 1.69,
+            "benchmark_weight": 0.86,
+            "active_weight": 0.83
+          },
+          {
+            "security_name": "BlackRock Inc",
+            "portfolio_weight": 1.02,
+            "benchmark_weight": 0.21,
+            "active_weight": 0.82
+          },
+          {
+            "security_name": "JPMorgan Chase & Co",
+            "portfolio_weight": 0.81,
+            "benchmark_weight": 1.23,
+            "active_weight": -0.42
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "risk_driver": "Life Sciences Tools & Services",
+        "mapped_sector": "Health Care",
+        "share_of_variance_pct": 0.49,
+        "active_weight": 0.68,
+        "signal_alignment": "diverging",
+        "top_sector_holdings": [
+          {
+            "security_name": "Johnson & Johnson",
+            "portfolio_weight": 0.94,
+            "benchmark_weight": 0.89,
+            "active_weight": 0.05
+          },
+          {
+            "security_name": "Thermo Fisher Scientific Inc",
+            "portfolio_weight": 0.67,
+            "benchmark_weight": 0.35,
+            "active_weight": 0.32
+          },
+          {
+            "security_name": "Intuitive Surgical Inc",
+            "portfolio_weight": 0.63,
+            "benchmark_weight": 0.2,
+            "active_weight": 0.43
+          }
+        ],
+        "inference_level": "sector_proxy"
+      }
+    ],
+    "specific_risk_watchlist": [
+      {
+        "label": "United States Lrg Growth",
+        "category": "Eq Size / Style",
+        "active_weight": -7.93,
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 6.33,
+            "benchmark_weight": 7.45,
+            "active_weight": -1.12
+          },
+          {
+            "security_name": "Broadcom Inc",
+            "portfolio_weight": 1.9,
+            "benchmark_weight": 2.3,
+            "active_weight": -0.4
+          },
+          {
+            "security_name": "Palo Alto Networks Inc",
+            "portfolio_weight": 1.27,
+            "benchmark_weight": 0.45,
+            "active_weight": 0.81
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "Information Technology",
+        "category": "Eq Sector",
+        "active_weight": -3.93,
+        "top_sector_holdings": [
+          {
+            "security_name": "NVIDIA Corp",
+            "portfolio_weight": 6.33,
+            "benchmark_weight": 7.45,
+            "active_weight": -1.12
+          },
+          {
+            "security_name": "Apple Inc",
+            "portfolio_weight": 5.64,
+            "benchmark_weight": 6.8,
+            "active_weight": -1.16
+          },
+          {
+            "security_name": "Microsoft Corp",
+            "portfolio_weight": 5.46,
+            "benchmark_weight": 5.33,
+            "active_weight": 0.13
+          }
+        ],
+        "inference_level": "sector_proxy"
+      },
+      {
+        "label": "United States Mid Value",
+        "category": "Eq Size / Style",
+        "active_weight": 2.66,
+        "top_sector_holdings": [
+          {
+            "security_name": "The Cigna Group",
+            "portfolio_weight": 0.51,
+            "benchmark_weight": 0.1,
+            "active_weight": 0.41
+          },
+          {
+            "security_name": "Duke Energy Corp",
+            "portfolio_weight": 0.45,
+            "benchmark_weight": 0.12,
+            "active_weight": 0.33
+          },
+          {
+            "security_name": "The Travelers Companies Inc",
+            "portfolio_weight": 0.35,
+            "benchmark_weight": 0.1,
+            "active_weight": 0.24
+          }
+        ],
+        "inference_level": "sector_proxy"
+      }
+    ],
+    "narrative_observations": [
+      "Measured active risk is currently most concentrated in style risk at 2.64%.",
+      "The biggest modeled industry driver is Semiconductors & Semiconductor Equipment at 2.7% of active variance.",
+      "The largest modeled style driver is Market Sensitivity at 20.0% of active variance.",
+      "Within the mapped Information Technology bucket behind Semiconductors & Semiconductor Equipment risk, the largest sector holdings are Taiwan Semiconductor Manufacturing Co Ltd ADR, Camtek Ltd, Nova Ltd."
+    ]
+  },
+  "sharepoint_research_focus": [
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "research_path": "202506-EQ-US ID EQ-Industrials Sector Report-WithAppendix.pptx",
+      "research_status": "",
+      "research_summary": "Equity Sector Review: US Industrials We have a neutral stance on the industrials sector, but some industries are undervalued. MAY 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 49 58 65 69 Mark Murray, CFA Head of Capital Market "
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "research_path": "202505-EQ-US SML EQ-Conviction Update.pptx",
+      "research_status": "",
+      "research_summary": "US SMID Conviction Update April 2025 CMA Team Executive Summary Executive Table Executive Summary US Small Caps have different key sector drivers than large caps, with Financial Services, Industrials and Consumer Cyclicals accounting for the majority. They als"
+    },
+    {
+      "acid": "US FN EQ",
+      "label": "Financials",
+      "category": "Eq Sector",
+      "research_path": "202512-EQ-US FN EQ-US Financials Sector Review .pptx",
+      "research_status": "",
+      "research_summary": "Equity Sector Review: US Financial Services Sector looks expensive, but we see value among select capital markets firms and asset managers. DECEMBER 2025 \u00a9 2025 Morningstar. All Rights Reserved. For General Education Use Only. 47 55 64 71 75 Mark Murray, CFA H"
+    },
+    {
+      "acid": "EM IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "research_path": "201907-EQ-EM IT EQ & KR EQ-Fundamental Review.pptx",
+      "research_status": "",
+      "research_summary": "Mike Budzinski Mike Stout Jared Watts Gareth Lyons Nabil Salem EM IT Deep Dive Asset Class Analysis Current Industry Composition EM IT is dominated by four industries today: *Tencent and Baidu are now classified under Interactive Media & Services; Alibaba is n"
+    },
+    {
+      "acid": "US IT EQ",
+      "label": "Information Technology",
+      "category": "Eq Sector",
+      "research_path": "202509-EQ-US IT EQ-Technology Sector Review 2025 -Final.pptx",
+      "research_status": "",
+      "research_summary": "Equity Sector Review: US Technology We are moderately negative on the sector, but we see the software industry as undervalued. AUGUST 2025 57 66 73 77 Mark Murray, CFA Head of Capital Market Assumptions Morningstar Investment Management Europe LLC Eric Compton"
+    }
+  ],
+  "internal_history_focus": [
+    {
+      "acid": "US LRG G EQ",
+      "label": "United States Lrg Growth",
+      "category": "Eq Size / Style",
+      "excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few poi",
+      "themes": [
+        "information_technology_underweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "excerpt": "Prospective Opp Value trades Based on the Algo and our current positioning, we decided to increase our Information Technology and Financials weightings.  Our IT underweight was at double digits.  We want to add a few poi",
+      "themes": [
+        "information_technology_underweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight I",
+      "themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight I",
+      "themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    },
+    {
+      "acid": "US SML G EQ",
+      "label": "United States Sml Growth",
+      "category": "Eq Size / Style",
+      "excerpt": "Sector Over/Underweights (Fund Level) The Industrials sector is our largest sector overweight (+3.8%) The Industrials overweight is linked to our SMID overweight. Wasatch and Systematic SMID are particularly overweight I",
+      "themes": [
+        "information_technology_underweight",
+        "smid_overweight",
+        "industrials_overweight",
+        "financials_overweight",
+        "ai_leadership_risk",
+        "subadvisor_and_sleeve_structure",
+        "value_tilt"
+      ]
+    }
+  ],
+  "source_drilldowns": [
+    {
+      "acid": "US LRG G EQ",
+      "label": "United States Lrg Growth",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "NVIDIA Corp",
+          "portfolio_weight": 6.3294,
+          "benchmark_weight": 7.4464,
+          "active_weight": -1.1171,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 3.1325,
+              "benchmark_weight": 0.0,
+              "active_weight": 3.1325
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 1.6655,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.6655
+            }
+          ]
+        },
+        {
+          "security_name": "Broadcom Inc",
+          "portfolio_weight": 1.898,
+          "benchmark_weight": 2.2959,
+          "active_weight": -0.3979,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 1.019,
+              "benchmark_weight": 0.0,
+              "active_weight": 1.019
+            },
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.4618,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4618
+            }
+          ]
+        },
+        {
+          "security_name": "Palo Alto Networks Inc",
+          "portfolio_weight": 1.2653,
+          "benchmark_weight": 0.4528,
+          "active_weight": 0.8125,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.8295,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.8295
+            },
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.4358,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4358
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US ID EQ",
+      "label": "Industrials",
+      "category": "Eq Sector",
+      "top_securities": [
+        {
+          "security_name": "Union Pacific Corp",
+          "portfolio_weight": 0.8067,
+          "benchmark_weight": 0.2258,
+          "active_weight": 0.5809,
+          "sources": [
+            {
+              "source_name": "MS US EQ SYSTEMATIC LARGE",
+              "portfolio_weight": 0.455,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.455
+            },
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3517,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3517
+            }
+          ]
+        },
+        {
+          "security_name": "Eaton Corp PLC",
+          "portfolio_weight": 0.7522,
+          "benchmark_weight": 0.2338,
+          "active_weight": 0.5184,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.4258,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4258
+            },
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.2611,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2611
+            }
+          ]
+        },
+        {
+          "security_name": "RTX Corp",
+          "portfolio_weight": 0.6339,
+          "benchmark_weight": 0.3505,
+          "active_weight": 0.2834,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.4129,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.4129
+            },
+            {
+              "source_name": "MS US EQUITY CLEARBRIDGE",
+              "portfolio_weight": 0.2209,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2209
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US SML EQ",
+      "label": "United States Sml",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "Casella Waste Systems Inc Class A",
+          "portfolio_weight": 0.2663,
+          "benchmark_weight": 0.007,
+          "active_weight": 0.2593,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.2634,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2634
+            },
+            {
+              "source_name": "SPDR Portfolio S&P 600 Sm Cap ETF",
+              "portfolio_weight": 0.003,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.003
+            }
+          ]
+        },
+        {
+          "security_name": "HEALTHPEAK PROPS. INC",
+          "portfolio_weight": 0.264,
+          "benchmark_weight": 0.0195,
+          "active_weight": 0.2445,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.264,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.264
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0195,
+              "active_weight": -0.0195
+            }
+          ]
+        },
+        {
+          "security_name": "Ollie's Bargain Outlet Holdings Inc",
+          "portfolio_weight": 0.2309,
+          "benchmark_weight": 0.0073,
+          "active_weight": 0.2237,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.2309,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2309
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0073,
+              "active_weight": -0.0073
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US MID V EQ",
+      "label": "United States Mid Value",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "The Cigna Group",
+          "portfolio_weight": 0.5109,
+          "benchmark_weight": 0.0968,
+          "active_weight": 0.4141,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.5109,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.5109
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0968,
+              "active_weight": -0.0968
+            }
+          ]
+        },
+        {
+          "security_name": "Duke Energy Corp",
+          "portfolio_weight": 0.4507,
+          "benchmark_weight": 0.1241,
+          "active_weight": 0.3266,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3135,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3135
+            },
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.1373,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1373
+            }
+          ]
+        },
+        {
+          "security_name": "The Travelers Companies Inc",
+          "portfolio_weight": 0.3479,
+          "benchmark_weight": 0.1039,
+          "active_weight": 0.2439,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY MFS",
+              "portfolio_weight": 0.3479,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3479
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.1039,
+              "active_weight": -0.1039
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "acid": "US SML G EQ",
+      "label": "United States Sml Growth",
+      "category": "Eq Size / Style",
+      "top_securities": [
+        {
+          "security_name": "HealthEquity Inc",
+          "portfolio_weight": 0.3963,
+          "benchmark_weight": 0.0103,
+          "active_weight": 0.386,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.3963,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.3963
+            },
+            {
+              "source_name": "Morningstar US Market TR USD",
+              "portfolio_weight": 0.0,
+              "benchmark_weight": 0.0103,
+              "active_weight": -0.0103
+            }
+          ]
+        },
+        {
+          "security_name": "Guidewire Software Inc",
+          "portfolio_weight": 0.2922,
+          "benchmark_weight": 0.0162,
+          "active_weight": 0.2761,
+          "sources": [
+            {
+              "source_name": "MSTAR USEQ OPPORTUNISTIC",
+              "portfolio_weight": 0.175,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.175
+            },
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.1172,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.1172
+            }
+          ]
+        },
+        {
+          "security_name": "Global E Online Ltd",
+          "portfolio_weight": 0.2289,
+          "benchmark_weight": 0.0,
+          "active_weight": 0.2289,
+          "sources": [
+            {
+              "source_name": "MS US EQUITY WASATCH",
+              "portfolio_weight": 0.2289,
+              "benchmark_weight": 0.0,
+              "active_weight": 0.2289
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "data_quality_flags": [
+    {
+      "severity": "medium",
+      "flag": "missing_vir_rows",
+      "message": "1 exposure rows do not have matched STF context."
+    },
+    {
+      "severity": "medium",
+      "flag": "missing_algo_rows",
+      "message": "3 exposure rows do not have matched algo context."
+    },
+    {
+      "severity": "low",
+      "flag": "logical_vs_source_snapshot_date",
+      "message": "The review month is 2026-09-30, while the source holdings snapshot embedded in the rolled artifact is 2026-10-06."
+    },
+    {
+      "severity": "low",
+      "flag": "algo_scaled_to_percentage_points",
+      "message": "Algo weights are stored as decimals in the source workbook and are converted to percentage points in this packet for readability."
+    },
+    {
+      "severity": "low",
+      "flag": "risk_context_pre_month_end",
+      "message": "Risk context uses the latest business-day row on or before 2026-09-30: 2026-07-20."
+    }
+  ],
+  "cost_guardrails": {
+    "instruction": "Use only the evidence below. Do not produce a broad monthly review. Focus on the top 4 PM decisions and keep every section concise.",
+    "target_output_tokens": 4200
+  }
+}

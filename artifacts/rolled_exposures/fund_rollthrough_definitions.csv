@@ -1,10 +1,10 @@
 row_id,snapshot_date,ingested_at,source_file,fund,portfolio_new_column,portfolio_target_column,portfolio_benchmark_column,benchmark_available_in_portfolio,benchmark_assumption_if_missing
-fdef_13e30d49a591,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar US Equity,G,H,I,Yes,
-fdef_ebe9eb9bdfdb,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar International Equity,M,N,O,Yes,
-fdef_69aa0d5c4268,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar Global Opportunistic Equity,S,T,U,Yes,
-fdef_8b9d0831541c,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar Global Income,Y,Z,AA,Yes,
-fdef_1375d365581e,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar Total Return Bond,AE,AF,AG,Yes,
-fdef_e572bce5a947,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar Municipal Bond,AK,AL,AM,Yes,
-fdef_480e64987a7e,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar Defensive Bond,AQ,AR,AS,Yes,
-fdef_442ebf0018b0,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar Multisector Bond,AW,AX,AY,Yes,
-fdef_eb16966c3b4c,2026-07-06,2026-07-21T18:20:11Z,RMv2_PCT_Mstar_funds_2026-07-06.xlsm,MStar Alternatives,BC,BD,,No,0.0
+fdef_0641c92bef8b,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar US Equity,G,H,I,Yes,
+fdef_4eebe6d8a6dc,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar International Equity,M,N,O,Yes,
+fdef_6ff03039577f,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar Global Opportunistic Equity,S,T,U,Yes,
+fdef_6009587d2983,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar Global Income,Y,Z,AA,Yes,
+fdef_fca8d344bfa7,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar Total Return Bond,AE,AF,AG,Yes,
+fdef_31b9030e11c5,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar Municipal Bond,AK,AL,AM,Yes,
+fdef_2bf1f048ad49,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar Defensive Bond,AQ,AR,AS,Yes,
+fdef_9bb3f557f539,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar Multisector Bond,AW,AX,AY,Yes,
+fdef_2dd082ca3121,2026-10-06,2026-10-26T16:24:53Z,RMv2_PCT_Mstar_funds_2026-10-06.xlsm,MStar Alternatives,BC,BD,,No,0.0

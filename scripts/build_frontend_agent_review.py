@@ -177,12 +177,151 @@ def build_review(packet: dict) -> dict:
     }
 
 
+def build_current_review(packet: dict) -> dict:
+    """Build the v2 frontend narrative shape from structured packet facts only.
+
+    This is the safe fallback when the optional Bedrock narrative run is not
+    available. It deliberately reuses packet prose and never invents market
+    evidence, holdings, signals, or risk observations.
+    """
+
+    snapshot = packet.get("fund_snapshot", {})
+    signal_summary = packet.get("signal_summary", {})
+    quality_flags = packet.get("data_quality_flags", [])
+    challenges = sorted(
+        packet.get("challenge_book", []),
+        key=lambda row: float(row.get("challenge_score") or 0),
+        reverse=True,
+    )[:4]
+
+    headlines = [str(item) for item in snapshot.get("headline_summary", []) if item]
+    observations = [
+        str(item) for item in signal_summary.get("fund_level_observations", []) if item
+    ]
+    stale_notes = [
+        str(item.get("message", ""))
+        for item in quality_flags
+        if item.get("flag") == "risk_context_pre_month_end" and item.get("message")
+    ]
+
+    key_insights = []
+    challenge_brief = []
+    for item in challenges:
+        label = item.get("label", "Position")
+        priority = item.get("priority", "medium")
+        key_insights.append(
+            {
+                "label": label,
+                "insight": item.get("challenge_headline")
+                or item.get("observation")
+                or item.get("reason", ""),
+                "why_it_matters": item.get("interpretation")
+                or item.get("positioning_tension")
+                or item.get("reason", ""),
+            }
+        )
+        challenge_brief.append(
+            {
+                "label": label,
+                "challenge_headline": item.get("challenge_headline", ""),
+                "descriptor": " | ".join(
+                    value
+                    for value in (
+                        item.get("category", ""),
+                        str(item.get("challenge_type", "")).replace("_", " "),
+                        f"{priority} priority",
+                    )
+                    if value
+                ),
+                "thesis_under_pressure": item.get("thesis_under_pressure", ""),
+                "positioning_tension": item.get("positioning_tension", ""),
+                "model_signal_tension": item.get("model_signal_tension", ""),
+                "relative_signal_readthrough": item.get("relative_signal_readthrough", ""),
+                "vir_decomposition_readthrough": item.get("vir_decomposition_readthrough", ""),
+                "market_context_readthrough": item.get("market_context_readthrough", ""),
+                "measured_risk_readthrough": item.get("measured_risk_readthrough", ""),
+                "exact_holdings_causing_it": item.get("top_holding_lineage", ""),
+                "exact_vir_algo_decomp_explanation": item.get("model_signal_tension", ""),
+                "exact_risk_contribution": item.get("measured_risk_readthrough", ""),
+                "exact_internal_research_excerpt": item.get("internal_context_summary", ""),
+                "exact_external_market_context": item.get("external_context_summary", ""),
+                "bull_case": item.get("interpretation", ""),
+                "bear_case": item.get("reason", ""),
+                "devils_advocate": item.get("devils_advocate_statement", ""),
+                "what_would_change_my_mind": item.get("what_would_change_view", ""),
+                "pm_decision_fork": item.get("pm_decision_fork", ""),
+                "recommended_action": "REVIEW AT IC" if priority == "high" else "DEFEND OR RESIZE",
+                "primary_pm_question": item.get("primary_pm_question")
+                or item.get("question", ""),
+                "evidence_needed_next": item.get("evidence_needed_next", ""),
+                "confidence": "Structured packet summary; optional model narrative was not run.",
+                "source_quality": item.get("source_quality", ""),
+            }
+        )
+
+    question_by_acid = {
+        str(row.get("acid", "")): row for row in packet.get("pm_questions", [])
+    }
+    roadmap_by_acid = {
+        str(row.get("acid", "")): row for row in packet.get("roadmap", [])
+    }
+    pm_questions = []
+    follow_up = []
+    for item in challenges:
+        acid = str(item.get("acid", ""))
+        question = question_by_acid.get(acid, {})
+        roadmap = roadmap_by_acid.get(acid, {})
+        pm_questions.append(
+            {
+                "label": item.get("label", "Position"),
+                "question": question.get("question")
+                or item.get("primary_pm_question")
+                or item.get("question", ""),
+                "why_now": question.get("why_now")
+                or item.get("challenge_headline")
+                or item.get("reason", ""),
+            }
+        )
+        follow_up.append(
+            {
+                "label": item.get("label", "Position"),
+                "action": roadmap.get("step") or item.get("evidence_needed_next", ""),
+                "why_it_matters": item.get("what_would_change_view")
+                or item.get("interpretation", ""),
+            }
+        )
+
+    dashboard_highlights = [
+        {"label": f"Packet highlight {index + 1}", "highlight": text}
+        for index, text in enumerate(headlines[:4])
+    ]
+    dashboard_highlights.extend(
+        {
+            "label": str(flag.get("flag", "data quality")).replace("_", " ").title(),
+            "highlight": flag.get("message", ""),
+        }
+        for flag in quality_flags[:4]
+        if flag.get("message")
+    )
+
+    executive_parts = headlines[:3] + observations[:3] + stale_notes[:1]
+    return {
+        "executive_summary": " ".join(executive_parts)
+        or "The structured packet is available, but no summary rows were produced.",
+        "key_insights": key_insights,
+        "challenge_brief": challenge_brief,
+        "pm_questions": pm_questions,
+        "follow_up": follow_up,
+        "dashboard_highlights": dashboard_highlights[:8],
+    }
+
+
 def main() -> int:
     args = parse_args()
     packet_path = Path(args.packet)
     output_path = Path(args.output)
     packet = json.loads(packet_path.read_text(encoding="utf-8"))
-    review = build_review(packet)
+    review = build_current_review(packet)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(review, indent=2), encoding="utf-8")
     print(f"packet={packet_path.as_posix()}")
